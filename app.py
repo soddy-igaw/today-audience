@@ -188,6 +188,20 @@ else:
 
     # ===== FEATURED ESSAY =====
     st.markdown("""
+    <div style="padding:48px 0 40px;border-bottom:1px solid #eee;margin-bottom:48px">
+      <h1 style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.2;letter-spacing:-1.5px;margin-bottom:16px">오늘의 오디언스</h1>
+      <p style="color:#111;font-size:1.05rem;font-weight:600;line-height:1.7;margin-bottom:12px">
+        "다음 캠페인, 누구한테 해야 하지?"를 해결하는 서비스
+      </p>
+      <p style="color:#888;font-size:0.92rem;line-height:1.8">
+        광고주가 미처 생각하지 못한 타겟을 매일 발견하는 곳.<br>
+        트렌드를 자동으로 읽고, 행동 시그널을 조합해<br>
+        아직 아무도 안 쓰는 오디언스를 제안합니다.
+      </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
     <div style="padding:48px 0 20px">
       <div class="feat-cat" style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px">⛳ 오늘의 오디언스 #1</div>
 
