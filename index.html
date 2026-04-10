@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>오늘의 오디언스</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard',sans-serif;background:#0a0a0f;color:#fff;-webkit-font-smoothing:antialiased}
+
+/* Feed */
+.feed{max-width:480px;margin:0 auto;padding:20px 16px 40px}
+.feed-header{padding:20px 0 32px;text-align:center}
+.feed-header h1{font-size:1.4rem;font-weight:800}
+.feed-header p{color:#64748b;font-size:0.82rem;margin-top:4px}
+
+/* Card (Feed) */
+.card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 24px;margin-bottom:16px;cursor:pointer;transition:transform 0.2s,border-color 0.2s}
+.card:hover{border-color:rgba(99,102,241,0.4);transform:translateY(-2px)}
+.card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.card-emoji{font-size:2rem}
+.card-meta .card-label{font-size:0.72rem;color:#6366f1;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.card-meta h2{font-size:1.15rem;font-weight:700;margin-top:2px}
+.card-summary{color:#94a3b8;font-size:0.92rem;line-height:1.6;margin-bottom:16px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{padding:4px 12px;border-radius:100px;font-size:0.75rem;font-weight:500;background:rgba(251,191,36,0.12);color:#fbbf24}
+.card-arrow{color:#475569;font-size:0.85rem;margin-top:14px}
+
+/* Detail (Full screen overlay) */
+.detail-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:#0a0a0f;z-index:100;overflow-y:auto;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);opacity:0;pointer-events:none}
+.detail-overlay.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.detail-inner{max-width:480px;margin:0 auto;padding:0 20px 60px}
+
+/* Detail Header */
+.detail-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;position:sticky;top:0;background:#0a0a0f;z-index:10}
+.back-btn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:8px}
+.detail-nav span{color:#64748b;font-size:0.82rem}
+
+.detail-hero{text-align:center;padding:32px 0 40px}
+.detail-hero .big-emoji{font-size:4rem;margin-bottom:16px}
+.detail-hero h1{font-size:1.6rem;font-weight:800;line-height:1.3;margin-bottom:12px}
+.detail-hero p{color:#94a3b8;font-size:0.95rem;line-height:1.6}
+
+/* Sections */
+.section{margin-bottom:40px}
+.section-label{font-size:0.72rem;color:#6366f1;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.section h3{font-size:1.15rem;font-weight:700;margin-bottom:16px;line-height:1.4}
+
+/* Quote */
+.quote{background:rgba(255,255,255,0.04);border-left:3px solid #6366f1;padding:20px;border-radius:0 12px 12px 0;margin-bottom:24px}
+.quote p{color:#cbd5e1;font-size:0.95rem;line-height:1.6;font-style:italic}
+
+/* Story blocks */
+.story-block{margin-bottom:24px}
+.story-block p{color:#cbd5e1;font-size:0.95rem;line-height:1.7}
+.story-block p strong{color:#fff}
+
+/* Signal list */
+.signals{list-style:none;margin:16px 0}
+.signals li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);color:#cbd5e1;font-size:0.9rem;line-height:1.5}
+.signals li:last-child{border:none}
+.signal-dot{width:6px;height:6px;background:#6366f1;border-radius:50%;margin-top:7px;flex-shrink:0}
+
+/* Compare */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;margin:16px 0}
+.compare-col{padding:20px}
+.compare-col:first-child{background:rgba(255,255,255,0.03)}
+.compare-col:last-child{background:rgba(99,102,241,0.08)}
+.compare-col h4{font-size:0.75rem;color:#64748b;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.compare-col:last-child h4{color:#a5b4fc}
+.compare-col ul{list-style:none}
+.compare-col ul li{font-size:0.85rem;color:#94a3b8;padding:5px 0;line-height:1.4}
+.compare-col:last-child ul li{color:#e2e8f0}
+
+/* Insight */
+.insight{background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.1));border-radius:16px;padding:24px;margin:24px 0}
+.insight p{color:#e2e8f0;font-size:1rem;line-height:1.6;font-weight:500}
+.insight .bulb{font-size:1.4rem;margin-bottom:8px;display:block}
+
+/* Industry cards */
+.ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ind-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px}
+.ind-card h4{font-size:0.9rem;font-weight:600;margin-bottom:4px}
+.ind-card p{color:#94a3b8;font-size:0.8rem;line-height:1.4}
+
+/* Bottom CTA */
+.bottom-cta{text-align:center;padding:40px 0}
+.bottom-cta p{color:#64748b;font-size:0.85rem;margin-bottom:16px}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:14px 32px;border-radius:100px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,0.4)}
+</style>
+</head>
+<body>
+
+<!-- Feed -->
+<div class="feed">
+  <div class="feed-header">
+    <h1>🎯 오늘의 오디언스</h1>
+    <p>광고주가 미처 몰랐던 타겟을 매일 발견하는 곳</p>
+  </div>
+
+  <div class="card" onclick="openDetail()">
+    <div class="card-top">
+      <div class="card-emoji">⛳</div>
+      <div class="card-meta">
+        <div class="card-label">Today's Pick</div>
+        <h2>접대 골프를 시작한 30대</h2>
+      </div>
+    </div>
+    <p class="card-summary">회사 때문에 골프에 입문한 30대 직장인. 이 사람은 고민하지 않는다. 빠르게 산다.</p>
+    <div class="card-tags">
+      <span class="tag">골프 용품</span>
+      <span class="tag">골프웨어</span>
+      <span class="tag">골프 레슨</span>
+      <span class="tag">프리미엄 카드</span>
+    </div>
+    <div class="card-arrow">자세히 보기 →</div>
+  </div>
+
+  <!-- 더 많은 카드 (비활성) -->
+  <div class="card" style="opacity:0.4;pointer-events:none">
+    <div class="card-top">
+      <div class="card-emoji">✈️</div>
+      <div class="card-meta">
+        <div class="card-label">Coming Soon</div>
+        <h2>90일 이내 해외여행 준비자</h2>
+      </div>
+    </div>
+    <p class="card-summary">항공앱 탐색 + 환전앱 설치. 출발 전 집중 소비 구간에 있는 유저.</p>
+  </div>
+
+  <div class="card" style="opacity:0.25;pointer-events:none">
+    <div class="card-top">
+      <div class="card-emoji">👶</div>
+      <div class="card-meta">
+        <div class="card-label">Coming Soon</div>
+        <h2>첫 아이 출산 준비 부부</h2>
+      </div>
+    </div>
+    <p class="card-summary">모든 카테고리에서 '처음' 구매하는 고가치 유저.</p>
+  </div>
+</div>
+
+<!-- Detail Overlay -->
+<div class="detail-overlay" id="detail">
+  <div class="detail-nav">
+    <button class="back-btn" onclick="closeDetail()">←</button>
+    <span>오늘의 오디언스 #1</span>
+    <div style="width:40px"></div>
+  </div>
+  <div class="detail-inner">
+
+    <div class="detail-hero">
+      <div class="big-emoji">⛳</div>
+      <h1>접대 골프를<br>시작한 30대</h1>
+      <p>회사 때문에 골프에 입문한 대기업 직장인.<br>취미가 아니라 업무의 연장.</p>
+    </div>
+
+    <!-- 문제 -->
+    <div class="section">
+      <div class="section-label">광고주의 숙제</div>
+      <div class="quote">
+        <p>"골프 관련 광고를 하고 싶은데,<br>기존 골퍼랑 입문자를 어떻게 구분하죠?"</p>
+      </div>
+      <div class="story-block">
+        <p>골프 시장이 커졌다는 건 다 안다. 문제는 <strong>"골프 관심자"로 타겟팅하면</strong> 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 다 섞인다는 것.</p>
+      </div>
+    </div>
+
+    <!-- 진짜 타겟 -->
+    <div class="section">
+      <div class="section-label">진짜 타겟은 따로 있다</div>
+      <h3>이런 행동을 하는 사람이다</h3>
+      <ul class="signals">
+        <li><span class="signal-dot"></span>30대 초중반, 대기업 재직 추정</li>
+        <li><span class="signal-dot"></span>최근 3개월 내 골프 앱 첫 설치</li>
+        <li><span class="signal-dot"></span>골프 용품 비교 검색 시작</li>
+        <li><span class="signal-dot"></span>골프 레슨 예약 앱 탐색</li>
+        <li><span class="signal-dot"></span>평일 저녁 골프 콘텐츠 소비</li>
+      </ul>
+      <div class="story-block">
+        <p>이 조합이 의미하는 건 하나다.<br><strong>"회사 때문에 골프를 시작한 사람."</strong></p>
+        <p style="margin-top:12px">접대, 임원 라운딩, 거래처 미팅.<br>이 사람들은 기존 골퍼와 <strong>완전히 다른 니즈</strong>를 가지고 있다.</p>
+      </div>
+    </div>
+
+    <!-- 비교 -->
+    <div class="section">
+      <div class="section-label">뭐가 다른가</div>
+      <h3>같은 골프인데, 완전히 다른 사람</h3>
+      <div class="compare-wrap">
+        <div class="compare-col">
+          <h4>기존 골프 관심자</h4>
+          <ul>
+            <li>장비에 진심</li>
+            <li>스코어에 집착</li>
+            <li>가성비 추구</li>
+            <li>주말 라운딩</li>
+            <li>천천히 구매</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>접대 골프 입문자</h4>
+          <ul>
+            <li>창피 안 당할 정도면 됨</li>
+            <li>매너와 에티켓이 급함</li>
+            <li>무난하게 좋은 걸 원함</li>
+            <li>평일 라운딩 비중 높음</li>
+            <li>빠르게 풀세트 구매</li>
+          </ul>
+        </div>
+      </div>
+      <div class="story-block">
+        <p><strong>이 사람은 고민하지 않는다. 빠르게 산다.</strong><br>객단가가 높고 전환이 빠르다.</p>
+      </div>
+    </div>
+
+    <!-- 추천 업종 -->
+    <div class="section">
+      <div class="section-label">이 오디언스를 쓸 수 있는 광고주</div>
+      <div class="ind-grid">
+        <div class="ind-card">
+          <h4>⛳ 골프 용품</h4>
+          <p>입문자 풀세트, "처음 사는 드라이버" 소구</p>
+        </div>
+        <div class="ind-card">
+          <h4>👔 골프웨어</h4>
+          <p>"접대 라운딩에 입고 갈 옷" 포지셔닝</p>
+        </div>
+        <div class="ind-card">
+          <h4>🏌️ 골프 레슨</h4>
+          <p>"4주 만에 필드 나가기" 속성 레슨</p>
+        </div>
+        <div class="ind-card">
+          <h4>💳 프리미엄 카드</h4>
+          <p>골프 특화 혜택 소구</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 인사이트 -->
+    <div class="section">
+      <div class="insight">
+        <span class="bulb">💡</span>
+        <p>"골프 관심자"는 오디언스가 아니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만든다.</p>
+      </div>
+      <div class="story-block">
+        <p>같은 골프인데, 접대 입문자 / 취미 입문자 / 은퇴 후 입문자는 완전히 다른 사람이다. <strong>행동 시그널의 조합</strong>으로 이걸 구분할 수 있다.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bottom-cta">
+      <p>이 오디언스, 다음 캠페인에 써보세요</p>
+      <a href="#" class="cta-btn">오디언스 문의하기 →</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const detail=document.getElementById('detail');
+function openDetail(){detail.classList.add('open');document.body.style.overflow='hidden'}
+function closeDetail(){detail.classList.remove('open');document.body.style.overflow=''}
+</script>
+</body>
+</html>
