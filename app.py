@@ -194,9 +194,9 @@ elif st.session_state.view == "detail_finance":
         <div style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px">💰 오늘의 오디언스 #2</div>
 
         <h1 style="font-size:2.6rem;font-weight:900;color:#111;line-height:1.25;letter-spacing:-1.5px;margin-bottom:32px">
-          '부동산 관심자' 타겟팅 금지!<br>
-          대출 만기 D-90의<br>
-          숨겨진 시그널
+          '대출 관심자' 타겟팅 금지!<br>
+          다음 달 이자가<br>
+          올라가는 사람
         </h1>
 
         <p style="color:#555;font-size:1.15rem;line-height:2;margin-bottom:28px">
@@ -207,65 +207,42 @@ elif st.session_state.view == "detail_finance":
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
           부동산 커뮤니티 글이 아닙니다.<br>
           대출 만기 3개월 전,<br>
-          금리 비교앱을 처음 깐 사람의<br>
-          행동 패턴이죠.
+          새벽 1시에 금리 비교앱을 깐 사람의<br>
+          실제 행동 패턴이죠.
         </p>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-          모든 금융 서비스가<br>
-          "부동산 관심자"를 타겟합니다.<br><br>
+          모든 은행이<br>
+          "대출 관심자"를 타겟합니다.<br><br>
           문제는 이 안에<br>
-          그냥 매물 구경하는 사람과<br>
-          지금 당장 돈을 움직이려는 사람이<br>
+          "언젠가 갈아타야지" 하는 사람과<br>
+          <strong style="color:#111">"이번 달 안에 안 바꾸면 매달 30만 원을 더 내는 사람"</strong>이<br>
           같이 섞여 있다는 것.
         </p>
 
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:28px">
-          우리가 주목한 건<br>
-          <strong style="color:#111">앱 설치의 조합과 타이밍</strong>이었습니다.
+        <p style="color:#111;font-size:1.3rem;font-weight:800;line-height:1.5;margin:32px 0">
+          시급한 사람은<br>
+          행동이 완전히 다릅니다.
         </p>
 
         <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
           <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">BEHAVIOR SIGNALS</p>
           <p style="color:#333;font-size:0.95rem;line-height:1.9">
-            → 금리 비교앱 첫 설치 (뱅크샐러드/핀다/토스)<br>
-            → 7일 내 <strong>3개 이상</strong> 대출 비교 서비스 탐색<br>
-            → 부동산 시세 앱 활성 사용 증가<br>
-            → "대출 갈아타기" "전세 대출 금리" 콘텐츠 소비<br>
-            → KB부동산/호갱노노 등 <strong>매물 탐색 병행</strong>
+            → 대출 비교앱 <strong>3개 이상</strong> 동시 설치 (7일 내)<br>
+            → 설치 후 <strong>매일 반복 접속</strong><br>
+            → "대출 갈아타기" "금리 인하 요구권" 콘텐츠 소비<br>
+            → 기존 은행앱 접속 빈도 <strong>감소</strong> ← 떠나려는 시그널<br>
+            → 새벽·출퇴근 시간대 집중 탐색
           </p>
         </div>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-          이 조합이 의미하는 건 하나입니다.
-        </p>
-
-        <p style="color:#111;font-size:1.3rem;font-weight:800;line-height:1.5;margin-bottom:28px">
-          "대출을 갈아타면서,<br>
-          전세→매매 전환을 동시에 고민하는 사람."
-        </p>
-
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:28px">
-          이 사람은 구경꾼이 아닙니다.<br>
-          금리 0.1%에 민감하고,<br>
-          조건이 맞으면 <strong style="color:#111">이번 달 안에 움직입니다.</strong>
+          앱을 1개 깔고 가끔 보는 사람은<br>
+          "언젠가" 갈아탈 사람입니다.<br><br>
+          앱을 <strong style="color:#111">3개 깔고 매일 여는 사람</strong>은<br>
+          <strong style="color:#111">지금 당장</strong> 갈아탈 사람입니다.
         </p>
       </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div style="padding:0 0 20px">
-      <p style="color:#111;font-size:1.1rem;font-weight:700;margin:28px 0 16px">같은 "부동산 관심자"도 전부 다릅니다</p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:8px">
-        부동산 앱<strong style="color:#111">만</strong> 봄<br>
-        → 구경꾼. 전환 안 됨.<br><br>
-        부동산 + <strong style="color:#111">인테리어</strong> 앱<br>
-        → 이미 계약한 사람. 늦음.<br><br>
-        <strong style="color:#6366f1">대출 비교 + 부동산 + 시세앱 동시</strong><br>
-        → 지금 움직이려는 사람. 골든타임.
-      </p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -273,72 +250,76 @@ elif st.session_state.view == "detail_finance":
     with col1:
         st.markdown("""
         <div style="background:#f8f8f8;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">부동산 구경꾼</h4>
+          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 구경꾼</h4>
           <p style="font-size:0.88rem;color:#888;line-height:1.8">
-            매물만 봄<br>대출 앱 없음<br>시세 확인만<br>전환율 극히 낮음
+            앱 1개 설치<br>가끔 접속<br>"나중에 해야지"<br>광고 무시<br>전환율 극히 낮음
           </p>
         </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div style="background:#f5f3ff;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 만기 D-90 유저</h4>
+          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 시급한 사람</h4>
           <p style="font-size:0.88rem;color:#333;line-height:1.8">
-            대출 비교앱 3개+<br>시세+매물 동시 탐색<br>금리 콘텐츠 소비<br>이번 달 안에 움직임
+            앱 3개+ 동시 설치<br>매일 반복 접속<br>"이번 달 안에"<br>금리 숫자에 즉시 반응<br>전환율 극상
           </p>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("""
     <div style="padding:20px 0">
+      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:28px 0">
+        모든 은행이 "대출 관심자"를 타겟하고 있습니다.<br>
+        그래서 단가가 비싸고 전환이 안 나옵니다.<br><br>
+        <strong style="color:#111">"이번 달 안에 갈아타야 하는 사람"은<br>
+        아무도 안 잡고 있습니다.</strong><br><br>
+        왜?<br>
+        이 세그먼트가 존재하는지 몰랐으니까요.
+      </p>
+
       <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
         <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">DMP에서 잡는 법</p>
         <p style="color:#333;font-size:0.88rem;line-height:1.9">
-          <strong>[대출 갈아타기 골든타임]</strong><br>
+          <strong>[대출 시급 유저]</strong><br>
           대출 비교앱 3개+ (7일 내 동시 설치)<br>
-          + 부동산 시세앱 활성<br>
-          + 매물 탐색앱 동시 사용<br>
-          + 30~40대
+          + 설치 후 일 1회 이상 반복 접속<br>
+          + 기존 은행앱 접속 빈도 감소<br>
+          + "갈아타기" "금리 비교" 콘텐츠 소비
         </p>
       </div>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:20px 0">
-        같은 "부동산 관심자"인데,<br>
-        <strong style="color:#111">대출 비교앱 설치 여부 하나</strong>로<br>
-        구경꾼과 실행자를 구분할 수 있습니다.
-      </p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0">
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
           <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏦 은행/저축은행</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">대환대출 상품 타겟팅</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">대환대출 "지금 갈아타면 월 OO만 원 절약" 소구</p>
         </div>
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏠 부동산 플랫폼</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">매물 탐색 활성 유저 확보</p>
-        </div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🛋️ 인테리어</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">매매 전환 후 리모델링 수요</p>
+          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">📱 핀테크</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">대출 비교 서비스 신규 유저 확보</p>
         </div>
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
           <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🛡️ 보험</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">주택 화재/전세보증 보험</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">대출 연계 보험 상품 타겟팅</p>
+        </div>
+        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
+          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">💳 카드사</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">대출 이자 캐시백 카드 전환</p>
         </div>
       </div>
 
       <div style="background:#111;border-radius:12px;padding:28px 32px;margin:32px 0">
         <p style="color:#a5b4fc;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:12px">💡 KEY INSIGHT</p>
         <p style="color:#fff;font-size:1.05rem;line-height:1.7;font-weight:500">
-          "부동산 관심자"는 오디언스가 아닙니다.<br>
-          <strong>대출 비교앱 3개를 동시에 까는 순간</strong>이<br>
-          오디언스를 만듭니다.<br><br>
-          그 사람은 지금 돈을 움직이려 하고 있습니다.
+          "대출 관심자"는 오디언스가 아닙니다.<br><br>
+          앱 <strong>1개</strong> 깔고 가끔 보는 사람과<br>
+          앱 <strong>3개</strong> 깔고 매일 여는 사람은<br>
+          완전히 다른 사람입니다.<br><br>
+          <strong>시급함의 크기</strong>가 오디언스를 만듭니다.
         </p>
       </div>
 
       <p style="color:#bbb;font-size:0.8rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee">
-        오늘의 오디언스 #2 · 대출 만기 D-90의 숨겨진 시그널 · by IGAWorks
+        오늘의 오디언스 #2 · 다음 달 이자가 올라가는 사람 · by IGAWorks
       </p>
     </div>
     """, unsafe_allow_html=True)
@@ -499,14 +480,14 @@ else:
       <div style="font-size:1.8rem">💰</div>
       <div style="flex:1">
         <p style="font-size:0.7rem;color:#6366f1;font-weight:600;letter-spacing:1px;margin-bottom:2px">금융 · 오늘의 오디언스 #2</p>
-        <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">대출 만기 D-90의 숨겨진 시그널</p>
-        <p style="font-size:0.82rem;color:#999">대출 비교앱 3개를 동시에 까는 순간이 오디언스다</p>
+        <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">다음 달 이자가 올라가는 사람</p>
+        <p style="font-size:0.82rem;color:#999">앱 1개 vs 3개, 시급함의 크기가 오디언스를 만든다</p>
       </div>
       <div style="color:#6366f1;font-size:0.78rem;font-weight:600;white-space:nowrap">읽기 →</div>
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("💰 대출 만기 D-90의 숨겨진 시그널 — 읽기", key="go_finance"):
+    if st.button("💰 다음 달 이자가 올라가는 사람 — 읽기", key="go_finance"):
         st.session_state.view = "detail_finance"
         st.rerun()
 
