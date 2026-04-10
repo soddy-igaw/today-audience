@@ -268,19 +268,180 @@ else:
         st.session_state.view = "detail"
         st.rerun()
 
+    # 금융
     st.markdown("""
-    <div class="feed-card dim">
+    <div class="feed-card">
       <div class="card-left">
-        <div class="card-label">✈️ Coming Soon</div>
-        <h2>90일 이내 해외여행 준비자</h2>
-        <p class="card-summary">항공앱 탐색 + 환전앱 설치 + 여행 콘텐츠 소비. 출발 전 집중 소비 구간에 있는 유저.</p>
+        <div class="card-label">💰 금융</div>
+        <h2>첫 주식을 산 2030 사회초년생</h2>
+        <p class="card-summary">증권앱 첫 설치 + 소액 적립식 투자 시작 + 재테크 유튜브 소비 급증. "월급만으로는 안 된다"를 깨달은 사람.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">증권사</span>
+          <span class="tag tag-ind">로보어드바이저</span>
+          <span class="tag tag-ind">재테크 교육</span>
+          <span class="tag tag-ind">핀테크</span>
+        </div>
+        <ul class="signals">
+          <li>증권앱 첫 설치 후 7일 내 첫 매수</li>
+          <li>재테크/투자 유튜브 일 30분 이상 시청</li>
+          <li>가계부 앱 동시 설치</li>
+          <li>연말정산/세금 관련 검색 시작</li>
+        </ul>
       </div>
     </div>
-    <div class="feed-card dim">
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="feed-card">
       <div class="card-left">
-        <div class="card-label">👶 Coming Soon</div>
-        <h2>첫 아이 출산 준비 부부</h2>
-        <p class="card-summary">모든 카테고리에서 '처음' 구매하는 고가치 유저. 브랜드 선점 효과가 가장 큰 오디언스.</p>
+        <div class="card-label">🏦 금융</div>
+        <h2>대출 갈아타기 골든타임 유저</h2>
+        <p class="card-summary">금리 비교앱 활성 사용 + 기존 대출 만기 임박 + 부동산 관련 검색 병행. 지금 움직이면 수백만 원 아끼는 사람.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">은행/저축은행</span>
+          <span class="tag tag-ind">대출 비교 플랫폼</span>
+          <span class="tag tag-ind">부동산</span>
+        </div>
+        <ul class="signals">
+          <li>금리 비교 앱 주 3회 이상 접속</li>
+          <li>대출 만기/금리 변동 관련 검색</li>
+          <li>타 은행 대출 상품 비교 탐색</li>
+          <li>부동산 시세 앱 동시 활성</li>
+        </ul>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # 골프
+    st.markdown("""
+    <div class="feed-card">
+      <div class="card-left">
+        <div class="card-label">⛳ 골프</div>
+        <h2>스크린에서 필드로 넘어가는 여성 골퍼</h2>
+        <p class="card-summary">스크린골프 주 2회 이상 + 골프웨어 검색 시작 + 필드 예약앱 첫 설치. 취미에서 라이프스타일로 전환 중인 유저.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">골프웨어</span>
+          <span class="tag tag-ind">골프장</span>
+          <span class="tag tag-ind">자외선차단</span>
+          <span class="tag tag-ind">프리미엄 SUV</span>
+        </div>
+        <ul class="signals">
+          <li>스크린골프 앱 주 2회 이상 사용</li>
+          <li>여성 골프웨어 브랜드 검색 시작</li>
+          <li>필드 예약 앱 첫 설치</li>
+          <li>골프 브이로그/인스타 팔로우 증가</li>
+        </ul>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # 교육
+    st.markdown("""
+    <div class="feed-card">
+      <div class="card-left">
+        <div class="card-label">📚 교육</div>
+        <h2>AI 시대 불안한 학부모</h2>
+        <p class="card-summary">"코딩 교육 시켜야 하나" 검색 + AI 관련 뉴스 소비 + 자녀 교육 커뮤니티 활동. 아이 미래가 걱정되기 시작한 부모.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">코딩 교육</span>
+          <span class="tag tag-ind">에듀테크</span>
+          <span class="tag tag-ind">학원/과외</span>
+          <span class="tag tag-ind">키즈 태블릿</span>
+        </div>
+        <ul class="signals">
+          <li>"초등 코딩" "AI 교육" 검색 시작</li>
+          <li>교육 커뮤니티 신규 가입/활동 증가</li>
+          <li>AI 뉴스 콘텐츠 소비 급증</li>
+          <li>자녀 학원비 비교 검색</li>
+        </ul>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="feed-card">
+      <div class="card-left">
+        <div class="card-label">🎓 교육</div>
+        <h2>이직 준비하는 3~5년차 직장인</h2>
+        <p class="card-summary">온라인 강의 플랫폼 결제 + 이력서 앱 설치 + 연봉 비교 검색. 현재 커리어에 한계를 느끼고 리스킬링 시작한 유저.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">온라인 교육</span>
+          <span class="tag tag-ind">이직 플랫폼</span>
+          <span class="tag tag-ind">자격증</span>
+          <span class="tag tag-ind">노트북/태블릿</span>
+        </div>
+        <ul class="signals">
+          <li>클래스101/패스트캠퍼스 등 결제</li>
+          <li>링크드인/원티드 프로필 업데이트</li>
+          <li>연봉/기업 리뷰 사이트 탐색</li>
+          <li>자격증/부트캠프 검색 시작</li>
+        </ul>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # 패션
+    st.markdown("""
+    <div class="feed-card">
+      <div class="card-left">
+        <div class="card-label">👗 패션</div>
+        <h2>콰이어트 럭셔리에 눈뜬 30대</h2>
+        <p class="card-summary">로고 없는 프리미엄 브랜드 검색 + 소재/핏 관련 콘텐츠 소비 + 중고 명품 앱 활성. "비싸 보이지 않게 비싼 옷"을 찾는 유저.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">컨템포러리 브랜드</span>
+          <span class="tag tag-ind">프리미엄 소재</span>
+          <span class="tag tag-ind">중고 명품</span>
+          <span class="tag tag-ind">테일러링</span>
+        </div>
+        <ul class="signals">
+          <li>르메르/아크네/로우클래식 등 검색</li>
+          <li>"캐시미어" "울 블렌드" 소재 검색</li>
+          <li>크림/트렌비 등 중고 명품 앱 활성</li>
+          <li>패션 에디토리얼 콘텐츠 소비 증가</li>
+        </ul>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="feed-card">
+      <div class="card-left">
+        <div class="card-label">👟 패션</div>
+        <h2>러닝에 빠진 패션 피플</h2>
+        <p class="card-summary">러닝앱 첫 설치 + 러닝화 검색 + 러닝크루 관련 인스타 팔로우. 운동이 아니라 라이프스타일로 러닝을 시작한 유저.</p>
+        <div class="card-arrow">자세히 보기 →</div>
+      </div>
+      <div class="card-right">
+        <div class="tag-row">
+          <span class="tag tag-ind">러닝화</span>
+          <span class="tag tag-ind">애슬레저</span>
+          <span class="tag tag-ind">스포츠워치</span>
+          <span class="tag tag-ind">러닝크루</span>
+        </div>
+        <ul class="signals">
+          <li>나이키런/스트라바 첫 설치</li>
+          <li>호카/온러닝/아식스 검색 시작</li>
+          <li>러닝크루 인스타 계정 팔로우</li>
+          <li>러닝 코스/대회 정보 탐색</li>
+        </ul>
       </div>
     </div>
     """, unsafe_allow_html=True)
