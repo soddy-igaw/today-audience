@@ -194,43 +194,45 @@ elif st.session_state.view == "detail_finance":
         <div style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px">💰 오늘의 오디언스 #2</div>
 
         <h1 style="font-size:2.6rem;font-weight:900;color:#111;line-height:1.25;letter-spacing:-1.5px;margin-bottom:32px">
-          '2030 금융' 타겟팅 금지!<br>
-          첫 월급통장의<br>
-          숨겨진 72시간
+          '부동산 관심자' 타겟팅 금지!<br>
+          대출 만기 D-90의<br>
+          숨겨진 시그널
         </h1>
 
         <p style="color:#555;font-size:1.15rem;line-height:2;margin-bottom:28px">
-          "적금이 뭔지도 모르겠는데,<br>
-          &nbsp;&nbsp;주식을 사라고요?"
+          "금리가 내려갔다는데,<br>
+          &nbsp;&nbsp;나는 왜 아직 4%대를 내고 있지?"
         </p>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-          핀테크 마케터의 푸념이 아닙니다.<br>
-          첫 월급을 받은 26살의 실제 검색 기록이죠.
+          부동산 커뮤니티 글이 아닙니다.<br>
+          대출 만기 3개월 전,<br>
+          금리 비교앱을 처음 깐 사람의<br>
+          행동 패턴이죠.
         </p>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
           모든 금융 서비스가<br>
-          "2030 MZ세대"를 타겟합니다.<br><br>
+          "부동산 관심자"를 타겟합니다.<br><br>
           문제는 이 안에<br>
-          월 500 투자하는 사람과<br>
-          적금이 뭔지 검색하는 사람이<br>
+          그냥 매물 구경하는 사람과<br>
+          지금 당장 돈을 움직이려는 사람이<br>
           같이 섞여 있다는 것.
         </p>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:28px">
           우리가 주목한 건<br>
-          <strong style="color:#111">완전히 다른 타이밍</strong>이었습니다.
+          <strong style="color:#111">앱 설치의 조합과 타이밍</strong>이었습니다.
         </p>
 
         <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
           <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">BEHAVIOR SIGNALS</p>
           <p style="color:#333;font-size:0.95rem;line-height:1.9">
-            → 급여 계좌 앱 <strong>첫</strong> 설치 (입사 추정)<br>
-            → 72시간 내 "적금 추천" "재테크 시작" 검색<br>
-            → 가계부 앱 첫 설치<br>
-            → 재테크 유튜브 시청 시간 급증<br>
-            → 신용점수 <strong>첫</strong> 조회
+            → 금리 비교앱 첫 설치 (뱅크샐러드/핀다/토스)<br>
+            → 7일 내 <strong>3개 이상</strong> 대출 비교 서비스 탐색<br>
+            → 부동산 시세 앱 활성 사용 증가<br>
+            → "대출 갈아타기" "전세 대출 금리" 콘텐츠 소비<br>
+            → KB부동산/호갱노노 등 <strong>매물 탐색 병행</strong>
           </p>
         </div>
 
@@ -239,20 +241,31 @@ elif st.session_state.view == "detail_finance":
         </p>
 
         <p style="color:#111;font-size:1.3rem;font-weight:800;line-height:1.5;margin-bottom:28px">
-          "생애 처음으로 돈을 관리하기 시작한 사람."
+          "대출을 갈아타면서,<br>
+          전세→매매 전환을 동시에 고민하는 사람."
         </p>
 
         <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:28px">
-          이 사람은 아직 아무것도 정하지 않았습니다.<br>
-          어떤 증권사도, 어떤 카드도, 어떤 보험도.<br><br>
-          <strong style="color:#111">비교하지 않습니다.<br>
-          처음 만나는 서비스를 그냥 씁니다.</strong>
-        </p>
-
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:8px">
-          기존 재테크 관심자와 비교하면:
+          이 사람은 구경꾼이 아닙니다.<br>
+          금리 0.1%에 민감하고,<br>
+          조건이 맞으면 <strong style="color:#111">이번 달 안에 움직입니다.</strong>
         </p>
       </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style="padding:0 0 20px">
+      <p style="color:#111;font-size:1.1rem;font-weight:700;margin:28px 0 16px">같은 "부동산 관심자"도 전부 다릅니다</p>
+
+      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:8px">
+        부동산 앱<strong style="color:#111">만</strong> 봄<br>
+        → 구경꾼. 전환 안 됨.<br><br>
+        부동산 + <strong style="color:#111">인테리어</strong> 앱<br>
+        → 이미 계약한 사람. 늦음.<br><br>
+        <strong style="color:#6366f1">대출 비교 + 부동산 + 시세앱 동시</strong><br>
+        → 지금 움직이려는 사람. 골든타임.
+      </p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -260,109 +273,72 @@ elif st.session_state.view == "detail_finance":
     with col1:
         st.markdown("""
         <div style="background:#f8f8f8;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">기존 재테크 관심자</h4>
+          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">부동산 구경꾼</h4>
           <p style="font-size:0.88rem;color:#888;line-height:1.8">
-            이미 증권 계좌 있음<br>브랜드 충성도 있음<br>비교하고 고민함<br>전환 비용 높음
+            매물만 봄<br>대출 앱 없음<br>시세 확인만<br>전환율 극히 낮음
           </p>
         </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div style="background:#f5f3ff;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">첫 월급 72시간 유저</h4>
+          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 만기 D-90 유저</h4>
           <p style="font-size:0.88rem;color:#333;line-height:1.8">
-            아직 계좌 없음<br>브랜드 미정<br>"추천해주세요" 검색<br>전환 비용 제로
+            대출 비교앱 3개+<br>시세+매물 동시 탐색<br>금리 콘텐츠 소비<br>이번 달 안에 움직임
           </p>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("""
     <div style="padding:20px 0">
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:28px 0">
-        그래서 토스가, 카카오뱅크가,<br>
-        이 순간을 잡으려고 하는 겁니다.<br><br>
-        <strong style="color:#111">첫 경험을 우리 앱에서 하면,<br>
-        평생 우리를 씁니다.</strong>
-      </p>
-
-      <div style="background:#f0f0f0;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#111;font-size:0.85rem;font-weight:700;letter-spacing:1px;margin-bottom:16px">🤔 그런데 이런 의문이 들 겁니다</p>
-        <p style="color:#555;font-size:0.92rem;line-height:1.8">
-          "앱 설치만으로 어떻게 알아?"<br>
-          "은행앱 깔았다고 다 첫 월급인가?"<br><br>
-          맞습니다. 한 가지 시그널로는 모릅니다.<br>
-          핵심은 <strong>조합과 순서</strong>입니다.
-        </p>
-      </div>
-
-      <p style="color:#111;font-size:1.1rem;font-weight:700;margin:28px 0 16px">같은 "은행앱 설치"도 전부 다릅니다</p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:8px">
-        은행앱 <strong style="color:#111">1개만</strong> 설치<br>
-        → 회사가 시켜서 깐 사람. 관심 없음.<br><br>
-        은행앱 <strong style="color:#111">3개 동시</strong> 설치<br>
-        → 금리 비교하는 사람. 이미 금융 경험 있음.<br><br>
-        은행앱 + 가계부앱 + 재테크 유튜브<br>
-        → <strong style="color:#6366f1">처음으로 돈 관리 시작한 사람.</strong>
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:28px 0">
-        <strong style="color:#111">"대충 비교하는 사람"은 앱을 3개 이상 동시에 깝니다.</strong><br>
-        이 사람은 이미 금융을 알아요.<br>
-        검색도 잘 하고, 조건도 따지고, 쉽게 안 움직입니다.<br><br>
-        반면 <strong style="color:#111">"첫 월급 유저"는 앱을 1개만 깔고 바로 씁니다.</strong><br>
-        비교할 기준 자체가 없으니까요.
-      </p>
-
       <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">DMP에서 구분하는 법</p>
+        <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">DMP에서 잡는 법</p>
         <p style="color:#333;font-size:0.88rem;line-height:1.9">
-          <strong>[첫 월급 유저]</strong><br>
-          은행앱 1개 + 가계부앱 + 재테크 콘텐츠<br>
-          → 30일 내 순차 설치<br><br>
-          <strong>[비교형 유저]</strong><br>
-          은행앱 3개+ 또는 대출비교앱<br>
-          → 7일 내 동시 설치
+          <strong>[대출 갈아타기 골든타임]</strong><br>
+          대출 비교앱 3개+ (7일 내 동시 설치)<br>
+          + 부동산 시세앱 활성<br>
+          + 매물 탐색앱 동시 사용<br>
+          + 30~40대
         </p>
       </div>
 
       <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:20px 0">
-        같은 금융앱 설치인데,<br>
-        <strong style="color:#111">설치 개수 × 순서 × 소비 콘텐츠</strong>로<br>
-        완전히 다른 두 사람을 구분할 수 있습니다.
+        같은 "부동산 관심자"인데,<br>
+        <strong style="color:#111">대출 비교앱 설치 여부 하나</strong>로<br>
+        구경꾼과 실행자를 구분할 수 있습니다.
       </p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0">
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏦 핀테크/은행</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">"첫 월급 굴리기" 온보딩 캠페인</p>
+          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏦 은행/저축은행</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">대환대출 상품 타겟팅</p>
         </div>
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">📈 증권사</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">"천 원부터 시작하는 주식" 첫 계좌</p>
+          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏠 부동산 플랫폼</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">매물 탐색 활성 유저 확보</p>
         </div>
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">💳 카드사</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">사회초년생 첫 카드 발급</p>
+          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🛋️ 인테리어</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">매매 전환 후 리모델링 수요</p>
         </div>
         <div style="background:#f8f8f8;border-radius:10px;padding:20px">
           <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🛡️ 보험</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">"사회생활 시작하면 이것만은" 소구</p>
+          <p style="font-size:0.8rem;color:#888;line-height:1.4">주택 화재/전세보증 보험</p>
         </div>
       </div>
 
       <div style="background:#111;border-radius:12px;padding:28px 32px;margin:32px 0">
         <p style="color:#a5b4fc;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:12px">💡 KEY INSIGHT</p>
         <p style="color:#fff;font-size:1.05rem;line-height:1.7;font-weight:500">
-          "2030 금융"은 오디언스가 아닙니다.<br>
-          <strong>첫 월급 후 72시간</strong>이 오디언스를 만듭니다.<br><br>
-          나이가 아니라<br>
-          <strong>금융 행동의 시작점</strong>을 잡아야 합니다.
+          "부동산 관심자"는 오디언스가 아닙니다.<br>
+          <strong>대출 비교앱 3개를 동시에 까는 순간</strong>이<br>
+          오디언스를 만듭니다.<br><br>
+          그 사람은 지금 돈을 움직이려 하고 있습니다.
         </p>
       </div>
 
       <p style="color:#bbb;font-size:0.8rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee">
-        오늘의 오디언스 #2 · 첫 월급통장의 72시간 · by IGAWorks
+        오늘의 오디언스 #2 · 대출 만기 D-90의 숨겨진 시그널 · by IGAWorks
       </p>
     </div>
     """, unsafe_allow_html=True)
@@ -523,14 +499,14 @@ else:
       <div style="font-size:1.8rem">💰</div>
       <div style="flex:1">
         <p style="font-size:0.7rem;color:#6366f1;font-weight:600;letter-spacing:1px;margin-bottom:2px">금융 · 오늘의 오디언스 #2</p>
-        <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">첫 월급통장의 숨겨진 72시간</p>
-        <p style="font-size:0.82rem;color:#999">첫 경험을 잡으면 평생 고객이 된다</p>
+        <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">대출 만기 D-90의 숨겨진 시그널</p>
+        <p style="font-size:0.82rem;color:#999">대출 비교앱 3개를 동시에 까는 순간이 오디언스다</p>
       </div>
       <div style="color:#6366f1;font-size:0.78rem;font-weight:600;white-space:nowrap">읽기 →</div>
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("💰 첫 월급통장의 숨겨진 72시간 — 읽기", key="go_finance"):
+    if st.button("💰 대출 만기 D-90의 숨겨진 시그널 — 읽기", key="go_finance"):
         st.session_state.view = "detail_finance"
         st.rerun()
 
