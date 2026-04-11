@@ -8,58 +8,78 @@ if "view" not in st.session_state:
 st.markdown("""
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-.stApp { background:#fafafa; font-family:'Pretendard',sans-serif; }
+.stApp { background:#fff; font-family:'Pretendard',sans-serif; }
 header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:none!important; }
-.block-container { max-width:960px!important; padding:0 24px 80px!important; }
+.block-container { max-width:620px!important; padding:0 20px 80px!important; }
 
 /* Nav */
-.nav { display:flex; align-items:center; justify-content:space-between; padding:20px 0; border-bottom:1px solid #eee; margin-bottom:48px; }
-.nav-logo { font-size:1.1rem; font-weight:800; color:#111; letter-spacing:-0.5px; }
+.nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; border-bottom:1px solid #f0f0f0; margin-bottom:40px; }
+.nav-logo { font-size:1rem; font-weight:800; color:#111; letter-spacing:-0.5px; }
 .nav-logo span { color:#6366f1; }
-.nav-sub { color:#999; font-size:0.78rem; }
+.nav-sub { color:#bbb; font-size:0.72rem; }
 
-/* Hero (brunch) */
-.br-hero { padding:48px 0 56px; border-bottom:1px solid #eee; margin-bottom:48px; }
-.br-hero h1 { font-size:2.8rem; font-weight:900; color:#111; line-height:1.2; letter-spacing:-1.5px; margin-bottom:16px; }
-.br-hero p { color:#666; font-size:1.05rem; line-height:1.7; max-width:520px; }
+/* Author */
+.author { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
+.author-avatar { width:40px; height:40px; border-radius:50%; background:#6366f1; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.85rem; font-weight:700; }
+.author-name { font-size:0.85rem; font-weight:600; color:#111; }
+.author-date { font-size:0.75rem; color:#bbb; }
 
-/* Section label */
-.sec-label { font-size:0.72rem; color:#6366f1; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:10px; }
-.sec-title { font-size:2rem; font-weight:800; color:#111; margin-bottom:8px; line-height:1.3; }
+/* Body text */
+.note-body p { color:#333; font-size:0.95rem; line-height:2; margin-bottom:24px; }
+.note-body strong { color:#111; }
+.note-body .lead { color:#111; font-size:1.2rem; font-weight:700; line-height:1.6; margin-bottom:28px; }
+.note-body .quote { color:#555; font-size:1.1rem; line-height:1.8; font-style:italic; margin:32px 0; padding-left:20px; border-left:3px solid #6366f1; }
 
-/* Magazine card */
-.mag-card {
-  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
-  padding:40px 0; border-bottom:1px solid #eee; transition:background 0.2s;
-}
-.mag-card:hover { background:rgba(99,102,241,0.02); }
-.mag-left .mag-cat { font-size:0.7rem; color:#6366f1; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
-.mag-left h2 { font-size:1.5rem; font-weight:800; color:#111; line-height:1.3; margin-bottom:10px; }
-.mag-left .mag-desc { color:#666; font-size:0.92rem; line-height:1.6; margin-bottom:16px; }
-.mag-left .mag-read { color:#6366f1; font-size:0.85rem; font-weight:600; }
-.mag-right { display:flex; flex-direction:column; gap:8px; }
-.mag-right .tag-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
-.tag { padding:5px 14px; border-radius:100px; font-size:0.75rem; font-weight:500; }
-.tag-ind { background:#f0eeff; color:#6366f1; }
-.sig-item { display:flex; align-items:center; gap:8px; padding:4px 0; }
-.sig-dot { width:5px; height:5px; background:#6366f1; border-radius:50%; flex-shrink:0; }
-.sig-text { color:#888; font-size:0.82rem; }
+/* Signal box */
+.sig-box { background:#f8f7ff; border-radius:12px; padding:24px 28px; margin:32px 0; }
+.sig-box .sig-label { font-size:0.7rem; color:#6366f1; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
+.sig-box p { color:#333; font-size:0.9rem; line-height:2; margin:0; }
 
-/* Featured (first card bigger) */
-.featured { padding:0 0 48px; border-bottom:1px solid #eee; margin-bottom:8px; }
-.featured .feat-cat { font-size:0.72rem; color:#6366f1; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px; }
-.featured h2 { font-size:2.2rem; font-weight:900; color:#111; line-height:1.2; margin-bottom:14px; letter-spacing:-0.5px; }
-.featured .feat-desc { color:#555; font-size:1.05rem; line-height:1.7; margin-bottom:20px; max-width:600px; }
-.featured .feat-meta { display:flex; align-items:center; gap:24px; }
-.featured .tag-row { display:flex; flex-wrap:wrap; gap:6px; }
-.featured .feat-read { color:#6366f1; font-size:0.9rem; font-weight:600; }
+/* Compare */
+.cmp-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:32px 0; }
+.cmp-card { border-radius:12px; padding:20px; }
+.cmp-card h4 { font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; font-weight:700; }
+.cmp-card p { font-size:0.85rem; line-height:1.9; }
+.cmp-left { background:#f8f8f8; }
+.cmp-left h4 { color:#999; }
+.cmp-left p { color:#888; }
+.cmp-right { background:#f8f7ff; }
+.cmp-right h4 { color:#6366f1; }
+.cmp-right p { color:#333; }
 
-.footer { text-align:center; color:#bbb; font-size:0.78rem; padding:48px 0 20px; }
+/* Industry grid */
+.ind-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:32px 0; }
+.ind-card { background:#f8f8f8; border-radius:10px; padding:18px; }
+.ind-card .ind-title { font-size:0.82rem; font-weight:700; color:#111; margin-bottom:4px; }
+.ind-card .ind-desc { font-size:0.78rem; color:#888; line-height:1.4; }
+
+/* Insight */
+.insight { background:#111; border-radius:12px; padding:28px; margin:36px 0; }
+.insight .ins-label { font-size:0.7rem; color:#a5b4fc; font-weight:700; letter-spacing:1.5px; margin-bottom:10px; }
+.insight p { color:#fff; font-size:0.98rem; line-height:1.8; font-weight:500; }
+
+/* Upcoming */
+.upcoming-item { display:flex; align-items:center; gap:16px; padding:18px 0; border-bottom:1px solid #f5f5f5; }
+.upcoming-item.dim { opacity:0.45; }
+.up-emoji { font-size:1.6rem; }
+.up-cat { font-size:0.68rem; color:#6366f1; font-weight:600; letter-spacing:1px; margin-bottom:1px; }
+.up-title { font-size:0.95rem; font-weight:700; color:#111; margin-bottom:1px; }
+.up-desc { font-size:0.78rem; color:#999; }
+.up-badge { color:#ccc; font-size:0.72rem; font-weight:500; white-space:nowrap; margin-left:auto; }
+.up-dday { background:#f0eeff; color:#6366f1; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:100px; white-space:nowrap; margin-left:auto; }
+
+/* Footer */
+.footer { text-align:center; color:#ccc; font-size:0.75rem; padding:48px 0 20px; }
+.note-end { color:#bbb; font-size:0.78rem; margin-top:48px; padding-top:20px; border-top:1px solid #f0f0f0; }
+
+/* Section header */
+.sec-header { margin:48px 0 24px; padding-top:40px; border-top:1px solid #f0f0f0; }
+.sec-header .sec-label { font-size:0.7rem; color:#6366f1; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+.sec-header h2 { font-size:1.3rem; font-weight:800; color:#111; margin-bottom:4px; }
+.sec-header p { font-size:0.85rem; color:#999; }
 
 @media(max-width:768px) {
-  .mag-card { grid-template-columns:1fr; gap:16px; }
-  .br-hero h1 { font-size:2rem; }
-  .featured h2 { font-size:1.6rem; }
+  .block-container { max-width:100%!important; }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -240,165 +260,79 @@ elif st.session_state.view == "detail_finance":
     st.markdown(finance_html, unsafe_allow_html=True)
 
 else:
-    # ===== BRUNCH FEED =====
+    # ===== LONGBLACK NOTE STYLE =====
     st.markdown("""
-    <div class="nav">
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
+
+    <div class="author">
+      <div class="author-avatar">IG</div>
       <div>
-        <div class="nav-logo"><span>오늘의</span> 오디언스</div>
-        <div class="nav-sub">by IGAWorks</div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">2026.04.11 · 오늘의 오디언스 #1</div>
       </div>
     </div>
-    """, unsafe_allow_html=True)
 
-    # ===== FEATURED ESSAY =====
-    st.markdown("""
-    <div style="padding:48px 0 40px;border-bottom:1px solid #eee;margin-bottom:48px">
-      <h1 style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.2;letter-spacing:-1.5px;margin-bottom:16px">오늘의 오디언스</h1>
-      <p style="color:#111;font-size:1.05rem;font-weight:600;line-height:1.7;margin-bottom:12px">
-        "다음 캠페인, 누구한테 해야 하지?"를 해결하는 서비스
-      </p>
-      <p style="color:#888;font-size:0.92rem;line-height:1.8">
-        광고주가 미처 생각하지 못한 타겟을 매일 발견하는 곳.<br>
-        트렌드를 자동으로 읽고, 행동 시그널을 조합해<br>
-        아직 아무도 안 쓰는 오디언스를 제안합니다.
-      </p>
+    <div class="note-body">
+      <p class="lead">'골프 관심자' 타겟팅 금지!<br>접대 골프 입문자의 숨겨진 구매 시그널</p>
+
+      <div class="quote">"드라이버를 사는 게 아니라,<br>창피를 안 당할 보험을 사는 겁니다."</div>
+
+      <p>광고 기획자의 말이 아닙니다.<br>IGAWorks DMP에서 발견한 실제 행동 데이터의 해석이죠.</p>
+
+      <p>골프 시장이 커졌다는 건 다 압니다.<br>문제는 "골프 관심자"로 타겟팅하면 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 전부 섞인다는 것.</p>
+
+      <p>우리가 주목한 건<br><strong>완전히 다른 종류의 골퍼</strong>였습니다.</p>
     </div>
-    """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div style="padding:48px 0 20px">
-      <div class="feat-cat" style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px">⛳ 오늘의 오디언스 #1</div>
-
-      <h1 style="font-size:2.6rem;font-weight:900;color:#111;line-height:1.25;letter-spacing:-1.5px;margin-bottom:32px">
-        '골프 관심자' 타겟팅 금지!<br>
-        접대 골프 입문자의<br>
-        숨겨진 구매 시그널
-      </h1>
-
-      <p style="color:#555;font-size:1.15rem;line-height:2;margin-bottom:28px">
-        "드라이버를 사는 게 아니라,<br>
-        &nbsp;&nbsp;창피를 안 당할 보험을 사는 겁니다."
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-        광고 기획자의 말이 아닙니다.<br>
-        IGAWorks DMP에서 발견한<br>
-        실제 행동 데이터의 해석이죠.
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-        골프 시장이 커졌다는 건 다 압니다.<br>
-        문제는 "골프 관심자"로 타겟팅하면<br>
-        10년 경력 싱글 골퍼부터<br>
-        유튜브만 보는 구경꾼까지<br>
-        전부 섞인다는 것.
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:28px">
-        우리가 주목한 건<br>
-        <strong style="color:#111">완전히 다른 종류의 골퍼</strong>였습니다.
-      </p>
-
-      <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">BEHAVIOR SIGNALS</p>
-        <p style="color:#333;font-size:0.95rem;line-height:1.9">
-          → 30대 초중반, 대기업 재직 추정<br>
-          → 최근 3개월 내 골프 앱 <strong>첫</strong> 설치<br>
-          → 골프 용품 비교 검색 시작<br>
-          → 골프 레슨 예약 앱 탐색<br>
-          → <strong>평일 저녁</strong> 골프 콘텐츠 소비
-        </p>
-      </div>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-        이 조합이 의미하는 건 하나입니다.
-      </p>
-
-      <p style="color:#111;font-size:1.3rem;font-weight:800;line-height:1.5;margin-bottom:28px">
-        "회사 때문에 골프를 시작한 사람."
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">
-        접대, 임원 라운딩, 거래처 미팅.<br>
-        이 사람들은 기존 골퍼와<br>
-        완전히 다른 니즈를 가지고 있습니다.
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:8px">
-        장비에 진심인 골퍼와 달리<br>
-        <strong style="color:#111">창피 안 당할 정도면 됩니다.</strong><br>
-        스코어에 집착하는 골퍼와 달리<br>
-        <strong style="color:#111">매너와 에티켓이 급합니다.</strong><br>
-        가성비를 따지는 골퍼와 달리<br>
-        <strong style="color:#111">무난하게 좋은 걸 원합니다.</strong>
-      </p>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:28px 0">
-        그래서 이 사람은<br>
-        고민하지 않습니다.<br>
-        <strong style="color:#111;font-size:1.05rem">빠르게 삽니다.</strong><br>
-        객단가가 높고, 전환이 빠릅니다.
-      </p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0">
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">⛳ 골프 용품</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">입문자 풀세트, "처음 사는 드라이버" 소구</p>
-        </div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">👔 골프웨어</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">"접대 라운딩에 입고 갈 옷" 포지셔닝</p>
-        </div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏌️ 골프 레슨</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">"4주 만에 필드 나가기" 속성 레슨</p>
-        </div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px">
-          <p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">💳 프리미엄 카드</p>
-          <p style="font-size:0.8rem;color:#888;line-height:1.4">골프 특화 혜택 소구</p>
-        </div>
-      </div>
-
-      <div style="background:#111;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#a5b4fc;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:12px">💡 KEY INSIGHT</p>
-        <p style="color:#fff;font-size:1.05rem;line-height:1.7;font-weight:500">
-          "골프 관심자"는 오디언스가 아닙니다.<br>
-          <strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.
-        </p>
-      </div>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8">
-        같은 골프인데,<br>
-        접대 입문자 / 취미 입문자 / 은퇴 후 입문자는<br>
-        완전히 다른 사람입니다.<br><br>
-        행동 시그널의 조합으로<br>
-        이걸 구분할 수 있습니다.
-      </p>
-
-      <p style="color:#bbb;font-size:0.8rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee">
-        오늘의 오디언스 #1 · 접대 골프를 시작한 30대 · by IGAWorks
-      </p>
+    <div class="sig-box">
+      <div class="sig-label">BEHAVIOR SIGNALS</div>
+      <p>→ 30대 초중반, 대기업 재직 추정<br>→ 최근 3개월 내 골프 앱 <strong>첫</strong> 설치<br>→ 골프 용품 비교 검색 시작<br>→ 골프 레슨 예약 앱 탐색<br>→ <strong>평일 저녁</strong> 골프 콘텐츠 소비</p>
     </div>
-    """, unsafe_allow_html=True)
 
-    # ===== PAST ESSAYS =====
-    st.markdown("""
-    <div style="padding:48px 0 20px;border-top:1px solid #eee;margin-top:48px">
-      <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px">ARCHIVE</p>
-      <h2 style="font-size:1.6rem;font-weight:800;color:#111;margin-bottom:32px">지난 오디언스</h2>
+    <div class="note-body">
+      <p>이 조합이 의미하는 건 하나입니다.</p>
+      <p class="lead">"회사 때문에 골프를 시작한 사람."</p>
+      <p>접대, 임원 라운딩, 거래처 미팅.<br>이 사람들은 기존 골퍼와 완전히 다른 니즈를 가지고 있습니다.</p>
+      <p>장비에 진심인 골퍼와 달리 <strong>창피 안 당할 정도면 됩니다.</strong><br>스코어에 집착하는 골퍼와 달리 <strong>매너와 에티켓이 급합니다.</strong><br>가성비를 따지는 골퍼와 달리 <strong>무난하게 좋은 걸 원합니다.</strong></p>
+      <p>그래서 이 사람은 고민하지 않습니다.<br><strong>빠르게 삽니다.</strong> 객단가가 높고, 전환이 빠릅니다.</p>
     </div>
+
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ind-title">⛳ 골프 용품</div><div class="ind-desc">입문자 풀세트, "처음 사는 드라이버" 소구</div></div>
+      <div class="ind-card"><div class="ind-title">👔 골프웨어</div><div class="ind-desc">"접대 라운딩에 입고 갈 옷" 포지셔닝</div></div>
+      <div class="ind-card"><div class="ind-title">🏌️ 골프 레슨</div><div class="ind-desc">"4주 만에 필드 나가기" 속성 레슨</div></div>
+      <div class="ind-card"><div class="ind-title">💳 프리미엄 카드</div><div class="ind-desc">골프 특화 혜택 소구</div></div>
+    </div>
+
+    <div class="insight">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"골프 관심자"는 오디언스가 아닙니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.</p>
+    </div>
+
+    <div class="note-body">
+      <p>같은 골프인데, 접대 입문자 / 취미 입문자 / 은퇴 후 입문자는 완전히 다른 사람입니다.<br>행동 시그널의 조합으로 이걸 구분할 수 있습니다.</p>
+    </div>
+
+    <div class="note-end">오늘의 오디언스 #1 · 접대 골프를 시작한 30대 · by IGAWorks</div>
     """, unsafe_allow_html=True)
 
-    # 금융 에세이 카드
+    # ===== ARCHIVE =====
     st.markdown("""
-    <div style="display:flex;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid #f0f0f0;cursor:pointer">
-      <div style="font-size:1.8rem">💰</div>
-      <div style="flex:1">
-        <p style="font-size:0.7rem;color:#6366f1;font-weight:600;letter-spacing:1px;margin-bottom:2px">금융 · 오늘의 오디언스 #2</p>
-        <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">다음 달 이자가 올라가는 사람</p>
-        <p style="font-size:0.82rem;color:#999">앱 1개 vs 3개, 시급함의 크기가 오디언스를 만든다</p>
+    <div class="sec-header">
+      <div class="sec-label">ARCHIVE</div>
+      <h2>지난 노트</h2>
+    </div>
+    <div class="upcoming-item" style="cursor:pointer">
+      <div class="up-emoji">💰</div>
+      <div>
+        <div class="up-cat">금융 · 오늘의 오디언스 #2</div>
+        <div class="up-title">다음 달 이자가 올라가는 사람</div>
+        <div class="up-desc">앱 1개 vs 3개, 시급함의 크기가 오디언스를 만든다</div>
       </div>
-      <div style="color:#6366f1;font-size:0.78rem;font-weight:600;white-space:nowrap">읽기 →</div>
+      <div style="color:#6366f1;font-size:0.78rem;font-weight:600;white-space:nowrap;margin-left:auto">읽기 →</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -408,32 +342,32 @@ else:
 
     # ===== COMING SOON =====
     st.markdown("""
-    <div style="padding:48px 0 20px;border-top:1px solid #eee;margin-top:32px">
-      <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px">COMING SOON</p>
-      <h2 style="font-size:1.6rem;font-weight:800;color:#111;margin-bottom:8px">다음 오디언스를 준비하고 있어요</h2>
-      <p style="color:#999;font-size:0.92rem;margin-bottom:36px">매주 새로운 오디언스 아이디어가 공개됩니다.</p>
+    <div class="sec-header">
+      <div class="sec-label">공개 예정 노트</div>
+      <h2>다음 오디언스를 준비하고 있어요</h2>
+      <p>매주 새로운 오디언스 아이디어가 공개됩니다.</p>
     </div>
     """, unsafe_allow_html=True)
 
     UPCOMING = [
-        ("#3", "⛳", "스크린에서 필드로 넘어가는 여성 골퍼", "스포츠/레저", "취미에서 라이프스타일로 전환 중"),
-        ("#4", "🏦", "대출 갈아타기 골든타임 유저", "금융", "지금 움직이면 수백만 원 아끼는 사람"),
-        ("#5", "💍", "결혼 준비 커플", "라이프 전환", "웨딩+대출+이사 동시에 터지는 순간"),
-        ("#6", "👶", "첫 아이 출산 준비 부부", "라이프 전환", "모든 카테고리의 첫 구매자"),
-        ("#7", "👗", "콰이어트 럭셔리에 눈뜬 30대", "패션", '"비싸 보이지 않게 비싼 옷"을 찾는 유저'),
-        ("#8", "👟", "러닝에 빠진 패션 피플", "패션", "라이프스타일로 러닝을 시작한 유저"),
+        ("#3", "⛳", "스크린에서 필드로 넘어가는 여성 골퍼", "스포츠/레저", "취미에서 라이프스타일로 전환 중", "D-5"),
+        ("#4", "🏦", "전세 만기 D-90, 지금 움직이는 사람", "금융", "대출+부동산+이사 동시 탐색", "D-12"),
+        ("#5", "💍", "결혼 준비 커플", "라이프 전환", "웨딩+대출+이사 동시에 터지는 순간", "D-19"),
+        ("#6", "👶", "첫 아이 출산 준비 부부", "라이프 전환", "모든 카테고리의 첫 구매자", "D-26"),
+        ("#7", "👗", "콰이어트 럭셔리에 눈뜬 30대", "패션", "비싸 보이지 않게 비싼 옷을 찾는 유저", "D-33"),
+        ("#8", "👟", "러닝에 빠진 패션 피플", "패션", "라이프스타일로 러닝을 시작한 유저", "D-40"),
     ]
 
-    for num, emoji, title, cat, desc in UPCOMING:
+    for num, emoji, title, cat, desc, dday in UPCOMING:
         st.markdown(f"""
-        <div style="display:flex;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid #f0f0f0;opacity:0.55">
-          <div style="font-size:1.8rem">{emoji}</div>
-          <div style="flex:1">
-            <p style="font-size:0.7rem;color:#6366f1;font-weight:600;letter-spacing:1px;margin-bottom:2px">{cat} · 오늘의 오디언스 {num}</p>
-            <p style="font-size:1.05rem;font-weight:700;color:#111;margin-bottom:2px">{title}</p>
-            <p style="font-size:0.82rem;color:#999">{desc}</p>
+        <div class="upcoming-item dim">
+          <div class="up-emoji">{emoji}</div>
+          <div>
+            <div class="up-cat">{cat} · 오늘의 오디언스 {num}</div>
+            <div class="up-title">{title}</div>
+            <div class="up-desc">{desc}</div>
           </div>
-          <div style="color:#ccc;font-size:0.78rem;font-weight:500;white-space:nowrap">오픈 예정</div>
+          <div class="up-dday">{dday}</div>
         </div>
         """, unsafe_allow_html=True)
 
