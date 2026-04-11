@@ -10,7 +10,7 @@ st.markdown("""
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 .stApp { background:#fff; font-family:'Pretendard',sans-serif; }
 header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:none!important; }
-.block-container { max-width:620px!important; padding:0 20px 80px!important; }
+.block-container { max-width:960px!important; padding:0 32px 80px!important; }
 
 /* Nav */
 .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; border-bottom:1px solid #f0f0f0; margin-bottom:40px; }
@@ -91,6 +91,7 @@ if st.session_state.view == "detail_golf":
         st.rerun()
 
     golf_html = """
+    <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
     <div class="nav"><div>
       <div class="nav-logo"><span>오늘의</span> 오디언스</div>
       <div class="nav-sub">by IGAWorks</div>
@@ -168,6 +169,7 @@ elif st.session_state.view == "detail_finance":
         st.rerun()
 
     finance_html = """
+    <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
     <div style="padding:20px 0">
       <div class="nav"><div>
         <div class="nav-logo"><span>오늘의</span> 오디언스</div>
