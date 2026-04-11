@@ -86,114 +86,80 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 # ===== ROUTING =====
 if st.session_state.view == "detail_golf":
-    # ===== GOLF DETAIL =====
     if st.button("← 돌아가기", key="back"):
         st.session_state.view = "feed"
         st.rerun()
 
-    st.markdown("""
-    <div class="detail-hero" style="text-align:center;padding:32px 0 48px">
-      <div style="font-size:4rem;margin-bottom:16px">⛳</div>
-      <div class="sec-title" style="font-size:2.2rem">접대 골프를<br>시작한 30대</div>
-      <p style="color:#94a3b8;font-size:1.05rem;line-height:1.6;margin-top:16px;max-width:500px;margin-left:auto;margin-right:auto">회사 때문에 골프에 입문한 대기업 직장인.<br>취미가 아니라 업무의 연장.</p>
+    golf_html = """
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
+
+    <div class="author">
+      <div class="author-avatar">IG</div>
+      <div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">2026.04.11 · 오늘의 오디언스 #1</div>
+      </div>
     </div>
-    """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2, gap="large")
+    <div class="note-body">
+      <p class="lead">'골프 관심자' 타겟팅 금지!<br>접대 골프 입문자의 숨겨진 구매 시그널</p>
 
-    with col1:
-        # 광고주의 숙제
-        st.markdown("""
-        <div class="sec-label">광고주의 숙제</div>
-        <div style="background:rgba(255,255,255,0.04);border-left:3px solid #6366f1;padding:20px;border-radius:0 12px 12px 0;margin-bottom:24px">
-          <p style="color:#cbd5e1;font-size:0.95rem;line-height:1.6;font-style:italic">"골프 관련 광고를 하고 싶은데,<br>기존 골퍼랑 입문자를 어떻게 구분하죠?"</p>
-        </div>
-        <p style="color:#cbd5e1;font-size:0.95rem;line-height:1.7">골프 시장이 커졌다는 건 다 안다. 문제는 <strong style="color:#fff">"골프 관심자"로 타겟팅하면</strong> 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 다 섞인다는 것.</p>
-        """, unsafe_allow_html=True)
+      <div class="quote">"드라이버를 사는 게 아니라,<br>창피를 안 당할 보험을 사는 겁니다."</div>
 
-        # 행동 시그널
-        st.markdown("""
-        <div style="margin-top:36px">
-        <div class="sec-label">진짜 타겟은 따로 있다</div>
-        <div class="sec-title" style="font-size:1.15rem">이런 행동을 하는 사람이다</div>
-        </div>
-        """, unsafe_allow_html=True)
+      <p>광고 기획자의 말이 아닙니다.<br>IGAWorks DMP에서 발견한 실제 행동 데이터의 해석이죠.</p>
 
-        signals = ["30대 초중반, 대기업 재직 추정", "최근 3개월 내 골프 앱 첫 설치", "골프 용품 비교 검색 시작", "골프 레슨 예약 앱 탐색", "평일 저녁 골프 콘텐츠 소비"]
-        for s in signals:
-            st.markdown(f'<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="width:6px;height:6px;background:#6366f1;border-radius:50%;flex-shrink:0"></span><span style="color:#cbd5e1;font-size:0.9rem">{s}</span></div>', unsafe_allow_html=True)
+      <p>골프 시장이 커졌다는 건 다 압니다. 문제는 "골프 관심자"로 타겟팅하면 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 전부 섞인다는 것.</p>
 
-        st.markdown("""
-        <p style="color:#cbd5e1;font-size:0.95rem;line-height:1.7;margin-top:20px">
-          이 조합이 의미하는 건 하나다.<br><strong style="color:#fff">"회사 때문에 골프를 시작한 사람."</strong>
-          <br><br>접대, 임원 라운딩, 거래처 미팅.<br>이 사람들은 기존 골퍼와 <strong style="color:#fff">완전히 다른 니즈</strong>를 가지고 있다.
-        </p>
-        """, unsafe_allow_html=True)
-
-    with col2:
-        # 비교
-        st.markdown("""
-        <div class="sec-label">뭐가 다른가</div>
-        <div class="sec-title" style="font-size:1.15rem">같은 골프인데, 완전히 다른 사람</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;margin:16px 0">
-          <div style="padding:20px;background:rgba(255,255,255,0.03)">
-            <h4 style="font-size:0.75rem;color:#64748b;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;font-weight:600">기존 골프 관심자</h4>
-            <ul style="list-style:none;padding:0">
-              <li style="font-size:0.85rem;color:#94a3b8;padding:5px 0">장비에 진심</li>
-              <li style="font-size:0.85rem;color:#94a3b8;padding:5px 0">스코어에 집착</li>
-              <li style="font-size:0.85rem;color:#94a3b8;padding:5px 0">가성비 추구</li>
-              <li style="font-size:0.85rem;color:#94a3b8;padding:5px 0">주말 라운딩</li>
-              <li style="font-size:0.85rem;color:#94a3b8;padding:5px 0">천천히 구매</li>
-            </ul>
-          </div>
-          <div style="padding:20px;background:rgba(99,102,241,0.08)">
-            <h4 style="font-size:0.75rem;color:#a5b4fc;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;font-weight:600">접대 골프 입문자</h4>
-            <ul style="list-style:none;padding:0">
-              <li style="font-size:0.85rem;color:#e2e8f0;padding:5px 0">창피 안 당할 정도면 됨</li>
-              <li style="font-size:0.85rem;color:#e2e8f0;padding:5px 0">매너와 에티켓이 급함</li>
-              <li style="font-size:0.85rem;color:#e2e8f0;padding:5px 0">무난하게 좋은 걸 원함</li>
-              <li style="font-size:0.85rem;color:#e2e8f0;padding:5px 0">평일 라운딩 비중 높음</li>
-              <li style="font-size:0.85rem;color:#e2e8f0;padding:5px 0">빠르게 풀세트 구매</li>
-            </ul>
-          </div>
-        </div>
-        <p style="color:#cbd5e1;font-size:0.95rem;line-height:1.7"><strong style="color:#fff">이 사람은 고민하지 않는다. 빠르게 산다.</strong><br>객단가가 높고 전환이 빠르다.</p>
-        """, unsafe_allow_html=True)
-
-        # 추천 업종
-        st.markdown("""
-        <div style="margin-top:36px">
-        <div class="sec-label">이 오디언스를 쓸 수 있는 광고주</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
-          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px">
-            <h4 style="color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:4px">⛳ 골프 용품</h4>
-            <p style="color:#94a3b8;font-size:0.8rem;line-height:1.4">입문자 풀세트, "처음 사는 드라이버" 소구</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px">
-            <h4 style="color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:4px">👔 골프웨어</h4>
-            <p style="color:#94a3b8;font-size:0.8rem;line-height:1.4">"접대 라운딩에 입고 갈 옷" 포지셔닝</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px">
-            <h4 style="color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:4px">🏌️ 골프 레슨</h4>
-            <p style="color:#94a3b8;font-size:0.8rem;line-height:1.4">"4주 만에 필드 나가기" 속성 레슨</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px">
-            <h4 style="color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:4px">💳 프리미엄 카드</h4>
-            <p style="color:#94a3b8;font-size:0.8rem;line-height:1.4">골프 특화 혜택 소구</p>
-          </div>
-        </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # 인사이트 (full width)
-    st.markdown("""
-    <div style="background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(168,85,247,0.1));border-radius:16px;padding:32px;margin:40px 0;text-align:center">
-      <p style="color:#e2e8f0;font-size:1.15rem;line-height:1.6;font-weight:500">💡 "골프 관심자"는 오디언스가 아니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만든다.</p>
-      <p style="color:#94a3b8;font-size:0.92rem;margin-top:12px">같은 골프인데, 접대 입문자 / 취미 입문자 / 은퇴 후 입문자는 완전히 다른 사람이다.<br>행동 시그널의 조합으로 이걸 구분할 수 있다.</p>
+      <p>우리가 주목한 건 <strong>완전히 다른 종류의 골퍼</strong>였습니다.</p>
     </div>
-    """, unsafe_allow_html=True)
 
-    st.markdown('<div class="footer">© 2026 IGAWorks — 오늘의 오디언스 · Audience Idea Bank</div>', unsafe_allow_html=True)
+    <div class="sig-box">
+      <div class="sig-label">BEHAVIOR SIGNALS</div>
+      <p>→ 30대 초중반, 대기업 재직 추정<br>→ 최근 3개월 내 골프 앱 <strong>첫</strong> 설치<br>→ 골프 용품 비교 검색 시작<br>→ 골프 레슨 예약 앱 탐색<br>→ <strong>평일 저녁</strong> 골프 콘텐츠 소비</p>
+    </div>
+
+    <div class="note-body">
+      <p>이 조합이 의미하는 건 하나입니다.</p>
+      <p class="lead">"회사 때문에 골프를 시작한 사람."</p>
+      <p>접대, 임원 라운딩, 거래처 미팅. 이 사람들은 기존 골퍼와 완전히 다른 니즈를 가지고 있습니다.</p>
+      <p>장비에 진심인 골퍼와 달리 <strong>창피 안 당할 정도면 됩니다.</strong><br>스코어에 집착하는 골퍼와 달리 <strong>매너와 에티켓이 급합니다.</strong><br>가성비를 따지는 골퍼와 달리 <strong>무난하게 좋은 걸 원합니다.</strong></p>
+      <p>그래서 이 사람은 고민하지 않습니다. <strong>빠르게 삽니다.</strong> 객단가가 높고, 전환이 빠릅니다.</p>
+    </div>
+
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-left">
+        <h4>기존 골프 관심자</h4>
+        <p>장비에 진심<br>스코어에 집착<br>가성비 추구<br>주말 라운딩<br>천천히 구매</p>
+      </div>
+      <div class="cmp-card cmp-right">
+        <h4>접대 골프 입문자</h4>
+        <p>창피 안 당할 정도면 됨<br>매너와 에티켓이 급함<br>무난하게 좋은 걸 원함<br>평일 라운딩 비중 높음<br>빠르게 풀세트 구매</p>
+      </div>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">DMP에서 잡는 법</div>
+      <p><strong>[접대 골프 입문자]</strong><br>골프앱 첫 설치 + 30대 + 대기업 재직 추정<br>+ 평일 저녁 골프 콘텐츠 소비<br>+ 골프 용품 비교 검색 시작 (60일 내)</p>
+    </div>
+
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ind-title">⛳ 골프 용품</div><div class="ind-desc">입문자 풀세트, "처음 사는 드라이버" 소구</div></div>
+      <div class="ind-card"><div class="ind-title">👔 골프웨어</div><div class="ind-desc">"접대 라운딩에 입고 갈 옷" 포지셔닝</div></div>
+      <div class="ind-card"><div class="ind-title">🏌️ 골프 레슨</div><div class="ind-desc">"4주 만에 필드 나가기" 속성 레슨</div></div>
+      <div class="ind-card"><div class="ind-title">💳 프리미엄 카드</div><div class="ind-desc">골프 특화 혜택 소구</div></div>
+    </div>
+
+    <div class="insight">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"골프 관심자"는 오디언스가 아닙니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.<br><br>같은 골프인데, 접대 입문자 / 취미 입문자 / 은퇴 후 입문자는 완전히 다른 사람입니다. 행동 시그널의 조합으로 이걸 구분할 수 있습니다.</p>
+    </div>
+
+    <div class="note-end">오늘의 오디언스 #1 · 접대 골프를 시작한 30대 · by IGAWorks</div>
+    """
+    st.markdown(golf_html, unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_finance":
     # ===== FINANCE DETAIL =====
