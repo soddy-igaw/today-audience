@@ -170,60 +170,99 @@ elif st.session_state.view == "detail_finance":
 
     finance_html = """
     <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
-    <div style="padding:20px 0">
-      <div class="nav"><div>
-        <div class="nav-logo"><span>오늘의</span> 오디언스</div>
-        <div class="nav-sub">by IGAWorks</div>
-      </div></div>
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
 
-      <div style="padding:48px 0 20px">
-        <div style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px">💰 오늘의 오디언스 #2</div>
-        <h1 style="font-size:2.6rem;font-weight:900;color:#111;line-height:1.25;letter-spacing:-1.5px;margin-bottom:32px">'대출 관심자' 타겟팅 금지!<br>다음 달 이자가<br>올라가는 사람</h1>
-        <p style="color:#555;font-size:1.15rem;line-height:2;margin-bottom:28px">"금리가 내려갔다는데,<br>&nbsp;&nbsp;나는 왜 아직 4%대를 내고 있지?"</p>
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">부동산 커뮤니티 글이 아닙니다.<br>대출 만기 3개월 전,<br>새벽 1시에 금리 비교앱을 깐 사람의<br>실제 행동 패턴이죠.</p>
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">모든 은행이<br>"대출 관심자"를 타겟합니다.<br><br>문제는 이 안에<br>"언젠가 갈아타야지" 하는 사람과<br><strong style="color:#111">"이번 달 안에 안 바꾸면 매달 30만 원을 더 내는 사람"</strong>이<br>같이 섞여 있다는 것.</p>
-        <p style="color:#111;font-size:1.3rem;font-weight:800;line-height:1.5;margin:32px 0">시급한 사람은<br>행동이 완전히 다릅니다.</p>
-
-        <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
-          <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">BEHAVIOR SIGNALS</p>
-          <p style="color:#333;font-size:0.95rem;line-height:1.9">→ 대출 비교앱 <strong>3개 이상</strong> 동시 설치 (7일 내)<br>→ 설치 후 <strong>매일 반복 접속</strong><br>→ "대출 갈아타기" "금리 인하 요구권" 콘텐츠 소비<br>→ 기존 은행앱 접속 빈도 <strong>감소</strong> (떠나려는 시그널)<br>→ 새벽/출퇴근 시간대 집중 탐색</p>
-        </div>
-
-        <p style="color:#888;font-size:0.92rem;line-height:1.8;margin-bottom:20px">앱을 1개 깔고 가끔 보는 사람은<br>"언젠가" 갈아탈 사람입니다.<br><br>앱을 <strong style="color:#111">3개 깔고 매일 여는 사람</strong>은<br><strong style="color:#111">지금 당장</strong> 갈아탈 사람입니다.</p>
+    <div class="author">
+      <div class="author-avatar">IG</div>
+      <div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">2026.04.10 · 오늘의 오디언스 #2</div>
       </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0">
-        <div style="background:#f8f8f8;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 구경꾼</h4>
-          <p style="font-size:0.88rem;color:#888;line-height:1.8">앱 1개 설치<br>가끔 접속<br>"나중에 해야지"<br>광고 무시<br>전환율 극히 낮음</p>
-        </div>
-        <div style="background:#f5f3ff;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 시급한 사람</h4>
-          <p style="font-size:0.88rem;color:#333;line-height:1.8">앱 3개+ 동시 설치<br>매일 반복 접속<br>"이번 달 안에"<br>금리 숫자에 즉시 반응<br>전환율 극상</p>
-        </div>
-      </div>
-
-      <p style="color:#888;font-size:0.92rem;line-height:1.8;margin:28px 0">모든 은행이 "대출 관심자"를 타겟하고 있습니다.<br>그래서 단가가 비싸고 전환이 안 나옵니다.<br><br><strong style="color:#111">"이번 달 안에 갈아타야 하는 사람"은<br>아무도 안 잡고 있습니다.</strong><br><br>왜?<br>이 세그먼트가 존재하는지 몰랐으니까요.</p>
-
-      <div style="background:#f5f3ff;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#6366f1;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">DMP에서 잡는 법</p>
-        <p style="color:#333;font-size:0.88rem;line-height:1.9"><strong>[대출 시급 유저]</strong><br>대출 비교앱 3개+ (7일 내 동시 설치)<br>+ 설치 후 일 1회 이상 반복 접속<br>+ 기존 은행앱 접속 빈도 감소<br>+ "갈아타기" "금리 비교" 콘텐츠 소비</p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0">
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px"><p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🏦 은행/저축은행</p><p style="font-size:0.8rem;color:#888;line-height:1.4">대환대출 "지금 갈아타면 월 OO만 원 절약" 소구</p></div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px"><p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">📱 핀테크</p><p style="font-size:0.8rem;color:#888;line-height:1.4">대출 비교 서비스 신규 유저 확보</p></div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px"><p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">🛡️ 보험</p><p style="font-size:0.8rem;color:#888;line-height:1.4">대출 연계 보험 상품 타겟팅</p></div>
-        <div style="background:#f8f8f8;border-radius:10px;padding:20px"><p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:6px">💳 카드사</p><p style="font-size:0.8rem;color:#888;line-height:1.4">대출 이자 캐시백 카드 전환</p></div>
-      </div>
-
-      <div style="background:#111;border-radius:12px;padding:28px 32px;margin:32px 0">
-        <p style="color:#a5b4fc;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;margin-bottom:12px">💡 KEY INSIGHT</p>
-        <p style="color:#fff;font-size:1.05rem;line-height:1.7;font-weight:500">"대출 관심자"는 오디언스가 아닙니다.<br><br>앱 <strong>1개</strong> 깔고 가끔 보는 사람과<br>앱 <strong>3개</strong> 깔고 매일 여는 사람은<br>완전히 다른 사람입니다.<br><br><strong>시급함의 크기</strong>가 오디언스를 만듭니다.</p>
-      </div>
-
-      <p style="color:#bbb;font-size:0.8rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee">오늘의 오디언스 #2 · 다음 달 이자가 올라가는 사람 · by IGAWorks</p>
     </div>
+
+    <div class="note-body">
+      <p class="lead">'대출 관심자' 타겟팅 금지!<br>다음 달 이자가 올라가는 사람</p>
+
+      <div class="quote">"매달 대출 광고에 3000만 원을 씁니다.<br>클릭은 되는데, 실제로 갈아타는 사람은<br>열 명 중 한 명도 안 돼요."</div>
+
+      <p>저축은행 마케터 K씨의 말입니다. 대출 상품 광고를 집행하는 거의 모든 금융사가 같은 고민을 하고 있어요.</p>
+
+      <p>"대출 관심자"를 타겟하면 클릭은 나옵니다. 금리가 궁금한 사람은 많으니까요. 문제는 <strong>궁금한 사람과 시급한 사람이 완전히 다르다</strong>는 것.</p>
+
+      <p>궁금한 사람은 클릭하고 나갑니다.<br>시급한 사람은 클릭하고 <strong>신청합니다.</strong></p>
+
+      <p>그런데 대부분의 광고는 이 둘을 구분하지 못합니다.</p>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">우리가 발견한 것</div>
+      <p>대출이 시급한 사람은 행동이 완전히 다릅니다.<br><br>→ 대출 비교앱 <strong>3개 이상</strong> 동시 설치 (7일 내)<br>→ 설치 후 <strong>매일 반복 접속</strong><br>→ "대출 갈아타기" "금리 인하 요구권" 콘텐츠 소비<br>→ 기존 은행앱 접속 빈도 <strong>감소</strong> (떠나려는 시그널)<br>→ 새벽, 출퇴근 시간대 집중 탐색</p>
+    </div>
+
+    <div class="note-body">
+      <p>핵심은 <strong>앱 설치 개수와 접속 빈도</strong>입니다.</p>
+
+      <p>앱을 1개 깔고 가끔 보는 사람은 "언젠가" 갈아탈 사람입니다. 급하지 않아요. 광고를 봐도 "나중에"라고 생각합니다.</p>
+
+      <p>앱을 <strong>3개 깔고 매일 여는 사람</strong>은 다릅니다. 이 사람은 지금 금리를 비교하고 있고, 조건이 맞으면 <strong>이번 달 안에 움직입니다.</strong></p>
+
+      <p>K씨에게 이 이야기를 했더니 이렇게 말했어요.</p>
+
+      <div class="quote">"그러니까, 우리가 지금까지 광고비의 90%를<br>'언젠가' 사람한테 쓰고 있었다는 거네요."</div>
+
+      <p>맞습니다. 그게 대출 광고 효율이 안 나오는 이유입니다.</p>
+    </div>
+
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-left">
+        <h4>대출 구경꾼</h4>
+        <p>앱 1개 설치<br>가끔 접속<br>"나중에 해야지"<br>광고 클릭 후 이탈<br>전환율 극히 낮음</p>
+      </div>
+      <div class="cmp-card cmp-right">
+        <h4>대출 시급한 사람</h4>
+        <p>앱 3개+ 동시 설치<br>매일 반복 접속<br>"이번 달 안에"<br>금리 숫자에 즉시 반응<br>전환율 극상</p>
+      </div>
+    </div>
+
+    <div class="note-body">
+      <p>더 흥미로운 건 <strong>시간대</strong>입니다.</p>
+
+      <p>대출 구경꾼은 점심시간에 잠깐 봅니다. 심심해서요.<br>대출 시급한 사람은 <strong>새벽 1시</strong>에 봅니다. 잠이 안 와서요.</p>
+
+      <p>같은 "대출 비교앱 사용자"인데, 접속 시간대 하나로 긴급도를 추정할 수 있습니다.</p>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">DMP에서 잡는 법</div>
+      <p><strong>[대출 시급 유저]</strong><br>대출 비교앱 3개+ (7일 내 동시 설치)<br>+ 설치 후 일 1회 이상 반복 접속<br>+ 기존 은행앱 접속 빈도 감소<br>+ 야간/새벽 시간대 활성<br>+ "갈아타기" "금리 비교" 콘텐츠 소비</p>
+    </div>
+
+    <div class="note-body">
+      <p>이 세그먼트로 광고를 집행하면 어떻게 될까요?</p>
+
+      <p>K씨의 저축은행이 기존 "대출 관심자" 대신 "대출 시급 유저"로 타겟을 바꿨다고 가정하면:</p>
+
+      <p>→ 도달 수는 줄어듭니다 (전체의 10~15%)<br>→ 하지만 전환율은 <strong>3~5배</strong> 올라갑니다<br>→ 광고비 대비 실제 대환 건수가 늘어납니다<br>→ "지금 갈아타면 월 OO만 원 절약" 메시지가 <strong>진짜로 먹힙니다</strong></p>
+
+      <p>왜? 이 사람은 이미 갈아타려고 마음먹은 사람이니까요. 광고가 설득하는 게 아니라, <strong>마지막 한 발을 밀어주는 것</strong>입니다.</p>
+    </div>
+
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ind-title">🏦 은행/저축은행</div><div class="ind-desc">대환대출 "지금 갈아타면 월 OO만 원 절약" 소구</div></div>
+      <div class="ind-card"><div class="ind-title">📱 핀테크</div><div class="ind-desc">대출 비교 서비스 "3초 만에 내 금리 확인" 유도</div></div>
+      <div class="ind-card"><div class="ind-title">🛡️ 보험</div><div class="ind-desc">대출 연계 보험 상품 타겟팅</div></div>
+      <div class="ind-card"><div class="ind-title">💳 카드사</div><div class="ind-desc">대출 이자 캐시백 카드 전환</div></div>
+    </div>
+
+    <div class="insight">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"대출 관심자"는 오디언스가 아닙니다.<br><br>앱 <strong>1개</strong> 깔고 가끔 보는 사람과<br>앱 <strong>3개</strong> 깔고 매일 여는 사람은<br>완전히 다른 사람입니다.<br><br><strong>시급함의 크기</strong>가 오디언스를 만듭니다.<br><br>광고비의 90%를 "언젠가" 사람에게 쓰지 마세요.<br>"이번 달" 사람에게 쓰세요.</p>
+    </div>
+
+    <div class="note-end">오늘의 오디언스 #2 · 다음 달 이자가 올라가는 사람 · by IGAWorks</div>
     """
     st.markdown(finance_html, unsafe_allow_html=True)
 
