@@ -231,7 +231,7 @@ elif st.session_state.view == "detail_finance":
             → 대출 비교앱 <strong>3개 이상</strong> 동시 설치 (7일 내)<br>
             → 설치 후 <strong>매일 반복 접속</strong><br>
             → "대출 갈아타기" "금리 인하 요구권" 콘텐츠 소비<br>
-            → 기존 은행앱 접속 빈도 <strong>감소</strong> ← 떠나려는 시그널<br>
+            → 기존 은행앱 접속 빈도 <strong>감소</strong> &lt;- 떠나려는 시그널<br>
             → 새벽·출퇴근 시간대 집중 탐색
           </p>
         </div>
@@ -246,25 +246,22 @@ elif st.session_state.view == "detail_finance":
     </div>
     """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-        <div style="background:#f8f8f8;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 구경꾼</h4>
-          <p style="font-size:0.88rem;color:#888;line-height:1.8">
-            앱 1개 설치<br>가끔 접속<br>"나중에 해야지"<br>광고 무시<br>전환율 극히 낮음
-          </p>
-        </div>
-        """, unsafe_allow_html=True)
-    with col2:
-        st.markdown("""
-        <div style="background:#f5f3ff;border-radius:12px;padding:20px">
-          <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 시급한 사람</h4>
-          <p style="font-size:0.88rem;color:#333;line-height:1.8">
-            앱 3개+ 동시 설치<br>매일 반복 접속<br>"이번 달 안에"<br>금리 숫자에 즉시 반응<br>전환율 극상
-          </p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0">
+      <div style="background:#f8f8f8;border-radius:12px;padding:20px">
+        <h4 style="font-size:0.75rem;color:#999;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 구경꾼</h4>
+        <p style="font-size:0.88rem;color:#888;line-height:1.8">
+          앱 1개 설치<br>가끔 접속<br>"나중에 해야지"<br>광고 무시<br>전환율 극히 낮음
+        </p>
+      </div>
+      <div style="background:#f5f3ff;border-radius:12px;padding:20px">
+        <h4 style="font-size:0.75rem;color:#6366f1;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">대출 시급한 사람</h4>
+        <p style="font-size:0.88rem;color:#333;line-height:1.8">
+          앱 3개+ 동시 설치<br>매일 반복 접속<br>"이번 달 안에"<br>금리 숫자에 즉시 반응<br>전환율 극상
+        </p>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     <div style="padding:20px 0">
