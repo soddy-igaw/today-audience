@@ -180,7 +180,11 @@ def _call_bedrock(prompt):
     try:
         import boto3
         region = os.environ.get("AWS_REGION", "us-east-1")
-        session = boto3.Session(profile_name="audmaker_soddy")
+        # GitHub Actions에서는 환경변수, 로컬에서는 SSO 프로필
+        if os.environ.get("AWS_ACCESS_KEY_ID"):
+            session = boto3.Session()
+        else:
+            session = boto3.Session(profile_name="audmaker_soddy")
         client = session.client("bedrock-runtime", region_name=region)
         body = json.dumps({
             "anthropic_version": "bedrock-2023-05-31",
@@ -294,9 +298,8 @@ def run(dry_run=False):
     print("⚠️  app.py 자동 수정은 아직 수동입니다.")
     print("   생성된 에세이를 확인하고 'kiro chat'에서 반영해주세요.")
 
-    # 7. git push
-    os.system(f"cd {ESSAY_DIR} && git add -A && git commit -m '{today.strftime('%Y-%m-%d')} 오늘의 오디언스 자동 생성 ({category})' && git push")
-    print("✅ 완료!")
+    # 7. git push는 GitHub Actions에서 처리
+    print("✅ 에세이 생성 완료!")
 
 
 if __name__ == "__main__":
