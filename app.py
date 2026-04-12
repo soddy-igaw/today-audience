@@ -399,26 +399,69 @@ else:
 
     <div style="border-top:1px solid #f0f0f0;margin:8px 0 32px"></div>
 
-    <!-- TODAY'S AUDIENCE (Golf) -->
+    <!-- TODAY'S NOTE - News Card -->
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">🎯 오늘의 오디언스</p>
+
+    <div style="border-radius:20px;overflow:hidden;border:1px solid #e8e8e8;margin-bottom:40px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+      <div style="background:linear-gradient(135deg,#1a472a 0%,#2d5a3f 50%,#3a7d5c 100%);padding:48px 36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">⛳</div>
+        <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:1px">TODAY</span>
+        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'골프 관심자' 타겟팅 금지!</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">접대 골프 입문자의 숨겨진 구매 시그널</p>
+      </div>
+      <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <span style="font-size:0.78rem;color:#888">추정 모수 <strong style="color:#6366f1">564만 명</strong> 중 접대 입문자</span>
+        </div>
+        <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
+      </div>
+    </div>
     """, unsafe_allow_html=True)
 
-    if st.button("⛳ 오늘의 오디언스 #1\n\n'골프 관심자' 타겟팅 금지! 접대 골프 입문자의 숨겨진 구매 시그널\n\n골프 인구 564만 명 중, 회사 때문에 입문한 30대 → 읽기", key="go_golf"):
+    if st.button("⛳ 접대 골프를 시작한 30대", key="go_golf"):
         st.session_state.view = "detail_golf"
         st.rerun()
 
     # Gallery
     st.markdown("""
-    <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 오디언스 갤러리</p>
+    <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 지난 노트</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px">
+
+      <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2a5298 100%);padding:32px 24px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:12px;right:16px;font-size:3rem;opacity:0.15">💰</div>
+          <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.62rem;font-weight:600;padding:3px 10px;border-radius:100px">#2</span>
+          <h3 style="color:#fff;font-size:1.05rem;font-weight:800;line-height:1.3;margin-top:12px">'대출 관심자'<br>타겟팅 금지!</h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.78rem;margin-top:6px">다음 달 이자가 올라가는 사람</p>
+        </div>
+        <div style="padding:14px 16px">
+          <span style="font-size:0.72rem;color:#999">은행 · 핀테크 · 보험</span>
+        </div>
+      </div>
+
+      <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="background:linear-gradient(135deg,#4a1942 0%,#6b3fa0 100%);padding:32px 24px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:12px;right:16px;font-size:3rem;opacity:0.15">🏠</div>
+          <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.62rem;font-weight:600;padding:3px 10px;border-radius:100px">#3</span>
+          <h3 style="color:#fff;font-size:1.05rem;font-weight:800;line-height:1.3;margin-top:12px">'전세대출 관심자'<br>타겟팅 금지!</h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.78rem;margin-top:6px">4월 17일 전에 움직여야 하는 사람</p>
+        </div>
+        <div style="padding:14px 16px">
+          <span style="font-size:0.72rem;color:#999">은행 · 부동산 · 보험</span>
+        </div>
+      </div>
+
+    </div>
     """, unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("💰 #2 · 대출\n\n'대출 관심자' 타겟팅 금지!\n다음 달 이자가 올라가는 사람", key="go_finance"):
+        if st.button("💰 대출 시급한 사람", key="go_finance"):
             st.session_state.view = "detail_finance"
             st.rerun()
     with col2:
-        if st.button("🏠 #3 · 전세대출\n\n'전세대출 관심자' 타겟팅 금지!\n4월 17일 전에 움직여야 하는 사람", key="go_gold"):
+        if st.button("🏠 전세대출 규제", key="go_gold"):
             st.session_state.view = "detail_gold"
             st.rerun()
 
