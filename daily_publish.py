@@ -155,18 +155,50 @@ HTML로 출력하세요. class는 다음을 사용:
 
 
 def call_llm(prompt):
-    """LLM API 호출 (Anthropic > OpenAI > 실패)"""
+    """LLM API 호출 (Bedrock > Anthropic > OpenAI)"""
+    # 1. AWS Bedrock (기본)
+    result = _call_bedrock(prompt)
+    if result:
+        return result
+
+    # 2. Anthropic 직접
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if api_key:
         return _call_anthropic(prompt, api_key)
 
+    # 3. OpenAI
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
         return _call_openai(prompt, api_key)
 
-    print("⚠️  LLM API 키가 없습니다. ANTHROPIC_API_KEY 또는 OPENAI_API_KEY를 설정하세요.")
-    print("    export ANTHROPIC_API_KEY='sk-ant-...'")
+    print("⚠️  LLM API 사용 불가. AWS 크레덴셜 또는 API 키를 설정하세요.")
     return None
+
+
+def _call_bedrock(prompt):
+    """AWS Bedrock Claude"""
+    try:
+        import boto3
+        region = os.environ.get("AWS_REGION", "us-east-1")
+        client = boto3.client("bedrock-runtime", region_name=region)
+        body = json.dumps({
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 4096,
+            "messages": [{"role": "user", "content": prompt}]
+        })
+        resp = client.invoke_model(
+            modelId="anthropic.claude-sonnet-4-20250514-v1:0",
+            body=body,
+            contentType="application/json",
+        )
+        result = json.loads(resp["body"].read())
+        return result["content"][0]["text"]
+    except ImportError:
+        print("   boto3 미설치, Bedrock 스킵")
+        return None
+    except Exception as e:
+        print(f"   Bedrock 실패: {e}")
+        return None
 
 
 def _call_anthropic(prompt, api_key):
