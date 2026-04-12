@@ -194,9 +194,8 @@ if st.session_state.view == "detail_golf":
           <p style="color:#555;font-size:0.72rem">골프 인구 564만 중</p>
         </div>
         <div>
-          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">객단가</p>
-          <p style="color:#fff;font-size:1.6rem;font-weight:900">높음</p>
-          <p style="color:#555;font-size:0.72rem">빠르게 풀세트 구매</p>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">추천 업종</p>
+          <p style="color:#fff;font-size:0.95rem;font-weight:600;line-height:1.6">골프 용품 · 골프웨어<br>레슨 · 프리미엄 카드</p>
         </div>
       </div>
       <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
@@ -323,19 +322,16 @@ elif st.session_state.view == "detail_finance":
       <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:20px">대출 시급한 사람</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
         <div>
-          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">전환율</p>
-          <p style="color:#6366f1;font-size:1.6rem;font-weight:900">3~5배</p>
-          <p style="color:#555;font-size:0.72rem">평소 대비</p>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">시그널</p>
+          <p style="color:#fff;font-size:0.95rem;font-weight:600;line-height:1.6">대출앱 3개+<br>동시 설치 + 매일 접속</p>
         </div>
         <div>
-          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">유저 가치</p>
-          <p style="color:#fff;font-size:1.6rem;font-weight:900">수십만 원</p>
-          <p style="color:#555;font-size:0.72rem">전환 1건당 수수료</p>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">추천 업종</p>
+          <p style="color:#fff;font-size:0.95rem;font-weight:600;line-height:1.6">은행 · 저축은행<br>핀테크 · 보험</p>
         </div>
       </div>
       <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">시그널</span><span style="color:#ccc;font-size:0.8rem">대출앱 3개+ 동시 + 매일 접속 + 야간</span></div>
-        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">추천 업종</span><span style="color:#ccc;font-size:0.8rem">은행 · 저축은행 · 핀테크 · 보험</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">핵심 구분</span><span style="color:#ccc;font-size:0.8rem">앱 1개 가끔 vs 3개 매일 + 야간</span></div>
         <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">메시지</span><span style="color:#fff;font-size:0.8rem;font-weight:600">"지금 갈아타면 월 32만 원 절약"</span></div>
       </div>
       <p style="color:#333;font-size:0.68rem;margin-top:16px">대출 비교앱 사용자 중 시급 유저 추정 10~15%</p>
@@ -450,19 +446,17 @@ elif st.session_state.view == "detail_gold":
       <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:20px">전세대출 규제 영향권 유저</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
         <div>
-          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">영향 규모</p>
-          <p style="color:#ef4444;font-size:1.6rem;font-weight:900">13.9조</p>
-          <p style="color:#555;font-size:0.72rem">1주택자 전세대출 보증</p>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">시그널</p>
+          <p style="color:#fff;font-size:0.95rem;font-weight:600;line-height:1.6">대출앱 2개+ 동시<br>부동산앱 급증 + 뉴스 50%+</p>
         </div>
         <div>
-          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">데드라인</p>
-          <p style="color:#ef4444;font-size:1.6rem;font-weight:900">D-5</p>
-          <p style="color:#555;font-size:0.72rem">4월 17일 만기연장 금지</p>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">추천 업종</p>
+          <p style="color:#fff;font-size:0.95rem;font-weight:600;line-height:1.6">은행 · 핀테크<br>부동산 · 보험</p>
         </div>
       </div>
       <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">시그널</span><span style="color:#ccc;font-size:0.8rem">대출앱 2개+ 동시 + 부동산앱 급증 + 뉴스 50%+</span></div>
-        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">추천 업종</span><span style="color:#ccc;font-size:0.8rem">은행 · 핀테크 · 부동산 · 보험</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">데드라인</span><span style="color:#ef4444;font-size:0.8rem;font-weight:700">4월 17일 만기연장 금지</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">영향 규모</span><span style="color:#ccc;font-size:0.8rem">1주택자 전세대출 보증 13.9조</span></div>
         <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">메시지</span><span style="color:#fff;font-size:0.8rem;font-weight:600">"4/17 전에 대환 신청하세요"</span></div>
       </div>
       <p style="color:#333;font-size:0.68rem;margin-top:16px">출처: 금융위 4/1 발표 · 서울경제 4/12 보도</p>
