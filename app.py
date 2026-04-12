@@ -184,16 +184,27 @@ if st.session_state.view == "detail_golf":
       <p>같은 골프 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
     </div>
 
-    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
-      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
-      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
-        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">접대 골프 입문자 (30대 대기업)</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">골프앱 첫 설치 + 30대 + 평일 저녁 활성</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">골프 인구 500~600만 명 중 접대 입문자 추정 50~80만</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">골프 용품 · 골프웨어 · 레슨 · 프리미엄 카드</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"다음 주 라운딩 전에 준비하세요"</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">데이터 출처</td><td style="padding:8px 0;color:#999;font-size:0.78rem">레저백서 2023, IGAWorks DMP 페르소나 P030902</td></tr>
-      </table>
+    <div style="background:#111;border-radius:20px;padding:32px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:24px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:20px">접대 골프 입문자</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">추정 모수</p>
+          <p style="color:#6366f1;font-size:1.6rem;font-weight:900">50~80만</p>
+          <p style="color:#555;font-size:0.72rem">골프 인구 564만 중</p>
+        </div>
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">객단가</p>
+          <p style="color:#fff;font-size:1.6rem;font-weight:900">높음</p>
+          <p style="color:#555;font-size:0.72rem">빠르게 풀세트 구매</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">시그널</span><span style="color:#ccc;font-size:0.8rem">골프앱 첫 설치 + 30대 + 평일 저녁</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">추천 업종</span><span style="color:#ccc;font-size:0.8rem">골프 용품 · 웨어 · 레슨 · 카드</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">메시지</span><span style="color:#fff;font-size:0.8rem;font-weight:600">"다음 주 라운딩 전에 준비하세요"</span></div>
+      </div>
+      <p style="color:#333;font-size:0.68rem;margin-top:16px">출처: 레저백서 2023 · IGAWorks DMP P030902</p>
     </div>
 
     <div class="note-end">오늘의 오디언스 #1 · 접대 골프를 시작한 30대 · by IGAWorks</div>
@@ -307,17 +318,27 @@ elif st.session_state.view == "detail_finance":
       <p>같은 대출 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
     </div>
 
-    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
-      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
-      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
-        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">대출 시급한 사람 (만기 임박/금리 변동)</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">대출 비교앱 3개+ 동시 설치 + 매일 접속 + 야간 활성</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">대출 비교앱 사용자 중 시급 유저 추정 10~15%</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">은행 · 저축은행 · 핀테크 · 보험 · 카드사</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"지금 갈아타면 월 OO만 원 절약"</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">전환율</td><td style="padding:8px 0;color:#6366f1;font-weight:700">평소 대비 3~5배 (추정)</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">유저 가치</td><td style="padding:8px 0;color:#111">대출 전환 1건당 수수료 수십만 원</td></tr>
-      </table>
+    <div style="background:#111;border-radius:20px;padding:32px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:24px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:20px">대출 시급한 사람</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">전환율</p>
+          <p style="color:#6366f1;font-size:1.6rem;font-weight:900">3~5배</p>
+          <p style="color:#555;font-size:0.72rem">평소 대비</p>
+        </div>
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">유저 가치</p>
+          <p style="color:#fff;font-size:1.6rem;font-weight:900">수십만 원</p>
+          <p style="color:#555;font-size:0.72rem">전환 1건당 수수료</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">시그널</span><span style="color:#ccc;font-size:0.8rem">대출앱 3개+ 동시 + 매일 접속 + 야간</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">추천 업종</span><span style="color:#ccc;font-size:0.8rem">은행 · 저축은행 · 핀테크 · 보험</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">메시지</span><span style="color:#fff;font-size:0.8rem;font-weight:600">"지금 갈아타면 월 32만 원 절약"</span></div>
+      </div>
+      <p style="color:#333;font-size:0.68rem;margin-top:16px">대출 비교앱 사용자 중 시급 유저 추정 10~15%</p>
     </div>
 
     <div class="note-end">오늘의 오디언스 #2 · 다음 달 이자가 올라가는 사람 · by IGAWorks</div>
@@ -424,17 +445,27 @@ elif st.session_state.view == "detail_gold":
       <p>같은 전세대출 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
     </div>
 
-    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
-      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
-      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
-        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">전세대출 규제 영향권 유저 (비거주 1주택자)</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">대출앱 2개+ 동시 설치 + 부동산앱 급증 + 뉴스앱 50%+</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">1주택자 전세대출 보증 13.9조 원 (2025년) 영향권</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">은행 · 핀테크 · 부동산 플랫폼 · 보험</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"4/17 전에 대환 신청하세요"</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">긴급도</td><td style="padding:8px 0;color:#ef4444;font-weight:700">🔴 데드라인 있음 (4월 17일)</td></tr>
-        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">데이터 기준</td><td style="padding:8px 0;color:#999;font-size:0.78rem">금융위 4/1 발표, 서울경제 4/12 보도</td></tr>
-      </table>
+    <div style="background:#111;border-radius:20px;padding:32px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:24px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:20px">전세대출 규제 영향권 유저</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">영향 규모</p>
+          <p style="color:#ef4444;font-size:1.6rem;font-weight:900">13.9조</p>
+          <p style="color:#555;font-size:0.72rem">1주택자 전세대출 보증</p>
+        </div>
+        <div>
+          <p style="color:#666;font-size:0.72rem;margin-bottom:4px">데드라인</p>
+          <p style="color:#ef4444;font-size:1.6rem;font-weight:900">D-5</p>
+          <p style="color:#555;font-size:0.72rem">4월 17일 만기연장 금지</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid #222;padding-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">시그널</span><span style="color:#ccc;font-size:0.8rem">대출앱 2개+ 동시 + 부동산앱 급증 + 뉴스 50%+</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">추천 업종</span><span style="color:#ccc;font-size:0.8rem">은행 · 핀테크 · 부동산 · 보험</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:#666;font-size:0.8rem">메시지</span><span style="color:#fff;font-size:0.8rem;font-weight:600">"4/17 전에 대환 신청하세요"</span></div>
+      </div>
+      <p style="color:#333;font-size:0.68rem;margin-top:16px">출처: 금융위 4/1 발표 · 서울경제 4/12 보도</p>
     </div>
 
     <div class="note-end">오늘의 오디언스 #3 · 4월 17일 전에 움직여야 하는 사람 · by IGAWorks</div>
