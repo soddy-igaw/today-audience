@@ -180,14 +180,15 @@ def _call_bedrock(prompt):
     try:
         import boto3
         region = os.environ.get("AWS_REGION", "us-east-1")
-        client = boto3.client("bedrock-runtime", region_name=region)
+        session = boto3.Session(profile_name="audmaker_soddy")
+        client = session.client("bedrock-runtime", region_name=region)
         body = json.dumps({
             "anthropic_version": "bedrock-2023-05-31",
             "max_tokens": 4096,
             "messages": [{"role": "user", "content": prompt}]
         })
         resp = client.invoke_model(
-            modelId="anthropic.claude-sonnet-4-20250514-v1:0",
+            modelId="us.anthropic.claude-3-5-haiku-20241022-v1:0",
             body=body,
             contentType="application/json",
         )
