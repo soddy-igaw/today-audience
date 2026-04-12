@@ -290,7 +290,7 @@ elif st.session_state.view == "detail_gold":
         st.session_state.view = "feed"
         st.rerun()
 
-    gold_html = """
+    jeonse_html = """
     <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
     <div class="nav"><div>
       <div class="nav-logo"><span>오늘의</span> 오디언스</div>
@@ -306,114 +306,81 @@ elif st.session_state.view == "detail_gold":
     </div>
 
     <div class="note-body">
-      <p class="lead">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후,<br>금 앱을 처음 깐 사람</p>
+      <p class="lead">'전세대출 관심자' 타겟팅 금지!<br>4월 17일 전에 움직여야 하는 사람</p>
 
-      <div class="quote">"금에 관심 있는 사람과<br>금에 돈을 넣을 사람은<br>완전히 다른 사람이에요."</div>
+      <div class="quote">"불이 났는데<br>소화기 할인 쿠폰을 보내고 있는 격이죠."</div>
 
-      <p>대형 증권사 마케터 P씨의 말입니다.</p>
+      <p>시중은행 전세대출 담당 마케터 L씨의 말입니다.</p>
 
-      <p>금값이 역대 최고를 찍고 있습니다. 1돈에 84만 원. 2025년 한 해 동안 금값은 70% 올랐어요. 1979년 이후 최고 상승률입니다.</p>
+      <p>4월 1일, 금융위원회가 가계대출 종합 대책을 발표했습니다. 핵심은 세 가지:</p>
 
-      <p>은행 금괴는 품절입니다. 한국조폐공사는 2025년 2월 금괴 제조를 중단했고, 10월에는 아예 전 제품 판매를 멈췄어요. 신한은행은 1kg 금괴 판매를 중지했습니다.</p>
+      <p>→ 가계대출 연간 성장률 상한 <strong>1.5%</strong>로 하향<br>→ 다주택자 주담대 만기 연장 <strong>4월 17일부터 금지</strong><br>→ 비거주 1주택자 전세대출 보증 <strong>제한 검토 중</strong></p>
 
-      <p>그런데 금을 못 사게 된 사람들이 <strong>다른 곳으로 몰리고 있습니다.</strong></p>
+      <p>특히 비거주 1주택자 — 집은 있지만 전세 놓고 다른 곳에 사는 사람 — 의 전세대출 보증이 막힐 수 있습니다. 2025년 한 해 동안 1주택자에게 나간 전세대출 보증이 <strong>13조 9400억 원</strong>. 이 중 상당수가 영향권입니다.</p>
 
-      <p>2026년 1월, 국내 금 ETF 유입액 7900억 원. 5대 은행 금통장 잔액 2조 1700억 원. KRX 금 거래 개인 계좌 145만 개.</p>
+      <p>L씨에게 물었습니다. "지금 전세대출 광고 어떻게 하고 계세요?"</p>
 
-      <p>모든 증권사가 이 사람들을 잡으려고 합니다. 문제는 <strong>"금 투자자"로 타겟하면 전환이 안 나온다</strong>는 것.</p>
+      <div class="quote">"'전세대출 관심자'로 타겟하면 두 부류가 섞여요.<br>그냥 금리 비교하는 사람과,<br>규제 전에 대환하지 않으면 대출이 막히는 사람.<br><br>이 두 사람한테 같은 광고를 보내고 있어요.<br>한쪽은 '좋은 조건 있으면 갈아탈까' 수준이고,<br>다른 한쪽은 '이번 달 안에 안 하면 끝'인데."</div>
+
+      <p>맞습니다. 규제가 만든 건 <strong>데드라인</strong>입니다. 4월 17일이 지나면 다주택자는 만기 연장이 안 됩니다. 비거주 1주택자 규제가 확정되면 전세대출 보증 자체가 막힙니다.</p>
+
+      <p><strong>이 사람들은 "관심"이 아니라 "생존"으로 움직이고 있습니다.</strong></p>
     </div>
 
     <div class="sig-box">
-      <div class="sig-label">P씨의 고민</div>
-      <p>"금 ETF 광고 CTR은 다른 상품의 2배예요. 클릭은 엄청 나요. 그런데 실제 계좌 개설은 1%도 안 됩니다. 다른 ETF는 3~4%인데."<br><br>"트래픽을 뜯어보니까, 대부분 '금 1돈 얼마', '오늘 금값' 검색하다 들어온 사람이에요. 금값이 궁금한 거지, 금을 사려는 게 아닌 거죠."<br><br>"그물을 바다에 던지는데, 잡히는 건 해파리뿐인 겁니다."</p>
+      <div class="sig-label">BEHAVIOR SIGNALS</div>
+      <p>→ 대출 비교앱 <strong>2개 이상 동시 설치</strong> (14일 내)<br>→ 부동산앱 활성 사용 <strong>급증</strong><br>→ 뉴스앱 접속 빈도 <strong>50% 이상 증가</strong><br>→ 규제 발표(4/1) 전후 <strong>설치 타이밍 집중</strong><br>→ 야간/새벽 시간대 활성</p>
     </div>
 
     <div class="note-body">
-      <p>P씨에게 물었습니다. "그러면 진짜 금을 살 사람은 어떻게 구분하나요?"</p>
+      <p>핵심은 <strong>"동시에 여러 앱을 까는 속도"</strong>입니다.</p>
 
-      <p>P씨는 모른다고 했어요. <strong>"금 관심자" 안에서 진짜 투자할 사람을 걸러낼 방법이 없다</strong>는 게 문제였습니다.</p>
-
-      <p>우리는 앱 데이터에서 힌트를 찾았습니다.</p>
+      <p>금리 비교하는 사람은 앱을 하나 깔고 천천히 봅니다.<br>규제 전에 움직이는 사람은 <strong>대출앱 + 부동산앱 + 뉴스앱을 동시에 깝니다.</strong></p>
     </div>
 
-    <div class="sig-box">
-      <div class="sig-label">우리가 발견한 것</div>
-      <p>금 거래 앱을 처음 설치한 사람은 세 부류로 나뉩니다.<br>그리고 <strong>설치 후 3일간의 행동</strong>으로 구분할 수 있습니다.<br><br>→ 금 거래앱(금방/한국금거래소/KRX금시장) <strong>첫 설치</strong><br>→ 설치 후 3일 내 <strong>매일 실행</strong> vs <strong>1회 실행 후 방치</strong><br>→ 증권앱 <strong>기존 사용자</strong> 여부<br>→ 금값 급등 시점과 설치 타이밍의 <strong>상관관계</strong></p>
-    </div>
-
-    <div class="note-body">
-      <p>같은 "금 앱 설치자"인데, 전부 다른 사람입니다.</p>
-    </div>
-
-    <div style="overflow-x:auto;margin:32px 0">
-      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
-        <tr style="border-bottom:2px solid #e0e0e0">
-          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600"></th>
-          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600">기존 금 투자자</th>
-          <th style="text-align:left;padding:12px 8px;color:#6366f1;font-weight:600">FOMO 진입자</th>
-          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600">관망형</th>
-        </tr>
-        <tr style="border-bottom:1px solid #f0f0f0">
-          <td style="padding:10px 8px;color:#888">금 앱</td>
-          <td style="padding:10px 8px;color:#888">6개월+ 전 설치</td>
-          <td style="padding:10px 8px;color:#333;font-weight:500">최근 30일 내 첫 설치</td>
-          <td style="padding:10px 8px;color:#888">최근 30일 내 첫 설치</td>
-        </tr>
-        <tr style="border-bottom:1px solid #f0f0f0">
-          <td style="padding:10px 8px;color:#888">설치 후 3일</td>
-          <td style="padding:10px 8px;color:#888">꾸준히 사용</td>
-          <td style="padding:10px 8px;color:#333;font-weight:500">매일 실행</td>
-          <td style="padding:10px 8px;color:#888">1회 실행 후 방치</td>
-        </tr>
-        <tr style="border-bottom:1px solid #f0f0f0">
-          <td style="padding:10px 8px;color:#888">증권앱</td>
-          <td style="padding:10px 8px;color:#888">있거나 없거나</td>
-          <td style="padding:10px 8px;color:#333;font-weight:500">기존 사용자 (주식→금 이동)</td>
-          <td style="padding:10px 8px;color:#888">없는 경우 많음</td>
-        </tr>
-        <tr style="border-bottom:1px solid #f0f0f0">
-          <td style="padding:10px 8px;color:#888">설치 타이밍</td>
-          <td style="padding:10px 8px;color:#888">금값과 무관</td>
-          <td style="padding:10px 8px;color:#333;font-weight:500">금값 급등 직후</td>
-          <td style="padding:10px 8px;color:#888">금값 급등 직후</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 8px;color:#888">전환 가능성</td>
-          <td style="padding:10px 8px;color:#888">이미 투자 중</td>
-          <td style="padding:10px 8px;color:#6366f1;font-weight:700">극상</td>
-          <td style="padding:10px 8px;color:#888">낮음 (교육 필요)</td>
-        </tr>
-      </table>
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-left">
+        <h4>전세대출 구경꾼</h4>
+        <p>부동산앱만 활성 증가<br>대출앱 미설치<br>뉴스 소비 평소와 비슷<br>30일+ 관찰 기간<br>전환 가능성 낮음</p>
+      </div>
+      <div class="cmp-card cmp-right">
+        <h4>규제 전 급히 움직이는 사람</h4>
+        <p>대출앱 2개+ 동시 설치<br>부동산앱 활성 급증<br>뉴스앱 접속 50%+ 증가<br>14일 내 집중 행동<br>전환 가능성 극상</p>
+      </div>
     </div>
 
     <div class="note-body">
-      <p>P씨에게 이 구분법을 보여줬더니 이렇게 말했어요.</p>
+      <p>L씨가 이 구분법을 보고 말했어요.</p>
 
-      <div class="quote">"우리가 지금까지 설치자를 전부 '관심자' 한 덩어리로 봤는데,<br>설치 후 3일 데이터만 봐도 나뉘는 거네요.<br><br>FOMO 진입자한테는 '지금 안 사면 더 오릅니다'가 먹히고,<br>관망형한테는 '소액부터 시작해보세요'가 먹히겠네요."</div>
-
-      <p>맞습니다. 같은 금 앱 설치자인데, <strong>메시지가 완전히 달라져야 합니다.</strong></p>
+      <div class="quote">"규제 전에 움직이는 사람한테는<br>'금리 비교해보세요'가 아니라<br>'4월 17일 전에 대환 신청하세요'가 맞는 거네요.<br><br>지금 우리는 불 난 사람한테<br>소화기 할인 쿠폰을 보내고 있었던 거예요."</div>
     </div>
 
     <div class="sig-box">
       <div class="sig-label">DMP에서 잡는 법 (앱 데이터만으로)</div>
-      <p><strong>[FOMO 진입자 — 전환 가능성 극상]</strong><br>금 거래앱 첫 설치 (30일 내)<br>+ 설치 후 3일 내 매일 실행<br>+ 증권앱 기존 사용자<br>+ 금값 급등 시점 전후 설치<br><br><strong>[관망형 — 교육 콘텐츠 타겟]</strong><br>금 거래앱 첫 설치 (30일 내)<br>+ 설치 후 1회 실행, 이후 미실행<br>+ 증권앱 미보유<br><br><em>* 앱 내부 거래 데이터(매수/매도)는 DMP로 볼 수 없습니다.<br>설치 + 실행 빈도 + 타이밍으로 의도를 추정합니다.</em></p>
+      <p><strong>[규제 전 급히 움직이는 사람]</strong><br>대출 비교앱 2개+ (14일 내 동시 설치)<br>+ 부동산앱 활성 사용 급증<br>+ 뉴스앱 접속 빈도 50%+ 증가<br>+ 규제 발표(4/1) 이후 설치<br><br><strong>[확인 중인 사람 — 교육 콘텐츠 타겟]</strong><br>부동산앱/뉴스앱 활성 증가 (+30%)<br>+ 대출앱 미설치<br>+ 30일 관찰 기간<br><br><em>* 실제 대출 보유 여부, 주택 소유 여부는 DMP로 확인 불가.<br>앱 설치 속도 + 동시성 + 타이밍으로 긴급도를 추정합니다.</em></p>
+    </div>
+
+    <div class="note-body">
+      <p>이 오디언스를 누가 사나?</p>
+
+      <p>전세대출 전환 1건당 은행 수수료는 수십만 원입니다. 규제 전 대환 수요가 몰리는 지금, <strong>이 유저 1명의 가치는 평소의 3~5배</strong>입니다.</p>
     </div>
 
     <div class="ind-grid">
-      <div class="ind-card"><div class="ind-title">📈 증권사</div><div class="ind-desc">FOMO 진입자 → "금 ETF, 1000원부터" 즉시 전환 유도</div></div>
-      <div class="ind-card"><div class="ind-title">🏦 은행</div><div class="ind-desc">관망형 → "금통장 소액 시작" 교육형 콘텐츠</div></div>
-      <div class="ind-card"><div class="ind-title">🤖 로보어드바이저</div><div class="ind-desc">"금+채권+달러 자동 분산" 안전자산 포트폴리오</div></div>
-      <div class="ind-card"><div class="ind-title">📚 재테크 교육</div><div class="ind-desc">"금값 역대 최고, 지금 사도 될까?" 콘텐츠 마케팅</div></div>
+      <div class="ind-card"><div class="ind-title">🏦 은행/저축은행</div><div class="ind-desc">"4/17 전 대환 신청" 긴급 캠페인</div></div>
+      <div class="ind-card"><div class="ind-title">📱 핀테크</div><div class="ind-desc">대출 비교 "내 전세대출 규제 영향 확인" 유도</div></div>
+      <div class="ind-card"><div class="ind-title">🏠 부동산 플랫폼</div><div class="ind-desc">전세→매매 전환 매물 추천</div></div>
+      <div class="ind-card"><div class="ind-title">🛡️ 보험</div><div class="ind-desc">전세보증보험 긴급 가입 타겟팅</div></div>
     </div>
 
     <div class="insight">
       <div class="ins-label">💡 KEY INSIGHT</div>
-      <p>"금 투자자"는 오디언스가 아닙니다.<br><br>금 앱을 <strong>깔고 매일 여는 사람</strong>과<br>금 앱을 <strong>깔고 한 번 보고 닫은 사람</strong>은<br>완전히 다른 사람입니다.<br><br><strong>설치 후 3일</strong>이 오디언스를 만듭니다.<br><br>금괴는 품절이지만, 금에 관심 있는 사람은 넘칩니다.<br>그 안에서 진짜 투자할 사람을 찾는 게 광고주의 숙제입니다.</p>
+      <p>"전세대출 관심자"는 오디언스가 아닙니다.<br><br>규제가 만든 건 <strong>데드라인</strong>입니다.<br>4월 17일 전에 움직이는 사람과<br>그냥 뉴스 보는 사람은 완전히 다릅니다.<br><br><strong>대출앱 2개를 동시에 까는 속도</strong>가<br>오디언스를 만듭니다.<br><br>불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요.<br>소화기를 들고 달려가세요.</p>
     </div>
 
-    <div class="note-end">오늘의 오디언스 #3 · 금괴 품절 이후, 금 앱을 처음 깐 사람 · by IGAWorks</div>
+    <div class="note-end">오늘의 오디언스 #3 · 4월 17일 전에 움직여야 하는 사람 · by IGAWorks<br><span style="font-size:0.72rem;color:#ccc">데이터 기준: 2026년 4월 1~12일 금융위원회 발표 및 언론 보도</span></div>
     """
-    st.markdown(gold_html, unsafe_allow_html=True)
+    st.markdown(jeonse_html, unsafe_allow_html=True)
 
 else:
     # ===== MAIN PAGE =====
@@ -451,7 +418,7 @@ else:
             st.session_state.view = "detail_finance"
             st.rerun()
     with col2:
-        if st.button("🥇 #3 · 금\n\n'금 투자자' 타겟팅 금지!\n금괴 품절 이후 앱을 처음 깐 사람", key="go_gold"):
+        if st.button("🏠 #3 · 전세대출\n\n'전세대출 관심자' 타겟팅 금지!\n4월 17일 전에 움직여야 하는 사람", key="go_gold"):
             st.session_state.view = "detail_gold"
             st.rerun()
 
