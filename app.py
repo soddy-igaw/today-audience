@@ -266,6 +266,105 @@ elif st.session_state.view == "detail_finance":
     """
     st.markdown(finance_html, unsafe_allow_html=True)
 
+elif st.session_state.view == "detail_gold":
+    if st.button("← 돌아가기", key="back_gold"):
+        st.session_state.view = "feed"
+        st.rerun()
+
+    gold_html = """
+    <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
+
+    <div class="author">
+      <div class="author-avatar">IG</div>
+      <div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">2026.04.12 · 오늘의 오디언스 #3</div>
+      </div>
+    </div>
+
+    <div class="note-body">
+      <p class="lead">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후 ETF로 몰린 사람</p>
+
+      <div class="quote">"금을 사고 싶은 게 아니라,<br>주식이 무서워진 겁니다."</div>
+
+      <p>금값이 역대 최고를 찍었습니다. 금 1돈에 93만 원. 은행 금괴는 품절이고, 금통장은 대기열입니다.</p>
+
+      <p>그런데 이상한 일이 벌어지고 있어요. 증권앱에서 <strong>금 ETF를 처음 산 사람</strong>이 급증하고 있습니다. 올해만 금 ETF 유입이 7900억 원. 전년 대비 3배.</p>
+
+      <p>이 사람들은 누구일까요?</p>
+
+      <p>증권사 마케터 P씨에게 물었습니다.</p>
+
+      <div class="quote">"금 ETF 신규 매수자 데이터를 뜯어봤는데요,<br>기존 금 투자자가 아니에요.<br>주식 거래 빈도가 확 줄어든 사람들이<br>금 ETF로 넘어오고 있어요."</div>
+
+      <p>맞습니다. 이 사람은 <strong>"금 투자자"가 아닙니다.</strong><br><strong>"주식이 무서워진 사람"</strong>입니다.</p>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">BEHAVIOR SIGNALS</div>
+      <p>→ 증권앱 활성 유지, 그러나 주식 거래 빈도 <strong>감소</strong><br>→ 금 ETF / 금통장 관련 콘텐츠 소비 <strong>시작</strong><br>→ "금 1돈 가격" "금 ETF 추천" 콘텐츠 탐색<br>→ 금 거래 플랫폼 앱 <strong>첫</strong> 설치<br>→ 안전자산 관련 유튜브 시청 시간 급증</p>
+    </div>
+
+    <div class="note-body">
+      <p>핵심은 <strong>"왜 금을 사는지"</strong>입니다.</p>
+
+      <p>같은 "금 ETF 매수자"인데 전부 다른 사람이에요.</p>
+    </div>
+
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-left">
+        <h4>기존 금 투자자</h4>
+        <p>포트폴리오 분산 목적<br>금 시세 꾸준히 추적<br>장기 보유<br>금괴/골드바 선호<br>추가 설득 어려움</p>
+      </div>
+      <div class="cmp-card cmp-right">
+        <h4>주식 도피형 금 진입자</h4>
+        <p>주식 손실 후 안전자산 이동<br>금 ETF 첫 매수<br>단기~중기 보유<br>앱으로 간편 매수 선호<br>다른 안전자산에도 관심</p>
+      </div>
+    </div>
+
+    <div class="note-body">
+      <p>P씨가 흥미로운 이야기를 했어요.</p>
+
+      <div class="quote">"이 사람들한테 '금 투자의 장점'을 말하면 안 먹혀요.<br>'지금 주식 들고 있으면 위험한 이유'를 말해야 반응합니다.<br>금을 사는 게 아니라, 주식에서 도망치는 거니까요."</div>
+
+      <p>그래서 광고 메시지가 완전히 달라져야 합니다.</p>
+
+      <p>기존 금 투자자에게는: "금값 전망, 올해 더 오를까?"<br>주식 도피형에게는: <strong>"불안한 장에서 내 자산을 지키는 법"</strong></p>
+
+      <p>같은 금 ETF 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">DMP에서 잡는 법</div>
+      <p><strong>[주식 도피형 금 진입자]</strong><br>증권앱 활성 + 주식 거래 빈도 감소 (최근 30일)<br>+ 금 ETF/금통장 콘텐츠 소비 시작<br>+ 금 거래 플랫폼 앱 첫 설치<br>+ 안전자산 관련 콘텐츠 소비 급증</p>
+    </div>
+
+    <div class="note-body">
+      <p>더 재밌는 건, 이 사람은 금만 보는 게 아니라는 겁니다.</p>
+
+      <p>주식이 무서워진 사람은 <strong>동시에 여러 안전자산을 탐색</strong>합니다. 금 ETF, 달러 예금, 채권 ETF, 심지어 부동산까지. 한 사람이 여러 카테고리의 광고주에게 가치가 있어요.</p>
+    </div>
+
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ind-title">📈 증권사</div><div class="ind-desc">금 ETF "1000원부터 금 투자" 신규 계좌 유도</div></div>
+      <div class="ind-card"><div class="ind-title">🏦 은행</div><div class="ind-desc">금통장 "비과세 혜택" + 달러 예금 교차 제안</div></div>
+      <div class="ind-card"><div class="ind-title">🤖 로보어드바이저</div><div class="ind-desc">"금+채권+달러 자동 분산" 포트폴리오 제안</div></div>
+      <div class="ind-card"><div class="ind-title">📚 재테크 교육</div><div class="ind-desc">"하락장에서 자산 지키는 법" 콘텐츠 마케팅</div></div>
+    </div>
+
+    <div class="insight">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"금 투자자"는 오디언스가 아닙니다.<br><br><strong>왜 금을 사는지</strong>가 오디언스를 만듭니다.<br><br>금괴를 모으는 사람과, 주식이 무서워서 도망친 사람은 완전히 다릅니다.<br>같은 금 ETF 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+    </div>
+
+    <div class="note-end">오늘의 오디언스 #3 · 금괴 품절 이후 ETF로 몰린 사람 · by IGAWorks</div>
+    """
+    st.markdown(gold_html, unsafe_allow_html=True)
+
 else:
     # ===== MAIN PAGE =====
     st.markdown("""
@@ -338,16 +437,40 @@ else:
         st.session_state.view = "detail_finance"
         st.rerun()
 
+    # ===== NOTE CARD #3 (Gold) =====
+    st.markdown("""
+    <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:28px;margin-bottom:16px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+        <div style="width:32px;height:32px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700">IG</div>
+        <div>
+          <div style="font-size:0.78rem;font-weight:600;color:#111">IGAWorks 오디언스 랩</div>
+          <div style="font-size:0.68rem;color:#bbb">2026.04.12</div>
+        </div>
+        <div style="margin-left:auto;background:#f0eeff;color:#6366f1;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px">🥇 #3</div>
+      </div>
+      <h3 style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후 ETF로 몰린 사람</h3>
+      <p style="color:#888;font-size:0.88rem;line-height:1.6;margin-bottom:14px">"금을 사고 싶은 게 아니라, 주식이 무서워진 겁니다." 금 ETF 유입 7900억 원, 이 사람들은 금 투자자가 아닙니다.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">증권사</span>
+        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">은행</span>
+        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">로보어드바이저</span>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if st.button("🥇 금괴 품절 이후 ETF로 몰린 사람 — 읽기", key="go_gold"):
+        st.session_state.view = "detail_gold"
+        st.rerun()
+
     # ===== COMING SOON CARDS =====
     st.markdown("""<p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:40px 0 20px;padding-top:32px;border-top:1px solid #f0f0f0">공개 예정 노트</p>""", unsafe_allow_html=True)
 
     UPCOMING = [
-        ("#3", "⛳", "스크린에서 필드로 넘어가는 여성 골퍼", "스포츠/레저", "D-5"),
-        ("#4", "🏦", "전세 만기 D-90, 지금 움직이는 사람", "금융", "D-12"),
-        ("#5", "💍", "결혼 준비 커플의 동시다발 소비", "라이프 전환", "D-19"),
-        ("#6", "👶", "첫 아이 출산 준비 부부", "라이프 전환", "D-26"),
-        ("#7", "👗", "콰이어트 럭셔리에 눈뜬 30대", "패션", "D-33"),
-        ("#8", "👟", "러닝에 빠진 패션 피플", "패션", "D-40"),
+        ("#4", "⛳", "스크린에서 필드로 넘어가는 여성 골퍼", "스포츠/레저", "D-5"),
+        ("#5", "🛒", "새벽배송에서 당일배송으로 갈아탄 사람", "쇼핑/배달", "D-12"),
+        ("#6", "💍", "결혼 준비 커플의 동시다발 소비", "라이프 전환", "D-19"),
+        ("#7", "👶", "첫 아이 출산 준비 부부", "라이프 전환", "D-26"),
+        ("#8", "👗", "콰이어트 럭셔리에 눈뜬 30대", "패션", "D-33"),
     ]
 
     for num, emoji, title, cat, dday in UPCOMING:
