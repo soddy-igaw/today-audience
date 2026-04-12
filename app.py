@@ -411,30 +411,31 @@ else:
       <p style="color:#888;font-size:0.92rem;line-height:1.7">광고주가 미처 생각하지 못한 타겟을 매일 발견하는 곳.<br>트렌드를 자동으로 읽고, 행동 시그널을 조합해<br>아직 아무도 안 쓰는 오디언스를 제안합니다.</p>
     </div>
 
-    <!-- Divider -->
     <div style="border-top:1px solid #f0f0f0;margin:8px 0 32px"></div>
 
-    <!-- Feed label -->
-    <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">오늘의 노트</p>
-    """, unsafe_allow_html=True)
+    <!-- TODAY'S AUDIENCE (Golf) -->
+    <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">🎯 오늘의 오디언스</p>
 
-    # ===== NOTE CARD #1 (Golf) =====
-    st.markdown("""
-    <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:28px;margin-bottom:16px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-        <div style="width:32px;height:32px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700">IG</div>
+    <div style="background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:36px;margin-bottom:40px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+        <div style="width:36px;height:36px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;font-weight:700">IG</div>
         <div>
-          <div style="font-size:0.78rem;font-weight:600;color:#111">IGAWorks 오디언스 랩</div>
-          <div style="font-size:0.68rem;color:#bbb">2026.04.11</div>
+          <div style="font-size:0.82rem;font-weight:600;color:#111">IGAWorks 오디언스 랩</div>
+          <div style="font-size:0.7rem;color:#bbb">2026.04.12</div>
         </div>
-        <div style="margin-left:auto;background:#f0eeff;color:#6366f1;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px">⛳ #1</div>
+        <div style="margin-left:auto;background:#6366f1;color:#fff;font-size:0.7rem;font-weight:700;padding:4px 14px;border-radius:100px">⛳ TODAY</div>
       </div>
-      <h3 style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">'골프 관심자' 타겟팅 금지!<br>접대 골프 입문자의 숨겨진 구매 시그널</h3>
-      <p style="color:#888;font-size:0.88rem;line-height:1.6;margin-bottom:14px">"드라이버를 사는 게 아니라, 창피를 안 당할 보험을 사는 겁니다." 회사 때문에 골프에 입문한 30대의 행동 패턴을 분석했습니다.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">골프 용품</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">골프웨어</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">프리미엄 카드</span>
+      <h2 style="font-size:1.4rem;font-weight:900;color:#111;line-height:1.3;margin-bottom:12px">'골프 관심자' 타겟팅 금지!<br>접대 골프 입문자의 숨겨진 구매 시그널</h2>
+      <p style="color:#666;font-size:0.92rem;line-height:1.7;margin-bottom:16px">"드라이버를 사는 게 아니라, 창피를 안 당할 보험을 사는 겁니다." 한국 골프 인구 564만 명 중, 회사 때문에 입문한 30대의 행동 패턴은 완전히 다릅니다.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
+        <span style="background:#f0eeff;color:#6366f1;font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:100px">골프 용품</span>
+        <span style="background:#f0eeff;color:#6366f1;font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:100px">골프웨어</span>
+        <span style="background:#f0eeff;color:#6366f1;font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:100px">골프 레슨</span>
+        <span style="background:#f0eeff;color:#6366f1;font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:100px">프리미엄 카드</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding-top:16px;border-top:1px solid #f0f0f0">
+        <span style="font-size:0.78rem;color:#888">추정 모수 <strong style="color:#6366f1">564만 명</strong> 중 접대 입문자</span>
+        <span style="margin-left:auto;color:#6366f1;font-size:0.85rem;font-weight:600">읽기 →</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
@@ -443,77 +444,53 @@ else:
         st.session_state.view = "detail_golf"
         st.rerun()
 
-    # ===== NOTE CARD #2 (Finance) =====
+    # Gallery
     st.markdown("""
-    <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:28px;margin-bottom:16px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-        <div style="width:32px;height:32px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700">IG</div>
-        <div>
-          <div style="font-size:0.78rem;font-weight:600;color:#111">IGAWorks 오디언스 랩</div>
-          <div style="font-size:0.68rem;color:#bbb">2026.04.10</div>
+    <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 오디언스 갤러리</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px">
+
+      <!-- Card: 대출 -->
+      <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:24px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span style="background:#f0eeff;color:#6366f1;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:100px">💰 #2</span>
+          <span style="font-size:0.68rem;color:#bbb">2026.04.10</span>
         </div>
-        <div style="margin-left:auto;background:#f0eeff;color:#6366f1;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px">💰 #2</div>
+        <h3 style="font-size:1.05rem;font-weight:800;color:#111;line-height:1.3;margin-bottom:8px">'대출 관심자' 타겟팅 금지!<br>다음 달 이자가 올라가는 사람</h3>
+        <p style="color:#999;font-size:0.82rem;line-height:1.5;margin-bottom:12px">앱 1개 vs 3개. 시급함의 크기가 오디언스를 만든다.</p>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">은행</span>
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">핀테크</span>
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">보험</span>
+        </div>
       </div>
-      <h3 style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">'대출 관심자' 타겟팅 금지!<br>다음 달 이자가 올라가는 사람</h3>
-      <p style="color:#888;font-size:0.88rem;line-height:1.6;margin-bottom:14px">앱 1개 깔고 가끔 보는 사람과, 3개 깔고 매일 여는 사람은 완전히 다릅니다. 시급함의 크기가 오디언스를 만듭니다.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">은행</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">핀테크</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">보험</span>
+
+      <!-- Card: 금 -->
+      <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:24px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span style="background:#f0eeff;color:#6366f1;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:100px">🥇 #3</span>
+          <span style="font-size:0.68rem;color:#bbb">2026.04.12</span>
+        </div>
+        <h3 style="font-size:1.05rem;font-weight:800;color:#111;line-height:1.3;margin-bottom:8px">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후 앱을 처음 깐 사람</h3>
+        <p style="color:#999;font-size:0.82rem;line-height:1.5;margin-bottom:12px">설치 후 3일이 오디언스를 만든다. FOMO vs 관망.</p>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">증권사</span>
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">은행</span>
+          <span style="background:#f8f8f8;color:#999;font-size:0.68rem;padding:3px 8px;border-radius:100px">로보어드바이저</span>
+        </div>
       </div>
+
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("💰 다음 달 이자가 올라가는 사람 — 읽기", key="go_finance"):
-        st.session_state.view = "detail_finance"
-        st.rerun()
-
-    # ===== NOTE CARD #3 (Gold) =====
-    st.markdown("""
-    <div style="background:#fff;border:1px solid #f0f0f0;border-radius:16px;padding:28px;margin-bottom:16px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-        <div style="width:32px;height:32px;border-radius:50%;background:#6366f1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700">IG</div>
-        <div>
-          <div style="font-size:0.78rem;font-weight:600;color:#111">IGAWorks 오디언스 랩</div>
-          <div style="font-size:0.68rem;color:#bbb">2026.04.12</div>
-        </div>
-        <div style="margin-left:auto;background:#f0eeff;color:#6366f1;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px">🥇 #3</div>
-      </div>
-      <h3 style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후 ETF로 몰린 사람</h3>
-      <p style="color:#888;font-size:0.88rem;line-height:1.6;margin-bottom:14px">"금을 사고 싶은 게 아니라, 주식이 무서워진 겁니다." 금 ETF 유입 7900억 원, 이 사람들은 금 투자자가 아닙니다.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">증권사</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">은행</span>
-        <span style="background:#f8f8f8;color:#888;font-size:0.72rem;padding:4px 10px;border-radius:100px">로보어드바이저</span>
-      </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    if st.button("🥇 금괴 품절 이후 ETF로 몰린 사람 — 읽기", key="go_gold"):
-        st.session_state.view = "detail_gold"
-        st.rerun()
-
-    # ===== COMING SOON CARDS =====
-    st.markdown("""<p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:40px 0 20px;padding-top:32px;border-top:1px solid #f0f0f0">공개 예정 노트</p>""", unsafe_allow_html=True)
-
-    UPCOMING = [
-        ("#4", "⛳", "스크린에서 필드로 넘어가는 여성 골퍼", "스포츠/레저", "D-5"),
-        ("#5", "🛒", "새벽배송에서 당일배송으로 갈아탄 사람", "쇼핑/배달", "D-12"),
-        ("#6", "💍", "결혼 준비 커플의 동시다발 소비", "라이프 전환", "D-19"),
-        ("#7", "👶", "첫 아이 출산 준비 부부", "라이프 전환", "D-26"),
-        ("#8", "👗", "콰이어트 럭셔리에 눈뜬 30대", "패션", "D-33"),
-    ]
-
-    for num, emoji, title, cat, dday in UPCOMING:
-        st.markdown(f"""
-        <div style="background:#fafafa;border:1px solid #f5f5f5;border-radius:12px;padding:20px 24px;margin-bottom:10px;opacity:0.5;display:flex;align-items:center;gap:14px">
-          <div style="font-size:1.4rem">{emoji}</div>
-          <div style="flex:1">
-            <div style="font-size:0.68rem;color:#6366f1;font-weight:600;letter-spacing:1px;margin-bottom:2px">{cat} · 오늘의 오디언스 {num}</div>
-            <div style="font-size:0.92rem;font-weight:700;color:#111">{title}</div>
-          </div>
-          <div style="background:#f0eeff;color:#6366f1;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap">{dday}</div>
-        </div>
-        """, unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("💰 대출 — 읽기", key="go_finance"):
+            st.session_state.view = "detail_finance"
+            st.rerun()
+    with col2:
+        if st.button("🥇 금 — 읽기", key="go_gold"):
+            st.session_state.view = "detail_gold"
+            st.rerun()
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
