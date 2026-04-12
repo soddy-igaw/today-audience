@@ -287,81 +287,112 @@ elif st.session_state.view == "detail_gold":
     </div>
 
     <div class="note-body">
-      <p class="lead">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후 ETF로 몰린 사람</p>
+      <p class="lead">'금 투자자' 타겟팅 금지!<br>금괴 품절 이후,<br>금 앱을 처음 깐 사람</p>
 
-      <div class="quote">"금을 사고 싶은 게 아니라,<br>주식이 무서워진 겁니다."</div>
+      <div class="quote">"금에 관심 있는 사람과<br>금에 돈을 넣을 사람은<br>완전히 다른 사람이에요."</div>
 
-      <p>금값이 역대 최고를 찍었습니다. 금 1돈에 93만 원. 은행 금괴는 품절이고, 금통장은 대기열입니다.</p>
+      <p>대형 증권사 마케터 P씨의 말입니다.</p>
 
-      <p>그런데 이상한 일이 벌어지고 있어요. 증권앱에서 <strong>금 ETF를 처음 산 사람</strong>이 급증하고 있습니다. 올해만 금 ETF 유입이 7900억 원. 전년 대비 3배.</p>
+      <p>금값이 역대 최고를 찍고 있습니다. 1돈에 84만 원. 2025년 한 해 동안 금값은 70% 올랐어요. 1979년 이후 최고 상승률입니다.</p>
 
-      <p>이 사람들은 누구일까요?</p>
+      <p>은행 금괴는 품절입니다. 한국조폐공사는 2025년 2월 금괴 제조를 중단했고, 10월에는 아예 전 제품 판매를 멈췄어요. 신한은행은 1kg 금괴 판매를 중지했습니다.</p>
 
-      <p>증권사 마케터 P씨에게 물었습니다.</p>
+      <p>그런데 금을 못 사게 된 사람들이 <strong>다른 곳으로 몰리고 있습니다.</strong></p>
 
-      <div class="quote">"금 ETF 신규 매수자 데이터를 뜯어봤는데요,<br>기존 금 투자자가 아니에요.<br>주식 거래 빈도가 확 줄어든 사람들이<br>금 ETF로 넘어오고 있어요."</div>
+      <p>2026년 1월, 국내 금 ETF 유입액 7900억 원. 5대 은행 금통장 잔액 2조 1700억 원. KRX 금 거래 개인 계좌 145만 개.</p>
 
-      <p>맞습니다. 이 사람은 <strong>"금 투자자"가 아닙니다.</strong><br><strong>"주식이 무서워진 사람"</strong>입니다.</p>
+      <p>모든 증권사가 이 사람들을 잡으려고 합니다. 문제는 <strong>"금 투자자"로 타겟하면 전환이 안 나온다</strong>는 것.</p>
     </div>
 
     <div class="sig-box">
-      <div class="sig-label">BEHAVIOR SIGNALS</div>
-      <p>→ 증권앱 활성 유지, 그러나 주식 거래 빈도 <strong>감소</strong><br>→ 금 ETF / 금통장 관련 콘텐츠 소비 <strong>시작</strong><br>→ "금 1돈 가격" "금 ETF 추천" 콘텐츠 탐색<br>→ 금 거래 플랫폼 앱 <strong>첫</strong> 설치<br>→ 안전자산 관련 유튜브 시청 시간 급증</p>
+      <div class="sig-label">P씨의 고민</div>
+      <p>"금 ETF 광고 CTR은 다른 상품의 2배예요. 클릭은 엄청 나요. 그런데 실제 계좌 개설은 1%도 안 됩니다. 다른 ETF는 3~4%인데."<br><br>"트래픽을 뜯어보니까, 대부분 '금 1돈 얼마', '오늘 금값' 검색하다 들어온 사람이에요. 금값이 궁금한 거지, 금을 사려는 게 아닌 거죠."<br><br>"그물을 바다에 던지는데, 잡히는 건 해파리뿐인 겁니다."</p>
     </div>
 
     <div class="note-body">
-      <p>핵심은 <strong>"왜 금을 사는지"</strong>입니다.</p>
+      <p>P씨에게 물었습니다. "그러면 진짜 금을 살 사람은 어떻게 구분하나요?"</p>
 
-      <p>같은 "금 ETF 매수자"인데 전부 다른 사람이에요.</p>
-    </div>
+      <p>P씨는 모른다고 했어요. <strong>"금 관심자" 안에서 진짜 투자할 사람을 걸러낼 방법이 없다</strong>는 게 문제였습니다.</p>
 
-    <div class="cmp-grid">
-      <div class="cmp-card cmp-left">
-        <h4>기존 금 투자자</h4>
-        <p>포트폴리오 분산 목적<br>금 시세 꾸준히 추적<br>장기 보유<br>금괴/골드바 선호<br>추가 설득 어려움</p>
-      </div>
-      <div class="cmp-card cmp-right">
-        <h4>주식 도피형 금 진입자</h4>
-        <p>주식 손실 후 안전자산 이동<br>금 ETF 첫 매수<br>단기~중기 보유<br>앱으로 간편 매수 선호<br>다른 안전자산에도 관심</p>
-      </div>
-    </div>
-
-    <div class="note-body">
-      <p>P씨가 흥미로운 이야기를 했어요.</p>
-
-      <div class="quote">"이 사람들한테 '금 투자의 장점'을 말하면 안 먹혀요.<br>'지금 주식 들고 있으면 위험한 이유'를 말해야 반응합니다.<br>금을 사는 게 아니라, 주식에서 도망치는 거니까요."</div>
-
-      <p>그래서 광고 메시지가 완전히 달라져야 합니다.</p>
-
-      <p>기존 금 투자자에게는: "금값 전망, 올해 더 오를까?"<br>주식 도피형에게는: <strong>"불안한 장에서 내 자산을 지키는 법"</strong></p>
-
-      <p>같은 금 ETF 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+      <p>우리는 앱 데이터에서 힌트를 찾았습니다.</p>
     </div>
 
     <div class="sig-box">
-      <div class="sig-label">DMP에서 잡는 법</div>
-      <p><strong>[주식 도피형 금 진입자]</strong><br>증권앱 활성 + 주식 거래 빈도 감소 (최근 30일)<br>+ 금 ETF/금통장 콘텐츠 소비 시작<br>+ 금 거래 플랫폼 앱 첫 설치<br>+ 안전자산 관련 콘텐츠 소비 급증</p>
+      <div class="sig-label">우리가 발견한 것</div>
+      <p>금 거래 앱을 처음 설치한 사람은 세 부류로 나뉩니다.<br>그리고 <strong>설치 후 3일간의 행동</strong>으로 구분할 수 있습니다.<br><br>→ 금 거래앱(금방/한국금거래소/KRX금시장) <strong>첫 설치</strong><br>→ 설치 후 3일 내 <strong>매일 실행</strong> vs <strong>1회 실행 후 방치</strong><br>→ 증권앱 <strong>기존 사용자</strong> 여부<br>→ 금값 급등 시점과 설치 타이밍의 <strong>상관관계</strong></p>
     </div>
 
     <div class="note-body">
-      <p>더 재밌는 건, 이 사람은 금만 보는 게 아니라는 겁니다.</p>
+      <p>같은 "금 앱 설치자"인데, 전부 다른 사람입니다.</p>
+    </div>
 
-      <p>주식이 무서워진 사람은 <strong>동시에 여러 안전자산을 탐색</strong>합니다. 금 ETF, 달러 예금, 채권 ETF, 심지어 부동산까지. 한 사람이 여러 카테고리의 광고주에게 가치가 있어요.</p>
+    <div style="overflow-x:auto;margin:32px 0">
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
+        <tr style="border-bottom:2px solid #e0e0e0">
+          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600"></th>
+          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600">기존 금 투자자</th>
+          <th style="text-align:left;padding:12px 8px;color:#6366f1;font-weight:600">FOMO 진입자</th>
+          <th style="text-align:left;padding:12px 8px;color:#999;font-weight:600">관망형</th>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0">
+          <td style="padding:10px 8px;color:#888">금 앱</td>
+          <td style="padding:10px 8px;color:#888">6개월+ 전 설치</td>
+          <td style="padding:10px 8px;color:#333;font-weight:500">최근 30일 내 첫 설치</td>
+          <td style="padding:10px 8px;color:#888">최근 30일 내 첫 설치</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0">
+          <td style="padding:10px 8px;color:#888">설치 후 3일</td>
+          <td style="padding:10px 8px;color:#888">꾸준히 사용</td>
+          <td style="padding:10px 8px;color:#333;font-weight:500">매일 실행</td>
+          <td style="padding:10px 8px;color:#888">1회 실행 후 방치</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0">
+          <td style="padding:10px 8px;color:#888">증권앱</td>
+          <td style="padding:10px 8px;color:#888">있거나 없거나</td>
+          <td style="padding:10px 8px;color:#333;font-weight:500">기존 사용자 (주식→금 이동)</td>
+          <td style="padding:10px 8px;color:#888">없는 경우 많음</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0">
+          <td style="padding:10px 8px;color:#888">설치 타이밍</td>
+          <td style="padding:10px 8px;color:#888">금값과 무관</td>
+          <td style="padding:10px 8px;color:#333;font-weight:500">금값 급등 직후</td>
+          <td style="padding:10px 8px;color:#888">금값 급등 직후</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 8px;color:#888">전환 가능성</td>
+          <td style="padding:10px 8px;color:#888">이미 투자 중</td>
+          <td style="padding:10px 8px;color:#6366f1;font-weight:700">극상</td>
+          <td style="padding:10px 8px;color:#888">낮음 (교육 필요)</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="note-body">
+      <p>P씨에게 이 구분법을 보여줬더니 이렇게 말했어요.</p>
+
+      <div class="quote">"우리가 지금까지 설치자를 전부 '관심자' 한 덩어리로 봤는데,<br>설치 후 3일 데이터만 봐도 나뉘는 거네요.<br><br>FOMO 진입자한테는 '지금 안 사면 더 오릅니다'가 먹히고,<br>관망형한테는 '소액부터 시작해보세요'가 먹히겠네요."</div>
+
+      <p>맞습니다. 같은 금 앱 설치자인데, <strong>메시지가 완전히 달라져야 합니다.</strong></p>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-label">DMP에서 잡는 법 (앱 데이터만으로)</div>
+      <p><strong>[FOMO 진입자 — 전환 가능성 극상]</strong><br>금 거래앱 첫 설치 (30일 내)<br>+ 설치 후 3일 내 매일 실행<br>+ 증권앱 기존 사용자<br>+ 금값 급등 시점 전후 설치<br><br><strong>[관망형 — 교육 콘텐츠 타겟]</strong><br>금 거래앱 첫 설치 (30일 내)<br>+ 설치 후 1회 실행, 이후 미실행<br>+ 증권앱 미보유<br><br><em>* 앱 내부 거래 데이터(매수/매도)는 DMP로 볼 수 없습니다.<br>설치 + 실행 빈도 + 타이밍으로 의도를 추정합니다.</em></p>
     </div>
 
     <div class="ind-grid">
-      <div class="ind-card"><div class="ind-title">📈 증권사</div><div class="ind-desc">금 ETF "1000원부터 금 투자" 신규 계좌 유도</div></div>
-      <div class="ind-card"><div class="ind-title">🏦 은행</div><div class="ind-desc">금통장 "비과세 혜택" + 달러 예금 교차 제안</div></div>
-      <div class="ind-card"><div class="ind-title">🤖 로보어드바이저</div><div class="ind-desc">"금+채권+달러 자동 분산" 포트폴리오 제안</div></div>
-      <div class="ind-card"><div class="ind-title">📚 재테크 교육</div><div class="ind-desc">"하락장에서 자산 지키는 법" 콘텐츠 마케팅</div></div>
+      <div class="ind-card"><div class="ind-title">📈 증권사</div><div class="ind-desc">FOMO 진입자 → "금 ETF, 1000원부터" 즉시 전환 유도</div></div>
+      <div class="ind-card"><div class="ind-title">🏦 은행</div><div class="ind-desc">관망형 → "금통장 소액 시작" 교육형 콘텐츠</div></div>
+      <div class="ind-card"><div class="ind-title">🤖 로보어드바이저</div><div class="ind-desc">"금+채권+달러 자동 분산" 안전자산 포트폴리오</div></div>
+      <div class="ind-card"><div class="ind-title">📚 재테크 교육</div><div class="ind-desc">"금값 역대 최고, 지금 사도 될까?" 콘텐츠 마케팅</div></div>
     </div>
 
     <div class="insight">
       <div class="ins-label">💡 KEY INSIGHT</div>
-      <p>"금 투자자"는 오디언스가 아닙니다.<br><br><strong>왜 금을 사는지</strong>가 오디언스를 만듭니다.<br><br>금괴를 모으는 사람과, 주식이 무서워서 도망친 사람은 완전히 다릅니다.<br>같은 금 ETF 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+      <p>"금 투자자"는 오디언스가 아닙니다.<br><br>금 앱을 <strong>깔고 매일 여는 사람</strong>과<br>금 앱을 <strong>깔고 한 번 보고 닫은 사람</strong>은<br>완전히 다른 사람입니다.<br><br><strong>설치 후 3일</strong>이 오디언스를 만듭니다.<br><br>금괴는 품절이지만, 금에 관심 있는 사람은 넘칩니다.<br>그 안에서 진짜 투자할 사람을 찾는 게 광고주의 숙제입니다.</p>
     </div>
 
-    <div class="note-end">오늘의 오디언스 #3 · 금괴 품절 이후 ETF로 몰린 사람 · by IGAWorks</div>
+    <div class="note-end">오늘의 오디언스 #3 · 금괴 품절 이후, 금 앱을 처음 깐 사람 · by IGAWorks</div>
     """
     st.markdown(gold_html, unsafe_allow_html=True)
 
