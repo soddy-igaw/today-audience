@@ -177,6 +177,25 @@ if st.session_state.view == "detail_golf":
       <p>"골프 관심자"는 오디언스가 아닙니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.<br><br>같은 골프인데, 접대 입문자 / 취미 입문자 / 은퇴 후 입문자는 완전히 다른 사람입니다. 행동 시그널의 조합으로 이걸 구분할 수 있습니다.</p>
     </div>
 
+    <div class="note-body">
+      <p class="lead" style="font-size:1.05rem">이 오디언스에게 보내는 광고</p>
+      <p>❌ 기존 "골프 관심자" 타겟:<br><span style="color:#999">"골프 시작하셨나요? 입문자 추천 클럽 보기"</span></p>
+      <p>✅ 접대 골프 입문자 타겟:<br><strong>"다음 주 라운딩, 창피 안 당하려면 이것만 준비하세요"</strong></p>
+      <p>같은 골프 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+    </div>
+
+    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
+      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
+        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">접대 골프 입문자 (30대 대기업)</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">골프앱 첫 설치 + 30대 + 평일 저녁 활성</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">골프 인구 500~600만 명 중 접대 입문자 추정 50~80만</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">골프 용품 · 골프웨어 · 레슨 · 프리미엄 카드</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"다음 주 라운딩 전에 준비하세요"</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">데이터 출처</td><td style="padding:8px 0;color:#999;font-size:0.78rem">레저백서 2023, IGAWorks DMP 페르소나 P030902</td></tr>
+      </table>
+    </div>
+
     <div class="note-end">오늘의 오디언스 #1 · 접대 골프를 시작한 30대 · by IGAWorks</div>
     """
     st.markdown(golf_html, unsafe_allow_html=True)
@@ -281,6 +300,26 @@ elif st.session_state.view == "detail_finance":
       <p>"대출 관심자"는 오디언스가 아닙니다.<br><br>앱 <strong>1개</strong> 깔고 가끔 보는 사람과<br>앱 <strong>3개</strong> 깔고 매일 여는 사람은<br>완전히 다른 사람입니다.<br><br><strong>시급함의 크기</strong>가 오디언스를 만듭니다.<br><br>광고비의 90%를 "언젠가" 사람에게 쓰지 마세요.<br>"이번 달" 사람에게 쓰세요.</p>
     </div>
 
+    <div class="note-body">
+      <p class="lead" style="font-size:1.05rem">이 오디언스에게 보내는 광고</p>
+      <p>❌ 기존 "대출 관심자" 타겟:<br><span style="color:#999">"금리 비교해보세요! 최저 연 3.5%~"</span></p>
+      <p>✅ 대출 시급한 사람 타겟:<br><strong>"지금 갈아타면 월 32만 원 절약됩니다. 3분 만에 확인"</strong></p>
+      <p>같은 대출 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+    </div>
+
+    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
+      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
+        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">대출 시급한 사람 (만기 임박/금리 변동)</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">대출 비교앱 3개+ 동시 설치 + 매일 접속 + 야간 활성</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">대출 비교앱 사용자 중 시급 유저 추정 10~15%</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">은행 · 저축은행 · 핀테크 · 보험 · 카드사</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"지금 갈아타면 월 OO만 원 절약"</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">전환율</td><td style="padding:8px 0;color:#6366f1;font-weight:700">평소 대비 3~5배 (추정)</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">유저 가치</td><td style="padding:8px 0;color:#111">대출 전환 1건당 수수료 수십만 원</td></tr>
+      </table>
+    </div>
+
     <div class="note-end">오늘의 오디언스 #2 · 다음 달 이자가 올라가는 사람 · by IGAWorks</div>
     """
     st.markdown(finance_html, unsafe_allow_html=True)
@@ -378,7 +417,27 @@ elif st.session_state.view == "detail_gold":
       <p>"전세대출 관심자"는 오디언스가 아닙니다.<br><br>규제가 만든 건 <strong>데드라인</strong>입니다.<br>4월 17일 전에 움직이는 사람과<br>그냥 뉴스 보는 사람은 완전히 다릅니다.<br><br><strong>대출앱 2개를 동시에 까는 속도</strong>가<br>오디언스를 만듭니다.<br><br>불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요.<br>소화기를 들고 달려가세요.</p>
     </div>
 
-    <div class="note-end">오늘의 오디언스 #3 · 4월 17일 전에 움직여야 하는 사람 · by IGAWorks<br><span style="font-size:0.72rem;color:#ccc">데이터 기준: 2026년 4월 1~12일 금융위원회 발표 및 언론 보도</span></div>
+    <div class="note-body">
+      <p class="lead" style="font-size:1.05rem">이 오디언스에게 보내는 광고</p>
+      <p>❌ 기존 "전세대출 관심자" 타겟:<br><span style="color:#999">"전세대출 금리 비교, 최저 연 3.2%~"</span></p>
+      <p>✅ 규제 전 급히 움직이는 사람 타겟:<br><strong>"4월 17일 전에 대환 신청하세요. 이후엔 만기 연장이 안 됩니다"</strong></p>
+      <p>같은 전세대출 광고인데, 메시지 하나로 전환율이 달라집니다.</p>
+    </div>
+
+    <div style="background:#f8f7ff;border:1px solid #e8e5ff;border-radius:16px;padding:28px;margin:36px 0">
+      <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:1.5px;margin-bottom:16px">📋 오디언스 요약 카드</p>
+      <table style="width:100%;font-size:0.85rem;border-collapse:collapse">
+        <tr><td style="padding:8px 0;color:#888;width:35%">오디언스</td><td style="padding:8px 0;color:#111;font-weight:600">전세대출 규제 영향권 유저 (비거주 1주택자)</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">DMP 시그널</td><td style="padding:8px 0;color:#111">대출앱 2개+ 동시 설치 + 부동산앱 급증 + 뉴스앱 50%+</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추정 모수</td><td style="padding:8px 0;color:#6366f1;font-weight:700">1주택자 전세대출 보증 13.9조 원 (2025년) 영향권</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 업종</td><td style="padding:8px 0;color:#111">은행 · 핀테크 · 부동산 플랫폼 · 보험</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">추천 메시지</td><td style="padding:8px 0;color:#111">"4/17 전에 대환 신청하세요"</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">긴급도</td><td style="padding:8px 0;color:#ef4444;font-weight:700">🔴 데드라인 있음 (4월 17일)</td></tr>
+        <tr style="border-top:1px solid #f0f0f0"><td style="padding:8px 0;color:#888">데이터 기준</td><td style="padding:8px 0;color:#999;font-size:0.78rem">금융위 4/1 발표, 서울경제 4/12 보도</td></tr>
+      </table>
+    </div>
+
+    <div class="note-end">오늘의 오디언스 #3 · 4월 17일 전에 움직여야 하는 사람 · by IGAWorks</div>
     """
     st.markdown(jeonse_html, unsafe_allow_html=True)
 
