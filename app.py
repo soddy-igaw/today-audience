@@ -601,30 +601,26 @@ else:
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">🎯 오늘의 오디언스</p>
 
     <div style="border-radius:20px;overflow:hidden;border:1px solid #e8e8e8;margin-bottom:40px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
-      <div style="background:linear-gradient(135deg,#f97316 0%,#ea580c 50%,#c2410c 100%);padding:48px 36px;position:relative;overflow:hidden">
-        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">🐾</div>
+      <div style="background:linear-gradient(135deg,#1a472a 0%,#2d5a3f 50%,#3a7d5c 100%);padding:48px 36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">⛳</div>
         <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:1px">TODAY</span>
-        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'반려동물 관심자' 타겟팅 금지!</h2>
-        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">첫 입양 후 2주, 앱이 폭발하는 사람</p>
+        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'골프 관심자' 타겟팅 금지!</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">접대 골프 입문자의 숨겨진 구매 시그널</p>
       </div>
       <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:0.78rem;color:#888">반려동물 인구 <strong style="color:#6366f1">1,546만 명</strong> 중 첫 입양자</span>
+        <span style="font-size:0.78rem;color:#888">추정 모수 <strong style="color:#6366f1">564만 명</strong> 중 접대 입문자</span>
         <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("🐾 첫 입양 후 2주, 앱이 폭발하는 사람", key="go_pet"):
-        st.session_state.view = "detail_pet"
+    if st.button("⛳ 접대 골프를 시작한 30대", key="go_golf"):
+        st.session_state.view = "detail_golf"
         st.rerun()
 
     st.markdown("""
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 지난 노트</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:40px">
-      <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-        <div style="background:linear-gradient(135deg,#1a472a,#3a7d5c);padding:28px 20px;position:relative"><div style="position:absolute;top:10px;right:14px;font-size:2.4rem;opacity:0.15">⛳</div><span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:100px">#1</span><h3 style="color:#fff;font-size:0.92rem;font-weight:800;line-height:1.3;margin-top:10px">접대 골프<br>입문자</h3></div>
-        <div style="padding:12px 14px"><span style="font-size:0.68rem;color:#999">골프 용품 · 웨어 · 레슨</span></div>
-      </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px">
       <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
         <div style="background:linear-gradient(135deg,#1e3a5f,#2a5298);padding:28px 20px;position:relative"><div style="position:absolute;top:10px;right:14px;font-size:2.4rem;opacity:0.15">💰</div><span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:100px">#2</span><h3 style="color:#fff;font-size:0.92rem;font-weight:800;line-height:1.3;margin-top:10px">대출 시급한<br>사람</h3></div>
         <div style="padding:12px 14px"><span style="font-size:0.68rem;color:#999">은행 · 핀테크 · 보험</span></div>
@@ -636,16 +632,12 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button("⛳ 골프", key="go_golf"):
-            st.session_state.view = "detail_golf"
-            st.rerun()
-    with col2:
         if st.button("💰 대출", key="go_finance"):
             st.session_state.view = "detail_finance"
             st.rerun()
-    with col3:
+    with col2:
         if st.button("🏠 전세", key="go_gold"):
             st.session_state.view = "detail_gold"
             st.rerun()
