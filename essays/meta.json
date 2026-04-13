@@ -41,7 +41,7 @@
   {
     "id": "pet_04",
     "number": 4,
-    "date": "2026-04-13",
+    "date": "2026-04-12",
     "category": "반려동물",
     "emoji": "🐾",
     "color_from": "#9a3412",
@@ -59,8 +59,8 @@
     "emoji": "💰",
     "color_from": "#1e3a5f",
     "color_to": "#2a5298",
-    "title": "대출 비교는 그만.",
-    "subtitle": "진짜 금융 스마트어퍼를 잡아라.",
+    "title": "'금융 관심자' 타겟팅 금지!",
+    "subtitle": "[계좌 개설만 하고 잠든 은행 앱 유저]",
     "summary_label": "금융 오디언스 인사이트",
     "industries": "금융"
   }

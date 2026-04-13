@@ -110,7 +110,7 @@ def get_persona_data(category):
 
 def build_prompt(category, trends, persona):
     """에세이 생성 프롬프트 구성"""
-    today = datetime.now().strftime("%Y.%m.%d")
+    today_str = datetime.now().strftime("%Y.%m.%d")
     apps = ", ".join(CATEGORY_APPS.get(category, []))
     trend_text = "\n".join([f"- [{t['keyword']}] {t['title']}" for t in trends[:5]])
     persona_text = ""
@@ -124,39 +124,47 @@ def build_prompt(category, trends, persona):
 """
 
     return f"""당신은 IGAWorks의 "오늘의 오디언스" 에세이 작가입니다.
-롱블랙 스타일로 한 편의 에세이를 작성하세요.
+롱블랙 스타일로 한 편의 에세이를 작성하세요. 최소 3000자 이상, 깊이 있게 작성하세요.
 
 ## 규칙
 1. 제목은 "'OO 관심자' 타겟팅 금지! [구체적 오디언스]" 형식
-2. 가상의 광고주 마케터 인터뷰 포함 (이름은 알파벳 1글자+씨)
+2. 가상의 광고주 마케터 인터뷰 포함 (이름은 알파벳 1글자+씨). 대화를 여러 번 주고받으세요.
 3. DMP 앱 데이터로 실제 잡을 수 있는 시그널만 사용
    - 가능: 앱 설치, 사용 빈도, 동시 설치, 타이밍
    - 불가: 앱 내부 행동, 검색어, 구매 금액
-4. 비교표 포함 (구경꾼 vs 진짜 타겟)
+4. 비교표 포함 (구경꾼 vs 진짜 타겟) — 각 5줄 이상
 5. 광고 카피 비교 (❌ 기존 vs ✅ 새 오디언스)
 6. 추적 가능한 앱: {apps}
 7. 짧은 문장, 많은 줄바꿈, 롱블랙 톤
+8. 추천 업종 4개 이상 (ind-grid)
+9. AUDIENCE CARD (다크 배경 style="background:#111") 포함 — 추정 모수, 추천 업종, 시그널, 메시지
+
+## 필수 구조 (이 순서대로 작성):
+1. <p class="lead"> 제목/부제
+2. <div class="quote"> 마케터 첫 인용
+3. 문제 제기 (기존 타겟팅의 한계) — 3~4 문단
+4. <div class="sig-box"> BEHAVIOR SIGNALS (5개 이상)
+5. 핵심 해석 — 2~3 문단
+6. <div class="cmp-grid"> 비교표
+7. <div class="sig-box"> DMP에서 잡는 법
+8. <div class="ind-grid"> 추천 업종 4개
+9. <div class="insight"> KEY INSIGHT
+10. 광고 카피 비교 (❌ vs ✅)
+11. AUDIENCE CARD (다크 배경 div)
+12. <div class="note-end"> 마무리
 
 ## 오늘의 카테고리: {category}
-## 날짜: {today}
+## 날짜: {today_str}
 
-## 최신 트렌드 (3일 이내 뉴스):
+## 최신 트렌드:
 {trend_text}
 
 {persona_text}
 
 ## 출력 형식
-HTML 조각(fragment)만 출력하세요. <!DOCTYPE>, <html>, <head>, <body>, <article> 태그는 절대 포함하지 마세요.
-바로 <div class="note-body">로 시작하세요.
-class는 다음을 사용:
-- note-body, lead, quote (본문)
-- sig-box, sig-label (시그널 박스)
-- cmp-grid, cmp-card, cmp-left, cmp-right (비교표)
-- ind-grid, ind-card, ind-title, ind-desc (추천 업종)
-- insight, ins-label (인사이트)
-- note-end (마지막 줄)
-
-마지막에 AUDIENCE CARD (다크 배경 #111) 포함.
+HTML 조각(fragment)만 출력. <!DOCTYPE>, <html>, <head>, <body>, <article> 태그 절대 금지.
+<div class="note-body">로 시작하세요.
+class: note-body, lead, quote, sig-box, sig-label, cmp-grid, cmp-card, cmp-left, cmp-right, ind-grid, ind-card, ind-title, ind-desc, insight, ins-label, note-end
 """
 
 
@@ -202,7 +210,7 @@ def _call_bedrock(prompt):
             "messages": [{"role": "user", "content": prompt}]
         })
         resp = client.invoke_model(
-            modelId="us.anthropic.claude-3-5-haiku-20241022-v1:0",
+            modelId="us.anthropic.claude-sonnet-4-20250514-v1:0",
             body=body,
             contentType="application/json",
         )
@@ -268,6 +276,10 @@ def update_meta(category, today, essay_html):
 
     next_num = max((e["number"] for e in meta), default=0) + 1
     date_str = today.strftime("%Y-%m-%d")
+
+    # 같은 날짜+카테고리 에세이가 이미 있으면 교체
+    meta = [e for e in meta if not (e["date"] == date_str and e["category"] == category)]
+    next_num = max((e["number"] for e in meta), default=0) + 1
     colors = CATEGORY_COLORS.get(category, ("#333", "#666", "📝"))
 
     # Extract title/subtitle from HTML
