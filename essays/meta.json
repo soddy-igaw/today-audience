@@ -10,7 +10,8 @@
     "title": "'골프 관심자' 타겟팅 금지!",
     "subtitle": "접대 골프 입문자의 숨겨진 구매 시그널",
     "summary_label": "골프 인구 <strong>564만 명</strong> 중 접대 입문자",
-    "industries": "골프 용품 · 웨어 · 레슨"
+    "industries": "골프 용품 · 웨어 · 레슨",
+    "card_title": "접대 골프<br>입문자"
   },
   {
     "id": "finance_02",
@@ -23,7 +24,8 @@
     "title": "'대출 관심자' 타겟팅 금지!",
     "subtitle": "다음 달 이자가 올라가는 사람",
     "summary_label": "대출 비교앱 <strong>3개+</strong> 동시 설치자",
-    "industries": "은행 · 핀테크 · 보험"
+    "industries": "은행 · 핀테크 · 보험",
+    "card_title": "대출 시급한<br>사람"
   },
   {
     "id": "realestate_03",
@@ -36,7 +38,8 @@
     "title": "'전세대출 관심자' 타겟팅 금지!",
     "subtitle": "4월 17일 전에 움직여야 하는 사람",
     "summary_label": "1주택자 전세대출 보증 <strong>13.9조</strong> 영향권",
-    "industries": "은행 · 부동산 · 보험"
+    "industries": "은행 · 부동산 · 보험",
+    "card_title": "전세대출<br>규제 영향권"
   },
   {
     "id": "pet_04",
@@ -49,7 +52,8 @@
     "title": "'반려동물 관심자' 타겟팅 금지!",
     "subtitle": "첫 입양 후 2주, 앱이 폭발하는 사람",
     "summary_label": "반려동물 인구 <strong>1,546만 명</strong> 중 첫 입양자",
-    "industries": "사료 · 펫보험 · 동물병원 · 용품"
+    "industries": "사료 · 펫보험 · 동물병원 · 용품",
+    "card_title": "첫 입양 후 2주<br>앱 폭발"
   },
   {
     "id": "금융_05",
