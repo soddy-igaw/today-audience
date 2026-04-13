@@ -265,55 +265,181 @@ def _call_openai(prompt, api_key):
         return result["choices"][0]["message"]["content"]
 
 
-def update_meta(category, today, essay_html):
-    """essays/meta.json에 새 에세이 추가, HTML 파일 저장"""
-    meta_path = os.path.join(ESSAY_DIR, "essays", "meta.json")
-    if os.path.exists(meta_path):
-        with open(meta_path, "r", encoding="utf-8") as f:
-            meta = json.load(f)
-    else:
-        meta = []
+def inject_to_app(category, today, essay_html):
+    """app.py에 새 에세이를 직접 삽입"""
+    import re as _re
 
-    next_num = max((e["number"] for e in meta), default=0) + 1
-    date_str = today.strftime("%Y-%m-%d")
-
-    # 같은 날짜+카테고리 에세이가 이미 있으면 교체
-    meta = [e for e in meta if not (e["date"] == date_str and e["category"] == category)]
-    next_num = max((e["number"] for e in meta), default=0) + 1
     colors = CATEGORY_COLORS.get(category, ("#333", "#666", "📝"))
+    color_from, color_to, emoji = colors
+    date_fmt = today.strftime("%Y.%m.%d")
 
-    # Extract title/subtitle from HTML
-    import re
-    title_m = re.search(r'class="lead"[^>]*>(.*?)</[^>]+>', essay_html, re.DOTALL)
-    raw_title = re.sub(r'<[^>]+>', ' ', title_m.group(1)).strip() if title_m else category
-    lines = [l.strip() for l in raw_title.split('\n') if l.strip()]
+    # Extract title/subtitle from essay HTML
+    m = _re.search(r'class="lead"[^>]*>(.*?)</[^>]+>', essay_html, _re.DOTALL)
+    raw = _re.sub(r'<[^>]+>', '\n', m.group(1)).strip() if m else category
+    lines = [l.strip() for l in raw.split('\n') if l.strip()]
     title = lines[0] if lines else category
     subtitle = lines[1] if len(lines) > 1 else title
 
-    essay_id = f"{category}_{next_num:02d}"
+    with open(APP_FILE, "r", encoding="utf-8") as f:
+        code = f.read()
 
-    entry = {
-        "id": essay_id,
-        "number": next_num,
-        "date": date_str,
-        "category": category,
-        "emoji": colors[2],
-        "color_from": colors[0],
-        "color_to": colors[1],
-        "title": title[:40],
-        "subtitle": subtitle[:40],
-        "summary_label": f"{category} 오디언스 인사이트",
-        "industries": category,
-    }
-    meta.append(entry)
-    with open(meta_path, "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=2)
+    # 1. Count existing essays to get next number
+    existing = _re.findall(r'오늘의 오디언스 #(\d+)', code)
+    next_num = max(int(n) for n in existing) + 1 if existing else 1
 
-    # Save essay HTML
-    html_path = os.path.join(ESSAY_DIR, "essays", f"{essay_id}.html")
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(essay_html)
-    print(f"📋 meta.json 업데이트: #{next_num} {essay_id}")
+    # 2. Find current TODAY info (from the go_ button before 지난 노트)
+    today_btn = _re.search(
+        r'if st\.button\("(.+?)",\s*key="go_(\w+)"\):\s*\n\s*st\.session_state\.view = "detail_(\w+)"',
+        code[code.find('🎯 오늘의 오디언스'):]
+    )
+    old_view_key = today_btn.group(2) if today_btn else None
+    old_detail = today_btn.group(3) if today_btn else None
+
+    # 3. Extract current TODAY card colors/emoji/title for moving to 지난 노트
+    today_card_m = _re.search(
+        r'<span[^>]*>TODAY</span>\s*<h2[^>]*>(.*?)</h2>\s*<p[^>]*>(.*?)</p>',
+        code, _re.DOTALL
+    )
+    old_title_short = _re.sub(r'<[^>]+>', '', today_card_m.group(1)).strip() if today_card_m else ""
+    old_gradient_m = _re.search(r'background:linear-gradient\(135deg,(#\w+)[^)]*\)', code[code.find('TODAY'):])
+    old_color_from = old_gradient_m.group(1) if old_gradient_m else "#333"
+    old_emoji_m = _re.search(r'opacity:0\.15">(.)(?:</div>)', code[code.find('TODAY'):])
+    old_emoji = old_emoji_m.group(1) if old_emoji_m else "📝"
+
+    # Get old summary from card bottom
+    old_summary_m = _re.search(r'font-size:0\.78rem;color:#888">(.*?)</span>', code[code.find('TODAY'):], _re.DOTALL)
+    old_summary_industries = ""
+    if old_summary_m:
+        old_summary_industries = _re.sub(r'<[^>]+>', '', old_summary_m.group(1)).strip()[:30]
+
+    new_view = f"detail_new{next_num}"
+
+    # 4. Build new elif route block
+    route_block = f'''
+elif st.session_state.view == "{new_view}":
+    if st.button("← 돌아가기", key="back_{next_num}"):
+        st.session_state.view = "feed"
+        st.rerun()
+
+    st.markdown("""
+    <style>.block-container {{ max-width:620px!important; padding:0 20px 80px!important; }}</style>
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
+    <div class="author">
+      <div class="author-avatar">IG</div>
+      <div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">{date_fmt} · 오늘의 오디언스 #{next_num}</div>
+      </div>
+    </div>
+    {essay_html}
+    """, unsafe_allow_html=True)
+
+'''
+
+    # 5. Insert route block before "else:" (main page)
+    code = code.replace('\nelse:\n    # ===== MAIN PAGE =====',
+                        route_block + 'else:\n    # ===== MAIN PAGE =====')
+
+    # 6. Replace TODAY card with new essay
+    today_section_start = code.find('🎯 오늘의 오디언스')
+    today_section_end = code.find('""", unsafe_allow_html=True)', today_section_start) + len('""", unsafe_allow_html=True)')
+
+    new_today_card = f'''🎯 오늘의 오디언스</p>
+
+    <div style="border-radius:20px;overflow:hidden;border:1px solid #e8e8e8;margin-bottom:40px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+      <div style="background:linear-gradient(135deg,{color_from} 0%,{color_to} 100%);padding:48px 36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">{emoji}</div>
+        <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:1px">TODAY</span>
+        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">{title}</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">{subtitle}</p>
+      </div>
+      <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
+        <span style="font-size:0.78rem;color:#888">{category} 오디언스 인사이트</span>
+        <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)'''
+
+    old_today = code[today_section_start:today_section_end]
+    code = code.replace(old_today, new_today_card)
+
+    # 7. Replace TODAY button
+    old_btn_pattern = _re.compile(
+        r'if st\.button\("[^"]+", key="go_\w+"\):\s*\n\s*st\.session_state\.view = "detail_\w+"\s*\n\s*st\.rerun\(\)\s*\n',
+        _re.MULTILINE
+    )
+    # Find the first go_ button after TODAY card (not in 지난 노트)
+    today_card_pos = code.find('🎯 오늘의 오디언스')
+    past_notes_pos = code.find('지난 노트')
+    btn_match = old_btn_pattern.search(code, today_card_pos, past_notes_pos)
+    if btn_match:
+        new_btn = f'''if st.button("{emoji} {subtitle}", key="go_new{next_num}"):
+        st.session_state.view = "{new_view}"
+        st.rerun()
+
+'''
+        code = code[:btn_match.start()] + '    ' + new_btn + code[btn_match.end():]
+
+    # 8. Add old TODAY to 지난 노트 grid (prepend as first card)
+    grid_marker = '<div style="display:grid;grid-template-columns:'
+    grid_pos = code.find(grid_marker)
+    if grid_pos > 0 and old_detail:
+        # Find the first card inside the grid
+        first_card_pos = code.find('<div style="border-radius:16px', grid_pos)
+        # Build card for old TODAY
+        old_card_title = old_title_short.replace("'", "").replace(" 타겟팅 금지!", "")
+        # Wrap long titles
+        words = old_card_title.split()
+        if len(words) > 2:
+            mid = len(words) // 2
+            old_card_title = ' '.join(words[:mid]) + '<br>' + ' '.join(words[mid:])
+
+        old_card = f'''<div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="background:linear-gradient(135deg,{old_color_from},{old_color_from}cc);padding:28px 20px;position:relative"><div style="position:absolute;top:10px;right:14px;font-size:2.4rem;opacity:0.15">{old_emoji}</div><span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:100px">#{next_num - 1}</span><h3 style="color:#fff;font-size:0.92rem;font-weight:800;line-height:1.3;margin-top:10px">{old_card_title}</h3></div>
+        <div style="padding:12px 14px"><span style="font-size:0.68rem;color:#999">{old_summary_industries}</span></div>
+      </div>
+      '''
+        code = code[:first_card_pos] + old_card + code[first_card_pos:]
+
+        # Update grid columns count
+        grid_line_start = code.rfind('grid-template-columns:', grid_pos)
+        grid_line_end = code.find(';', grid_line_start)
+        old_grid = code[grid_line_start:grid_line_end]
+        fr_count = old_grid.count('1fr')
+        new_grid = 'grid-template-columns:' + ' '.join(['1fr'] * (fr_count + 1))
+        code = code[:grid_line_start] + new_grid + code[grid_line_end:]
+
+        # Add button for old TODAY in columns
+        # Find the columns section after grid
+        col_section = _re.search(r'(col\d+, col\d+, col\d+)\s*=\s*st\.columns\((\d+)\)', code)
+        if col_section:
+            old_col_count = int(col_section.group(2))
+            # Add new column variable and button
+            new_col_count = old_col_count + 1
+            old_col_names = col_section.group(1)
+            new_col_name = f"col{new_col_count}"
+            new_col_names = f"{old_col_names}, {new_col_name}"
+            code = code.replace(
+                f'{old_col_names} = st.columns({old_col_count})',
+                f'{new_col_names} = st.columns({new_col_count})'
+            )
+            # Add button in new column before footer
+            footer_pos = code.find("st.markdown('<div class=\"footer\"")
+            if footer_pos > 0:
+                new_col_btn = f'''    with {new_col_name}:
+        if st.button("{old_emoji} {old_title_short[:15]}", key="go_{old_detail}2"):
+            st.session_state.view = "detail_{old_detail}"
+            st.rerun()
+
+'''
+                code = code[:footer_pos] + new_col_btn + code[footer_pos:]
+
+    with open(APP_FILE, "w", encoding="utf-8") as f:
+        f.write(code)
+    print(f"📝 app.py 업데이트: #{next_num} {new_view}")
 
 
 def run(dry_run=False):
@@ -371,9 +497,9 @@ def run(dry_run=False):
         print("🔍 dry-run 모드: 코드 반영 안 함")
         return
 
-    # 6. meta.json 업데이트 — app.py가 자동으로 읽음
-    update_meta(category, today, essay_html)
-    print("✅ 에세이 발행 완료! (meta.json 업데이트됨)")
+    # 6. app.py에 에세이 삽입
+    inject_to_app(category, today, essay_html)
+    print("✅ 에세이 발행 완료! (app.py 업데이트됨)")
 
 
 if __name__ == "__main__":
