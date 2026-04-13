@@ -28,7 +28,7 @@ CATEGORY_ROTATION = {
     0: "금융",    # 월
     1: "부동산",  # 화
     2: "쇼핑",    # 수
-    3: "배달",    # 목
+    3: "헬스",    # 목
     4: "골프",    # 금
     5: "교육",    # 토
     6: "반려동물", # 일
@@ -43,6 +43,7 @@ CATEGORY_KEYWORDS = {
     "교육": ["코딩 교육 AI", "이직 준비", "자격증", "온라인 강의"],
     "반려동물": ["반려동물 펫코노미", "펫보험", "동물병원", "반려동물 입양"],
     "패션": ["러닝크루", "콰이어트럭셔리", "중고명품"],
+    "헬스": ["헬스장 PT", "러닝크루", "홈트레이닝", "크로스핏", "필라테스"],
 }
 
 CATEGORY_APPS = {
@@ -54,6 +55,7 @@ CATEGORY_APPS = {
     "교육": ["클래스101", "패스트캠퍼스", "인프런"],
     "반려동물": ["포인핸드", "펫닥", "핏펫"],
     "패션": ["크림", "번개장터", "무신사"],
+    "헬스": ["캐치핏", "나이키런클럽", "킵", "애플피트니스", "눔"],
 }
 
 CATEGORY_COLORS = {
@@ -65,6 +67,7 @@ CATEGORY_COLORS = {
     "교육": ("#1e1b4b", "#4338ca", "📚"),
     "반려동물": ("#9a3412", "#f97316", "🐾"),
     "패션": ("#831843", "#db2777", "👗"),
+    "헬스": ("#0f766e", "#14b8a6", "💪"),
 }
 
 
@@ -180,11 +183,15 @@ def _call_bedrock(prompt):
     try:
         import boto3
         region = os.environ.get("AWS_REGION", "us-east-1")
-        # GitHub Actions에서는 환경변수, 로컬에서는 SSO 프로필
+        # GitHub Actions에서는 환경변수, 로컬에서는 SSO → default fallback
         if os.environ.get("AWS_ACCESS_KEY_ID"):
             session = boto3.Session()
         else:
-            session = boto3.Session(profile_name="audmaker_soddy")
+            try:
+                session = boto3.Session(profile_name="audmaker_soddy")
+                session.client("sts").get_caller_identity()
+            except Exception:
+                session = boto3.Session()  # default 프로필 (IAM 키)
         client = session.client("bedrock-runtime", region_name=region)
         body = json.dumps({
             "anthropic_version": "bedrock-2023-05-31",
@@ -247,6 +254,53 @@ def _call_openai(prompt, api_key):
         return result["choices"][0]["message"]["content"]
 
 
+def update_meta(category, today, essay_html):
+    """essays/meta.json에 새 에세이 추가, HTML 파일 저장"""
+    meta_path = os.path.join(ESSAY_DIR, "essays", "meta.json")
+    if os.path.exists(meta_path):
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+    else:
+        meta = []
+
+    next_num = max((e["number"] for e in meta), default=0) + 1
+    date_str = today.strftime("%Y-%m-%d")
+    colors = CATEGORY_COLORS.get(category, ("#333", "#666", "📝"))
+
+    # Extract title/subtitle from HTML
+    import re
+    title_m = re.search(r'class="lead"[^>]*>(.*?)</[^>]+>', essay_html, re.DOTALL)
+    raw_title = re.sub(r'<[^>]+>', ' ', title_m.group(1)).strip() if title_m else category
+    lines = [l.strip() for l in raw_title.split('\n') if l.strip()]
+    title = lines[0] if lines else category
+    subtitle = lines[1] if len(lines) > 1 else title
+
+    essay_id = f"{category}_{next_num:02d}"
+
+    entry = {
+        "id": essay_id,
+        "number": next_num,
+        "date": date_str,
+        "category": category,
+        "emoji": colors[2],
+        "color_from": colors[0],
+        "color_to": colors[1],
+        "title": title[:40],
+        "subtitle": subtitle[:40],
+        "summary_label": f"{category} 오디언스 인사이트",
+        "industries": category,
+    }
+    meta.append(entry)
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+
+    # Save essay HTML
+    html_path = os.path.join(ESSAY_DIR, "essays", f"{essay_id}.html")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(essay_html)
+    print(f"📋 meta.json 업데이트: #{next_num} {essay_id}")
+
+
 def run(dry_run=False):
     """전체 파이프라인 실행"""
     today = datetime.now()
@@ -294,12 +348,9 @@ def run(dry_run=False):
         print("🔍 dry-run 모드: 코드 반영 안 함")
         return
 
-    # 6. TODO: app.py 자동 수정 (TODAY 교체 + 지난 노트 이동)
-    print("⚠️  app.py 자동 수정은 아직 수동입니다.")
-    print("   생성된 에세이를 확인하고 'kiro chat'에서 반영해주세요.")
-
-    # 7. git push는 GitHub Actions에서 처리
-    print("✅ 에세이 생성 완료!")
+    # 6. meta.json 업데이트 — app.py가 자동으로 읽음
+    update_meta(category, today, essay_html)
+    print("✅ 에세이 발행 완료! (meta.json 업데이트됨)")
 
 
 if __name__ == "__main__":

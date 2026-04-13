@@ -1,0 +1,67 @@
+[
+  {
+    "id": "golf_01",
+    "number": 1,
+    "date": "2026-04-11",
+    "category": "골프",
+    "emoji": "⛳",
+    "color_from": "#1a472a",
+    "color_to": "#3a7d5c",
+    "title": "'골프 관심자' 타겟팅 금지!",
+    "subtitle": "접대 골프 입문자의 숨겨진 구매 시그널",
+    "summary_label": "골프 인구 <strong>564만 명</strong> 중 접대 입문자",
+    "industries": "골프 용품 · 웨어 · 레슨"
+  },
+  {
+    "id": "finance_02",
+    "number": 2,
+    "date": "2026-04-10",
+    "category": "금융",
+    "emoji": "💰",
+    "color_from": "#1e3a5f",
+    "color_to": "#2a5298",
+    "title": "'대출 관심자' 타겟팅 금지!",
+    "subtitle": "다음 달 이자가 올라가는 사람",
+    "summary_label": "대출 비교앱 <strong>3개+</strong> 동시 설치자",
+    "industries": "은행 · 핀테크 · 보험"
+  },
+  {
+    "id": "realestate_03",
+    "number": 3,
+    "date": "2026-04-12",
+    "category": "부동산",
+    "emoji": "🏠",
+    "color_from": "#4a1942",
+    "color_to": "#6b3fa0",
+    "title": "'전세대출 관심자' 타겟팅 금지!",
+    "subtitle": "4월 17일 전에 움직여야 하는 사람",
+    "summary_label": "1주택자 전세대출 보증 <strong>13.9조</strong> 영향권",
+    "industries": "은행 · 부동산 · 보험"
+  },
+  {
+    "id": "pet_04",
+    "number": 4,
+    "date": "2026-04-13",
+    "category": "반려동물",
+    "emoji": "🐾",
+    "color_from": "#9a3412",
+    "color_to": "#f97316",
+    "title": "'반려동물 관심자' 타겟팅 금지!",
+    "subtitle": "첫 입양 후 2주, 앱이 폭발하는 사람",
+    "summary_label": "반려동물 인구 <strong>1,546만 명</strong> 중 첫 입양자",
+    "industries": "사료 · 펫보험 · 동물병원 · 용품"
+  },
+  {
+    "id": "금융_05",
+    "number": 5,
+    "date": "2026-04-13",
+    "category": "금융",
+    "emoji": "💰",
+    "color_from": "#1e3a5f",
+    "color_to": "#2a5298",
+    "title": "대출 비교는 그만.",
+    "subtitle": "진짜 금융 스마트어퍼를 잡아라.",
+    "summary_label": "금융 오디언스 인사이트",
+    "industries": "금융"
+  }
+]
