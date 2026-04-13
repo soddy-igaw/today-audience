@@ -103,15 +103,29 @@ div[data-testid="stButton"] > button[kind="secondary"] {
 if st.session_state.view.startswith("detail_") and essays:
     essay_id = st.session_state.view.replace("detail_", "")
     html = load_essay_html(essay_id)
-    if html:
+    # find meta for this essay
+    meta_entry = next((e for e in essays if e["id"] == essay_id), None)
+    if html and meta_entry:
         if st.button("← 돌아가기", key="back"):
             st.session_state.view = "feed"
             st.rerun()
-        st.markdown(
-            '<style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>'
-            + html,
-            unsafe_allow_html=True,
-        )
+        # Add nav/author header only if not already in HTML
+        prefix = '<style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>'
+        if 'class="nav"' not in html:
+            prefix += f'''
+            <div class="nav"><div>
+              <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+              <div class="nav-sub">by IGAWorks</div>
+            </div></div>
+            <div class="author">
+              <div class="author-avatar">IG</div>
+              <div>
+                <div class="author-name">IGAWorks 오디언스 랩</div>
+                <div class="author-date">{meta_entry["date"].replace("-",".")} · 오늘의 오디언스 #{meta_entry["number"]}</div>
+              </div>
+            </div>
+            '''
+        st.markdown(prefix + html, unsafe_allow_html=True)
     else:
         st.session_state.view = "feed"
         st.rerun()

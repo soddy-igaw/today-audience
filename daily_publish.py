@@ -146,12 +146,15 @@ def build_prompt(category, trends, persona):
 {persona_text}
 
 ## 출력 형식
-HTML로 출력하세요. class는 다음을 사용:
+HTML 조각(fragment)만 출력하세요. <!DOCTYPE>, <html>, <head>, <body>, <article> 태그는 절대 포함하지 마세요.
+바로 <div class="note-body">로 시작하세요.
+class는 다음을 사용:
 - note-body, lead, quote (본문)
 - sig-box, sig-label (시그널 박스)
 - cmp-grid, cmp-card, cmp-left, cmp-right (비교표)
 - ind-grid, ind-card, ind-title, ind-desc (추천 업종)
 - insight, ins-label (인사이트)
+- note-end (마지막 줄)
 
 마지막에 AUDIENCE CARD (다크 배경 #111) 포함.
 """
@@ -337,6 +340,14 @@ def run(dry_run=False):
         print(f"📝 프롬프트 저장: {prompt_file}")
         print("   이 프롬프트를 Claude/ChatGPT에 붙여넣으면 에세이가 생성됩니다.")
         return
+
+    # 4.5 HTML 정리 — 문서 태그 제거
+    import re
+    essay_html = re.sub(r'```html\s*', '', essay_html)
+    essay_html = re.sub(r'```\s*$', '', essay_html)
+    for tag in ['<!DOCTYPE[^>]*>', '</?html[^>]*>', '</?head[^>]*>', '</?body[^>]*>', '</?article[^>]*>']:
+        essay_html = re.sub(tag, '', essay_html, flags=re.IGNORECASE)
+    essay_html = essay_html.strip()
 
     # 5. 결과 저장
     output_file = os.path.join(ESSAY_DIR, f"essay_{today.strftime('%Y%m%d')}.html")
