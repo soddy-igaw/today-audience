@@ -133,24 +133,24 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
   .hero-card { flex-direction:column; gap:16px; }
 }
 
-/* Hide helper buttons */
-.hidden-btn button {
-  position:absolute!important; width:1px!important; height:1px!important;
-  opacity:0!important; overflow:hidden!important; padding:0!important;
-  margin:0!important; border:none!important; min-height:0!important;
-}
-
-/* Detail back button */
+/* Card buttons */
 div[data-testid="stButton"] > button {
-  width:auto!important; background:#fff!important; border:1px solid #eee!important;
-  border-radius:12px!important; padding:10px 20px!important; min-height:auto!important;
-  font-size:0.85rem!important; color:#888!important; font-weight:500!important;
-  cursor:pointer!important; margin-bottom:16px!important;
+  width:100%!important; text-align:left!important; border:none!important;
+  background:#fff!important; border-radius:20px!important; padding:24px 20px!important;
+  min-height:auto!important; cursor:pointer!important;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; transition:all 0.25s!important;
+  color:#111!important; font-size:0.88rem!important; font-weight:600!important;
+  line-height:1.6!important; white-space:pre-line!important;
 }
-div[data-testid="stButton"] > button:hover { background:#f8f8f8!important; color:#111!important; }
-div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
+div[data-testid="stButton"] > button:hover {
+  transform:translateY(-3px)!important; box-shadow:0 12px 32px rgba(0,0,0,0.1)!important;
+  background:#fff!important; color:#111!important;
+}
+div[data-testid="stButton"] > button:focus { box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; }
 
-@media(max-width:768px) { .block-container { max-width:100%!important; } }
+@media(max-width:768px) {
+  .block-container { max-width:100%!important; padding:0 16px 80px!important; }
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -1232,52 +1232,23 @@ else:
     e = ESSAYS[0]
     st.markdown(f"""
     <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:16px">🎯 오늘의 오디언스</p>
-    <div class="hero-card" onclick="document.querySelectorAll('.hidden-btn button')[0].click()">
-      <div class="hero-left">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-          <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e['tag']}</span>
-          <span style="font-size:0.68rem;color:#ccc">추정 {e['stat']}</span>
-        </div>
-        <div style="font-size:1.4rem;font-weight:900;color:#111;line-height:1.35;margin-bottom:10px">{e['title'].replace(chr(10), '<br>')}</div>
-        <div style="font-size:0.88rem;color:#888;line-height:1.6">{e['sub']}</div>
-        <div style="margin-top:16px"><span style="font-size:0.82rem;color:#6366f1;font-weight:600">자세히 보기 →</span></div>
-      </div>
-      <div class="hero-right">{e['emoji']}</div>
-    </div>
     """, unsafe_allow_html=True)
-    with st.container():
-        st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-        if st.button("go", key=f"go_{e['id']}"):
-            st.session_state.view = f"detail_{e['id']}"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+    if st.button(f"{e['emoji']}  {e['tag']}  ·  추정 {e['stat']}\n\n{e['title'].replace(chr(10), chr(10))}\n\n{e['sub']}\n\n자세히 보기 →", key=f"go_{e['id']}"):
+        st.session_state.view = f"detail_{e['id']}"
+        st.rerun()
 
     # Grid — 나머지
     st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p>', unsafe_allow_html=True)
-    grid_html = '<div class="card-grid">'
-    for e in ESSAYS[1:]:
-        grid_html += f"""
-        <div class="grid-card" onclick="document.querySelectorAll('.hidden-btn button')[{ESSAYS.index(e)}].click()">
-          <div style="font-size:2rem;margin-bottom:12px">{e['emoji']}</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
-            <span style="font-size:0.65rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:2px 8px;border-radius:100px">{e['tag']}</span>
-          </div>
-          <div style="font-size:0.95rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:6px">{e['title'].replace(chr(10), '<br>')}</div>
-          <div style="font-size:0.75rem;color:#999;line-height:1.4;margin-bottom:14px">{e['sub'][:45]}...</div>
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="font-size:1.1rem;font-weight:900;color:{e['color']}">{e['stat']}</span>
-            <span style="color:#ccc;font-size:0.9rem">→</span>
-          </div>
-        </div>"""
-    grid_html += '</div>'
-    st.markdown(grid_html, unsafe_allow_html=True)
-
-    for e in ESSAYS[1:]:
-        with st.container():
-            st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-            if st.button("go", key=f"go_{e['id']}"):
-                st.session_state.view = f"detail_{e['id']}"
-                st.rerun()
-            st.markdown('</div>', unsafe_allow_html=True)
+    cols_per_row = 3
+    past = ESSAYS[1:]
+    for row_start in range(0, len(past), cols_per_row):
+        row = past[row_start:row_start + cols_per_row]
+        cols = st.columns(len(row))
+        for col, e in zip(cols, row):
+            with col:
+                label = f"{e['emoji']}\n{e['tag']}  ·  {e['stat']}\n\n{e['title'].replace(chr(10), chr(10))}\n\n{e['sub'][:40]}…"
+                if st.button(label, key=f"go_{e['id']}"):
+                    st.session_state.view = f"detail_{e['id']}"
+                    st.rerun()
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
