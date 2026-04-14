@@ -9,116 +9,99 @@ st.markdown("""
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 * { margin:0; padding:0; box-sizing:border-box; }
-.stApp { background:#f5f6f8; font-family:'Pretendard',sans-serif; }
+.stApp { background:#fff; font-family:'Pretendard',sans-serif; }
 header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:none!important; }
-.block-container { max-width:760px!important; padding:0 24px 100px!important; margin:0 auto!important; }
+.block-container { max-width:900px!important; padding:0 24px 100px!important; margin:0 auto!important; }
 
 /* Feed cards */
 .feed-card {
-  background:#fff; border-radius:20px; padding:28px 24px; margin-bottom:14px;
-  cursor:pointer; transition:all 0.2s;
-  box-shadow:0 1px 3px rgba(0,0,0,0.04);
+  background:#fff; border:1px solid #e5e5e5; border-radius:0; padding:24px 20px;
+  cursor:pointer; transition:all 0.15s;
 }
-.feed-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+.feed-card:hover { background:#fafafa; }
 
-.past-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.past-grid .feed-card { margin-bottom:0; }
-.feed-emoji { font-size:2.4rem; margin-bottom:16px; }
-.feed-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#6366f1; background:#f0eeff; padding:3px 10px; border-radius:100px; margin-bottom:12px; }
-.feed-title { font-size:1.15rem; font-weight:800; color:#111; line-height:1.4; margin-bottom:6px; }
-.feed-sub { font-size:0.82rem; color:#888; line-height:1.5; }
-.feed-bottom { display:flex; align-items:center; justify-content:space-between; margin-top:20px; padding-top:16px; border-top:1px solid #f0f0f0; }
-.feed-stat { font-size:0.75rem; color:#aaa; }
-.feed-stat strong { color:#6366f1; font-weight:700; }
-.feed-arrow { color:#ccc; font-size:1.2rem; }
+.ch-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border-top:1px solid #e5e5e5; }
+.ch-grid .feed-card { border-top:none; border-right:1px solid #e5e5e5; }
+.ch-grid .feed-card:last-child { border-right:none; }
 
 /* Detail page */
 .detail-wrap { max-width:520px; margin:0 auto; }
-.detail-back { font-size:0.85rem; color:#888; margin-bottom:24px; cursor:pointer; }
-.detail-hero { background:#fff; border-radius:20px; padding:32px 24px; margin-bottom:16px; }
-.detail-emoji { font-size:3rem; margin-bottom:16px; }
-.detail-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#6366f1; background:#f0eeff; padding:3px 10px; border-radius:100px; margin-bottom:12px; }
-.detail-title { font-size:1.4rem; font-weight:900; color:#111; line-height:1.35; margin-bottom:8px; }
-.detail-sub { font-size:0.88rem; color:#888; line-height:1.6; }
-.detail-meta { font-size:0.72rem; color:#bbb; margin-top:16px; }
+.detail-hero { background:#fff; border-radius:0; padding:32px 0; margin-bottom:16px; border-bottom:1px solid #e5e5e5; }
+.detail-emoji { font-size:2.4rem; margin-bottom:16px; }
+.detail-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#000; background:#f0f0f0; padding:3px 10px; border-radius:0; margin-bottom:12px; }
+.detail-title { font-size:1.4rem; font-weight:900; color:#000; line-height:1.35; margin-bottom:8px; }
+.detail-sub { font-size:0.88rem; color:#666; line-height:1.6; }
+.detail-meta { font-size:0.72rem; color:#999; margin-top:16px; }
 
 /* Content sections */
-.section { background:#fff; border-radius:20px; padding:28px 24px; margin-bottom:14px; }
-.section-label { font-size:0.68rem; font-weight:700; color:#6366f1; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
+.section { background:#fff; border-radius:0; padding:28px 0; margin-bottom:0; border-bottom:1px solid #f0f0f0; }
+.section-label { font-size:0.68rem; font-weight:700; color:#000; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
 .section p { color:#333; font-size:0.9rem; line-height:1.9; margin-bottom:16px; }
-.section strong { color:#111; }
+.section strong { color:#000; }
 
-.quote-box { background:#f8f7ff; border-radius:16px; padding:24px; margin-bottom:14px; }
-.quote-box p { color:#555; font-size:0.95rem; line-height:1.8; font-style:italic; margin:0; }
+.quote-box { background:#f7f7f7; border-radius:0; padding:24px; margin-bottom:14px; border-left:3px solid #000; }
+.quote-box p { color:#444; font-size:0.95rem; line-height:1.8; font-style:italic; margin:0; }
 
-.signal-item { padding:14px 0; border-bottom:1px solid #f5f5f5; }
+.signal-item { padding:14px 0; border-bottom:1px solid #f0f0f0; }
 .signal-item:last-child { border-bottom:none; }
-.signal-title { font-size:0.85rem; font-weight:700; color:#111; margin-bottom:4px; }
+.signal-title { font-size:0.85rem; font-weight:700; color:#000; margin-bottom:4px; }
 .signal-desc { font-size:0.78rem; color:#888; line-height:1.5; }
 
 .cmp-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.cmp-card { border-radius:14px; padding:20px; }
+.cmp-card { border-radius:0; padding:20px; }
 .cmp-card h4 { font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; font-weight:700; }
 .cmp-card p { font-size:0.82rem; line-height:1.8; margin:0; }
-.cmp-left { background:#f8f8f8; }
+.cmp-left { background:#f7f7f7; }
 .cmp-left h4 { color:#999; }
 .cmp-left p { color:#888; }
-.cmp-right { background:#f0eeff; }
-.cmp-right h4 { color:#6366f1; }
-.cmp-right p { color:#333; }
+.cmp-right { background:#000; }
+.cmp-right h4 { color:#999; }
+.cmp-right p { color:#fff; }
 
 .ind-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.ind-card { background:#f8f8f8; border-radius:12px; padding:16px; }
-.ind-card .ind-title { font-size:0.82rem; font-weight:700; color:#111; margin-bottom:4px; }
+.ind-card { background:#f7f7f7; border-radius:0; padding:16px; }
+.ind-card .ind-title { font-size:0.82rem; font-weight:700; color:#000; margin-bottom:4px; }
 .ind-card .ind-desc { font-size:0.75rem; color:#888; line-height:1.4; }
 
-.insight-box { background:#111; border-radius:20px; padding:28px 24px; margin-bottom:14px; }
-.insight-box .ins-label { font-size:0.68rem; color:#a5b4fc; font-weight:700; letter-spacing:1.5px; margin-bottom:12px; }
+.insight-box { background:#000; border-radius:0; padding:28px 24px; margin-bottom:14px; }
+.insight-box .ins-label { font-size:0.68rem; color:#888; font-weight:700; letter-spacing:1.5px; margin-bottom:12px; }
 .insight-box p { color:#fff; font-size:0.92rem; line-height:1.8; font-weight:500; margin:0; }
 
-.audience-card { background:#111; border-radius:20px; padding:28px 24px; margin-bottom:14px; }
+.audience-card { background:#000; border-radius:0; padding:28px 24px; margin-bottom:14px; }
 
-.ad-compare { background:#fff; border-radius:20px; padding:28px 24px; margin-bottom:14px; }
+.ad-compare { background:#fff; border-radius:0; padding:28px 24px; margin-bottom:14px; border:1px solid #e5e5e5; }
 
 /* Timeline */
-.tl { padding-left:24px; border-left:3px solid #e5e7eb; margin-left:6px; }
+.tl { padding-left:24px; border-left:2px solid #ddd; margin-left:6px; }
 .tl-item { margin-bottom:24px; position:relative; }
-.tl-dot { position:absolute; left:-31px; top:3px; width:12px; height:12px; border-radius:50%; border:2px solid #fff; }
-.tl-green { background:#14b8a6; box-shadow:0 0 0 2px #14b8a6; }
-.tl-yellow { background:#f59e0b; box-shadow:0 0 0 2px #f59e0b; }
-.tl-red { background:#ef4444; box-shadow:0 0 0 2px #ef4444; }
-.tl-day { font-size:0.68rem; font-weight:700; margin-bottom:4px; }
-.tl-title { font-size:0.88rem; font-weight:700; color:#111; margin-bottom:2px; }
+.tl-dot { position:absolute; left:-30px; top:3px; width:10px; height:10px; border-radius:50%; border:2px solid #fff; }
+.tl-green { background:#000; box-shadow:0 0 0 2px #000; }
+.tl-yellow { background:#888; box-shadow:0 0 0 2px #888; }
+.tl-red { background:#000; box-shadow:0 0 0 2px #000; }
+.tl-day { font-size:0.68rem; font-weight:700; margin-bottom:4px; color:#000; }
+.tl-title { font-size:0.88rem; font-weight:700; color:#000; margin-bottom:2px; }
 .tl-desc { font-size:0.78rem; color:#888; }
-.tl-bar-wrap { margin-top:8px; background:#f0fdf4; border-radius:8px; padding:8px 12px; }
-.tl-bar-bg { background:#e5e7eb; border-radius:4px; height:8px; overflow:hidden; }
-.tl-bar-fill { background:#14b8a6; height:100%; border-radius:4px; }
+.tl-bar-wrap { margin-top:8px; background:#f7f7f7; border-radius:0; padding:8px 12px; }
+.tl-bar-bg { background:#e5e5e5; border-radius:0; height:6px; overflow:hidden; }
+.tl-bar-fill { background:#000; height:100%; border-radius:0; }
 .tl-flow { margin-top:8px; display:flex; gap:8px; align-items:center; }
-.tl-flow-down { background:#fee2e2; border-radius:8px; padding:6px 10px; flex:1; text-align:center; }
-.tl-flow-up { background:#f0fdf4; border-radius:8px; padding:6px 10px; flex:1; text-align:center; }
-.tl-alert { background:#fef2f2; border-radius:12px; padding:16px; border:1px solid #fecaca; }
+.tl-flow-down { background:#f7f7f7; border-radius:0; padding:6px 10px; flex:1; text-align:center; }
+.tl-flow-up { background:#000; border-radius:0; padding:6px 10px; flex:1; text-align:center; color:#fff; }
+.tl-alert { background:#f7f7f7; border-radius:0; padding:16px; border:1px solid #000; }
 
 /* Countdown */
-.cd-item { background:#f8f8f8; border-radius:14px; padding:16px; margin-bottom:10px; border-left:4px solid #e5e7eb; }
-.cd-urgent { border-left-color:#ef4444; background:#fef2f2; }
-.cd-warn { border-left-color:#f59e0b; }
-.cd-info { border-left-color:#6366f1; }
+.cd-item { background:#f7f7f7; border-radius:0; padding:16px; margin-bottom:10px; border-left:3px solid #ddd; }
+.cd-urgent { border-left-color:#000; background:#f7f7f7; }
+.cd-warn { border-left-color:#888; }
+.cd-info { border-left-color:#000; }
 
 /* App flow */
 .af-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-.af-gone { background:#f3f4f6; border-radius:10px; padding:8px 14px; text-decoration:line-through; color:#bbb; font-size:0.82rem; flex:1; text-align:center; }
-.af-new { background:#f0eeff; border-radius:10px; padding:8px 14px; color:#6366f1; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
-.af-up { background:#f0fdf4; border-radius:10px; padding:8px 14px; color:#14b8a6; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
+.af-gone { background:#f7f7f7; border-radius:0; padding:8px 14px; text-decoration:line-through; color:#bbb; font-size:0.82rem; flex:1; text-align:center; }
+.af-new { background:#000; border-radius:0; padding:8px 14px; color:#fff; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
+.af-up { background:#f7f7f7; border-radius:0; padding:8px 14px; color:#000; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
 
-.footer { text-align:center; color:#ccc; font-size:0.72rem; padding:32px 0 16px; }
-
-/* Streamlit button overrides - card style */
-/* Feed cards */
-.feed-card {
-  background:#fff; border-radius:24px; padding:28px 24px; margin-bottom:16px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.25s; cursor:pointer;
-}
-.feed-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+.footer { text-align:center; color:#bbb; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Hide helper buttons */
 .hidden-btn button {
@@ -129,15 +112,19 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 /* Detail back button */
 div[data-testid="stButton"] > button {
-  width:auto!important; background:#fff!important; border:1px solid #eee!important;
-  border-radius:12px!important; padding:10px 20px!important; min-height:auto!important;
-  font-size:0.85rem!important; color:#888!important; font-weight:500!important;
+  width:auto!important; background:#fff!important; border:1px solid #ddd!important;
+  border-radius:0!important; padding:10px 20px!important; min-height:auto!important;
+  font-size:0.85rem!important; color:#666!important; font-weight:500!important;
   cursor:pointer!important; margin-bottom:16px!important;
 }
-div[data-testid="stButton"] > button:hover { background:#f8f8f8!important; color:#111!important; }
+div[data-testid="stButton"] > button:hover { background:#000!important; color:#fff!important; border-color:#000!important; }
 div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
-@media(max-width:768px) { .block-container { max-width:100%!important; } }
+@media(max-width:768px) {
+  .block-container { max-width:100%!important; }
+  .ch-grid { grid-template-columns:1fr!important; }
+  .ch-grid .feed-card { border-right:none!important; border-bottom:1px solid #e5e5e5; }
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -1206,56 +1193,80 @@ elif st.session_state.view == "detail_pet":
     """, unsafe_allow_html=True)
 
 else:
-    # ===== FEED =====
+    # ===== FEED (롱블랙 스타일 · B&W) =====
+
+    CHAPTERS = [
+        {"label": "금융", "ids": ["finance", "stock", "travel"]},
+        {"label": "스포츠 · 라이프", "ids": ["golf", "health", "car", "game"]},
+        {"label": "반려동물", "ids": ["pet"]},
+    ]
+    ESSAY_MAP = {e["id"]: e for e in ESSAYS}
+    today = ESSAYS[0]
+
+    # --- 헤더 ---
     st.markdown("""
-    <div style="padding:40px 0 32px">
-      <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:12px">AUDIENCE IDEA BANK</p>
-      <h1 style="font-size:1.8rem;font-weight:900;color:#111;line-height:1.3;letter-spacing:-0.5px;margin-bottom:8px">다음 캠페인,<br>누구한테 해야 하지?</h1>
-      <p style="color:#999;font-size:0.82rem;line-height:1.6">트렌드를 읽고, 행동 시그널을 조합해<br>아직 아무도 안 쓰는 오디언스를 제안합니다.</p>
+    <div style="padding:48px 0 16px;border-bottom:3px solid #000;margin-bottom:0">
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:3px;color:#999;margin-bottom:10px">AUDIENCE IDEA BANK</p>
+      <h1 style="font-size:2rem;font-weight:900;color:#000;line-height:1.2;letter-spacing:-1px">오늘의 오디언스</h1>
     </div>
     """, unsafe_allow_html=True)
 
-    for i, e in enumerate(ESSAYS):
-        if i == 0:
-            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:16px">🎯 오늘의 오디언스</p>', unsafe_allow_html=True)
-        elif i == 1:
-            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p><div class="past-grid">', unsafe_allow_html=True)
+    # --- 오늘의 오디언스 (크게) ---
+    btn_idx = 0
+    st.markdown(f"""
+    <div class="feed-card" style="padding:36px 0;border:none;border-bottom:1px solid #e5e5e5" onclick="document.querySelectorAll('.hidden-btn button')[0].click()">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
+        <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
+        <span style="font-size:0.68rem;color:#999">{today["date"]}</span>
+      </div>
+      <div style="font-size:1.5rem;font-weight:900;color:#000;line-height:1.3;margin-bottom:12px">{today["title"].replace(chr(10), "<br>")}</div>
+      <div style="font-size:0.9rem;color:#666;line-height:1.7;margin-bottom:24px">{today["sub"]}</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.2rem;font-weight:900;color:#000">{today["stat"]}</span>
+        <span style="font-size:0.72rem;color:#999">{today["stat_label"]}</span>
+        <span style="margin-left:auto;font-size:0.8rem;font-weight:600;color:#000">읽기 →</span>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+    with st.container():
+        st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
+        if st.button("go", key=f"go_{today['id']}"):
+            st.session_state.view = f"detail_{today['id']}"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
+    btn_idx += 1
+
+    # --- 챕터별 섹션 (3열 그리드) ---
+    for ch in CHAPTERS:
+        ch_essays = [ESSAY_MAP[eid] for eid in ch["ids"] if eid in ESSAY_MAP and eid != today["id"]]
+        if not ch_essays:
+            continue
 
         st.markdown(f"""
-        <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{i}].click()">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-            <span style="font-size:1.6rem">{e["emoji"]}</span>
-            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
-            <span style="font-size:0.68rem;color:#ccc;margin-left:auto">추정 {e["stat"]}</span>
-          </div>
-          <div style="font-size:{'1.15' if i==0 else '1'}rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
-          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:{'20' if i==0 else '14'}px">{e["sub"] if i==0 else e["sub"][:50]+"..."}</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
-            <div><span style="font-size:{'1.3' if i==0 else '1.1'}rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
-            <span style="color:#ccc;font-size:1.1rem">→</span>
-          </div>
+        <div style="margin-top:48px;margin-bottom:0;padding-bottom:12px;border-bottom:2px solid #000">
+          <span style="font-size:0.95rem;font-weight:900;color:#000">{ch["label"]}</span>
         </div>
         """, unsafe_allow_html=True)
 
-        # 버튼은 그리드 밖에 모아서
-        if i == 0:
+        st.markdown('<div class="ch-grid">', unsafe_allow_html=True)
+        for e in ch_essays:
+            st.markdown(f"""
+            <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{btn_idx}].click()">
+              <div style="font-size:0.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:12px">{e["tag"].upper()}</div>
+              <div style="font-size:0.92rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), " ")}</div>
+              <div style="font-size:0.75rem;color:#999;line-height:1.5;margin-bottom:16px">{e["sub"][:50]}...</div>
+              <div style="font-size:1rem;font-weight:900;color:#000">{e["stat"]}</div>
+            </div>
+            """, unsafe_allow_html=True)
+            btn_idx += 1
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        for e in ch_essays:
             with st.container():
                 st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
                 if st.button("go", key=f"go_{e['id']}"):
                     st.session_state.view = f"detail_{e['id']}"
                     st.rerun()
                 st.markdown('</div>', unsafe_allow_html=True)
-
-    # 그리드 닫기
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # 지난 오디언스 버튼들
-    for e in ESSAYS[1:]:
-        with st.container():
-            st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-            if st.button("go", key=f"go_{e['id']}"):
-                st.session_state.view = f"detail_{e['id']}"
-                st.rerun()
-            st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
