@@ -137,7 +137,7 @@ def build_prompt(category, trends, persona):
 6. 추적 가능한 앱: {apps}
 7. 짧은 문장, 많은 줄바꿈, 롱블랙 톤
 8. 추천 업종 4개 이상 (ind-grid)
-9. AUDIENCE CARD (다크 배경 style="background:#111") 포함 — 추정 모수, 추천 업종, 시그널, 메시지
+9. AUDIENCE CARD (다크 배경 style="background:#111") 포함 — 추정 모수(반드시 "N~N만" 형식), 추천 업종, 시그널, 메시지
 
 ## 필수 구조 (이 순서대로 작성):
 1. <p class="lead"> 제목/부제
@@ -280,6 +280,12 @@ def inject_to_app(category, today, essay_html):
     title = lines[0] if lines else category
     subtitle = lines[1] if len(lines) > 1 else title
 
+    # Extract audience size from AUDIENCE CARD or 추정 모수
+    audience_m = _re.search(r'추정 모수.*?<p[^>]*>([\d~,만억천명\s]+)</p>', essay_html, _re.DOTALL)
+    if not audience_m:
+        audience_m = _re.search(r'([\d,]+~[\d,]+만)', essay_html)
+    audience_size = audience_m.group(1).strip() if audience_m else ""
+
     with open(APP_FILE, "r", encoding="utf-8") as f:
         code = f.read()
 
@@ -357,7 +363,7 @@ elif st.session_state.view == "{new_view}":
         <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">{subtitle}</p>
       </div>
       <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:0.78rem;color:#888">{category} 오디언스 인사이트</span>
+        <span style="font-size:0.78rem;color:#888">{f'추정 오디언스 <strong style="color:#6366f1">{audience_size}</strong>' if audience_size else f'{category} 오디언스 인사이트'}</span>
         <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
       </div>
     </div>
