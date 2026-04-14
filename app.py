@@ -95,6 +95,18 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .tl-flow-up { background:#f0fdf4; border-radius:8px; padding:6px 10px; flex:1; text-align:center; }
 .tl-alert { background:#fef2f2; border-radius:12px; padding:16px; border:1px solid #fecaca; }
 
+/* Countdown */
+.cd-item { background:#f8f8f8; border-radius:14px; padding:16px; margin-bottom:10px; border-left:4px solid #e5e7eb; }
+.cd-urgent { border-left-color:#ef4444; background:#fef2f2; }
+.cd-warn { border-left-color:#f59e0b; }
+.cd-info { border-left-color:#6366f1; }
+
+/* App flow */
+.af-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.af-gone { background:#f3f4f6; border-radius:10px; padding:8px 14px; text-decoration:line-through; color:#bbb; font-size:0.82rem; flex:1; text-align:center; }
+.af-new { background:#f0eeff; border-radius:10px; padding:8px 14px; color:#6366f1; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
+.af-up { background:#f0fdf4; border-radius:10px; padding:8px 14px; color:#14b8a6; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
+
 .footer { text-align:center; color:#ccc; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Streamlit button overrides - card style */
@@ -207,12 +219,28 @@ if st.session_state.view == "detail_travel":
     </div>
 
     <div class="section">
-      <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">해외여행 앱 사용 빈도 급감 또는 삭제</div><div class="signal-desc">스카이스캐너/트립닷컴 등 30일 내 사용 80%+ 감소 → 해외여행 포기 시그널</div></div>
-      <div class="signal-item"><div class="signal-title">국내 숙박앱 신규 설치 또는 사용 급증</div><div class="signal-desc">야놀자/여기어때 일일 사용 시간 2배+ 증가 → 국내로 전환 중</div></div>
-      <div class="signal-item"><div class="signal-title">주말 집중 탐색 패턴</div><div class="signal-desc">금요일 저녁~토요일 오전 숙박앱 집중 사용 → 당일/1박 근교 여행 계획</div></div>
-      <div class="signal-item"><div class="signal-title">네비/지도앱 주말 사용 급증</div><div class="signal-desc">평일 대비 주말 네비앱 사용 3배+ → 차로 이동하는 근교 여행자</div></div>
-      <div class="signal-item"><div class="signal-title">맛집/카페 앱 동시 사용</div><div class="signal-desc">숙박앱 + 맛집앱(캐치테이블/다이닝코드) 동시 활성 → 여행 코스 짜는 중</div></div>
+      <div class="section-label">APP FLOW — 앱 사용 전환 맵</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">A씨의 앱 사용이 어떻게 바뀌었는지 DMP로 보면</p>
+
+      <div style="margin-bottom:20px">
+        <div style="font-size:0.72rem;font-weight:700;color:#ef4444;margin-bottom:10px">✕ 삭제 / 미사용</div>
+        <div class="af-row"><div class="af-gone">✈️ 스카이스캐너</div><div style="color:#ccc">→</div><div class="af-new">🏨 야놀자</div></div>
+        <div class="af-row"><div class="af-gone">✈️ 트립닷컴</div><div style="color:#ccc">→</div><div class="af-new">🏨 여기어때</div></div>
+        <div class="af-row"><div class="af-gone">✈️ 아고다</div><div style="color:#ccc">→</div><div class="af-new">🍽️ 캐치테이블</div></div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <div style="font-size:0.72rem;font-weight:700;color:#14b8a6;margin-bottom:10px">↑ 사용 급증</div>
+        <div class="af-row"><div class="af-up">🗺️ 네이버지도 주말 3배↑</div></div>
+        <div class="af-row"><div class="af-up">🚗 티맵 주말 사용 신규</div></div>
+        <div class="af-row"><div class="af-up">📸 인스타그램 #국내여행 탐색</div></div>
+      </div>
+
+      <div class="tl-bar-wrap">
+        <div style="font-size:0.7rem;color:#888;margin-bottom:4px">해외여행 앱 사용 감소율</div>
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:85%;background:#ef4444"></div></div>
+        <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-top:2px">-85% — 30일 내 거의 미사용</div>
+      </div>
     </div>
 
     <div class="section">
@@ -295,12 +323,58 @@ elif st.session_state.view == "detail_golf":
     </div>
 
     <div class="section">
-      <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">골프 앱 첫 설치 (90일 내 이력 없음)</div><div class="signal-desc">골프존/스마트스코어 신규 설치 → 완전 초보 진입. 기존 골퍼와 구분되는 핵심 시그널</div></div>
-      <div class="signal-item"><div class="signal-title">설치 후 3일 내 레슨앱 추가 설치</div><div class="signal-desc">골프앱 → 레슨앱 빠른 전환 → "빨리 배워야 한다"는 긴급도</div></div>
-      <div class="signal-item"><div class="signal-title">평일 저녁 19~23시 집중 사용</div><div class="signal-desc">주말이 아닌 평일 저녁 → 퇴근 후 급하게 준비하는 직장인 패턴</div></div>
-      <div class="signal-item"><div class="signal-title">기기 가격대 상위 30%</div><div class="signal-desc">최신 플래그십 기기 → 구매력 있는 직장인. 가성비가 아닌 "무난하게 좋은 것" 추구</div></div>
-      <div class="signal-item"><div class="signal-title">골프웨어/용품 쇼핑앱 동시 활성</div><div class="signal-desc">무신사/크림에서 골프웨어 탐색 시작 → 장비+옷+레슨 한꺼번에 준비</div></div>
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">B씨의 앱 사용 변화를 DMP로 추적하면 이렇게 보입니다</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot tl-green"></div>
+          <div class="tl-day" style="color:#16a34a">DAY 0 · 부장님의 한마디</div>
+          <div class="tl-title">⛳ 골프존 앱 첫 설치</div>
+          <div class="tl-desc">90일간 골프앱 사용 이력 없음 → 완전 신규. 기존 골퍼와 구분되는 핵심 시그널</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green"></div>
+          <div class="tl-day" style="color:#16a34a">DAY 0~1 · 그날 밤</div>
+          <div class="tl-title">🏌️ 레슨앱 + 스마트스코어 추가 설치</div>
+          <div class="tl-desc">24시간 내 골프앱 3개 동시 설치 → "빨리 배워야 한다"는 긴급도</div>
+          <div class="tl-bar-wrap">
+            <div style="font-size:0.7rem;color:#888;margin-bottom:4px">24시간 내 동시 설치 속도</div>
+            <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:95%;background:#16a34a"></div></div>
+            <div style="font-size:0.68rem;color:#16a34a;font-weight:700;margin-top:2px">상위 3% — 일반 입문자 대비 5배 빠름</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green"></div>
+          <div class="tl-day" style="color:#16a34a">DAY 2~5 · 평일 저녁 집중</div>
+          <div class="tl-title">🌙 19~23시 골프 콘텐츠 소비</div>
+          <div class="tl-desc">주말이 아닌 평일 저녁 → 퇴근 후 급하게 준비하는 직장인 패턴</div>
+          <div class="tl-flow">
+            <div class="tl-flow-up" style="background:#f0fdf4">
+              <div style="font-size:0.65rem;color:#999">기기 가격대</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#16a34a">상위 30%</div>
+            </div>
+            <div style="color:#ccc">+</div>
+            <div class="tl-flow-up" style="background:#f0fdf4">
+              <div style="font-size:0.65rem;color:#999">사용 시간대</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#16a34a">평일 저녁</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-yellow"></div>
+          <div class="tl-day" style="color:#f59e0b">DAY 3~7 · 💰 지출 시작</div>
+          <div class="tl-title">🛒 골프웨어/용품 쇼핑앱 탐색</div>
+          <div class="tl-desc">무신사/크림에서 골프웨어 탐색 → 장비+옷+레슨 한꺼번에 준비</div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot tl-red"></div>
+          <div class="tl-alert">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 7 · 여기서 잡아야 합니다</div>
+            <div class="tl-title">풀세트 구매 / 레슨 등록 / 골프웨어 결제</div>
+            <div class="tl-desc">접대 입문자는 평균 7일 내 첫 구매. 고민 없이 빠르게 삽니다. 객단가 150만원+</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
@@ -384,12 +458,44 @@ elif st.session_state.view == "detail_finance":
     </div>
 
     <div class="section">
-      <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">대출 비교앱 2개+ 동시 설치 (14일 내)</div><div class="signal-desc">뱅크샐러드+핀다+토스 중 2개 이상을 2주 안에 설치 → 비교쇼핑이 아니라 긴급 탐색</div></div>
-      <div class="signal-item"><div class="signal-title">부동산앱 활성 사용 급증</div><div class="signal-desc">직방/다방 일일 사용 시간 2배+ 증가 → 전세 만기 대응 중</div></div>
-      <div class="signal-item"><div class="signal-title">뉴스앱 접속 빈도 50%+ 증가</div><div class="signal-desc">규제 발표(4/1) 전후로 뉴스 소비 급증 → 시장 변화에 민감하게 반응</div></div>
-      <div class="signal-item"><div class="signal-title">규제 발표 이후 설치 타이밍 집중</div><div class="signal-desc">4/1 이후 대출앱 신규 설치 → 규제에 직접 영향받는 사람</div></div>
-      <div class="signal-item"><div class="signal-title">야간/새벽 시간대 활성</div><div class="signal-desc">23시~02시 대출앱+부동산앱 동시 사용 → 급해서 잠 못 자는 사람</div></div>
+      <div class="section-label">BEHAVIOR COUNTDOWN</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">C씨의 규제 발표 후 행동 변화 — 데드라인이 만든 시그널</p>
+      <div class="cd-item cd-info">
+        <div class="cd-day" style="color:#6366f1">D-17 · 규제 발표 당일 (4/1)</div>
+        <div class="tl-title">📱 뱅크샐러드 + 핀다 동시 설치</div>
+        <div class="tl-desc">뉴스 확인 직후 대출 비교앱 2개 설치 → 규제에 직접 영향받는 사람</div>
+      </div>
+      <div class="cd-item cd-info">
+        <div class="cd-day" style="color:#6366f1">D-14 · 탐색 시작</div>
+        <div class="tl-title">📊 매일 2회+ 접속, 새벽 시간대 활성</div>
+        <div class="tl-desc">23시~02시 대출앱 사용 → 급해서 잠 못 자는 사람</div>
+        <div class="tl-bar-wrap" style="background:#f0eeff">
+          <div style="font-size:0.7rem;color:#888;margin-bottom:4px">뉴스앱 접속 빈도 변화</div>
+          <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:75%;background:#6366f1"></div></div>
+          <div style="font-size:0.68rem;color:#6366f1;font-weight:700;margin-top:2px">+50% 증가 — 규제 뉴스 집중 소비</div>
+        </div>
+      </div>
+      <div class="cd-item cd-warn">
+        <div class="cd-day" style="color:#f59e0b">D-7 · 기존 은행 이탈 시작</div>
+        <div class="tl-title">🏦 주거래 은행앱 사용 빈도 급감</div>
+        <div class="tl-desc">기존 은행앱 접속 30%+ 감소 → 떠나려는 이탈 시그널</div>
+        <div class="tl-flow">
+          <div class="tl-flow-down">
+            <div style="font-size:0.65rem;color:#999">기존 은행앱</div>
+            <div style="font-size:0.85rem;font-weight:800;color:#ef4444">↓ 30%</div>
+          </div>
+          <div style="color:#ccc">→</div>
+          <div class="tl-flow-up">
+            <div style="font-size:0.65rem;color:#999">비교앱</div>
+            <div style="font-size:0.85rem;font-weight:800;color:#6366f1">매일 접속</div>
+          </div>
+        </div>
+      </div>
+      <div class="cd-item cd-urgent">
+        <div class="cd-day" style="color:#ef4444">⚡ D-3 · 여기서 잡아야 합니다</div>
+        <div class="tl-title">대환 신청 / 전세보증보험 가입 / 매매 전환 검토</div>
+        <div class="tl-desc">4/17 이후 만기 연장 불가. 이 유저 1명의 가치는 평소의 3~5배.</div>
+      </div>
     </div>
 
     <div class="section">
@@ -602,12 +708,47 @@ elif st.session_state.view == "detail_pet":
     </div>
 
     <div class="section">
-      <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">입양 앱(포인핸드) 첫 설치</div><div class="signal-desc">입양 의사결정의 시작점. 90일간 펫앱 사용 이력 없음 → 신규 확인</div></div>
-      <div class="signal-item"><div class="signal-title">2주 내 펫 관련 앱 3개+ 동시 설치</div><div class="signal-desc">건강앱(펫닥)+쇼핑앱(펫프렌즈)+정보앱 동시 → 모든 게 처음인 사람</div></div>
-      <div class="signal-item"><div class="signal-title">설치 후 하루 2회 이상 실행</div><div class="signal-desc">매일 반복 접속 → 불안해서 계속 확인하는 첫 반려인</div></div>
-      <div class="signal-item"><div class="signal-title">심야 시간대 펫앱 사용 급증</div><div class="signal-desc">밤 11시~새벽 1시 집중 → 아이가 아파서 검색하는 패턴</div></div>
-      <div class="signal-item"><div class="signal-title">기존 90일간 펫앱 사용 이력 없음</div><div class="signal-desc">기존 반려인이 아닌 완전 신규 → 모든 카테고리 첫 구매</div></div>
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">첫 입양자의 앱 사용 변화 — 2주 골든타임</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#f97316;box-shadow:0 0 0 2px #f97316"></div>
+          <div class="tl-day" style="color:#f97316">DAY 0 · 입양 결심</div>
+          <div class="tl-title">🐾 포인핸드(입양앱) 첫 설치</div>
+          <div class="tl-desc">90일간 펫앱 사용 이력 없음 → 완전 신규 반려인 확인</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#f97316;box-shadow:0 0 0 2px #f97316"></div>
+          <div class="tl-day" style="color:#f97316">DAY 1~3 · 앱 폭발</div>
+          <div class="tl-title">📱 펫앱 3개+ 동시 설치</div>
+          <div class="tl-desc">건강앱(펫닥) + 쇼핑앱(펫프렌즈) + 정보앱 → 모든 게 처음인 사람</div>
+          <div class="tl-bar-wrap" style="background:#fff7ed">
+            <div style="font-size:0.7rem;color:#888;margin-bottom:4px">3일 내 동시 설치 속도</div>
+            <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:88%;background:#f97316"></div></div>
+            <div style="font-size:0.68rem;color:#f97316;font-weight:700;margin-top:2px">88% — 기존 반려인 대비 10배 빠른 설치</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#f97316;box-shadow:0 0 0 2px #f97316"></div>
+          <div class="tl-day" style="color:#f97316">DAY 3~7 · 불안 검색</div>
+          <div class="tl-title">🌙 심야 11시~새벽 1시 펫앱 집중 사용</div>
+          <div class="tl-desc">아이가 아파서, 밥을 안 먹어서 → 불안해서 밤에 검색하는 패턴</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-yellow"></div>
+          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 💰 첫 지출</div>
+          <div class="tl-title">🛒 사료/용품 쇼핑 시작</div>
+          <div class="tl-desc">첫 사료 선택 → 이때 선택한 브랜드를 3년 유지. 선점이 핵심</div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot tl-red"></div>
+          <div class="tl-alert">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 14 · 이 2주를 놓치면 3년을 놓칩니다</div>
+            <div class="tl-title">사료 구독 / 펫보험 가입 / 동물병원 등록</div>
+            <div class="tl-desc">첫 입양 2주 내 브랜드 선택 → 3년 고객 전환. 펫보험 가입률 12.8%지만 이 시기 가입자는 유지율 89%.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
