@@ -81,12 +81,18 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 /* Streamlit button overrides - card style */
 div[data-testid="stButton"] > button {
-  width:100%!important; border:none!important; background:transparent!important;
-  padding:8px!important; margin:-20px 0 8px 0!important; min-height:20px!important;
-  cursor:pointer!important; opacity:0.01!important; font-size:1px!important;
+  width:100%!important; text-align:left!important; border:none!important;
+  background:#fff!important; border-radius:24px!important; padding:28px 24px!important;
+  margin-bottom:16px!important; min-height:auto!important; cursor:pointer!important;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; transition:all 0.25s!important;
+  color:#111!important; font-size:0.92rem!important; font-weight:700!important;
+  line-height:1.5!important; white-space:pre-line!important;
 }
-div[data-testid="stButton"] > button:hover { background:transparent!important; }
-div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
+div[data-testid="stButton"] > button:hover {
+  transform:translateY(-3px)!important; box-shadow:0 12px 32px rgba(0,0,0,0.1)!important;
+  background:#fff!important; color:#111!important;
+}
+div[data-testid="stButton"] > button:focus { box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; }
 
 @media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
@@ -388,21 +394,8 @@ else:
     """, unsafe_allow_html=True)
 
     for e in ESSAYS:
-        st.markdown(f"""
-        <div style="background:#fff;border-radius:24px;padding:28px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);cursor:pointer;transition:all 0.25s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-            <span style="font-size:1.6rem">{e["emoji"]}</span>
-            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
-          </div>
-          <div style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
-          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:20px">{e["sub"]}</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
-            <div><span style="font-size:1.3rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
-            <span style="color:#ccc;font-size:1.1rem">→</span>
-          </div>
-        </div>
-        """, unsafe_allow_html=True)
-        if st.button(f"　", key=f"go_{e['id']}"):
+        label = f"{e['emoji']}  {e['tag']}  ·  추정 {e['stat']}\n\n{e['title'].replace(chr(10), chr(10))}\n\n{e['sub']}"
+        if st.button(label, key=f"go_{e['id']}"):
             st.session_state.view = f"detail_{e['id']}"
             st.rerun()
 
