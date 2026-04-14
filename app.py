@@ -144,8 +144,8 @@ ESSAYS = [
         "id": "stock", "emoji": "📈", "tag": "증권", "number": 7,
         "title": "미국주식 앱 알림을 끄고\n금 시세앱을 깐 사람",
         "sub": "트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다",
-        "stat": "80~150만",
-        "stat_label": "미장→금 전환자",
+        "stat": "~97만",
+        "stat_label": "증권앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#eab308",
     },
@@ -153,8 +153,8 @@ ESSAYS = [
         "id": "travel", "emoji": "✈️", "tag": "여행", "number": 5,
         "title": "해외여행 앱을 지우고\n국내 펜션앱을 깐 사람",
         "sub": "환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다",
-        "stat": "200~350만",
-        "stat_label": "국내전환 여행자",
+        "stat": "~65만",
+        "stat_label": "여행앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#0ea5e9",
     },
@@ -162,8 +162,8 @@ ESSAYS = [
         "id": "pet", "emoji": "🐾", "tag": "반려동물", "number": 4,
         "title": "첫 입양 후 2주,\n앱이 폭발하는 사람",
         "sub": "2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다",
-        "stat": "36~124만",
-        "stat_label": "연간 첫 입양자",
+        "stat": "~13만",
+        "stat_label": "펫앱+커머스 (DMP)",
         "date": "2026.04.13",
         "color": "#f97316",
     },
@@ -180,8 +180,8 @@ ESSAYS = [
         "id": "golf", "emoji": "⛳", "tag": "골프", "number": 1,
         "title": "드라이버를 사는 게 아니라\n창피를 안 당할 보험을 삽니다",
         "sub": "접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.",
-        "stat": "50~80만",
-        "stat_label": "접대 입문자",
+        "stat": "~17만",
+        "stat_label": "골프앱 사용자 (DMP)",
         "date": "2026.04.11",
         "color": "#16a34a",
     },
@@ -189,8 +189,8 @@ ESSAYS = [
         "id": "health", "emoji": "💪", "tag": "건강", "number": 6,
         "title": "러닝앱 깔고 3일 만에\n식단앱까지 깐 사람",
         "sub": "다이어트를 결심한 게 아니라, 몸이 바뀌기 시작한 겁니다",
-        "stat": "150~250만",
-        "stat_label": "행동 전환 유저",
+        "stat": "~103만",
+        "stat_label": "운동앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#14b8a6",
     },
@@ -334,7 +334,7 @@ if st.session_state.view == "detail_stock":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">미장→금 전환 투자자</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#eab308;font-size:1.5rem;font-weight:900">80~150만</p><p style="color:#555;font-size:0.7rem">서학개미 400만 중 순매도 전환</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#eab308;font-size:1.5rem;font-weight:900">~97만</p><p style="color:#555;font-size:0.7rem">증권/투자앱 (DMP 30일)</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">금 투자 · 증권사<br>자산관리 · 로보어드</p></div>
       </div>
     </div>
@@ -440,7 +440,7 @@ elif st.session_state.view == "detail_travel":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">국내전환 여행자</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">200~350만</p><p style="color:#555;font-size:0.7rem">해외여행 경험자 중 국내전환</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~65만</p><p style="color:#555;font-size:0.7rem">여행+항공+호텔앱 (DMP 30일)</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">숙박 · 렌터카<br>맛집 · 액티비티</p></div>
       </div>
     </div>
@@ -573,7 +573,7 @@ elif st.session_state.view == "detail_golf":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">접대 골프 입문자</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">50~80만</p><p style="color:#555;font-size:0.7rem">골프 인구 564만 중</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~17만</p><p style="color:#555;font-size:0.7rem">골프앱 사용자 (DMP 30일)</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">골프 용품 · 골프웨어<br>레슨 · 프리미엄 카드</p></div>
       </div>
     </div>
@@ -829,7 +829,7 @@ elif st.session_state.view == "detail_health":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">행동 전환 유저</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">150~250만</p><p style="color:#555;font-size:0.7rem">운동앱 MAU 중 7일+ 지속</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~103만</p><p style="color:#555;font-size:0.7rem">운동+다이어트앱 (DMP 30일)</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">프로틴 · PT<br>러닝화 · 식단</p></div>
       </div>
     </div>
@@ -947,7 +947,7 @@ elif st.session_state.view == "detail_pet":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">첫 입양 폭발기 유저</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">36~124만</p><p style="color:#555;font-size:0.7rem">연간 (1,546만 중 3~8%)</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~13만</p><p style="color:#555;font-size:0.7rem">펫앱+커머스 조회 (DMP 30일)</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">사료 · 펫보험<br>동물병원 · 용품</p></div>
       </div>
     </div>
