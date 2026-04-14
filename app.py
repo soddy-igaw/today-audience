@@ -172,7 +172,7 @@ ESSAYS = [
         "title": "대출앱 3개를 동시에\n깐 사람의 비밀",
         "sub": "불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요",
         "stat": "~10만",
-        "stat_label": "DMP 실측 대출탐색 유저",
+        "stat_label": "대출탐색 유저 (DMP)",
         "date": "2026.04.10",
         "color": "#6366f1",
     },
@@ -668,7 +668,7 @@ elif st.session_state.view == "detail_finance":
 
     <div class="section">
       <div class="section-label">DMP에서 잡는 법</div>
-      <p><strong>[규제 전 급히 움직이는 사람]</strong><br>대출 카테고리 앱 사용 (핀다/KB알다/OK비교대출 등)<br>+ 은행앱 동시 사용 (갈아타기 비교 행동)<br>+ 30~40대<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 대출앱+은행앱 동시 사용자 약 7.7만명 (30일 기준)</em></p>
+      <p><strong>[규제 전 급히 움직이는 사람]</strong><br>대출 카테고리 앱 + 뱅크샐러드 사용자<br>+ 은행앱 동시 사용 (갈아타기 비교 행동)<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 대출앱+뱅크샐러드 사용자 약 10.6만명 (30일 기준)</em></p>
     </div>
 
     <div class="section">
@@ -695,7 +695,7 @@ elif st.session_state.view == "detail_finance":
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
       <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">규제 전 급히 움직이는 유저</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수 (DMP 실측)</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~10만</p><p style="color:#555;font-size:0.7rem">대출앱+은행앱 동시 사용자</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수 (DMP 실측)</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~10만</p><p style="color:#555;font-size:0.7rem">대출앱+뱅크샐러드 사용자</p></div>
         <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">은행 · 핀테크<br>부동산 · 보험</p></div>
       </div>
     </div>
