@@ -1,5 +1,4 @@
 import streamlit as st
-from st_click_detector import click_detector
 
 st.set_page_config(page_title="오늘의 오디언스", page_icon="🎯", layout="wide")
 
@@ -12,7 +11,7 @@ st.markdown("""
 * { margin:0; padding:0; box-sizing:border-box; }
 .stApp { background:#f5f6f8; font-family:'Pretendard',sans-serif; }
 header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:none!important; }
-.block-container { max-width:960px!important; padding:0 32px 100px!important; margin:0 auto!important; }
+.block-container { max-width:480px!important; padding:0 20px 100px!important; margin:0 auto!important; }
 
 /* Feed cards */
 .feed-card {
@@ -31,7 +30,7 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .feed-arrow { color:#ccc; font-size:1.2rem; }
 
 /* Detail page */
-.detail-wrap { max-width:620px; margin:0 auto; }
+.detail-wrap { max-width:520px; margin:0 auto; }
 .detail-back { font-size:0.85rem; color:#888; margin-bottom:24px; cursor:pointer; }
 .detail-hero { background:#fff; border-radius:20px; padding:32px 24px; margin-bottom:16px; }
 .detail-emoji { font-size:3rem; margin-bottom:16px; }
@@ -112,29 +111,20 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 /* Streamlit button overrides - card style */
 /* Feed cards */
-.hero-card {
-  background:#fff; border-radius:24px; padding:36px 32px; margin-bottom:24px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06); cursor:pointer; transition:all 0.25s;
-  display:flex; align-items:center; gap:32px;
+.feed-card {
+  background:#fff; border-radius:24px; padding:28px 24px; margin-bottom:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.25s; cursor:pointer;
 }
-.hero-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
-.hero-left { flex:1; }
-.hero-right { font-size:4rem; }
+.feed-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
 
-.card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px; }
-.grid-card {
-  background:#fff; border-radius:20px; padding:24px 20px; cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.25s;
-}
-.grid-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
-
-@media(max-width:768px) {
-  .block-container { max-width:100%!important; padding:0 16px 80px!important; }
-  .card-grid { grid-template-columns:repeat(2,1fr); }
-  .hero-card { flex-direction:column; gap:16px; }
+/* Hide helper buttons */
+.hidden-btn button {
+  position:absolute!important; width:1px!important; height:1px!important;
+  opacity:0!important; overflow:hidden!important; padding:0!important;
+  margin:0!important; border:none!important; min-height:0!important;
 }
 
-/* Card buttons */
+/* Detail back button */
 div[data-testid="stButton"] > button {
   width:auto!important; background:#fff!important; border:1px solid #eee!important;
   border-radius:12px!important; padding:10px 20px!important; min-height:auto!important;
@@ -144,13 +134,7 @@ div[data-testid="stButton"] > button {
 div[data-testid="stButton"] > button:hover { background:#f8f8f8!important; color:#111!important; }
 div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
-/* Click detector links */
-a.card-link { text-decoration:none!important; color:inherit!important; display:block; }
-
-@media(max-width:768px) {
-  .block-container { max-width:100%!important; padding:0 16px 80px!important; }
-  .card-grid { grid-template-columns:repeat(2,1fr)!important; }
-}
+@media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
 """, unsafe_allow_html=True)
 
@@ -1228,52 +1212,27 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    # Hero — 최신 에세이
-    e = ESSAYS[0]
-    hero_html = f"""
-    <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:16px">🎯 오늘의 오디언스</p>
-    <a href="#" id="{e['id']}" class="card-link">
-    <div class="hero-card">
-      <div class="hero-left">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-          <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e['tag']}</span>
-          <span style="font-size:0.68rem;color:#ccc">추정 {e['stat']}</span>
-        </div>
-        <div style="font-size:1.4rem;font-weight:900;color:#111;line-height:1.35;margin-bottom:10px">{e['title'].replace(chr(10), '<br>')}</div>
-        <div style="font-size:0.88rem;color:#888;line-height:1.6">{e['sub']}</div>
-        <div style="margin-top:16px"><span style="font-size:0.82rem;color:#6366f1;font-weight:600">자세히 보기 →</span></div>
-      </div>
-      <div class="hero-right">{e['emoji']}</div>
-    </div>
-    </a>
-    """
-
-    # Grid — 나머지
-    grid_html = """
-    <p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p>
-    <div class="card-grid">
-    """
-    for e in ESSAYS[1:]:
-        grid_html += f"""
-        <a href="#" id="{e['id']}" class="card-link">
-        <div class="grid-card">
-          <div style="font-size:2rem;margin-bottom:12px">{e['emoji']}</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">
-            <span style="font-size:0.65rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:2px 8px;border-radius:100px">{e['tag']}</span>
+    for i, e in enumerate(ESSAYS):
+        st.markdown(f"""
+        <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{i}].click()">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <span style="font-size:1.6rem">{e["emoji"]}</span>
+            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
+            <span style="font-size:0.68rem;color:#ccc;margin-left:auto">추정 {e["stat"]}</span>
           </div>
-          <div style="font-size:0.95rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:6px">{e['title'].replace(chr(10), '<br>')}</div>
-          <div style="font-size:0.75rem;color:#999;line-height:1.4;margin-bottom:14px">{e['sub'][:45]}...</div>
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="font-size:1.1rem;font-weight:900;color:{e['color']}">{e['stat']}</span>
-            <span style="color:#ccc;font-size:0.9rem">→</span>
+          <div style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
+          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:20px">{e["sub"]}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
+            <div><span style="font-size:1.3rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
+            <span style="color:#ccc;font-size:1.1rem">→</span>
           </div>
         </div>
-        </a>"""
-    grid_html += "</div>"
-
-    clicked = click_detector(hero_html + grid_html)
-    if clicked:
-        st.session_state.view = f"detail_{clicked}"
-        st.rerun()
+        """, unsafe_allow_html=True)
+        with st.container():
+            st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
+            if st.button("go", key=f"go_{e['id']}"):
+                st.session_state.view = f"detail_{e['id']}"
+                st.rerun()
+            st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
