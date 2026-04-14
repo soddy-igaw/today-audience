@@ -80,21 +80,29 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .footer { text-align:center; color:#ccc; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Streamlit button overrides - card style */
-/* Feed card buttons */
+/* Feed cards */
+.feed-card {
+  background:#fff; border-radius:24px; padding:28px 24px; margin-bottom:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.25s; cursor:pointer;
+}
+.feed-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+
+/* Hide helper buttons */
+.hidden-btn button {
+  position:absolute!important; width:1px!important; height:1px!important;
+  opacity:0!important; overflow:hidden!important; padding:0!important;
+  margin:0!important; border:none!important; min-height:0!important;
+}
+
+/* Detail back button */
 div[data-testid="stButton"] > button {
-  width:100%!important; text-align:left!important; border:none!important;
-  background:#fff!important; border-radius:24px!important; padding:28px 24px!important;
-  margin-bottom:16px!important; min-height:auto!important; cursor:pointer!important;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; transition:all 0.25s!important;
-  color:#333!important; font-size:0.88rem!important; font-weight:600!important;
-  line-height:1.6!important; white-space:pre-line!important;
+  width:auto!important; background:#fff!important; border:1px solid #eee!important;
+  border-radius:12px!important; padding:10px 20px!important; min-height:auto!important;
+  font-size:0.85rem!important; color:#888!important; font-weight:500!important;
+  cursor:pointer!important; margin-bottom:16px!important;
 }
-div[data-testid="stButton"] > button:hover {
-  transform:translateY(-3px)!important; box-shadow:0 12px 32px rgba(0,0,0,0.1)!important;
-  background:#fff!important; color:#111!important;
-}
-div[data-testid="stButton"] > button:active { transform:translateY(0)!important; }
-div[data-testid="stButton"] > button:focus { box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; }
+div[data-testid="stButton"] > button:hover { background:#f8f8f8!important; color:#111!important; }
+div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 @media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
@@ -395,10 +403,27 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    for e in ESSAYS:
-        label = f"{e['emoji']}  {e['tag']}  ·  추정 {e['stat']}\n\n{e['title'].replace(chr(10), chr(10))}\n\n{e['sub']}  →"
-        if st.button(label, key=f"go_{e['id']}"):
-            st.session_state.view = f"detail_{e['id']}"
-            st.rerun()
+    for i, e in enumerate(ESSAYS):
+        st.markdown(f"""
+        <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{i}].click()">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <span style="font-size:1.6rem">{e["emoji"]}</span>
+            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
+            <span style="font-size:0.68rem;color:#ccc;margin-left:auto">추정 {e["stat"]}</span>
+          </div>
+          <div style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
+          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:20px">{e["sub"]}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
+            <div><span style="font-size:1.3rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
+            <span style="color:#ccc;font-size:1.1rem">→</span>
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
+        with st.container():
+            st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
+            if st.button("go", key=f"go_{e['id']}"):
+                st.session_state.view = f"detail_{e['id']}"
+                st.rerun()
+            st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
