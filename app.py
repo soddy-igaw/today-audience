@@ -111,6 +111,15 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "travel", "emoji": "✈️", "tag": "여행", "number": 5,
+        "title": "해외여행 앱을 지우고\n국내 펜션앱을 깐 사람",
+        "sub": "환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다",
+        "stat": "200~350만",
+        "stat_label": "국내전환 여행자",
+        "date": "2026.04.14",
+        "color": "#0ea5e9",
+    },
+    {
         "id": "pet", "emoji": "🐾", "tag": "반려동물", "number": 4,
         "title": "첫 입양 후 2주,\n앱이 폭발하는 사람",
         "sub": "2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다",
@@ -140,7 +149,97 @@ ESSAYS = [
 ]
 
 # ===== ROUTING =====
-if st.session_state.view == "detail_golf":
+if st.session_state.view == "detail_travel":
+    if st.button("← 뒤로", key="back_t"):
+        st.session_state.view = "feed"
+        st.rerun()
+    st.markdown("""
+    <div class="detail-wrap">
+    <div class="detail-hero">
+      <div class="detail-emoji">✈️</div>
+      <span class="detail-tag">여행</span>
+      <div class="detail-title">해외여행 앱을 지우고 국내 펜션앱을 깐 사람</div>
+      <div class="detail-sub">환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다</div>
+      <div class="detail-meta">2026.04.14 · 오늘의 오디언스 #5</div>
+    </div>
+
+    <div class="quote-box">
+      <p>"저는 원래 1년에 해외여행 2번은 갔어요.<br>근데 올해는 환율 보고 바로 제주도로 바꿨어요.<br>비행기값이면 제주에서 3박 하거든요."<br><br>— A씨, 32세, 마케팅 회사 재직</p>
+    </div>
+
+    <div class="section">
+      <p>2026년 4월, 원/달러 환율이 1,450원을 넘었습니다.</p>
+      <p>고환율에 유가까지 오르면서 여행자보험 계약이 감소하고 있다는 보도가 나왔습니다. 해외여행 수요가 줄고 있다는 신호.</p>
+      <p>하지만 <strong>여행을 포기한 게 아닙니다.</strong></p>
+      <p>A씨처럼 <strong>방향을 바꾼 겁니다.</strong> 해외 → 국내로. 호텔 → 펜션으로. 패키지 → 자유여행으로.</p>
+      <p>여행 업계 마케터들은 아직 이 변화를 못 잡고 있습니다. "여행 관심자"로 타겟하면 여전히 해외여행 검색자와 국내전환자가 섞입니다.</p>
+    </div>
+
+    <div class="quote-box">
+      <p>"해외여행 앱은 삭제했는데, 야놀자랑 여기어때는 매일 봐요.<br>주말마다 근교 가성비 숙소 찾고 있거든요.<br>돈을 안 쓰는 게 아니라, 쓰는 방식이 바뀐 거예요."<br><br>— A씨</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">BEHAVIOR SIGNALS</div>
+      <div class="signal-item"><div class="signal-title">해외여행 앱 사용 빈도 급감 또는 삭제</div><div class="signal-desc">스카이스캐너/트립닷컴 등 30일 내 사용 80%+ 감소 → 해외여행 포기 시그널</div></div>
+      <div class="signal-item"><div class="signal-title">국내 숙박앱 신규 설치 또는 사용 급증</div><div class="signal-desc">야놀자/여기어때 일일 사용 시간 2배+ 증가 → 국내로 전환 중</div></div>
+      <div class="signal-item"><div class="signal-title">주말 집중 탐색 패턴</div><div class="signal-desc">금요일 저녁~토요일 오전 숙박앱 집중 사용 → 당일/1박 근교 여행 계획</div></div>
+      <div class="signal-item"><div class="signal-title">네비/지도앱 주말 사용 급증</div><div class="signal-desc">평일 대비 주말 네비앱 사용 3배+ → 차로 이동하는 근교 여행자</div></div>
+      <div class="signal-item"><div class="signal-title">맛집/카페 앱 동시 사용</div><div class="signal-desc">숙박앱 + 맛집앱(캐치테이블/다이닝코드) 동시 활성 → 여행 코스 짜는 중</div></div>
+    </div>
+
+    <div class="section">
+      <p>핵심은 <strong>"앱 삭제 + 앱 설치"의 교차 시그널</strong>입니다.</p>
+      <p>해외여행 앱을 지우는 건 단순히 안 가겠다는 게 아닙니다. <strong>예산을 국내로 돌렸다</strong>는 뜻입니다.</p>
+      <p>이 사람들은 돈을 안 쓰는 게 아닙니다. <strong>오히려 국내에서 더 자주, 더 많이 씁니다.</strong> 해외여행 1번 갈 돈으로 국내여행 3~4번을 갑니다. 객단가는 낮지만 빈도가 높습니다.</p>
+    </div>
+
+    <div class="section">
+      <div class="cmp-grid">
+        <div class="cmp-card cmp-left"><h4>여행 구경꾼</h4><p>해외여행 앱 유지<br>숙박앱 가끔 접속<br>"언젠가" 가려는 사람<br>검색만 하고 예약 안 함<br>전환 가능성 낮음</p></div>
+        <div class="cmp-card cmp-right"><h4>국내전환 여행자</h4><p>해외앱 삭제/미사용<br>국내 숙박앱 매일 접속<br>주말마다 실제 이동<br>숙박+맛집+네비 동시 사용<br>월 2~3회 실제 지출</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">DMP에서 잡는 법</div>
+      <p><strong>[국내전환 여행자]</strong><br>해외여행 앱 사용 80%+ 감소 (30일 내)<br>+ 국내 숙박앱 사용 빈도 2배+ 증가<br>+ 주말 네비앱 사용 급증<br>+ 맛집/카페앱 동시 활성<br><br><em style="color:#888;font-size:0.8rem">* 실제 예약/결제 여부는 DMP로 확인 불가.<br>앱 사용 패턴의 교차(해외↓ 국내↑)와 주말 이동 패턴으로 추정합니다.</em></p>
+    </div>
+
+    <div class="section">
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-title">🏨 국내 숙박</div><div class="ind-desc">"이번 주말, 2시간 거리 가성비 펜션"</div></div>
+        <div class="ind-card"><div class="ind-title">🚗 렌터카/주유</div><div class="ind-desc">"근교 드라이브 코스 + 주유 할인"</div></div>
+        <div class="ind-card"><div class="ind-title">🍽️ 지역 맛집/카페</div><div class="ind-desc">"현지인만 아는 숨은 맛집 코스"</div></div>
+        <div class="ind-card"><div class="ind-title">🎫 액티비티/체험</div><div class="ind-desc">"서핑/도예/와이너리 당일 체험"</div></div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"여행 관심자"는 오디언스가 아닙니다.<br><br>해외여행 앱을 <strong>지운 사람</strong>이 오디언스입니다.<br>이 사람은 여행을 포기한 게 아니라<br><strong>돈 쓰는 방향을 바꾼 겁니다.</strong><br><br>해외 1회 → 국내 3~4회.<br>객단가는 낮지만, 빈도와 총 지출은 더 높습니다.</p>
+    </div>
+
+    <div class="ad-compare">
+      <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "올 여름 해외여행 특가! 방콕 3박 59만원~"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "이번 주말, 차로 2시간. 해외 안 부러운 감성 펜션"</p>
+    </div>
+
+    <div class="audience-card">
+      <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">국내전환 여행자</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">200~350만</p><p style="color:#555;font-size:0.7rem">해외여행 경험자 중 국내전환</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">숙박 · 렌터카<br>맛집 · 액티비티</p></div>
+      </div>
+    </div>
+
+    <div class="footer">오늘의 오디언스 #5 · by IGAWorks</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_golf":
     if st.button("← 뒤로", key="back_g"):
         st.session_state.view = "feed"
         st.rerun()
