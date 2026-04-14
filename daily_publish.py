@@ -96,9 +96,11 @@ def get_persona_data(category):
     persona_map = {
         "골프": "P030902",
         "반려동물": "P020501",
-        "패션": "P030201",
+        "패션": "P030203",
         "쇼핑": "P030101",
         "교육": "P010104",
+        "헬스": "P031003",
+        "부동산": "P031101",
     }
     code = persona_map.get(category)
     if not code or not os.path.exists(PERSONA_FILE):
@@ -382,12 +384,12 @@ elif st.session_state.view == "{new_view}":
     past_notes_pos = code.find('지난 노트')
     btn_match = old_btn_pattern.search(code, today_card_pos, past_notes_pos)
     if btn_match:
-        new_btn = f'''if st.button("{emoji} {subtitle}", key="go_new{next_num}"):
+        new_btn = f'''    if st.button("{emoji} {subtitle}", key="go_new{next_num}"):
         st.session_state.view = "{new_view}"
         st.rerun()
 
 '''
-        code = code[:btn_match.start()] + '    ' + new_btn + code[btn_match.end():]
+        code = code[:btn_match.start()] + new_btn + code[btn_match.end():]
 
     # 8. Add old TODAY to 지난 노트 grid (prepend as first card)
     grid_marker = '<div style="display:grid;grid-template-columns:'
@@ -439,7 +441,6 @@ elif st.session_state.view == "{new_view}":
         if st.button("{old_emoji} {old_title_short[:15]}", key="go_{old_detail}2"):
             st.session_state.view = "detail_{old_detail}"
             st.rerun()
-
 '''
                 code = code[:footer_pos] + new_col_btn + code[footer_pos:]
 

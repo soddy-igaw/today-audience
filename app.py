@@ -583,6 +583,219 @@ elif st.session_state.view == "detail_pet":
     """
     st.markdown(pet_html, unsafe_allow_html=True)
 
+elif st.session_state.view == "detail_new5":
+    if st.button("← 돌아가기", key="back_5"):
+        st.session_state.view = "feed"
+        st.rerun()
+
+    st.markdown("""
+    <style>.block-container { max-width:620px!important; padding:0 20px 80px!important; }</style>
+    <div class="nav"><div>
+      <div class="nav-logo"><span>오늘의</span> 오디언스</div>
+      <div class="nav-sub">by IGAWorks</div>
+    </div></div>
+    <div class="author">
+      <div class="author-avatar">IG</div>
+      <div>
+        <div class="author-name">IGAWorks 오디언스 랩</div>
+        <div class="author-date">2026.04.14 · 오늘의 오디언스 #5</div>
+      </div>
+    </div>
+    <div class="note-body">
+
+<p class="lead">'인테리어 관심자' 타겟팅 금지!<br>
+[3개월 내 실제 이사 준비 유저]</p>
+
+<div class="quote">
+"인테리어 앱 설치자들에게 광고했는데 클릭률은 높아요. 근데 전환은 왜 이렇게 낮죠? 다들 구경만 하는 것 같아요."
+<span>— K씨, 홈퍼니싱 브랜드 마케팅 매니저</span>
+</div>
+
+**"인테리어에 관심 있는 사람"**
+
+이보다 뭉뚱그린 타겟이 또 있을까.
+
+인테리어 관심자라는 건 누구인가?
+오늘 오후에 심심해서 집꾸미기 앱 훑어본 직장인?
+3년 후 결혼 준비하며 레퍼런스 모으는 대학생?
+아니면 다음 달 이사 앞두고 절박하게 업체 알아보는 실수요자?
+
+전부 다 "인테리어 관심자"다.
+하지만 광고비를 쓸 가치가 있는 건 마지막 한 명뿐.
+
+나머지는 그냥 구경꾼이다.
+예쁜 사진 보며 "나중에 내 집 꾸밀 때..." 라고 상상하는.
+
+<div class="sig-box">
+<div class="sig-label">BEHAVIOR SIGNALS</div>
+직방 + 다방 + 호갱노노<br>
+3개 앱 동시 설치율 78%<br><br>
+최근 30일 내 부동산 앱<br>
+주 3회 이상 접속<br><br>
+부동산 앱 첫 설치 후<br>
+3개월 내 인테리어 앱 추가 설치<br><br>
+주말 오전 10-12시<br>
+부동산 앱 집중 사용<br><br>
+인테리어 앱보다<br>
+부동산 앱 사용 빈도 2배 이상
+</div>
+
+**진짜 이사 준비하는 사람들은 패턴이 다르다.**
+
+먼저 부동산 앱부터 깐다.
+직방, 다방, 호갱노노를 동시에.
+하나로는 안 되니까. 놓치는 매물이 있을까 봐.
+
+그다음에야 인테리어 앱을 깐다.
+집을 구한 다음 꾸미는 거니까.
+순서가 명확하다.
+
+**반대로 구경꾼들은 인테리어 앱만 있다.**
+
+집도 없으면서 꾸밀 생각부터 한다.
+현실적이지 않다는 뜻.
+당장 지갑을 열 확률이 낮다.
+
+<div class="cmp-grid">
+<div class="cmp-card cmp-left">
+<h4>🏠 구경꾼</h4>
+인테리어 앱만 설치<br>
+부동산 앱 사용 경험 無<br>
+주로 평일 저녁 시간대 접속<br>
+앱 내에서 '저장'만 반복<br>
+설치 후 3개월 넘게 앱만 유지<br>
+소셜 공유 기능 자주 사용<br>
+트렌드성 콘텐츠 위주 소비<br>
+실제 구매 전환율 2% 미만
+</div>
+<div class="cmp-card cmp-right">
+<h4>🔧 실제 이사 준비자</h4>
+부동산 앱 → 인테리어 앱 순차 설치<br>
+3개 이상 부동산 앱 동시 보유<br>
+주말 오전 부동산 앱 집중 사용<br>
+검색보다 '실제 매물' 위주 탐색<br>
+앱 설치 후 3개월 내 활동 집중<br>
+가격 정보에 민감한 반응<br>
+실용성 위주 콘텐츠 선호<br>
+실제 구매 전환율 15% 이상
+</div>
+</div>
+
+<div class="sig-box">
+<div class="sig-label">DMP에서 잡는 법</div>
+1단계: 직방+다방+호갱노노 동시 설치<br>
+2단계: 최근 30일 부동산 앱 사용 빈도 주 3회↑<br>
+3단계: 부동산 앱 설치 이후 인테리어 앱 추가<br>
+4단계: 주말 오전 부동산 앱 활성 패턴<br>
+5단계: 전체 기간 3개월 이내 압축
+</div>
+
+<div class="ind-grid">
+<div class="ind-card">
+<div class="ind-title">🏡 인테리어 시공</div>
+<div class="ind-desc">실제 이사 앞둔 사람들만 타겟. 견적 문의율 300% 향상 기대. 시공 일정 맞춰 광고 집행.</div>
+</div>
+<div class="ind-card">
+<div class="ind-title">🛋️ 가구 브랜드</div>
+<div class="ind-desc">새 집 가구 구매 적기 포착. 기존 관심자 대비 구매 전환 5배 높음. 배송 일정까지 고려한 타이밍.</div>
+</div>
+<div class="ind-card">
+<div class="ind-title">🏠 부동산 중개</div>
+<div class="ind-desc">이미 적극적으로 집 알아보는 층. 경쟁업체 이용자도 함께 공략. 계약 성사율 대폭 상승.</div>
+</div>
+<div class="ind-card">
+<div class="ind-title">🚛 이사 서비스</div>
+<div class="ind-desc">이사 확정 전 미리 접근. 예약률 최대 400% 증가. 성수기 대비한 선제적 마케팅 가능.</div>
+</div>
+</div>
+
+<div class="insight">
+<div class="ins-label">KEY INSIGHT</div>
+진짜 고객은 꿈꾸지 않는다. 준비한다.<br>
+인테리어 관심보다 이사 준비 신호가 100배 정확하다.
+</div>
+
+**광고 카피도 달라져야 한다.**
+
+❌ **기존**: "꿈꾸던 인테리어를 현실로"
+✅ **새 타겟**: "이사 한 달 전 미리 준비하세요"
+
+❌ **기존**: "트렌디한 홈스타일링"  
+✅ **새 타겟**: "새 집 입주 일정에 맞춰 시공"
+
+❌ **기존**: "인테리어 영감을 찾아보세요"
+✅ **새 타겟**: "계약금 낸 분들을 위한 특가"
+
+구경꾼에게는 꿈을 팔았다.
+실수요자에게는 솔루션을 판다.
+
+**K씨와의 두 번째 대화.**
+
+"정말 부동산 앱 쓰는 사람들이 더 잘 살까요?"
+
+**당연하다.**
+
+집 구하는 사람이 인테리어에 돈 쓸 확률이 높다.
+이미 목적이 명확하니까.
+예산도 책정해둔 상태고.
+
+"그럼 타겟 사이즈가 많이 줄어들지 않나요?"
+
+**줄어든다.**
+
+400만 명에서 50만 명으로.
+하지만 50만 명이 400만 명보다 값지다.
+구매 확률이 8배 높으니까.
+
+"언제부터 이 타겟으로 잡아야 할까요?"
+
+**지금 당장.**
+
+이사철은 따로 없다. 연중 계속이다.
+다만 3-4월, 8-9월에 더 집중될 뿐.
+미리 준비하는 게 좋다.
+
+<div style="background:#111; color:#fff; padding:24px; border-radius:8px; margin:24px 0;">
+<h3 style="color:#00ff88; margin:0 0 16px 0;">AUDIENCE CARD</h3>
+<h4 style="margin:0 0 8px 0;">3개월 내 실제 이사 준비 유저</h4>
+<p style="margin:0 0 16px 0; opacity:0.8;">추정 모수: 45만~65만 명</p>
+
+<div style="margin:16px 0;">
+<strong style="color:#00ff88;">추천 업종</strong><br>
+인테리어 시공, 가구 브랜드, 부동산 중개, 이사 서비스
+</div>
+
+<div style="margin:16px 0;">
+<strong style="color:#00ff88;">핵심 시그널</strong><br>
+부동산 3개 앱 동시 설치 + 인테리어 앱 후순위 추가 + 주말 오전 집중 사용
+</div>
+
+<div style="margin:16px 0;">
+<strong style="color:#00ff88;">메시지</strong><br>
+"이사 일정 맞춰 미리 준비" / "새 집 입주 전 완벽 세팅" / "계약 완료자 특별 혜택"
+</div>
+</div>
+
+<div class="note-end">
+**마지막 조언.**
+
+인테리어 관심자 타겟팅은 이제 그만.
+너무 넓다. 너무 뭉뚱그려져 있다.
+
+실제로 이사 준비하는 사람들을 찾아라.
+부동산 앱 사용 패턴이 가장 정확한 신호다.
+
+그들은 이미 예산을 정해뒀다.
+시기도 정해뒀다.
+당신의 서비스만 기다리고 있다.
+
+**2026년 4월 14일**<br>
+**IGAWorks 오늘의 오디언스**
+</div>
+
+</div>
+    """, unsafe_allow_html=True)
+
 else:
     # ===== MAIN PAGE =====
     st.markdown("""
@@ -601,26 +814,30 @@ else:
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">🎯 오늘의 오디언스</p>
 
     <div style="border-radius:20px;overflow:hidden;border:1px solid #e8e8e8;margin-bottom:40px;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
-      <div style="background:linear-gradient(135deg,#f97316 0%,#ea580c 50%,#c2410c 100%);padding:48px 36px;position:relative;overflow:hidden">
-        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">🐾</div>
+      <div style="background:linear-gradient(135deg,#4a1942 0%,#6b3fa0 100%);padding:48px 36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">🏠</div>
         <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:1px">TODAY</span>
-        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'반려동물 관심자' 타겟팅 금지!</h2>
-        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">첫 입양 후 2주, 앱이 폭발하는 사람</p>
+        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'인테리어 관심자' 타겟팅 금지!</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">[3개월 내 실제 이사 준비 유저]</p>
       </div>
       <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:0.78rem;color:#888">반려동물 인구 <strong style="color:#6366f1">1,546만 명</strong> 중 첫 입양자</span>
+        <span style="font-size:0.78rem;color:#888">부동산 오디언스 인사이트</span>
         <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("🐾 첫 입양 후 2주, 앱이 폭발하는 사람", key="go_pet"):
-        st.session_state.view = "detail_pet"
+    if st.button("🏠 [3개월 내 실제 이사 준비 유저]", key="go_new5"):
+        st.session_state.view = "detail_new5"
         st.rerun()
 
     st.markdown("""
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 지난 노트</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:40px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:40px">
+      <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+        <div style="background:linear-gradient(135deg,#1a472a,#1a472acc);padding:28px 20px;position:relative"><div style="position:absolute;top:10px;right:14px;font-size:2.4rem;opacity:0.15">⛳</div><span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:100px">#4</span><h3 style="color:#fff;font-size:0.92rem;font-weight:800;line-height:1.3;margin-top:10px">반려동물 관심자</h3></div>
+        <div style="padding:12px 14px"><span style="font-size:0.68rem;color:#999">반려동물 인구 1,546만 명 중 첫 입양자</span></div>
+      </div>
       <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
         <div style="background:linear-gradient(135deg,#1a472a,#3a7d5c);padding:28px 20px;position:relative"><div style="position:absolute;top:10px;right:14px;font-size:2.4rem;opacity:0.15">⛳</div><span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:100px">#1</span><h3 style="color:#fff;font-size:0.92rem;font-weight:800;line-height:1.3;margin-top:10px">접대 골프<br>입문자</h3></div>
         <div style="padding:12px 14px"><span style="font-size:0.68rem;color:#999">골프 용품 · 웨어 · 레슨</span></div>
@@ -636,7 +853,7 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("⛳ 골프", key="go_golf"):
             st.session_state.view = "detail_golf"
@@ -648,6 +865,10 @@ else:
     with col3:
         if st.button("🏠 전세", key="go_gold"):
             st.session_state.view = "detail_gold"
+            st.rerun()
+    with col4:
+        if st.button("🐾 반려동물", key="go_pet2"):
+            st.session_state.view = "detail_pet"
             st.rerun()
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
