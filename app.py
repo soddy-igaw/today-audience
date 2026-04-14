@@ -81,17 +81,12 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 /* Streamlit button overrides - card style */
 div[data-testid="stButton"] > button {
-  width:100%!important; text-align:left!important; border:none!important;
-  background:#fff!important; border-radius:20px!important; padding:28px 24px!important;
-  margin-bottom:14px!important; min-height:auto!important; cursor:pointer!important;
-  box-shadow:0 1px 3px rgba(0,0,0,0.04)!important; transition:all 0.2s!important;
-  color:#111!important; font-size:0.95rem!important; font-weight:700!important; line-height:1.4!important;
+  width:100%!important; border:none!important; background:transparent!important;
+  padding:8px!important; margin:-20px 0 8px 0!important; min-height:20px!important;
+  cursor:pointer!important; opacity:0.01!important; font-size:1px!important;
 }
-div[data-testid="stButton"] > button:hover {
-  transform:translateY(-2px)!important; box-shadow:0 8px 24px rgba(0,0,0,0.08)!important;
-  background:#fff!important; color:#111!important;
-}
-div[data-testid="stButton"] > button:focus { box-shadow:0 1px 3px rgba(0,0,0,0.04)!important; }
+div[data-testid="stButton"] > button:hover { background:transparent!important; }
+div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 @media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
@@ -101,24 +96,30 @@ div[data-testid="stButton"] > button:focus { box-shadow:0 1px 3px rgba(0,0,0,0.0
 ESSAYS = [
     {
         "id": "pet", "emoji": "🐾", "tag": "반려동물", "number": 4,
-        "title": "'반려동물 관심자'\n타겟팅 금지!",
-        "sub": "첫 입양 후 2주, 앱이 폭발하는 사람",
-        "stat": "반려동물 인구 <strong>1,546만</strong> 중 첫 입양자",
+        "title": "첫 입양 후 2주,\n앱이 폭발하는 사람",
+        "sub": "2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다",
+        "stat": "36~124만",
+        "stat_label": "연간 첫 입양자",
         "date": "2026.04.13",
+        "color": "#f97316",
     },
     {
         "id": "finance", "emoji": "💰", "tag": "금융", "number": 2,
-        "title": "'대출 관심자'\n타겟팅 금지!",
-        "sub": "다음 달 이자가 올라가는 사람",
-        "stat": "대출 비교앱 <strong>3개+</strong> 동시 설치자",
+        "title": "대출앱 3개를 동시에\n깐 사람의 비밀",
+        "sub": "불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요",
+        "stat": "120~200만",
+        "stat_label": "갈아타기 직전 유저",
         "date": "2026.04.10",
+        "color": "#6366f1",
     },
     {
         "id": "golf", "emoji": "⛳", "tag": "골프", "number": 1,
-        "title": "'골프 관심자'\n타겟팅 금지!",
-        "sub": "접대 골프 입문자의 숨겨진 구매 시그널",
-        "stat": "골프 인구 <strong>564만</strong> 중 접대 입문자",
+        "title": "드라이버를 사는 게 아니라\n창피를 안 당할 보험을 삽니다",
+        "sub": "접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.",
+        "stat": "50~80만",
+        "stat_label": "접대 입문자",
         "date": "2026.04.11",
+        "color": "#16a34a",
     },
 ]
 
@@ -217,74 +218,75 @@ elif st.session_state.view == "detail_finance":
     <div class="detail-hero">
       <div class="detail-emoji">💰</div>
       <span class="detail-tag">금융</span>
-      <div class="detail-title">'대출 관심자' 타겟팅 금지!</div>
-      <div class="detail-sub">다음 달 이자가 올라가는 사람</div>
+      <div class="detail-title">대출앱 3개를 동시에 깐 사람의 비밀</div>
+      <div class="detail-sub">불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요</div>
       <div class="detail-meta">2026.04.10 · 오늘의 오디언스 #2</div>
     </div>
 
     <div class="quote-box">
-      <p>"매달 대출 광고에 3000만 원을 씁니다.<br>클릭은 되는데, 실제로 갈아타는 사람은<br>열 명 중 한 명도 안 돼요."</p>
+      <p>"불이 났는데<br>소화기 할인 쿠폰을 보내고 있는 격이죠."<br><br>— K씨, 시중은행 전세대출 담당 마케터</p>
     </div>
 
     <div class="section">
-      <p>저축은행 마케터 K씨의 말입니다. "대출 관심자"를 타겟하면 클릭은 나옵니다. 금리가 궁금한 사람은 많으니까요.</p>
-      <p>문제는 <strong>궁금한 사람과 시급한 사람이 완전히 다르다</strong>는 것.</p>
-      <p>궁금한 사람은 클릭하고 나갑니다.<br>시급한 사람은 클릭하고 <strong>신청합니다.</strong></p>
+      <p>4월 1일, 금융위원회가 가계대출 종합 대책을 발표했습니다.</p>
+      <p>→ 가계대출 연간 성장률 상한 <strong>1.5%</strong>로 하향<br>→ 다주택자 주담대 만기 연장 <strong>4월 17일부터 금지</strong><br>→ 비거주 1주택자 전세대출 보증 <strong>제한 검토 중</strong></p>
+      <p>규제가 만든 건 <strong>데드라인</strong>입니다. 4월 17일이 지나면 다주택자는 만기 연장이 안 됩니다.</p>
+      <p><strong>이 사람들은 "관심"이 아니라 "생존"으로 움직이고 있습니다.</strong></p>
     </div>
 
     <div class="section">
       <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">대출 비교앱 3개 이상 동시 설치 (7일 내)</div><div class="signal-desc">뱅크샐러드+핀다+토스를 일주일 안에 설치 → 비교쇼핑 단계 진입</div></div>
-      <div class="signal-item"><div class="signal-title">설치 후 매일 반복 접속</div><div class="signal-desc">하루 2회+ 실행 → 조건 비교 중. 가끔 보는 사람과 완전히 다른 패턴</div></div>
-      <div class="signal-item"><div class="signal-title">기존 은행앱 접속 빈도 감소</div><div class="signal-desc">주거래 은행앱 사용이 줄어듦 → 떠나려는 이탈 시그널</div></div>
-      <div class="signal-item"><div class="signal-title">새벽·출퇴근 시간대 집중 탐색</div><div class="signal-desc">23시~02시, 07~09시 사용 → 급해서 틈틈이 찾는 사람</div></div>
-      <div class="signal-item"><div class="signal-title">금융 뉴스앱 사용 빈도 급증</div><div class="signal-desc">금리 관련 뉴스 소비 증가 → 시장 변화에 반응하는 사람</div></div>
+      <div class="signal-item"><div class="signal-title">대출 비교앱 2개+ 동시 설치 (14일 내)</div><div class="signal-desc">뱅크샐러드+핀다+토스 중 2개 이상을 2주 안에 설치 → 비교쇼핑이 아니라 긴급 탐색</div></div>
+      <div class="signal-item"><div class="signal-title">부동산앱 활성 사용 급증</div><div class="signal-desc">직방/다방 일일 사용 시간 2배+ 증가 → 전세 만기 대응 중</div></div>
+      <div class="signal-item"><div class="signal-title">뉴스앱 접속 빈도 50%+ 증가</div><div class="signal-desc">규제 발표(4/1) 전후로 뉴스 소비 급증 → 시장 변화에 민감하게 반응</div></div>
+      <div class="signal-item"><div class="signal-title">규제 발표 이후 설치 타이밍 집중</div><div class="signal-desc">4/1 이후 대출앱 신규 설치 → 규제에 직접 영향받는 사람</div></div>
+      <div class="signal-item"><div class="signal-title">야간/새벽 시간대 활성</div><div class="signal-desc">23시~02시 대출앱+부동산앱 동시 사용 → 급해서 잠 못 자는 사람</div></div>
     </div>
 
     <div class="section">
-      <p>핵심은 <strong>앱 설치 개수와 접속 빈도</strong>입니다.</p>
-      <p>앱을 1개 깔고 가끔 보는 사람은 "언젠가" 갈아탈 사람입니다. 급하지 않아요.</p>
-      <p>앱을 <strong>3개 깔고 매일 여는 사람</strong>은 다릅니다. 이 사람은 지금 금리를 비교하고 있고, 조건이 맞으면 <strong>이번 달 안에 움직입니다.</strong></p>
+      <p>핵심은 <strong>"동시에 여러 앱을 까는 속도"</strong>입니다.</p>
+      <p>금리 비교하는 사람은 앱을 하나 깔고 천천히 봅니다.<br>규제 전에 움직이는 사람은 <strong>대출앱 + 부동산앱 + 뉴스앱을 동시에 깝니다.</strong></p>
+      <p>이 사람들에게 광고는 방해가 아닙니다. <strong>지금 당장 필요한 정보</strong>입니다. 전환율이 평소의 3~5배.</p>
     </div>
 
     <div class="section">
       <div class="cmp-grid">
-        <div class="cmp-card cmp-left"><h4>대출 구경꾼</h4><p>앱 1개, 가끔 접속<br>금리 궁금한 정도<br>은행앱 그대로 사용<br>낮 시간 가끔 확인<br>"나중에" 갈아탈 생각</p></div>
-        <div class="cmp-card cmp-right"><h4>갈아타기 직전</h4><p>앱 3개+ 동시 설치<br>매일 반복 접속<br>기존 은행앱 사용 감소<br>새벽/출퇴근 집중 탐색<br>이번 달 안에 실행</p></div>
+        <div class="cmp-card cmp-left"><h4>대출 구경꾼</h4><p>부동산앱만 활성 증가<br>대출앱 미설치<br>뉴스 소비 평소와 비슷<br>30일+ 관찰 기간<br>전환 가능성 낮음</p></div>
+        <div class="cmp-card cmp-right"><h4>규제 전 급히 움직이는 사람</h4><p>대출앱 2개+ 동시 설치<br>부동산앱 활성 급증<br>뉴스앱 접속 50%+ 증가<br>14일 내 집중 행동<br>전환 가능성 극상</p></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-label">DMP에서 잡는 법</div>
-      <p><strong>[대출 갈아타기 직전]</strong><br>대출 비교앱 3개+ (7일 내 동시 설치)<br>+ 매일 2회+ 접속<br>+ 기존 은행앱 사용 빈도 30%+ 감소<br>+ 새벽/출퇴근 시간대 집중</p>
+      <p><strong>[규제 전 급히 움직이는 사람]</strong><br>대출 비교앱 2개+ (14일 내 동시 설치)<br>+ 부동산앱 활성 사용 급증<br>+ 뉴스앱 접속 빈도 50%+ 증가<br>+ 규제 발표(4/1) 이후 설치<br><br><em style="color:#888;font-size:0.8rem">* 실제 대출 보유 여부는 DMP로 확인 불가.<br>앱 설치 속도 + 동시성 + 타이밍으로 긴급도를 추정합니다.</em></p>
     </div>
 
     <div class="section">
       <div class="ind-grid">
-        <div class="ind-card"><div class="ind-title">🏦 은행/저축은행</div><div class="ind-desc">"지금 갈아타면 금리 0.3% 추가 인하"</div></div>
-        <div class="ind-card"><div class="ind-title">📱 핀테크</div><div class="ind-desc">"3분 만에 내 대출 갈아타기 비교"</div></div>
-        <div class="ind-card"><div class="ind-title">🛡️ 보험</div><div class="ind-desc">대출 연계 보험 리파이낸싱</div></div>
-        <div class="ind-card"><div class="ind-title">💳 카드</div><div class="ind-desc">대출 이자 캐시백 카드</div></div>
+        <div class="ind-card"><div class="ind-title">🏦 은행/저축은행</div><div class="ind-desc">"4/17 전 대환 신청" 긴급 캠페인</div></div>
+        <div class="ind-card"><div class="ind-title">📱 핀테크</div><div class="ind-desc">"내 전세대출 규제 영향 확인" 유도</div></div>
+        <div class="ind-card"><div class="ind-title">🏠 부동산 플랫폼</div><div class="ind-desc">전세→매매 전환 매물 추천</div></div>
+        <div class="ind-card"><div class="ind-title">🛡️ 보험</div><div class="ind-desc">전세보증보험 긴급 가입 타겟팅</div></div>
       </div>
     </div>
 
     <div class="insight-box">
       <div class="ins-label">💡 KEY INSIGHT</div>
-      <p>"대출 관심자"는 오디언스가 아닙니다.<br><strong>앱 3개를 동시에 까는 속도</strong>가 오디언스를 만듭니다.</p>
+      <p>"대출 관심자"는 오디언스가 아닙니다.<br><br>규제가 만든 건 <strong>데드라인</strong>입니다.<br><strong>대출앱 2개를 동시에 까는 속도</strong>가 오디언스를 만듭니다.<br><br>불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요.<br>소화기를 들고 달려가세요.</p>
     </div>
 
     <div class="ad-compare">
       <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
-      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "대출 금리 비교, 최저 연 3.2%~"</p>
-      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "지금 갈아타면 이번 달부터 이자가 줄어듭니다"</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "전세대출 금리 비교, 최저 연 3.2%~"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "4월 17일 전에 대환 신청하세요. 이후엔 만기 연장이 안 됩니다"</p>
     </div>
 
     <div class="audience-card">
       <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
-      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">대출 갈아타기 직전 유저</h3>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">규제 전 급히 움직이는 유저</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">120~200만</p><p style="color:#555;font-size:0.7rem">대출 비교앱 사용자 중</p></div>
-        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">은행 · 핀테크<br>보험 · 카드</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">120~200만</p><p style="color:#555;font-size:0.7rem">전세대출 보증 13.9조 영향권</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">은행 · 핀테크<br>부동산 · 보험</p></div>
       </div>
     </div>
 
@@ -386,8 +388,21 @@ else:
     """, unsafe_allow_html=True)
 
     for e in ESSAYS:
-        label = f"{e['emoji']}  {e['tag']}\n{e['title'].replace(chr(10), ' ')}\n{e['sub']}"
-        if st.button(label, key=f"go_{e['id']}"):
+        st.markdown(f"""
+        <div style="background:#fff;border-radius:24px;padding:28px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);cursor:pointer;transition:all 0.25s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <span style="font-size:1.6rem">{e["emoji"]}</span>
+            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
+          </div>
+          <div style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
+          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:20px">{e["sub"]}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
+            <div><span style="font-size:1.3rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
+            <span style="color:#ccc;font-size:1.1rem">→</span>
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
+        if st.button(f"　", key=f"go_{e['id']}"):
             st.session_state.view = f"detail_{e['id']}"
             st.rerun()
 
