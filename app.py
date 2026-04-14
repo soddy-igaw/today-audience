@@ -1213,6 +1213,11 @@ else:
     """, unsafe_allow_html=True)
 
     for i, e in enumerate(ESSAYS):
+        if i == 0:
+            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:16px">🎯 오늘의 오디언스</p>', unsafe_allow_html=True)
+        elif i == 1:
+            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p>', unsafe_allow_html=True)
+
         st.markdown(f"""
         <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{i}].click()">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
