@@ -100,7 +100,6 @@ def get_persona_data(category):
         "쇼핑": "P030101",
         "교육": "P010104",
         "헬스": "P031003",
-        "부동산": "P031101",
     }
     code = persona_map.get(category)
     if not code or not os.path.exists(PERSONA_FILE):
@@ -384,12 +383,16 @@ elif st.session_state.view == "{new_view}":
     past_notes_pos = code.find('지난 노트')
     btn_match = old_btn_pattern.search(code, today_card_pos, past_notes_pos)
     if btn_match:
-        new_btn = f'''    if st.button("{emoji} {subtitle}", key="go_new{next_num}"):
+        new_btn = f'''if st.button("{emoji} {subtitle}", key="go_new{next_num}"):
         st.session_state.view = "{new_view}"
         st.rerun()
 
-'''
-        code = code[:btn_match.start()] + new_btn + code[btn_match.end():]
+    '''
+        # Replace including leading whitespace
+        start = btn_match.start()
+        # Find start of line (include leading spaces)
+        line_start = code.rfind('\n', 0, start) + 1
+        code = code[:line_start] + '    ' + new_btn + code[btn_match.end():]
 
     # 8. Add old TODAY to 지난 노트 grid (prepend as first card)
     grid_marker = '<div style="display:grid;grid-template-columns:'
@@ -421,11 +424,9 @@ elif st.session_state.view == "{new_view}":
         code = code[:grid_line_start] + new_grid + code[grid_line_end:]
 
         # Add button for old TODAY in columns
-        # Find the columns section after grid
-        col_section = _re.search(r'(col\d+, col\d+, col\d+)\s*=\s*st\.columns\((\d+)\)', code)
+        col_section = _re.search(r'(col\d+(?:,\s*col\d+)+)\s*=\s*st\.columns\((\d+)\)', code)
         if col_section:
             old_col_count = int(col_section.group(2))
-            # Add new column variable and button
             new_col_count = old_col_count + 1
             old_col_names = col_section.group(1)
             new_col_name = f"col{new_col_count}"
@@ -434,14 +435,15 @@ elif st.session_state.view == "{new_view}":
                 f'{old_col_names} = st.columns({old_col_count})',
                 f'{new_col_names} = st.columns({new_col_count})'
             )
-            # Add button in new column before footer
-            footer_pos = code.find("st.markdown('<div class=\"footer\"")
+            # Insert new with-block before footer
+            footer_pos = code.find("    st.markdown('<div class=\"footer\"")
             if footer_pos > 0:
-                new_col_btn = f'''    with {new_col_name}:
-        if st.button("{old_emoji} {old_title_short[:15]}", key="go_{old_detail}2"):
-            st.session_state.view = "detail_{old_detail}"
-            st.rerun()
-'''
+                new_col_btn = (
+                    f'    with {new_col_name}:\n'
+                    f'        if st.button("{old_emoji} {old_title_short[:15]}", key="go_{old_detail}2"):\n'
+                    f'            st.session_state.view = "detail_{old_detail}"\n'
+                    f'            st.rerun()\n'
+                )
                 code = code[:footer_pos] + new_col_btn + code[footer_pos:]
 
     with open(APP_FILE, "w", encoding="utf-8") as f:

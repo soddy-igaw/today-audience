@@ -603,194 +603,175 @@ elif st.session_state.view == "detail_new5":
     </div>
     <div class="note-body">
 
-<p class="lead">'인테리어 관심자' 타겟팅 금지!<br>
-[3개월 내 실제 이사 준비 유저]</p>
+<p class="lead">
+'부동산 관심자' 타겟팅 금지!<br>
+[전월세 만기 2개월 전 급한 사람들]
+</p>
 
 <div class="quote">
-"인테리어 앱 설치자들에게 광고했는데 클릭률은 높아요. 근데 전환은 왜 이렇게 낮죠? 다들 구경만 하는 것 같아요."
-<span>— K씨, 홈퍼니싱 브랜드 마케팅 매니저</span>
+"부동산 앱 깔고 매일 들어가는 사람 겨냥했는데 성과가 별로예요. 그냥 구경만 하는 것 같아요. 진짜 급한 사람들을 어떻게 찾을 수 있을까요?"<br>
+— K씨, 이사 서비스 마케터
 </div>
 
-**"인테리어에 관심 있는 사람"**
+마케터들이 가장 많이 하는 실수.
 
-이보다 뭉뚱그린 타겟이 또 있을까.
+'부동산 앱 사용자 = 부동산 니즈'라는 착각이다.
 
-인테리어 관심자라는 건 누구인가?
-오늘 오후에 심심해서 집꾸미기 앱 훑어본 직장인?
-3년 후 결혼 준비하며 레퍼런스 모으는 대학생?
-아니면 다음 달 이사 앞두고 절박하게 업체 알아보는 실수요자?
+직방, 다방, 호갱노노 앱을 매일 여는 사람들. 과연 모두가 진짜 고객일까?
 
-전부 다 "인테리어 관심자"다.
-하지만 광고비를 쓸 가치가 있는 건 마지막 한 명뿐.
+대부분은 그냥 구경이다. 심심할 때 매물 보기. 언젠가 이사할 때를 위한 시장 조사. 투자 목적의 정보 수집.
 
-나머지는 그냥 구경꾼이다.
-예쁜 사진 보며 "나중에 내 집 꾸밀 때..." 라고 상상하는.
+정작 진짜 급한 사람들은 따로 있다.
+
+전월세 만기가 2개월 앞으로 다가온 사람들.
+
+이들의 행동 패턴은 완전히 다르다. 앱 사용 빈도가 급격히 증가한다. 여러 앱을 동시에 설치한다. 주말 새벽까지 앱을 켠다.
+
+절박함이 데이터에 드러난다.
+
+"일반 부동산 관심자와 진짜 급한 사람은 어떻게 구분하나요?" K씨가 묻는다.
+
+"앱 사용 패턴이 완전히 달라요. 급한 사람들은 갑자기 여러 앱을 설치하고 사용 빈도가 3배 이상 늘어납니다."
+
+"아, 행동의 변화를 보는 거군요?"
+
+"맞아요. 평소에 부동산 앱 안 쓰던 사람이 갑자기 3개 앱을 동시에 깔면 뭔가 일이 있는 거죠."
+
+"그럼 오히려 기존 사용자보다 신규 사용자가 더 좋은 타겟일 수 있겠네요?"
+
+"정확합니다. 특히 최근 2주 내에 여러 앱을 설치하고 매일 사용하는 패턴이 가장 강한 시그널이에요."
 
 <div class="sig-box">
 <div class="sig-label">BEHAVIOR SIGNALS</div>
-직방 + 다방 + 호갱노노<br>
-3개 앱 동시 설치율 78%<br><br>
-최근 30일 내 부동산 앱<br>
-주 3회 이상 접속<br><br>
-부동산 앱 첫 설치 후<br>
-3개월 내 인테리어 앱 추가 설치<br><br>
-주말 오전 10-12시<br>
-부동산 앱 집중 사용<br><br>
-인테리어 앱보다<br>
-부동산 앱 사용 빈도 2배 이상
+• 최근 2주 내 부동산 앱 2개 이상 신규 설치<br>
+• 직방+다방+호갱노노 중 2개 이상 동시 활성<br>
+• 평일 저녁 9시 이후, 주말 새벽 앱 사용<br>
+• 이전 대비 앱 사용 빈도 3배 이상 증가<br>
+• 매일 연속 7일 이상 부동산 앱 접속<br>
+• 금융 앱과 부동산 앱 교차 사용 패턴<br>
+• 지도 앱과 부동산 앱 연속 사용
 </div>
 
-**진짜 이사 준비하는 사람들은 패턴이 다르다.**
+이 시그널들이 말하는 건 하나다.
 
-먼저 부동산 앱부터 깐다.
-직방, 다방, 호갱노노를 동시에.
-하나로는 안 되니까. 놓치는 매물이 있을까 봐.
+시간이 없다.
 
-그다음에야 인테리어 앱을 깐다.
-집을 구한 다음 꾸미는 거니까.
-순서가 명확하다.
+평소에 부동산에 관심 없던 사람이 갑자기 여러 앱을 깔았다? 뭔가 급한 일이 생겼다는 뜻이다.
 
-**반대로 구경꾼들은 인테리어 앱만 있다.**
+전월세 만기, 갑작스런 이사, 회사 발령.
 
-집도 없으면서 꾸밀 생각부터 한다.
-현실적이지 않다는 뜻.
-당장 지갑을 열 확률이 낮다.
+이런 상황의 사람들은 선택의 여지가 없다. 빨리 결정해야 한다. 프리미엄을 지불할 의향도 높다.
+
+반대로 평소 부동산 앱을 자주 쓰던 사람들은? 대부분 '관망'이다. 좋은 매물 있으면 볼까 하는 수준.
+
+급함의 정도가 다르다.
 
 <div class="cmp-grid">
 <div class="cmp-card cmp-left">
-<h4>🏠 구경꾼</h4>
-인테리어 앱만 설치<br>
-부동산 앱 사용 경험 無<br>
-주로 평일 저녁 시간대 접속<br>
-앱 내에서 '저장'만 반복<br>
-설치 후 3개월 넘게 앱만 유지<br>
-소셜 공유 기능 자주 사용<br>
-트렌드성 콘텐츠 위주 소비<br>
-실제 구매 전환율 2% 미만
+<h4>부동산 구경꾼</h4>
+• 평소부터 부동산 앱 꾸준히 사용<br>
+• 주로 1-2개 앱만 사용하는 패턴<br>
+• 시간대 구분 없이 심심할 때 접속<br>
+• 사용 빈도 변화 없이 일정한 패턴<br>
+• 지역 제한 없이 여러 동네 둘러보기<br>
+• 가격대 폭넓게 설정하고 구경<br>
+• 매물 정보만 보고 문의는 드물게<br>
+• 투자나 관심 목적의 정보 수집<br>
+• 결정 급하지 않아 까다로운 조건<br>
+• 시장 상황 파악용 앱 사용
 </div>
 <div class="cmp-card cmp-right">
-<h4>🔧 실제 이사 준비자</h4>
-부동산 앱 → 인테리어 앱 순차 설치<br>
-3개 이상 부동산 앱 동시 보유<br>
-주말 오전 부동산 앱 집중 사용<br>
-검색보다 '실제 매물' 위주 탐색<br>
-앱 설치 후 3개월 내 활동 집중<br>
-가격 정보에 민감한 반응<br>
-실용성 위주 콘텐츠 선호<br>
-실제 구매 전환율 15% 이상
+<h4>진짜 급한 사람</h4>
+• 최근 들어 갑작스럽게 앱 사용 시작<br>
+• 여러 앱 동시 설치해서 비교 분석<br>
+• 저녁 늦게, 주말 새벽까지 집중 사용<br>
+• 이전 대비 사용량 급격히 폭증<br>
+• 특정 지역, 특정 조건으로 집중 검색<br>
+• 예산 범위 명확하고 현실적 조건<br>
+• 매물 확인 후 바로 문의 연결<br>
+• 전월세 만기나 이사 사유로 절박함<br>
+• 빠른 결정 필요해서 타협점 찾기<br>
+• 금융 앱까지 함께 활용하는 패턴
 </div>
 </div>
 
 <div class="sig-box">
 <div class="sig-label">DMP에서 잡는 법</div>
-1단계: 직방+다방+호갱노노 동시 설치<br>
-2단계: 최근 30일 부동산 앱 사용 빈도 주 3회↑<br>
-3단계: 부동산 앱 설치 이후 인테리어 앱 추가<br>
-4단계: 주말 오전 부동산 앱 활성 패턴<br>
-5단계: 전체 기간 3개월 이내 압축
+1. 부동산 앱 신규 설치 후 7일 연속 사용자<br>
+2. 직방+다방 동시 설치 후 활성 사용자<br>
+3. 부동산 앱 사용량 전월 대비 300% 증가자<br>
+4. 저녁 9시-새벽 1시 부동산 앱 사용자<br>
+5. 금융 앱과 부동산 앱 1시간 내 교차 사용자
 </div>
 
 <div class="ind-grid">
 <div class="ind-card">
-<div class="ind-title">🏡 인테리어 시공</div>
-<div class="ind-desc">실제 이사 앞둔 사람들만 타겟. 견적 문의율 300% 향상 기대. 시공 일정 맞춰 광고 집행.</div>
+<div class="ind-title">이사/청소 서비스</div>
+<div class="ind-desc">급하게 집을 구하는 사람들은 이사 준비도 급하다. 포장 서비스, 원룸 청소, 빠른 이사 상품이 필요하다.</div>
 </div>
 <div class="ind-card">
-<div class="ind-title">🛋️ 가구 브랜드</div>
-<div class="ind-desc">새 집 가구 구매 적기 포착. 기존 관심자 대비 구매 전환 5배 높음. 배송 일정까지 고려한 타이밍.</div>
+<div class="ind-title">인테리어/가구</div>
+<div class="ind-desc">새집에 들어가면서 가구나 소품이 필요한 타이밍. 조립 가구, 생활용품, 빠른 배송 서비스 니즈가 높다.</div>
 </div>
 <div class="ind-card">
-<div class="ind-title">🏠 부동산 중개</div>
-<div class="ind-desc">이미 적극적으로 집 알아보는 층. 경쟁업체 이용자도 함께 공략. 계약 성사율 대폭 상승.</div>
+<div class="ind-title">대출/금융</div>
+<div class="ind-desc">전월세 자금이 급하게 필요한 상황. 전세대출, 월세 보증금 대출, 빠른 심사 금융상품 수요가 크다.</div>
 </div>
 <div class="ind-card">
-<div class="ind-title">🚛 이사 서비스</div>
-<div class="ind-desc">이사 확정 전 미리 접근. 예약률 최대 400% 증가. 성수기 대비한 선제적 마케팅 가능.</div>
+<div class="ind-title">생활 서비스</div>
+<div class="ind-desc">새 동네 정보가 필요한 시점. 동네 맛집, 마트, 병원, 학원 정보 등 지역 기반 서비스 관심이 높다.</div>
 </div>
 </div>
 
 <div class="insight">
 <div class="ins-label">KEY INSIGHT</div>
-진짜 고객은 꿈꾸지 않는다. 준비한다.<br>
-인테리어 관심보다 이사 준비 신호가 100배 정확하다.
+급함은 데이터에 드러난다. 평소 패턴과 다른 행동이 가장 강한 구매 신호다.
 </div>
 
-**광고 카피도 달라져야 한다.**
+"그러면 광고 메시지도 달라져야겠네요?" K씨가 말한다.
 
-❌ **기존**: "꿈꾸던 인테리어를 현실로"
-✅ **새 타겟**: "이사 한 달 전 미리 준비하세요"
+"당연하죠. 급한 사람에게 '언젠가'라는 말은 의미가 없어요."
 
-❌ **기존**: "트렌디한 홈스타일링"  
-✅ **새 타겟**: "새 집 입주 일정에 맞춰 시공"
+❌ 기존: "완벽한 새집을 위한 이사 서비스"
+✅ 새로운: "이번 주 이사? 24시간 내 견적 확인"
 
-❌ **기존**: "인테리어 영감을 찾아보세요"
-✅ **새 타겟**: "계약금 낸 분들을 위한 특가"
+❌ 기존: "합리적인 전세대출 상담받기"  
+✅ 새로운: "계약금 급해? 3일 내 대출 실행"
 
-구경꾼에게는 꿈을 팔았다.
-실수요자에게는 솔루션을 판다.
+❌ 기존: "우리 동네 맛있는 곳 찾기"
+✅ 새로운: "새 동네 첫 주, 배달 가능한 곳"
 
-**K씨와의 두 번째 대화.**
+급한 사람들에게는 속도가 핵심이다.
 
-"정말 부동산 앱 쓰는 사람들이 더 잘 살까요?"
+빨리 해결해줄 수 있다는 메시지가 가장 효과적이다.
 
-**당연하다.**
-
-집 구하는 사람이 인테리어에 돈 쓸 확률이 높다.
-이미 목적이 명확하니까.
-예산도 책정해둔 상태고.
-
-"그럼 타겟 사이즈가 많이 줄어들지 않나요?"
-
-**줄어든다.**
-
-400만 명에서 50만 명으로.
-하지만 50만 명이 400만 명보다 값지다.
-구매 확률이 8배 높으니까.
-
-"언제부터 이 타겟으로 잡아야 할까요?"
-
-**지금 당장.**
-
-이사철은 따로 없다. 연중 계속이다.
-다만 3-4월, 8-9월에 더 집중될 뿐.
-미리 준비하는 게 좋다.
-
-<div style="background:#111; color:#fff; padding:24px; border-radius:8px; margin:24px 0;">
-<h3 style="color:#00ff88; margin:0 0 16px 0;">AUDIENCE CARD</h3>
-<h4 style="margin:0 0 8px 0;">3개월 내 실제 이사 준비 유저</h4>
-<p style="margin:0 0 16px 0; opacity:0.8;">추정 모수: 45만~65만 명</p>
-
-<div style="margin:16px 0;">
-<strong style="color:#00ff88;">추천 업종</strong><br>
-인테리어 시공, 가구 브랜드, 부동산 중개, 이사 서비스
+<div style="background:#111; color:#fff; padding:20px; margin:20px 0; border-radius:8px;">
+<h3 style="color:#00ff88; margin:0 0 15px 0;">🎯 AUDIENCE CARD</h3>
+<div style="margin-bottom:12px;"><strong>오디언스:</strong> 전월세 만기 2개월 전 급한 사람들</div>
+<div style="margin-bottom:12px;"><strong>추정 모수:</strong> 15~25만명</div>
+<div style="margin-bottom:12px;"><strong>추천 업종:</strong> 이사서비스, 인테리어, 대출, 생활서비스</div>
+<div style="margin-bottom:12px;"><strong>핵심 시그널:</strong> 부동산 앱 신규 다중 설치 + 사용량 급증</div>
+<div><strong>메시지 방향:</strong> 빠른 해결, 즉시 상담, 긴급 지원</div>
 </div>
 
-<div style="margin:16px 0;">
-<strong style="color:#00ff88;">핵심 시그널</strong><br>
-부동산 3개 앱 동시 설치 + 인테리어 앱 후순위 추가 + 주말 오전 집중 사용
-</div>
+"결국 타이밍이 가장 중요하다는 거네요." K씨가 정리한다.
 
-<div style="margin:16px 0;">
-<strong style="color:#00ff88;">메시지</strong><br>
-"이사 일정 맞춰 미리 준비" / "새 집 입주 전 완벽 세팅" / "계약 완료자 특별 혜택"
-</div>
-</div>
+"맞습니다. 부동산 관심이 아니라 부동산 급함을 타겟해야 해요."
+
+"그럼 평소에 관심 많던 사람들보다 갑자기 관심 생긴 사람들이 더 좋은 고객이겠네요?"
+
+"정확해요. 변화가 구매의 신호예요. 특히 급격한 변화는 더욱 강한 신호죠."
+
+"이제 왜 성과가 안 나왔는지 알겠어요. 구경꾼들에게 광고하고 있었네요."
+
+진짜 고객은 따로 있다.
+
+데이터 속에서 절박함을 찾아내는 것.
+
+그것이 마케터의 진짜 실력이다.
 
 <div class="note-end">
-**마지막 조언.**
-
-인테리어 관심자 타겟팅은 이제 그만.
-너무 넓다. 너무 뭉뚱그려져 있다.
-
-실제로 이사 준비하는 사람들을 찾아라.
-부동산 앱 사용 패턴이 가장 정확한 신호다.
-
-그들은 이미 예산을 정해뒀다.
-시기도 정해뒀다.
-당신의 서비스만 기다리고 있다.
-
-**2026년 4월 14일**<br>
-**IGAWorks 오늘의 오디언스**
+부동산 시장에서 가장 좋은 고객은 가장 급한 고객이다. DMP로 그들의 절박함을 읽어내자.
 </div>
 
 </div>
@@ -817,21 +798,21 @@ else:
       <div style="background:linear-gradient(135deg,#4a1942 0%,#6b3fa0 100%);padding:48px 36px;position:relative;overflow:hidden">
         <div style="position:absolute;top:20px;right:24px;font-size:4rem;opacity:0.15">🏠</div>
         <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:1px">TODAY</span>
-        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'인테리어 관심자' 타겟팅 금지!</h2>
-        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">[3개월 내 실제 이사 준비 유저]</p>
+        <h2 style="color:#fff;font-size:1.5rem;font-weight:900;line-height:1.3;margin-top:16px">'부동산 관심자' 타겟팅 금지!</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.6;margin-top:8px">[전월세 만기 2개월 전 급한 사람들]</p>
       </div>
       <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:0.78rem;color:#888">부동산 오디언스 인사이트</span>
+        <span style="font-size:0.78rem;color:#888">추정 오디언스 <strong style="color:#6366f1">15~25만</strong></span>
         <span style="color:#6366f1;font-size:0.82rem;font-weight:600">읽기 →</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("🏠 [3개월 내 실제 이사 준비 유저]", key="go_new5"):
+    if st.button("🏠 [전월세 만기 2개월 전 급한 사람들]", key="go_new5"):
         st.session_state.view = "detail_new5"
         st.rerun()
 
-    st.markdown("""
+        st.markdown("""
     <p style="font-size:0.7rem;color:#6366f1;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:8px 0 20px">📚 지난 노트</p>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:40px">
       <div style="border-radius:16px;overflow:hidden;border:1px solid #f0f0f0;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
@@ -866,9 +847,9 @@ else:
         if st.button("🏠 전세", key="go_gold"):
             st.session_state.view = "detail_gold"
             st.rerun()
+
     with col4:
-        if st.button("🐾 반려동물", key="go_pet2"):
+        if st.button("⛳ '반려동물 관심자' 타겟팅 ", key="go_pet2"):
             st.session_state.view = "detail_pet"
             st.rerun()
-
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
