@@ -223,7 +223,7 @@ if st.session_state.view == "detail_stock":
     </div>
 
     <div class="quote-box">
-      <p>"증권사 앱에서 '미국주식 추천' 푸시가 오는데<br>이미 다 팔았거든요. 짜증나서 알림 끄고<br>금방 앱이랑 한국금거래소 앱 깔았어요.<br>지금은 매일 아침 금 시세부터 확인해요."<br><br>— E씨</p>
+      <p>"증권사 앱에서 '미국주식 추천' 푸시가 오는데<br>이미 다 팔았거든요. 짜증나서 알림 끄고<br>금방 앱이랑 한국금거래소 앱 깔았어요.<br>요즘은 금 투자앱을 매일 열어봐요. 증권앱은 안 켜요."<br><br>— E씨</p>
     </div>
 
     <div class="section">
@@ -266,9 +266,20 @@ if st.session_state.view == "detail_stock":
         </div>
         <div class="tl-item">
           <div class="tl-dot tl-yellow"></div>
-          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 매일 확인</div>
-          <div class="tl-title">☀️ 아침 7~8시 금 시세 확인 루틴</div>
-          <div class="tl-desc">기존 증권앱 대신 금 시세앱을 매일 아침 확인 → 새 투자 루틴 형성</div>
+          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 투자 루틴 전환</div>
+          <div class="tl-title">🔄 금 투자앱 매일 실행 + 증권앱 미실행</div>
+          <div class="tl-desc">기존 증권앱 대신 금 투자앱을 매일 여는 패턴 → 주력 투자처가 바뀐 시그널</div>
+          <div class="tl-flow">
+            <div class="tl-flow-down">
+              <div style="font-size:0.65rem;color:#999">증권앱 실행</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#ef4444">주 0~1회</div>
+            </div>
+            <div style="color:#ccc">→</div>
+            <div class="tl-flow-up">
+              <div style="font-size:0.65rem;color:#999">금 투자앱 실행</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#eab308">매일</div>
+            </div>
+          </div>
         </div>
         <div class="tl-item" style="margin-bottom:0">
           <div class="tl-dot tl-red"></div>
@@ -296,7 +307,7 @@ if st.session_state.view == "detail_stock":
 
     <div class="section">
       <div class="section-label">DMP에서 잡는 법</div>
-      <p><strong>[미장→금 전환자]</strong><br>증권앱 접속 빈도 70%+ 감소 (14일 내)<br>+ 뉴스앱 관세/환율 소비 2배+ 증가<br>+ 금 투자앱(금방/한국금거래소) 신규 설치<br>+ 매일 아침 금 시세앱 실행<br><br><em style="color:#888;font-size:0.8rem">* 실제 매도/매수 금액은 DMP로 확인 불가.<br>앱 이탈 + 앱 진입의 교차 타이밍으로 자산 이동을 추정합니다.</em></p>
+      <p><strong>[미장→금 전환자]</strong><br>증권앱 접속 빈도 70%+ 감소 (14일 내)<br>+ 뉴스앱 접속 빈도 2배+ 증가<br>+ 금 투자앱(금방/한국금거래소) 신규 설치<br>+ 금 투자앱 일일 실행 + 증권앱 미실행 패턴<br><br><em style="color:#888;font-size:0.8rem">* 실제 매도/매수 금액은 DMP로 확인 불가.<br>앱 실행 빈도의 역전(증권↓ 금↑)으로 자산 이동을 추정합니다.</em></p>
     </div>
 
     <div class="section">
