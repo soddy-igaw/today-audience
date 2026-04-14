@@ -79,14 +79,19 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 .footer { text-align:center; color:#ccc; font-size:0.72rem; padding:32px 0 16px; }
 
-/* Streamlit button overrides */
+/* Streamlit button overrides - card style */
 div[data-testid="stButton"] > button {
-  width:100%!important; border:none!important; background:transparent!important;
-  padding:0!important; margin:0!important; min-height:0!important; cursor:pointer!important;
+  width:100%!important; text-align:left!important; border:none!important;
+  background:#fff!important; border-radius:20px!important; padding:28px 24px!important;
+  margin-bottom:14px!important; min-height:auto!important; cursor:pointer!important;
+  box-shadow:0 1px 3px rgba(0,0,0,0.04)!important; transition:all 0.2s!important;
+  color:#111!important; font-size:0.95rem!important; font-weight:700!important; line-height:1.4!important;
 }
-div[data-testid="stButton"] > button:hover { background:transparent!important; }
-div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
-div[data-testid="stButton"] > button p { display:none; }
+div[data-testid="stButton"] > button:hover {
+  transform:translateY(-2px)!important; box-shadow:0 8px 24px rgba(0,0,0,0.08)!important;
+  background:#fff!important; color:#111!important;
+}
+div[data-testid="stButton"] > button:focus { box-shadow:0 1px 3px rgba(0,0,0,0.04)!important; }
 
 @media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
@@ -381,20 +386,8 @@ else:
     """, unsafe_allow_html=True)
 
     for e in ESSAYS:
-        title_display = e["title"].replace(chr(10), "<br>")
-        st.markdown(f"""
-        <div class="feed-card">
-          <div class="feed-emoji">{e["emoji"]}</div>
-          <span class="feed-tag">{e["tag"]}</span>
-          <div class="feed-title">{title_display}</div>
-          <div class="feed-sub">{e["sub"]}</div>
-          <div class="feed-bottom">
-            <div class="feed-stat">{e["stat"]}</div>
-            <div class="feed-arrow">→</div>
-          </div>
-        </div>
-        """, unsafe_allow_html=True)
-        if st.button(f"open_{e['id']}", key=f"go_{e['id']}"):
+        label = f"{e['emoji']}  {e['tag']}\n{e['title'].replace(chr(10), ' ')}\n{e['sub']}"
+        if st.button(label, key=f"go_{e['id']}"):
             st.session_state.view = f"detail_{e['id']}"
             st.rerun()
 
