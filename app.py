@@ -454,12 +454,63 @@ elif st.session_state.view == "detail_health":
     </div>
 
     <div class="section">
-      <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">러닝/운동앱 신규 설치 후 7일 연속 실행</div><div class="signal-desc">나이키런클럽/캐치핏 설치 후 매일 실행 → "이번엔 진짜"인 사람. 3일 만에 삭제하는 사람과 구분</div></div>
-      <div class="signal-item"><div class="signal-title">3일 내 식단/칼로리 앱 추가 설치</div><div class="signal-desc">운동앱 → 식단앱 빠른 전환 → 운동+식단 동시 관리 = 진지한 행동 변화</div></div>
-      <div class="signal-item"><div class="signal-title">아침 5~7시 앱 사용 패턴 신규 발생</div><div class="signal-desc">기존에 없던 새벽 사용 패턴 → 생활 루틴 자체가 바뀐 시그널</div></div>
-      <div class="signal-item"><div class="signal-title">배달앱 사용 빈도 감소</div><div class="signal-desc">주 5회 → 주 1~2회로 급감 → 식단 관리 시작한 이탈 시그널</div></div>
-      <div class="signal-item"><div class="signal-title">건강기능식품/보충제 쇼핑앱 탐색</div><div class="signal-desc">쿠팡/아이허브에서 프로틴/비타민 검색 시작 → 지출 준비 완료</div></div>
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">D씨의 실제 앱 사용 변화를 DMP로 추적하면 이렇게 보입니다</p>
+
+      <div style="position:relative;padding-left:28px;border-left:3px solid #e0e0e0;margin-left:8px">
+        <div style="margin-bottom:24px;position:relative">
+          <div style="position:absolute;left:-34px;top:2px;width:14px;height:14px;border-radius:50%;background:#14b8a6;border:3px solid #fff;box-shadow:0 0 0 2px #14b8a6"></div>
+          <div style="font-size:0.68rem;color:#14b8a6;font-weight:700;margin-bottom:4px">DAY 0 · 건강검진 직후</div>
+          <div style="font-size:0.88rem;font-weight:700;color:#111;margin-bottom:2px">🏃 나이키런클럽 설치</div>
+          <div style="font-size:0.78rem;color:#888">90일간 운동앱 사용 이력 없음 → 완전 신규 진입</div>
+        </div>
+
+        <div style="margin-bottom:24px;position:relative">
+          <div style="position:absolute;left:-34px;top:2px;width:14px;height:14px;border-radius:50%;background:#14b8a6;border:3px solid #fff;box-shadow:0 0 0 2px #14b8a6"></div>
+          <div style="font-size:0.68rem;color:#14b8a6;font-weight:700;margin-bottom:4px">DAY 1~7 · 습관 형성</div>
+          <div style="font-size:0.88rem;font-weight:700;color:#111;margin-bottom:2px">⏰ 새벽 5~6시 앱 실행 시작</div>
+          <div style="font-size:0.78rem;color:#888">기존에 없던 새벽 패턴 → 생활 루틴 자체가 바뀐 시그널</div>
+          <div style="margin-top:8px;background:#f0fdf4;border-radius:8px;padding:8px 12px">
+            <div style="font-size:0.7rem;color:#888;margin-bottom:4px">7일 연속 실행률</div>
+            <div style="background:#e5e7eb;border-radius:4px;height:8px;overflow:hidden"><div style="background:#14b8a6;height:100%;width:92%;border-radius:4px"></div></div>
+            <div style="font-size:0.68rem;color:#14b8a6;font-weight:700;margin-top:2px">92% — 상위 5% 지속률</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px;position:relative">
+          <div style="position:absolute;left:-34px;top:2px;width:14px;height:14px;border-radius:50%;background:#14b8a6;border:3px solid #fff;box-shadow:0 0 0 2px #14b8a6"></div>
+          <div style="font-size:0.68rem;color:#14b8a6;font-weight:700;margin-bottom:4px">DAY 3 · 식단 전환</div>
+          <div style="font-size:0.88rem;font-weight:700;color:#111;margin-bottom:2px">🥗 식단 관리앱 추가 설치</div>
+          <div style="font-size:0.78rem;color:#888">운동 → 식단 3일 만에 전환 = 진지한 행동 변화</div>
+          <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+            <div style="background:#fee2e2;border-radius:8px;padding:6px 10px;flex:1;text-align:center">
+              <div style="font-size:0.65rem;color:#999">배달앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#ef4444">↓ 60%</div>
+            </div>
+            <div style="color:#ccc">→</div>
+            <div style="background:#f0fdf4;border-radius:8px;padding:6px 10px;flex:1;text-align:center">
+              <div style="font-size:0.65rem;color:#999">식단앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#14b8a6">매일 기록</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px;position:relative">
+          <div style="position:absolute;left:-34px;top:2px;width:14px;height:14px;border-radius:50%;background:#f59e0b;border:3px solid #fff;box-shadow:0 0 0 2px #f59e0b"></div>
+          <div style="font-size:0.68rem;color:#f59e0b;font-weight:700;margin-bottom:4px">DAY 10~14 · 💰 지출 시작</div>
+          <div style="font-size:0.88rem;font-weight:700;color:#111;margin-bottom:2px">🛒 프로틴/보충제 쇼핑 탐색</div>
+          <div style="font-size:0.78rem;color:#888">쿠팡/아이허브에서 프로틴 검색 → 지출 준비 완료</div>
+        </div>
+
+        <div style="position:relative">
+          <div style="position:absolute;left:-34px;top:2px;width:14px;height:14px;border-radius:50%;background:#ef4444;border:3px solid #fff;box-shadow:0 0 0 2px #ef4444"></div>
+          <div style="background:#fef2f2;border-radius:12px;padding:16px;border:1px solid #fecaca">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 14 · 여기서 잡아야 합니다</div>
+            <div style="font-size:0.88rem;font-weight:700;color:#111;margin-bottom:4px">PT 등록 / 러닝화 구매 / 구독 전환</div>
+            <div style="font-size:0.78rem;color:#888">2주 지속한 사람은 3개월 유지 확률 78%. 이 타이밍을 놓치면 습관이 꺾입니다.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
