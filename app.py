@@ -11,7 +11,7 @@ st.markdown("""
 * { margin:0; padding:0; box-sizing:border-box; }
 .stApp { background:#f5f6f8; font-family:'Pretendard',sans-serif; }
 header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:none!important; }
-.block-container { max-width:480px!important; padding:0 20px 100px!important; margin:0 auto!important; }
+.block-container { max-width:760px!important; padding:0 24px 100px!important; margin:0 auto!important; }
 
 /* Feed cards */
 .feed-card {
@@ -20,6 +20,9 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
   box-shadow:0 1px 3px rgba(0,0,0,0.04);
 }
 .feed-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+
+.past-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.past-grid .feed-card { margin-bottom:0; }
 .feed-emoji { font-size:2.4rem; margin-bottom:16px; }
 .feed-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#6366f1; background:#f0eeff; padding:3px 10px; border-radius:100px; margin-bottom:12px; }
 .feed-title { font-size:1.15rem; font-weight:800; color:#111; line-height:1.4; margin-bottom:6px; }
@@ -1216,7 +1219,7 @@ else:
         if i == 0:
             st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin-bottom:16px">🎯 오늘의 오디언스</p>', unsafe_allow_html=True)
         elif i == 1:
-            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-size:0.72rem;color:#6366f1;font-weight:700;letter-spacing:2px;margin:32px 0 16px">📚 지난 오디언스</p><div class="past-grid">', unsafe_allow_html=True)
 
         st.markdown(f"""
         <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{i}].click()">
@@ -1225,14 +1228,29 @@ else:
             <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
             <span style="font-size:0.68rem;color:#ccc;margin-left:auto">추정 {e["stat"]}</span>
           </div>
-          <div style="font-size:1.15rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
-          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:20px">{e["sub"]}</div>
+          <div style="font-size:{'1.15' if i==0 else '1'}rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
+          <div style="font-size:0.82rem;color:#888;line-height:1.5;margin-bottom:{'20' if i==0 else '14'}px">{e["sub"] if i==0 else e["sub"][:50]+"..."}</div>
           <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #f0f0f0">
-            <div><span style="font-size:1.3rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
+            <div><span style="font-size:{'1.3' if i==0 else '1.1'}rem;font-weight:900;color:{e['color']}">{e["stat"]}</span><span style="font-size:0.72rem;color:#aaa;margin-left:6px">{e["stat_label"]}</span></div>
             <span style="color:#ccc;font-size:1.1rem">→</span>
           </div>
         </div>
         """, unsafe_allow_html=True)
+
+        # 버튼은 그리드 밖에 모아서
+        if i == 0:
+            with st.container():
+                st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
+                if st.button("go", key=f"go_{e['id']}"):
+                    st.session_state.view = f"detail_{e['id']}"
+                    st.rerun()
+                st.markdown('</div>', unsafe_allow_html=True)
+
+    # 그리드 닫기
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # 지난 오디언스 버튼들
+    for e in ESSAYS[1:]:
         with st.container():
             st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
             if st.button("go", key=f"go_{e['id']}"):
