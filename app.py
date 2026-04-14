@@ -141,6 +141,24 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "car", "emoji": "🚗", "tag": "자동차", "number": 8,
+        "title": "전기차 앱 지우고\n하이브리드 비교앱 깐 사람",
+        "sub": "보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다",
+        "stat": "~80만",
+        "stat_label": "자동차앱 사용자 (DMP)",
+        "date": "2026.04.14",
+        "color": "#dc2626",
+    },
+    {
+        "id": "game", "emoji": "🎮", "tag": "게임", "number": 9,
+        "title": "스위치2 예약 알림 켜고\n게이밍 노트북 비교 시작한 사람",
+        "sub": "신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다",
+        "stat": "~140만",
+        "stat_label": "게임앱 사용자 (DMP)",
+        "date": "2026.04.14",
+        "color": "#7c3aed",
+    },
+    {
         "id": "stock", "emoji": "📈", "tag": "증권", "number": 7,
         "title": "미국주식 앱 알림을 끄고\n금 시세앱을 깐 사람",
         "sub": "트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다",
@@ -197,7 +215,235 @@ ESSAYS = [
 ]
 
 # ===== ROUTING =====
-if st.session_state.view == "detail_stock":
+if st.session_state.view == "detail_car":
+    if st.button("← 뒤로", key="back_car"):
+        st.session_state.view = "feed"
+        st.rerun()
+    st.markdown("""
+    <div class="detail-wrap">
+    <div class="detail-hero">
+      <div class="detail-emoji">🚗</div>
+      <span class="detail-tag">자동차</span>
+      <div class="detail-title">전기차 앱 지우고 하이브리드 비교앱 깐 사람</div>
+      <div class="detail-sub">보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다</div>
+      <div class="detail-meta">2026.04.14 · 오늘의 오디언스 #8</div>
+    </div>
+
+    <div class="quote-box">
+      <p>"테슬라 모델Y 계약 직전이었어요.<br>근데 하반기 보조금 개편 뉴스 보고 멈췄어요.<br>지금은 하이브리드 비교하고 있어요.<br>보조금 빠지면 전기차 가성비가 안 나오거든요."<br><br>— F씨, 39세, 2인 가구 맞벌이</p>
+    </div>
+
+    <div class="section">
+      <p>2026년 하반기, 전기차 보조금이 전면 개편됩니다. 테슬라가 지원 대상에서 빠질 수 있다는 보도까지.</p>
+      <p>동시에 중국산 BYD·테슬라가 한국 시장을 휩쓸면서, 국산 전기차 판매는 주춤. 소비자들은 혼란 속에서 <strong>전기차 → 하이브리드로 선택지를 바꾸고 있습니다.</strong></p>
+      <p>자동차 마케터들은 아직 "전기차 관심자"를 타겟합니다. 하지만 이 중 상당수는 <strong>이미 전기차를 포기하고 하이브리드를 보고 있는 사람</strong>입니다.</p>
+    </div>
+
+    <div class="quote-box">
+      <p>"자동차 커뮤니티에서 하이브리드 후기만 찾아봐요.<br>전기차 충전 인프라도 불안하고, 보조금도 줄고.<br>차라리 하이브리드가 현실적이더라고요.<br>이번 주말에 딜러 시승 예약했어요."<br><br>— F씨</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">F씨의 자동차 앱 사용 변화를 DMP로 추적하면</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#dc2626;box-shadow:0 0 0 2px #dc2626"></div>
+          <div class="tl-day" style="color:#dc2626">DAY 0 · 보조금 뉴스 충격</div>
+          <div class="tl-title">📰 뉴스앱 자동차/보조금 기사 집중 소비</div>
+          <div class="tl-desc">뉴스앱 접속 빈도 증가 + 자동차 관련 기사 체류 시간 증가</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#dc2626;box-shadow:0 0 0 2px #dc2626"></div>
+          <div class="tl-day" style="color:#dc2626">DAY 1~5 · 비교 탐색 시작</div>
+          <div class="tl-title">🔍 자동차 비교앱 사용 급증</div>
+          <div class="tl-desc">자동차 브랜드/구매정보 카테고리 앱 사용 시간 2배+ 증가</div>
+          <div class="tl-flow">
+            <div class="tl-flow-down">
+              <div style="font-size:0.65rem;color:#999">전기차 전용앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#ef4444">사용↓</div>
+            </div>
+            <div style="color:#ccc">→</div>
+            <div class="tl-flow-up">
+              <div style="font-size:0.65rem;color:#999">종합 비교앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#dc2626">사용↑↑</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-yellow"></div>
+          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 딜러 방문 준비</div>
+          <div class="tl-title">📍 자동차 딜러십 방문지 데이터 발생</div>
+          <div class="tl-desc">주말 딜러십/전시장 체류 시간 발생 → 시승 단계 진입</div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot tl-red"></div>
+          <div class="tl-alert">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 14 · 여기서 잡아야 합니다</div>
+            <div class="tl-title">계약 / 할부 비교 / 보험 가입</div>
+            <div class="tl-desc">시승 후 2주 내 계약 전환율이 가장 높음. 할부/보험/용품 동시 지출</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="cmp-grid">
+        <div class="cmp-card cmp-left"><h4>자동차 구경꾼</h4><p>자동차앱 가끔 접속<br>특정 브랜드만 탐색<br>딜러 방문 없음<br>뉴스 소비 변화 없음<br>"내년에 바꿀까"</p></div>
+        <div class="cmp-card cmp-right"><h4>전환 검토 중인 구매자</h4><p>비교앱 사용 급증<br>전기차→하이브리드 전환<br>주말 딜러십 방문<br>보조금/할부 뉴스 집중<br>2주 내 계약 가능</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">DMP에서 잡는 법</div>
+      <p><strong>[전환 검토 중인 구매자]</strong><br>자동차 비교앱 사용 시간 2배+ 증가 (14일 내)<br>+ 딜러십/전시장 방문지 데이터 발생<br>+ 뉴스앱 자동차 관련 소비 증가<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 자동차앱 사용자 약 80만명 (30일 기준)</em></p>
+    </div>
+
+    <div class="section">
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-title">🚗 완성차 브랜드</div><div class="ind-desc">"보조금 없어도 가성비 1등 하이브리드"</div></div>
+        <div class="ind-card"><div class="ind-title">💳 할부/리스</div><div class="ind-desc">"월 39만원, 부담 없는 하이브리드 리스"</div></div>
+        <div class="ind-card"><div class="ind-title">🛡️ 자동차보험</div><div class="ind-desc">"신차 구매 시 첫 해 보험료 30% 할인"</div></div>
+        <div class="ind-card"><div class="ind-title">⛽ 주유/충전</div><div class="ind-desc">"하이브리드 오너 전용 주유 캐시백"</div></div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"자동차 관심자"는 오디언스가 아닙니다.<br><br>전기차 앱 사용이 줄고 비교앱이 늘어난 사람,<br>그리고 <strong>주말에 딜러십을 방문한 사람</strong>이 오디언스입니다.<br>이 사람은 포기한 게 아니라 선택지를 바꾼 겁니다.</p>
+    </div>
+
+    <div class="ad-compare">
+      <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "전기차 보조금 최대 780만원! 지금 계약하세요"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "보조금 없어도 연비로 뽑는 하이브리드, 시승 예약하세요"</p>
+    </div>
+
+    <div class="audience-card">
+      <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">전환 검토 중인 자동차 구매자</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수 (DMP 실측)</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~80만</p><p style="color:#555;font-size:0.7rem">자동차앱 사용자 (DMP 30일)</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">완성차 · 할부/리스<br>보험 · 주유</p></div>
+      </div>
+    </div>
+
+    <div class="footer">오늘의 오디언스 #8 · by IGAWorks</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_game":
+    if st.button("← 뒤로", key="back_game"):
+        st.session_state.view = "feed"
+        st.rerun()
+    st.markdown("""
+    <div class="detail-wrap">
+    <div class="detail-hero">
+      <div class="detail-emoji">🎮</div>
+      <span class="detail-tag">게임</span>
+      <div class="detail-title">스위치2 예약 알림 켜고 게이밍 노트북 비교 시작한 사람</div>
+      <div class="detail-sub">신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다</div>
+      <div class="detail-meta">2026.04.14 · 오늘의 오디언스 #9</div>
+    </div>
+
+    <div class="quote-box">
+      <p>"GTA6 트레일러 나온 날, 스팀 앱이랑 게임 커뮤니티를<br>하루에 20번은 들어간 것 같아요.<br>그러다 내 PC 사양이 안 되겠다 싶어서<br>그 주에 게이밍 노트북 비교 시작했어요."<br><br>— G씨, 27세, 대학원생</p>
+    </div>
+
+    <div class="section">
+      <p>2026년, 게임 업계 빅뱅이 시작됩니다. GTA6 출시 임박, 닌텐도 스위치2는 일본에서 PS5 대비 5배 판매, 포켓몬 챔피언스 등 모바일 신작 러시.</p>
+      <p>게임 마케터들은 "게임 유저"를 타겟합니다. 하지만 매일 모바일 게임하는 사람과, <strong>신작 때문에 하드웨어까지 바꾸려는 사람</strong>은 완전히 다릅니다.</p>
+      <p>G씨처럼 <strong>게임 커뮤니티 접속이 폭발하면서 동시에 전자기기 쇼핑을 시작한 사람</strong> — 이 사람이 진짜 돈 쓰는 유저입니다.</p>
+    </div>
+
+    <div class="quote-box">
+      <p>"스위치2도 예약할 거고, PC도 바꿀 거예요.<br>GTA6 나오면 현재 사양으론 안 돌아가거든요.<br>게이밍 노트북 200만원짜리 보고 있어요.<br>게임 하나 때문에 200만원 쓰는 거죠."<br><br>— G씨</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">G씨의 앱 사용 변화를 DMP로 추적하면</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#7c3aed;box-shadow:0 0 0 2px #7c3aed"></div>
+          <div class="tl-day" style="color:#7c3aed">DAY 0 · 신작 발표/트레일러</div>
+          <div class="tl-title">🎮 게임 커뮤니티앱 접속 3배+ 급증</div>
+          <div class="tl-desc">게임 관련 앱 일일 사용 시간 폭발 → 신작에 반응하는 코어 유저</div>
+          <div class="tl-bar-wrap" style="background:#f5f3ff">
+            <div style="font-size:0.7rem;color:#888;margin-bottom:4px">게임앱 일일 사용 시간 변화</div>
+            <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:90%;background:#7c3aed"></div></div>
+            <div style="font-size:0.68rem;color:#7c3aed;font-weight:700;margin-top:2px">+200% — 평소 대비 3배 사용</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#7c3aed;box-shadow:0 0 0 2px #7c3aed"></div>
+          <div class="tl-day" style="color:#7c3aed">DAY 3~5 · 하드웨어 탐색 시작</div>
+          <div class="tl-title">💻 전자기기 쇼핑앱에서 게이밍 기기 조회</div>
+          <div class="tl-desc">쿠팡/네이버쇼핑에서 게이밍 노트북/콘솔 상품 조회 시작</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-yellow"></div>
+          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 💰 비교 쇼핑</div>
+          <div class="tl-title">🛒 가격비교앱 + 커머스 반복 조회</div>
+          <div class="tl-desc">같은 상품 3회+ 반복 조회 → 구매 직전 비교 단계</div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot tl-red"></div>
+          <div class="tl-alert">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 14 · 여기서 잡아야 합니다</div>
+            <div class="tl-title">게이밍 노트북 구매 / 콘솔 예약 / 주변기기 결제</div>
+            <div class="tl-desc">신작 발표 후 2주 내 하드웨어 구매 전환. 객단가 100~200만원+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="cmp-grid">
+        <div class="cmp-card cmp-left"><h4>일반 게임 유저</h4><p>모바일 게임 위주<br>게임앱 사용 일정<br>하드웨어 관심 없음<br>커머스 조회 없음<br>월 지출 1~2만원</p></div>
+        <div class="cmp-card cmp-right"><h4>신작 대응 코어 유저</h4><p>커뮤니티 접속 3배 급증<br>게이밍 기기 쇼핑 시작<br>상품 반복 조회 (3회+)<br>콘솔+PC 동시 탐색<br>객단가 100~200만원</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">DMP에서 잡는 법</div>
+      <p><strong>[신작 대응 코어 유저]</strong><br>게임앱 사용 시간 2배+ 증가 (14일 내)<br>+ 전자기기 커머스에서 게이밍 상품 조회<br>+ 같은 상품 3회+ 반복 조회<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 게임앱 사용자 약 140만명 (30일 기준)</em></p>
+    </div>
+
+    <div class="section">
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-title">💻 게이밍 노트북/PC</div><div class="ind-desc">"GTA6 풀옵 돌리는 노트북, 지금 사전예약"</div></div>
+        <div class="ind-card"><div class="ind-title">🎮 콘솔/주변기기</div><div class="ind-desc">"스위치2 예약 + 프로컨 번들 할인"</div></div>
+        <div class="ind-card"><div class="ind-title">🖥️ 모니터/의자</div><div class="ind-desc">"게이밍 환경 업그레이드 세트"</div></div>
+        <div class="ind-card"><div class="ind-title">💳 할부/카드</div><div class="ind-desc">"게이밍 기기 무이자 12개월"</div></div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"게임 유저"는 오디언스가 아닙니다.<br><br>신작 발표 후 <strong>커뮤니티 접속이 3배 뛰면서<br>동시에 하드웨어 쇼핑을 시작한 사람</strong>이 오디언스입니다.<br>게임 하나 때문에 200만원을 쓰는 사람.<br>이 타이밍을 놓치면 다음 신작까지 기다려야 합니다.</p>
+    </div>
+
+    <div class="ad-compare">
+      <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "게이밍 노트북 할인! 최대 30% OFF"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "GTA6 풀옵으로 돌리려면, 이 사양이 필요합니다"</p>
+    </div>
+
+    <div class="audience-card">
+      <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">신작 대응 코어 게이머</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수 (DMP 실측)</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">~140만</p><p style="color:#555;font-size:0.7rem">게임앱 사용자 (DMP 30일)</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">노트북/PC · 콘솔<br>모니터 · 할부</p></div>
+      </div>
+    </div>
+
+    <div class="footer">오늘의 오디언스 #9 · by IGAWorks</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_stock":
     if st.button("← 뒤로", key="back_s"):
         st.session_state.view = "feed"
         st.rerun()
