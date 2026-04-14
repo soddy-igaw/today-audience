@@ -146,6 +146,15 @@ ESSAYS = [
         "date": "2026.04.11",
         "color": "#16a34a",
     },
+    {
+        "id": "health", "emoji": "💪", "tag": "건강", "number": 6,
+        "title": "러닝앱 깔고 3일 만에\n식단앱까지 깐 사람",
+        "sub": "다이어트를 결심한 게 아니라, 몸이 바뀌기 시작한 겁니다",
+        "stat": "150~250만",
+        "stat_label": "행동 전환 유저",
+        "date": "2026.04.14",
+        "color": "#14b8a6",
+    },
 ]
 
 # ===== ROUTING =====
@@ -248,61 +257,63 @@ elif st.session_state.view == "detail_golf":
     <div class="detail-hero">
       <div class="detail-emoji">⛳</div>
       <span class="detail-tag">골프</span>
-      <div class="detail-title">'골프 관심자' 타겟팅 금지!</div>
-      <div class="detail-sub">접대 골프 입문자의 숨겨진 구매 시그널</div>
+      <div class="detail-title">드라이버를 사는 게 아니라 창피를 안 당할 보험을 삽니다</div>
+      <div class="detail-sub">접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.</div>
       <div class="detail-meta">2026.04.11 · 오늘의 오디언스 #1</div>
     </div>
 
     <div class="quote-box">
-      <p>"드라이버를 사는 게 아니라,<br>창피를 안 당할 보험을 사는 겁니다."</p>
+      <p>"부장님이 다음 달 라운딩 가자고 했어요.<br>골프 한 번도 안 쳐봤는데.<br>그날 밤에 골프존 앱 깔고, 레슨 앱 깔고,<br>드라이버 가격 검색하고... 새벽 2시까지 했어요."<br><br>— B씨, 34세, 대기업 영업팀</p>
     </div>
 
     <div class="section">
-      <p>골프 시장이 커졌다는 건 다 압니다. 문제는 "골프 관심자"로 타겟팅하면 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 전부 섞인다는 것.</p>
-      <p>우리가 주목한 건 <strong>완전히 다른 종류의 골퍼</strong>였습니다.</p>
+      <p>골프 인구 564만 시대. 모든 골프 브랜드가 "골프 관심자"를 타겟합니다.</p>
+      <p>문제는 10년 경력 싱글 골퍼부터 유튜브만 보는 구경꾼까지 전부 섞인다는 것.</p>
+      <p>B씨는 다릅니다. <strong>골프가 좋아서 시작한 게 아닙니다. 회사 때문에 시작한 겁니다.</strong></p>
+    </div>
+
+    <div class="quote-box">
+      <p>"드라이버 뭐가 좋은지 모르겠어요.<br>그냥 '이거 사면 창피는 안 당하겠다' 싶은 걸 샀어요.<br>가격은 안 봤어요. 다음 주까지 준비해야 하니까."<br><br>— B씨</p>
     </div>
 
     <div class="section">
       <div class="section-label">BEHAVIOR SIGNALS</div>
-      <div class="signal-item"><div class="signal-title">30대 초중반, 대기업 재직 추정</div><div class="signal-desc">기기 가격대 + 출퇴근 시간대 패턴으로 추정</div></div>
-      <div class="signal-item"><div class="signal-title">최근 3개월 내 골프 앱 첫 설치</div><div class="signal-desc">90일간 골프 관련 앱 사용 이력 없음 → 신규 진입</div></div>
-      <div class="signal-item"><div class="signal-title">골프 용품 비교 앱 탐색 시작</div><div class="signal-desc">골프존 + 스마트스코어 동시 설치 (14일 내)</div></div>
-      <div class="signal-item"><div class="signal-title">평일 저녁 골프 콘텐츠 소비</div><div class="signal-desc">주말이 아닌 평일 19-22시 집중 사용 → 접대 준비</div></div>
-      <div class="signal-item"><div class="signal-title">레슨 예약 앱 탐색</div><div class="signal-desc">속성 레슨 니즈 → 빠르게 필드에 나가야 하는 사람</div></div>
+      <div class="signal-item"><div class="signal-title">골프 앱 첫 설치 (90일 내 이력 없음)</div><div class="signal-desc">골프존/스마트스코어 신규 설치 → 완전 초보 진입. 기존 골퍼와 구분되는 핵심 시그널</div></div>
+      <div class="signal-item"><div class="signal-title">설치 후 3일 내 레슨앱 추가 설치</div><div class="signal-desc">골프앱 → 레슨앱 빠른 전환 → "빨리 배워야 한다"는 긴급도</div></div>
+      <div class="signal-item"><div class="signal-title">평일 저녁 19~23시 집중 사용</div><div class="signal-desc">주말이 아닌 평일 저녁 → 퇴근 후 급하게 준비하는 직장인 패턴</div></div>
+      <div class="signal-item"><div class="signal-title">기기 가격대 상위 30%</div><div class="signal-desc">최신 플래그십 기기 → 구매력 있는 직장인. 가성비가 아닌 "무난하게 좋은 것" 추구</div></div>
+      <div class="signal-item"><div class="signal-title">골프웨어/용품 쇼핑앱 동시 활성</div><div class="signal-desc">무신사/크림에서 골프웨어 탐색 시작 → 장비+옷+레슨 한꺼번에 준비</div></div>
     </div>
 
     <div class="section">
-      <p>이 조합이 의미하는 건 하나입니다.</p>
-      <p><strong style="font-size:1.1rem">"회사 때문에 골프를 시작한 사람."</strong></p>
-      <p>접대, 임원 라운딩, 거래처 미팅. 이 사람들은 기존 골퍼와 완전히 다른 니즈를 가지고 있습니다.</p>
-      <p>장비에 진심인 골퍼와 달리 <strong>창피 안 당할 정도면 됩니다.</strong><br>스코어에 집착하는 골퍼와 달리 <strong>매너와 에티켓이 급합니다.</strong><br>가성비를 따지는 골퍼와 달리 <strong>무난하게 좋은 걸 원합니다.</strong></p>
-      <p>그래서 이 사람은 고민하지 않습니다. <strong>빠르게 삽니다.</strong> 객단가가 높고, 전환이 빠릅니다.</p>
+      <p>이 사람은 <strong>고민하지 않습니다. 빠르게 삽니다.</strong></p>
+      <p>장비에 진심인 골퍼는 3개월 비교합니다. 접대 입문자는 3일 만에 풀세트를 삽니다. 객단가가 높고, 전환이 빠릅니다.</p>
     </div>
 
     <div class="section">
       <div class="cmp-grid">
-        <div class="cmp-card cmp-left"><h4>기존 골프 관심자</h4><p>장비에 진심<br>스코어에 집착<br>가성비 추구<br>주말 라운딩<br>천천히 구매</p></div>
-        <div class="cmp-card cmp-right"><h4>접대 골프 입문자</h4><p>창피 안 당할 정도면 됨<br>매너와 에티켓이 급함<br>무난하게 좋은 걸 원함<br>평일 라운딩 비중 높음<br>빠르게 풀세트 구매</p></div>
+        <div class="cmp-card cmp-left"><h4>기존 골프 관심자</h4><p>장비에 진심, 3개월 비교<br>스코어에 집착<br>가성비 추구<br>주말 라운딩 중심<br>천천히 구매</p></div>
+        <div class="cmp-card cmp-right"><h4>접대 골프 입문자</h4><p>창피 안 당할 정도면 됨<br>매너와 에티켓이 급함<br>무난하게 좋은 걸 원함<br>평일 라운딩 비중 높음<br>3일 만에 풀세트 구매</p></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-label">DMP에서 잡는 법</div>
-      <p><strong>[접대 골프 입문자]</strong><br>골프앱 첫 설치 + 30대 + 대기업 재직 추정<br>+ 평일 저녁 골프 콘텐츠 소비<br>+ 골프 용품 비교 검색 시작 (60일 내)</p>
+      <p><strong>[접대 골프 입문자]</strong><br>골프앱 첫 설치 (90일 내 이력 없음)<br>+ 3일 내 레슨앱 추가 설치<br>+ 평일 저녁 집중 사용<br>+ 기기 가격대 상위 30%<br>+ 골프웨어 쇼핑앱 동시 활성</p>
     </div>
 
     <div class="section">
       <div class="ind-grid">
-        <div class="ind-card"><div class="ind-title">⛳ 골프 용품</div><div class="ind-desc">입문자 풀세트, "처음 사는 드라이버"</div></div>
-        <div class="ind-card"><div class="ind-title">👔 골프웨어</div><div class="ind-desc">"접대 라운딩에 입고 갈 옷"</div></div>
+        <div class="ind-card"><div class="ind-title">⛳ 골프 용품</div><div class="ind-desc">"다음 주 라운딩 전에 이것만 준비하세요"</div></div>
+        <div class="ind-card"><div class="ind-title">👔 골프웨어</div><div class="ind-desc">"접대 라운딩, 이 옷이면 됩니다"</div></div>
         <div class="ind-card"><div class="ind-title">🏌️ 골프 레슨</div><div class="ind-desc">"4주 만에 필드 나가기" 속성 레슨</div></div>
-        <div class="ind-card"><div class="ind-title">💳 프리미엄 카드</div><div class="ind-desc">골프 특화 혜택 소구</div></div>
+        <div class="ind-card"><div class="ind-title">💳 프리미엄 카드</div><div class="ind-desc">골프장 할인 + 라운지 혜택</div></div>
       </div>
     </div>
 
     <div class="insight-box">
       <div class="ins-label">💡 KEY INSIGHT</div>
-      <p>"골프 관심자"는 오디언스가 아닙니다.<br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.</p>
+      <p>"골프 관심자"는 오디언스가 아닙니다.<br><br><strong>왜 골프를 시작했는지</strong>가 오디언스를 만듭니다.<br>접대 입문자는 고민하지 않습니다.<br>빠르게 삽니다. 비싸게 삽니다.</p>
     </div>
 
     <div class="ad-compare">
@@ -347,6 +358,11 @@ elif st.session_state.view == "detail_finance":
       <p>→ 가계대출 연간 성장률 상한 <strong>1.5%</strong>로 하향<br>→ 다주택자 주담대 만기 연장 <strong>4월 17일부터 금지</strong><br>→ 비거주 1주택자 전세대출 보증 <strong>제한 검토 중</strong></p>
       <p>규제가 만든 건 <strong>데드라인</strong>입니다. 4월 17일이 지나면 다주택자는 만기 연장이 안 됩니다.</p>
       <p><strong>이 사람들은 "관심"이 아니라 "생존"으로 움직이고 있습니다.</strong></p>
+    </div>
+
+    <div class="quote-box">
+      <p>"뉴스 보고 바로 뱅크샐러드 깔았어요.<br>다음 날 핀다도 깔고, 토스 대출 탭도 매일 확인하고.<br>새벽에 눈 떠서 금리 비교하다 출근해요.<br>4월 17일 전에 안 하면 진짜 끝이거든요."<br><br>— C씨, 38세, 1주택 전세 거주자</p>
+    </div>
     </div>
 
     <div class="section">
@@ -406,6 +422,94 @@ elif st.session_state.view == "detail_finance":
     </div>
 
     <div class="footer">오늘의 오디언스 #2 · by IGAWorks</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_health":
+    if st.button("← 뒤로", key="back_h"):
+        st.session_state.view = "feed"
+        st.rerun()
+    st.markdown("""
+    <div class="detail-wrap">
+    <div class="detail-hero">
+      <div class="detail-emoji">💪</div>
+      <span class="detail-tag">건강</span>
+      <div class="detail-title">러닝앱 깔고 3일 만에 식단앱까지 깐 사람</div>
+      <div class="detail-sub">다이어트를 결심한 게 아니라, 몸이 바뀌기 시작한 겁니다</div>
+      <div class="detail-meta">2026.04.14 · 오늘의 오디언스 #6</div>
+    </div>
+
+    <div class="quote-box">
+      <p>"건강검진 결과 보고 충격받았어요.<br>그날 바로 나이키런클럽 깔고 다음 날 새벽에 뛰었어요.<br>3일 뒤에 식단 앱 깔고, 일주일 뒤에 PT 등록했어요.<br>지금 한 달째 매일 기록하고 있어요."<br><br>— D씨, 36세, IT 회사 PM</p>
+    </div>
+
+    <div class="section">
+      <p>건강기능식품 시장 6조 원. 홈트레이닝 시장 2조 원. 다이어트 앱 MAU 800만.</p>
+      <p>모든 헬스 브랜드가 "건강 관심자"를 타겟합니다. 문제는 유튜브에서 운동 영상만 보는 사람과, 실제로 몸을 바꾸고 있는 사람이 섞인다는 것.</p>
+      <p>D씨는 다릅니다. <strong>관심이 아니라 행동이 바뀐 사람입니다.</strong></p>
+    </div>
+
+    <div class="quote-box">
+      <p>"예전에도 다이어트 앱 깔아본 적 있어요.<br>근데 3일 만에 삭제했죠.<br>이번엔 달라요. 러닝 → 식단 → PT까지 일주일 만에 다 깔았어요.<br>매일 아침 6시에 알람 맞춰놓고 뛰고 있어요."<br><br>— D씨</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">BEHAVIOR SIGNALS</div>
+      <div class="signal-item"><div class="signal-title">러닝/운동앱 신규 설치 후 7일 연속 실행</div><div class="signal-desc">나이키런클럽/캐치핏 설치 후 매일 실행 → "이번엔 진짜"인 사람. 3일 만에 삭제하는 사람과 구분</div></div>
+      <div class="signal-item"><div class="signal-title">3일 내 식단/칼로리 앱 추가 설치</div><div class="signal-desc">운동앱 → 식단앱 빠른 전환 → 운동+식단 동시 관리 = 진지한 행동 변화</div></div>
+      <div class="signal-item"><div class="signal-title">아침 5~7시 앱 사용 패턴 신규 발생</div><div class="signal-desc">기존에 없던 새벽 사용 패턴 → 생활 루틴 자체가 바뀐 시그널</div></div>
+      <div class="signal-item"><div class="signal-title">배달앱 사용 빈도 감소</div><div class="signal-desc">주 5회 → 주 1~2회로 급감 → 식단 관리 시작한 이탈 시그널</div></div>
+      <div class="signal-item"><div class="signal-title">건강기능식품/보충제 쇼핑앱 탐색</div><div class="signal-desc">쿠팡/아이허브에서 프로틴/비타민 검색 시작 → 지출 준비 완료</div></div>
+    </div>
+
+    <div class="section">
+      <p>핵심은 <strong>"앱 설치 속도 + 생활 패턴 변화"</strong>의 조합입니다.</p>
+      <p>다이어트 앱을 깔았다가 3일 만에 지우는 사람은 매년 수백만 명입니다. 이 사람들에게 광고해봤자 전환이 안 됩니다.</p>
+      <p>하지만 러닝앱 깔고 <strong>7일 연속 실행</strong>하면서 <strong>식단앱까지 추가</strong>하고, <strong>배달앱 사용이 줄어든</strong> 사람? 이 사람은 진짜입니다. 프로틴, PT, 운동복, 러닝화 — <strong>전부 삽니다.</strong></p>
+    </div>
+
+    <div class="section">
+      <div class="cmp-grid">
+        <div class="cmp-card cmp-left"><h4>건강 콘텐츠 소비자</h4><p>운동 영상만 시청<br>앱 설치 후 3일 내 삭제<br>배달앱 사용 변화 없음<br>생활 패턴 그대로<br>전환 가능성 낮음</p></div>
+        <div class="cmp-card cmp-right"><h4>행동 전환 유저</h4><p>러닝앱 7일 연속 실행<br>3일 내 식단앱 추가<br>배달앱 사용 급감<br>새벽 루틴 신규 발생<br>프로틴/PT 지출 준비</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">DMP에서 잡는 법</div>
+      <p><strong>[행동 전환 유저]</strong><br>러닝/운동앱 설치 후 7일 연속 실행<br>+ 3일 내 식단앱 추가 설치<br>+ 배달앱 사용 빈도 50%+ 감소<br>+ 아침 5~7시 신규 사용 패턴<br><br><em style="color:#888;font-size:0.8rem">* 실제 체중/건강 데이터는 DMP로 확인 불가.<br>앱 사용 지속성 + 생활 패턴 변화로 진지도를 추정합니다.</em></p>
+    </div>
+
+    <div class="section">
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-title">🥤 프로틴/보충제</div><div class="ind-desc">"운동 시작 2주차, 지금이 프로틴 골든타임"</div></div>
+        <div class="ind-card"><div class="ind-title">🏋️ PT/헬스장</div><div class="ind-desc">"혼자 뛰다 한계 느낄 때, 4주 PT"</div></div>
+        <div class="ind-card"><div class="ind-title">👟 러닝화/운동복</div><div class="ind-desc">"매일 뛰는 사람을 위한 러닝화"</div></div>
+        <div class="ind-card"><div class="ind-title">🥗 식단/밀키트</div><div class="ind-desc">"배달 끊은 당신을 위한 고단백 도시락"</div></div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"건강 관심자"는 오디언스가 아닙니다.<br><br>러닝앱 깔고 <strong>7일 연속 뛴 사람</strong>이 오디언스입니다.<br>이 사람은 다이어트를 결심한 게 아니라<br><strong>이미 몸이 바뀌기 시작한 겁니다.</strong><br><br>배달앱을 지우고 식단앱을 깐 사람한테<br>"살 빼세요" 광고를 보내지 마세요.<br>"지금 잘 하고 있어요"를 보내세요.</p>
+    </div>
+
+    <div class="ad-compare">
+      <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "올 여름 다이어트! 지금 시작하세요"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "2주째 매일 뛰고 있죠? 이제 프로틴 더할 타이밍입니다"</p>
+    </div>
+
+    <div class="audience-card">
+      <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">행동 전환 유저</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#6366f1;font-size:1.5rem;font-weight:900">150~250만</p><p style="color:#555;font-size:0.7rem">운동앱 MAU 중 7일+ 지속</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">프로틴 · PT<br>러닝화 · 식단</p></div>
+      </div>
+    </div>
+
+    <div class="footer">오늘의 오디언스 #6 · by IGAWorks</div>
     </div>
     """, unsafe_allow_html=True)
 
