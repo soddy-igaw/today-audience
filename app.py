@@ -141,6 +141,15 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "stock", "emoji": "📈", "tag": "증권", "number": 7,
+        "title": "미국주식 앱 알림을 끄고\n금 시세앱을 깐 사람",
+        "sub": "트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다",
+        "stat": "80~150만",
+        "stat_label": "미장→금 전환자",
+        "date": "2026.04.14",
+        "color": "#eab308",
+    },
+    {
         "id": "travel", "emoji": "✈️", "tag": "여행", "number": 5,
         "title": "해외여행 앱을 지우고\n국내 펜션앱을 깐 사람",
         "sub": "환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다",
@@ -188,7 +197,142 @@ ESSAYS = [
 ]
 
 # ===== ROUTING =====
-if st.session_state.view == "detail_travel":
+if st.session_state.view == "detail_stock":
+    if st.button("← 뒤로", key="back_s"):
+        st.session_state.view = "feed"
+        st.rerun()
+    st.markdown("""
+    <div class="detail-wrap">
+    <div class="detail-hero">
+      <div class="detail-emoji">📈</div>
+      <span class="detail-tag">증권</span>
+      <div class="detail-title">미국주식 앱 알림을 끄고 금 시세앱을 깐 사람</div>
+      <div class="detail-sub">트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다</div>
+      <div class="detail-meta">2026.04.14 · 오늘의 오디언스 #7</div>
+    </div>
+
+    <div class="quote-box">
+      <p>"4월 초에 트럼프 관세 뉴스 보고 바로 미국주식 다 팔았어요.<br>그 돈으로 금 ETF 샀어요. 환율도 불안하고, 금값은 계속 오르니까.<br>토스증권 알림은 꺼버렸어요. 대신 금방 앱 매일 확인해요."<br><br>— E씨, 31세, 스타트업 개발자</p>
+    </div>
+
+    <div class="section">
+      <p>4월, 서학개미가 처음으로 미국주식 순매도로 전환했습니다.</p>
+      <p>트럼프의 S301 관세 정책 재점화, 원/달러 환율 1,450원 돌파. "미장 재미없다"는 분위기가 퍼지고 있습니다.</p>
+      <p>동시에 금값은 연일 신고가. "연말 6,000달러 간다"는 전망까지. <strong>"나만 안 샀어"</strong> 심리가 개인 투자자를 금으로 몰고 있습니다.</p>
+      <p>증권사 마케터들은 아직 "해외주식 관심자"를 타겟합니다. 하지만 이 사람들 중 상당수는 <strong>이미 팔고 나온 사람</strong>입니다.</p>
+    </div>
+
+    <div class="quote-box">
+      <p>"증권사 앱에서 '미국주식 추천' 푸시가 오는데<br>이미 다 팔았거든요. 짜증나서 알림 끄고<br>금방 앱이랑 한국금거래소 앱 깔았어요.<br>지금은 매일 아침 금 시세부터 확인해요."<br><br>— E씨</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">BEHAVIOR TIMELINE</div>
+      <p style="font-size:0.78rem;color:#999;margin-bottom:20px">E씨의 투자 앱 사용 변화를 DMP로 추적하면</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#eab308;box-shadow:0 0 0 2px #eab308"></div>
+          <div class="tl-day" style="color:#eab308">DAY 0 · 관세 뉴스 충격</div>
+          <div class="tl-title">📰 뉴스앱 접속 빈도 2배+ 증가</div>
+          <div class="tl-desc">관세/환율/미국주식 관련 뉴스 집중 소비 → 시장 변화에 민감하게 반응</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#eab308;box-shadow:0 0 0 2px #eab308"></div>
+          <div class="tl-day" style="color:#eab308">DAY 1~3 · 미장 이탈</div>
+          <div class="tl-title">📉 증권앱 접속 빈도 급감 + 알림 OFF</div>
+          <div class="tl-desc">토스증권/키움증권 일일 접속 70%+ 감소 → 매도 후 관심 끊은 시그널</div>
+          <div class="tl-flow">
+            <div class="tl-flow-down">
+              <div style="font-size:0.65rem;color:#999">증권앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#ef4444">↓ 70%</div>
+            </div>
+            <div style="color:#ccc">→</div>
+            <div class="tl-flow-up">
+              <div style="font-size:0.65rem;color:#999">뉴스앱</div>
+              <div style="font-size:0.85rem;font-weight:800;color:#eab308">↑ 2배</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-green" style="background:#eab308;box-shadow:0 0 0 2px #eab308"></div>
+          <div class="tl-day" style="color:#eab308">DAY 3~5 · 금 투자 진입</div>
+          <div class="tl-title">🥇 금방 / 한국금거래소 앱 신규 설치</div>
+          <div class="tl-desc">증권앱 이탈 후 3~5일 내 금 투자앱 설치 → 자산 재배치 시그널</div>
+          <div class="tl-bar-wrap" style="background:#fefce8">
+            <div style="font-size:0.7rem;color:#888;margin-bottom:4px">금 투자앱 신규 설치 속도</div>
+            <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:82%;background:#eab308"></div></div>
+            <div style="font-size:0.68rem;color:#eab308;font-weight:700;margin-top:2px">82% — 증권앱 이탈 후 5일 내 전환</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot tl-yellow"></div>
+          <div class="tl-day" style="color:#f59e0b">DAY 7~10 · 매일 확인</div>
+          <div class="tl-title">☀️ 아침 7~8시 금 시세 확인 루틴</div>
+          <div class="tl-desc">기존 증권앱 대신 금 시세앱을 매일 아침 확인 → 새 투자 루틴 형성</div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot tl-red"></div>
+          <div class="tl-alert">
+            <div style="font-size:0.68rem;color:#ef4444;font-weight:700;margin-bottom:4px">⚡ DAY 14 · 여기서 잡아야 합니다</div>
+            <div class="tl-title">금 ETF 추가 매수 / 실물 금 구매 / 달러 자산 재배치</div>
+            <div class="tl-desc">미장 이탈 후 2주 내 금 투자 확대. 이 시점에 금 관련 상품 광고 전환율 4배+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p>핵심은 <strong>"증권앱 이탈 + 금 투자앱 진입"의 교차 시그널</strong>입니다.</p>
+      <p>금에 관심 있는 사람은 많습니다. 하지만 <strong>미국주식을 실제로 팔고 나온 사람</strong>은 다릅니다. 이 사람은 이미 현금을 들고 있고, 다음 투자처를 찾고 있습니다.</p>
+      <p>증권사가 "미국주식 추천" 푸시를 보내면 알림을 끕니다. 하지만 "금 ETF 수수료 0%" 광고를 보면 <strong>바로 클릭합니다.</strong></p>
+    </div>
+
+    <div class="section">
+      <div class="cmp-grid">
+        <div class="cmp-card cmp-left"><h4>주식 구경꾼</h4><p>증권앱 유지, 가끔 접속<br>뉴스 소비 변화 없음<br>금 투자앱 미설치<br>매도 이력 없음<br>"언젠가" 금 사볼까</p></div>
+        <div class="cmp-card cmp-right"><h4>미장→금 전환자</h4><p>증권앱 접속 70%+ 감소<br>뉴스앱 관세/환율 집중<br>금 투자앱 5일 내 설치<br>매일 아침 금 시세 확인<br>현금 보유 → 즉시 매수</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">DMP에서 잡는 법</div>
+      <p><strong>[미장→금 전환자]</strong><br>증권앱 접속 빈도 70%+ 감소 (14일 내)<br>+ 뉴스앱 관세/환율 소비 2배+ 증가<br>+ 금 투자앱(금방/한국금거래소) 신규 설치<br>+ 매일 아침 금 시세앱 실행<br><br><em style="color:#888;font-size:0.8rem">* 실제 매도/매수 금액은 DMP로 확인 불가.<br>앱 이탈 + 앱 진입의 교차 타이밍으로 자산 이동을 추정합니다.</em></p>
+    </div>
+
+    <div class="section">
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-title">🥇 금 투자 플랫폼</div><div class="ind-desc">"미장 불안할 때, 금 ETF 수수료 0%"</div></div>
+        <div class="ind-card"><div class="ind-title">🏦 증권사</div><div class="ind-desc">"금 ETF/금 현물 원클릭 매수"</div></div>
+        <div class="ind-card"><div class="ind-title">💰 자산관리</div><div class="ind-desc">"포트폴리오 리밸런싱 무료 진단"</div></div>
+        <div class="ind-card"><div class="ind-title">📊 로보어드바이저</div><div class="ind-desc">"관세 시대 안전자산 자동 배분"</div></div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ins-label">💡 KEY INSIGHT</div>
+      <p>"투자 관심자"는 오디언스가 아닙니다.<br><br><strong>증권앱 알림을 끈 사람</strong>이 오디언스입니다.<br>이 사람은 투자를 그만둔 게 아니라<br><strong>투자 방향을 바꾼 겁니다.</strong><br><br>"미국주식 추천"을 보내지 마세요.<br>"금 ETF 수수료 0%"를 보내세요.</p>
+    </div>
+
+    <div class="ad-compare">
+      <p style="font-size:0.85rem;font-weight:700;color:#111;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+      <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "미국주식 지금이 매수 타이밍! 수수료 무료"</p>
+      <p style="font-size:0.85rem;color:#111;font-weight:600">✅ "미장 팔고 뭐 살지 고민 중이라면, 금 ETF 수수료 0%"</p>
+    </div>
+
+    <div class="audience-card">
+      <p style="font-size:0.68rem;color:#a5b4fc;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+      <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">미장→금 전환 투자자</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수</p><p style="color:#eab308;font-size:1.5rem;font-weight:900">80~150만</p><p style="color:#555;font-size:0.7rem">서학개미 400만 중 순매도 전환</p></div>
+        <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">금 투자 · 증권사<br>자산관리 · 로보어드</p></div>
+      </div>
+    </div>
+
+    <div class="footer">오늘의 오디언스 #7 · by IGAWorks</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_travel":
     if st.button("← 뒤로", key="back_t"):
         st.session_state.view = "feed"
         st.rerun()
