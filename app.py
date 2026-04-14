@@ -80,19 +80,25 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .footer { text-align:center; color:#ccc; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Streamlit button overrides - card style */
+/* Feed card buttons - invisible overlay */
+.feed-btn-wrap { margin-top:-160px; margin-bottom:16px; position:relative; z-index:10; }
+.feed-btn-wrap button {
+  width:100%!important; height:160px!important; border:none!important; background:transparent!important;
+  cursor:pointer!important; padding:0!important; min-height:160px!important;
+}
+.feed-btn-wrap button:hover { background:transparent!important; }
+.feed-btn-wrap button:focus { box-shadow:none!important; }
+.feed-btn-wrap button p { opacity:0!important; }
+
+/* Detail back button */
 div[data-testid="stButton"] > button {
-  width:100%!important; text-align:left!important; border:none!important;
-  background:#fff!important; border-radius:24px!important; padding:28px 24px!important;
-  margin-bottom:16px!important; min-height:auto!important; cursor:pointer!important;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; transition:all 0.25s!important;
-  color:#111!important; font-size:0.92rem!important; font-weight:700!important;
-  line-height:1.5!important; white-space:pre-line!important;
+  width:auto!important; background:#fff!important; border:1px solid #eee!important;
+  border-radius:12px!important; padding:10px 20px!important; min-height:auto!important;
+  font-size:0.85rem!important; color:#888!important; font-weight:500!important;
+  cursor:pointer!important; margin-bottom:16px!important;
 }
-div[data-testid="stButton"] > button:hover {
-  transform:translateY(-3px)!important; box-shadow:0 12px 32px rgba(0,0,0,0.1)!important;
-  background:#fff!important; color:#111!important;
-}
-div[data-testid="stButton"] > button:focus { box-shadow:0 2px 8px rgba(0,0,0,0.06)!important; }
+div[data-testid="stButton"] > button:hover { background:#f8f8f8!important; color:#111!important; }
+div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 @media(max-width:768px) { .block-container { max-width:100%!important; } }
 </style>
@@ -394,9 +400,21 @@ else:
     """, unsafe_allow_html=True)
 
     for e in ESSAYS:
-        label = f"{e['emoji']}  {e['tag']}  ·  추정 {e['stat']}\n\n{e['title'].replace(chr(10), chr(10))}\n\n{e['sub']}"
-        if st.button(label, key=f"go_{e['id']}"):
+        st.markdown(f"""
+        <div style="background:#fff;border-radius:24px;padding:28px 24px;margin-bottom:0;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:all 0.25s;height:150px;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+            <span style="font-size:1.6rem">{e["emoji"]}</span>
+            <span style="font-size:0.68rem;font-weight:600;color:{e['color']};background:{e['color']}15;padding:3px 10px;border-radius:100px">{e["tag"]}</span>
+            <span style="font-size:0.68rem;color:#ccc;margin-left:auto">추정 {e["stat"]}</span>
+          </div>
+          <div style="font-size:1.1rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:8px">{e["title"].replace(chr(10), "<br>")}</div>
+          <div style="font-size:0.8rem;color:#999;line-height:1.5">{e["sub"]}</div>
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown('<div class="feed-btn-wrap">', unsafe_allow_html=True)
+        if st.button("ㅤ", key=f"go_{e['id']}"):
             st.session_state.view = f"detail_{e['id']}"
             st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
