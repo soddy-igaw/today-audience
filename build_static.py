@@ -10,6 +10,7 @@ ESSAYS = [
     {"id":"car","tag":"자동차","title":"전기차 앱 지우고 하이브리드 비교앱 깐 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~80만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80"},
     {"id":"game","tag":"게임","title":"스위치2 예약 알림 켜고 게이밍 노트북 비교 시작한 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~140만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
     {"id":"stock","tag":"증권","title":"미국주식 앱 알림을 끄고 금 시세앱을 깐 사람","sub":"트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다","stat":"~97만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
+    {"id":"ktx","tag":"여행","title":"KTX 매진 뜨자마자 고속버스앱 깐 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~27만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80"},
     {"id":"travel","tag":"여행","title":"해외여행 앱을 지우고 국내 펜션앱을 깐 사람","sub":"환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다","stat":"~65만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
     {"id":"pet","tag":"반려동물","title":"첫 입양 후 2주, 앱이 폭발하는 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~13만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13","img":"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80"},
     {"id":"themestock","tag":"테마주","title":"뉴스 보고 30분 안에 종목 검색한 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~52만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
@@ -23,7 +24,7 @@ CHAPTERS = [
     {"label":"금융","ids":["finance","stock","realestate","themestock"]},
     {"label":"스포츠","ids":["running","golf","health"]},
     {"label":"게임","ids":["game"]},
-    {"label":"라이프","ids":["travel","car","pet"]},
+    {"label":"라이프","ids":["travel","ktx","car","pet"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init

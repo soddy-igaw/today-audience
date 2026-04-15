@@ -192,6 +192,16 @@ ESSAYS = [
         "img": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80",
     },
     {
+        "id": "ktx", "emoji": "🚄", "tag": "여행", "number": 13,
+        "title": "KTX 매진 뜨자마자\n고속버스앱 깐 사람",
+        "sub": "외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다",
+        "stat": "~27만",
+        "stat_label": "코레일+교통앱 동시 활성 (DMP)",
+        "date": "2026.04.15",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "travel", "emoji": "✈️", "tag": "여행", "number": 5,
         "title": "해외여행 앱을 지우고\n국내 펜션앱을 깐 사람",
         "sub": "환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다",
@@ -294,6 +304,11 @@ elif st.session_state.view == "detail_stock":
         go_feed()
     st.markdown(load_essay("stock"), unsafe_allow_html=True)
 
+elif st.session_state.view == "detail_ktx":
+    if st.button("← 뒤로", key="back_ktx"):
+        go_feed()
+    st.markdown(load_essay("ktx"), unsafe_allow_html=True)
+
 elif st.session_state.view == "detail_travel":
     if st.button("← 뒤로", key="back_t"):
         go_feed()
@@ -326,7 +341,7 @@ else:
         {"label": "금융", "ids": ["finance", "stock", "realestate", "themestock"]},
         {"label": "스포츠", "ids": ["running", "golf", "health"]},
         {"label": "게임", "ids": ["game"]},
-        {"label": "라이프", "ids": ["travel", "pet"]},
+        {"label": "라이프", "ids": ["travel", "ktx", "pet"]},
     ]
     ESSAY_MAP = {e["id"]: e for e in ESSAYS}
     today = ESSAYS[0]
