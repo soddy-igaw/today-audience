@@ -38,6 +38,9 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .ch-grid .feed-card { border-top:none; border-right:1px solid #e5e5e5; }
 .ch-grid .feed-card:last-child { border-right:none; }
 
+/* Hero image */
+.hero-img { width:100%; height:280px; object-fit:cover; margin-bottom:0; filter:grayscale(100%); }
+
 /* Detail page */
 .detail-wrap { max-width:600px; margin:0 auto; }
 .detail-hero { background:#fff; border-radius:0; padding:32px 0; margin-bottom:16px; border-bottom:1px solid #e5e5e5; }
@@ -238,6 +241,7 @@ if st.session_state.view == "detail_realestate":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🏠</div>
       <span class="detail-tag">부동산</span>
@@ -390,6 +394,7 @@ elif st.session_state.view == "detail_running":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🏃</div>
       <span class="detail-tag">러닝</span>
@@ -519,6 +524,7 @@ elif st.session_state.view == "detail_car":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🚗</div>
       <span class="detail-tag">자동차</span>
@@ -635,6 +641,7 @@ elif st.session_state.view == "detail_game":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🎮</div>
       <span class="detail-tag">게임</span>
@@ -745,6 +752,7 @@ elif st.session_state.view == "detail_stock":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">📈</div>
       <span class="detail-tag">증권</span>
@@ -890,6 +898,7 @@ elif st.session_state.view == "detail_travel":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">✈️</div>
       <span class="detail-tag">여행</span>
@@ -995,6 +1004,7 @@ elif st.session_state.view == "detail_golf":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">⛳</div>
       <span class="detail-tag">골프</span>
@@ -1127,6 +1137,7 @@ elif st.session_state.view == "detail_finance":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">💰</div>
       <span class="detail-tag">금융</span>
@@ -1248,6 +1259,7 @@ elif st.session_state.view == "detail_health":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">💪</div>
       <span class="detail-tag">건강</span>
@@ -1381,6 +1393,7 @@ elif st.session_state.view == "detail_pet":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🐾</div>
       <span class="detail-tag">반려동물</span>
