@@ -161,6 +161,7 @@ ESSAYS = [
         "stat_label": "자동차앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#dc2626",
+        "img": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "game", "emoji": "🎮", "tag": "게임", "number": 9,
@@ -170,6 +171,7 @@ ESSAYS = [
         "stat_label": "게임앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#7c3aed",
+        "img": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "stock", "emoji": "📈", "tag": "증권", "number": 7,
@@ -179,6 +181,7 @@ ESSAYS = [
         "stat_label": "증권앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#eab308",
+        "img": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "travel", "emoji": "✈️", "tag": "여행", "number": 5,
@@ -188,6 +191,7 @@ ESSAYS = [
         "stat_label": "여행앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#0ea5e9",
+        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "pet", "emoji": "🐾", "tag": "반려동물", "number": 4,
@@ -197,6 +201,7 @@ ESSAYS = [
         "stat_label": "펫앱+커머스 (DMP)",
         "date": "2026.04.13",
         "color": "#f97316",
+        "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "finance", "emoji": "💰", "tag": "금융", "number": 2,
@@ -206,6 +211,7 @@ ESSAYS = [
         "stat_label": "대출탐색 유저 (DMP)",
         "date": "2026.04.10",
         "color": "#6366f1",
+        "img": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "running", "emoji": "🏃", "tag": "러닝", "number": 11,
@@ -215,6 +221,7 @@ ESSAYS = [
         "stat_label": "러닝앱+커머스 동시 활성 (DMP)",
         "date": "2026.04.15",
         "color": "#000",
+        "img": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "golf", "emoji": "⛳", "tag": "골프", "number": 1,
@@ -224,6 +231,7 @@ ESSAYS = [
         "stat_label": "골프앱 사용자 (DMP)",
         "date": "2026.04.11",
         "color": "#16a34a",
+        "img": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "health", "emoji": "💪", "tag": "건강", "number": 6,
@@ -233,6 +241,7 @@ ESSAYS = [
         "stat_label": "운동앱 사용자 (DMP)",
         "date": "2026.04.14",
         "color": "#14b8a6",
+        "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
     },
 ]
 
@@ -1565,8 +1574,11 @@ else:
         cols = st.columns(3)
         for i, e in enumerate(ch_essays):
             with cols[i % 3]:
+                card_img = e.get("img", "")
+                img_tag = f'<img src="{card_img}" style="width:100%;height:120px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px">' if card_img else ""
                 st.markdown(f"""
                 <div style="padding:4px 0">
+                  {img_tag}
                   <div style="font-size:0.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:10px">{e["tag"].upper()}</div>
                   <div style="font-size:1rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e["title"].replace(chr(10), " ")}</div>
                   <div style="font-size:0.72rem;color:#999;line-height:1.5;margin-bottom:12px">{e["sub"][:50]}...</div>
