@@ -104,22 +104,16 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .footer { text-align:center; color:#bbb; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Hide helper buttons */
-.hidden-btn { position:relative; height:0!important; overflow:hidden!important; margin:0!important; padding:0!important; }
-.hidden-btn div, .hidden-btn button, .hidden-btn [data-testid="stButton"] {
-  position:absolute!important; width:1px!important; height:1px!important;
-  opacity:0!important; overflow:hidden!important; padding:0!important;
-  margin:0!important; border:none!important; min-height:0!important;
-  pointer-events:auto!important;
-}
+.hidden-btn { display:none!important; }
 
-/* Detail back button */
+/* Streamlit button overrides */
 div[data-testid="stButton"] > button {
-  width:auto!important; background:#fff!important; border:1px solid #ddd!important;
-  border-radius:0!important; padding:10px 20px!important; min-height:auto!important;
-  font-size:0.85rem!important; color:#666!important; font-weight:500!important;
-  cursor:pointer!important; margin-bottom:16px!important;
+  width:auto!important; background:#000!important; border:none!important;
+  border-radius:0!important; padding:8px 20px!important; min-height:auto!important;
+  font-size:0.78rem!important; color:#fff!important; font-weight:600!important;
+  cursor:pointer!important; margin:8px 0 0!important;
 }
-div[data-testid="stButton"] > button:hover { background:#000!important; color:#fff!important; border-color:#000!important; }
+div[data-testid="stButton"] > button:hover { background:#333!important; }
 div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 @media(max-width:768px) {
@@ -1215,9 +1209,8 @@ else:
     """, unsafe_allow_html=True)
 
     # --- 오늘의 오디언스 (크게) ---
-    btn_idx = 0
     st.markdown(f"""
-    <div class="feed-card" style="padding:36px 0;border:none;border-bottom:1px solid #e5e5e5" onclick="document.querySelectorAll('.hidden-btn button')[0].click()">
+    <div style="padding:36px 0;border-bottom:1px solid #e5e5e5">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
         <span style="font-size:0.68rem;font-weight:900;color:#000;letter-spacing:2px">TODAY</span>
         <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
@@ -1228,17 +1221,12 @@ else:
       <div style="display:flex;align-items:center;gap:12px">
         <span style="font-size:1.2rem;font-weight:900;color:#000">{today["stat"]}</span>
         <span style="font-size:0.72rem;color:#999">{today["stat_label"]}</span>
-        <span style="margin-left:auto;font-size:0.8rem;font-weight:600;color:#000">읽기 →</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
-    with st.container():
-        st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-        if st.button("ㅤ", key=f"go_{today['id']}"):
-            st.session_state.view = f"detail_{today['id']}"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
-    btn_idx += 1
+    if st.button("읽기 →", key=f"go_{today['id']}", use_container_width=True):
+        st.session_state.view = f"detail_{today['id']}"
+        st.rerun()
 
     # --- 챕터별 섹션 (3열 그리드) ---
     for ch in CHAPTERS:
@@ -1247,30 +1235,24 @@ else:
             continue
 
         st.markdown(f"""
-        <div style="margin-top:48px;margin-bottom:0;padding-bottom:12px;border-bottom:2px solid #000">
+        <div style="margin-top:48px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #000">
           <span style="font-size:0.95rem;font-weight:900;color:#000">{ch["label"]}</span>
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown('<div class="ch-grid">', unsafe_allow_html=True)
-        for e in ch_essays:
-            st.markdown(f"""
-            <div class="feed-card" onclick="document.querySelectorAll('.hidden-btn button')[{btn_idx}].click()">
-              <div style="font-size:0.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:12px">{e["tag"].upper()}</div>
-              <div style="font-size:0.92rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:8px">{e["title"].replace(chr(10), " ")}</div>
-              <div style="font-size:0.75rem;color:#999;line-height:1.5;margin-bottom:16px">{e["sub"][:50]}...</div>
-              <div style="font-size:1rem;font-weight:900;color:#000">{e["stat"]}</div>
-            </div>
-            """, unsafe_allow_html=True)
-            btn_idx += 1
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        for e in ch_essays:
-            with st.container():
-                st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-                if st.button("ㅤ", key=f"go_{e['id']}"):
+        cols = st.columns(3)
+        for i, e in enumerate(ch_essays):
+            with cols[i % 3]:
+                st.markdown(f"""
+                <div style="padding:4px 0">
+                  <div style="font-size:0.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:10px">{e["tag"].upper()}</div>
+                  <div style="font-size:0.88rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e["title"].replace(chr(10), " ")}</div>
+                  <div style="font-size:0.72rem;color:#999;line-height:1.5;margin-bottom:12px">{e["sub"][:50]}...</div>
+                  <div style="font-size:0.95rem;font-weight:900;color:#000">{e["stat"]}</div>
+                </div>
+                """, unsafe_allow_html=True)
+                if st.button("읽기 →", key=f"go_{e['id']}"):
                     st.session_state.view = f"detail_{e['id']}"
                     st.rerun()
-                st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
