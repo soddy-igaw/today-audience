@@ -1212,11 +1212,11 @@ else:
     st.markdown(f"""
     <div style="padding:36px 0;border-bottom:1px solid #e5e5e5">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
-        <span style="font-size:0.68rem;font-weight:900;color:#000;letter-spacing:2px">TODAY</span>
+        <span style="font-size:0.68rem;font-weight:900;color:#e8530e;letter-spacing:2px">TODAY</span>
         <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
         <span style="font-size:0.68rem;color:#999">{today["date"]}</span>
       </div>
-      <div style="font-size:1.5rem;font-weight:900;color:#000;line-height:1.3;margin-bottom:12px">{today["title"].replace(chr(10), "<br>")}</div>
+      <div style="font-size:1.8rem;font-weight:900;color:#000;line-height:1.3;margin-bottom:12px">{today["title"].replace(chr(10), "<br>")}</div>
       <div style="font-size:0.9rem;color:#666;line-height:1.7;margin-bottom:24px">{today["sub"]}</div>
       <div style="display:flex;align-items:center;gap:12px">
         <span style="font-size:1.2rem;font-weight:900;color:#000">{today["stat"]}</span>
@@ -1246,7 +1246,7 @@ else:
                 st.markdown(f"""
                 <div style="padding:4px 0">
                   <div style="font-size:0.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:10px">{e["tag"].upper()}</div>
-                  <div style="font-size:0.88rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e["title"].replace(chr(10), " ")}</div>
+                  <div style="font-size:1rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e["title"].replace(chr(10), " ")}</div>
                   <div style="font-size:0.72rem;color:#999;line-height:1.5;margin-bottom:12px">{e["sub"][:50]}...</div>
                   <div style="font-size:0.95rem;font-weight:900;color:#000">{e["stat"]}</div>
                 </div>
