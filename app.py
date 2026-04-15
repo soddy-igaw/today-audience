@@ -104,10 +104,12 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .footer { text-align:center; color:#bbb; font-size:0.72rem; padding:32px 0 16px; }
 
 /* Hide helper buttons */
-.hidden-btn button {
+.hidden-btn { position:relative; height:0!important; overflow:hidden!important; margin:0!important; padding:0!important; }
+.hidden-btn div, .hidden-btn button, .hidden-btn [data-testid="stButton"] {
   position:absolute!important; width:1px!important; height:1px!important;
   opacity:0!important; overflow:hidden!important; padding:0!important;
   margin:0!important; border:none!important; min-height:0!important;
+  pointer-events:auto!important;
 }
 
 /* Detail back button */
@@ -1208,6 +1210,7 @@ else:
     <div style="padding:48px 0 16px;border-bottom:3px solid #000;margin-bottom:0">
       <p style="font-size:0.68rem;font-weight:700;letter-spacing:3px;color:#999;margin-bottom:10px">AUDIENCE IDEA BANK</p>
       <h1 style="font-size:2rem;font-weight:900;color:#000;line-height:1.2;letter-spacing:-1px">오늘의 오디언스</h1>
+      <p style="color:#999;font-size:0.82rem;line-height:1.6;margin-top:8px">트렌드를 읽고, 행동 시그널을 조합해<br>아직 아무도 안 쓰는 오디언스를 제안합니다.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1216,6 +1219,7 @@ else:
     st.markdown(f"""
     <div class="feed-card" style="padding:36px 0;border:none;border-bottom:1px solid #e5e5e5" onclick="document.querySelectorAll('.hidden-btn button')[0].click()">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
+        <span style="font-size:0.68rem;font-weight:900;color:#000;letter-spacing:2px">TODAY</span>
         <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
         <span style="font-size:0.68rem;color:#999">{today["date"]}</span>
       </div>
@@ -1230,7 +1234,7 @@ else:
     """, unsafe_allow_html=True)
     with st.container():
         st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-        if st.button("go", key=f"go_{today['id']}"):
+        if st.button("ㅤ", key=f"go_{today['id']}"):
             st.session_state.view = f"detail_{today['id']}"
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
@@ -1264,7 +1268,7 @@ else:
         for e in ch_essays:
             with st.container():
                 st.markdown('<div class="hidden-btn">', unsafe_allow_html=True)
-                if st.button("go", key=f"go_{e['id']}"):
+                if st.button("ㅤ", key=f"go_{e['id']}"):
                     st.session_state.view = f"detail_{e['id']}"
                     st.rerun()
                 st.markdown('</div>', unsafe_allow_html=True)
