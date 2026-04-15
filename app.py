@@ -304,15 +304,39 @@ if st.session_state.view == "detail_realestate":
     </div>
 
     <div class="section">
+      <div class="section-label">차량 보유 판별 — 커머스 데이터로 확인</div>
+      <p>차 시세 조회만으로는 보유 여부가 불확실합니다. <strong>커머스 구매 이력</strong>으로 실제 보유자를 걸러냅니다.</p>
+      <p><strong>차량 보유 확정 시그널 (90일 내)</strong><br>
+      ✅ 주유앱(오일나우/카카오T주유) 월 2회+ 결제<br>
+      ✅ 자동차 용품(세차용품/방향제/블랙박스) 커머스 구매 이력<br>
+      ✅ 주차앱(아이파킹/모두의주차장) 활성 사용<br>
+      ✅ 자동차보험앱 설치 또는 갱신 조회<br>
+      ✅ 하이패스/톨게이트 관련 앱 활성</p>
+      <p>이 중 <strong>2개 이상 해당</strong>하면 실제 차량 보유자로 판별합니다. 차를 사려는 사람과 이미 가지고 있는 사람은 커머스 패턴이 완전히 다릅니다.</p>
+      <p><strong>보유 차량 가치 추정</strong><br>
+      주유앱 결제 빈도(주행거리 추정) + 보험앱 차종 정보 + 차 시세앱 조회 차종 → 담보 가치 2,000~4,000만원 구간 추정 가능</p>
+    </div>
+
+    <div class="section">
       <div class="cmp-grid">
-        <div class="cmp-card cmp-left"><h4>일반 대출 탐색자</h4><p>대출앱만 활성<br>부동산앱 변화 없음<br>차 시세 조회 없음<br>한도 부족 인지 안 됨<br>"언젠가" 대출받을까</p></div>
-        <div class="cmp-card cmp-right"><h4>담보 조합 매매 전환자</h4><p>부동산 전세→매매 전환<br>대출앱 한도 시뮬레이션<br>차 시세앱 동시 활성<br>부족분 정확히 인지<br>2주 내 실행 가능</p></div>
+        <div class="cmp-card cmp-left"><h4>일반 대출 탐색자</h4><p>대출앱만 활성<br>부동산앱 변화 없음<br>차 시세 조회 없음<br>차량 용품 구매 이력 없음<br>"언젠가" 대출받을까</p></div>
+        <div class="cmp-card cmp-right"><h4>담보 조합 매매 전환자</h4><p>부동산 전세→매매 전환<br>대출앱 한도 시뮬레이션<br>차 시세앱 + 주유앱 활성<br>차량 용품 구매 이력 확인<br>담보 가치 확인 → 실행</p></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-label">DMP에서 잡는 법</div>
-      <p><strong>[담보 조합 매매 전환자]</strong><br>부동산앱 매매 탭 사용 급증 (14일 내)<br>+ 대출비교앱 설치 또는 사용 빈도 2배+ 증가<br>+ 자동차 시세조회앱(KB차차차/엔카) 접속<br>+ 세 가지가 14일 내 동시 활성<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 부동산앱+대출앱 동시 사용자 약 34만명 (30일 기준)<br>이 중 차 시세앱 동시 활성 유저는 약 4.2만명으로 추정</em></p>
+      <p><strong>[담보 조합 매매 전환자]</strong><br>
+      <em style="color:#000;font-weight:700">Step 1. 차량 보유 확정</em><br>
+      주유앱 월 2회+ 결제 OR 자동차 용품 커머스 구매 OR 주차앱 활성<br>
+      → 2개 이상 해당 시 보유자 확정<br><br>
+      <em style="color:#000;font-weight:700">Step 2. 매매 전환 시그널</em><br>
+      부동산앱 매매 탭 사용 급증 (14일 내)<br>
+      + 대출비교앱 설치 또는 사용 빈도 2배+ 증가<br><br>
+      <em style="color:#000;font-weight:700">Step 3. 담보 조합 시그널</em><br>
+      자동차 시세조회앱(KB차차차/엔카) 접속<br>
+      → Step 1~3 모두 충족 = 핵심 타겟<br><br>
+      <em style="color:#888;font-size:0.8rem">* DMP 실측: 부동산앱+대출앱 동시 사용자 약 34만명 (30일 기준)<br>이 중 차량 보유 확정 + 차 시세앱 동시 활성 유저는 약 4.2만명으로 추정</em></p>
     </div>
 
     <div class="section">
