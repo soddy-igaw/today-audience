@@ -2,8 +2,22 @@ import streamlit as st
 
 st.set_page_config(page_title="오늘의 오디언스", page_icon="🎯", layout="wide")
 
-if "view" not in st.session_state:
+# URL 쿼리 파라미터 ↔ 세션 상태 연동
+params = st.query_params
+if "view" in params:
+    st.session_state.view = params["view"]
+elif "view" not in st.session_state:
     st.session_state.view = "feed"
+
+def go(view):
+    st.session_state.view = view
+    st.query_params["view"] = view
+    
+
+def go_feed():
+    st.session_state.view = "feed"
+    st.query_params.clear()
+    
 
 st.markdown("""
 <style>
@@ -221,8 +235,7 @@ ESSAYS = [
 # ===== ROUTING =====
 if st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -374,8 +387,7 @@ if st.session_state.view == "detail_realestate":
 
 elif st.session_state.view == "detail_running":
     if st.button("← 뒤로", key="back_run"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -504,8 +516,7 @@ elif st.session_state.view == "detail_running":
 
 elif st.session_state.view == "detail_car":
     if st.button("← 뒤로", key="back_car"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -621,8 +632,7 @@ elif st.session_state.view == "detail_car":
 
 elif st.session_state.view == "detail_game":
     if st.button("← 뒤로", key="back_game"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -732,8 +742,7 @@ elif st.session_state.view == "detail_game":
 
 elif st.session_state.view == "detail_stock":
     if st.button("← 뒤로", key="back_s"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -878,8 +887,7 @@ elif st.session_state.view == "detail_stock":
 
 elif st.session_state.view == "detail_travel":
     if st.button("← 뒤로", key="back_t"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -984,8 +992,7 @@ elif st.session_state.view == "detail_travel":
 
 elif st.session_state.view == "detail_golf":
     if st.button("← 뒤로", key="back_g"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -1117,8 +1124,7 @@ elif st.session_state.view == "detail_golf":
 
 elif st.session_state.view == "detail_finance":
     if st.button("← 뒤로", key="back_f"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -1239,8 +1245,7 @@ elif st.session_state.view == "detail_finance":
 
 elif st.session_state.view == "detail_health":
     if st.button("← 뒤로", key="back_h"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -1373,8 +1378,7 @@ elif st.session_state.view == "detail_health":
 
 elif st.session_state.view == "detail_pet":
     if st.button("← 뒤로", key="back_p"):
-        st.session_state.view = "feed"
-        st.rerun()
+        go_feed()
     st.markdown("""
     <div class="detail-wrap">
     <div class="detail-hero">
@@ -1526,8 +1530,8 @@ else:
     </div>
     """, unsafe_allow_html=True)
     if st.button("읽기 →", key=f"go_{today['id']}", use_container_width=True):
-        st.session_state.view = f"detail_{today['id']}"
-        st.rerun()
+        go(f"detail_{today['id']}")
+        
 
     # --- 챕터별 섹션 (3열 그리드) ---
     for ch in CHAPTERS:
@@ -1553,7 +1557,6 @@ else:
                 </div>
                 """, unsafe_allow_html=True)
                 if st.button("읽기 →", key=f"go_{e['id']}"):
-                    st.session_state.view = f"detail_{e['id']}"
-                    st.rerun()
+                    go(f"detail_{e['id']}")
 
     st.markdown('<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>', unsafe_allow_html=True)
