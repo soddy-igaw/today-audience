@@ -151,6 +151,7 @@ ESSAYS = [
         "stat_label": "부동산+대출앱 동시 사용자 (DMP)",
         "date": "2026.04.15",
         "color": "#000",
+        "img": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "car", "emoji": "🚗", "tag": "자동차", "number": 8,
@@ -524,7 +525,7 @@ elif st.session_state.view == "detail_car":
         go_feed()
     st.markdown("""
     <div class="detail-wrap">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=800&h=400&fit=crop&q=80" alt="">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80" alt="">
     <div class="detail-hero">
       <div class="detail-emoji">🚗</div>
       <span class="detail-tag">자동차</span>
@@ -1527,8 +1528,11 @@ else:
     """, unsafe_allow_html=True)
 
     # --- 오늘의 오디언스 (크게) ---
+    today_img = today.get("img", "")
+    img_html = f'<img src="{today_img}" style="width:100%;height:240px;object-fit:cover;filter:grayscale(100%);margin-bottom:24px">' if today_img else ""
     st.markdown(f"""
     <div style="padding:36px 0;border-bottom:1px solid #e5e5e5">
+      {img_html}
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
         <span style="font-size:0.68rem;font-weight:900;color:#e8530e;background:#000;padding:4px 10px;letter-spacing:2px">TODAY</span>
         <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
