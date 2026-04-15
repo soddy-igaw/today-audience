@@ -1,5 +1,8 @@
 import streamlit as st
 
+import os
+_DIR = os.path.dirname(os.path.abspath(__file__))
+
 st.set_page_config(page_title="오늘의 오디언스", page_icon="🎯", layout="wide")
 
 # URL 쿼리 파라미터 ↔ 세션 상태 연동
@@ -259,67 +262,67 @@ ESSAYS = [
 if st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
         go_feed()
-    with open("essays_html/realestate.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "realestate.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_running":
     if st.button("← 뒤로", key="back_run"):
         go_feed()
-    with open("essays_html/running.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "running.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_car":
     if st.button("← 뒤로", key="back_car"):
         go_feed()
-    with open("essays_html/car.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "car.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_game":
     if st.button("← 뒤로", key="back_game"):
         go_feed()
-    with open("essays_html/game.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "game.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_themestock":
     if st.button("← 뒤로", key="back_ts"):
         go_feed()
-    with open("essays_html/themestock.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "themestock.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_stock":
     if st.button("← 뒤로", key="back_s"):
         go_feed()
-    with open("essays_html/stock.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "stock.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_travel":
     if st.button("← 뒤로", key="back_t"):
         go_feed()
-    with open("essays_html/travel.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "travel.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_golf":
     if st.button("← 뒤로", key="back_g"):
         go_feed()
-    with open("essays_html/golf.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "golf.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_finance":
     if st.button("← 뒤로", key="back_f"):
         go_feed()
-    with open("essays_html/finance.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "finance.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_health":
     if st.button("← 뒤로", key="back_h"):
         go_feed()
-    with open("essays_html/health.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "health.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_pet":
     if st.button("← 뒤로", key="back_p"):
         go_feed()
-    with open("essays_html/pet.html", "r") as f:
+    with open(os.path.join(_DIR, "essays_html", "pet.html"), "r") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 else:
