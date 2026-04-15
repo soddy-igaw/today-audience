@@ -39,7 +39,7 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .ch-grid .feed-card:last-child { border-right:none; }
 
 /* Detail page */
-.detail-wrap { max-width:520px; margin:0 auto; }
+.detail-wrap { max-width:600px; margin:0 auto; }
 .detail-hero { background:#fff; border-radius:0; padding:32px 0; margin-bottom:16px; border-bottom:1px solid #e5e5e5; }
 .detail-emoji { font-size:2.4rem; margin-bottom:16px; }
 .detail-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#000; background:#f0f0f0; padding:3px 10px; border-radius:0; margin-bottom:12px; }
@@ -50,11 +50,11 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 /* Content sections */
 .section { background:#fff; border-radius:0; padding:28px 0; margin-bottom:0; border-bottom:1px solid #f0f0f0; }
 .section-label { font-size:0.68rem; font-weight:700; color:#000; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
-.section p { color:#333; font-size:0.9rem; line-height:1.9; margin-bottom:16px; }
+.section p { color:#333; font-size:1.02rem; line-height:1.85; margin-bottom:16px; }
 .section strong { color:#000; }
 
 .quote-box { background:#f7f7f7; border-radius:0; padding:24px; margin-bottom:14px; border-left:3px solid #000; }
-.quote-box p { color:#444; font-size:0.95rem; line-height:1.8; font-style:italic; margin:0; }
+.quote-box p { color:#444; font-size:1rem; line-height:1.8; font-style:italic; margin:0; }
 
 .signal-item { padding:14px 0; border-bottom:1px solid #f0f0f0; }
 .signal-item:last-child { border-bottom:none; }
