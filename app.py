@@ -1,9 +1,14 @@
 import streamlit as st
-
 import os
+
 _DIR = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(page_title="오늘의 오디언스", page_icon="🎯", layout="wide")
+
+@st.cache_data
+def load_essay(name):
+    with open(os.path.join(_DIR, "essays_html", f"{name}.html"), "r") as f:
+        return f.read()
 
 # URL 쿼리 파라미터 ↔ 세션 상태 연동
 params = st.query_params
@@ -262,68 +267,57 @@ ESSAYS = [
 if st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "realestate.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("realestate"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_running":
     if st.button("← 뒤로", key="back_run"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "running.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("running"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_car":
     if st.button("← 뒤로", key="back_car"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "car.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("car"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_game":
     if st.button("← 뒤로", key="back_game"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "game.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("game"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_themestock":
     if st.button("← 뒤로", key="back_ts"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "themestock.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("themestock"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_stock":
     if st.button("← 뒤로", key="back_s"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "stock.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("stock"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_travel":
     if st.button("← 뒤로", key="back_t"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "travel.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("travel"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_golf":
     if st.button("← 뒤로", key="back_g"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "golf.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("golf"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_finance":
     if st.button("← 뒤로", key="back_f"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "finance.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("finance"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_health":
     if st.button("← 뒤로", key="back_h"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "health.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("health"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_pet":
     if st.button("← 뒤로", key="back_p"):
         go_feed()
-    with open(os.path.join(_DIR, "essays_html", "pet.html"), "r") as f:
-        st.markdown(f.read(), unsafe_allow_html=True)
+    st.markdown(load_essay("pet"), unsafe_allow_html=True)
 
 else:
     # ===== FEED (롱블랙 스타일 · B&W) =====
@@ -348,7 +342,7 @@ else:
 
     # --- 오늘의 오디언스 (크게) ---
     today_img = today.get("img", "")
-    img_html = f'<img src="{today_img}" style="width:100%;height:240px;object-fit:cover;filter:grayscale(100%);margin-bottom:24px">' if today_img else ""
+    img_html = f'<img loading="lazy" src="{today_img}" style="width:100%;height:240px;object-fit:cover;filter:grayscale(100%);margin-bottom:24px">' if today_img else ""
     st.markdown(f"""
     <div style="padding:36px 0;border-bottom:1px solid #e5e5e5">
       {img_html}
@@ -384,8 +378,8 @@ else:
         cols = st.columns(3)
         for i, e in enumerate(ch_essays):
             with cols[i % 3]:
-                card_img = e.get("img", "")
-                img_tag = f'<img src="{card_img}" style="width:100%;height:120px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px">' if card_img else ""
+                card_img = e.get("img", "").replace("w=800", "w=400")
+                img_tag = f'<img loading="lazy" src="{card_img}" style="width:100%;height:120px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px">' if card_img else ""
                 st.markdown(f"""
                 <div style="padding:4px 0">
                   {img_tag}
