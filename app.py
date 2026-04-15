@@ -339,9 +339,10 @@ else:
 
     CHAPTERS = [
         {"label": "금융", "ids": ["finance", "stock", "realestate", "themestock"]},
+        {"label": "여행", "ids": ["travel", "ktx"]},
         {"label": "스포츠", "ids": ["running", "golf", "health"]},
+        {"label": "라이프", "ids": ["car", "pet"]},
         {"label": "게임", "ids": ["game"]},
-        {"label": "라이프", "ids": ["travel", "ktx", "pet"]},
     ]
     ESSAY_MAP = {e["id"]: e for e in ESSAYS}
     today = ESSAYS[0]

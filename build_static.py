@@ -22,9 +22,10 @@ ESSAYS = [
 
 CHAPTERS = [
     {"label":"금융","ids":["finance","stock","realestate","themestock"]},
+    {"label":"여행","ids":["travel","ktx"]},
     {"label":"스포츠","ids":["running","golf","health"]},
+    {"label":"라이프","ids":["car","pet"]},
     {"label":"게임","ids":["game"]},
-    {"label":"라이프","ids":["travel","ktx","car","pet"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init
