@@ -1192,9 +1192,9 @@ else:
     # ===== FEED (롱블랙 스타일 · B&W) =====
 
     CHAPTERS = [
-        {"label": "금융", "ids": ["finance", "stock", "travel"]},
-        {"label": "스포츠 · 라이프", "ids": ["golf", "health", "car", "game"]},
-        {"label": "반려동물", "ids": ["pet"]},
+        {"label": "금융", "ids": ["finance", "stock"]},
+        {"label": "스포츠", "ids": ["golf", "health"]},
+        {"label": "라이프", "ids": ["travel", "game", "pet"]},
     ]
     ESSAY_MAP = {e["id"]: e for e in ESSAYS}
     today = ESSAYS[0]
@@ -1212,7 +1212,7 @@ else:
     st.markdown(f"""
     <div style="padding:36px 0;border-bottom:1px solid #e5e5e5">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
-        <span style="font-size:0.68rem;font-weight:900;color:#e8530e;letter-spacing:2px">TODAY</span>
+        <span style="font-size:0.68rem;font-weight:900;color:#e8530e;background:#000;padding:4px 10px;letter-spacing:2px">TODAY</span>
         <span style="font-size:0.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today["tag"]}</span>
         <span style="font-size:0.68rem;color:#999">{today["date"]}</span>
       </div>
