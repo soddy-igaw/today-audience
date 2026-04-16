@@ -2,7 +2,7 @@ name: 오늘의 오디언스 자동 발행
 
 on:
   schedule:
-    - cron: '0 1 * * *'  # UTC 01:00 = KST 10:00
+    - cron: '0 22 * * *'  # UTC 22:00 = KST 07:00
   workflow_dispatch:  # 수동 실행 가능
 
 permissions:
