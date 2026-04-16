@@ -152,6 +152,16 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "wegovy", "emoji": "💊", "tag": "헬스", "number": 14,
+        "title": "위고비 처방받고\n헬스장 끊은 사람",
+        "sub": "GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다",
+        "stat": "~18만",
+        "stat_label": "병원예약+약국앱 동시 활성 (DMP)",
+        "date": "2026.04.16",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "realestate", "emoji": "🏠", "tag": "부동산", "number": 10,
         "title": "전세 만기 앞두고\n내 차 시세부터 조회한 사람",
         "sub": "주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다",
@@ -232,6 +242,16 @@ ESSAYS = [
         "img": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80",
     },
     {
+        "id": "carinsurance", "emoji": "🛡️", "tag": "금융", "number": 15,
+        "title": "자동차보험 만기 알림 뜨고\n비교앱 3개 깐 사람",
+        "sub": "작년보다 15만원 올랐다면, 지금 갈아타세요. 3분이면 비교 끝",
+        "stat": "~41만",
+        "stat_label": "보험사+비교앱 동시 활성 (DMP)",
+        "date": "2026.04.16",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "finance", "emoji": "💰", "tag": "금융", "number": 2,
         "title": "대출앱 3개를 동시에\n깐 사람의 비밀",
         "sub": "불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요",
@@ -274,7 +294,17 @@ ESSAYS = [
 ]
 
 # ===== ROUTING =====
-if st.session_state.view == "detail_realestate":
+if st.session_state.view == "detail_wegovy":
+    if st.button("← 뒤로", key="back_wg"):
+        go_feed()
+    st.markdown(load_essay("wegovy"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_carinsurance":
+    if st.button("← 뒤로", key="back_ci"):
+        go_feed()
+    st.markdown(load_essay("carinsurance"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
         go_feed()
     st.markdown(load_essay("realestate"), unsafe_allow_html=True)
@@ -338,9 +368,9 @@ else:
     # ===== FEED (롱블랙 스타일 · B&W) =====
 
     CHAPTERS = [
-        {"label": "금융", "ids": ["finance", "stock", "realestate", "themestock"]},
+        {"label": "금융", "ids": ["finance", "stock", "realestate", "themestock", "carinsurance"]},
         {"label": "여행", "ids": ["travel", "ktx"]},
-        {"label": "스포츠", "ids": ["running", "golf", "health"]},
+        {"label": "스포츠", "ids": ["running", "golf", "health", "wegovy"]},
         {"label": "라이프", "ids": ["car", "pet"]},
         {"label": "게임", "ids": ["game"]},
     ]

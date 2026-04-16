@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"wegovy","tag":"헬스","title":"위고비 처방받고 헬스장 끊은 사람","sub":"GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다","stat":"~18만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate","tag":"부동산","title":"전세 만기 앞두고 내 차 시세부터 조회한 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~34만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"car","tag":"자동차","title":"전기차 앱 지우고 하이브리드 비교앱 깐 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~80만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80"},
     {"id":"game","tag":"게임","title":"스위치2 예약 알림 켜고 게이밍 노트북 비교 시작한 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~140만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
@@ -14,6 +15,7 @@ ESSAYS = [
     {"id":"travel","tag":"여행","title":"해외여행 앱을 지우고 국내 펜션앱을 깐 사람","sub":"환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다","stat":"~65만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
     {"id":"pet","tag":"반려동물","title":"첫 입양 후 2주, 앱이 폭발하는 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~13만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13","img":"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80"},
     {"id":"themestock","tag":"테마주","title":"뉴스 보고 30분 안에 종목 검색한 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~52만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
+    {"id":"carinsurance","tag":"금융","title":"자동차보험 만기 알림 뜨고 비교앱 3개 깐 사람","sub":"작년보다 15만원 올랐다면, 지금 갈아타세요","stat":"~41만","stat_label":"보험사+비교앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop&q=80"},
     {"id":"finance","tag":"금융","title":"대출앱 3개를 동시에 깐 사람의 비밀","sub":"불 난 사람한테 소화기 할인 쿠폰을 보내지 마세요","stat":"~10만","stat_label":"대출탐색 유저 (DMP)","date":"2026.04.10","img":"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80"},
     {"id":"running","tag":"러닝","title":"러닝화 2켤레 사고 주말마다 한강에서 뛰는 사람","sub":"커머스에서 15만원짜리 러닝화를 반복 조회하면서, 주말 아침 한강에 나타나는 사람","stat":"~48만","stat_label":"러닝앱+커머스 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=400&fit=crop&q=80"},
     {"id":"golf","tag":"골프","title":"드라이버를 사는 게 아니라 창피를 안 당할 보험을 삽니다","sub":"접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.","stat":"~17만","stat_label":"골프앱 사용자 (DMP)","date":"2026.04.11","img":"https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop&q=80"},
@@ -21,9 +23,9 @@ ESSAYS = [
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["finance","stock","realestate","themestock"]},
+    {"label":"금융","ids":["finance","stock","realestate","themestock","carinsurance"]},
     {"label":"여행","ids":["travel","ktx"]},
-    {"label":"스포츠","ids":["running","golf","health"]},
+    {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},
     {"label":"게임","ids":["game"]},
 ]

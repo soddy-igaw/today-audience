@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>위고비 처방받고 헬스장 끊은 사람 — 오늘의 오디언스</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 100px}
+.hero-img{width:100%;height:280px;object-fit:cover;filter:grayscale(100%)}
+.detail-wrap{max-width:600px;margin:0 auto}
+.detail-hero{padding:32px 0;margin-bottom:16px;border-bottom:1px solid #e5e5e5}
+.detail-emoji{font-size:2.4rem;margin-bottom:16px}
+.detail-tag{display:inline-block;font-size:.68rem;font-weight:600;color:#000;background:#f0f0f0;padding:3px 10px;margin-bottom:12px}
+.detail-title{font-size:1.4rem;font-weight:900;color:#000;line-height:1.35;margin-bottom:8px}
+.detail-sub{font-size:.88rem;color:#666;line-height:1.6}
+.detail-meta{font-size:.72rem;color:#999;margin-top:16px}
+.section{padding:28px 0;border-bottom:1px solid #f0f0f0}
+.section-label{font-size:.68rem;font-weight:700;color:#000;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.section p{color:#333;font-size:1.02rem;line-height:1.85;margin-bottom:16px}
+.section strong{color:#000}
+.quote-box{background:#f7f7f7;padding:24px;margin-bottom:14px;border-left:3px solid #000}
+.quote-box p{color:#444;font-size:1rem;line-height:1.8;font-style:italic;margin:0}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp-card{padding:20px}
+.cmp-card h4{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.cmp-card p{font-size:.82rem;line-height:1.8;margin:0}
+.cmp-left{background:#f7f7f7}.cmp-left h4{color:#999}.cmp-left p{color:#888}
+.cmp-right{background:#000}.cmp-right h4{color:#999}.cmp-right p{color:#fff}
+.ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ind-card{background:#f7f7f7;padding:16px}
+.ind-card .ind-title{font-size:.82rem;font-weight:700;color:#000;margin-bottom:4px}
+.ind-card .ind-desc{font-size:.75rem;color:#888;line-height:1.4}
+.insight-box{background:#000;padding:28px 24px;margin-bottom:14px}
+.insight-box .ins-label{font-size:.68rem;color:#888;font-weight:700;letter-spacing:1.5px;margin-bottom:12px}
+.insight-box p{color:#fff;font-size:.92rem;line-height:1.8;font-weight:500;margin:0}
+.audience-card{background:#000;padding:28px 24px;margin-bottom:14px}
+.ad-compare{background:#fff;padding:28px 24px;margin-bottom:14px;border:1px solid #e5e5e5}
+.tl{padding-left:24px;border-left:2px solid #ddd;margin-left:6px}
+.tl-item{margin-bottom:24px;position:relative}
+.tl-dot{position:absolute;left:-30px;top:3px;width:10px;height:10px;border-radius:50%;border:2px solid #fff}
+.tl-green{background:#000;box-shadow:0 0 0 2px #000}
+.tl-yellow{background:#888;box-shadow:0 0 0 2px #888}
+.tl-red{background:#000;box-shadow:0 0 0 2px #000}
+.tl-day{font-size:.68rem;font-weight:700;margin-bottom:4px;color:#000}
+.tl-title{font-size:.88rem;font-weight:700;color:#000;margin-bottom:2px}
+.tl-desc{font-size:.78rem;color:#888}
+.tl-bar-wrap{margin-top:8px;background:#f7f7f7;padding:8px 12px}
+.tl-bar-bg{background:#e5e5e5;height:6px;overflow:hidden}
+.tl-bar-fill{background:#000;height:100%}
+.tl-flow{margin-top:8px;display:flex;gap:8px;align-items:center}
+.tl-flow-down{background:#f7f7f7;padding:6px 10px;flex:1;text-align:center}
+.tl-flow-up{background:#000;padding:6px 10px;flex:1;text-align:center;color:#fff}
+.tl-alert{background:#f7f7f7;padding:16px;border:1px solid #000}
+.cd-item{background:#f7f7f7;padding:16px;margin-bottom:10px;border-left:3px solid #ddd}
+.cd-urgent{border-left-color:#000}.cd-warn{border-left-color:#888}.cd-info{border-left-color:#000}
+.af-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.af-gone{background:#f7f7f7;padding:8px 14px;text-decoration:line-through;color:#bbb;font-size:.82rem;flex:1;text-align:center}
+.af-new{background:#000;padding:8px 14px;color:#fff;font-weight:700;font-size:.82rem;flex:1;text-align:center}
+.af-up{background:#f7f7f7;padding:8px 14px;color:#000;font-weight:700;font-size:.82rem;flex:1;text-align:center}
+.footer{text-align:center;color:#bbb;font-size:.72rem;padding:32px 0 16px}
+.back-btn{display:inline-block;background:#000;color:#fff;padding:8px 20px;font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:16px}
+.back-btn:hover{background:#333}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid #e5e5e5}
+.ch-card{background:#fff;border:1px solid #e5e5e5;border-top:none;border-right:1px solid #e5e5e5;padding:24px 20px;text-decoration:none;color:inherit;transition:background .15s}
+.ch-card:last-child{border-right:none}
+.ch-card:hover{background:#fafafa}
+.ch-card img{width:100%;height:120px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px}
+.today-card{padding:36px 0;border-bottom:1px solid #e5e5e5;display:block;text-decoration:none;color:inherit}
+.today-card:hover{opacity:.9}
+.today-card img{width:100%;height:240px;object-fit:cover;filter:grayscale(100%);margin-bottom:24px}
+@media(max-width:768px){.ch-grid{grid-template-columns:1fr!important}.ch-card{border-right:none!important;border-bottom:1px solid #e5e5e5}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back-btn" href="index.html">← 뒤로</a>
+<div class="detail-wrap">
+<img class="hero-img" src="https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80" alt="">
+<div class="detail-hero">
+  <div class="detail-emoji">💊</div>
+  <span class="detail-tag">헬스</span>
+  <div class="detail-title">위고비 처방받고 헬스장 끊은 사람</div>
+  <div class="detail-sub">GLP-1 다이어트약 처방이 폭발하면서, '운동으로 빼는 사람'과 '약으로 빼는 사람'이 갈리고 있습니다</div>
+  <div class="detail-meta">2026.04.16 · 오늘의 오디언스 #14</div>
+</div>
+<div class="quote-box">
+  <p>"건강검진에서 BMI 28 나왔어요.<br>비만클리닉 가서 위고비 처방받았는데<br>한 달 만에 5kg 빠졌어요.<br>PT 3개월 남았는데 그냥 끊었어요.<br>운동 안 해도 빠지는데 왜 해요."<br><br>— M씨, 34세, IT회사 기획자</p>
+</div>
+<div class="section">
+  <p>2026년, 다이어트 시장의 판이 바뀌고 있습니다. GLP-1 계열 다이어트약 — <strong>위고비, 삭센다</strong> — 처방이 폭발하면서, 비만클리닉 예약이 헬스장 등록을 대체하기 시작했습니다.</p>
+  <p>병원예약앱(똑닥, 굿닥)에서 비만클리닉 카테고리 접속이 급증. 동시에 약국앱(팜잇, 약국찾기) 활성이 올라가고, 헬스장/PT앱 사용은 급감하는 사람이 나타나고 있습니다.</p>
+  <p>헬스 마케터들은 "다이어트 관심자"를 타겟합니다. 하지만 <strong>약으로 빼기 시작한 사람</strong>에게 PT 할인 쿠폰은 의미가 없습니다. 이 사람에게 필요한 건 <strong>처방 후 관리</strong>입니다.</p>
+</div>
+<div class="quote-box">
+  <p>"똑닥에서 비만클리닉 예약하고<br>처방받은 날부터 약국앱으로 재고 확인해요.<br>체중관리앱 깔아서 매일 기록하고.<br>헬스장앱은 해지 방법 검색했어요.<br>이제 프로바이오틱스랑 단백질 보충제 찾아보고 있어요."<br><br>— M씨</p>
+</div>
+<div class="section">
+  <div class="section-label">BEHAVIOR TIMELINE</div>
+  <p style="font-size:0.78rem;color:#999;margin-bottom:20px">M씨의 앱 사용 변화를 DMP로 추적하면</p>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-dot tl-green" style="background:#000;box-shadow:0 0 0 2px #000"></div>
+      <div class="tl-day" style="color:#000">DAY 0 · 비만클리닉 예약</div>
+      <div class="tl-title">🏥 병원예약앱(똑닥/굿닥) 비만클리닉 예약</div>
+      <div class="tl-desc">건강검진 후 비만클리닉 카테고리 접속 → GLP-1 처방 여정 시작</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot tl-green" style="background:#000;box-shadow:0 0 0 2px #000"></div>
+      <div class="tl-day" style="color:#000">DAY 1~7 · 약국앱 활성 + 체중관리앱 설치</div>
+      <div class="tl-title">💊 약국앱(팜잇/약국찾기) 활성 + 체중관리앱 설치</div>
+      <div class="tl-desc">처방 후 약국앱 월 2회+ 접속 시작. 동시에 체중관리앱 신규 설치 = 약 기반 다이어트 진입</div>
+      <div class="tl-flow">
+        <div class="tl-flow-up">
+          <div style="font-size:0.65rem;color:#fff">약국앱</div>
+          <div style="font-size:0.85rem;font-weight:800;color:#fff">활성 시작</div>
+        </div>
+        <div style="color:#ccc">+</div>
+        <div class="tl-flow-up">
+          <div style="font-size:0.65rem;color:#fff">체중관리앱</div>
+          <div style="font-size:0.85rem;font-weight:800;color:#fff">신규 설치</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot tl-yellow" style="background:#888;box-shadow:0 0 0 2px #888"></div>
+      <div class="tl-day" style="color:#000">DAY 14 · 헬스장/PT앱 사용 급감</div>
+      <div class="tl-title">🏋️ 헬스장/PT앱 사용 급감 (해지 조회)</div>
+      <div class="tl-desc">약으로 체중이 빠지기 시작하면서 운동 동기 소멸. 헬스장앱 접속 50%+ 감소 = 이탈 시그널</div>
+      <div class="tl-bar-wrap">
+        <div style="font-size:0.7rem;color:#888;margin-bottom:4px">헬스장앱 사용 변화</div>
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:25%"></div></div>
+        <div style="font-size:0.68rem;color:#000;font-weight:700;margin-top:2px">-50% 이상 — 헬스장앱 사용 급감</div>
+      </div>
+    </div>
+    <div class="tl-item" style="margin-bottom:0">
+      <div class="tl-dot tl-red" style="background:#000;box-shadow:0 0 0 2px #000"></div>
+      <div class="tl-alert">
+        <div style="font-size:0.68rem;color:#000;font-weight:700;margin-bottom:4px">⚡ DAY 30 · 여기서 잡아야 합니다</div>
+        <div class="tl-title">건강기능식품 커머스 조회 시작 (프로바이오틱스, 단백질 등)</div>
+        <div class="tl-desc">약으로 빠진 후 관리 니즈 폭발. 건기식/영양제 커머스 조회 시작 = 지갑이 열리는 타이밍</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <p>핵심은 <strong>"병원예약앱 + 약국앱 활성 → 헬스장앱 급감"의 교차</strong>입니다.</p>
+  <p>다이어트에 관심 있는 사람은 수백만 명입니다. 하지만 <strong>비만클리닉을 예약하고, 약국앱이 활성화되면서, 동시에 헬스장앱 사용이 급감하는 사람</strong>? 이 사람은 GLP-1으로 전환한 사람입니다.</p>
+  <p>이 사람에게 PT 할인을 보내면 무시당합니다. <strong>처방 후 관리 — 영양제, 체성분 측정, 프로바이오틱스</strong>를 보내야 전환됩니다.</p>
+</div>
+<div class="section">
+  <div class="cmp-grid">
+    <div class="cmp-card cmp-left"><h4>운동 다이어트 유저</h4><p>헬스장/PT앱 활성 유지<br>러닝앱 주 3회+ 실행<br>병원예약앱 비활성<br>약국앱 비활성<br>식단앱 중심 관리</p></div>
+    <div class="cmp-card cmp-right"><h4>GLP-1 전환 유저</h4><p>병원예약앱 비만클리닉 접속<br>약국앱 월 2회+ 활성<br>헬스장앱 사용 50%+ 감소<br>체중관리앱 신규 설치<br>건기식 커머스 조회 시작</p></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-label">DMP에서 잡는 법</div>
+  <p><strong>[GLP-1 전환 다이어터]</strong><br>병원예약앱 비만클리닉 카테고리 접속<br>+ 약국앱 월 2회+ 활성<br>+ 헬스장앱 사용 50%+ 감소<br><br><em style="color:#888;font-size:0.8rem">* DMP 실측: 병원예약앱+약국앱 동시 활성 유저 약 18만명 (30일 기준)<br>이 중 헬스장앱 사용 급감 교차 유저가 핵심 타겟</em></p>
+</div>
+<div class="section">
+  <div class="ind-grid">
+    <div class="ind-card"><div class="ind-title">🏥 비만클리닉</div><div class="ind-desc">"위고비 처방 후 관리까지, 맞춤 프로그램"</div></div>
+    <div class="ind-card"><div class="ind-title">💊 제약사</div><div class="ind-desc">"GLP-1 처방 후 영양 관리 가이드"</div></div>
+    <div class="ind-card"><div class="ind-title">🥗 건강기능식품</div><div class="ind-desc">"처방 다이어트 중 부족한 영양, 맞춤 보충"</div></div>
+    <div class="ind-card"><div class="ind-title">⚖️ 체성분측정</div><div class="ind-desc">"약으로 빠진 체중, 근육량은 괜찮을까요?"</div></div>
+  </div>
+</div>
+<div class="insight-box">
+  <div class="ins-label">💡 KEY INSIGHT</div>
+  <p>"다이어트 관심자"는 오디언스가 아닙니다.<br><br>비만클리닉을 예약하고 약국앱이 활성화되면서<br><strong>헬스장앱 사용이 급감하는 사람</strong>이 오디언스입니다.<br><br>이 사람은 운동으로 빼는 걸 포기한 게 아닙니다.<br><strong>더 효율적인 방법을 선택한 사람</strong>입니다.<br>PT 할인을 보내지 마세요.<br>"처방 후 관리가 중요합니다"를 보내세요.</p>
+</div>
+<div class="ad-compare">
+  <p style="font-size:0.85rem;font-weight:700;color:#000;margin-bottom:16px">이 오디언스에게 보내는 광고</p>
+  <p style="font-size:0.85rem;color:#999;margin-bottom:8px">❌ "여름 전 다이어트! PT 50% 할인"</p>
+  <p style="font-size:0.85rem;color:#000;font-weight:600">✅ "위고비 처방 후 관리가 중요합니다. 맞춤 영양제 추천"</p>
+</div>
+<div class="audience-card">
+  <p style="font-size:0.68rem;color:#888;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
+  <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">GLP-1 전환 다이어터</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추정 모수 (DMP 실측)</p><p style="color:#fff;font-size:1.5rem;font-weight:900">~18만</p><p style="color:#555;font-size:0.7rem">병원예약+약국앱 동시 활성</p></div>
+    <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">추천 업종</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">비만클리닉 · 제약<br>건기식 · 체성분</p></div>
+  </div>
+</div>
+<div class="footer">오늘의 오디언스 #14 · by IGAWorks</div>
+</div>
+</div>
+</body>
+</html>
