@@ -169,7 +169,7 @@ ESSAYS = [
         "stat_label": "병원예약+약국앱 동시 활성 (DMP)",
         "date": "2026.04.16",
         "color": "#000",
-        "img": "https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80",
+        "img": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80h=400https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80fit=crophttps://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80q=80",
     },
     {
         "id": "car", "emoji": "🚗", "tag": "자동차", "number": 8,
