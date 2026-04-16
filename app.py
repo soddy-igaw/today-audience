@@ -152,16 +152,6 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
-        "id": "wegovy", "emoji": "💊", "tag": "헬스", "number": 14,
-        "title": "위고비 처방받고\n헬스장 끊은 사람",
-        "sub": "GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다",
-        "stat": "~18만",
-        "stat_label": "병원예약+약국앱 동시 활성 (DMP)",
-        "date": "2026.04.16",
-        "color": "#000",
-        "img": "https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80",
-    },
-    {
         "id": "realestate", "emoji": "🏠", "tag": "부동산", "number": 10,
         "title": "전세 만기 앞두고\n내 차 시세부터 조회한 사람",
         "sub": "주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다",
@@ -170,6 +160,16 @@ ESSAYS = [
         "date": "2026.04.15",
         "color": "#000",
         "img": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
+    },
+    {
+        "id": "wegovy", "emoji": "💊", "tag": "헬스", "number": 14,
+        "title": "위고비 처방받고\n헬스장 끊은 사람",
+        "sub": "GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다",
+        "stat": "~18만",
+        "stat_label": "병원예약+약국앱 동시 활성 (DMP)",
+        "date": "2026.04.16",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "car", "emoji": "🚗", "tag": "자동차", "number": 8,
