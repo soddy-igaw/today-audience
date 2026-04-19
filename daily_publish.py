@@ -274,10 +274,11 @@ def _call_anthropic(prompt, api_key):
 
 def _call_openai(prompt, api_key):
     """OpenAI API"""
+    import time
     data = json.dumps({
         "model": "gpt-4o",
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 4096,
+        "max_tokens": 8192,
     }).encode("utf-8")
     req = urllib.request.Request(
         "https://api.openai.com/v1/chat/completions",
@@ -287,9 +288,21 @@ def _call_openai(prompt, api_key):
             "Authorization": f"Bearer {api_key}",
         },
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        result = json.loads(resp.read().decode("utf-8"))
-        return result["choices"][0]["message"]["content"]
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+                return result["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="ignore")
+            print(f"   OpenAI 에러 {e.code} (시도 {attempt+1}/3): {body[:200]}")
+            if e.code == 429 and attempt < 2:
+                wait = 30 * (attempt + 1)
+                print(f"   {wait}초 후 재시도...")
+                time.sleep(wait)
+            else:
+                return None
+    return None
 
 
 def inject_to_app(category, today, essay_html):
