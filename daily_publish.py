@@ -117,78 +117,68 @@ def build_prompt(category, trends, persona):
     persona_text = ""
     if persona:
         persona_text = f"""
-자사 DMP 페르소나 데이터:
+자사 페르소나 데이터:
 - 페르소나명: {persona['name']}
 - 추정 모수: {persona.get('estimate_min', '?'):,}~{persona.get('estimate_max', '?'):,}명
-- 산출 근거: {persona.get('basis', '')}
-- 출처: {persona.get('source', '')}
 """
 
+    # 기존 에세이 참고용
+    ref_file = os.path.join(ESSAY_DIR, "essays_html", "realestate.html")
+    ref_html = ""
+    if os.path.exists(ref_file):
+        with open(ref_file, "r") as f:
+            ref_html = f.read()[:3000]
+
     return f"""당신은 IGAWorks의 "오늘의 오디언스" 에세이 작가입니다.
-롱블랙 스타일로 한 편의 에세이를 작성하세요. 최소 3000자 이상.
 
 ## 에세이 컨셉
-1. 최근 시장 트렌드가 이렇다 (뉴스/데이터 기반)
-2. 해당 업종 인하우스 광고주(마케터)는 아직 명확한 오디언스를 못 찾고 있다
-3. 시장 트렌드와 유저들의 행동 패턴을 보면 이런 시그널이 보인다
-4. 자사 DMP로는 이 패턴을 이렇게 찾을 수 있다!
+시장 트렌드를 읽고, 행동 시그널을 조합해 아직 아무도 안 쓰는 오디언스를 제안합니다.
+타겟: 광고 마케터, AE, 광고주. "이 사람한테 광고하면 됩니다"를 전달.
 
-## IGAWorks DMP에서 추적 가능한 유저 행동 시그널
-단순 "앱 설치 여부"가 아니라, 유저의 행동 맥락을 조합해서 의도를 읽어야 합니다.
+## 필수 구조 (이 순서 그대로)
+1. detail-hero: 제목(타겟 직관형 — "OO하는 사람"), 서브타이틀, 날짜
+2. quote-box: 가상 페르소나 인터뷰 (감정 있게, 구체적 상황)
+3. section "무슨 일이 벌어지고 있나": 시장 배경 2~3문단
+4. quote-box: 페르소나 두 번째 인터뷰 (더 깊은 디테일)
+5. section "이 사람의 행동 패턴": 타임라인 (DAY 0 → DAY 14)
+6. section "이 사람을 찾는 법": 시그널 카드 4개 (앱 이름 + 행동)
+7. insight-box: KEY INSIGHT 한 문단
+8. audience-card: 오디언스 이름, 추정 모수, 핵심 시그널
+9. CTA box
+10. footer
 
-### 추적 가능한 행동 데이터:
-- **앱 설치/삭제 타이밍**: 언제 깔았는지, 며칠 만에 삭제했는지
-- **앱 사용 빈도 변화**: 주 1회 → 매일, 또는 매일 → 안 씀 (이탈 시그널)
-- **앱 사용 시간대**: 출퇴근(7-9시/18-20시), 점심(12-13시), 심야(23-02시)
-- **앱 카테고리 이동 패턴**: 뉴스앱 → 금융앱 → 부동산앱 순서로 이동
-- **동시 설치 속도**: 같은 카테고리 앱 N개를 며칠 내에 설치 (비교쇼핑 시그널)
-- **앱 조합 패턴**: A앱+B앱+C앱을 동시에 쓰는 사람 (의도 추정)
-- **사용 기기 정보**: OS, 기기 가격대 (구매력 추정)
-- **위치 기반 패턴**: 특정 지역 체류 시간 변화 (이사/출퇴근 변화)
-- **푸시 알림 반응률**: 알림 클릭 vs 무시 (관여도)
-- **앱 내 체류 시간 변화**: 짧게 확인 vs 오래 탐색 (탐색 깊이)
-- **신규 vs 복귀 유저**: 90일 미사용 후 재설치 (계기 발생)
-- **크로스 카테고리 행동**: 골프앱 쓰다가 명품앱 설치 (라이프스타일 변화)
+## DMP로 추적 가능한 시그널만 사용
+- 앱 설치/삭제, 사용 빈도 변화, 사용 시간대
+- 동시 설치 속도, 앱 조합 패턴
+- 커머스 구매 이력, 위치 데이터
+- ❌ 앱 내부 탭/검색어/장바구니는 추적 불가 — 절대 사용 금지
 
-### 추적 불가능한 것:
-- 앱 내부 검색어, 장바구니, 결제 금액
-- 웹 브라우징 기록
-- 개인 신용정보, 소득, 자산
+## 제목 규칙
+- 타겟 직관형: "OO하는 사람" — 광고주가 바로 "이 타겟!" 인지
+- 예: "대출 만기 전 대환을 준비하는 사람", "접대 때문에 골프 시작한 입문자"
 
-## 행동 시그널 설계 원칙
-1. **단일 시그널이 아니라 시그널 조합**으로 의도를 추정
-   - 나쁜 예: "대출앱 설치자" → 너무 넓음
-   - 좋은 예: "대출 비교앱 3개를 7일 내 설치 + 매일 접속 + 기존 은행앱 사용 감소" → 갈아타기 직전
-2. **시간축 변화**가 핵심 — "지금 이 행동을 하고 있다"가 아니라 "최근 N일간 행동이 이렇게 변했다"
-3. **행동의 속도와 강도**로 긴급도를 구분
-   - 천천히 1개씩 = 관심 단계
-   - 빠르게 여러 개 동시 = 실행 직전
-4. **이탈 시그널도 중요** — 기존에 쓰던 앱을 안 쓰기 시작하면 전환 시그널
+## CSS 클래스 (반드시 이 클래스만 사용)
+detail-wrap, hero-img, detail-hero, detail-emoji, detail-tag, detail-title, detail-sub, detail-meta,
+quote-box, section, section-label, tl, tl-item, tl-dot, tl-day, tl-title, tl-desc,
+tl-flow, tl-flow-down, tl-flow-up, tl-bar-wrap, tl-bar-bg, tl-bar-fill, tl-alert,
+ind-grid, ind-card, ind-title, ind-desc, insight-box, ins-label, audience-card, footer
+
+## 색상: 흑백 기조 + 포인트 #e8530e
+- "이 사람을 찾는 법" section-label: style="color:#e8530e"
+- ind-card: style="border-left:3px solid #e8530e"
+- insight-box 핵심 문장: style="color:#e8530e"
+- audience-card 모수 숫자: style="color:#e8530e"
+- 타임라인 핵심 시그널 dot: style="background:#e8530e;box-shadow:0 0 0 2px #e8530e"
 
 ## 규칙
-1. 제목: "'OO 관심자' 타겟팅 금지! [구체적 오디언스]" 형식
-2. 가상의 인하우스 마케터 인터뷰 (이름은 알파벳 1글자+씨). 실제 업무 고민을 구체적으로.
-3. 위의 DMP 행동 시그널만 사용. 단순 앱 설치가 아니라 행동 패턴 조합으로 설계.
-4. 비교표: 구경꾼 vs 진짜 타겟 — 행동 패턴의 차이를 구체적으로 (각 5줄+)
-5. 광고 카피 비교 (❌ 기존 vs ✅ 새 오디언스)
-6. 추적 가능한 앱: {apps}
-7. 짧은 문장, 많은 줄바꿈, 롱블랙 톤
-8. 추천 업종 4개+ (구체적 캠페인 아이디어 포함)
-9. AUDIENCE CARD (다크 배경 #111) — 추정 모수("N~N만" 형식), 핵심 시그널 조합, 추천 업종, 메시지
+- HTML 조각만 출력. <div class="detail-wrap">로 시작, </div>로 끝
+- <!DOCTYPE>, <html>, <head>, <body> 태그 절대 금지
+- 빈 줄 없이 태그 연속 배치
+- 추적 가능한 앱: {apps}
+- 히어로 이미지는 넣지 마세요 (빌드 시 자동 추가)
 
-## 필수 구조:
-1. <p class="lead"> 제목/부제
-2. <div class="quote"> 마케터 첫 인용 (실제 업무 고민)
-3. 시장 현황 + 기존 타겟팅의 한계 (3~4 문단, 트렌드 뉴스 인용)
-4. <div class="sig-box"> BEHAVIOR SIGNALS — 행동 시그널 조합 5개+ (각각 왜 이 행동이 의미있는지 설명)
-5. 핵심 해석 — 이 시그널 조합이 왜 기존 타겟팅보다 나은지 (2~3 문단)
-6. <div class="cmp-grid"> 비교표 (행동 패턴 기준)
-7. <div class="sig-box"> DMP에서 잡는 법 — 구체적 조건 조합 (AND/OR, 기간, 빈도)
-8. <div class="ind-grid"> 추천 업종 4개 (구체적 캠페인 메시지)
-9. <div class="insight"> KEY INSIGHT
-10. 광고 카피 비교 (❌ vs ✅)
-11. AUDIENCE CARD (다크 배경 div)
-12. <div class="note-end"> 마무리
+## 참고: 기존 에세이 HTML 구조
+{ref_html}
 
 ## 오늘의 카테고리: {category}
 ## 날짜: {today_str}
@@ -197,11 +187,6 @@ def build_prompt(category, trends, persona):
 {trend_text}
 
 {persona_text}
-
-## 출력 형식
-HTML 조각만 출력. <!DOCTYPE>, <html>, <head>, <body>, <article> 태그 절대 금지.
-<div class="note-body">로 시작.
-class: note-body, lead, quote, sig-box, sig-label, cmp-grid, cmp-card, cmp-left, cmp-right, ind-grid, ind-card, ind-title, ind-desc, insight, ins-label, note-end
 """
 
 
