@@ -250,7 +250,7 @@ def _call_anthropic(prompt, api_key):
     """Anthropic Claude API"""
     data = json.dumps({
         "model": "claude-sonnet-4-20250514",
-        "max_tokens": 4096,
+        "max_tokens": 8192,
         "messages": [{"role": "user", "content": prompt}]
     }).encode("utf-8")
     req = urllib.request.Request(
@@ -262,9 +262,14 @@ def _call_anthropic(prompt, api_key):
             "anthropic-version": "2023-06-01",
         },
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        result = json.loads(resp.read().decode("utf-8"))
-        return result["content"][0]["text"]
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+            return result["content"][0]["text"]
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="ignore")
+        print(f"   Anthropic 에러 {e.code}: {body[:200]}")
+        return None
 
 
 def _call_openai(prompt, api_key):
@@ -376,11 +381,11 @@ def inject_to_app(category, today, essay_html):
         print("🏗️  정적 사이트 재빌드 완료")
 
 
-def run(dry_run=False):
+def run(dry_run=False, category_override=None):
     """전체 파이프라인 실행"""
     today = datetime.now()
     weekday = today.weekday()
-    category = CATEGORY_ROTATION.get(weekday, "금융")
+    category = category_override or CATEGORY_ROTATION.get(weekday, "금융")
 
     print(f"\n🎯 오늘의 카테고리: {category} ({today.strftime('%Y-%m-%d %A')})")
 
@@ -438,4 +443,10 @@ def run(dry_run=False):
 
 if __name__ == "__main__":
     dry_run = "--dry-run" in sys.argv
-    run(dry_run=dry_run)
+    # --category 금융 으로 카테고리 강제 지정 가능
+    override = None
+    if "--category" in sys.argv:
+        idx = sys.argv.index("--category")
+        if idx + 1 < len(sys.argv):
+            override = sys.argv[idx + 1]
+    run(dry_run=dry_run, category_override=override)

@@ -21,7 +21,7 @@ jobs:
       - name: Run daily publish
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python daily_publish.py
+        run: python daily_publish.py --category 금융
 
       - name: Commit and push
         run: |
