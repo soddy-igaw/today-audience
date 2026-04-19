@@ -384,8 +384,20 @@ def inject_to_app(category, today, essay_html):
 def run(dry_run=False, category_override=None):
     """전체 파이프라인 실행"""
     today = datetime.now()
-    weekday = today.weekday()
-    category = category_override or CATEGORY_ROTATION.get(weekday, "금융")
+
+    if category_override:
+        category = category_override
+    else:
+        # 트렌드 기반 자동 선택: 모든 카테고리에서 뉴스 수집, 가장 많은 곳 선택
+        print("📡 트렌드 기반 카테고리 자동 선택 중...")
+        best_cat, best_count = "금융", 0
+        for cat in CATEGORY_KEYWORDS:
+            count = len(collect_trends(cat))
+            print(f"   {cat}: {count}개 뉴스")
+            if count > best_count:
+                best_count = count
+                best_cat = cat
+        category = best_cat
 
     print(f"\n🎯 오늘의 카테고리: {category} ({today.strftime('%Y-%m-%d %A')})")
 
