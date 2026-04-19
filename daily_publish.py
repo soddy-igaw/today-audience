@@ -191,23 +191,23 @@ ind-grid, ind-card, ind-title, ind-desc, insight-box, ins-label, audience-card, 
 
 
 def call_llm(prompt):
-    """LLM API 호출 (Bedrock > Anthropic > OpenAI)"""
-    # 1. AWS Bedrock (기본)
-    result = _call_bedrock(prompt)
-    if result:
-        return result
-
-    # 2. Anthropic 직접
+    """LLM API 호출 (Anthropic > OpenAI > Bedrock)"""
+    # 1. Anthropic 직접
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if api_key:
         return _call_anthropic(prompt, api_key)
 
-    # 3. OpenAI
+    # 2. OpenAI
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
         return _call_openai(prompt, api_key)
 
-    print("⚠️  LLM API 사용 불가. AWS 크레덴셜 또는 API 키를 설정하세요.")
+    # 3. AWS Bedrock (fallback)
+    result = _call_bedrock(prompt)
+    if result:
+        return result
+
+    print("⚠️  LLM API 사용 불가. ANTHROPIC_API_KEY를 설정하세요.")
     return None
 
 
