@@ -50,12 +50,12 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 .detail-meta{font-size:.78rem;color:#bbb;margin-top:20px}
 /* 인터뷰 */
 .quote-box{padding:56px 0;border-bottom:1px solid #f0f0f0;background:none;border-left:none;margin:0}
-.quote-box p{font-size:1.15rem;color:#333;line-height:2;font-style:italic;letter-spacing:-0.2px;margin:0}
+.quote-box p{font-size:1.18rem;color:#333;line-height:2.1;font-style:italic;letter-spacing:-0.2px;margin:0}
 .quote-box strong{color:#000;font-style:normal;font-weight:800}
 /* 섹션 */
 .section{padding:56px 0;border-bottom:1px solid #f0f0f0}
 .section-label{font-size:1.15rem;font-weight:900;color:#e8530e;margin-bottom:24px;letter-spacing:-0.3px}
-.section p{color:#444;font-size:1.02rem;line-height:2;margin-bottom:20px;letter-spacing:-0.1px}
+.section p{color:#444;font-size:1.08rem;line-height:2.1;margin-bottom:20px;letter-spacing:-0.1px}
 .section strong{color:#000}
 /* STEP 카드 */
 .behavior-cards{display:flex;flex-direction:column;gap:20px}
@@ -119,28 +119,31 @@ today = ESSAYS[0]
 essay_map = {e["id"]: e for e in ESSAYS}
 
 cards_html = ""
-# Today hero
-cards_html += f"""
-<div style="padding:48px 0 16px;border-bottom:3px solid #000">
-  <p style="font-size:.68rem;font-weight:700;letter-spacing:3px;color:#999;margin-bottom:10px">AUDIENCE IDEA BANK</p>
-  <h1 style="font-size:2rem;font-weight:900;color:#000;line-height:1.2;letter-spacing:-1px">오늘의 오디언스</h1>
-  <p style="color:#999;font-size:.82rem;line-height:1.6;margin-top:8px">트렌드를 읽고, 행동 시그널을 조합해<br>아직 아무도 안 쓰는 오디언스를 제안합니다.</p>
+# Header
+cards_html += """
+<div style="padding:48px 0 40px">
+  <div style="font-size:.72rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:12px">AUDIENCE IDEA BANK</div>
+  <h1 style="font-size:1.6rem;font-weight:900;color:#000;letter-spacing:-0.5px;margin-bottom:8px">오늘의 오디언스</h1>
+  <div style="font-size:.88rem;color:#999;line-height:1.6">트렌드를 읽고, 행동 시그널을 조합해<br>아직 아무도 안 쓰는 오디언스를 제안합니다.</div>
 </div>
-<a class="today-card" href="{today['id']}.html">
-  <img loading="lazy" src="{today['img']}" alt="">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
-    <span style="font-size:.68rem;font-weight:900;color:#e8530e;background:#000;padding:4px 10px;letter-spacing:2px">TODAY</span>
-    <span style="font-size:.68rem;font-weight:700;color:#000;background:#f0f0f0;padding:4px 12px">{today['tag']}</span>
-    <span style="font-size:.68rem;color:#999">{today['date']}</span>
-  </div>
-  <div style="font-size:1.8rem;font-weight:900;color:#000;line-height:1.3;margin-bottom:12px">{today['title']}</div>
-  <div style="font-size:.9rem;color:#666;line-height:1.7;margin-bottom:24px">{today['sub']}</div>
-  <div style="display:flex;align-items:center;gap:12px">
-    <span style="font-size:1.2rem;font-weight:900;color:#000">{today['stat']}</span>
-    <span style="font-size:.72rem;color:#999">{today['stat_label']}</span>
-    <span style="margin-left:auto;font-size:.8rem;font-weight:600;color:#000">읽기 →</span>
-  </div>
-</a>
+"""
+# Today hero (검정 배경)
+cards_html += f"""
+<div style="background:#000;padding:48px 32px;margin:0 -24px">
+  <a href="{today['id']}.html" style="text-decoration:none;color:inherit;display:block">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:28px">
+      <span style="font-size:.72rem;font-weight:900;color:#e8530e;letter-spacing:2px">TODAY</span>
+      <span style="font-size:.65rem;font-weight:600;color:#666">{today['tag']} · {today['date']}</span>
+    </div>
+    <div style="font-size:1.8rem;font-weight:900;color:#fff;line-height:1.35;letter-spacing:-0.5px;margin-bottom:16px">{today['title']}</div>
+    <div style="font-size:1rem;color:#888;line-height:1.7;margin-bottom:32px">{today['sub']}</div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:1.3rem;font-weight:900;color:#e8530e">{today['stat']}</span>
+      <span style="font-size:.72rem;color:#666">{today['stat_label']}</span>
+      <span style="margin-left:auto;font-size:.78rem;font-weight:600;color:#e8530e">읽기 →</span>
+    </div>
+  </a>
+</div>
 """
 
 # Chapters
@@ -149,8 +152,8 @@ for ch in CHAPTERS:
     if not ch_essays:
         continue
     cards_html += f"""
-<div style="margin-top:48px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #000">
-  <span style="font-size:.95rem;font-weight:900;color:#000">{ch['label']}</span>
+<div style="margin-top:48px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #eee">
+  <span style="font-size:.85rem;font-weight:900;color:#000">{ch['label']}</span>
 </div>
 <div class="ch-grid">"""
     for e in ch_essays:
@@ -158,10 +161,9 @@ for ch in CHAPTERS:
         cards_html += f"""
   <a class="ch-card" href="{e['id']}.html">
     <img loading="lazy" src="{thumb}" alt="">
-    <div style="font-size:.62rem;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:10px">{e['tag'].upper()}</div>
-    <div style="font-size:1rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e['title']}</div>
-    <div style="font-size:.72rem;color:#999;line-height:1.5;margin-bottom:12px">{e['sub'][:50]}...</div>
-    <div style="font-size:.95rem;font-weight:900;color:#000">{e['stat']}</div>
+    <div style="font-size:.6rem;font-weight:700;color:#e8530e;letter-spacing:0.5px;margin-bottom:8px">{e['tag']}</div>
+    <div style="font-size:.9rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px">{e['title']}</div>
+    <div style="font-size:.85rem;font-weight:900;color:#000;margin-top:10px">{e['stat']}</div>
   </a>"""
     cards_html += "\n</div>"
 
