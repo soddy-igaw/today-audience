@@ -60,7 +60,7 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 
 /* Content sections */
 .section { background:#fff; border-radius:0; padding:28px 0; margin-bottom:0; border-bottom:1px solid #f0f0f0; }
-.section-label { font-size:0.88rem; font-weight:800; color:#000; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+.section-label { font-size:1.05rem; font-weight:900; color:#000; letter-spacing:0.5px; margin-bottom:16px; }
 .section p { color:#333; font-size:1.02rem; line-height:1.85; margin-bottom:16px; }
 .section strong { color:#000; }
 
