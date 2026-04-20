@@ -7,74 +7,54 @@
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased}
+body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
 .wrap{max-width:900px;margin:0 auto;padding:0 24px 100px}
-.hero-img{width:100%;height:280px;object-fit:cover;filter:grayscale(100%)}
-.detail-wrap{max-width:600px;margin:0 auto}
-.detail-hero{padding:32px 0;margin-bottom:16px;border-bottom:1px solid #e5e5e5}
-.detail-emoji{font-size:2.4rem;margin-bottom:16px}
-.detail-tag{display:inline-block;font-size:.68rem;font-weight:600;color:#000;background:#f0f0f0;padding:3px 10px;margin-bottom:12px}
-.detail-title{font-size:1.4rem;font-weight:900;color:#000;line-height:1.35;margin-bottom:8px}
-.detail-sub{font-size:1rem;color:#666;line-height:1.6}
-.detail-meta{font-size:.78rem;color:#999;margin-top:16px}
-.section{padding:28px 0;border-bottom:1px solid #f0f0f0}
-.section-label{font-size:1.05rem;font-weight:900;color:#000;letter-spacing:0.5px;margin-bottom:16px}
-.section p{color:#333;font-size:1.02rem;line-height:1.85;margin-bottom:16px}
+/* 에세이 상세 */
+.detail-wrap{max-width:620px;margin:0 auto}
+.detail-hero{padding:60px 0 40px;border-bottom:1px solid #eee}
+.detail-tag{font-size:.72rem;font-weight:600;color:#e8530e;letter-spacing:1px;margin-bottom:16px;display:block}
+.detail-emoji{display:none}
+.detail-title{font-size:1.8rem;font-weight:900;color:#000;line-height:1.35;letter-spacing:-0.5px;margin-bottom:16px}
+.detail-sub{font-size:1.05rem;color:#666;line-height:1.7}
+.detail-meta{font-size:.78rem;color:#bbb;margin-top:20px}
+/* 인터뷰 */
+.quote-box{padding:48px 0;border-bottom:1px solid #f0f0f0;background:none;border-left:none;margin:0}
+.quote-box p{font-size:1.15rem;color:#333;line-height:2;font-style:italic;letter-spacing:-0.2px;margin:0}
+.quote-box strong{color:#000;font-style:normal;font-weight:800}
+/* 섹션 */
+.section{padding:48px 0;border-bottom:1px solid #f0f0f0}
+.section-label{font-size:1.15rem;font-weight:900;color:#e8530e;margin-bottom:24px;letter-spacing:-0.3px}
+.section p{color:#444;font-size:1.02rem;line-height:2;margin-bottom:20px;letter-spacing:-0.1px}
 .section strong{color:#000}
-.quote-box{background:#f7f7f7;padding:28px;margin-bottom:14px;border-left:4px solid #e8530e}
-.quote-box p{color:#333;font-size:1.05rem;line-height:1.85;font-style:italic;margin:0}
-.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cmp-card{padding:20px}
-.cmp-card h4{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-weight:700}
-.cmp-card p{font-size:.82rem;line-height:1.8;margin:0}
-.cmp-left{background:#f7f7f7}.cmp-left h4{color:#999}.cmp-left p{color:#888}
-.cmp-right{background:#000}.cmp-right h4{color:#999}.cmp-right p{color:#fff}
+/* STEP 카드 */
+.behavior-cards{display:flex;flex-direction:column;gap:20px}
+.behavior-card{background:#fafafa;padding:28px;position:relative;overflow:hidden}
+.behavior-card.highlight{background:#000}
+.behavior-card.highlight .bc-desc{color:#999}
+.bc-step{font-size:.65rem;font-weight:700;color:#bbb;letter-spacing:2px;margin-bottom:12px}
+.behavior-card.highlight .bc-step{color:#666}
+.bc-title{font-size:1.1rem;font-weight:900;color:#000;line-height:1.35;margin-bottom:8px}
+.behavior-card.highlight .bc-title{color:#fff}
+.bc-desc{font-size:.88rem;color:#777;line-height:1.6}
+.bc-num{font-size:2.5rem;font-weight:900;color:#000;opacity:0.06;position:absolute;right:24px;top:50%;transform:translateY(-50%)}
+.behavior-card.highlight .bc-num{color:#e8530e;opacity:1;font-size:1.6rem;position:static;transform:none;margin-top:16px}
+/* 인사이트 */
+.insight-box{background:#000;padding:40px 32px;margin:48px 0}
+.insight-box .ins-label{font-size:.68rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:16px}
+.insight-box p{color:#fff;font-size:1.05rem;line-height:1.9;font-weight:500;margin:0}
+.insight-box strong{color:#e8530e;font-weight:700}
+/* 오디언스 카드 */
+.audience-card{background:#111;padding:32px;margin-bottom:16px}
+/* 기타 레거시 */
 .ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ind-card{background:#f7f7f7;padding:16px}
 .ind-card .ind-title{font-size:.82rem;font-weight:700;color:#000;margin-bottom:4px}
 .ind-card .ind-desc{font-size:.75rem;color:#888;line-height:1.4}
-.insight-box{background:#000;padding:28px 24px;margin-bottom:14px}
-.insight-box .ins-label{font-size:.68rem;color:#888;font-weight:700;letter-spacing:1.5px;margin-bottom:12px}
-.insight-box p{color:#fff;font-size:.92rem;line-height:1.8;font-weight:500;margin:0}
-.audience-card{background:#000;padding:28px 24px;margin-bottom:14px}
-.ad-compare{background:#fff;padding:28px 24px;margin-bottom:14px;border:1px solid #e5e5e5}
-.tl{padding-left:24px;border-left:2px solid #ddd;margin-left:6px}
-.tl-item{margin-bottom:24px;position:relative}
-.tl-dot{position:absolute;left:-30px;top:3px;width:10px;height:10px;border-radius:50%;border:2px solid #fff}
-.tl-green{background:#000;box-shadow:0 0 0 2px #000}
-.tl-yellow{background:#888;box-shadow:0 0 0 2px #888}
-.tl-red{background:#000;box-shadow:0 0 0 2px #000}
-.tl-day{font-size:.68rem;font-weight:700;margin-bottom:4px;color:#000}
-.tl-title{font-size:.88rem;font-weight:700;color:#000;margin-bottom:2px}
-.tl-desc{font-size:.78rem;color:#888}
-.tl-bar-wrap{margin-top:8px;background:#f7f7f7;padding:8px 12px}
-.tl-bar-bg{background:#e5e5e5;height:6px;overflow:hidden}
-.tl-bar-fill{background:#000;height:100%}
-.tl-flow{margin-top:8px;display:flex;gap:8px;align-items:center}
-.tl-flow-down{background:#f7f7f7;padding:6px 10px;flex:1;text-align:center}
-.tl-flow-up{background:#000;padding:6px 10px;flex:1;text-align:center;color:#fff}
-.tl-alert{background:#f7f7f7;padding:16px;border:1px solid #000}
-.cd-item{background:#f7f7f7;padding:16px;margin-bottom:10px;border-left:3px solid #ddd}
-.cd-urgent{border-left-color:#000}.cd-warn{border-left-color:#888}.cd-info{border-left-color:#000}
-.af-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.af-gone{background:#f7f7f7;padding:8px 14px;text-decoration:line-through;color:#bbb;font-size:.82rem;flex:1;text-align:center}
-.af-new{background:#000;padding:8px 14px;color:#fff;font-weight:700;font-size:.82rem;flex:1;text-align:center}
-.af-up{background:#f7f7f7;padding:8px 14px;color:#000;font-weight:700;font-size:.82rem;flex:1;text-align:center}
-.footer{text-align:center;color:#bbb;font-size:.72rem;padding:32px 0 16px}
-.behavior-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px}
-.behavior-card{background:#f7f7f7;padding:24px;position:relative;overflow:hidden}
-.behavior-card.highlight{background:#000;color:#fff}
-.behavior-card.highlight .bc-desc{color:#aaa}
-.behavior-card.highlight .bc-num{color:#e8530e}
-.bc-step{font-size:.65rem;font-weight:700;color:#999;letter-spacing:2px;margin-bottom:10px}
-.behavior-card.highlight .bc-step{color:#666}
-.bc-title{font-size:1.1rem;font-weight:900;color:#000;line-height:1.35;margin-bottom:6px}
-.behavior-card.highlight .bc-title{color:#fff}
-.bc-desc{font-size:.85rem;color:#666;line-height:1.5}
-.bc-num{font-size:2.2rem;font-weight:900;color:#000;position:absolute;right:24px;top:50%;transform:translateY(-50%);opacity:0.15}
-.behavior-card.highlight .bc-num{opacity:1;font-size:1.6rem;position:static;transform:none;margin-top:12px}
+.hero-img{width:100%;height:280px;object-fit:cover;filter:grayscale(100%)}
+.footer{text-align:center;color:#ccc;font-size:.72rem;padding:40px 0 16px}
 .back-btn{display:inline-block;background:#000;color:#fff;padding:8px 20px;font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:16px}
 .back-btn:hover{background:#333}
+/* 메인 피드 */
 .ch-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
 .ch-grid::-webkit-scrollbar{height:4px}
 .ch-grid::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
@@ -137,6 +117,21 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 <div style="font-size:.72rem;color:#888;margin-top:4px">담보 가치 확인</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">이 오디언스를 타겟하면</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div style="padding:24px;background:#fafafa">
+<div style="font-size:.68rem;font-weight:700;color:#bbb;margin-bottom:8px">기존 타겟팅</div>
+<div style="font-size:1rem;font-weight:800;color:#ccc;margin-bottom:8px">"부동산 관심자"</div>
+<div style="font-size:.82rem;color:#999;line-height:1.6">구경꾼과 진짜가 섞여 있음<br>같은 광고를 34만 명에게 노출<br>경쟁사도 같은 타겟 사용</div>
+</div>
+<div style="padding:24px;background:#000">
+<div style="font-size:.68rem;font-weight:700;color:#666;margin-bottom:8px">이 오디언스</div>
+<div style="font-size:1rem;font-weight:800;color:#e8530e;margin-bottom:8px">"지금 움직이는 사람"</div>
+<div style="font-size:.82rem;color:#aaa;line-height:1.6">행동이 바뀐 사람만 선별<br>교차 시그널로 정밀 타겟<br>우리만 잡을 수 있는 오디언스</div>
 </div>
 </div>
 </div>
