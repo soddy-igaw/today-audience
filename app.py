@@ -127,6 +127,18 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .af-up { background:#f7f7f7; border-radius:0; padding:8px 14px; color:#000; font-weight:700; font-size:0.82rem; flex:1; text-align:center; }
 
 .footer { text-align:center; color:#bbb; font-size:0.72rem; padding:32px 0 16px; }
+.behavior-cards { display:flex; flex-direction:column; gap:16px; margin-top:20px; }
+.behavior-card { background:#f7f7f7; padding:24px; position:relative; overflow:hidden; }
+.behavior-card.highlight { background:#000; color:#fff; }
+.behavior-card.highlight .bc-desc { color:#aaa; }
+.behavior-card.highlight .bc-num { color:#e8530e; }
+.bc-step { font-size:.65rem; font-weight:700; color:#999; letter-spacing:2px; margin-bottom:10px; }
+.behavior-card.highlight .bc-step { color:#666; }
+.bc-title { font-size:1.1rem; font-weight:900; color:#000; line-height:1.35; margin-bottom:6px; }
+.behavior-card.highlight .bc-title { color:#fff; }
+.bc-desc { font-size:.85rem; color:#666; line-height:1.5; }
+.bc-num { font-size:2.2rem; font-weight:900; color:#000; position:absolute; right:24px; top:50%; transform:translateY(-50%); opacity:0.15; }
+.behavior-card.highlight .bc-num { opacity:1; font-size:1.6rem; position:static; transform:none; margin-top:12px; }
 
 /* Hide helper buttons */
 .hidden-btn { display:none!important; }
