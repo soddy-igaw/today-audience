@@ -18,6 +18,7 @@ ESSAYS = [
     {"id":"pet","tag":"반려동물","title":"반려동물 첫 입양 후 2주 이내 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~13만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13","img":"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80"},
     {"id":"themestock","tag":"테마주","title":"테마주 뉴스에 반응해 추격 매수하는 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~52만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
     {"id":"carinsurance","tag":"금융","title":"자동차보험 만기 전 갈아타기 비교 중인 사람","sub":"작년보다 15만원 올랐다면, 지금 갈아타세요","stat":"~41만","stat_label":"보험사+비교앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop&q=80"},
+    {"id":"tosspay","tag":"금융","title":"기존 간편결제 사용이 줄고 새 결제앱을 깐 사람","sub":"간편결제 갈아타기가 시작됐습니다","stat":"~120만","stat_label":"간편결제앱 전환 행동 유저","date":"2026.04.20","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
     {"id":"finance","tag":"금융","title":"대출 만기 전 대환을 준비하는 사람","sub":"새벽 2시에 대출앱 3개를 번갈아 여는 사람","stat":"~10만","stat_label":"대출탐색 유저 (DMP)","date":"2026.04.10","img":"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80"},
     {"id":"running","tag":"러닝","title":"매주 뛰면서 러닝 장비에 돈 쓰는 사람","sub":"커머스에서 15만원짜리 러닝화를 반복 조회하면서, 주말 아침 한강에 나타나는 사람","stat":"~48만","stat_label":"러닝앱+커머스 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=400&fit=crop&q=80"},
     {"id":"golf","tag":"골프","title":"접대 때문에 골프 시작한 입문자","sub":"접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.","stat":"~17만","stat_label":"골프앱 사용자 (DMP)","date":"2026.04.11","img":"https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop&q=80"},
@@ -25,7 +26,7 @@ ESSAYS = [
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["finance","stock","realestate","themestock","carinsurance"]},
+    {"label":"금융","ids":["finance","tosspay","stock","realestate","themestock","carinsurance"]},
     {"label":"여행","ids":["travel","ktx"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},

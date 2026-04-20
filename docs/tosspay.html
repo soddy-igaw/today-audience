@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>간편결제 전환자 — 프리뷰</title>
+<title>기존 간편결제 사용이 줄고 새 결제앱을 깐 사람 — 오늘의 오디언스</title>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:600px;margin:0 auto;padding:0 24px 100px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 100px}
 .hero-img{width:100%;height:280px;object-fit:cover;filter:grayscale(100%)}
+.detail-wrap{max-width:600px;margin:0 auto}
 .detail-hero{padding:32px 0;margin-bottom:16px;border-bottom:1px solid #e5e5e5}
 .detail-emoji{font-size:2.4rem;margin-bottom:16px}
 .detail-tag{display:inline-block;font-size:.68rem;font-weight:600;color:#000;background:#f0f0f0;padding:3px 10px;margin-bottom:12px}
@@ -22,34 +23,61 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 .section strong{color:#000}
 .quote-box{background:#f7f7f7;padding:28px;margin-bottom:14px;border-left:4px solid #e8530e}
 .quote-box p{color:#333;font-size:1.05rem;line-height:1.85;font-style:italic;margin:0}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp-card{padding:20px}
+.cmp-card h4{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.cmp-card p{font-size:.82rem;line-height:1.8;margin:0}
+.cmp-left{background:#f7f7f7}.cmp-left h4{color:#999}.cmp-left p{color:#888}
+.cmp-right{background:#000}.cmp-right h4{color:#999}.cmp-right p{color:#fff}
+.ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ind-card{background:#f7f7f7;padding:16px}
+.ind-card .ind-title{font-size:.82rem;font-weight:700;color:#000;margin-bottom:4px}
+.ind-card .ind-desc{font-size:.75rem;color:#888;line-height:1.4}
 .insight-box{background:#000;padding:28px 24px;margin-bottom:14px}
 .insight-box .ins-label{font-size:.68rem;color:#888;font-weight:700;letter-spacing:1.5px;margin-bottom:12px}
 .insight-box p{color:#fff;font-size:.92rem;line-height:1.8;font-weight:500;margin:0}
 .audience-card{background:#000;padding:28px 24px;margin-bottom:14px}
+.ad-compare{background:#fff;padding:28px 24px;margin-bottom:14px;border:1px solid #e5e5e5}
+.tl{padding-left:24px;border-left:2px solid #ddd;margin-left:6px}
+.tl-item{margin-bottom:24px;position:relative}
+.tl-dot{position:absolute;left:-30px;top:3px;width:10px;height:10px;border-radius:50%;border:2px solid #fff}
+.tl-green{background:#000;box-shadow:0 0 0 2px #000}
+.tl-yellow{background:#888;box-shadow:0 0 0 2px #888}
+.tl-red{background:#000;box-shadow:0 0 0 2px #000}
+.tl-day{font-size:.68rem;font-weight:700;margin-bottom:4px;color:#000}
+.tl-title{font-size:.88rem;font-weight:700;color:#000;margin-bottom:2px}
+.tl-desc{font-size:.78rem;color:#888}
+.tl-bar-wrap{margin-top:8px;background:#f7f7f7;padding:8px 12px}
+.tl-bar-bg{background:#e5e5e5;height:6px;overflow:hidden}
+.tl-bar-fill{background:#000;height:100%}
+.tl-flow{margin-top:8px;display:flex;gap:8px;align-items:center}
+.tl-flow-down{background:#f7f7f7;padding:6px 10px;flex:1;text-align:center}
+.tl-flow-up{background:#000;padding:6px 10px;flex:1;text-align:center;color:#fff}
+.tl-alert{background:#f7f7f7;padding:16px;border:1px solid #000}
+.cd-item{background:#f7f7f7;padding:16px;margin-bottom:10px;border-left:3px solid #ddd}
+.cd-urgent{border-left-color:#000}.cd-warn{border-left-color:#888}.cd-info{border-left-color:#000}
+.af-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.af-gone{background:#f7f7f7;padding:8px 14px;text-decoration:line-through;color:#bbb;font-size:.82rem;flex:1;text-align:center}
+.af-new{background:#000;padding:8px 14px;color:#fff;font-weight:700;font-size:.82rem;flex:1;text-align:center}
+.af-up{background:#f7f7f7;padding:8px 14px;color:#000;font-weight:700;font-size:.82rem;flex:1;text-align:center}
 .footer{text-align:center;color:#bbb;font-size:.72rem;padding:32px 0 16px}
-/* 토스 스타일 행동 카드 */
-.behavior-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px}
-.behavior-card{background:#f7f7f7;padding:24px;position:relative;overflow:hidden}
-.behavior-card.highlight{background:#000;color:#fff}
-.behavior-card.highlight .bc-desc{color:#aaa}
-.behavior-card.highlight .bc-num{color:#e8530e}
-.bc-step{font-size:.65rem;font-weight:700;color:#999;letter-spacing:2px;margin-bottom:10px}
-.behavior-card.highlight .bc-step{color:#666}
-.bc-title{font-size:1.1rem;font-weight:900;color:#000;line-height:1.35;margin-bottom:6px}
-.behavior-card.highlight .bc-title{color:#fff}
-.bc-desc{font-size:.85rem;color:#666;line-height:1.5}
-.bc-num{font-size:2.2rem;font-weight:900;color:#000;position:absolute;right:24px;top:50%;transform:translateY(-50%);opacity:0.15}
-.behavior-card.highlight .bc-num{opacity:1;font-size:1.6rem;position:static;transform:none;margin-top:12px}
-/* 시그널 카드 */
-.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.sig-card{padding:20px;border-left:4px solid #e8530e;background:#f7f7f7}
-.sig-card .sig-title{font-size:.85rem;font-weight:800;color:#000;margin-bottom:4px}
-.sig-card .sig-desc{font-size:.75rem;color:#888;line-height:1.4}
+.back-btn{display:inline-block;background:#000;color:#fff;padding:8px 20px;font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:16px}
+.back-btn:hover{background:#333}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid #e5e5e5}
+.ch-card{background:#fff;border:1px solid #e5e5e5;border-top:none;border-right:1px solid #e5e5e5;padding:24px 20px;text-decoration:none;color:inherit;transition:background .15s}
+.ch-card:last-child{border-right:none}
+.ch-card:hover{background:#fafafa}
+.ch-card img{width:100%;height:120px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px}
+.today-card{padding:36px 0;border-bottom:1px solid #e5e5e5;display:block;text-decoration:none;color:inherit}
+.today-card:hover{opacity:.9}
+.today-card img{width:100%;height:240px;object-fit:cover;filter:grayscale(100%);margin-bottom:24px}
+@media(max-width:768px){.ch-grid{grid-template-columns:1fr!important}.ch-card{border-right:none!important;border-bottom:1px solid #e5e5e5}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
+<a class="back-btn" href="index.html">← 뒤로</a>
+<div class="detail-wrap">
 <div class="detail-hero">
   <div class="detail-emoji">💳</div>
   <span class="detail-tag">금융</span>
@@ -57,22 +85,18 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
   <div class="detail-sub">간편결제 시장에서 갈아타기가 시작됐습니다. 전통시장까지 간편결제가 퍼지면서, 결제 습관이 바뀌는 사람이 포착됩니다.</div>
   <div class="detail-meta">2026.04.20 · 오늘의 오디언스</div>
 </div>
-
 <div class="quote-box">
   <p>"속초 여행 갔는데 중앙시장에서 할머니가<br>태블릿 들고 QR 찍어주시는 거 보고 깜짝 놀랐어요.<br>현금 없어서 당황했는데 <strong style="color:#000;font-style:normal">토스페이 되더라고요.</strong><br>그날 처음 써봤는데, <strong style="color:#000;font-style:normal">돌아와서도 계속 쓰게 됐어요.</strong><br>지금은 카카오페이보다 토스를 더 많이 써요."<br><br>— P씨, 29세, 디자이너</p>
 </div>
-
 <div class="section">
   <div class="section-label">무슨 일이 벌어지고 있나</div>
   <p>2026년, 전통시장과 로컬 상권까지 간편결제가 확산됐습니다. 제로페이·토스페이 가맹점이 급증하면서, <strong>"현금만 되는 곳"이 사라지고 있습니다.</strong></p>
   <p>동시에 간편결제 시장에서 <strong>갈아타기</strong>가 벌어지고 있습니다. 카카오페이 독주 시대가 끝나고, 토스페이·네이버페이가 혜택 경쟁을 벌이면서 사용자들이 움직이기 시작했습니다.</p>
   <p>핵심은 <strong>"어떤 결제앱을 쓰느냐"가 아니라 "결제 습관이 바뀌는 순간"</strong>을 잡는 것입니다.</p>
 </div>
-
 <div class="quote-box">
   <p>"솔직히 카카오페이 오래 썼는데<br>토스가 시장에서 300원 캐시백 주니까 바꿨어요.<br><strong style="color:#000;font-style:normal">한 번 바꾸니까 편의점도, 카페도 다 토스로 하게 되더라고요.</strong><br><strong style="color:#000;font-style:normal">결제앱은 한 번 바꾸면 안 돌아가요.</strong>"<br><br>— P씨</p>
 </div>
-
 <div class="section">
   <div class="section-label">이 사람은 이런 행동을 합니다</div>
   <div class="behavior-cards">
@@ -102,7 +126,6 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
     </div>
   </div>
 </div>
-
 <div class="section">
   <div class="section-label" style="color:#e8530e">이 사람을 찾는 법</div>
   <p>이 세 가지가 동시에 보이면, 이 사람입니다.</p>
@@ -113,12 +136,10 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
     <div class="sig-card"><div class="sig-title">🎁 혜택앱 동시 활성</div><div class="sig-desc">포인트 적립앱<br>결제앱과 동시 사용</div></div>
   </div>
 </div>
-
 <div class="insight-box">
   <div class="ins-label">💡 KEY INSIGHT</div>
   <p>"간편결제 사용자"는 오디언스가 아닙니다.<br><br>기존 결제앱 사용이 줄면서<br><strong style="color:#e8530e">새 결제앱을 설치하고 전통시장에서까지 쓰기 시작한 사람</strong>이 오디언스입니다.<br><br>결제앱은 한 번 바꾸면 안 돌아갑니다.<br>이 전환의 순간을 잡는 게 전부입니다.</p>
 </div>
-
 <div class="audience-card">
   <p style="font-size:0.68rem;color:#888;font-weight:700;letter-spacing:1.5px;margin-bottom:20px">📋 AUDIENCE CARD</p>
   <h3 style="color:#fff;font-size:1.15rem;font-weight:800;margin-bottom:20px">간편결제 갈아타기 전환자</h3>
@@ -127,11 +148,9 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
     <div><p style="color:#666;font-size:0.7rem;margin-bottom:4px">핵심 시그널</p><p style="color:#fff;font-size:0.88rem;font-weight:600;line-height:1.6">기존 결제앱 -30%<br>새 결제앱 신규 설치<br>전통시장 위치 체류<br>혜택앱 동시 활성</p></div>
   </div>
 </div>
-
 <div style="background:#e8530e;padding:20px 24px;margin-bottom:14px;text-align:center"><p style="color:#fff;font-size:.88rem;font-weight:600;margin:0">이 오디언스로 캠페인을 설계하고 싶다면 → 문의하기</p></div>
-
 <div class="footer">오늘의 오디언스 · by IGAWorks</div>
-
+</div>
 </div>
 </body>
 </html>

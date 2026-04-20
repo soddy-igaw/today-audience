@@ -272,6 +272,16 @@ ESSAYS = [
         "img": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop&q=80",
     },
     {
+        "id": "tosspay", "emoji": "💳", "tag": "금융", "number": 18,
+        "title": "기존 간편결제 사용이 줄고\n새 결제앱을 깐 사람",
+        "sub": "간편결제 갈아타기가 시작됐습니다. 전통시장까지 퍼지면서 결제 습관이 바뀌는 사람.",
+        "stat": "~120만",
+        "stat_label": "간편결제앱 전환 행동 유저",
+        "date": "2026.04.20",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "finance", "emoji": "💰", "tag": "금융", "number": 2,
         "title": "대출 만기 전\n대환을 준비하는 사람",
         "sub": "새벽 2시에 대출앱 3개를 번갈아 여는 사람",
@@ -333,6 +343,11 @@ elif st.session_state.view == "detail_safehaven_0420":
     if st.button("← 뒤로", key="back_sh"):
         go_feed()
     st.markdown(load_essay("safehaven_0420"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_tosspay":
+    if st.button("← 뒤로", key="back_tp"):
+        go_feed()
+    st.markdown(load_essay("tosspay"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
@@ -398,7 +413,7 @@ else:
     # ===== FEED (롱블랙 스타일 · B&W) =====
 
     CHAPTERS = [
-        {"label": "금융", "ids": ["finance", "stock", "realestate", "themestock", "carinsurance"]},
+        {"label": "금융", "ids": ["finance", "tosspay", "stock", "realestate", "themestock", "carinsurance"]},
         {"label": "여행", "ids": ["travel", "ktx"]},
         {"label": "스포츠", "ids": ["running", "golf", "health", "wegovy"]},
         {"label": "라이프", "ids": ["car", "pet"]},
