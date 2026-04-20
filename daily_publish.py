@@ -387,8 +387,21 @@ def inject_to_app(category, today, essay_html):
         f.write(code)
     print(f"📝 app.py 업데이트: #{next_num} {essay_id}")
 
-    # 6. Rebuild static site
+    # 6. Update build_static.py ESSAYS too
     build_script = os.path.join(ESSAY_DIR, "build_static.py")
+    if os.path.exists(build_script):
+        with open(build_script, "r", encoding="utf-8") as f:
+            bcode = f.read()
+        new_build_entry = (
+            f'    {{"id":"{essay_id}","tag":"{category}","title":"{title}",'
+            f'"sub":"{sub[:80]}","stat":"{stat}","stat_label":"{stat_label}",'
+            f'"date":"{date_fmt}","img":"{img}"}},\n'
+        )
+        bcode = bcode.replace('ESSAYS = [\n', f'ESSAYS = [\n{new_build_entry}')
+        with open(build_script, "w", encoding="utf-8") as f:
+            f.write(bcode)
+
+    # 7. Rebuild static site
     if os.path.exists(build_script):
         subprocess.run([sys.executable, build_script], cwd=ESSAY_DIR)
         print("🏗️  정적 사이트 재빌드 완료")

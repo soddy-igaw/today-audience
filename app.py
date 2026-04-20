@@ -152,14 +152,14 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
-        "id": "헬스_0420", "emoji": "💪", "tag": "헬스", "number": 16,
-        "title": "PT 끝나고 피트니스 어플 완전히 갈아타는 사람",
-        "sub": "3개월 PT 완료 후 홈트로 전환하며 앱을 대거 교체하는 사람. 홈트 기구, 보충제, 피트니스웨어 광고주의 새로운 타겟.",
+        "id": "금융_0420", "emoji": "💰", "tag": "금융", "number": 16,
+        "title": "고정금리 만료 앞두고 갈아타기 준비하는 사람",
+        "sub": "2~3년 전 고정금리 대출자들이 만료 시점에서 갈아타기를 검토 중. 금융·핀테크 광고주의 골든타임.",
         "stat": "",
-        "stat_label": "헬스 오디언스 (DMP)",
+        "stat_label": "금융 오디언스 (DMP)",
         "date": "2026.04.20",
         "color": "#000",
-        "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
+        "img": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80",
     },
     {
         "id": "realestate", "emoji": "🏠", "tag": "부동산", "number": 10,
@@ -314,10 +314,10 @@ elif st.session_state.view == "detail_carinsurance":
         go_feed()
     st.markdown(load_essay("carinsurance"), unsafe_allow_html=True)
 
-elif st.session_state.view == "detail_헬스_0420":
-    if st.button("← 뒤로", key="back_헬스_0420"):
+elif st.session_state.view == "detail_금융_0420":
+    if st.button("← 뒤로", key="back_금융_0420"):
         go_feed()
-    st.markdown(load_essay("헬스_0420"), unsafe_allow_html=True)
+    st.markdown(load_essay("금융_0420"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
