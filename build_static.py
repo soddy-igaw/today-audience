@@ -49,11 +49,11 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 .detail-sub{font-size:1.05rem;color:#666;line-height:1.7}
 .detail-meta{font-size:.78rem;color:#bbb;margin-top:20px}
 /* 인터뷰 */
-.quote-box{padding:48px 0;border-bottom:1px solid #f0f0f0;background:none;border-left:none;margin:0}
+.quote-box{padding:56px 0;border-bottom:1px solid #f0f0f0;background:none;border-left:none;margin:0}
 .quote-box p{font-size:1.15rem;color:#333;line-height:2;font-style:italic;letter-spacing:-0.2px;margin:0}
 .quote-box strong{color:#000;font-style:normal;font-weight:800}
 /* 섹션 */
-.section{padding:48px 0;border-bottom:1px solid #f0f0f0}
+.section{padding:56px 0;border-bottom:1px solid #f0f0f0}
 .section-label{font-size:1.15rem;font-weight:900;color:#e8530e;margin-bottom:24px;letter-spacing:-0.3px}
 .section p{color:#444;font-size:1.02rem;line-height:2;margin-bottom:20px;letter-spacing:-0.1px}
 .section strong{color:#000}
