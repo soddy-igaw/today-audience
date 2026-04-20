@@ -55,8 +55,8 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .detail-emoji { font-size:2.4rem; margin-bottom:16px; }
 .detail-tag { display:inline-block; font-size:0.68rem; font-weight:600; color:#000; background:#f0f0f0; padding:3px 10px; border-radius:0; margin-bottom:12px; }
 .detail-title { font-size:1.4rem; font-weight:900; color:#000; line-height:1.35; margin-bottom:8px; }
-.detail-sub { font-size:0.88rem; color:#666; line-height:1.6; }
-.detail-meta { font-size:0.72rem; color:#999; margin-top:16px; }
+.detail-sub { font-size:1rem; color:#666; line-height:1.6; }
+.detail-meta { font-size:0.78rem; color:#999; margin-top:16px; }
 
 /* Content sections */
 .section { background:#fff; border-radius:0; padding:28px 0; margin-bottom:0; border-bottom:1px solid #f0f0f0; }
@@ -64,8 +64,8 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 .section p { color:#333; font-size:1.02rem; line-height:1.85; margin-bottom:16px; }
 .section strong { color:#000; }
 
-.quote-box { background:#f7f7f7; border-radius:0; padding:24px; margin-bottom:14px; border-left:3px solid #000; }
-.quote-box p { color:#444; font-size:1rem; line-height:1.8; font-style:italic; margin:0; }
+.quote-box { background:#f7f7f7; padding:28px; margin-bottom:14px; border-left:4px solid #e8530e; }
+.quote-box p { color:#333; font-size:1.05rem; line-height:1.85; font-style:italic; margin:0; }
 
 .signal-item { padding:14px 0; border-bottom:1px solid #f0f0f0; }
 .signal-item:last-child { border-bottom:none; }
