@@ -172,6 +172,12 @@ with open(os.path.join(OUT, "index.html"), "w") as f:
 print("OK: index.html")
 
 # === BUILD DETAIL PAGES ===
+# Build chapter lookup: essay_id -> chapter label
+essay_chapter = {}
+for ch in CHAPTERS:
+    for eid in ch["ids"]:
+        essay_chapter[eid] = ch["label"]
+
 for e in ESSAYS:
     essay_file = os.path.join(DIR, "essays_html", f"{e['id']}.html")
     if not os.path.exists(essay_file):
@@ -179,7 +185,35 @@ for e in ESSAYS:
         continue
     with open(essay_file, "r") as ef:
         essay_html = ef.read()
-    body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{essay_html}'
+
+    # Build related essays (same chapter, exclude self)
+    ch_label = essay_chapter.get(e["id"], "")
+    related = []
+    if ch_label:
+        for ch in CHAPTERS:
+            if ch["label"] == ch_label:
+                related = [essay_map[eid] for eid in ch["ids"] if eid in essay_map and eid != e["id"]]
+                break
+
+    related_html = ""
+    if related:
+        related_html = f"""
+<div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
+  <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>
+  <div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch">"""
+        for r in related[:5]:
+            thumb = r["img"].replace("w=800", "w=300") if r.get("img") else ""
+            img_tag = f'<img loading="lazy" src="{thumb}" style="width:100%;height:80px;object-fit:cover;filter:grayscale(100%);margin-bottom:8px">' if thumb else ""
+            related_html += f"""
+    <a href="{r['id']}.html" style="min-width:180px;max-width:200px;flex-shrink:0;text-decoration:none;color:inherit;border:1px solid #eee;padding:12px">
+      {img_tag}
+      <div style="font-size:.65rem;font-weight:700;color:#e8530e;margin-bottom:6px">{r['tag']}</div>
+      <div style="font-size:.82rem;font-weight:800;color:#000;line-height:1.3;margin-bottom:4px">{r['title']}</div>
+      <div style="font-size:.68rem;color:#999">{r['stat']}</div>
+    </a>"""
+        related_html += "\n  </div>\n</div>"
+
+    body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{essay_html}\n{related_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
