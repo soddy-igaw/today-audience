@@ -41,17 +41,16 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 .point{padding:48px 0;border-bottom:1px solid #f0f0f0}
 .point p{font-size:1.1rem;color:#000;line-height:1.9;font-weight:600;letter-spacing:-0.2px}
 .point strong{color:#e8530e}
-.compare{padding:48px 0;border-bottom:1px solid #f0f0f0}
-.compare .title{font-size:1.05rem;font-weight:900;color:#000;margin-bottom:20px}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.audience{background:#000;padding:40px 32px;margin-top:48px}
-.audience .a-label{font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:20px}
-.audience h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:24px}
-.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.audience-grid .num{font-size:1.6rem;font-weight:900;color:#e8530e}
-.audience-grid .a-sub{font-size:.72rem;color:#666;margin-top:4px}
-.audience-grid .sig{font-size:.88rem;color:#fff;font-weight:600;line-height:1.8}
-.audience .recommend{color:#888;font-size:.75rem;margin-top:20px;border-top:1px solid #333;padding-top:16px}
+.vs{padding:48px 0;border-bottom:1px solid #f0f0f0}
+.vs .title{font-size:1.05rem;font-weight:900;color:#000;margin-bottom:20px}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card-section{background:#000;padding:40px 32px;margin-top:48px}
+.card-section .label{font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:20px}
+.card-section h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.card-section .count{font-size:1.6rem;font-weight:900;color:#e8530e;margin-bottom:4px}
+.card-section .count-sub{font-size:.75rem;color:#666;margin-bottom:24px}
+.card-section .signals{font-size:.88rem;color:#fff;font-weight:600;line-height:1.8}
+.card-section .recommend{color:#888;font-size:.75rem;margin-top:20px;border-top:1px solid #333;padding-top:16px}
 .cta{background:#e8530e;padding:24px;text-align:center;margin-top:16px}
 .cta p{color:#fff;font-size:.9rem;font-weight:600}
 .footer{text-align:center;color:#ccc;font-size:.72rem;padding:48px 0 16px}
@@ -110,37 +109,31 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 </div>
 
 <div class="point">
-  <p>"주식 이탈자"한테 광고하면 늦습니다.<br><strong>증권앱을 끄면서 금앱을 깐 사람.</strong><br>이 사람은 지금 안전자산을 찾고 있습니다.</p>
+  <p>"주식 이탈자"한테 광고하면 늦습니다.<br><strong>증권앱을 끄면서 금앱을 깐 사람.</strong><br>이 사람은 지금 금을 사고 있습니다.</p>
 </div>
 
-<div class="compare">
-  <div class="title">이 오디언스를 타겟하면</div>
-  <div class="compare-grid">
+<div class="vs">
+  <div class="title">이 사람한테 광고하면</div>
+  <div class="vs-grid">
     <div style="padding:24px;background:#fafafa">
       <div style="font-size:.68rem;font-weight:700;color:#bbb;margin-bottom:8px">기존</div>
       <div style="font-size:1rem;font-weight:800;color:#ccc;margin-bottom:8px">"투자 관심자"</div>
-      <div style="font-size:.85rem;color:#999;line-height:1.7">구경꾼이 섞여 있습니다<br>85만 명 전체에 같은 광고<br>경쟁사도 같은 사람한테 보냅니다</div>
+      <div style="font-size:.85rem;color:#999;line-height:1.7">구경꾼이 섞여 있습니다<br>85만 명 전체에 같은 광고<br>다른 데서도 같은 사람한테 보냅니다</div>
     </div>
     <div style="padding:24px;background:#000">
-      <div style="font-size:.68rem;font-weight:700;color:#666;margin-bottom:8px">이 오디언스</div>
-      <div style="font-size:1rem;font-weight:800;color:#e8530e;margin-bottom:8px">"지금 움직이는 사람"</div>
-      <div style="font-size:.85rem;color:#aaa;line-height:1.7">행동이 바뀐 사람만 골라냅니다<br>증권앱 끄고 금앱 깐 사람만<br>이건 우리만 찾을 수 있습니다</div>
+      <div style="font-size:.68rem;font-weight:700;color:#666;margin-bottom:8px">이 사람</div>
+      <div style="font-size:1rem;font-weight:800;color:#e8530e;margin-bottom:8px">"지금 금을 사고 있는 사람"</div>
+      <div style="font-size:.85rem;color:#aaa;line-height:1.7">증권앱 끄고 금앱 깐 사람만<br>지금 안전자산을 찾고 있습니다<br>이 사람은 여기서만 찾을 수 있습니다</div>
     </div>
   </div>
 </div>
 
-<div class="audience">
-  <div class="a-label">AUDIENCE CARD</div>
+<div class="card-section">
+  <div class="label">오늘의 오디언스</div>
   <h3>전쟁형 안전자산 이동자</h3>
-  <div class="audience-grid">
-    <div>
-      <div class="num">~85만 명</div>
-      <div class="a-sub">증권앱 끄고 금·달러앱 깐 사람</div>
-    </div>
-    <div>
-      <div class="sig">증권앱 -75%<br>금 투자앱 NEW<br>달러 환전 +5배</div>
-    </div>
-  </div>
+  <div class="count">~85만 명</div>
+  <div class="count-sub">증권앱 끄고 금·달러앱 깐 사람</div>
+  <div class="signals">증권앱 -75% · 금 투자앱 NEW · 달러 환전 +5배</div>
   <div class="recommend">💡 금 투자 플랫폼 · 달러 예금 · 안전자산 ETF · 종신보험</div>
 </div>
 
