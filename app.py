@@ -42,9 +42,10 @@ header, .stDeployButton, #MainMenu, footer, [data-testid="stToolbar"] { display:
 }
 .feed-card:hover { background:#fafafa; }
 
-.ch-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border-top:1px solid #e5e5e5; }
-.ch-grid .feed-card { border-top:none; border-right:1px solid #e5e5e5; }
-.ch-grid .feed-card:last-child { border-right:none; }
+.ch-grid { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding-bottom:8px; }
+.ch-grid::-webkit-scrollbar { height:4px; }
+.ch-grid::-webkit-scrollbar-thumb { background:#ddd; border-radius:2px; }
+.ch-grid .feed-card { min-width:220px; max-width:260px; flex-shrink:0; scroll-snap-align:start; }
 
 /* Hero image */
 .hero-img { width:100%; height:280px; object-fit:cover; margin-bottom:0; filter:grayscale(100%); }
@@ -155,8 +156,7 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 @media(max-width:768px) {
   .block-container { max-width:100%!important; }
-  .ch-grid { grid-template-columns:1fr!important; }
-  .ch-grid .feed-card { border-right:none!important; border-bottom:1px solid #e5e5e5; }
+  .ch-grid .feed-card { min-width:180px; max-width:220px; }
 }
 </style>
 """, unsafe_allow_html=True)
