@@ -26,7 +26,7 @@ ESSAYS = [
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["finance","tosspay","stock","realestate","themestock","carinsurance"]},
+    {"label":"금융","ids":["finance","tosspay","stock","realestate","themestock","carinsurance","safehaven_0420","금융_0420"]},
     {"label":"여행","ids":["travel","ktx"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},
