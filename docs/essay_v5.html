@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>오늘의 오디언스 — v5</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px 100px}
+/* 히어로 이미지 */
+.hero-img{width:calc(100% + 48px);margin:0 -24px;height:320px;object-fit:cover;filter:grayscale(100%)}
+/* 헤더 */
+.hero{padding:40px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#e8530e;letter-spacing:1px;margin-bottom:16px}
+.hero h1{font-size:1.8rem;font-weight:900;color:#000;line-height:1.4;letter-spacing:-0.5px}
+.hero .meta{font-size:.78rem;color:#bbb;margin-top:16px}
+/* 본문 */
+.body p{font-size:1.1rem;color:#333;line-height:2.1;margin-bottom:24px;letter-spacing:-0.2px}
+.body strong{color:#000;font-weight:800}
+.body .accent{color:#e8530e;font-weight:800}
+.body .muted{color:#999}
+.body .big{font-size:1.3rem;font-weight:800;color:#000;line-height:1.6;margin:40px 0}
+/* 인터뷰 */
+.body .quote{font-style:italic;padding:40px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin:32px 0}
+.body .quote p{color:#333}
+.body .quote strong{color:#000;font-style:normal}
+.body .quote .who{font-size:.82rem;color:#999;font-style:normal;margin-top:12px}
+/* 숫자 강조 */
+.num-row{display:flex;gap:16px;margin:32px 0}
+.num-box{flex:1;text-align:center;padding:24px 16px}
+.num-box.dark{background:#000}
+.num-box .label{font-size:.72rem;font-weight:700;margin-bottom:6px}
+.num-box .value{font-size:2rem;font-weight:900}
+/* 오디언스 카드 */
+.card{background:#000;padding:48px 32px;margin:48px -24px}
+.card .card-label{font-size:.62rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:20px}
+.card h3{color:#fff;font-size:1.4rem;font-weight:900;line-height:1.4;margin-bottom:12px}
+.card .count{font-size:2rem;font-weight:900;color:#e8530e;margin-bottom:4px}
+.card .count-sub{font-size:.75rem;color:#666;margin-bottom:28px}
+.card .signals{font-size:.88rem;color:#fff;font-weight:600;line-height:2}
+.card .recommend{color:#666;font-size:.72rem;margin-top:20px;border-top:1px solid #333;padding-top:16px}
+/* CTA */
+.cta{background:#e8530e;padding:20px;text-align:center;margin:0 -24px}
+.cta p{color:#fff;font-size:.88rem;font-weight:600}
+.footer{text-align:center;color:#ccc;font-size:.72rem;padding:48px 0 16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<img class="hero-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=400&fit=crop&q=80" alt="">
+
+<div class="hero">
+  <div class="tag">오늘의 오디언스 #19</div>
+  <h1>전세 포기하고<br>10억 이하 매매로 선회한 사람</h1>
+  <div class="meta">2026.04.21 · by IGAWorks</div>
+</div>
+
+<div class="body">
+
+<p>전세를 구하기가 어려워지고 있습니다.</p>
+
+<p>갱신이 안 되고, 보증금은 올라가고, 매물은 줄어듭니다.<br>그래서 이 사람들은 방향을 바꿨습니다.<br><strong>전세 대신 매매.</strong> 그것도 <span class="accent">10억 이하</span>로.</p>
+
+<p>서울 아파트 거래 상위 10곳 중 5곳이 노원구에 집중됐습니다.<br>이 사람들은 집을 사고 싶어서 산 게 아닙니다.<br><strong>전세를 못 구해서 산 겁니다.</strong></p>
+
+<div class="quote">
+  <p>"전세 만기인데 갱신이 안 돼요. 집주인이 2억을 더 내라고.<br>그 돈이면 <strong>노원에 9억짜리 아파트 살 수 있더라고요.</strong><br>전세금 빼서 그냥 사기로 했어요.<br><strong>전세 구하는 것보다 매매가 더 쉬웠어요.</strong>"</p>
+  <div class="who">— S씨, 36세, 맞벌이 1자녀</div>
+</div>
+
+<div class="big">이 사람은 이렇게 움직입니다.</div>
+
+<p><strong>부동산앱 사용이 바뀝니다.</strong><br>전세 매물을 보다가, 매물이 없어서 매매 쪽으로 넘어갑니다.<br>직방, 호갱노노 실행이 매일로 바뀝니다.</p>
+
+<p><strong>10억 이하 매물만 반복 조회합니다.</strong><br>노원, 도봉, 강북. 같은 단지를 3회 이상 봅니다.<br>비교가 아니라 확인입니다. 이미 마음을 정한 사람의 패턴.</p>
+
+<p><strong>대출앱을 깔고 한도를 조회합니다.</strong><br>뱅크샐러드, 핀다에서 주담대 시뮬레이션.<br>전세금으로 매매 자금을 마련하는 계산을 시작합니다.</p>
+
+<div class="num-row">
+  <div class="num-box dark">
+    <div class="label" style="color:#888">대출비교앱</div>
+    <div class="value" style="color:#e8530e">NEW</div>
+  </div>
+  <div class="num-box dark">
+    <div class="label" style="color:#888">부동산앱</div>
+    <div class="value" style="color:#e8530e">매일</div>
+  </div>
+</div>
+
+<p>전세난이 만든 <span class="accent">~42만 명</span>의 매매 전환자.<br>이 사람들은 부동산, 대출, 이사, 인테리어 상품에<br><strong>반응할 가능성이 높은 구간</strong>에 있습니다.</p>
+
+<div class="big">"부동산 관심자"한테 광고하면 늦습니다.</div>
+
+<p><span class="muted">기존엔 42만 명 전체에 같은 광고를 보냈습니다.</span><br><strong>전세를 못 구해서 10억 이하 매매로 선회한 사람.</strong><br>이 사람은 지금 집을 사고 있습니다.<br>이 사람은 여기서만 찾을 수 있습니다.</p>
+
+</div>
+
+<div class="card">
+  <div class="card-label">오늘의 오디언스</div>
+  <h3>전세 포기하고<br>10억 이하 매매로 선회한 사람</h3>
+  <div class="count">~42만 명</div>
+  <div class="count-sub">부동산앱 전세→매매 전환 + 대출앱 동시 활성</div>
+  <div class="signals">부동산앱 매일 실행 · 10억 이하 반복 조회 · 대출앱 NEW</div>
+  <div class="recommend">💡 부동산 중개 · 주담대 · 이사/인테리어 · 가전</div>
+</div>
+
+<div class="cta"><p>이 오디언스로 캠페인을 설계하고 싶다면 → 문의하기</p></div>
+
+<div class="footer">오늘의 오디언스 · by IGAWorks</div>
+
+</div>
+</body>
+</html>
