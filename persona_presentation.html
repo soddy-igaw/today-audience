@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>페르소나 확장 — 발표 자료</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-snap-type:y mandatory; overflow-y:scroll; }
+body { font-family:'Pretendard',sans-serif; background:#0a0a0a; color:#fff; }
+
+.slide {
+  min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+  padding:80px 10vw; scroll-snap-align:start; position:relative;
+}
+.slide-title { background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%); text-align:center; }
+.slide-title h1 { font-size:3.2rem; font-weight:900; line-height:1.3; margin-bottom:24px; }
+.slide-title h1 span { color:#6366f1; }
+.slide-title p { font-size:1.2rem; color:#888; }
+.big-num { font-size:6rem; font-weight:900; color:#6366f1; line-height:1; margin-bottom:16px; }
+.big-label { font-size:1.4rem; color:#aaa; font-weight:500; margin-bottom:48px; }
+.sec-label { font-size:0.75rem; font-weight:700; color:#6366f1; letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; }
+.sub { font-size:1.8rem; font-weight:800; line-height:1.4; margin-bottom:32px; }
+.sub span { color:#6366f1; }
+.body-text { font-size:1.1rem; color:#999; line-height:1.8; max-width:640px; margin-bottom:32px; }
+.stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:40px; max-width:800px; }
+.stat-card { background:#141414; border-radius:16px; padding:32px 24px; }
+.stat-card .num { font-size:2.4rem; font-weight:900; color:#fff; margin-bottom:4px; }
+.stat-card .num.purple { color:#6366f1; }
+.stat-card .label { font-size:0.85rem; color:#666; }
+.tbl { width:100%; max-width:900px; border-collapse:collapse; margin-bottom:32px; }
+.tbl th { text-align:left; font-size:0.75rem; color:#666; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:12px 16px; border-bottom:1px solid #222; }
+.tbl td { font-size:0.95rem; color:#ccc; padding:14px 16px; border-bottom:1px solid #1a1a1a; }
+.tbl td:first-child { color:#fff; font-weight:600; }
+.tbl tr:hover td { background:#141414; }
+.cmp { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:800px; margin-bottom:40px; }
+.cmp-box { border-radius:16px; padding:32px 24px; }
+.cmp-box.dim { background:#141414; }
+.cmp-box.bright { background:#1a1a3e; border:1px solid #6366f1; }
+.cmp-box h4 { font-size:0.75rem; color:#666; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; }
+.cmp-box.bright h4 { color:#6366f1; }
+.cmp-box p { font-size:0.95rem; color:#888; line-height:1.8; }
+.cmp-box.bright p { color:#ccc; }
+.flow { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:40px; }
+.flow-step { background:#141414; border-radius:12px; padding:16px 24px; text-align:center; }
+.flow-step .num { font-size:1.6rem; font-weight:900; color:#6366f1; }
+.flow-step .txt { font-size:0.8rem; color:#888; margin-top:4px; }
+.flow-arrow { color:#333; font-size:1.4rem; }
+.tags { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px; }
+.tag { background:#1a1a2e; color:#a5b4fc; font-size:0.85rem; font-weight:600; padding:8px 16px; border-radius:100px; }
+.insight { background:#141414; border-left:4px solid #6366f1; border-radius:0 12px 12px 0; padding:24px 28px; max-width:700px; margin-bottom:32px; }
+.insight p { font-size:1.05rem; color:#ccc; line-height:1.8; }
+.footer { text-align:center; padding:40px; color:#333; font-size:0.75rem; }
+.page-num { position:absolute; bottom:32px; right:10vw; font-size:0.75rem; color:#333; }
+@media(max-width:768px) {
+  .slide { padding:60px 24px; }
+  .big-num { font-size:3.5rem; }
+  .sub { font-size:1.3rem; }
+  .stat-grid { grid-template-columns:1fr; }
+  .cmp { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. Title -->
+<div class="slide slide-title">
+  <h1>DMP 페르소나 <span>확장</span><br>기획 및 검증 결과</h1>
+  <p>2026.04.21 · IGAWorks SCI · Soddy</p>
+  <div class="page-num">1</div>
+</div>
+
+<!-- 2. Problem -->
+<div class="slide">
+  <div class="sec-label">Problem</div>
+  <div class="sub">DMP는 시장의 <span>최대 90%</span>를 놓치고 있음</div>
+  <div class="body-text">DMP 페르소나는 앱 설치·사용 이력 기반으로 부여되어, 앱을 설치하지 않은 잠재고객은 포착하지 못함.</div>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="num">29%</div>
+      <div class="label">골프 유저<br>DMP 166만 / 시장 564만</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">4%</div>
+      <div class="label">캠핑족<br>DMP 31만 / 시장 700만+</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">7%</div>
+      <div class="label">반려동물인<br>DMP 102만 / 시장 1,546만</div>
+    </div>
+  </div>
+  <div class="page-num">2</div>
+</div>
+
+<!-- 3. Solution -->
+<div class="slide">
+  <div class="sec-label">Solution</div>
+  <div class="sub" style="font-size:2rem;">104개 DMP 페르소나를<br>쿠팡+DMP <span>커머스 시그널</span>로 선별</div>
+  <div class="body-text" style="font-size:1.2rem;">조회(VIEW)·장바구니(CART)·구매(PURCHASE) 데이터에서<br>페르소나별 행동 패턴을 분석하여 확장 가능 여부를 판정.</div>
+  <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);max-width:700px;margin-top:40px;">
+    <div class="stat-card" style="text-align:center;">
+      <div class="num purple" style="font-size:3rem;">8개</div>
+      <div class="label" style="font-size:1rem;">모델 확장<br>카테고리 조합 패턴</div>
+    </div>
+    <div class="stat-card" style="text-align:center;">
+      <div class="num purple" style="font-size:3rem;">16개</div>
+      <div class="label" style="font-size:1rem;">룰 베이스<br>키워드/카테고리 매칭</div>
+    </div>
+    <div class="stat-card" style="text-align:center;background:#1a1a3e;border:1px solid #6366f1;">
+      <div class="num purple" style="font-size:3rem;">24개</div>
+      <div class="label" style="font-size:1rem;color:#a5b4fc;">최종 커버<br>104개 중</div>
+    </div>
+  </div>
+  <div class="page-num">3</div>
+</div>
+
+<!-- 4. Result -->
+<div class="slide" style="text-align:center;">
+  <div class="sec-label">Result</div>
+  <div class="big-num" style="font-size:7rem;">24개</div>
+  <div class="big-label" style="font-size:1.6rem;">104개 DMP 페르소나 중 커머스 시그널로 커버</div>
+  <div class="body-text" style="font-size:1.2rem;text-align:center;max-width:500px;margin:24px auto 0;">모델 8개: 카테고리 조합 패턴으로 잠재 유저 식별<br>룰 16개: 키워드/카테고리 행동 조건으로 확장<br>나머지 80개: 커머스 데이터로 구분 불가</div>
+  <div class="page-num">4</div>
+</div>
+
+<!-- 10. Not Covered -->
+<div class="slide">
+  <div class="sec-label">Not Covered</div>
+  <div class="sub" style="font-size:2rem;">80개는 왜 <span>안 되는가</span></div>
+  <div class="body-text" style="font-size:1.2rem;">커머스 데이터는 "어떤 상품을 조회하고 장바구니에 담았는가"만 파악 가능.<br>아래 유형은 구매 행동으로 구분할 수 없음.</div>
+  <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="stat-card"><div class="num" style="font-size:2.2rem;">10</div><div class="label" style="font-size:0.95rem;">직업/신분</div></div>
+    <div class="stat-card"><div class="num" style="font-size:2.2rem;">6</div><div class="label" style="font-size:0.95rem;">금융/투자</div></div>
+    <div class="stat-card"><div class="num" style="font-size:2.2rem;">8</div><div class="label" style="font-size:0.95rem;">콘텐츠/미디어</div></div>
+    <div class="stat-card"><div class="num" style="font-size:2.2rem;">6</div><div class="label" style="font-size:0.95rem;">범용 라벨</div></div>
+  </div>
+  <div class="body-text" style="color:#888;font-size:1.05rem;margin-top:16px;">+ 연령/학생 4 · 겹침/대체 6 · 앱 전용 14 · 모델 탈락 14 · 기타 12</div>
+  <div class="page-num">5</div>
+</div>
+
+
+<!-- 5. Why Model — 골프 사례 -->
+<div class="slide">
+  <div class="sec-label">Why Model</div>
+  <div class="sub" style="font-size:2.2rem;">DMP 골프유저 중 <span>74%</span>는<br>쿠팡에서 골프용품을 한 번도 안 봄</div>
+  <div class="body-text" style="font-size:1.3rem;margin-bottom:24px;">단순 룰("골프용품 N회 조회")로는 이 유저를 찾을 수 없음.<br><strong>모델은 여러 카테고리의 조합 패턴으로 식별.</strong></div>
+  <div class="tags" style="gap:14px;">
+    <div class="tag" style="font-size:1rem;padding:10px 20px;">골프의류/잡화</div>
+    <div class="tag" style="font-size:1rem;padding:10px 20px;">홍삼/건강식품</div>
+    <div class="tag" style="font-size:1rem;padding:10px 20px;">캠핑가구/용품</div>
+    <div class="tag" style="font-size:1rem;padding:10px 20px;">자동차 시트/매트</div>
+  </div>
+  <div class="insight" style="margin-top:28px;">
+    <p style="font-size:1.2rem;">중장년 건강 관심 + 아웃도어 + 자동차 보유<br>→ <strong>이 조합이 뚜렷하면 골프 유저일 가능성이 높음</strong><br><br><span style="color:#6366f1;font-size:1.1rem;">골프용품을 안 봐도 찾을 수 있는 이유 = 모델</span></p>
+  </div>
+  <div class="page-num">6</div>
+</div>
+
+<!-- 6. Cut 기준 — 어디까지 확장할 것인가 -->
+<div class="slide">
+  <div class="sec-label">어디까지 확장할 것인가</div>
+  <div class="sub">정확도가 유지되면서<br><span>적정 모수</span>를 확보하는 구간 선정</div>
+  <div class="body-text">모델이 "해당 유저일 확률"을 매기고, 확률 상위 구간별로 정확도와 모수를 비교하여 최적 구간을 선정.</div>
+  <table class="tbl" style="max-width:700px;">
+    <tr><th>기준</th><th>조건</th></tr>
+    <tr><td style="color:#6366f1;">정확도</td><td>적중률 30% 이상 또는 랜덤 대비 10배 이상</td></tr>
+    <tr><td style="color:#6366f1;">시장 검증</td><td>외부 통계 대비 과확장 여부 확인</td></tr>
+    <tr><td style="color:#6366f1;">데모 검증</td><td>확장 유저의 연령/성별이 실제 시장과 일치하는지 확인</td></tr>
+  </table>
+  <div class="body-text" style="margin-top:24px;">골프 유저 — 구간별 비교:</div>
+  <table class="tbl" style="max-width:700px;">
+    <tr><th>구간</th><th>적중률</th><th>랜덤 대비</th><th>총 모수</th><th>시장 대비</th></tr>
+    <tr><td>1%</td><td>100.0%</td><td>19.4배</td><td>183만</td><td>32%</td></tr>
+    <tr class="highlight"><td>5% ← 선정</td><td>32.9%</td><td>6.4배</td><td>236만</td><td>42%</td></tr>
+    <tr><td>10%</td><td>19.6%</td><td>3.8배</td><td>306만</td><td>54%</td></tr>
+  </table>
+  <div class="body-text" style="color:#555;font-size:0.85rem;margin-top:16px;">→ 5% 구간: 적중률 33% 유지, 시장 564만의 42%로 적정. 10%부터 정확도 급락.</div>
+  <div class="page-num">7</div>
+</div>
+
+<!-- 7. 골프 확장 결과 -->
+<div class="slide">
+  <div class="sec-label">골프 유저 — 확장 결과</div>
+  <div class="sub" style="font-size:2rem;">DMP <span>166만</span> → 확장 후 <span>236만 (+42%)</span></div>
+  <div class="cmp" style="margin-top:24px;">
+    <div class="cmp-box dim" style="padding:32px;">
+      <h4 style="font-size:0.9rem;">Before</h4>
+      <p style="font-size:2.8rem;font-weight:900;color:#fff;margin-bottom:8px;">166만</p>
+      <p style="font-size:1.1rem;">DMP만으로 시장의 29%</p>
+    </div>
+    <div class="cmp-box bright" style="padding:32px;">
+      <h4 style="font-size:0.9rem;">After</h4>
+      <p style="font-size:2.8rem;font-weight:900;color:#6366f1;margin-bottom:8px;">236만</p>
+      <p style="font-size:1.1rem;">시장의 42%로 확장<br>랜덤 대비 6.4배 정확도</p>
+    </div>
+  </div>
+  <div class="stat-grid" style="grid-template-columns:repeat(2,1fr);max-width:700px;margin-top:28px;">
+    <div class="stat-card" style="padding:28px;text-align:center;">
+      <div style="font-size:1rem;color:#666;margin-bottom:8px;">시장 커버리지</div>
+      <div style="font-size:3rem;font-weight:900;color:#6366f1;">42%</div>
+      <div style="font-size:1.1rem;color:#ccc;margin-top:8px;">골프 인구 564만 대비<br><span style="color:#888;font-size:0.9rem;">(레저백서 2023)</span></div>
+    </div>
+    <div class="stat-card" style="padding:28px;text-align:center;">
+      <div style="font-size:1rem;color:#666;margin-bottom:8px;">데모 검증</div>
+      <div style="font-size:3rem;font-weight:900;color:#6366f1;">69%</div>
+      <div style="font-size:1.1rem;color:#ccc;margin-top:8px;">확장 유저 중 40~50대 남성<br><span style="color:#888;font-size:0.9rem;">실제 골프 인구 남성 66%와 일치</span></div>
+    </div>
+  </div>
+  <div class="page-num">8</div>
+</div>
+
+<!-- 7. Model 8개 -->
+<div class="slide">
+  <div class="sec-label">Model — 8개 확정</div>
+  <div class="sub">페르소나별 <span>평균 70%</span> 모수 확장</div>
+  <table class="tbl">
+    <tr><th>페르소나</th><th>DMP</th><th>+확장</th><th>총 모수</th><th>확장률</th><th>랜덤 대비 정확도</th></tr>
+    <tr><td>가전 구매 예정자</td><td>15만</td><td>+35만</td><td>50만</td><td>+233%</td><td>12.2배</td></tr>
+    <tr><td>캠핑족</td><td>31만</td><td>+34만</td><td>65만</td><td>+110%</td><td>16.0배</td></tr>
+    <tr><td>반려동물인</td><td>102만</td><td>+77만</td><td>179만</td><td>+75%</td><td>9.7배</td></tr>
+    <tr><td>골프 유저</td><td>166만</td><td>+70만</td><td>236만</td><td>+42%</td><td>6.4배</td></tr>
+    <tr><td>5세미만 유아부모</td><td>156만</td><td>+59만</td><td>215만</td><td>+38%</td><td>6.8배</td></tr>
+    <tr><td>신생아 부모</td><td>52만</td><td>+13만</td><td>65만</td><td>+25%</td><td>14.9배</td></tr>
+    <tr><td>초등학생 학부모</td><td>214만</td><td>+53만</td><td>267만</td><td>+25%</td><td>5.0배</td></tr>
+    <tr><td>명품 소비족</td><td>128만</td><td>+15만</td><td>144만</td><td>+12%</td><td>6.4배</td></tr>
+  </table>
+  <div class="page-num">9</div>
+</div>
+
+<!-- 6. Rule — 유형 + 예시 -->
+<div class="slide">
+  <div class="sec-label">Rule Base — 16개 확정</div>
+  <div class="sub">모델로 안 되는 16개는<br><span>페르소나 의미에 맞는 행동 조건</span>으로</div>
+  <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);max-width:100%;gap:16px;">
+    <div class="stat-card" style="padding:28px;">
+      <div class="num purple" style="font-size:1.8rem;margin-bottom:12px;">① 반복 소비</div>
+      <div style="font-size:1.1rem;color:#ccc;line-height:1.7;">매달 사니까<br><strong style="color:#6366f1;font-size:1.2rem;">→ 여러 달에 걸쳐<br>담거나 산 사람</strong></div>
+      <div style="font-size:0.95rem;color:#555;margin-top:12px;">건기식, 다이어트, 간편요리</div>
+    </div>
+    <div class="stat-card" style="padding:28px;">
+      <div class="num purple" style="font-size:1.8rem;margin-bottom:12px;">② 최근 관심</div>
+      <div style="font-size:1.1rem;color:#ccc;line-height:1.7;">시점이 중요하니까<br><strong style="color:#6366f1;font-size:1.2rem;">→ 최근 3개월<br>행동만</strong></div>
+      <div style="font-size:0.95rem;color:#555;margin-top:12px;">해외여행, 유아용품</div>
+    </div>
+    <div class="stat-card" style="padding:28px;">
+      <div class="num purple" style="font-size:1.8rem;margin-bottom:12px;">③ 탐색/비교</div>
+      <div style="font-size:1.1rem;color:#ccc;line-height:1.7;">오래 고민하니까<br><strong style="color:#6366f1;font-size:1.2rem;">→ 6개월 내<br>복수 상품 비교</strong></div>
+      <div style="font-size:0.95rem;color:#555;margin-top:12px;">디지털, 국산차, 콘솔, 러닝화</div>
+    </div>
+    <div class="stat-card" style="padding:28px;">
+      <div class="num purple" style="font-size:1.8rem;margin-bottom:12px;">④ 라이프스타일</div>
+      <div style="font-size:1.1rem;color:#ccc;line-height:1.7;">꾸준한 관심이니까<br><strong style="color:#6366f1;font-size:1.2rem;">→ 6개월<br>누적 행동</strong></div>
+      <div style="font-size:0.95rem;color:#555;margin-top:12px;">인테리어, 패셔니스타 등 7개</div>
+    </div>
+  </div>
+  <div class="cmp" style="margin-top:8px;gap:20px;">
+    <div class="cmp-box bright" style="padding:28px;">
+      <h4 style="font-size:0.85rem;">예: 건강기능식품 — 반복 소비</h4>
+      <p style="font-size:0.95rem;color:#a5b4fc;margin-bottom:8px;">쿠팡+DMP 6개월 | 홍삼, 비타민, 유산균 등</p>
+      <p style="font-size:1.05rem;color:#fff;">5월 비타민 장바구니 + 8월 홍삼 구매<br>= <strong style="color:#6366f1;">다른 달에 담거나 산 행동 → 반복 소비자</strong></p>
+      <p style="font-size:1.4rem;font-weight:900;color:#6366f1;margin-top:12px;">121만 → 304만 (+151%)</p>
+    </div>
+    <div class="cmp-box bright" style="padding:28px;">
+      <h4 style="font-size:0.85rem;">예: 해외여행 예정자 — 최근 관심</h4>
+      <p style="font-size:0.95rem;color:#a5b4fc;margin-bottom:8px;">DMP 최근 3개월 | 여권, 해외유심, 캐리어 등</p>
+      <p style="font-size:1.05rem;color:#fff;">여권케이스 조회 + 해외유심 장바구니<br>= <strong style="color:#6366f1;">준비물 2개 이상 행동 → 여행 준비 중</strong></p>
+      <p style="font-size:1.4rem;font-weight:900;color:#6366f1;margin-top:12px;">51만 → 173만 (+237%)</p>
+    </div>
+  </div>
+  <div class="page-num">10</div>
+</div>
+
+
+<!-- 9-1. Rule 16개 상세 -->
+<div class="slide" style="padding:60px 5vw;">
+  <div class="sec-label">Rule Base — 16개 상세</div>
+  <div class="sub" style="font-size:1.8rem;">페르소나별 키워드·조건·모수 <span style="font-size:1.4rem;margin-left:16px;">최대 +585% 확장</span></div>
+  <table class="tbl" style="font-size:0.8rem;width:100%;max-width:100%;">
+    <tr><th>#</th><th>유형</th><th>페르소나</th><th>키워드/카테고리</th><th>기간</th><th>조건</th><th>DMP</th><th>총 모수</th><th>확장률</th></tr>
+    <tr><td>1</td><td>반복 소비</td><td>건강기능식품 관심</td><td>홍삼/비타민/오메가3/유산균</td><td>6개월</td><td>6개월 중 2개월 이상 장바구니/구매</td><td>121만</td><td>304만</td><td>+151%</td></tr>
+    <tr><td>2</td><td>반복 소비</td><td>다이어트 관심</td><td>닭가슴살/곤약/체중계</td><td>6개월</td><td>6개월 중 2개월 이상 장바구니/구매</td><td>150만</td><td>310만</td><td>+106%</td></tr>
+    <tr><td>3</td><td>반복 소비</td><td>간편 요리 추구자</td><td>밀키트/즉석밥/레토르트</td><td>6개월</td><td>6개월 중 2개월 이상 장바구니/구매</td><td>259만</td><td>276만</td><td>+7%</td></tr>
+    <tr><td>4</td><td>최근 관심</td><td>해외여행 예정자</td><td>여권/해외유심/로밍/캐리어</td><td>DMP 3개월</td><td>상품 2종 이상 & 행동≥2</td><td>51만</td><td>173만</td><td>+237%</td></tr>
+    <tr><td>5</td><td>최근 관심</td><td>유아용품 구매 예정자</td><td>카테고리: 기저귀/이유식/카시트/젖병</td><td>DMP 3개월</td><td>상품 2종 이상 & cart/purchase≥1</td><td>16만</td><td>20만</td><td>+27%</td></tr>
+    <tr><td>6</td><td>탐색/비교</td><td>디지털 얼리어답터</td><td>갤럭시S/아이폰/에어팟</td><td>6개월</td><td>상품 3종 이상 & cart/purchase≥2</td><td>100만</td><td>162만</td><td>+62%</td></tr>
+    <tr><td>7</td><td>탐색/비교</td><td>국산차 오너</td><td>엔진오일/타이어/와이퍼</td><td>6개월</td><td>상품 2종 이상 & cart/purchase≥3</td><td>120만</td><td>177만</td><td>+47%</td></tr>
+    <tr><td>8</td><td>탐색/비교</td><td>콘솔 게임 유저</td><td>닌텐도/스위치/xbox</td><td>6개월</td><td>상품 2종 이상 & cart/purchase≥1</td><td>31만</td><td>78만</td><td>+152%</td></tr>
+    <tr><td>9</td><td>탐색/비교</td><td>러닝화 관심자</td><td>러닝화/런닝화/조깅화</td><td>6개월</td><td>cart/purchase≥2</td><td>6.6만</td><td>45만</td><td>+585%</td></tr>
+    <tr><td>10</td><td>라이프스타일</td><td>인테리어 관심</td><td>커튼/블라인드/벽지/조명</td><td>6개월</td><td>상품 2종 이상 & cart/purchase≥1</td><td>231만</td><td>371만</td><td>+60%</td></tr>
+    <tr><td>11</td><td>라이프스타일</td><td>패셔니스타</td><td>명품/디자이너/브랜드패션</td><td>6개월</td><td>상품 3종 이상 & cart/purchase≥2</td><td>98만</td><td>133만</td><td>+36%</td></tr>
+    <tr><td>12</td><td>라이프스타일</td><td>외모뷰티 관심</td><td>스킨케어/세럼/파운데이션</td><td>6개월</td><td>상품 3종 이상 & cart/purchase≥2</td><td>102만</td><td>320만</td><td>+214%</td></tr>
+    <tr><td>13</td><td>라이프스타일</td><td>요리 관심 유저</td><td>프라이팬/냄비/칼/도마</td><td>6개월</td><td>cart/purchase≥5</td><td>108만</td><td>296만</td><td>+174%</td></tr>
+    <tr><td>14</td><td>라이프스타일</td><td>아웃도어 액티비티</td><td>등산화/트레킹폴/고어텍스</td><td>6개월</td><td>상품 2종 이상 & view≥2</td><td>334만</td><td>483만</td><td>+45%</td></tr>
+    <tr><td>15</td><td>라이프스타일</td><td>가드닝 관심</td><td>화분/원예/모종/텃밭</td><td>6개월</td><td>상품 2종 이상 & cart/purchase≥1</td><td>41만</td><td>113만</td><td>+173%</td></tr>
+    <tr><td>16</td><td>라이프스타일</td><td>커피 애호가</td><td>원두/커피머신/드립커피</td><td>6개월</td><td>상품 2종 이상 & cart/purchase≥1</td><td>93만</td><td>160만</td><td>+72%</td></tr>
+  </table>
+  <div class="page-num">11</div>
+</div>
+
+<!-- 10. Summary -->
+<div class="slide slide-title">
+  <div class="sec-label">Summary</div>
+  <h1 style="font-size:2.6rem;">104개 중 <span>24개</span> 커버<br>모델 평균 <span>70%</span> 확장 · 최대 <span>16배</span> 정확도<br>룰 최대 <span>+585%</span> 확장</h1>
+  <p style="margin-top:32px;color:#666;">상세 문서: 페르소나확장_기획서_v1.md · 부록 A~J</p>
+  <div class="page-num">12</div>
+</div>
+
+<div class="footer">© 2026 IGAWorks SCI · Soddy</div>
+
+</body>
+</html>
