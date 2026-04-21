@@ -6,9 +6,10 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"realestate_0421","tag":"부동산","title":"전세 포기하고 10억 이하 매매로 선회한 사람","sub":"전세난에 10억 이하 매매로 전환하는 사람","stat":"~42만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"safehaven_0420","tag":"증권","title":"전쟁 뉴스에 증시를 떠나 안전자산으로 이동하는 사람","sub":"KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람","stat":"~85만","stat_label":"증권앱 이탈+안전자산앱 동시 활성","date":"2026.04.20","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
     {"id":"금융_0420","tag":"금융","title":"고정금리 만료 앞두고 갈아타기 준비하는 사람","sub":"2~3년 전 고정금리 대출자들이 만료 시점에서 갈아타기를 검토 중. 금융·핀테크 광고주의 골든타임.","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.04.20","img":"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80"},
-    {"id":"realestate","tag":"부동산","title":"전세→매매 전환 중, 차 담보로 부족분을 메우는 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~34만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
+    {"id":"realestate","realestate_0421","tag":"부동산","title":"전세→매매 전환 중, 차 담보로 부족분을 메우는 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~34만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"wegovy","tag":"헬스","title":"다이어트약 처방 후 운동을 끊은 사람","sub":"GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다","stat":"~18만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80h=400https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80fit=crophttps://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80q=80"},
     {"id":"car","tag":"자동차","title":"전기차에서 하이브리드로 선택지를 바꾼 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~80만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80"},
     {"id":"game","tag":"게임","title":"신작 발표 후 게이밍 하드웨어 구매 직전인 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~140만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
@@ -26,7 +27,7 @@ ESSAYS = [
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["finance","tosspay","stock","realestate","themestock","carinsurance","safehaven_0420","금융_0420"]},
+    {"label":"금융","ids":["finance","tosspay","stock","realestate","realestate_0421","themestock","carinsurance","safehaven_0420","금융_0420"]},
     {"label":"여행","ids":["travel","ktx"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},

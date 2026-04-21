@@ -164,6 +164,16 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "realestate_0421", "emoji": "🏠", "tag": "부동산", "number": 19,
+        "title": "전세 포기하고\n10억 이하 매매로 선회한 사람",
+        "sub": "전세난에 10억 이하 매매로 전환하는 사람",
+        "stat": "~42만",
+        "stat_label": "부동산앱 전세→매매 전환 유저",
+        "date": "2026.04.21",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "safehaven_0420", "emoji": "🛡️", "tag": "증권", "number": 17,
         "title": "전쟁 뉴스에 증시를 떠나\n안전자산으로 이동하는 사람",
         "sub": "KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람",
@@ -350,6 +360,11 @@ elif st.session_state.view == "detail_금융_0420":
     if st.button("← 뒤로", key="back_금융_0420"):
         go_feed()
     st.markdown(load_essay("금융_0420"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_realestate_0421":
+    if st.button("← 뒤로", key="back_re0421"):
+        go_feed()
+    st.markdown(load_essay("realestate_0421"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_safehaven_0420":
     if st.button("← 뒤로", key="back_sh"):
