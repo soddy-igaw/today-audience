@@ -164,6 +164,16 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "헬스_0421", "emoji": "💪", "tag": "헬스", "number": 19,
+        "title": "헬스장에서 홈트로 갈아탄 사람",
+        "sub": "미세먼지와 비용 부담으로 홈트레이닝을 시작한 사람들. 운동 루틴은 유지하되 장소만 바꾼 타겟.",
+        "stat": "",
+        "stat_label": "헬스 오디언스 (DMP)",
+        "date": "2026.04.21",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "safehaven_0420", "emoji": "🛡️", "tag": "증권", "number": 17,
         "title": "전쟁 뉴스에 증시를 떠나\n안전자산으로 이동하는 사람",
         "sub": "KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람",
@@ -360,6 +370,11 @@ elif st.session_state.view == "detail_tosspay":
     if st.button("← 뒤로", key="back_tp"):
         go_feed()
     st.markdown(load_essay("tosspay"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_헬스_0421":
+    if st.button("← 뒤로", key="back_헬스_0421"):
+        go_feed()
+    st.markdown(load_essay("헬스_0421"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
