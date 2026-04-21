@@ -41,18 +41,21 @@ strong{color:#000;font-weight:800}
 .card .count{font-size:2rem;font-weight:900;color:#e8530e;margin-bottom:4px}
 .card .count-sub{font-size:.75rem;color:#666;margin-bottom:28px}
 .card .signals{font-size:.88rem;color:#fff;font-weight:600;line-height:2}
-/* 업종별 카드 */
+/* 업종별 아코디언 */
 .biz-section{margin-top:48px;padding-top:32px;border-top:1px solid #eee}
 .biz-section .title{font-size:.88rem;font-weight:800;color:#000;margin-bottom:20px}
-.biz-scroll{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.biz-scroll::-webkit-scrollbar{height:0}
-.biz-card{min-width:280px;max-width:300px;flex-shrink:0;scroll-snap-align:start;padding:32px 28px;border-right:1px solid #f0f0f0}
-.biz-card:last-child{border-right:none}
-.biz-card .biz-icon{font-size:1.6rem;margin-bottom:12px}
-.biz-card .biz-for{font-size:.65rem;font-weight:700;color:#e8530e;letter-spacing:1px;margin-bottom:10px}
-.biz-card h4{font-size:1.05rem;font-weight:900;color:#000;line-height:1.4;margin-bottom:8px}
-.biz-card .biz-desc{font-size:.88rem;color:#666;line-height:1.7;margin-bottom:16px}
-.biz-card .biz-action{font-size:.82rem;font-weight:700;color:#e8530e}
+.biz-list{display:flex;flex-direction:column;gap:0}
+.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}
+.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}
+.biz-header .biz-icon{font-size:1.4rem}
+.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}
+.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}
+.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:300px}
+.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}
+.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}
+.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}
 .cta{background:#e8530e;padding:20px;text-align:center;margin:0 -24px}
 .cta p{color:#fff;font-size:.88rem;font-weight:600}
 .footer{text-align:center;color:#ccc;font-size:.72rem;padding:48px 0 16px}
@@ -114,34 +117,54 @@ strong{color:#000;font-weight:800}
 
 <div class="biz-section">
   <div class="title">이 오디언스, 당신의 업종이라면?</div>
-  <div class="biz-scroll">
-    <div class="biz-card">
-      <div class="biz-icon">🏦</div>
-      <div class="biz-for">캐피탈 · 자동차 담보대출</div>
-      <h4>주담대 부족분을<br>차 담보로 메우려는 사람</h4>
-      <div class="biz-desc">DSR 한도가 부족한 이 사람은 KB차차차에서 내 차 시세를 조회합니다. 차를 팔 생각은 없지만, 담보로 2천만원을 만들 수 있다는 걸 알면 바로 움직입니다.</div>
-      <div class="biz-action">→ "내 차로 2천만원, 주담대 부족분 해결"</div>
+  <div class="biz-list">
+    <div class="biz-item" onclick="this.classList.toggle('open')">
+      <div class="biz-header">
+        <span class="biz-icon">🏦</span>
+        <span class="biz-for">캐피탈 · 자동차 담보대출</span>
+        <span class="biz-arrow">+</span>
+      </div>
+      <div class="biz-body">
+        <h4>주담대 부족분을 차 담보로 메우려는 사람</h4>
+        <p>DSR 한도가 부족한 이 사람은 KB차차차에서 내 차 시세를 조회합니다. 차를 팔 생각은 없지만, 담보로 2천만원을 만들 수 있다는 걸 알면 바로 움직입니다.</p>
+        <div class="biz-action">→ "내 차로 2천만원, 주담대 부족분 해결"</div>
+      </div>
     </div>
-    <div class="biz-card">
-      <div class="biz-icon">🏠</div>
-      <div class="biz-for">부동산 중개 플랫폼</div>
-      <h4>10억 이하 매물을<br>매일 반복 조회하는 사람</h4>
-      <div class="biz-desc">노원, 도봉, 강북. 같은 단지를 3회 이상 봅니다. 비교가 아니라 확인입니다. 이미 마음을 정한 사람의 패턴.</div>
-      <div class="biz-action">→ "전세금으로 살 수 있는 매물, 지금 확인하세요"</div>
+    <div class="biz-item" onclick="this.classList.toggle('open')">
+      <div class="biz-header">
+        <span class="biz-icon">🏠</span>
+        <span class="biz-for">부동산 중개 플랫폼</span>
+        <span class="biz-arrow">+</span>
+      </div>
+      <div class="biz-body">
+        <h4>10억 이하 매물을 매일 반복 조회하는 사람</h4>
+        <p>노원, 도봉, 강북. 같은 단지를 3회 이상 봅니다. 비교가 아니라 확인입니다. 이미 마음을 정한 사람의 패턴.</p>
+        <div class="biz-action">→ "전세금으로 살 수 있는 매물, 지금 확인하세요"</div>
+      </div>
     </div>
-    <div class="biz-card">
-      <div class="biz-icon">🚚</div>
-      <div class="biz-for">이사 · 인테리어</div>
-      <h4>매매 계약 직후<br>이사를 준비하는 사람</h4>
-      <div class="biz-desc">매매 계약 후 2주 내 이사앱 설치가 시작됩니다. 동시에 오늘의집, 쿠팡에서 가전/가구 조회. 입주 준비 지출이 한꺼번에 터집니다.</div>
-      <div class="biz-action">→ "계약 축하합니다. 이사 견적 3분 만에 비교"</div>
+    <div class="biz-item" onclick="this.classList.toggle('open')">
+      <div class="biz-header">
+        <span class="biz-icon">🚚</span>
+        <span class="biz-for">이사 · 인테리어</span>
+        <span class="biz-arrow">+</span>
+      </div>
+      <div class="biz-body">
+        <h4>매매 계약 직후 이사를 준비하는 사람</h4>
+        <p>매매 계약 후 2주 내 이사앱 설치가 시작됩니다. 동시에 오늘의집, 쿠팡에서 가전/가구 조회. 입주 준비 지출이 한꺼번에 터집니다.</p>
+        <div class="biz-action">→ "계약 축하합니다. 이사 견적 3분 만에 비교"</div>
+      </div>
     </div>
-    <div class="biz-card">
-      <div class="biz-icon">📦</div>
-      <div class="biz-for">가전 · 가구</div>
-      <h4>새 집에 들어가는 사람</h4>
-      <div class="biz-desc">입주 전 가전 패키지, 가구 세트를 한꺼번에 구매합니다. 객단가 300만원+. 이사 시점에 맞춘 타이밍이 핵심.</div>
-      <div class="biz-action">→ "입주 가전 패키지, 지금 견적 받으세요"</div>
+    <div class="biz-item" onclick="this.classList.toggle('open')">
+      <div class="biz-header">
+        <span class="biz-icon">📦</span>
+        <span class="biz-for">가전 · 가구</span>
+        <span class="biz-arrow">+</span>
+      </div>
+      <div class="biz-body">
+        <h4>새 집에 들어가는 사람</h4>
+        <p>입주 전 가전 패키지, 가구 세트를 한꺼번에 구매합니다. 객단가 300만원+. 이사 시점에 맞춘 타이밍이 핵심.</p>
+        <div class="biz-action">→ "입주 가전 패키지, 지금 견적 받으세요"</div>
+      </div>
     </div>
   </div>
 </div>
