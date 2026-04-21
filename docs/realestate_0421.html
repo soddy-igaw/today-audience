@@ -108,18 +108,35 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 </div>
 </div>
 <div class="section">
-<div class="section-label">이 사람한테 광고하면</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="padding:24px;background:#fafafa">
-<div style="font-size:.68rem;font-weight:700;color:#bbb;margin-bottom:8px">기존</div>
-<div style="font-size:1rem;font-weight:800;color:#ccc;margin-bottom:8px">"부동산 관심자"</div>
-<div style="font-size:.85rem;color:#999;line-height:1.7">구경꾼이 섞여 있습니다<br>42만 명 전체에 같은 광고<br>다른 데서도 같은 사람한테 보냅니다</div>
+<div class="section-label">이 오디언스, 당신의 업종이라면?</div>
+<style>
+.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}
+.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}
+.biz-header .biz-icon{font-size:1.4rem}
+.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}
+.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}
+.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:300px}
+.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}
+.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}
+.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}
+</style>
+<div class="biz-item" onclick="this.classList.toggle('open')">
+<div class="biz-header"><span class="biz-icon">🏦</span><span class="biz-for">캐피탈 · 자동차 담보대출</span><span class="biz-arrow">+</span></div>
+<div class="biz-body"><h4>주담대 부족분을 차 담보로 메우려는 사람</h4><p>DSR 한도가 부족한 이 사람은 KB차차차에서 내 차 시세를 조회합니다. 담보로 2천만원을 만들 수 있다는 걸 알면 바로 움직입니다.</p><div class="biz-action">→ "내 차로 2천만원, 주담대 부족분 해결"</div></div>
 </div>
-<div style="padding:24px;background:#000">
-<div style="font-size:.68rem;font-weight:700;color:#666;margin-bottom:8px">이 사람</div>
-<div style="font-size:1rem;font-weight:800;color:#e8530e;margin-bottom:8px">"전세 못 구해서 사는 사람"</div>
-<div style="font-size:.85rem;color:#aaa;line-height:1.7">전세→매매 전환이 확인된 사람만<br>10억 이하 매물 반복 조회 중<br>이 사람은 여기서만 찾을 수 있습니다</div>
+<div class="biz-item" onclick="this.classList.toggle('open')">
+<div class="biz-header"><span class="biz-icon">🏠</span><span class="biz-for">부동산 중개 플랫폼</span><span class="biz-arrow">+</span></div>
+<div class="biz-body"><h4>10억 이하 매물을 매일 반복 조회하는 사람</h4><p>노원, 도봉, 강북. 같은 단지를 3회 이상 봅니다. 이미 마음을 정한 사람의 패턴.</p><div class="biz-action">→ "전세금으로 살 수 있는 매물, 지금 확인하세요"</div></div>
 </div>
+<div class="biz-item" onclick="this.classList.toggle('open')">
+<div class="biz-header"><span class="biz-icon">🚚</span><span class="biz-for">이사 · 인테리어</span><span class="biz-arrow">+</span></div>
+<div class="biz-body"><h4>매매 계약 직후 이사를 준비하는 사람</h4><p>계약 후 2주 내 이사앱 설치. 동시에 오늘의집, 쿠팡에서 가전/가구 조회. 입주 준비 지출이 한꺼번에 터집니다.</p><div class="biz-action">→ "계약 축하합니다. 이사 견적 3분 만에 비교"</div></div>
+</div>
+<div class="biz-item" onclick="this.classList.toggle('open')">
+<div class="biz-header"><span class="biz-icon">📦</span><span class="biz-for">가전 · 가구</span><span class="biz-arrow">+</span></div>
+<div class="biz-body"><h4>새 집에 들어가는 사람</h4><p>입주 전 가전 패키지, 가구 세트를 한꺼번에 구매. 객단가 300만원+. 이사 시점에 맞춘 타이밍이 핵심.</p><div class="biz-action">→ "입주 가전 패키지, 지금 견적 받으세요"</div></div>
 </div>
 </div>
 <div class="insight-box">
