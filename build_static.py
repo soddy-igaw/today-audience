@@ -213,7 +213,16 @@ for e in ESSAYS:
     hue = hue_map.get(tag, "0")
     img_filter = f"grayscale(80%) sepia(20%) hue-rotate({hue}deg)" if hue != "0" else "grayscale(100%)"
     hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" style="filter:{img_filter}" alt="">\n' if img_url else ""
-    body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{related_html}'
+    # Next audience preview
+    current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
+    next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
+    next_html = f"""
+<div style="padding:24px 0;border-top:1px solid #f0f0f0;text-align:center">
+<div style="font-size:.68rem;color:#999;margin-bottom:6px">다음 오디언스</div>
+<a href="{next_essay['id']}.html" style="font-size:.95rem;font-weight:800;color:#000;text-decoration:none">{next_essay['title']}</a>
+</div>"""
+
+    body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
