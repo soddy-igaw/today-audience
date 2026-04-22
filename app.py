@@ -234,6 +234,16 @@ ESSAYS = [
         "img": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80",
     },
     {
+        "id": "game_0422", "emoji": "🎮", "tag": "게임", "number": 22,
+        "title": "GTA6 출시일 확정 후\n게이밍 PC를 사전예약하는 사람",
+        "sub": "게임 하나 때문에 200만원 쓰는 사람",
+        "stat": "~140만",
+        "stat_label": "게임앱+쇼핑앱 동시 활성",
+        "date": "2026.04.22",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "game", "emoji": "🎮", "tag": "게임", "number": 9,
         "title": "신작 발표 후\n게이밍 하드웨어 구매 직전인 사람",
         "sub": "신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다",
@@ -405,6 +415,11 @@ elif st.session_state.view == "detail_car":
     if st.button("← 뒤로", key="back_car"):
         go_feed()
     st.markdown(load_essay("car"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_game_0422":
+    if st.button("← 뒤로", key="back_g0422"):
+        go_feed()
+    st.markdown(load_essay("game_0422"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_game":
     if st.button("← 뒤로", key="back_game"):

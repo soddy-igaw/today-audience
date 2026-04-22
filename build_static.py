@@ -13,6 +13,7 @@ ESSAYS = [
     {"id":"realestate","tag":"부동산","title":"전세→매매 전환 중, 차 담보로 부족분을 메우는 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~34만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"wegovy","tag":"헬스","title":"다이어트약 처방 후 운동을 끊은 사람","sub":"GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다","stat":"~18만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80h=400https://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80fit=crophttps://images.unsplash.com/photo-1505576399279-0d754c0ce141?w=800&h=400&fit=crop&q=80q=80"},
     {"id":"car","tag":"자동차","title":"전기차에서 하이브리드로 선택지를 바꾼 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~80만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80"},
+    {"id":"game_0422","tag":"게임","title":"GTA6 출시일 확정 후 게이밍 PC를 사전예약하는 사람","sub":"게임 하나 때문에 200만원 쓰는 사람","stat":"~140만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
     {"id":"game","tag":"게임","title":"신작 발표 후 게이밍 하드웨어 구매 직전인 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~140만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
     {"id":"stock","tag":"증권","title":"미국주식에서 금으로 갈아타는 사람","sub":"트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다","stat":"~97만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
     {"id":"ktx","tag":"여행","title":"KTX 매진 후 대안 교통을 찾는 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~27만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80"},
@@ -32,7 +33,7 @@ CHAPTERS = [
     {"label":"여행","ids":["travel","ktx"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},
-    {"label":"게임","ids":["game"]},
+    {"label":"게임","ids":["game","game_0422"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init
