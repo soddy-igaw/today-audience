@@ -164,16 +164,6 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
-        "id": "헬스_0422", "emoji": "💪", "tag": "헬스", "number": 21,
-        "title": "러닝크루 참여 후, 개인 트레이닝으로 넘어가려는 사람",
-        "sub": "그룹 러닝의 한계를 느끼고 1:1 맞춤 케어를 원하는 사람. PT·헬스케어·보충제 광고주의 새로운 타겟.",
-        "stat": "",
-        "stat_label": "헬스 오디언스 (DMP)",
-        "date": "2026.04.22",
-        "color": "#000",
-        "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
-    },
-    {
         "id": "realestate_0422", "emoji": "🏠", "tag": "부동산", "number": 20,
         "title": "5월 9일 전에\n팔아야 하는 다주택자",
         "sub": "양도세 중과 유예 만료 D-17, 데드라인에 쫓기는 다주택자",
@@ -400,11 +390,6 @@ elif st.session_state.view == "detail_tosspay":
     if st.button("← 뒤로", key="back_tp"):
         go_feed()
     st.markdown(load_essay("tosspay"), unsafe_allow_html=True)
-
-elif st.session_state.view == "detail_헬스_0422":
-    if st.button("← 뒤로", key="back_헬스_0422"):
-        go_feed()
-    st.markdown(load_essay("헬스_0422"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
