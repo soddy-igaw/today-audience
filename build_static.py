@@ -209,7 +209,11 @@ for e in ESSAYS:
 
     # Add hero image before essay content
     img_url = e.get("img", "")
-    hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" alt="">\n' if img_url else ""
+    tag = e.get("tag", "")
+    hue_map = {"금융":"180","부동산":"220","증권":"180","테마주":"180","여행":"160","러닝":"120","골프":"120","건강":"120","헬스":"120","자동차":"0","반려동물":"30","게임":"220"}
+    hue = hue_map.get(tag, "0")
+    img_filter = f"grayscale(80%) sepia(20%) hue-rotate({hue}deg)" if hue != "0" else "grayscale(100%)"
+    hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" style="filter:{img_filter}" alt="">\n' if img_url else ""
     body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{related_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
