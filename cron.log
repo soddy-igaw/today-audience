@@ -1,1 +1,51 @@
 Tue Apr 21 10:00:17 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
+Wed Apr 22 10:00:24 KST 2026 자동 발행 시작
+OK: index.html
+OK: 헬스_0422.html
+OK: realestate_0422.html
+OK: realestate_0421.html
+OK: safehaven_0420.html
+OK: 금융_0420.html
+OK: realestate.html
+OK: wegovy.html
+OK: car.html
+OK: game.html
+OK: stock.html
+OK: ktx.html
+OK: travel.html
+OK: pet.html
+OK: themestock.html
+OK: carinsurance.html
+OK: tosspay.html
+OK: finance.html
+OK: running.html
+OK: golf.html
+OK: health.html
+
+DONE — 22 files in docs/
+📡 트렌드 기반 카테고리 자동 선택 중...
+   금융: 0개 뉴스
+   부동산: 0개 뉴스
+   쇼핑: 1개 뉴스
+   배달: 1개 뉴스
+   골프: 1개 뉴스
+   교육: 1개 뉴스
+   반려동물: 0개 뉴스
+   패션: 0개 뉴스
+   헬스: 3개 뉴스
+   여행: 3개 뉴스
+   증권: 2개 뉴스
+   게임: 0개 뉴스
+
+🎯 오늘의 카테고리: 헬스 (2026-04-22 Wednesday)
+📡 트렌드 수집 중...
+   2개 뉴스 수집
+   → [러닝크루] 강북구, 우이천 따라 달릴 청년 러닝크루 참여자 모집 - 서울일보...
+   → [크로스핏] 테론, 칼로리 소모량 기준 보상 제공 서비스 론칭 - 네이트...
+📊 페르소나: 건강기능식품_관심_유저 (8,000,000~12,000,000명)
+✍️  에세이 생성 중...
+📄 에세이 저장: /home/soddy/today-audience/essay_20260422.html
+📄 에세이 저장: /home/soddy/today-audience/essays_html/헬스_0422.html
+📝 app.py 업데이트: #21 헬스_0422
+🏗️  정적 사이트 재빌드 완료
+✅ 에세이 발행 완료! (app.py 업데이트됨)

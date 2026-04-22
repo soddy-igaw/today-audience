@@ -9,7 +9,7 @@ if ! aws sts get-caller-identity --profile audmaker_soddy > /dev/null 2>&1; then
 fi
 
 echo "$(date) 자동 발행 시작" >> /home/soddy/today-audience/cron.log
-python3 daily_publish.py --category 교육 >> /home/soddy/today-audience/cron.log 2>&1
+python3 daily_publish.py >> /home/soddy/today-audience/cron.log 2>&1
 
 # git push
 git add -A
