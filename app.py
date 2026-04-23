@@ -164,6 +164,16 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "travel_0423", "emoji": "✈️", "tag": "여행", "number": 24,
+        "title": "유류할증료 보고\n해외여행 취소한 사람",
+        "sub": "해외에서 국내로 방향을 바꾼 사람",
+        "stat": "~72만",
+        "stat_label": "해외앱 감소 + 국내 숙박앱 증가",
+        "date": "2026.04.23",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "shopping_0423", "emoji": "🛒", "tag": "쇼핑", "number": 23,
         "title": "쿠팡 실행이 줄고\n알리·테무를 깐 사람",
         "sub": "구매 채널을 바꾸는 사람",
@@ -390,6 +400,11 @@ elif st.session_state.view == "detail_금융_0420":
     if st.button("← 뒤로", key="back_금융_0420"):
         go_feed()
     st.markdown(load_essay("금융_0420"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_travel_0423":
+    if st.button("← 뒤로", key="back_tr0423"):
+        go_feed()
+    st.markdown(load_essay("travel_0423"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_shopping_0423":
     if st.button("← 뒤로", key="back_sh0423"):

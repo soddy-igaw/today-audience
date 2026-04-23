@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"travel_0423","tag":"여행","title":"유류할증료 보고 해외여행 취소한 사람","sub":"해외에서 국내로 방향을 바꾼 사람","stat":"~72만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
     {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~95만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate_0422","tag":"부동산","title":"5월 9일 전에 팔아야 하는 다주택자","sub":"양도세 중과 유예 만료 D-17","stat":"~28만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate_0421","tag":"부동산","title":"전세 포기하고 10억 이하 매매로 선회한 사람","sub":"전세난에 10억 이하 매매로 전환하는 사람","stat":"~42만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
@@ -17,7 +18,7 @@ ESSAYS = [
     {"id":"game_0422","tag":"게임","title":"GTA6 출시일 확정 후 게이밍 PC를 사전예약하는 사람","sub":"게임 하나 때문에 200만원 쓰는 사람","stat":"~140만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
     {"id":"game","tag":"게임","title":"신작 발표 후 게이밍 하드웨어 구매 직전인 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~140만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
     {"id":"stock","tag":"증권","title":"미국주식에서 금으로 갈아타는 사람","sub":"트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다","stat":"~97만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
-    {"id":"ktx","tag":"여행","title":"KTX 매진 후 대안 교통을 찾는 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~27만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80"},
+    {"id":"ktx","travel_0423","tag":"여행","title":"KTX 매진 후 대안 교통을 찾는 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~27만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80"},
     {"id":"travel","tag":"여행","title":"해외여행 대신 국내여행으로 전환한 사람","sub":"환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다","stat":"~65만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
     {"id":"pet","tag":"반려동물","title":"반려동물 첫 입양 후 2주 이내 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~13만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13","img":"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80"},
     {"id":"themestock","tag":"테마주","title":"테마주 뉴스에 반응해 추격 매수하는 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~52만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
@@ -31,7 +32,7 @@ ESSAYS = [
 
 CHAPTERS = [
     {"label":"금융","ids":["finance","tosspay","stock","realestate","realestate_0421","realestate_0422","themestock","carinsurance","safehaven_0420","금융_0420"]},
-    {"label":"여행","ids":["travel","ktx"]},
+    {"label":"여행","ids":["travel","ktx","travel_0423"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},
     {"label":"게임","ids":["game","game_0422"]},
