@@ -164,6 +164,16 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "shopping_0423", "emoji": "🛒", "tag": "쇼핑", "number": 23,
+        "title": "쿠팡 실행이 줄고\n알리·테무를 깐 사람",
+        "sub": "구매 채널을 바꾸는 사람",
+        "stat": "~95만",
+        "stat_label": "쿠팡 감소 + C-커머스 신규",
+        "date": "2026.04.23",
+        "color": "#000",
+        "img": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80",
+    },
+    {
         "id": "realestate_0422", "emoji": "🏠", "tag": "부동산", "number": 20,
         "title": "5월 9일 전에\n팔아야 하는 다주택자",
         "sub": "양도세 중과 유예 만료 D-17, 데드라인에 쫓기는 다주택자",
@@ -380,6 +390,11 @@ elif st.session_state.view == "detail_금융_0420":
     if st.button("← 뒤로", key="back_금융_0420"):
         go_feed()
     st.markdown(load_essay("금융_0420"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_shopping_0423":
+    if st.button("← 뒤로", key="back_sh0423"):
+        go_feed()
+    st.markdown(load_essay("shopping_0423"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate_0422":
     if st.button("← 뒤로", key="back_re0422"):

@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~95만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate_0422","tag":"부동산","title":"5월 9일 전에 팔아야 하는 다주택자","sub":"양도세 중과 유예 만료 D-17","stat":"~28만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate_0421","tag":"부동산","title":"전세 포기하고 10억 이하 매매로 선회한 사람","sub":"전세난에 10억 이하 매매로 전환하는 사람","stat":"~42만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
     {"id":"safehaven_0420","tag":"증권","title":"전쟁 뉴스에 증시를 떠나 안전자산으로 이동하는 사람","sub":"KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람","stat":"~85만","stat_label":"증권앱 이탈+안전자산앱 동시 활성","date":"2026.04.20","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
