@@ -1,0 +1,487 @@
+# Query Standard Version 2
+# - 2025.11.26 최종 업데이트를 기반으로 재구성
+# - LLM Selector를 통한 개별 요청 처리를 위한 구조화된 파일
+
+global_instructions: |
+  당신은 광고 회사의 SQL을 추출하는 데에 특화된 AI 에이전트입니다. 사용자의 자연어 요청을 SQL 쿼리로 변환해야 하는 임무가 있습니다.
+
+  ## 기본 규칙
+  - 해당 파일은 사용자의 자연어 요청을 SQL 쿼리로 변환하는 과정에서 반드시 준수해야 하는 규칙들을 포함합니다.
+  - 모든 쿼리는 AWS Athena 데이터 조회 기준으로 작성합니다.
+  - 모든 쿼리의 결과값은 반드시 distinct adid 로 나와야 합니다.
+  - 요청하지 않는 내용을 추가로 제시하는 것을 금지합니다.
+  - 데이터 스키마에 존재하지 않는 컬럼을 대상으로 쿼리를 작성하는 점을 금지합니다.
+  - 데이터 조회(SELECT) 쿼리만 생성 가능합니다.
+  - WITH 절(CTE), UNION/INTERSECT/EXCEPT 등 SELECT 기반 쿼리는 허용됩니다.
+  - 서브쿼리, 뷰 조회 등 읽기 전용 작업은 허용됩니다.
+  - DDL(CREATE, DROP, ALTER, TRUNCATE 등) 쿼리 생성을 금지합니다.
+  - DML(INSERT, UPDATE, DELETE, MERGE 등) 쿼리 생성을 금지합니다.
+
+  ## 요청 데이터 구조
+  사용자의 최초 자연어 요청은 아래와 같은 형식으로 들어옵니다:
+  {'id': 1, 'target': '타겟 설명', 'evidence': "실제 조건 내용", 'Used_Signals_Raw': 'APP, PRODUCT, VIEW'}
+  - 'id': 해당 요청의 고유 번호를 의미합니다. 전체 요청은 10개 이상으로 들어올 수 있습니다.
+  - 'target': 사용자 요청의 타겟을 압축하여 정리한 내용입니다. 쿼리 추출 시 참고용으로 사용 가능합니다.
+  - 'evidence': 사용자 요청에서 가장 중요한 부분입니다. 해당 evidence에 등장하는 내용을 반영하여 쿼리를 작성합니다.
+  - 'Used_Signals_Raw': 각 자연어 요청의 조건입니다. Used_Signals_Raw 기준의 데이터를 참고하여 쿼리를 작성합니다.
+
+  ## Used_Signals_Raw 조건 종류
+  PLACE: 방문지 데이터, DMP-PERSONA: 내부 페르소나 데이터, DEMO: 연령/성별 데모 정보, APP: 실제 사용 앱패키지, PRODUCT: 실제 조회한 상품 리스트, VIEW: 상품 조회 횟수, CYCLE: 구매주기, TOP20: 상위 20% 사용자
+  INTEREST(성향 기준), ADJECTIVE(형용사 기준), CUSTOM(타겟 기준)은 실제 쿼리 작성과는 무관합니다.
+
+  ## 조건 추출 원칙
+  - 수치, 행동 기반 정보만 쿼리 조건으로 사용하고, 형용사, 감정, 비유, 스토리텔링 문장은 모두 무시합니다.
+  - 타겟 설명 중 성향, 분위기, 심리, 서술적 표현은 쿼리 조건 생성에 절대 포함하지 않습니다.
+  - evidence에서 추출 가능한 조건 개수는 다양할 수 있습니다(더 적거나 더 많을 수 있음).
+
+  ## 데이터 조회 필수 조건
+  - 일자별 앱 사용성: 실제 사용일자에 +1일 계산하여 SEARCH_KEY 입력 (20250801 조회 시 20250802 사용)
+  - 커머스 데이터 조회 시 필수: AND pd_cate_id IS NOT NULL, AND user_id <> '00000000-0000-0000-0000-000000000000', AND adv_id not in ('p3637g')
+  - 구매 데이터 조회 시 추가: AND revenue > 0
+  - 데모 기준: p_age '01','02'=10대, '03','04'=20대, '05','06'=30대, '07','08'=40대, '09','10'=50대, '11','12'=60대
+
+examples:
+  - id: 1
+    question: "특정 앱을 한 달 내 방문한 사용자 조회"
+    content: |
+      [Example: 앱 방문 사용자 조회]
+      Q: 올리브영 온라인몰을 한 달 내 1회 방문한 사용자
+      SQL:
+      SELECT DISTINCT adid
+      FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+      WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME
+                            FROM DMP.ST_CATEGORY
+                            WHERE APP_NAME LIKE '%올리브영%')
+      AND SEARCH_KEY BETWEEN 20250928 AND 20251028
+
+  - id: 2
+    question: "앱 카테고리 주간 사용시간 기준 사용자 조회"
+    content: |
+      [Example: 앱 카테고리 사용시간 기준 조회]
+      Q: 쇼핑>종합쇼핑/홈쇼핑 카테고리 앱을 주간 합산 38분 사용한 사용자
+      SQL:
+      WITH PKG
+      AS (SELECT PACKAGE_NAME
+      FROM DMP.ST_CATEGORY
+      WHERE TOTAL_CATE = '쇼핑>종합쇼핑/홈쇼핑')
+
+      SELECT DISTINCT adid
+      FROM
+      (
+          SELECT ADID, SUM(DAILY_USE_SEC)/60 AS USE_MIN
+          FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+          WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME FROM PKG)
+          AND SEARCH_KEY BETWEEN 20251021 AND 20251028
+          GROUP BY 1
+      )
+      WHERE USE_MIN >= 38
+
+  - id: 3
+    question: "특정 상품을 검색한 사용자 조회"
+    content: |
+      [Example: 상품 검색 사용자 조회]
+      Q: '아토베리어365 세라-히알 속수분 앰플 30ml'을 검색한 사용자
+      SQL:
+      WITH PRD
+      AS (SELECT PROD_ID
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE PRODUCT_NAME LIKE '%아토베리어365 세라-히알 속수분 앰플 30ml%')
+
+      SELECT DISTINCT user_id AS adid
+      FROM DMP_COMMERCE.EVENT_VIEW
+      WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+      AND SEARCH_KEY BETWEEN 20250928 AND 20251028
+      AND pd_cate_id IS NOT NULL
+      AND user_id <> '00000000-0000-0000-0000-000000000000'
+      AND adv_id not in ('p3637g')
+
+  - id: 4
+    question: "특정 키워드 관련 제품을 여러 번 조회한 사용자"
+    content: |
+      [Example: 키워드 기반 반복 조회 사용자]
+      Q: 최근 5일 '민감성' 관련 제품을 7회 조회한 사용자
+      SQL:
+      WITH PRD
+      AS (SELECT PROD_ID
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE PRODUCT_NAME LIKE '%민감성%')
+
+      SELECT DISTINCT user_id AS adid
+      FROM
+      (
+          SELECT USER_ID, COUNT(USER_ID) AS CNT
+          FROM DMP_COMMERCE.EVENT_VIEW
+          WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+          AND SEARCH_KEY BETWEEN 20251023 AND 20251028
+          AND pd_cate_id IS NOT NULL
+          AND user_id <> '00000000-0000-0000-0000-000000000000'
+          AND adv_id not in ('p3637g')
+          GROUP BY 1
+      )
+      WHERE CNT >= 7
+
+  - id: 5
+    question: "복합 조건의 전체 쿼리 (UNION ALL 사용)"
+    content: |
+      [Example: 복합 조건 통합 쿼리]
+      Q: 올리브영 방문 + 쇼핑앱 사용 + 상품 검색 + 키워드 조회를 모두 포함한 사용자
+      SQL:
+      WITH PKG
+          AS (SELECT PACKAGE_NAME
+          FROM DMP.ST_CATEGORY
+          WHERE TOTAL_CATE = '쇼핑>종합쇼핑/홈쇼핑')
+      ,
+      PRD1
+      AS (SELECT PROD_ID
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE PRODUCT_NAME LIKE '%아토베리어365 세라-히알 속수분 앰플 30ml%')
+      ,
+      PRD2
+          AS (SELECT PROD_ID
+          FROM DMP_COMMERCE.COMM_PD_INFO
+          WHERE PRODUCT_NAME LIKE '%민감성%')
+
+      SELECT DISTINCT adid
+      FROM
+      (
+          (SELECT ADID
+          FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+          WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME
+                                FROM DMP.ST_CATEGORY
+                                WHERE APP_NAME LIKE '%올리브영%')
+          AND SEARCH_KEY BETWEEN 20250928 AND 20251028
+          )
+          UNION ALL
+          (
+          SELECT ADID
+          FROM
+          (
+              SELECT ADID, SUM(DAILY_USE_SEC)/60 AS USE_MIN
+              FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+              WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME FROM PKG)
+              AND SEARCH_KEY BETWEEN 20251021 AND 20251028
+              GROUP BY 1
+          )
+          WHERE USE_MIN >= 38
+          )
+          UNION ALL
+          (
+          SELECT USER_ID AS ADID
+          FROM DMP_COMMERCE.EVENT_VIEW
+          WHERE PROD_ID IN (SELECT PROD_ID FROM PRD1)
+          AND SEARCH_KEY BETWEEN 20250928 AND 20251028
+          AND pd_cate_id IS NOT NULL
+          AND user_id <> '00000000-0000-0000-0000-000000000000'
+          AND adv_id not in ('p3637g')
+          )
+          UNION ALL
+          (
+          SELECT USER_ID AS ADID
+          FROM
+          (
+              SELECT USER_ID, COUNT(USER_ID) AS CNT
+              FROM DMP_COMMERCE.EVENT_VIEW
+              WHERE PROD_ID IN (SELECT PROD_ID FROM PRD2)
+              AND SEARCH_KEY BETWEEN 20251023 AND 20251028
+              AND pd_cate_id IS NOT NULL
+              AND user_id <> '00000000-0000-0000-0000-000000000000'
+              AND adv_id not in ('p3637g')
+              GROUP BY 1
+          )
+          WHERE CNT >= 7)
+      )
+
+  - id: 6
+    question: "방문지(POI) 기반 사용자 조회"
+    content: |
+      [Example: 방문지 기반 사용자 조회]
+      Q: 면세점을 최근 한달 내 2회 방문한 사용자
+      SQL:
+      SELECT DISTINCT adid
+      FROM AI_TOKYO.CHECKIN_MODEL
+      WHERE SEARCH_KEY BETWEEN 20251001 AND 20251101
+      AND REGEXP_LIKE(PLACE_ID, '면세점')
+      GROUP BY ADID
+      HAVING COUNT(*) >= 2
+
+  - id: 7
+    question: "DMP 페르소나 기반 사용자 조회 (Used_Signals_Raw: DMP-PERSONA)"
+    content: |
+      [Example: 페르소나 기반 사용자 조회]
+      Q: 신용카드 앱 이용시간 상위 20% 사용자
+      SQL:
+      SELECT DISTINCT A.adid
+      FROM
+      (
+          (SELECT ADID, SPLIT(T, ':')[1] AS PERSONA_CODE
+          FROM
+              (SELECT ADID, SPLIT(CATE_CODE, ',') AS CATE_CODE
+              FROM DMP.INTEGRATED_AUDIENCE
+              WHERE CATE_CODE IS NOT NULL)
+              CROSS JOIN
+              UNNEST(CATE_CODE) AS T(T)
+          ) A
+          INNER JOIN
+          (SELECT PERSONA_NAME, PERSONA_CODE
+          FROM DMP.PERSONA_INFO
+          WHERE PERSONA_NAME = '신용카드 앱 이용시간 상위 20%') B
+          ON A.PERSONA_CODE = B.PERSONA_CODE
+      )
+
+  - id: 8
+    question: "구매주기 기반 사용자 조회 (Used_Signals_Raw: CYCLE)"
+    content: |
+      [Example: 구매주기 기반 사용자 조회]
+      Q: 구매주기 약 36개월인 고데기 구매자 + 최근 1주일 다이슨, 보다나 교차 조회자
+      SQL:
+      WITH CATE_ID
+      AS
+      (SELECT DISTINCT PD_CATE_ID
+      FROM DMP_COMMERCE.COMM_CATE_INFO
+      WHERE REGEXP_LIKE(PD_CATE_NAME, '고데기'))
+      ,
+      PRD
+      AS
+      (SELECT PROD_ID, PRODUCT_NAME
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE REGEXP_LIKE(PRODUCT_NAME, '다이슨|보다나')
+      GROUP BY 1,2)
+
+      SELECT DISTINCT ADID
+      FROM
+          (SELECT DISTINCT USER_ID AS adid
+          FROM DMP_COMMERCE.EVENT_PURCHASE
+          WHERE PD_CATE_ID IN (SELECT PD_CATE_ID FROM CATE_ID)
+          AND SEARCH_KEY BETWEEN 20220801 AND 20221101
+          AND pd_cate_id IS NOT NULL
+          AND user_id <> '00000000-0000-0000-0000-000000000000'
+          AND adv_id not in ('p3637g')
+          AND revenue > 0
+          )
+          UNION ALL
+          (SELECT DISTINCT USER_ID AS adid
+          FROM DMP_COMMERCE.EVENT_VIEW
+          WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+          AND SEARCH_KEY BETWEEN 20251027 AND 20251102
+          AND pd_cate_id IS NOT NULL
+          AND user_id <> '00000000-0000-0000-0000-000000000000'
+          AND adv_id not in ('p3637g')
+          )
+
+  - id: 9
+    question: "상위 20% 사용자 조회 (Used_Signals_Raw: TOP20)"
+    content: |
+      [Example: 상위 20% 사용자 조회]
+      Q: 최근 14일 생활가전>헤어기기,두피관리기>고데기 카테고리 VIEW 상위 20% 사용자
+      SQL:
+      WITH BASE AS (
+          SELECT
+              USER_ID AS adid
+          FROM DMP_COMMERCE.EVENT_VIEW
+          WHERE PD_CATE_ID IN (
+              SELECT PD_CATE_ID
+              FROM DMP_COMMERCE.COMM_CATE_INFO
+              WHERE PD_CATE_NAME = '생활가전>헤어기기,두피관리기>고데기'
+          )
+          AND SEARCH_KEY BETWEEN 20251014 AND 20251028
+          AND PD_CATE_ID IS NOT NULL
+          AND USER_ID <> '00000000-0000-0000-0000-000000000000'
+          AND ADV_ID NOT IN ('p3637g')
+      ),
+      RANKED AS (
+          SELECT
+              adid,
+              NTILE(5) OVER (
+                  ORDER BY COUNT(*) DESC, adid
+              ) AS tile_num
+          FROM BASE
+          GROUP BY adid
+      )
+      SELECT adid
+      FROM RANKED
+      WHERE tile_num = 1
+
+  - id: 10
+    question: "데모 조건과 다른 조건의 INNER JOIN"
+    content: |
+      [Example: 데모 조건 INNER JOIN]
+      Q: 백화점 방문 + 패션앱 사용 + 전기면도기 조회하는 20대, 40대 남성
+      SQL:
+      WITH PKG AS (
+          SELECT PACKAGE_NAME
+          FROM DMP.ST_CATEGORY
+          WHERE TOTAL_CATE = '패션/의류>종합패션몰'
+      ),
+      PRD AS (
+          SELECT PROD_ID
+          FROM DMP_COMMERCE.COMM_PD_INFO
+          WHERE PRODUCT_NAME LIKE '%전기면도기%'
+      ),
+      DEMO_USERS AS (
+          SELECT ADID
+          FROM DMP_ONESTORE.ADID_INFO
+          WHERE P_GENDER = 'M'
+          AND P_AGE IN ('03', '04', '07', '08')
+          AND AGREE_STAT = 'Y'
+      )
+
+      SELECT DISTINCT A.adid
+      FROM
+      (
+          (
+          SELECT DISTINCT adid
+          FROM
+              (
+                  (
+                  SELECT ADID
+                  FROM AI_TOKYO.CHECKIN_MODEL
+                  WHERE SEARCH_KEY BETWEEN 20251011 AND 20251110
+                  AND REGEXP_LIKE(PLACE_ID, '백화점')
+                  GROUP BY ADID
+                  HAVING COUNT(*) >= 2
+                  )
+                  UNION ALL
+                  (
+                  SELECT ADID
+                  FROM (
+                  SELECT ADID, SUM(DAILY_USE_SEC)/60 AS USE_MIN
+                  FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+                  WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME FROM PKG)
+                  AND SEARCH_KEY BETWEEN 20251104 AND 20251110
+                  GROUP BY ADID
+                  )
+                  WHERE USE_MIN >= 20
+                  )
+                  UNION ALL
+                  (
+                  SELECT USER_ID AS ADID
+                  FROM (
+                  SELECT USER_ID, COUNT(USER_ID) AS CNT
+                  FROM DMP_COMMERCE.EVENT_VIEW
+                  WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+                  AND SEARCH_KEY BETWEEN 20251011 AND 20251110
+                  AND PD_CATE_ID IS NOT NULL
+                  AND USER_ID <> '00000000-0000-0000-0000-000000000000'
+                  AND ADV_ID NOT IN ('p3637g')
+                  GROUP BY USER_ID
+                  )
+                  WHERE CNT >= 6
+                  )
+              )
+          ) A
+          INNER JOIN
+          (
+              SELECT adid
+              FROM DEMO_USERS
+          ) B
+          ON A.ADID = B.ADID
+      )
+
+  - id: 11
+    question: "단일 조건 데모 필터링"
+    content: |
+      [Example: 단일 조건 데모 필터링]
+      Q: 네이버 스마트스토어를 한 달 내 2회 방문하는 20대 여성
+      SQL:
+      WITH target_users_20s_female AS (
+          SELECT adid
+          FROM dmp_onestore.adid_info
+          WHERE p_gender = 'F'
+            AND p_age IN ('03', '04')
+            AND AGREE_STAT = 'Y'
+      ),
+      naver_package AS (
+          SELECT package_name
+          FROM dmp.st_category
+          WHERE app_name LIKE '%네이버 스마트스토어%'
+      )
+
+      SELECT DISTINCT adid
+      FROM (
+          SELECT t1.adid
+          FROM dmp_onestore.package_usage_all_v2 AS t1
+          INNER JOIN target_users_20s_female AS t2
+              ON t1.adid = t2.adid
+          INNER JOIN naver_package AS t3
+              ON t1.package_name = t3.package_name
+          WHERE t1.search_key BETWEEN 20251006 AND 20251105
+          GROUP BY t1.adid
+          HAVING COUNT(DISTINCT t1.search_key) >= 2
+      )
+
+  - id: 12
+    question: "특정 상품 구매 사용자 조회"
+    content: |
+      [Example: 상품 구매 사용자 조회]
+      Q: 최근 30일 기준 '고데기' 라는 이름이 들어간 상품을 구매한 사용자
+      SQL:
+      WITH PRD
+      AS (SELECT PROD_ID
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE PRODUCT_NAME LIKE '%고데기%')
+
+      SELECT DISTINCT user_id AS adid
+      FROM DMP_COMMERCE.EVENT_PURCHASE
+      WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+      AND SEARCH_KEY BETWEEN 20251001 AND 20251030
+      AND pd_cate_id IS NOT NULL
+      AND revenue > 0
+      AND user_id <> '00000000-0000-0000-0000-000000000000'
+      AND adv_id not in ('p3637g')
+
+  - id: 13
+    question: "특정 브랜드 조회 사용자"
+    content: |
+      [Example: 브랜드 조회 사용자]
+      Q: 최근 10일 기준 '세타필' 브랜드의 화장품을 조회한 사용자
+      SQL:
+      WITH PRD
+      AS (SELECT PROD_ID
+      FROM DMP_COMMERCE.COMM_PD_INFO
+      WHERE PRODUCT_NAME LIKE '%세타필%')
+
+      SELECT DISTINCT user_id AS adid
+      FROM DMP_COMMERCE.EVENT_VIEW
+      WHERE PROD_ID IN (SELECT PROD_ID FROM PRD)
+      AND SEARCH_KEY BETWEEN 20251018 AND 20251028
+      AND pd_cate_id IS NOT NULL
+      AND user_id <> '00000000-0000-0000-0000-000000000000'
+      AND adv_id not in ('p3637g')
+
+  - id: 14
+    question: "일간 앱 사용자 조회"
+    content: |
+      [Example: 일간 앱 사용자 조회]
+      Q: 2025년 9월 1일 A 앱을 사용한 사용자 (+1일 처리 주의)
+      SQL:
+      SELECT ADID
+      FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+      WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME
+                            FROM DMP.ST_CATEGORY
+                            WHERE APP_NAME LIKE '%A%')
+      AND SEARCH_KEY = 20250902
+      GROUP BY 1
+
+  - id: 15
+    question: "주간/월간 앱 사용자 조회"
+    content: |
+      [Example: 주간/월간 앱 사용자 조회]
+      Q1: 2025년 9월 15일-28일 주차에 A앱을 사용한 사용자 (주간)
+      SQL1:
+      SELECT ADID
+      FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+      WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME
+                            FROM DMP.ST_CATEGORY
+                            WHERE APP_NAME LIKE '%A%')
+      AND SEARCH_KEY BETWEEN 20250915 AND 20250928
+      GROUP BY 1
+
+      Q2: 2025년 8월의 1개월 동안 A 앱을 사용한 사용자 (월간)
+      SQL2:
+      SELECT ADID
+      FROM DMP_ONESTORE.PACKAGE_USAGE_MONTHLY
+      WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME
+                            FROM DMP.ST_CATEGORY
+                            WHERE APP_NAME LIKE '%A%')
+      AND SEARCH_KEY = '2508m'
+      GROUP BY 1

@@ -1,0 +1,171 @@
+{
+  "tables": [
+    {
+      "table_name": "dmp_onestore.package_usage_all_v2",
+      "columns": [
+        "adid",
+        "package_name",
+        "install_market",
+        "daily_use_sec",
+        "search_key"
+      ]
+    },
+    {
+      "table_name": "dmp_onestore.package_usage_monthly",
+      "columns": [
+        "adid",
+        "package_name",
+        "install_market",
+        "sum_use_sec",
+        "search_key"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.ads_owner_info",
+      "columns": [
+        "adv_id",
+        "ads_owner_name",
+        "package_name"
+      ]
+    },
+    {
+      "table_name": "ai_tokyo.product_category_meta_ver3",
+      "columns": [
+        "package_name",
+        "product_id",
+        "product_name",
+        "category_pred"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.event_cart",
+      "columns": [
+        "user_id",
+        "prod_id",
+        "price",
+        "quantity",
+        "revenue",
+        "event_datetime_kst",
+        "adv_id",
+        "pd_cate_id",
+        "search_key"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.event_purchase",
+      "columns": [
+        "user_id",
+        "prod_id",
+        "order_id",
+        "price",
+        "quantity",
+        "revenue",
+        "event_datetime_kst",
+        "adv_id",
+        "pd_cate_id",
+        "search_key"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.event_view",
+      "columns": [
+        "user_id",
+        "prod_id",
+        "price",
+        "quantity",
+        "revenue",
+        "event_datetime_kst",
+        "adv_id",
+        "pd_cate_id",
+        "search_key"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.comm_cate_info",
+      "columns": [
+        "pd_cate_id",
+        "pd_cate_name"
+      ]
+    },
+    {
+      "table_name": "dmp_commerce.comm_pd_info",
+      "columns": [
+        "prod_id",
+        "adv_id",
+        "product_id",
+        "product_name",
+        "pd_cate_id"
+      ]
+    },
+    {
+      "table_name": "dmp.region_based_user",
+      "columns": [
+        "userid",
+        "os",
+        "address_latitude",
+        "address_longitude",
+        "predicted_house_price",
+        "address",
+        "address_1depth",
+        "address_2depth",
+        "address_3depth",
+        "address_4depth",
+        "asset_percent",
+        "predicted_house_type",
+        "predicted_house_space"
+      ]
+    },
+    {
+      "table_name": "ai_tokyo.checkin_model",
+      "columns": [
+        "adid",
+        "os",
+        "latitude",
+        "longitude",
+        "place_id",
+        "search_key",
+        "hour"
+      ]
+    },
+    {
+      "table_name": "dmp.st_category",
+      "columns": [
+        "package_name",
+        "app_name",
+        "total_cate",
+        "cate_code"
+      ]
+    },
+    {
+      "table_name": "dmp_onestore.adid_info",
+      "columns": [
+        "adid",
+        "p_age",
+        "p_gender",
+        "p_marry",
+        "untracked_date",
+        "agree_stat",
+        "disagree_date"
+      ]
+    },
+    {
+      "table_name": "dmp.integrated_audience",
+      "columns": [
+        "adid",
+        "p_code",
+        "cate_code",
+        "keyword"
+      ]
+    },
+    {
+      "table_name": "dmp.persona_info",
+      "columns": [
+        "persona_name",
+        "persona_code",
+        "depth1",
+        "depth2",
+        "persona_info"
+      ]
+    }
+  ]
+}
