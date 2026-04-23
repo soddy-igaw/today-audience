@@ -118,6 +118,63 @@ def get_persona_data(category):
     return data.get(code)
 
 
+def query_audience_size(category):
+    """Athena에서 카테고리별 교차 시그널 ADID 수 실측"""
+    CROSS_QUERIES = {
+        "금융": ("대출앱+은행앱", "%대출%", "%은행%"),
+        "부동산": ("부동산앱+대출/은행앱", "%부동산%", "%대출%"),
+        "쇼핑": ("쇼핑앱+가격비교앱", "%종합쇼핑%", "%가격비교%"),
+        "골프": ("골프앱+비즈니스앱", "%골프%", "%비즈니스%"),
+        "반려동물": ("반려동물앱+쇼핑앱", "%반려%", "%쇼핑%"),
+        "헬스": ("운동앱 2개+쇼핑앱", "%운동%", "%쇼핑%"),
+        "여행": ("여행/숙박앱 2개 이상", "%여행%", "%숙박%"),
+        "증권": ("증권앱+은행앱", "%증권%", "%은행%"),
+        "게임": ("게임앱+가전앱", "%게임%", "%가전%"),
+        "패션": ("패션앱+쇼핑앱", "%패션%", "%쇼핑%"),
+        "교육": ("교육앱+취업앱", "%교육%", "%취업%"),
+    }
+    entry = CROSS_QUERIES.get(category)
+    if not entry:
+        return None
+    label, cate_a, cate_b = entry
+    try:
+        import boto3
+        from datetime import timedelta
+        end = datetime.now()
+        start = end - timedelta(days=30)
+        s_key = int(start.strftime("%Y%m%d"))
+        e_key = int(end.strftime("%Y%m%d"))
+        client = boto3.Session(region_name="ap-northeast-1").client("athena")
+        sql = f"""
+WITH a AS (SELECT DISTINCT adid FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+  WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME FROM DMP.ST_CATEGORY WHERE TOTAL_CATE LIKE '{cate_a}')
+  AND SEARCH_KEY BETWEEN {s_key} AND {e_key}),
+b AS (SELECT DISTINCT adid FROM DMP_ONESTORE.PACKAGE_USAGE_ALL_V2
+  WHERE PACKAGE_NAME IN (SELECT PACKAGE_NAME FROM DMP.ST_CATEGORY WHERE TOTAL_CATE LIKE '{cate_b}')
+  AND SEARCH_KEY BETWEEN {s_key} AND {e_key})
+SELECT COUNT(DISTINCT a.adid) FROM a JOIN b ON a.adid = b.adid"""
+        import time
+        qid = client.start_query_execution(
+            QueryString=sql,
+            ResultConfiguration={"OutputLocation": "s3://ai-profiling-tokyo/soddy/today_audience_query/"},
+            WorkGroup="mi.ai"
+        )["QueryExecutionId"]
+        for _ in range(60):
+            time.sleep(5)
+            r = client.get_query_execution(QueryExecutionId=qid)
+            state = r["QueryExecution"]["Status"]["State"]
+            if state == "SUCCEEDED":
+                rows = client.get_query_results(QueryExecutionId=qid)["ResultSet"]["Rows"]
+                count = int(rows[1]["Data"][0]["VarCharValue"]) if len(rows) > 1 else 0
+                man = count // 10000
+                return {"count": count, "label": f"~{man}만 명", "signal": f"{label} · DMP 실측"}
+            elif state in ("FAILED", "CANCELLED"):
+                return None
+    except Exception as e:
+        print(f"⚠️ Athena 쿼리 실패: {e}")
+    return None
+
+
 def build_prompt(category, trends, persona):
     """에세이 생성 프롬프트 구성"""
     today_str = datetime.now().strftime("%Y.%m.%d")
@@ -448,8 +505,18 @@ def run(dry_run=False, category_override=None):
     if persona:
         print(f"📊 페르소나: {persona['name']} ({persona.get('estimate_min', '?'):,}~{persona.get('estimate_max', '?'):,}명)")
 
+    # 2.5 Athena 실측 모수
+    print("📊 DMP 실측 모수 조회 중...")
+    audience = query_audience_size(category)
+    if audience:
+        print(f"   → {audience['label']} ({audience['signal']})")
+    else:
+        print("   ⚠️ 실측 조회 실패 — 추정치 사용")
+
     # 3. 프롬프트 생성
     prompt = build_prompt(category, trends, persona)
+    if audience:
+        prompt += f"\n\n[DMP 실측 데이터]\n추정 규모: {audience['label']}\n시그널: {audience['signal']}\n※ 이 숫자를 data-box에 반드시 사용하세요."
 
     # 4. LLM 호출
     print("✍️  에세이 생성 중...")
