@@ -143,26 +143,79 @@ cards_html += f"""
 </div>
 """
 
-# Chapters
-for ch in CHAPTERS:
-    ch_essays = [essay_map[eid] for eid in ch["ids"] if eid in essay_map and eid != today["id"]]
-    if not ch_essays:
-        continue
-    cards_html += f"""
-<div style="margin-top:48px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #eee">
-  <span style="font-size:.85rem;font-weight:900;color:#000">{ch['label']}</span>
+# 6 cards — 카테고리별 대표 1개 (최신)
+cards_html += """
+<div style="margin-top:48px;margin-bottom:20px">
+  <span style="font-size:.85rem;font-weight:900;color:#000">카테고리별 오디언스</span>
 </div>
-<div class="ch-grid">"""
-    for e in ch_essays:
-        thumb = e["img"].replace("w=800", "w=400")
-        cards_html += f"""
-  <a class="ch-card" href="{e['id']}.html">
-    <img loading="lazy" src="{thumb}" alt="">
-    <div class="ch-tag">{e['tag']}</div>
-    <div class="ch-title">{e['title']}</div>
-    <div class="ch-stat">{e['stat']}</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">"""
+for ch in CHAPTERS:
+    # 첫 번째 = 최신 (today 제외)
+    pick = None
+    for eid in ch["ids"]:
+        if eid in essay_map and eid != today["id"]:
+            pick = essay_map[eid]
+            break
+    if not pick:
+        # today가 이 카테고리면 today 사용
+        for eid in ch["ids"]:
+            if eid in essay_map:
+                pick = essay_map[eid]
+                break
+    if not pick:
+        continue
+    thumb = pick["img"].replace("w=800", "w=400")
+    cards_html += f"""
+  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;padding:20px;border-radius:12px">
+    <div style="font-size:.6rem;font-weight:700;color:#e8530e;letter-spacing:.5px;margin-bottom:8px">{ch['label']}</div>
+    <div style="font-size:.88rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:8px">{pick['title']}</div>
+    <div style="font-size:.78rem;font-weight:900;color:#000">{pick['stat']}</div>
   </a>"""
-    cards_html += "\n</div>"
+cards_html += "\n</div>"
+
+# FOR YOU — 이메일 구독 + 선호 카테고리
+cat_labels = [ch["label"] for ch in CHAPTERS]
+chips_html = ""
+for cl in cat_labels:
+    chips_html += f'<label style="display:inline-block;margin:0 6px 8px 0"><input type="checkbox" name="categories" value="{cl}" style="display:none" class="cat-chk"><span class="cat-chip">{cl}</span></label>'
+
+cards_html += f"""
+<div style="background:#111;margin:48px -24px 0;padding:48px 28px;text-align:center">
+  <div style="font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:12px">FOR YOU</div>
+  <div style="font-size:1.15rem;font-weight:800;color:#fff;line-height:1.5;margin-bottom:8px">관심 있는 오디언스를<br>이메일로 받아보세요</div>
+  <div style="font-size:.82rem;color:#666;margin-bottom:24px">선호 카테고리를 선택하면, 맞춤 오디언스를 보내드립니다.</div>
+  <div style="margin-bottom:20px">{chips_html}</div>
+  <form id="subscribe-form" onsubmit="return handleSubscribe(event)" style="display:flex;gap:8px;max-width:360px;margin:0 auto">
+    <input type="email" id="sub-email" placeholder="이메일 주소" required style="flex:1;padding:12px 16px;border:1px solid #333;background:#222;color:#fff;border-radius:8px;font-size:.85rem;outline:none">
+    <button type="submit" id="sub-btn" style="padding:12px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독하기</button>
+  </form>
+  <div id="sub-msg" style="font-size:.78rem;color:#666;margin-top:12px;min-height:20px"></div>
+</div>
+<style>
+.cat-chip{{display:inline-block;padding:6px 14px;border:1px solid #444;border-radius:20px;font-size:.75rem;font-weight:600;color:#888;cursor:pointer;transition:all .15s}}
+.cat-chk:checked+.cat-chip{{background:#e8530e;border-color:#e8530e;color:#fff}}
+</style>
+<script>
+// TODO: GOOGLE_APPS_SCRIPT_URL을 실제 배포 URL로 교체하세요
+var SHEET_URL='GOOGLE_APPS_SCRIPT_URL';
+function handleSubscribe(e){{
+  e.preventDefault();
+  var email=document.getElementById('sub-email').value;
+  var cats=[].slice.call(document.querySelectorAll('.cat-chk:checked')).map(function(c){{return c.value}});
+  if(!cats.length){{document.getElementById('sub-msg').textContent='카테고리를 1개 이상 선택해주세요';return false}}
+  var btn=document.getElementById('sub-btn');btn.disabled=true;btn.textContent='전송 중...';
+  fetch(SHEET_URL,{{method:'POST',mode:'no-cors',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{email:email,categories:cats.join(',')}})}}
+  ).then(function(){{
+    document.getElementById('sub-msg').textContent='구독 완료! 감사합니다 🎉';
+    document.getElementById('subscribe-form').reset();
+    [].slice.call(document.querySelectorAll('.cat-chk')).forEach(function(c){{c.checked=false}});
+  }}).catch(function(){{
+    document.getElementById('sub-msg').textContent='오류가 발생했습니다. 다시 시도해주세요.';
+  }}).finally(function(){{btn.disabled=false;btn.textContent='구독하기'}});
+  return false
+}}
+</script>
+"""
 
 cards_html += '\n<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>'
 
