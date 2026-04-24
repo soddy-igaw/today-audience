@@ -1,90 +1,165 @@
-<div class="detail-wrap">
-<div class="detail-hero">
-<span class="detail-tag">금융</span>
-<div class="detail-title">고정금리 만료 앞두고<br>갈아타기 준비하는 사람</div>
-<div class="detail-meta">2026.04.20 · 오늘의 오디언스 #16</div>
+<style>
+body{background:#f7f7fa !important}
+.wrap{max-width:800px}
+a{color:inherit;text-decoration:none}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back:hover{color:#333}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
+.punchline{background:#111;margin:0 -24px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
+.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
+.compare-col{padding:20px}
+.compare-col:first-child{background:#f7f7fa}
+.compare-col:last-child{background:#111}
+.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
+.audience-box .a-basis{font-size:.7rem;color:#666}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
+.biz-item{border-bottom:1px solid #f0f0f0}
+.biz-item:last-child{border:none}
+.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:200px}
+.biz-body-inner{padding:0 0 16px}
+.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+</style>
+
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">금융 · 2026.04.20</div>
+  <h1>고정금리 만료 앞두고<br/>갈아타기 준비하는 사람</h1>
+  <div class="meta">2026.04.20 · 오늘의 오디언스 #16</div>
 </div>
 
-<div class="quote-box">
-<p>"금리 0.3% 차이가 월 12만원이에요.<br><strong style="color:#000;font-style:normal">만기 두 달 전부터 비교 시작했어요.</strong><br>은행 3곳 앱 다 깔았습니다."</p>
-<div style="font-size:.82rem;color:#999;margin-top:12px">— J씨, 37세, 중소기업 대리</div>
+<div class="punchline">
+  <p >이 사람은 대출이 필요한 게 아닙니다.<br/><strong >지금, 더 나은 조건을 찾는 중입니다.</strong></p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.15rem;font-weight:800;color:#000;line-height:1.6;letter-spacing:-0.3px">이 사람은 대출이 필요한 게 아닙니다.<br><strong style="color:#e8530e">지금, 더 나은 조건을 찾는 중입니다.</strong></p>
+<div style="height:20px"></div>
+
+<div class="quote">
+  <p>"금리 0.3% 차이가 월 12만원이에요.<br/><strong >만기 두 달 전부터 비교 시작했어요.</strong><br/>은행 3곳 앱 다 깔았습니다."</p>
+  <div class="from">— J씨, 37세, 중소기업 대리</div>
 </div>
 
-<div class="section">
-<div class="section-label" style="color:#e8530e">왜 지금인가</div>
-<p style="font-size:.95rem;color:#333;line-height:1.9">기준금리 인하 기대가 커지고 있습니다.<br>고정금리 만기가 돌아오는 사람들이 움직이기 시작했습니다.</p>
+<div class="card">
+  <div class="s-label">왜 지금인가</div>
+  <p style="font-size:.95rem;color:#333;line-height:1.9">기준금리 인하 기대가 커지고 있습니다.<br/>고정금리 만기가 돌아오는 사람들이 움직이기 시작했습니다.</p>
 <p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">대출앱을 새로 깔고, <strong>같은 주에 은행앱 3개를 번갈아 열고 있습니다.</strong></p>
 <p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
 </div>
 
-<div class="section">
-<div class="section-label">이 사람의 일주일</div>
-<div class="behavior-cards">
-<div class="behavior-card">
-<div class="bc-step">STEP 01</div>
-<div class="bc-title">대출 비교앱을 깔았습니다</div>
-<div class="bc-desc">뱅크샐러드, 핀다. 금리 비교부터 시작합니다.</div>
-</div>
-<div class="behavior-card highlight">
-<div class="bc-step">STEP 02 · 전환점</div>
-<div class="bc-title">은행앱을 3개 번갈아 엽니다</div>
-<div class="bc-desc">카카오뱅크, 토스뱅크, 국민은행. 한도 조회를 반복하는 중입니다.</div>
-</div>
-<div class="behavior-card">
-<div class="bc-step">STEP 03</div>
-<div class="bc-title">대환 신청 직전입니다</div>
-<div class="bc-desc">조건 비교가 끝나면 바로 실행합니다. 만기가 다가오고 있으니까.</div>
-</div>
-</div>
-</div>
-
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.05rem;font-weight:800;color:#000;line-height:1.7">이 사람은 왜 매력적인가</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:12px">비교가 끝나면 바로 실행하는 사람입니다.<br><strong>지금 가장 좋은 조건을 보여주면 됩니다.</strong></p>
+<div class="card">
+  <div class="s-label">이 사람의 일주일</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">대출 비교앱을 깔았습니다</div>
+      <div class="step-desc">뱅크샐러드, 핀다. 금리 비교부터 시작합니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">은행앱을 3개 번갈아 엽니다</div>
+      <div class="step-desc">카카오뱅크, 토스뱅크, 국민은행. 한도 조회를 반복하는 중입니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">대환 신청 직전입니다</div>
+      <div class="step-desc">조건 비교가 끝나면 바로 실행합니다. 만기가 다가오고 있으니까.</div>
+    </div>
+  </div>
 </div>
 
-<div style="padding:28px 0;border-bottom:1px solid #f0f0f0">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="padding:20px;background:#f7f7f7">
-<div style="font-size:.68rem;font-weight:700;color:#999;margin-bottom:8px">대출 관심자</div>
-<div style="font-size:.85rem;color:#999;line-height:1.8">대출앱 깔아만 둔 사람<br>비교만 하고 실행 안 함<br>"나중에 알아볼까"</div>
-</div>
-<div style="padding:20px;background:#000">
-<div style="font-size:.68rem;font-weight:700;color:#e8530e;margin-bottom:8px">대환 실행자</div>
-<div style="font-size:.85rem;color:#aaa;line-height:1.8">은행앱 3개 번갈아 열고<br>한도 조회 반복 중<br><strong style="color:#fff">만기 전에 옮기는 사람</strong></div>
-</div>
-</div>
+<div class="highlight-line">
+  <p>이 사람은 왜 매력적인가<br><span>비교가 끝나면 바로 실행하는 사람입니다.지금 가장 좋은 조건을 보여주면 됩니다.</span></p>
 </div>
 
-<div style="background:#000;padding:48px 32px;margin-top:28px">
-<p style="font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:24px">오늘의 오디언스</p>
-<h3 style="color:#fff;font-size:1.4rem;font-weight:900;line-height:1.4;margin-bottom:12px">고정금리 만료 앞두고<br>갈아타기 준비하는 사람</h3>
-<p style="color:#e8530e;font-size:2rem;font-weight:900;margin-bottom:4px">~8만 명</p>
-<p style="color:#666;font-size:.72rem;margin-bottom:32px">대출앱+은행앱 교차 · DMP 실측</p>
-<p style="color:#fff;font-size:.92rem;font-weight:600;line-height:2">비교가 끝나면 바로 실행합니다.<br>지금, 가장 좋은 조건을 기다리는 중입니다.</p>
+<div class="card">
+  <div class="s-label">뭐가 다른가</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>대출 관심자</h4>
+      <ul>
+        <li>대출앱 깔아만 둔 사람</li>
+        <li>비교만 하고 실행 안 함</li>
+        <li>"나중에 알아볼까"</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>대환 실행자</h4>
+      <ul>
+        <li>은행앱 3개 번갈아 열고</li>
+        <li>한도 조회 반복 중</li>
+        <li><strong>만기 전에 옮기는 사람</strong></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="section">
-<div class="section-label">이 오디언스, 당신의 업종이라면?</div>
-<style>.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}.biz-header .biz-icon{font-size:1.4rem}.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}.biz-item.open .biz-body{max-height:300px}.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}</style>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🏦</span><span class="biz-for">인터넷은행이라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>비교 중인 사람에게 가장 먼저 보이면 됩니다</h4><p>금리 0.1% 차이에 움직이는 사람. 조건만 맞으면 바로 갈아탑니다.</p><div class="biz-action">→ "대환 금리 비교, 30초 조회"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">📱</span><span class="biz-for">핀테크라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>한도 조회를 반복하는 중입니다</h4><p>비교 플랫폼에서 이미 3곳 이상 조회. 마지막 선택지를 찾고 있습니다.</p><div class="biz-action">→ "내 조건에 맞는 최저금리 찾기"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🛡️</span><span class="biz-for">보험사라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>대출을 옮기면서 보험도 재점검합니다</h4><p>금융 전반을 정리하는 타이밍. 보장성 보험 리뷰가 자연스러운 선택지입니다.</p><div class="biz-action">→ "대출 갈아탈 때, 보험도 점검"</div></div>
-</div>
+<div class="audience-box">
+  <h3>고정금리 만료 앞두고<br/>갈아타기 준비하는 사람</h3>
+  <div class="a-num">~8만 명</div>
+  <div class="a-basis">대출앱+은행앱 교차 · DMP 실측</div>
+  <div class="a-desc">비교가 끝나면 바로 실행합니다.<br/>지금, 가장 좋은 조건을 기다리는 중입니다.</div>
 </div>
 
-<div style="background:#e8530e;padding:20px 24px;margin-bottom:14px;text-align:center"><p style="color:#fff;font-size:.88rem;font-weight:600;margin:0">이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p></div>
+<div class="card">
+  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">인터넷은행이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>금리 0.1% 차이에 움직이는 사람. 조건만 맞으면 바로 갈아탑니다.</p><div class="biz-action">→ "대환 금리 비교, 30초 조회"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">핀테크라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>비교 플랫폼에서 이미 3곳 이상 조회. 마지막 선택지를 찾고 있습니다.</p><div class="biz-action">→ "내 조건에 맞는 최저금리 찾기"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">보험사라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>금융 전반을 정리하는 타이밍. 보장성 보험 리뷰가 자연스러운 선택지입니다.</p><div class="biz-action">→ "대출 갈아탈 때, 보험도 점검"</div></div></div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
+</div>
+
 <div class="footer">오늘의 오디언스 #16 · by IGAWorks</div>
-</div>

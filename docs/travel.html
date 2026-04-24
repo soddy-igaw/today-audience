@@ -58,66 +58,172 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 </head>
 <body>
 <div class="wrap">
-<div class="detail-wrap">
-<div class="detail-hero">
-<span class="detail-tag">여행</span>
-<div class="detail-title">해외여행 대신 국내여행으로<br>전환한 사람</div>
-<div class="detail-meta">2026.04.14 · 오늘의 오디언스 #5</div>
+<style>
+body{background:#f7f7fa !important}
+.wrap{max-width:800px}
+a{color:inherit;text-decoration:none}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back:hover{color:#333}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
+.punchline{background:#111;margin:0 -24px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
+.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
+.compare-col{padding:20px}
+.compare-col:first-child{background:#f7f7fa}
+.compare-col:last-child{background:#111}
+.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
+.audience-box .a-basis{font-size:.7rem;color:#666}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
+.biz-item{border-bottom:1px solid #f0f0f0}
+.biz-item:last-child{border:none}
+.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:200px}
+.biz-body-inner{padding:0 0 16px}
+.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+</style>
+
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">여행 · 2026.04.14</div>
+  <h1>해외여행 대신 국내여행으로<br/>전환한 사람</h1>
+  <div class="meta">2026.04.14 · 오늘의 오디언스 #5</div>
 </div>
 
-<div class="quote-box">
-<p>"발리 항공권 보다가 제주도 숙소 예약했어요.<br><br><strong style="color:#000;font-style:normal">포기한 게 아니에요. 방향을 바꾼 거예요.</strong>"</p>
-<div style="font-size:.82rem;color:#999;margin-top:12px">— S씨, 33세, 마케터</div>
+<div class="punchline">
+  <p >이 사람은 여행을 포기한 게 아닙니다.<br/><strong >지금, 여행의 방향을 바꾸는 중입니다.</strong></p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.15rem;font-weight:800;color:#000;line-height:1.6;letter-spacing:-0.3px">이 사람은 여행을 포기한 게 아닙니다.<br><strong style="color:#e8530e">지금, 여행의 방향을 바꾸는 중입니다.</strong></p>
+<div style="height:20px"></div>
+
+<div class="quote">
+  <p>"발리 항공권 보다가 제주도 숙소 예약했어요.<br/><br/><strong >포기한 게 아니에요. 방향을 바꾼 거예요.</strong>"</p>
+  <div class="from">— S씨, 33세, 마케터</div>
 </div>
 
-<div class="section">
-<div class="section-label" style="color:#e8530e">왜 지금인가</div>
-<p style="font-size:.95rem;color:#333;line-height:1.9">환율이 1,450원을 넘겼습니다.<br>유류할증료가 4인 가족 기준 60만원. 해외여행 비용이 체감되기 시작했습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">그런데 이 사람들, 여행앱을 끈 게 아닙니다.<br><strong>같은 주에 국내 숙박앱을 깔았습니다.</strong></p>
+<div class="card">
+  <div class="s-label">왜 지금인가</div>
+  <p style="font-size:.95rem;color:#333;line-height:1.9">환율이 1,450원을 넘겼습니다.<br/>유류할증료가 4인 가족 기준 60만원. 해외여행 비용이 체감되기 시작했습니다.</p>
+<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">그런데 이 사람들, 여행앱을 끈 게 아닙니다.<br/><strong>같은 주에 국내 숙박앱을 깔았습니다.</strong></p>
 <p style="font-size:.78rem;color:#999;margin-top:12px">출처: 헤럴드경제 · DMP 앱 설치 시그널 기준</p>
 </div>
 
-<div class="section">
-<div class="section-label">이 사람의 일주일</div>
-<div class="behavior-cards">
-<div class="behavior-card"><div class="bc-step">STEP 01</div><div class="bc-title">해외여행앱 접속이 줄었습니다</div><div class="bc-desc">스카이스캐너, 트립닷컴. 항공권 검색을 멈췄습니다.</div></div>
-<div class="behavior-card highlight"><div class="bc-step">STEP 02 · 전환점</div><div class="bc-title">국내 숙박앱을 깔았습니다</div><div class="bc-desc">야놀자, 여기어때. 해외 대신 제주, 강릉, 속초. 여행 자체를 포기한 게 아닙니다.</div></div>
-<div class="behavior-card"><div class="bc-step">STEP 03</div><div class="bc-title">렌터카를 예약합니다</div><div class="bc-desc">국내 여행은 차가 필요합니다. 쏘카, 롯데렌터카 앱이 열리기 시작합니다.</div></div>
-</div></div>
-
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.05rem;font-weight:800;color:#000;line-height:1.7">이 사람은 왜 매력적인가</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:12px">여행 예산이 사라진 게 아닙니다.<br><strong>예산의 방향이 바뀐 겁니다.</strong> 숙소, 렌터카, 맛집 — 국내에서 쓸 준비가 된 사람.</p>
+<div class="card">
+  <div class="s-label">이 사람의 일주일</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">해외여행앱 접속이 줄었습니다</div>
+      <div class="step-desc">스카이스캐너, 트립닷컴. 항공권 검색을 멈췄습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">국내 숙박앱을 깔았습니다</div>
+      <div class="step-desc">야놀자, 여기어때. 해외 대신 제주, 강릉, 속초. 여행 자체를 포기한 게 아닙니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">렌터카를 예약합니다</div>
+      <div class="step-desc">국내 여행은 차가 필요합니다. 쏘카, 롯데렌터카 앱이 열리기 시작합니다.</div>
+    </div>
+  </div>
 </div>
 
-<div style="padding:28px 0;border-bottom:1px solid #f0f0f0">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="padding:20px;background:#f7f7f7"><div style="font-size:.68rem;font-weight:700;color:#999;margin-bottom:8px">해외여행자</div><div style="font-size:.85rem;color:#999;line-height:1.8">항공권 비교 중<br>아직 예약 안 함<br>"언젠가 갈 거야"</div></div>
-<div style="padding:20px;background:#000"><div style="font-size:.68rem;font-weight:700;color:#e8530e;margin-bottom:8px">국내 전환자</div><div style="font-size:.85rem;color:#aaa;line-height:1.8">해외앱 접속 감소<br>국내 숙박앱 신규 설치<br><strong style="color:#fff">지금 국내에서 쓸 준비가 된 사람</strong></div></div>
-</div></div>
-
-<div style="background:#000;padding:48px 32px;margin-top:28px">
-<p style="font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:24px">오늘의 오디언스</p>
-<h3 style="color:#fff;font-size:1.4rem;font-weight:900;line-height:1.4;margin-bottom:12px">해외여행 대신 국내여행으로<br>전환한 사람</h3>
-<p style="color:#e8530e;font-size:2rem;font-weight:900;margin-bottom:4px">~185만 명</p>
-<p style="color:#666;font-size:.72rem;margin-bottom:32px">여행/숙박/항공앱 2개 이상 사용 · DMP 실측</p>
-<p style="color:#fff;font-size:.92rem;font-weight:600;line-height:2">여행을 포기한 게 아닙니다.<br>지금, 방향을 바꾸는 중입니다.</p>
+<div class="highlight-line">
+  <p>이 사람은 왜 매력적인가<br><span>여행 예산이 사라진 게 아닙니다.예산의 방향이 바뀐 겁니다.숙소, 렌터카, 맛집 — 국내에서 쓸 준비가 된 사람.</span></p>
 </div>
 
-<div class="section">
-<div class="section-label">이 오디언스, 당신의 업종이라면?</div>
-<style>.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}.biz-header .biz-icon{font-size:1.4rem}.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}.biz-item.open .biz-body{max-height:300px}.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}</style><div class="biz-item" onclick="this.classList.toggle('open')"><div class="biz-header"><span class="biz-icon">🏨</span><span class="biz-for">OTA라면</span><span class="biz-arrow">+</span></div><div class="biz-body"><h4>해외 대신 국내를 찾기 시작한 사람입니다</h4><p>제주, 강릉, 속초 — 국내 숙소가 자연스러운 선택지입니다.</p><div class="biz-action">→ "국내 인기 숙소, 이번 주말"</div></div></div>
-<div class="biz-item" onclick="this.classList.toggle('open')"><div class="biz-header"><span class="biz-icon">🚗</span><span class="biz-for">렌터카라면</span><span class="biz-arrow">+</span></div><div class="biz-body"><h4>국내 여행에는 차가 필요합니다</h4><p>숙소 예약 직후 렌터카를 검색하는 타이밍.</p><div class="biz-action">→ "제주 렌터카, 최저가 비교"</div></div></div>
-<div class="biz-item" onclick="this.classList.toggle('open')"><div class="biz-header"><span class="biz-icon">💳</span><span class="biz-for">카드사라면</span><span class="biz-arrow">+</span></div><div class="biz-body"><h4>여행 지출이 국내로 옮겨지는 중입니다</h4><p>항공 마일리지 대신 국내 숙소·맛집 할인이 자연스러운 선택지.</p><div class="biz-action">→ "국내여행 캐시백 카드"</div></div></div>
+<div class="card">
+  <div class="s-label">뭐가 다른가</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>해외여행자</h4>
+      <ul>
+        <li>항공권 비교 중</li>
+        <li>아직 예약 안 함</li>
+        <li>"언젠가 갈 거야"</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>국내 전환자</h4>
+      <ul>
+        <li>해외앱 접속 감소</li>
+        <li>국내 숙박앱 신규 설치</li>
+        <li><strong>지금 국내에서 쓸 준비가 된 사람</strong></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div style="background:#e8530e;padding:20px 24px;margin-bottom:14px;text-align:center"><p style="color:#fff;font-size:.88rem;font-weight:600;margin:0">이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p></div>
+<div class="audience-box">
+  <h3>해외여행 대신 국내여행으로<br/>전환한 사람</h3>
+  <div class="a-num">~185만 명</div>
+  <div class="a-basis">여행/숙박/항공앱 2개 이상 사용 · DMP 실측</div>
+  <div class="a-desc">여행을 포기한 게 아닙니다.<br/>지금, 방향을 바꾸는 중입니다.</div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">OTA라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>제주, 강릉, 속초 — 국내 숙소가 자연스러운 선택지입니다.</p><div class="biz-action">→ "국내 인기 숙소, 이번 주말"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>숙소 예약 직후 렌터카를 검색하는 타이밍.</p><div class="biz-action">→ "제주 렌터카, 최저가 비교"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드사라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>항공 마일리지 대신 국내 숙소·맛집 할인이 자연스러운 선택지.</p><div class="biz-action">→ "국내여행 캐시백 카드"</div></div></div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
+</div>
+
 <div class="footer">오늘의 오디언스 #5 · by IGAWorks</div>
-</div>
+
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

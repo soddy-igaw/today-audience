@@ -58,95 +58,151 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 </head>
 <body>
 <div class="wrap">
-<div class="detail-wrap">
-<div class="detail-hero">
-<span class="detail-tag">반려동물</span>
-<div class="detail-title">반려동물 첫 입양 후<br>2주 이내 사람</div>
-<div class="detail-meta">2026.04.13 · 오늘의 오디언스 #4</div>
+<style>
+body{background:#f7f7fa !important}
+.wrap{max-width:800px}
+a{color:inherit;text-decoration:none}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back:hover{color:#333}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
+.punchline{background:#111;margin:0 -24px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
+.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
+.compare-col{padding:20px}
+.compare-col:first-child{background:#f7f7fa}
+.compare-col:last-child{background:#111}
+.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
+.audience-box .a-basis{font-size:.7rem;color:#666}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
+.biz-item{border-bottom:1px solid #f0f0f0}
+.biz-item:last-child{border:none}
+.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:200px}
+.biz-body-inner{padding:0 0 16px}
+.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+</style>
+
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">반려동물 · 2026.04.13</div>
+  <h1>반려동물 첫 입양 후<br/>2주 이내 사람</h1>
+  <div class="meta">2026.04.13 · 오늘의 오디언스 #4</div>
 </div>
 
-<div class="quote-box">
-<p>"입양하고 3일째인데 뭘 먹여야 하는지 모르겠어요.<br><strong style="color:#000;font-style:normal">새벽 2시에 사료 검색하고 있습니다.</strong><br>병원도 어디로 가야 하는지."</p>
-<div style="font-size:.82rem;color:#999;margin-top:12px">— H씨, 28세, 프리랜서</div>
+<div class="punchline">
+  <p >이 사람은 반려동물을 키우는 게 아닙니다.<br/><strong >처음이라 모든 걸 사는 중입니다.</strong></p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.15rem;font-weight:800;color:#000;line-height:1.6;letter-spacing:-0.3px">이 사람은 반려동물을 키우는 게 아닙니다.<br><strong style="color:#e8530e">처음이라 모든 걸 사는 중입니다.</strong></p>
+<div style="height:20px"></div>
+
+<div class="quote">
+  <p>"입양하고 3일째인데 뭘 먹여야 하는지 모르겠어요.<br/><strong >새벽 2시에 사료 검색하고 있습니다.</strong><br/>병원도 어디로 가야 하는지."</p>
+  <div class="from">— H씨, 28세, 프리랜서</div>
 </div>
 
-<div class="section">
-<div class="section-label" style="color:#e8530e">왜 지금인가</div>
-<p style="font-size:.95rem;color:#333;line-height:1.9">봄 입양 시즌입니다.<br>반려동물 앱을 처음 깔고, 같은 주에 쇼핑앱에서 사료와 용품을 검색하기 시작한 사람들.</p>
+<div class="card">
+  <div class="s-label">왜 지금인가</div>
+  <p style="font-size:.95rem;color:#333;line-height:1.9">봄 입양 시즌입니다.<br/>반려동물 앱을 처음 깔고, 같은 주에 쇼핑앱에서 사료와 용품을 검색하기 시작한 사람들.</p>
 <p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 설치 시그널 기준</p>
 </div>
 
-<div class="section">
-<div class="section-label">이 사람의 2주</div>
-<div class="behavior-cards">
-<div class="behavior-card">
-<div class="bc-step">STEP 01</div>
-<div class="bc-title">반려동물 앱을 깔았습니다</div>
-<div class="bc-desc">펫닥, 핏펫. 처음 깐 사람. 병원 찾기부터 시작합니다.</div>
-</div>
-<div class="behavior-card highlight">
-<div class="bc-step">STEP 02 · 전환점</div>
-<div class="bc-title">새벽에 사료를 검색합니다</div>
-<div class="bc-desc">쇼핑앱에서 "강아지 사료 추천", "고양이 화장실". 뭘 사야 하는지 모르니까 더 많이 봅니다.</div>
-</div>
-<div class="behavior-card">
-<div class="bc-step">STEP 03</div>
-<div class="bc-title">동물병원 예약을 잡습니다</div>
-<div class="bc-desc">첫 건강검진. 예방접종. 처음이라 병원도 검색해서 갑니다.</div>
-</div>
-</div>
+
+
+<div class="highlight-line">
+  <p>이 사람은 왜 매력적인가<br><span>사료, 용품, 병원, 보험 —처음이라 모든 선택지에 열려있습니다.지금 추천하면 그게 기준이 됩니다.</span></p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.05rem;font-weight:800;color:#000;line-height:1.7">이 사람은 왜 매력적인가</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:12px">사료, 용품, 병원, 보험 — <strong>처음이라 모든 선택지에 열려있습니다.</strong><br>지금 추천하면 그게 기준이 됩니다.</p>
+<div class="card">
+  <div class="s-label">뭐가 다른가</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>반려인</h4>
+      <ul>
+        <li>이미 브랜드 정해짐</li>
+        <li>단골 병원 있음</li>
+        <li>"늘 사던 거"</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>첫 입양자</h4>
+      <ul>
+        <li>뭘 사야 하는지 모름</li>
+        <li>병원도 검색해서 감</li>
+        <li><strong>지금 처음 고르는 사람</strong></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div style="padding:28px 0;border-bottom:1px solid #f0f0f0">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="padding:20px;background:#f7f7f7">
-<div style="font-size:.68rem;font-weight:700;color:#999;margin-bottom:8px">반려인</div>
-<div style="font-size:.85rem;color:#999;line-height:1.8">이미 브랜드 정해짐<br>단골 병원 있음<br>"늘 사던 거"</div>
-</div>
-<div style="padding:20px;background:#000">
-<div style="font-size:.68rem;font-weight:700;color:#e8530e;margin-bottom:8px">첫 입양자</div>
-<div style="font-size:.85rem;color:#aaa;line-height:1.8">뭘 사야 하는지 모름<br>병원도 검색해서 감<br><strong style="color:#fff">지금 처음 고르는 사람</strong></div>
-</div>
-</div>
+<div class="audience-box">
+  <h3>반려동물 첫 입양 후<br/>2주 이내 사람</h3>
+  <div class="a-num">~11만 명</div>
+  <div class="a-basis">반려동물앱+쇼핑앱 90일 교차 · DMP 실측</div>
+  <div class="a-desc">처음이라 모든 걸 삽니다.<br/>지금 추천하면 그게 기준이 됩니다.</div>
 </div>
 
-<div style="background:#000;padding:48px 32px;margin-top:28px">
-<p style="font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:24px">오늘의 오디언스</p>
-<h3 style="color:#fff;font-size:1.4rem;font-weight:900;line-height:1.4;margin-bottom:12px">반려동물 첫 입양 후<br>2주 이내 사람</h3>
-<p style="color:#e8530e;font-size:2rem;font-weight:900;margin-bottom:4px">~11만 명</p>
-<p style="color:#666;font-size:.72rem;margin-bottom:32px">반려동물앱+쇼핑앱 90일 교차 · DMP 실측</p>
-<p style="color:#fff;font-size:.92rem;font-weight:600;line-height:2">처음이라 모든 걸 삽니다.<br>지금 추천하면 그게 기준이 됩니다.</p>
+<div class="card">
+  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🍖</span><span class="biz-name">프리미엄 사료라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>아직 브랜드가 없는 사람. 지금 보여주면 그게 첫 번째 선택이 됩니다.</p><div class="biz-action">→ "수의사 추천 입양 초기 사료"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">펫보험이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>예방접종 비용을 보고 보험을 검색하기 시작하는 타이밍.</p><div class="biz-action">→ "입양 30일 이내 가입 시 할인"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🏥</span><span class="biz-name">동물병원이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>검색해서 가는 사람. 첫 경험이 좋으면 계속 옵니다.</p><div class="biz-action">→ "첫 건강검진 무료 이벤트"</div></div></div>
+  </div>
 </div>
 
-<div class="section">
-<div class="section-label">이 오디언스, 당신의 업종이라면?</div>
-<style>.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}.biz-header .biz-icon{font-size:1.4rem}.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}.biz-item.open .biz-body{max-height:300px}.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}</style>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🍖</span><span class="biz-for">프리미엄 사료라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>첫 사료를 고르는 중입니다</h4><p>아직 브랜드가 없는 사람. 지금 보여주면 그게 첫 번째 선택이 됩니다.</p><div class="biz-action">→ "수의사 추천 입양 초기 사료"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🛡️</span><span class="biz-for">펫보험이라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>첫 병원비에 놀란 사람입니다</h4><p>예방접종 비용을 보고 보험을 검색하기 시작하는 타이밍.</p><div class="biz-action">→ "입양 30일 이내 가입 시 할인"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🏥</span><span class="biz-for">동물병원이라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>단골 병원이 아직 없습니다</h4><p>검색해서 가는 사람. 첫 경험이 좋으면 계속 옵니다.</p><div class="biz-action">→ "첫 건강검진 무료 이벤트"</div></div>
-</div>
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
 </div>
 
-<div style="background:#e8530e;padding:20px 24px;margin-bottom:14px;text-align:center"><p style="color:#fff;font-size:.88rem;font-weight:600;margin:0">이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p></div>
 <div class="footer">오늘의 오디언스 #4 · by IGAWorks</div>
-</div>
 
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
