@@ -226,7 +226,7 @@ document.querySelectorAll('.fy-chip').forEach(function(chip){{
   <div id="sub-msg" style="font-size:.72rem;color:#666;margin-top:8px;min-height:16px"></div>
 </div>
 <script>
-var SHEET_URL='GOOGLE_APPS_SCRIPT_URL';
+var SHEET_URL='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
 function handleSubscribe(e){{
   e.preventDefault();
   var email=document.getElementById('sub-email').value;
