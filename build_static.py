@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","sub":"개인정보 유출 후 채널을 바꾸는 사람","stat":"~23만","stat_label":"쿠팡 이탈→경쟁앱 전환 9.7%","date":"2026.04.24","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
     {"id":"travel_0423","tag":"여행","title":"유류할증료 보고 해외여행 취소한 사람","sub":"해외에서 국내로 방향을 바꾼 사람","stat":"~185만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
     {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~67만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
     {"id":"realestate_0422","tag":"부동산","title":"5월 9일 전에 팔아야 하는 다주택자","sub":"양도세 중과 유예 만료 D-17","stat":"~43만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80"},
@@ -36,6 +37,7 @@ CHAPTERS = [
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
     {"label":"라이프","ids":["car","pet"]},
     {"label":"게임","ids":["game","game_0422"]},
+    {"label":"쇼핑","ids":["coupang_exit","shopping_0423"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init

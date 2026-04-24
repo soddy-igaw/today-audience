@@ -163,6 +163,7 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 # ===== CARD DATA =====
 ESSAYS = [
+    {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","stat":"~23만","date":"2026.04.24"},
     {
         "id": "travel_0423", "emoji": "✈️", "tag": "여행", "number": 24,
         "title": "유류할증료 보고\n해외여행 취소한 사람",
