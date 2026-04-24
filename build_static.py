@@ -158,9 +158,9 @@ for i, pick in enumerate(top6):
     num = i + 1
     short_title = pick['title'] if len(pick['title']) <= 20 else pick['title'][:18] + '…'
     cards_html += f"""
-  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:16px 14px;min-width:0">
-    <div style="font-size:1.5rem;font-weight:900;color:#e0e0e0;margin-bottom:6px">{num}</div>
-    <div style="font-size:.78rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{pick['title']}</div>
+  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:24px 16px;min-width:0">
+    <div style="font-size:1.5rem;font-weight:900;color:#e0e0e0;margin-bottom:10px">{num}</div>
+    <div style="font-size:.78rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{pick['title']}</div>
     <div style="font-size:.7rem;font-weight:900;color:#000">{pick['stat']}</div>
   </a>"""
 cards_html += "\n</div>"
@@ -217,14 +217,13 @@ document.querySelectorAll('.fy-chip').forEach(function(chip){{
 </script>
 
 <!-- 이메일 구독 -->
-<div style="background:#111;margin:48px -24px 0;padding:48px 28px;text-align:center">
-  <div style="font-size:1.1rem;font-weight:800;color:#fff;line-height:1.5;margin-bottom:8px">매일 아침, 새로운 오디언스를<br>이메일로 받아보세요</div>
-  <div style="font-size:.82rem;color:#666;margin-bottom:24px">놓치지 않도록 보내드립니다.</div>
+<div style="background:#111;margin:48px -24px 0;padding:28px 28px;text-align:center">
+  <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:14px">매일 아침, 새로운 오디언스를 이메일로 받아보세요</div>
   <form id="subscribe-form" onsubmit="return handleSubscribe(event)" style="display:flex;gap:8px;max-width:360px;margin:0 auto">
-    <input type="email" id="sub-email" placeholder="이메일 주소" required style="flex:1;padding:12px 16px;border:1px solid #333;background:#222;color:#fff;border-radius:8px;font-size:.85rem;outline:none">
-    <button type="submit" id="sub-btn" style="padding:12px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
+    <input type="email" id="sub-email" placeholder="이메일 주소" required style="flex:1;padding:10px 14px;border:1px solid #333;background:#222;color:#fff;border-radius:8px;font-size:.82rem;outline:none">
+    <button type="submit" id="sub-btn" style="padding:10px 18px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
   </form>
-  <div id="sub-msg" style="font-size:.78rem;color:#666;margin-top:12px;min-height:20px"></div>
+  <div id="sub-msg" style="font-size:.72rem;color:#666;margin-top:8px;min-height:16px"></div>
 </div>
 <script>
 var SHEET_URL='GOOGLE_APPS_SCRIPT_URL';
