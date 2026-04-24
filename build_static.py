@@ -153,15 +153,15 @@ cards_html += """
 <div style="margin-top:48px;margin-bottom:16px">
   <span style="font-size:.95rem;font-weight:900;color:#000">광고주가 많이 본 오디언스</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">"""
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">"""
 for i, pick in enumerate(top6):
     num = i + 1
+    short_title = pick['title'] if len(pick['title']) <= 20 else pick['title'][:18] + '…'
     cards_html += f"""
-  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:18px 16px">
-    <div style="font-size:1.6rem;font-weight:900;color:#e0e0e0;margin-bottom:8px">{num}</div>
-    <div style="font-size:.82rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:6px">{pick['title']}</div>
-    <div style="font-size:.68rem;color:#999;margin-bottom:8px">{pick['sub'][:30]}…</div>
-    <div style="font-size:.72rem;font-weight:900;color:#000">{pick['stat']}</div>
+  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:16px 14px;min-width:0">
+    <div style="font-size:1.5rem;font-weight:900;color:#e0e0e0;margin-bottom:6px">{num}</div>
+    <div style="font-size:.78rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{pick['title']}</div>
+    <div style="font-size:.7rem;font-weight:900;color:#000">{pick['stat']}</div>
   </a>"""
 cards_html += "\n</div>"
 
