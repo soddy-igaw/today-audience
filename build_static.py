@@ -256,17 +256,31 @@ document.querySelectorAll('.fy-chip').forEach(function(chip){{
 }});
 </script>
 
-<!-- 이메일 구독 -->
-<div style="background:#111;margin:48px -24px 0;padding:28px 28px;text-align:center">
-  <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:14px">매일 아침, 새로운 오디언스를 이메일로 받아보세요</div>
-  <form id="subscribe-form" onsubmit="return handleSubscribe(event)" style="display:flex;gap:8px;max-width:360px;margin:0 auto">
-    <input type="email" id="sub-email" placeholder="이메일 주소" required style="flex:1;padding:10px 14px;border:1px solid #333;background:#222;color:#fff;border-radius:8px;font-size:.82rem;outline:none">
-    <button type="submit" id="sub-btn" style="padding:10px 18px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
-  </form>
-  <div id="sub-msg" style="font-size:.72rem;color:#666;margin-top:8px;min-height:16px"></div>
+<!-- 구독 팝업 모달 -->
+<div id="sub-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999;justify-content:center;align-items:center" onclick="if(event.target===this)closeSub()">
+  <div style="background:#fff;border-radius:20px;padding:40px 32px;max-width:400px;width:90%;text-align:center;position:relative">
+    <div onclick="closeSub()" style="position:absolute;top:16px;right:20px;font-size:1.2rem;color:#999;cursor:pointer">✕</div>
+    <div style="font-size:2rem;margin-bottom:16px">🎯</div>
+    <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:8px">오늘의 오디언스 구독</div>
+    <div style="font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px">매일 아침, 광고주가 바로 쓸 수 있는<br>새로운 오디언스를 이메일로 보내드립니다.</div>
+    <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
+      <input type="email" id="sub-email" placeholder="이메일 주소" required style="width:100%;padding:14px 16px;border:1px solid #e0e0e0;border-radius:12px;font-size:.88rem;outline:none;margin-bottom:10px;box-sizing:border-box">
+      <button type="submit" id="sub-btn" style="width:100%;padding:14px;background:#111;color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer">구독하기</button>
+    </form>
+    <div id="sub-msg" style="font-size:.72rem;color:#888;margin-top:10px;min-height:16px"></div>
+  </div>
 </div>
+
+<!-- 하단 고정 구독 바 -->
+<div id="sub-bar" style="position:fixed;bottom:0;left:0;width:100%;background:#111;padding:14px 24px;z-index:998;display:flex;align-items:center;justify-content:center;gap:12px">
+  <span style="font-size:.82rem;color:#fff;font-weight:600">매일 새로운 오디언스를 받아보세요</span>
+  <button onclick="openSub()" style="padding:8px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer">구독하기</button>
+</div>
+
 <script>
 var SHEET_URL='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
+function openSub(){{document.getElementById('sub-overlay').style.display='flex'}}
+function closeSub(){{document.getElementById('sub-overlay').style.display='none'}}
 function handleSubscribe(e){{
   e.preventDefault();
   var email=document.getElementById('sub-email').value;
@@ -275,15 +289,17 @@ function handleSubscribe(e){{
   ).then(function(){{
     document.getElementById('sub-msg').textContent='구독 완료! 감사합니다 🎉';
     document.getElementById('subscribe-form').reset();
+    setTimeout(closeSub,2000);
+    document.getElementById('sub-bar').style.display='none';
   }}).catch(function(){{
     document.getElementById('sub-msg').textContent='오류가 발생했습니다. 다시 시도해주세요.';
-  }}).finally(function(){{btn.disabled=false;btn.textContent='구독'}});
+  }}).finally(function(){{btn.disabled=false;btn.textContent='구독하기'}});
   return false
 }}
 </script>
 """
 
-cards_html += '\n<div class="footer"><div style="margin-bottom:8px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:8px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>'
+cards_html += '\n<div class="footer" style="padding-bottom:80px"><div style="margin-bottom:8px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:8px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>'
 
 with open(os.path.join(OUT, "index.html"), "w") as f:
     f.write(page_wrap("오늘의 오디언스", cards_html))
