@@ -212,18 +212,7 @@ for e in ESSAYS:
 
     # Add hero image before essay content
     img_url = e.get("img", "")
-    eid = e["id"]
-    # Test: stock uses color+typo hero instead of photo
-    if eid == "stock":
-        hero_img = f'''<div style="width:calc(100% + 48px);margin:0 -24px;height:320px;background:#111;display:flex;flex-direction:column;justify-content:flex-end;padding:40px 32px;box-sizing:border-box">
-<div style="font-size:.6rem;color:#e8530e;font-weight:700;letter-spacing:2px;margin-bottom:8px">{e["tag"]}</div>
-<div style="font-size:1.6rem;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-0.5px">{e["title"]}</div>
-<div style="font-size:2.4rem;font-weight:900;color:#e8530e;margin-top:12px">{e.get("stat","")}</div>
-</div>\n'''
-    elif img_url:
-        hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" alt="">\n'
-    else:
-        hero_img = ""
+    hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" alt="">\n' if img_url else ""
     # Next audience preview
     current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
     next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
