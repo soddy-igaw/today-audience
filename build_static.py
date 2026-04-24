@@ -300,7 +300,13 @@ for e in ESSAYS:
 <a href="{next_essay['id']}.html" style="font-size:.95rem;font-weight:800;color:#000;text-decoration:none">{next_essay['title']}</a>
 </div>"""
 
-    body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}'
+    # Detect toss-style essays (contain their own <style> block)
+    is_toss_style = '<style>' in essay_html
+
+    if is_toss_style:
+        body = f'{essay_html}\n{related_html}'
+    else:
+        body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
