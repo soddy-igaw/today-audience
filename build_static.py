@@ -327,7 +327,7 @@ for e in ESSAYS:
         related_html += "\n  </div>\n</div>"
 
     img_url = e.get("img", "")
-    hero_img = make_hero_svg(e.get("tag", "")) + '\n'
+    hero_img = ""
     current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
     next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
     next_html = f"""
