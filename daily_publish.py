@@ -188,12 +188,12 @@ def build_prompt(category, trends, persona):
 - 추정 모수: {persona.get('estimate_min', '?'):,}~{persona.get('estimate_max', '?'):,}명
 """
 
-    # 기존 에세이 참고용
-    ref_file = os.path.join(ESSAY_DIR, "essays_html", "realestate.html")
+    # 기존 에세이 참고용 (토스 스타일)
+    ref_file = os.path.join(ESSAY_DIR, "essays_html", "coupang_exit.html")
     ref_html = ""
     if os.path.exists(ref_file):
         with open(ref_file, "r") as f:
-            ref_html = f.read()[:3000]
+            ref_html = f.read()
 
     return f"""당신은 IGAWorks의 "오늘의 오디언스" 에세이 작가입니다.
 
@@ -201,49 +201,45 @@ def build_prompt(category, trends, persona):
 시장 트렌드를 읽고, 행동 시그널을 조합해 아직 아무도 안 쓰는 오디언스를 제안합니다.
 타겟: 광고 마케터, AE, 광고주. "이 사람한테 광고하면 됩니다"를 전달.
 
-## 필수 구조 (이 순서 그대로)
-1. detail-hero: 제목(타겟 직관형 — "OO하는 사람"), 서브타이틀, 날짜
-2. quote-box: 가상 페르소나 인터뷰 (감정 있게, 구체적 상황)
-3. section "무슨 일이 벌어지고 있나": 시장 배경 2~3문단
-4. quote-box: 페르소나 두 번째 인터뷰 (더 깊은 디테일)
-5. section "이 사람의 행동 패턴": 타임라인 (DAY 0 → DAY 14)
-6. section "이 사람을 찾는 법": 시그널 카드 4개 (앱 이름 + 행동)
-7. insight-box: KEY INSIGHT 한 문단
-8. audience-card: 오디언스 이름, 추정 모수, 핵심 시그널
-9. CTA box
-10. footer
+## 톤 & 스타일
+- 단정적 표현 자제: "~입니다" 대신 "~로 보입니다", "~하는 중입니다"
+- 문장 사이 줄바꿈 충분히: 한 문장 끝나면 <br> 넣기
+- em dash(—) 뒤에 반드시 공백: "금, 달러 — 이 사람은"
+- 근거/출처는 "출처: OO" 형태로 명시
+
+## 필수 구조 — 토스 카드 스타일 (아래 HTML 구조 그대로 따라하세요)
+
+반드시 아래 참고 HTML의 클래스명과 구조를 그대로 사용하세요:
+- hero (tag, h1, sub, meta)
+- punchline (핵심 한 문장)
+- quote (가상 인터뷰)
+- card + s-label (왜 지금인가)
+- card + steps > step/step.active (행동 시그널 3단계)
+- highlight-line (매력 포인트)
+- card + compare (비교 그리드)
+- audience-box (오디언스 규모)
+- card + biz-item 아코디언 (광고주 활용 3개)
+- cta-bar
+- footer
 
 ## DMP로 추적 가능한 시그널만 사용
 - 앱 설치/삭제, 사용 빈도 변화, 사용 시간대
 - 동시 설치 속도, 앱 조합 패턴
-- 커머스 구매 이력, 위치 데이터
 - ❌ 앱 내부 탭/검색어/장바구니는 추적 불가 — 절대 사용 금지
 
 ## 제목 규칙
-- 타겟 직관형: "OO하는 사람" — 광고주가 바로 "이 타겟!" 인지
-- 예: "대출 만기 전 대환을 준비하는 사람", "접대 때문에 골프 시작한 입문자"
-
-## CSS 클래스 (반드시 이 클래스만 사용)
-detail-wrap, hero-img, detail-hero, detail-emoji, detail-tag, detail-title, detail-sub, detail-meta,
-quote-box, section, section-label, tl, tl-item, tl-dot, tl-day, tl-title, tl-desc,
-tl-flow, tl-flow-down, tl-flow-up, tl-bar-wrap, tl-bar-bg, tl-bar-fill, tl-alert,
-ind-grid, ind-card, ind-title, ind-desc, insight-box, ins-label, audience-card, footer
+- 타겟 직관형: "OO하는 사람"
+- 예: "대출 만기 전 대환을 준비하는 사람"
 
 ## 색상: 흑백 기조 + 포인트 #e8530e
-- "이 사람을 찾는 법" section-label: style="color:#e8530e"
-- ind-card: style="border-left:3px solid #e8530e"
-- insight-box 핵심 문장: style="color:#e8530e"
-- audience-card 모수 숫자: style="color:#e8530e"
-- 타임라인 핵심 시그널 dot: style="background:#e8530e;box-shadow:0 0 0 2px #e8530e"
 
 ## 규칙
-- HTML 조각만 출력. <div class="detail-wrap">로 시작, </div>로 끝
+- <style> 태그 없이 HTML 본문만 출력 (CSS는 빌드 시 자동 주입)
+- <div class="back"> 으로 시작
 - <!DOCTYPE>, <html>, <head>, <body> 태그 절대 금지
-- 빈 줄 없이 태그 연속 배치
 - 추적 가능한 앱: {apps}
-- 히어로 이미지는 넣지 마세요 (빌드 시 자동 추가)
 
-## 참고: 기존 에세이 HTML 구조
+## 참고: 토스 스타일 에세이 HTML (이 구조를 그대로 따라하세요, 단 <style> 블록은 제외)
 {ref_html}
 
 ## 오늘의 카테고리: {category}
@@ -253,6 +249,9 @@ ind-grid, ind-card, ind-title, ind-desc, insight-box, ins-label, audience-card, 
 {trend_text}
 
 {persona_text}
+
+## 푸터 문구 (반드시 이것 사용):
+<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
 """
 
 
@@ -389,9 +388,19 @@ def inject_to_app(category, today, essay_html):
     audience_m = _re.search(r'font-weight:900">([\d~,만억천명\s]+)</p>', essay_html)
     stat = audience_m.group(1).strip() if audience_m else ""
 
-    # 1. Save essay HTML (remove blank lines for Streamlit compat)
+    # 1. Save essay HTML — 토스 스타일 CSS 주입 + 정리
     essay_file = os.path.join(ESSAY_DIR, "essays_html", f"{essay_id}.html")
     cleaned = '\n'.join(line for line in essay_html.split('\n') if line.strip())
+    # 토스 스타일 CSS가 없으면 주입
+    if 'body{background:#f7f7fa' not in cleaned:
+        toss_css_file = os.path.join(ESSAY_DIR, "essays_html", "coupang_exit.html")
+        if os.path.exists(toss_css_file):
+            with open(toss_css_file, "r") as tcf:
+                toss_content = tcf.read()
+            # <style>...</style> 블록 추출
+            style_match = _re.search(r'(<style>.*?</style>)', toss_content, _re.DOTALL)
+            if style_match:
+                cleaned = style_match.group(1) + '\n\n' + cleaned
     with open(essay_file, "w", encoding="utf-8") as f:
         f.write(cleaned)
     print(f"📄 에세이 저장: {essay_file}")
