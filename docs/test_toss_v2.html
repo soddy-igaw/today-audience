@@ -9,32 +9,36 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f7f7fa;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
 a{color:inherit;text-decoration:none}
-
 .wrap{max-width:560px;margin:0 auto;padding:0 20px 80px}
 
 /* Back */
-.back{display:flex;align-items:center;gap:6px;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
 .back:hover{color:#333}
 
 /* Hero */
-.hero{padding:8px 0 28px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#ff3b30;letter-spacing:.3px;margin-bottom:14px}
-.hero h1{font-size:1.65rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:10px}
-.hero .sub{font-size:.92rem;color:#888;line-height:1.6}
-.hero .meta{font-size:.72rem;color:#bbb;margin-top:14px}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
 
-/* Card (공통 카드 스타일) */
-.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+/* 핵심 문장 강조 (이 사람은?) */
+.punchline{background:#111;margin:0 -20px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+
+/* Card */
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 
 /* Quote */
-.quote{border-left:3px solid #ff3b30;padding:20px 22px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#666;line-height:1.85;font-style:italic}
-.quote strong{color:#111;font-style:normal}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 
-/* Section Label */
-.s-label{font-size:.68rem;font-weight:700;color:#ff3b30;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.12rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:14px}
+/* Section Label — 빨간색 대신 회색 */
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
 
 /* Impact Tree */
 .impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
@@ -43,67 +47,72 @@ a{color:inherit;text-decoration:none}
 .impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
 .impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#ff3b30}
+.impact-dot.hot{background:#e8530e}
 .impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
 .impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
 .impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(255,59,48,.08);color:#ff3b30}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 
 /* Steps */
 .steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:18px 20px}
-.step.active{background:#fff5f5;border:1px solid rgba(255,59,48,.15)}
-.step-num{font-size:.6rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#ff3b30}
-.step-title{font-size:.92rem;font-weight:700;color:#222;margin-bottom:4px}
-.step.active .step-title{color:#ff3b30}
-.step-desc{font-size:.82rem;color:#888;line-height:1.6}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+
+/* 중간 강조 문장 */
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
 
 /* Compare */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
 .compare-col{padding:20px}
 .compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#fff5f5}
+.compare-col:last-child{background:#111}
 .compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#ff3b30}
-.compare-col li{list-style:none;font-size:.82rem;color:#888;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#555}
-.compare-col:last-child strong{color:#111}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
 
 /* Audience Box */
-.audience-box{background:linear-gradient(135deg,#1a1a22,#2a2a35);border-radius:16px;padding:36px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
-.audience-box .a-num{font-size:2.2rem;font-weight:900;color:#ff3b30;margin-bottom:4px}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
 .audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.88rem;color:#aaa;margin-top:16px;line-height:1.7}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
 
 /* Biz */
 .biz-item{border-bottom:1px solid #f0f0f0}
 .biz-item:last-child{border:none}
 .biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-head .biz-icon{font-size:1.2rem}
-.biz-head .biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-head .biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#ff3b30}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
 .biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .biz-item.open .biz-body{max-height:200px}
 .biz-body-inner{padding:0 0 16px}
 .biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#ff3b30}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
 
 /* CTA */
-.cta-bar{background:#ff3b30;border-radius:12px;padding:16px 24px;text-align:center;margin-bottom:14px}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
 .cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
 
 /* Related */
 .related-label{font-size:.72rem;color:#bbb;margin-bottom:12px}
 .related-cards{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
 .related-card{min-width:160px;max-width:180px;flex-shrink:0;background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.related-card .r-tag{font-size:.6rem;font-weight:600;color:#ff3b30;margin-bottom:6px}
-.related-card .r-title{font-size:.82rem;font-weight:700;color:#222;line-height:1.35;margin-bottom:8px}
-.related-card .r-stat{font-size:.78rem;font-weight:800;color:#ff3b30}
+.r-tag{font-size:.6rem;font-weight:600;color:#e8530e;margin-bottom:6px}
+.r-title{font-size:.82rem;font-weight:700;color:#222;line-height:1.35;margin-bottom:8px}
+.r-stat{font-size:.78rem;font-weight:800;color:#111}
 
-/* Footer */
 .footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
 </style>
 </head>
@@ -118,6 +127,13 @@ a{color:inherit;text-decoration:none}
   <div class="sub">개인정보 유출 후 채널을 바꾸는 사람</div>
   <div class="meta">오늘의 오디언스 #25</div>
 </div>
+
+<!-- 핵심 문장 -->
+<div class="punchline">
+  <p>이 사람은 쇼핑을 그만둔 게 아닙니다.<br><strong>지금, 쇼핑 채널을 바꾸는 중입니다.</strong></p>
+</div>
+
+<div style="height:20px"></div>
 
 <div class="quote">
   <p>"개인정보 유출 뉴스 보고 쿠팡 삭제했어요.<br><strong>근데 로켓배송 없으니까 불편하더라고요.</strong><br>네이버플러스 스토어 깔았습니다."</p>
@@ -152,7 +168,7 @@ a{color:inherit;text-decoration:none}
   <div class="s-label">왜 지금인가</div>
   <div class="s-title">쿠팡 이탈자 236만 중<br>경쟁앱 전환은 9.7%</div>
   <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">네이버플러스 스토어 MAU는 1년 만에 75.5% 성장.<br>11번가 추월이 눈앞입니다.</p>
-  <p style="font-size:.7rem;color:#bbb">출처: 이데일리 · 아이지에이웍스 모바일인덱스</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 이데일리 · 아이지에이웍스 모바일인덱스</p>
 </div>
 
 <!-- 행동 시그널 -->
@@ -175,6 +191,11 @@ a{color:inherit;text-decoration:none}
       <div class="step-desc">생필품, 식품 — 매일 사는 것들의 채널이 바뀌고 있습니다.</div>
     </div>
   </div>
+</div>
+
+<!-- 강조 문장 -->
+<div class="highlight-line">
+  <p>이 사람은 왜 매력적인가?<br><span>쇼핑 채널이 바뀌는 사람은<br>결제 수단도, 멤버십도, 포인트도 바뀝니다.</span></p>
 </div>
 
 <!-- 비교 -->
@@ -206,7 +227,7 @@ a{color:inherit;text-decoration:none}
   <h3>쿠팡을 떠나 네이버로 옮긴 사람</h3>
   <div class="a-num">~23만 명</div>
   <div class="a-basis">쿠팡 이탈자 236만 중 경쟁앱 전환 9.7% · 모바일인덱스 실측</div>
-  <div class="a-desc">쇼핑을 그만둔 게 아닙니다.<br>지금, 채널을 바꾸는 중입니다.</div>
+  <div class="a-desc">쇼핑을 그만둔 게 아닙니다.<br><strong>지금, 채널을 바꾸는 중입니다.</strong></div>
 </div>
 
 <!-- 업종별 활용 -->
@@ -230,8 +251,7 @@ a{color:inherit;text-decoration:none}
   <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
 </div>
 
-<!-- 관련 오디언스 -->
-<div style="margin-top:24px">
+<div style="margin-top:28px">
   <div class="related-label">같은 주제의 오디언스</div>
   <div class="related-cards">
     <a class="related-card" href="#">
