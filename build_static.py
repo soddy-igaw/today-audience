@@ -143,7 +143,7 @@ cards_html += f"""
 </div>
 """
 
-# 광고주가 많이 본 오디언스 TOP 6 (랜덤, 롱블랙 카드 스타일)
+# 광고주가 많이 본 오디언스 TOP 6 (2×3 그리드)
 import random
 non_today = [e for e in ESSAYS if e["id"] != today["id"]]
 random.shuffle(non_today)
@@ -151,27 +151,26 @@ top6 = non_today[:6]
 
 cards_html += """
 <div style="margin-top:48px;margin-bottom:16px">
-  <span style="font-size:.85rem;font-weight:900;color:#000">광고주가 많이 본 오디언스</span>
+  <span style="font-size:.95rem;font-weight:900;color:#000">광고주가 많이 본 오디언스</span>
 </div>
-<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory">"""
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">"""
 for i, pick in enumerate(top6):
     num = i + 1
     cards_html += f"""
-  <a href="{pick['id']}.html" style="min-width:160px;max-width:180px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:20px 18px;position:relative">
-    <div style="font-size:1.8rem;font-weight:900;color:#eee;margin-bottom:10px">{num}</div>
-    <div style="font-size:.62rem;font-weight:600;color:#e8530e;margin-bottom:6px">{pick['tag']}</div>
-    <div style="font-size:.85rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">{pick['title']}</div>
-    <div style="font-size:.78rem;font-weight:900;color:#000">{pick['stat']}</div>
+  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:18px 16px">
+    <div style="font-size:1.6rem;font-weight:900;color:#e0e0e0;margin-bottom:8px">{num}</div>
+    <div style="font-size:.82rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:6px">{pick['title']}</div>
+    <div style="font-size:.68rem;color:#999;margin-bottom:8px">{pick['sub'][:30]}…</div>
+    <div style="font-size:.72rem;font-weight:900;color:#000">{pick['stat']}</div>
   </a>"""
 cards_html += "\n</div>"
 
-# 관심 있는 분야는? — 카테고리 칩 클릭 → 팝업
+# 당신을 위한 FOR YOU — 관심사 칩 → 하단에 4개 오디언스 노출
 cat_labels = [ch["label"] for ch in CHAPTERS]
 chips_html = ""
 for cl in cat_labels:
-    chips_html += f'<span class="cat-chip" onclick="openCatPopup(\'{cl}\')" style="cursor:pointer">{cl}</span> '
+    chips_html += f'<span class="fy-chip" data-cat="{cl}">{cl}</span>'
 
-# 팝업용 카테고리별 오디언스 데이터 (JSON)
 cat_data = {}
 for ch in CHAPTERS:
     items = []
@@ -185,56 +184,45 @@ import json as _json
 cat_json = _json.dumps(cat_data, ensure_ascii=False)
 
 cards_html += f"""
-<div style="margin-top:48px;padding:36px 0;text-align:center">
-  <div style="font-size:1.1rem;font-weight:800;color:#111;margin-bottom:16px">관심 있는 분야는?</div>
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px">{chips_html}</div>
-</div>
-
-<!-- 카테고리 팝업 -->
-<div id="cat-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;align-items:flex-end;justify-content:center" onclick="if(event.target===this)closeCatPopup()">
-  <div style="background:#fff;width:100%;max-width:560px;max-height:70vh;border-radius:20px 20px 0 0;padding:28px 24px 40px;overflow-y:auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-      <span id="cat-popup-title" style="font-size:1rem;font-weight:800;color:#111"></span>
-      <span onclick="closeCatPopup()" style="font-size:1.2rem;color:#999;cursor:pointer">✕</span>
-    </div>
-    <div id="cat-popup-list"></div>
-  </div>
+<div style="margin-top:56px;padding-top:32px;border-top:1px solid #f0f0f0">
+  <div style="font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:8px">FOR YOU</div>
+  <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:6px">당신을 위한</div>
+  <div style="font-size:.82rem;color:#999;line-height:1.6;margin-bottom:20px">관심사를 선택하면, 관련 오디언스를 추천해드립니다.</div>
+  <div id="fy-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">{chips_html}</div>
+  <div id="fy-list" style="min-height:40px"></div>
 </div>
 
 <style>
-.cat-chip{{display:inline-block;padding:8px 18px;border:1px solid #eee;border-radius:20px;font-size:.8rem;font-weight:600;color:#555;transition:all .15s}}
-.cat-chip:hover{{background:#111;color:#fff;border-color:#111}}
+.fy-chip{{display:inline-block;padding:8px 18px;border:1px solid #eee;border-radius:20px;font-size:.78rem;font-weight:600;color:#888;cursor:pointer;transition:all .15s}}
+.fy-chip:hover,.fy-chip.active{{background:#111;color:#fff;border-color:#111}}
 </style>
 <script>
-var CAT_DATA={cat_json};
-function openCatPopup(cat){{
-  var popup=document.getElementById('cat-popup');
-  document.getElementById('cat-popup-title').textContent=cat+' 오디언스';
-  var list=document.getElementById('cat-popup-list');
-  var items=CAT_DATA[cat]||[];
-  list.innerHTML=items.map(function(it){{
-    return '<a href="'+it.id+'.html" style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #f5f5f5;text-decoration:none;color:inherit">'
-      +'<div style="flex:1"><div style="font-size:.62rem;font-weight:600;color:#e8530e;margin-bottom:3px">'+it.tag+'</div>'
-      +'<div style="font-size:.88rem;font-weight:700;color:#111;line-height:1.3">'+it.title+'</div></div>'
-      +'<span style="font-size:.78rem;font-weight:900;color:#000">'+it.stat+'</span></a>'
-  }}).join('');
-  popup.style.display='flex';
-  document.body.style.overflow='hidden';
-}}
-function closeCatPopup(){{
-  document.getElementById('cat-popup').style.display='none';
-  document.body.style.overflow='';
-}}
+var FY_DATA={cat_json};
+document.querySelectorAll('.fy-chip').forEach(function(chip){{
+  chip.addEventListener('click',function(){{
+    document.querySelectorAll('.fy-chip').forEach(function(c){{c.classList.remove('active')}});
+    this.classList.add('active');
+    var cat=this.dataset.cat;
+    var items=(FY_DATA[cat]||[]).slice(0,4);
+    var list=document.getElementById('fy-list');
+    if(!items.length){{list.innerHTML='<div style="font-size:.82rem;color:#ccc;padding:16px 0">아직 준비 중입니다.</div>';return}}
+    list.innerHTML=items.map(function(it){{
+      return '<a href="'+it.id+'.html" style="display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid #f5f5f5;text-decoration:none;color:inherit">'
+        +'<div style="flex:1"><div style="font-size:.6rem;font-weight:600;color:#e8530e;margin-bottom:3px">'+it.tag+'</div>'
+        +'<div style="font-size:.88rem;font-weight:700;color:#111;line-height:1.3">'+it.title+'</div></div>'
+        +'<span style="font-size:.78rem;font-weight:900;color:#000">'+it.stat+'</span></a>'
+    }}).join('');
+  }});
+}});
 </script>
 
-<!-- FOR YOU 이메일 구독 -->
-<div style="background:#111;margin:0 -24px;padding:48px 28px;text-align:center">
-  <div style="font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:12px">FOR YOU</div>
-  <div style="font-size:1.15rem;font-weight:800;color:#fff;line-height:1.5;margin-bottom:8px">관심 있는 오디언스를<br>이메일로 받아보세요</div>
-  <div style="font-size:.82rem;color:#666;margin-bottom:24px">매일 아침, 새로운 오디언스를 보내드립니다.</div>
+<!-- 이메일 구독 -->
+<div style="background:#111;margin:48px -24px 0;padding:48px 28px;text-align:center">
+  <div style="font-size:1.1rem;font-weight:800;color:#fff;line-height:1.5;margin-bottom:8px">매일 아침, 새로운 오디언스를<br>이메일로 받아보세요</div>
+  <div style="font-size:.82rem;color:#666;margin-bottom:24px">놓치지 않도록 보내드립니다.</div>
   <form id="subscribe-form" onsubmit="return handleSubscribe(event)" style="display:flex;gap:8px;max-width:360px;margin:0 auto">
     <input type="email" id="sub-email" placeholder="이메일 주소" required style="flex:1;padding:12px 16px;border:1px solid #333;background:#222;color:#fff;border-radius:8px;font-size:.85rem;outline:none">
-    <button type="submit" id="sub-btn" style="padding:12px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독하기</button>
+    <button type="submit" id="sub-btn" style="padding:12px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
   </form>
   <div id="sub-msg" style="font-size:.78rem;color:#666;margin-top:12px;min-height:20px"></div>
 </div>
@@ -243,14 +231,14 @@ var SHEET_URL='GOOGLE_APPS_SCRIPT_URL';
 function handleSubscribe(e){{
   e.preventDefault();
   var email=document.getElementById('sub-email').value;
-  var btn=document.getElementById('sub-btn');btn.disabled=true;btn.textContent='전송 중...';
+  var btn=document.getElementById('sub-btn');btn.disabled=true;btn.textContent='...';
   fetch(SHEET_URL,{{method:'POST',mode:'no-cors',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{email:email}})}}
   ).then(function(){{
     document.getElementById('sub-msg').textContent='구독 완료! 감사합니다 🎉';
     document.getElementById('subscribe-form').reset();
   }}).catch(function(){{
     document.getElementById('sub-msg').textContent='오류가 발생했습니다. 다시 시도해주세요.';
-  }}).finally(function(){{btn.disabled=false;btn.textContent='구독하기'}});
+  }}).finally(function(){{btn.disabled=false;btn.textContent='구독'}});
   return false
 }}
 </script>
@@ -263,7 +251,6 @@ with open(os.path.join(OUT, "index.html"), "w") as f:
 print("OK: index.html")
 
 # === BUILD DETAIL PAGES ===
-# Build chapter lookup: essay_id -> chapter label
 essay_chapter = {}
 for ch in CHAPTERS:
     for eid in ch["ids"]:
@@ -277,7 +264,6 @@ for e in ESSAYS:
     with open(essay_file, "r") as ef:
         essay_html = ef.read()
 
-    # Build related essays (same chapter, exclude self)
     ch_label = essay_chapter.get(e["id"], "")
     related = []
     if ch_label:
@@ -304,10 +290,8 @@ for e in ESSAYS:
     </a>"""
         related_html += "\n  </div>\n</div>"
 
-    # Add hero image before essay content
     img_url = e.get("img", "")
     hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" alt="">\n' if img_url else ""
-    # Next audience preview
     current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
     next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
     next_html = f"""
