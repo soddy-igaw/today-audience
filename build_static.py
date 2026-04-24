@@ -143,27 +143,27 @@ cards_html += f"""
 </div>
 """
 
-# 광고주가 많이 본 오디언스 TOP 6 (랜덤)
+# 광고주가 많이 본 오디언스 TOP 6 (랜덤, 롱블랙 카드 스타일)
 import random
 non_today = [e for e in ESSAYS if e["id"] != today["id"]]
 random.shuffle(non_today)
 top6 = non_today[:6]
 
 cards_html += """
-<div style="margin-top:48px;margin-bottom:20px">
+<div style="margin-top:48px;margin-bottom:16px">
   <span style="font-size:.85rem;font-weight:900;color:#000">광고주가 많이 본 오디언스</span>
-</div>"""
+</div>
+<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory">"""
 for i, pick in enumerate(top6):
     num = i + 1
     cards_html += f"""
-<a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid #f0f0f0">
-  <span style="font-size:1.1rem;font-weight:900;color:#ddd;min-width:24px">{num}</span>
-  <div style="flex:1">
-    <div style="font-size:.62rem;font-weight:600;color:#e8530e;margin-bottom:4px">{pick['tag']}</div>
-    <div style="font-size:.9rem;font-weight:800;color:#111;line-height:1.35">{pick['title']}</div>
-  </div>
-  <span style="font-size:.78rem;font-weight:900;color:#000;white-space:nowrap">{pick['stat']}</span>
-</a>"""
+  <a href="{pick['id']}.html" style="min-width:160px;max-width:180px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:20px 18px;position:relative">
+    <div style="font-size:1.8rem;font-weight:900;color:#eee;margin-bottom:10px">{num}</div>
+    <div style="font-size:.62rem;font-weight:600;color:#e8530e;margin-bottom:6px">{pick['tag']}</div>
+    <div style="font-size:.85rem;font-weight:800;color:#111;line-height:1.35;margin-bottom:10px">{pick['title']}</div>
+    <div style="font-size:.78rem;font-weight:900;color:#000">{pick['stat']}</div>
+  </a>"""
+cards_html += "\n</div>"
 
 # 관심 있는 분야는? — 카테고리 칩 클릭 → 팝업
 cat_labels = [ch["label"] for ch in CHAPTERS]
