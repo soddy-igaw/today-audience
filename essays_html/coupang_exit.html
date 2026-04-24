@@ -1,90 +1,199 @@
-<div class="detail-wrap">
-<div class="detail-hero">
-<span class="detail-tag">쇼핑</span>
-<div class="detail-title">쿠팡을 떠나<br>네이버로 옮긴 사람</div>
-<div class="detail-meta">2026.04.24 · 오늘의 오디언스 #25</div>
+<style>
+.wrap{background:#f7f7fa;max-width:800px}
+a{color:inherit;text-decoration:none}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back:hover{color:#333}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
+.punchline{background:#111;margin:0 -24px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
+.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
+.compare-col{padding:20px}
+.compare-col:first-child{background:#f7f7fa}
+.compare-col:last-child{background:#111}
+.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
+.audience-box .a-basis{font-size:.7rem;color:#666}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
+.biz-item{border-bottom:1px solid #f0f0f0}
+.biz-item:last-child{border:none}
+.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:200px}
+.biz-body-inner{padding:0 0 16px}
+.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+</style>
+
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">쇼핑 · 2026.04.24</div>
+  <h1>쿠팡을 떠나<br>네이버로 옮긴 사람</h1>
+  <div class="sub">개인정보 유출 후 채널을 바꾸는 사람</div>
+  <div class="meta">오늘의 오디언스 #25</div>
 </div>
 
-<div class="quote-box">
-<p>"개인정보 유출 뉴스 보고 쿠팡 삭제했어요.<br><strong style="color:#000;font-style:normal">근데 로켓배송 없으니까 불편하더라고요.</strong><br>네이버플러스 스토어 깔았습니다."</p>
-<div style="font-size:.82rem;color:#999;margin-top:12px">— F씨, 30세, 직장인</div>
+<div class="punchline">
+  <p>이 사람은 쇼핑을 그만둔 게 아닙니다.<br><strong>지금, 쇼핑 채널을 바꾸는 중입니다.</strong></p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.15rem;font-weight:800;color:#000;line-height:1.6;letter-spacing:-0.3px">이 사람은 쇼핑을 그만둔 게 아닙니다.<br><strong style="color:#e8530e">지금, 쇼핑 채널을 바꾸는 중입니다.</strong></p>
+<div style="height:20px"></div>
+
+<div class="quote">
+  <p>"개인정보 유출 뉴스 보고 쿠팡 삭제했어요.<br><strong>근데 로켓배송 없으니까 불편하더라고요.</strong><br>네이버플러스 스토어 깔았습니다."</p>
+  <div class="from">— 30세, 직장인</div>
 </div>
 
-<div class="section">
-<div class="section-label" style="color:#e8530e">왜 지금인가</div>
-<p style="font-size:.95rem;color:#333;line-height:1.9">쿠팡 개인정보 유출 사고 이후, 이탈자가 236만 명 발생했습니다.<br>하지만 경쟁 플랫폼으로 옮긴 사람은 9.7%에 불과합니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">그 9.7% 중 절반 가까이가 <strong>네이버플러스 스토어를 깔았습니다.</strong><br>네이버플러스 스토어 MAU는 1년 만에 75.5% 성장. 11번가 추월이 눈앞입니다.</p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">출처: 이데일리 · 아이지에이웍스 모바일인덱스 리포트</p>
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">쿠팡 이탈 → 채널 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">이커머스 경쟁</span>
+      <span class="impact-badge hot">기회</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">간편결제 전환</span>
+      <span class="impact-badge positive">긍정</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">멤버십·구독 이동</span>
+      <span class="impact-badge positive">긍정</span>
+    </div>
+  </div>
 </div>
 
-<div class="section">
-<div class="section-label">이 사람의 일주일</div>
-<div class="behavior-cards">
-<div class="behavior-card">
-<div class="bc-step">STEP 01</div>
-<div class="bc-title">쿠팡 접속이 줄었습니다</div>
-<div class="bc-desc">매일 열던 쿠팡. 개인정보 유출 뉴스 이후 접속 빈도가 떨어집니다. 삭제까지는 아니지만, 습관이 흔들리기 시작합니다.</div>
-</div>
-<div class="behavior-card highlight">
-<div class="bc-step">STEP 02 · 전환점</div>
-<div class="bc-title">네이버플러스 스토어를 깔았습니다</div>
-<div class="bc-desc">쿠팡 대안을 찾는 중. 네이버 멤버십 혜택, 포인트 적립 — 로켓배송 없이도 되는 선택지를 발견합니다.</div>
-</div>
-<div class="behavior-card">
-<div class="bc-step">STEP 03</div>
-<div class="bc-title">일상 구매가 옮겨지는 중입니다</div>
-<div class="bc-desc">생필품, 식품 — 매일 사는 것들의 채널이 바뀌고 있습니다. 결제 습관이 바뀌면 돌아오기 어렵습니다.</div>
-</div>
-</div>
+<div class="card">
+  <div class="s-label">왜 지금인가</div>
+  <div class="s-title">쿠팡 이탈자 236만 중<br>경쟁앱 전환은 9.7%</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">네이버플러스 스토어 MAU는 1년 만에 75.5% 성장.<br>11번가 추월이 눈앞입니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 이데일리 · 아이지에이웍스 모바일인덱스</p>
 </div>
 
-<div style="padding:32px 0;border-bottom:1px solid #f0f0f0">
-<p style="font-size:1.05rem;font-weight:800;color:#000;line-height:1.7">이 사람은 왜 매력적인가</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:12px">쇼핑 채널이 바뀌는 사람은 결제 수단도, 멤버십도, 포인트도 바뀝니다.<br><strong>지금 이 사람의 지갑이 새로 열리는 중입니다.</strong></p>
+<div class="card">
+  <div class="s-label">이 사람의 일주일</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">쿠팡 접속이 줄었습니다</div>
+      <div class="step-desc">매일 열던 쿠팡. 개인정보 유출 뉴스 이후 접속 빈도가 떨어집니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">네이버플러스 스토어를 깔았습니다</div>
+      <div class="step-desc">쿠팡 대안을 찾는 중. 네이버 멤버십 혜택, 포인트 적립 — 로켓배송 없이도 되는 선택지를 발견합니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">일상 구매가 옮겨지는 중입니다</div>
+      <div class="step-desc">생필품, 식품 — 매일 사는 것들의 채널이 바뀌고 있습니다.</div>
+    </div>
+  </div>
 </div>
 
-<div style="padding:28px 0;border-bottom:1px solid #f0f0f0">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="padding:20px;background:#f7f7f7">
-<div style="font-size:.68rem;font-weight:700;color:#999;margin-bottom:8px">쿠팡 충성 유저</div>
-<div style="font-size:.85rem;color:#999;line-height:1.8">로켓배송만 씀<br>다른 앱 안 깔음<br>"쿠팡이면 되지"</div>
-</div>
-<div style="padding:20px;background:#000">
-<div style="font-size:.68rem;font-weight:700;color:#e8530e;margin-bottom:8px">채널 전환자</div>
-<div style="font-size:.85rem;color:#aaa;line-height:1.8">쿠팡 접속 감소<br>네이버플러스 스토어 신규 설치<br><strong style="color:#fff">지금 쇼핑 채널을 바꾸는 사람</strong></div>
-</div>
-</div>
+<div class="highlight-line">
+  <p>이 사람은 왜 매력적인가?<br><span>쇼핑 채널이 바뀌는 사람은<br>결제 수단도, 멤버십도, 포인트도 바뀝니다.</span></p>
 </div>
 
-<div style="background:#000;padding:48px 32px;margin-top:28px">
-<p style="font-size:.65rem;color:#666;font-weight:700;letter-spacing:2px;margin-bottom:24px">오늘의 오디언스</p>
-<h3 style="color:#fff;font-size:1.4rem;font-weight:900;line-height:1.4;margin-bottom:12px">쿠팡을 떠나<br>네이버로 옮긴 사람</h3>
-<p style="color:#e8530e;font-size:2rem;font-weight:900;margin-bottom:4px">~23만 명</p>
-<p style="color:#666;font-size:.72rem;margin-bottom:32px">쿠팡 이탈자 236만 중 경쟁앱 전환 9.7% · 모바일인덱스 실측</p>
-<p style="color:#fff;font-size:.92rem;font-weight:600;line-height:2">쇼핑을 그만둔 게 아닙니다.<br>지금, 채널을 바꾸는 중입니다.</p>
+<div class="card">
+  <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 쇼핑인데, 완전히 다른 사람</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>쿠팡 충성 유저</h4>
+      <ul>
+        <li>로켓배송만 씀</li>
+        <li>다른 앱 안 깔음</li>
+        <li>"쿠팡이면 되지"</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>채널 전환자</h4>
+      <ul>
+        <li>쿠팡 접속 감소</li>
+        <li>네이버플러스 신규 설치</li>
+        <li><strong>지금 채널을 바꾸는 사람</strong></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="section">
-<div class="section-label">이 오디언스, 당신의 업종이라면?</div>
-<style>.biz-item{border-bottom:1px solid #f0f0f0;cursor:pointer}.biz-header{display:flex;align-items:center;gap:12px;padding:20px 0}.biz-header .biz-icon{font-size:1.4rem}.biz-header .biz-for{font-size:.88rem;font-weight:700;color:#000;flex:1}.biz-header .biz-arrow{font-size:1.2rem;color:#ccc;font-weight:300;transition:transform .2s}.biz-item.open .biz-arrow{transform:rotate(45deg);color:#e8530e}.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}.biz-item.open .biz-body{max-height:300px}.biz-body h4{font-size:1rem;font-weight:800;color:#000;margin-bottom:8px}.biz-body p{font-size:.9rem;color:#666;line-height:1.7;margin-bottom:12px}.biz-body .biz-action{font-size:.85rem;font-weight:700;color:#e8530e;margin-bottom:20px}</style>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🛒</span><span class="biz-for">이커머스라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>쿠팡에서 이탈한 사람이 새 채널을 찾는 중입니다</h4><p>신규 가입 혜택, 첫 구매 할인 — 지금 보여주면 습관이 됩니다.</p><div class="biz-action">→ "첫 구매 30% 할인, 지금 시작"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">🏷️</span><span class="biz-for">브랜드·셀러라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>채널이 바뀌면 브랜드 선택도 바뀝니다</h4><p>쿠팡에서 늘 사던 브랜드 대신, 새 플랫폼에서 처음 보는 브랜드를 고릅니다.</p><div class="biz-action">→ "네이버 스토어 입점, 지금 시작"</div></div>
-</div>
-<div class="biz-item" onclick="this.classList.toggle('open')">
-<div class="biz-header"><span class="biz-icon">💳</span><span class="biz-for">카드사라면</span><span class="biz-arrow">+</span></div>
-<div class="biz-body"><h4>결제 채널이 바뀌는 중입니다</h4><p>쿠팡 와우 멤버십 대신 네이버 멤버십. 결제 연동 혜택이 자연스러운 선택지.</p><div class="biz-action">→ "네이버 결제 캐시백 카드"</div></div>
-</div>
+<div class="audience-box">
+  <h3>쿠팡을 떠나 네이버로 옮긴 사람</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">쿠팡 이탈자 236만 중 경쟁앱 전환 9.7% · 모바일인덱스 실측</div>
+  <div class="a-desc">쇼핑을 그만둔 게 아닙니다.<br><strong>지금, 채널을 바꾸는 중입니다.</strong></div>
 </div>
 
-<div style="background:#e8530e;padding:20px 24px;margin-bottom:14px;text-align:center"><p style="color:#fff;font-size:.88rem;font-weight:600;margin:0">이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p></div>
+<div class="card">
+  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🛒</span><span class="biz-name">이커머스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>쿠팡에서 이탈한 사람이 새 채널을 찾는 중입니다. 신규 가입 혜택, 첫 구매 할인 — 지금 보여주면 습관이 됩니다.</p><div class="biz-action">→ "첫 구매 30% 할인, 지금 시작"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🏷️</span><span class="biz-name">브랜드·셀러라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>채널이 바뀌면 브랜드 선택도 바뀝니다. 새 플랫폼에서 처음 보는 브랜드를 고릅니다.</p><div class="biz-action">→ "네이버 스토어 입점, 지금 시작"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드사라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>결제 채널이 바뀌는 중입니다. 쿠팡 와우 멤버십 대신 네이버 멤버십.</p><div class="biz-action">→ "네이버 결제 캐시백 카드"</div></div></div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
+</div>
+
 <div class="footer">오늘의 오디언스 #25 · by IGAWorks</div>
-</div>
