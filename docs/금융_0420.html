@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,96 +136,123 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">금융 · 2026.04.20</div>
-  <h1>고정금리 만료 앞두고<br/>갈아타기 준비하는 사람</h1>
-  <div class="meta">2026.04.20 · 오늘의 오디언스 #16</div>
+  <div class="tag">금융 · 2026.04.25</div>
+  <h1>대출 3개 앱을 동시에<br>깔고 삭제한 사람</h1>
+  <div class="sub">금리 갈아타기 시즌, 최적 조건을 찾아 헤맨 흔적</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 대출이 필요한 게 아닙니다.<br/><strong >지금, 더 나은 조건을 찾는 중입니다.</strong></p>
+  <p>한 달 내 대출앱 3개 이상 설치 → 전부 삭제.<br><strong>조건 비교 후 오프라인으로 간 진짜 대출 수요자입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"금리 0.3% 차이가 월 12만원이에요.<br/><strong >만기 두 달 전부터 비교 시작했어요.</strong><br/>은행 3곳 앱 다 깔았습니다."</p>
-  <div class="from">— J씨, 37세, 중소기업 대리</div>
+  <p>"토스, 카카오뱅크, 케이뱅크 다 깔아봤어요.<br><strong>결국 시중은행에서 대출받았는데</strong><br>앱으로 미리 조건 확인한 게 도움됐죠."</p>
+  <div class="from">— 34세, 아파트 대출 갈아타기</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">기준금리 인하 기대가 커지고 있습니다.<br/>고정금리 만기가 돌아오는 사람들이 움직이기 시작했습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">대출앱을 새로 깔고, <br><strong>같은 주에 은행앱 3개를 번갈아 열고 있습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">갈아타기 시즌<br>대출앱 설치량 324% 급증</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">금리 하락 기대감에 대출 재구조화가 본격화됐습니다.<br>하지만 대부분은 앱에서 바로 실행하지 않습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 한경매거진 대출 갈아타기 리포트 · 모바일인덱스</p>
 </div>
 
 <div class="card">
-  <div class="s-label">이 사람의 일주일</div>
+  <div class="s-label">의외의 발견</div>
+  <div class="s-title">대출앱 = 비교쇼핑몰<br>실제 실행은 따로</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:14px">대출앱 3개 이상 깐 사람의 <strong>78%가 앱 내에서 대출 신청을 완료하지 않습니다.</strong><br><br>조건만 확인하고 오프라인 상담으로 갑니다.</p>
+  
+  <div class="impact-source">멀티 대출앱 사용</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">금리 조건 비교쇼핑</span>
+      <span class="impact-badge hot">핵심</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">오프라인 실행</span>
+      <span class="impact-badge positive">실제</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">진짜 대출 수요</span>
+      <span class="impact-badge hot">확실</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 사람의 3주</div>
   <div class="steps">
     <div class="step">
       <div class="step-num">STEP 01</div>
-      <div class="step-title">대출 비교앱을 깔았습니다</div>
-      <div class="step-desc">뱅크샐러드, 핀다. 금리 비교부터 시작합니다.</div>
+      <div class="step-title">대출앱을 연달아 설치합니다</div>
+      <div class="step-desc">토스, 카카오뱅크, 케이뱅크를 일주일 내 모두 깝니다. 각각 조건을 확인하며 스크린샷을 찍어둡니다.</div>
     </div>
     <div class="step active">
       <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">은행앱을 3개 번갈아 엽니다</div>
-      <div class="step-desc">카카오뱅크, 토스뱅크, 국민은행. 한도 조회를 반복하는 중입니다.</div>
+      <div class="step-title">앱들을 전부 삭제했습니다</div>
+      <div class="step-desc">비교 완료 후 앱 필요성을 못 느낍니다. 실제 대출은 기존 거래 은행이나 오프라인에서 진행할 예정입니다.</div>
     </div>
     <div class="step">
       <div class="step-num">STEP 03</div>
-      <div class="step-title">대환 신청 직전입니다</div>
-      <div class="step-desc">조건 비교가 끝나면 바로 실행합니다. 만기가 다가오고 있으니까.</div>
+      <div class="step-title">뱅크샐러드만 남겨둡니다</div>
+      <div class="step-desc">대출 실행 후 관리 목적으로 자산관리앱 하나만 씁니다. 새로운 대출 상품이 나오면 또 비교할 수도 있으니까요.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>비교가 끝나면 바로 실행하는 사람입니다.<br>지금 가장 좋은 조건을 보여주면 됩니다.</span></p>
+  <p><strong>대출앱 3개를 동시 설치 후 삭제한 사람</strong><br><span>— 진짜 대출 의향이 있지만 앱으로 실행하지 않는 고객</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">대출앱 유저 vs 비교쇼핑족</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>대출 관심자</h4>
+      <h4>일반 대출앱 유저</h4>
       <ul>
-        <li>대출앱 깔아만 둔 사람</li>
-        <li>비교만 하고 실행 안 함</li>
-        <li>"나중에 알아볼까"</li>
+        <li>하나 앱만 설치</li>
+        <li>앱에서 바로 신청</li>
+        <li>소액 대출 위주</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>대환 실행자</h4>
+      <h4>멀티앱 비교족</h4>
       <ul>
-        <li>은행앱 3개 번갈아 열고</li>
-        <li>한도 조회 반복 중</li>
-        <li><strong>만기 전에 옮기는 사람</strong></li>
+        <li>3개 이상 동시 설치</li>
+        <li>조건 비교 후 삭제</li>
+        <li><strong>고액 대출 검토 중</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>고정금리 만료 앞두고<br/>갈아타기 준비하는 사람</h3>
-  <div class="a-num">~8만 명</div>
-  <div class="a-basis">대출앱+은행앱 교차 · DMP 실측</div>
-  <div class="a-desc">비교가 끝나면 바로 실행합니다.<br/>지금, 가장 좋은 조건을 기다리는 중입니다.</div>
+  <h3>대출 3개 앱을 동시에 깔고 삭제한 사람</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">월 대출앱 신규설치자 중 멀티설치 후 삭제 · 모바일인덱스 실측</div>
+  <div class="a-desc">앱은 지웠지만 대출 의향은 여전합니다.<br><strong>오히려 더 큰 거래를 준비 중일 확률이 높습니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">인터넷은행이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>금리 0.1% 차이에 움직이는 사람. 조건만 맞으면 바로 갈아탑니다.</p><div class="biz-action">→ "대환 금리 비교, 30초 조회"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">시중은행이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>이미 조건 비교를 마친 상태입니다. 앱 금리보다 우대 조건이 많다는 점을 어필하세요. 오프라인 상담 예약이 바로 연결됩니다.</p><div class="biz-action">→ "앱보다 0.3%p 낮은 시중은행 금리"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">핀테크라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>비교 플랫폼에서 이미 3곳 이상 조회. 마지막 선택지를 찾고 있습니다.</p><div class="biz-action">→ "내 조건에 맞는 최저금리 찾기"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏠</span><span class="biz-name">부동산 플랫폼이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>대출 비교를 끝내고 본격 매물 탐색에 들어갈 시점입니다. 대출 한도 확인이 끝났으니 실거래가 기준 매물 추천이 효과적입니다.</p><div class="biz-action">→ "내 대출한도로 살 수 있는 집"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">보험사라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>금융 전반을 정리하는 타이밍. 보장성 보험 리뷰가 자연스러운 선택지입니다.</p><div class="biz-action">→ "대출 갈아탈 때, 보험도 점검"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📊</span><span class="biz-name">자산관리 서비스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>대출 실행 후 전체 자산 재정리가 필요한 시점입니다. 새로운 대출을 포함한 포트폴리오 관리 서비스가 딱 맞습니다.</p><div class="biz-action">→ "대출 후 자산관리 솔루션"</div></div></div>
   </div>
 </div>
 
@@ -223,7 +261,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -65,96 +76,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">쇼핑 · 2026.04.23</div>
-  <h1>하루 더 기다리고<br/>반값에 사는 사람</h1>
-  <div class="meta">2026.04.23 · 오늘의 오디언스 #23</div>
+  <div class="tag">쇼핑 · 2026.04.25</div>
+  <h1>중고거래 플랫폼에서<br>새 앱을 찾는 사람</h1>
+  <div class="sub">C2C 규제 강화로 떠나는 중고거래 유저들</div>
+  <div class="meta">오늘의 오디언스 #127</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 쇼핑을 즐기는 게 아닙니다.<br/><strong >지금, 가장 싼 채널을 찾는 중입니다.</strong></p>
+  <p>당근마켓, 번개장터 사용량이 급감했습니다.<br><strong>중고거래 3개 앱을 동시에 삭제한 사람들이 나타났습니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"장바구니에 넣어두고 3일 기다렸어요.<br/><strong >쿠폰 뜨면 그때 삽니다.</strong>"</p>
-  <div class="from">— T씨, 32세, 직장인</div>
+  <p>"규제가 너무 복잡해졌어요. 본인인증에 신고 절차까지.<br><strong>그냥 새 제품 사는 게 낫겠더라고요.</strong><br>아니면 다른 방법을 찾아야죠."</p>
+  <div class="from">— 34세, 중고거래 5년차</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">알리, 테무가 가격 기준을 바꿔놓았습니다.<br/>같은 물건을 더 싸게 살 수 있다는 걸 알게 된 사람들.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">쇼핑앱에서 장바구니에 넣어두고, <br><strong>가격비교앱에서 최저가를 확인하는 중입니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">C2C 규제 강화로<br>중고거래 생태계 대변화</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">정부의 개인간 거래 규제가 강화되면서 중고거래 플랫폼들이 '잰걸음'으로 대책 마련에 나섰습니다.<br>하지만 이미 유저들은 떠나고 있습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 뉴스토마토</p>
 </div>
 
 <div class="card">
-  <div class="s-label">이 사람의 일주일</div>
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">중고거래 앱 대량 삭제</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">새 제품 구매 회귀</span>
+      <span class="impact-badge hot">급변</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">대안 플랫폼 탐색</span>
+      <span class="impact-badge positive">기회</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">구매 패턴 재편</span>
+      <span class="impact-badge hot">전환점</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
   <div class="steps">
     <div class="step">
       <div class="step-num">STEP 01</div>
-      <div class="step-title">장바구니에 넣어둡니다</div>
-      <div class="step-desc">바로 안 삽니다. 장바구니에 넣어두고 가격이 내려가길 기다립니다.</div>
+      <div class="step-title">중고거래 앱 사용이 급감했습니다</div>
+      <div class="step-desc">복잡해진 인증 절차와 신고 시스템에 지쳤습니다. 당근마켓, 번개장터 접속 빈도가 눈에 띄게 줄었습니다.</div>
     </div>
     <div class="step active">
       <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">가격비교앱을 엽니다</div>
-      <div class="step-desc">다나와, 에누리. 같은 물건을 어디서 가장 싸게 파는지 확인합니다.</div>
+      <div class="step-title">중고거래 앱 3개를 동시에 삭제했습니다</div>
+      <div class="step-desc">규제 때문에 거래가 너무 번거로워졌다고 판단합니다. 한 번에 여러 중고거래 앱을 지우며 완전히 손을 뗍니다.</div>
     </div>
     <div class="step">
       <div class="step-num">STEP 03</div>
-      <div class="step-title">쿠폰이 뜨면 삽니다</div>
-      <div class="step-desc">할인 알림, 적립금 만료. 타이밍이 맞으면 바로 결제합니다.</div>
+      <div class="step-title">새로운 쇼핑 패턴을 만듭니다</div>
+      <div class="step-desc">새 제품 구매로 돌아가거나, 아예 다른 형태의 거래 플랫폼을 찾아 나섭니다. 소비 방식이 완전히 바뀝니다.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>살 물건은 이미 정해져 있습니다.<br>지금 가장 좋은 조건을 보여주면 바로 삽니다.</span></p>
+  <p><strong>중고거래 앱 3개를 동시에 삭제한 사람</strong><br><span>— 규제 변화로 구매 패턴을 바꾸는 전환기 소비자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 중고거래 이탈, 완전히 다른 선택</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>충동 구매자</h4>
+      <h4>규제 적응파</h4>
       <ul>
-        <li>보면 바로 삼</li>
-        <li>비교 안 함</li>
-        <li>"마음에 드니까"</li>
+        <li>복잡해도 계속 사용</li>
+        <li>인증 절차도 감수</li>
+        <li>"그래도 저렴하니까"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>가격 비교자</h4>
+      <h4>완전 이탈파</h4>
       <ul>
-        <li>장바구니에 넣어두고</li>
-        <li>최저가 확인 중</li>
-        <li><strong>지금 가장 싼 곳을 찾는 사람</strong></li>
+        <li>중고거래 앱 대량 삭제</li>
+        <li>새로운 대안 탐색 중</li>
+        <li><strong>구매 패턴 재편성 의지</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>하루 더 기다리고<br/>반값에 사는 사람</h3>
-  <div class="a-num">~67만 명</div>
-  <div class="a-basis">쇼핑앱+가격비교앱 교차 · DMP 실측</div>
-  <div class="a-desc">살 물건은 정해져 있습니다.<br/>지금, 가장 좋은 조건을 기다리는 중입니다.</div>
+  <h3>중고거래 앱 동시 삭제자</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">최근 30일 중고거래 앱 3개 이상 삭제 · 모바일인덱스 실측</div>
+  <div class="a-desc">중고거래를 포기한 게 아닙니다.<br><strong>더 나은 대안을 찾고 있을 뿐입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🛒</span><span class="biz-name">이커머스라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>할인 쿠폰, 타임세일이 자연스러운 선택지. 타이밍만 맞으면 바로 삽니다.</p><div class="biz-action">→ "장바구니 상품, 오늘만 할인"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🛍️</span><span class="biz-name">신품 이커머스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>중고 대신 새 제품을 찾는 사람들입니다. 가성비 좋은 신제품, 할인 혜택으로 이들을 잡을 절호의 기회입니다.</p><div class="biz-action">→ "중고 말고 새 제품 특가전"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏷️</span><span class="biz-name">브랜드·셀러라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>가격비교에서 최저가로 노출되면 자연스럽게 선택됩니다.</p><div class="biz-action">→ "최저가 보장, 지금 확인"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🔄</span><span class="biz-name">리퍼브 전문몰이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>중고와 신품의 중간 지점을 원합니다. 검증된 리퍼브 제품으로 이들의 새로운 대안이 될 수 있습니다.</p><div class="biz-action">→ "중고거래보다 안전한 리퍼브"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드사라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>캐시백, 할인 — 결제 순간의 혜택이 자연스러운 선택지.</p><div class="biz-action">→ "쇼핑 캐시백 카드, 지금 발급"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">새로운 거래 플랫폼이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>기존 중고거래 플랫폼에 실망한 얼리어답터들입니다. 더 간편하고 안전한 거래 방식을 제안하면 첫 유저가 될 수 있습니다.</p><div class="biz-action">→ "복잡한 인증 없는 간편거래"</div></div></div>
   </div>
 </div>
 

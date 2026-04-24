@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -65,77 +76,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">부동산 · 2026.04.21</div>
-  <h1>전세 포기하고 10억 이하<br/>매매로 선회한 사람</h1>
-  <div class="meta">2026.04.21 · 오늘의 오디언스 #19</div>
+  <div class="tag">부동산 · 2026.04.25</div>
+  <h1>전세보증금 마련을 위해<br>대출앱 3개를 동시에 깐 사람</h1>
+  <div class="sub">전세 만기 앞두고 급하게 자금 조달에 나선 사람</div>
+  <div class="meta">오늘의 오디언스 #26</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 집을 사고 싶은 게 아닙니다.<br/><strong >지금, 전세에서 밀려나는 중입니다.</strong></p>
+  <p>전세 만기 D-60 이내, 급작스럽게 대출앱을 여러 개 설치.<br><strong>토스뱅크·카카오뱅크·케이뱅크를 7일 이내 동시 설치한 사람입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"전세 만기인데 집주인이 안 돌려줘요.<br/><br/><strong >차라리 사자. 대출 알아보는 중입니다.</strong>"</p>
-  <div class="from">— L씨, 38세, 맞벌이</div>
+  <p>"집주인이 갑자기 매매로 전환한다더라고요.<br><strong>두 달 안에 보증금을 더 마련해야 해서요.</strong><br>은행마다 조건이 다르니까 일단 다 깔아봤어요."</p>
+  <div class="from">— 32세, 직장인</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">전세 사기 이후 전세 매물이 줄었습니다.<br/>만기가 돌아오는데 갱신이 안 되는 사람들이 매매로 돌아서고 있습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">부동산앱에서 매매 매물을 보면서, <br><strong>같은 주에 대출앱을 깔았습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">전세 매물 44% 급감<br>보증금 추가 마련이 절실한 상황</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">전세 매물 감소로 기존 세입자들이 보증금 증액 압박을 받고 있습니다.<br>동시에 주금공 보금자리론 금리까지 0.25%p 올랐습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 뉴스1 · 연합인포맥스</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">전세 만기 + 대출앱 동시 설치</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">긴급 자금 필요</span>
+      <span class="impact-badge hot">급박</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">금융상품 비교검토</span>
+      <span class="impact-badge positive">신중</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">이사 vs 매매 결정</span>
+      <span class="impact-badge hot">기로</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">부동산앱 사용량이 급증했습니다</div>
+      <div class="step-desc">직방·다방·호갱노노 접속이 평소의 3배로 늘었습니다. 전세 매물을 찾거나 시세를 확인하고 있습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">대출앱 3개를 7일 이내 동시 설치</div>
+      <div class="step-desc">토스뱅크·카카오뱅크·케이뱅크를 연달아 깔았습니다. 각 은행별 전세자금대출 조건을 비교하고 한도를 확인 중입니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">주거 선택의 기로에 섭니다</div>
+      <div class="step-desc">대출 한도에 따라 이사할지 매매로 전환할지 결정합니다. 보험상품·이사업체앱도 함께 검색하기 시작합니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>전세에서 매매로 넘어가는 사람은 대출, 보험, 이사 — 모든 선택지가 동시에 열립니다.</span></p>
+  <p><strong>전세 만기 압박으로 대출앱을 동시 다발 설치한 사람</strong><br><span>— 급한 자금 조달이 필요한 고관여 금융 고객</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 대출 고객, 완전히 다른 절박함</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>내 집 마련 관심자</h4>
+      <h4>일반적인 대출 검토자</h4>
       <ul>
-        <li>부동산앱 둘러보기만</li>
-        <li>대출 조회 안 함</li>
-        <li>"언젠가 사야지"</li>
+        <li>여유롭게 조건 비교</li>
+        <li>1-2개 앱만 사용</li>
+        <li>"나중에 생각해봐야지"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>매매 전환자</h4>
+      <h4>전세 만료 급박 고객</h4>
       <ul>
-        <li>매매 매물 검색 중</li>
-        <li>대출 한도 조회 시작</li>
-        <li><strong>지금 전세에서 밀려나는 사람</strong></li>
+        <li>7일 내 3개 앱 설치</li>
+        <li>부동산앱도 급증</li>
+        <li><strong>지금 당장 결정해야 하는 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>전세 포기하고 10억 이하<br/>매매로 선회한 사람</h3>
-  <div class="a-num">~43만 명</div>
-  <div class="a-basis">부동산앱+대출/은행앱 교차 · DMP 실측</div>
-  <div class="a-desc">전세에서 매매로 넘어가는 중입니다.<br/>지금, 모든 선택지가 열리는 타이밍.</div>
+  <h3>전세보증금 마련 급박족</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">전국 전세 만기 예정자 중 대출앱 동시 설치 비중 · 모바일인덱스 실측</div>
+  <div class="a-desc">시간이 별로 없습니다.<br><strong>지금 결정하지 않으면 이사를 해야 합니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">캐피탈이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>주택담보대출 비교가 자연스러운 선택지.</p><div class="biz-action">→ "내 한도 조회, 30초 완료"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">금융기관이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>급박한 자금 조달 니즈가 확실한 고객입니다. 전세자금대출 한도 상향, 신속 심사 — 지금이 전환 타이밍입니다.</p><div class="biz-action">→ "24시간 이내 전세대출 승인"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏠</span><span class="biz-name">부동산 플랫폼이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>전세→매매 전환자에게 맞춤 매물 추천이 자연스럽습니다.</p><div class="biz-action">→ "내 예산에 맞는 매물 찾기"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏠</span><span class="biz-name">부동산 서비스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>전세 매물 찾기와 매매 검토를 동시에 하는 사람들입니다. 급매물·전세 투 매매 전환 — 시급한 주거 해법을 제시하세요.</p><div class="biz-action">→ "전세보증금으로 매매 전환 컨설팅"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📦</span><span class="biz-name">이사 플랫폼이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>만기일이 곧 이사일. 견적 비교가 자연스러운 타이밍.</p><div class="biz-action">→ "이사 견적, 3곳 비교"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📦</span><span class="biz-name">이사·생활 서비스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>결국 이사할 가능성이 높은 사람들입니다. 이사업체·인테리어·가전 — 주거 이동에 따른 모든 서비스 니즈가 생깁니다.</p><div class="biz-action">→ "전세 만료 이사 패키지 서비스"</div></div></div>
   </div>
 </div>
 

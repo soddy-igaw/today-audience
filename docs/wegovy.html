@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,77 +136,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">헬스 · 2026.04.16</div>
-  <h1>다이어트약 처방 후<br/>운동을 끊은 사람</h1>
-  <div class="meta">2026.04.16 · 오늘의 오디언스 #14</div>
+  <div class="tag">헬스 · 2026.04.25</div>
+  <h1>PT 끊은 후 러닝앱 설치한 사람</h1>
+  <div class="sub">헬스장에서 야외로, 운동의 중심이 바뀐 사람</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 다이어트 중인 게 아닙니다.<br/><strong >지금, 몸이 바뀌면서 다음 선택지를 찾는 중입니다.</strong></p>
+  <p>PT 비용 부담으로 헬스장을 떠났지만<br><strong>운동은 포기하지 않은 사람들입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"위고비 맞고 나서 운동 안 해도 빠져요.<br/><br/><strong >근데 근육도 같이 빠지는 것 같아요.</strong>"</p>
-  <div class="from">— A씨, 34세, 직장인</div>
+  <p>"PT 한 달에 40만원은 너무 부담스러워요.<br><strong>그냥 밖에서 뛰는 게 낫겠더라고요.</strong><br>앱으로도 충분히 관리되고."</p>
+  <div class="from">— 29세, 직장인</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">GLP-1 다이어트약(위고비, 삭센다) 처방이 급증하고 있습니다.<br/>약으로 체중이 빠지면서, 운동을 줄이는 사람들이 늘고 있습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">건강앱과 의료앱을 동시에 쓰면서, <br><strong>쇼핑앱에서 보충제를 검색하기 시작한 사람들.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">러닝크루 열풍<br>야외 운동이 대세가 된 이유</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">야외 러닝이 실내보다 칼로리를 5% 더 소모한다는 연구결과가 나왔습니다.<br>러닝크루 문화와 맞물려 PT 대신 러닝을 선택하는 사람들이 늘고 있습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 동아일보 · 아이지에이웍스 모바일인덱스</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">PT → 러닝 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">러닝앱 신규유입</span>
+      <span class="impact-badge hot">급증</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">야외운동용품 관심</span>
+      <span class="impact-badge positive">상승</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">운동 앱 의존도</span>
+      <span class="impact-badge hot">증가</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">헬스장 앱 사용이 줄어듭니다</div>
+      <div class="step-desc">PT 비용 부담, 시간 제약으로 헬스장 출입이 드물어집니다. 피트니스센터 앱 접속도 현저히 감소했습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">나이키런클럽이나 애디다스런을 깝니다</div>
+      <div class="step-desc">운동을 포기하는 대신 러닝앱을 설치합니다. 무료로 코칭을 받을 수 있고, 기록 관리도 가능하다는 걸 발견합니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">야외 운동이 메인이 됩니다</div>
+      <div class="step-desc">이제 헬스장보다 공원에서 더 많은 시간을 보냅니다. 러닝크루에 참여하거나 혼자서도 꾸준히 뜁니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>약으로 빠지면 근손실이 옵니다.이 사람은 지금 다음 선택지를 찾기 시작했습니다.</span></p>
+  <p><strong>PT 끊고 3일 내 러닝앱을 설치한 사람</strong><br><span>— 비용 효율적인 운동 방식을 찾은 실용주의자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 운동 포기, 완전히 다른 선택</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>다이어트 관심자</h4>
+      <h4>운동 완전 중단자</h4>
       <ul>
-        <li>운동+식단 병행</li>
-        <li>약 안 씀</li>
-        <li>"의지로 빼자"</li>
+        <li>PT 끊으면서 모든 운동 중단</li>
+        <li>피트니스 앱 모두 삭제</li>
+        <li>"운동은 나중에..."</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>약물 다이어터</h4>
+      <h4>러닝 전환자</h4>
       <ul>
-        <li>약 처방 시작</li>
-        <li>운동 감소 중</li>
-        <li><strong>지금 근손실을 걱정하는 사람</strong></li>
+        <li>헬스장 앱 사용 중단</li>
+        <li>러닝앱 신규 설치</li>
+        <li><strong>운동 방식만 바꾼 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>다이어트약 처방 후<br/>운동을 끊은 사람</h3>
-  <div class="a-num">~110만 명</div>
-  <div class="a-basis">건강앱+의료앱+쇼핑앱 3중 교차 · DMP 실측</div>
-  <div class="a-desc">약으로 빠지면 다음 고민이 옵니다.<br/>지금, 선택지를 찾는 중입니다.</div>
+  <h3>PT 끊은 후 러닝앱 설치한 사람</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">헬스장 이탈 후 7일 내 러닝앱 신규설치자 · 모바일인덱스 실측</div>
+  <div class="a-desc">운동을 포기한 게 아닙니다.<br><strong>더 합리적인 방법을 찾은 것입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏥</span><span class="biz-name">비만클리닉이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>재처방, 용량 조절 — 지속 관리가 자연스러운 선택지.</p><div class="biz-action">→ "위고비 재처방, 가까운 클리닉"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">👟</span><span class="biz-name">스포츠용품 브랜드라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>러닝화, 운동복, 액세서리 — 야외 운동에 필요한 모든 것에 관심이 높습니다. PT 비용을 아낀 만큼 용품에 투자할 여력이 있습니다.</p><div class="biz-action">→ "PT 대신 좋은 러닝화로"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💊</span><span class="biz-name">건기식이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>프로틴, 비타민 — 약과 함께 먹는 보충제가 자연스러운 선택지.</p><div class="biz-action">→ "다이어트약과 함께 먹는 프로틴"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">피트니스 앱이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>PT 트레이너 대신 앱 코칭에 의존하게 된 사람들입니다. 유료 구독 전환율이 높고, 프리미엄 기능에 대한 니즈가 확실합니다.</p><div class="biz-action">→ "개인 PT 대신 스마트 코칭"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">⚖️</span><span class="biz-name">체성분 측정이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>체지방은 줄고 근육도 줄고. 측정이 자연스러운 다음 단계.</p><div class="biz-action">→ "인바디 측정, 가까운 곳"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏥</span><span class="biz-name">건강관리 서비스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>야외 운동으로 전환하면서 부상 위험, 운동 강도 관리에 대한 고민이 생겼습니다. 체계적인 건강 모니터링 서비스가 필요합니다.</p><div class="biz-action">→ "러너를 위한 건강 체크업"</div></div></div>
   </div>
 </div>
 
@@ -204,7 +258,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

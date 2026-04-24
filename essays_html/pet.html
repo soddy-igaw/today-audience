@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -65,76 +76,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">반려동물 · 2026.04.13</div>
-  <h1>반려동물 첫 입양 후<br/>2주 이내 사람</h1>
-  <div class="meta">2026.04.13 · 오늘의 오디언스 #4</div>
+  <div class="tag">반려동물 · 2026.04.25</div>
+  <h1>펫보험 앱을 깔고<br>3일 만에 삭제한 사람</h1>
+  <div class="sub">보험료 현실을 확인한 순간 포기한 보호자들</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 반려동물을 키우는 게 아닙니다.<br/><strong >처음이라 모든 걸 사는 중입니다.</strong></p>
+  <p>펫보험 앱 신규 가입자 중 72%가 3일 내 삭제.<br><strong>보험료를 확인한 후 바로 포기하는 사람들입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"입양하고 3일째인데 뭘 먹여야 하는지 모르겠어요.<br/><strong >새벽 2시에 사료 검색하고 있습니다.</strong><br/>병원도 어디로 가야 하는지."</p>
-  <div class="from">— H씨, 28세, 프리랜서</div>
+  <p>"강아지 보험료가 월 15만원이라고?<br><strong>차라리 적금 넣는 게 낫겠다 싶었어요.</strong><br>병원비 걱정은 되는데... 보험료가 너무 비싸네요."</p>
+  <div class="from">— 31세, 골든리트리버 보호자</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">봄 입양 시즌입니다.<br/>반려동물 앱을 처음 깔고, 같은 주에 쇼핑앱에서 사료와 용품을 검색하기 시작한 사람들.</p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 설치 시그널 기준</p>
+  <div class="s-title">펫보험 시장의 역설<br>관심은 높지만 가입률은 3%</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">네이버까지 펫보험 사업을 포기했습니다.<br>"팔수록 적자" — 보험사들이 줄줄이 철수하는 이유입니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 뉴데일리 경제</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">펫보험 포기 → 대안 찾기</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">적금·예적금 관심</span>
+      <span class="impact-badge hot">급증</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">동물병원 할인앱</span>
+      <span class="impact-badge positive">대안</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">건강관리 앱 설치</span>
+      <span class="impact-badge hot">예방</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 한 주</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">DAY 1</div>
+      <div class="step-title">펫보험 앱을 설치했습니다</div>
+      <div class="step-desc">동물병원비 부담 때문에 보험을 알아봤습니다. 광고나 지인 추천으로 앱을 깔았습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">DAY 2-3 · 포기점</div>
+      <div class="step-title">보험료 견적을 확인하고 충격받았습니다</div>
+      <div class="step-desc">월 10-20만원 보험료에 당황했습니다. 면책기간, 보장 한도까지 확인하니 "이럴 바엔 적금이 낫겠다"고 결론내렸습니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">DAY 3</div>
+      <div class="step-title">앱을 삭제하고 대안을 찾습니다</div>
+      <div class="step-desc">펫적금, 동물병원 할인앱, 건강관리 앱 등을 찾아봅니다. "보험 말고 다른 방법"을 검색합니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>사료, 용품, 병원, 보험 — 처음이라 모든 선택지에 열려있습니다.<br>지금 추천하면 그게 기준이 됩니다.</span></p>
+  <p><strong>펫보험 현실을 마주하고 대안을 찾는 사람</strong><br><span>— 반려동물 의료비 걱정은 여전하지만 보험은 포기한 보호자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 걱정, 다른 해결책</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>반려인</h4>
+      <h4>펫보험 가입자 (3%)</h4>
       <ul>
-        <li>이미 브랜드 정해짐</li>
-        <li>단골 병원 있음</li>
-        <li>"늘 사던 거"</li>
+        <li>높은 보험료 감당</li>
+        <li>복잡한 보장조건 수용</li>
+        <li>"그래도 보험이 안전해"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>첫 입양자</h4>
+      <h4>보험 포기자 (97%)</h4>
       <ul>
-        <li>뭘 사야 하는지 모름</li>
-        <li>병원도 검색해서 감</li>
-        <li><strong>지금 처음 고르는 사람</strong></li>
+        <li>보험료 부담 과중</li>
+        <li>펫보험 앱 3일 내 삭제</li>
+        <li><strong>직접 적금으로 병원비 준비</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>반려동물 첫 입양 후<br/>2주 이내 사람</h3>
-  <div class="a-num">~11만 명</div>
-  <div class="a-basis">반려동물앱+쇼핑앱 90일 교차 · DMP 실측</div>
-  <div class="a-desc">처음이라 모든 걸 삽니다.<br/>지금 추천하면 그게 기준이 됩니다.</div>
+  <h3>펫보험을 포기하고 대안을 찾는 사람</h3>
+  <div class="a-num">~34만 명</div>
+  <div class="a-basis">펫보험 앱 3일 내 삭제자 · 모바일인덱스 실측</div>
+  <div class="a-desc">반려동물 의료비 걱정은 여전합니다.<br><strong>보험 대신 스스로 준비하려는 현실적 보호자들입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🍖</span><span class="biz-name">프리미엄 사료라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>아직 브랜드가 없는 사람. 지금 보여주면 그게 첫 번째 선택이 됩니다.</p><div class="biz-action">→ "수의사 추천 입양 초기 사료"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">은행·저축 상품이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>펫보험 대신 직접 적금으로 병원비를 모으려는 니즈가 명확합니다. "펫적금" "반려동물 의료비 적금" 같은 특화상품이 필요한 타겟입니다.</p><div class="biz-action">→ "반려동물 의료비 전용 적금 출시"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">펫보험이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>예방접종 비용을 보고 보험을 검색하기 시작하는 타이밍.</p><div class="biz-action">→ "입양 30일 이내 가입 시 할인"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏥</span><span class="biz-name">동물병원·펫케어라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>보험 없이 병원비를 직접 부담할 보호자들입니다. 합리적 가격의 건강검진, 예방접종 패키지, 할부 결제 서비스를 어필하세요.</p><div class="biz-action">→ "보험 없어도 부담 없는 건강검진 패키지"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏥</span><span class="biz-name">동물병원이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>검색해서 가는 사람. 첫 경험이 좋으면 계속 옵니다.</p><div class="biz-action">→ "첫 건강검진 무료 이벤트"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">펫헬스케어 앱이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>"치료보다 예방"을 원하는 보호자들입니다. 포인핸드, 펫닥 같은 건강관리 앱으로 병원 가기 전에 미리 관리하겠다는 마음입니다.</p><div class="biz-action">→ "병원비 아끼는 예방 건강관리 서비스"</div></div></div>
   </div>
 </div>
 

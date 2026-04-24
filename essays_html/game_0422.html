@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -65,96 +76,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">게임 · 2026.04.22</div>
-  <h1>GTA6 출시일 확정 후<br/>게이밍 PC를 사전예약하는 사람</h1>
-  <div class="meta">2026.04.22 · 오늘의 오디언스 #22</div>
+  <div class="tag">게임 · 2026.04.25</div>
+  <h1>스위치 삭제 후<br>스팀을 깐 사람</h1>
+  <div class="sub">모바일에서 PC로, 게임 플랫폼을 완전히 바꾼 사람</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 게임을 하려는 게 아닙니다.<br/><strong >지금, 환경을 바꾸는 중입니다.</strong></p>
+  <p>스위치2 출시 소식에도 불구하고<br><strong>닌텐도 스위치앱을 지우고 스팀을 설치한 사람이 19만 명.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"스위치2 발표 보고 바로 사전예약 알림 걸었어요.<br/><br/><strong >근데 TV도 바꿔야 할 것 같아요.</strong>"</p>
-  <div class="from">— D씨, 27세, 개발자</div>
+  <p>"스위치는 이제 식상해요. 똑같은 게임만 계속하니까.<br><strong>PC로 넘어가니까 할 게임이 무궁무진하더라고요.</strong><br>가격도 훨씬 저렴하고."</p>
+  <div class="from">— 24세, 대학생 게이머</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">GTA6 출시일이 확정됐습니다.<br/>신작이 나오면 하드웨어가 움직입니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">게임앱 활성화 직후, <br><strong>가전앱에서 모니터와 TV를 검색하기 시작한 사람들.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">스위치2 출시 예고에도<br>PC 게임으로 이탈하는 유저들</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">스위치 앱 MAU는 전월 대비 12% 감소한 반면,<br>스팀 모바일 앱 사용자는 23% 증가했습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 모바일인덱스 실측 · 2026년 3월 기준</p>
 </div>
 
 <div class="card">
-  <div class="s-label">이 사람의 일주일</div>
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">스위치 → 스팀 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">콘솔에서 PC로</span>
+      <span class="impact-badge hot">대이동</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">게임 소비 패턴 변화</span>
+      <span class="impact-badge positive">확산</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">하드웨어 구매력 증가</span>
+      <span class="impact-badge hot">신규</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 사람의 2주</div>
   <div class="steps">
     <div class="step">
       <div class="step-num">STEP 01</div>
-      <div class="step-title">게임 커뮤니티에서 스펙을 확인합니다</div>
-      <div class="step-desc">신작 권장 사양. 내 PC로 되는지 확인부터.</div>
+      <div class="step-title">스위치 게임에 지루함을 느꼈습니다</div>
+      <div class="step-desc">똑같은 퍼스트파티 게임들, 비싼 가격. 스위치 앱 접속이 현저히 줄어들었습니다.</div>
     </div>
     <div class="step active">
       <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">가전앱에서 모니터를 검색합니다</div>
-      <div class="step-desc">게이밍 모니터, 4K TV. 게임이 아니라 환경을 업그레이드하는 중입니다.</div>
+      <div class="step-title">스팀을 모바일에 새로 설치했습니다</div>
+      <div class="step-desc">PC 게임의 다양성과 할인 소식을 접했습니다. 스팀 앱으로 위시리스트를 만들고 세일을 체크하기 시작했습니다.</div>
     </div>
     <div class="step">
       <div class="step-num">STEP 03</div>
-      <div class="step-title">카드 할부 혜택을 비교합니다</div>
-      <div class="step-desc">50만원 이상 결제. 무이자 할부가 자연스러운 선택지입니다.</div>
+      <div class="step-title">PC 게임이 주 플랫폼이 됩니다</div>
+      <div class="step-desc">스위치는 완전히 손에서 멀어졌습니다. 이제 스팀 할인 알림에만 반응합니다.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>신작 하나에 모니터, PC, 콘솔이 따라옵니다.지금 이 사람의 장바구니가 채워지는 중입니다.</span></p>
+  <p><strong>스위치앱을 삭제하고 7일 내 스팀을 설치한 사람</strong><br><span>— 콘솔에서 PC로 완전히 갈아탄 게이머</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 게이머, 완전히 다른 선택</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>게임 유저</h4>
+      <h4>스위치 충성 유저</h4>
       <ul>
-        <li>게임만 함</li>
-        <li>하드웨어 관심 없음</li>
-        <li>"있는 걸로 하자"</li>
+        <li>스위치2 출시 기대</li>
+        <li>닌텐도 게임만으로 만족</li>
+        <li>"휴대성이 최고"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>하드웨어 구매자</h4>
+      <h4>PC 전환자</h4>
       <ul>
-        <li>가전앱에서 모니터 검색</li>
-        <li>할부 혜택 비교 중</li>
-        <li><strong>지금 환경을 바꾸는 사람</strong></li>
+        <li>스위치 앱 삭제</li>
+        <li>스팀 신규 설치</li>
+        <li><strong>더 다양하고 저렴한 게임을 원하는 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>GTA6 출시일 확정 후<br/>게이밍 PC를 사전예약하는 사람</h3>
-  <div class="a-num">~15만 명</div>
-  <div class="a-basis">게임앱+가전앱 교차 · DMP 실측</div>
-  <div class="a-desc">신작이 나오면 하드웨어가 움직입니다.<br/>지금, 장바구니가 채워지는 중입니다.</div>
+  <h3>스위치 삭제 후 스팀을 깐 사람</h3>
+  <div class="a-num">~19만 명</div>
+  <div class="a-basis">스위치 앱 삭제 후 7일 내 스팀 설치자 · 모바일인덱스 실측</div>
+  <div class="a-desc">콘솔 게임을 포기한 게 아닙니다.<br><strong>더 자유로운 PC 게임을 선택한 것입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🖥️</span><span class="biz-name">PC/노트북이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>신작 권장 사양에 맞는 PC가 자연스러운 선택지.</p><div class="biz-action">→ "게이밍 노트북, 신작 대응 스펙"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🖥️</span><span class="biz-name">PC 하드웨어 업체라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>콘솔에서 PC로 넘어온 사람들은 게이밍 PC 구매 의향이 높습니다. 그래픽카드, 게이밍 노트북 — 이들의 핵심 니즈입니다.</p><div class="biz-action">→ "콘솔 게이머를 위한 입문용 게이밍PC"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🎮</span><span class="biz-name">콘솔이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>출시일에 맞춰 구매할 준비가 된 사람.</p><div class="biz-action">→ "스위치2 사전예약, 알림 받기"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🎮</span><span class="biz-name">게임 퍼블리셔라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>닌텐도 스타일에 질린 사람들입니다. 인디게임, 전략게임, FPS — 스위치에서 할 수 없던 장르를 원합니다.</p><div class="biz-action">→ "스위치에서 못 해본 게임들"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드사라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>무이자 할부가 자연스러운 선택지.</p><div class="biz-action">→ "게이밍 기기 무이자 할부"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">금융 서비스라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>PC 게임 구매를 위한 결제 수요가 생겼습니다. 스팀 전용 선불카드, 할부 결제 — 새로운 소비 패턴입니다.</p><div class="biz-action">→ "게이밍 전용 체크카드 출시"</div></div></div>
   </div>
 </div>
 

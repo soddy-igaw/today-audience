@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,77 +136,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">러닝 · 2026.04.15</div>
-  <h1>매주 뛰면서 러닝 장비에<br/>돈 쓰는 사람</h1>
-  <div class="meta">2026.04.15 · 오늘의 오디언스 #11</div>
+  <div class="tag">헬스 · 2026.04.25</div>
+  <h1>PT 끊은 후<br>홈트 앱만 깔고 있는 사람</h1>
+  <div class="sub">헬스장을 떠났지만 운동은 포기하지 않은 사람</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 러닝을 하는 게 아닙니다.<br/><strong >지금, 러닝에 투자하는 중입니다.</strong></p>
+  <p>PT 수업 앱 삭제 후 72시간 내에 홈트레이닝 앱을 3개 이상 설치한 사람.<br><strong>헬스장이 아닌 집에서 새로운 루틴을 찾고 있습니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"처음엔 아무 운동화나 신고 뛰었는데<br/><br/><strong >지금은 러닝화만 3켤레예요.</strong>"</p>
-  <div class="from">— Y씨, 31세, 디자이너</div>
+  <p>"PT비 한 달에 80만원이었어요.<br><strong>그 돈으로 홈트 앱 구독하고 운동기구 사니까</strong><br>훨씬 효율적이더라고요. 시간도 자유롭고."</p>
+  <div class="from">— 32세, 홈트 전환자</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">러닝크루 문화가 확산되고 있습니다.<br/>혼자 뛰던 사람이 크루에 들어가면 장비에 돈을 쓰기 시작합니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">운동앱을 2개 이상 쓰면서, <br><strong>쇼핑앱에서 러닝화와 GPS워치를 검색하는 사람들.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">PT 가격 상승 vs 홈트 앱 고도화<br>선택지가 명확해진 시점</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">PT 1회당 평균 8만원 vs 홈트 앱 월 구독 1만원대.<br>가격 차이가 커지면서 홈트 앱 퀄리티는 계속 올라갑니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 헬스업계 · 앱스토어 피트니스 랭킹</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">PT → 홈트 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">홈트 시장 급성장</span>
+      <span class="impact-badge hot">폭발</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">운동기구 온라인 구매</span>
+      <span class="impact-badge positive">증가</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">헬스장 회원권 해지</span>
+      <span class="impact-badge hot">이탈</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 2주</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">PT 앱 사용량이 급격히 줄었습니다</div>
+      <div class="step-desc">헬스장 PT 예약 앱을 더 이상 열지 않습니다. 비용 부담과 시간 제약에 지쳤습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">홈트 앱을 연속으로 설치했습니다</div>
+      <div class="step-desc">나이키 트레이닝 클럽, 캐치핏, 킵을 72시간 내에 모두 깔았습니다. 여러 앱을 비교하며 자신에게 맞는 걸 찾고 있습니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">홈트 루틴이 완전히 자리잡습니다</div>
+      <div class="step-desc">매일 오후 7시, 거실에서 30분 운동이 새로운 습관이 됐습니다. 덤벨과 요가매트까지 주문했습니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>러닝이 습관이 되면 장비에 투자합니다.지금 이 사람의 장바구니가 채워지는 중입니다.</span></p>
+  <p><strong>PT 끊은 후 3일 내에 홈트 앱 3개를 깐 사람</strong><br><span>— 운동은 계속하되, 방식을 바꾼 실용주의자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 운동, 완전히 다른 접근</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>러닝 입문자</h4>
+      <h4>PT 충성 고객</h4>
       <ul>
-        <li>가끔 뜀</li>
-        <li>아무 운동화</li>
-        <li>"건강 좀 챙기자"</li>
+        <li>월 80만원 PT비 지출</li>
+        <li>헬스장 출입 주 3회</li>
+        <li>"트레이너가 있어야 해"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>러닝 투자자</h4>
+      <h4>홈트 전환자</h4>
       <ul>
-        <li>매주 기록</li>
-        <li>러닝화 검색 중</li>
-        <li><strong>지금 장비에 투자하는 사람</strong></li>
+        <li>PT 앱 삭제 완료</li>
+        <li>홈트 앱 동시 비교</li>
+        <li><strong>집에서 효율적 운동 추구</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>매주 뛰면서 러닝 장비에<br/>돈 쓰는 사람</h3>
-  <div class="a-num">~27만 명</div>
-  <div class="a-basis">운동앱 2개 이상 사용 · DMP 실측</div>
-  <div class="a-desc">러닝이 습관이 되면 장비가 따라옵니다.<br/>지금, 장바구니가 채워지는 중입니다.</div>
+  <h3>PT 끊고 홈트로 간 사람</h3>
+  <div class="a-num">~23만 명</div>
+  <div class="a-basis">PT 앱 삭제 후 홈트 앱 3개 이상 설치자 · 모바일인덱스 실측</div>
+  <div class="a-desc">운동을 포기한 게 아닙니다.<br><strong>더 스마트한 방법을 찾았을 뿐입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">👟</span><span class="biz-name">러닝화라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>첫 러닝화는 아무거나. 두 번째부터 브랜드를 고릅니다.</p><div class="biz-action">→ "러닝화 베스트셀러, 지금 확인"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏋️</span><span class="biz-name">운동기구 브랜드라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>PT 끊은 만큼 홈트 장비에 투자할 여유가 생겼습니다. 덤벨, 밴드, 요가매트 — 홈짐 구축 수요가 폭발적입니다.</p><div class="biz-action">→ "PT비로 홈짐 만들기 패키지"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">⌚</span><span class="biz-name">GPS워치라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>페이스, 심박수 — 데이터에 눈뜬 러너에게 자연스러운 선택지.</p><div class="biz-action">→ "가민 러닝워치, 입문 모델"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">피트니스 앱이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>여러 홈트 앱을 동시에 써보는 황금기입니다. 첫 체험이 결정적 — 프리미엄 체험 기간과 개인 맞춤 프로그램으로 승부하세요.</p><div class="biz-action">→ "PT 경험자 전용 고강도 코스"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏃</span><span class="biz-name">마라톤이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>크루에서 뛰다 보면 대회가 자연스러운 다음 단계.</p><div class="biz-action">→ "서울마라톤, 접수 시작"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏠</span><span class="biz-name">홈 인테리어라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>거실이나 방 한 칸을 운동 공간으로 꾸미려 합니다. 거울, 바닥재, 수납함 — 홈짐 인테리어 수요가 급증합니다.</p><div class="biz-action">→ "2평 홈짐 셀프 인테리어"</div></div></div>
   </div>
 </div>
 
@@ -204,7 +258,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,96 +136,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">금융 · 2026.04.16</div>
-  <h1>자동차보험 만기 전<br/>갈아타기 비교 중인 사람</h1>
-  <div class="meta">2026.04.16 · 오늘의 오디언스 #15</div>
+  <div class="tag">금융 · 2026.04.25</div>
+  <h1>대출 3개 앱을 동시에 깔고<br>72시간 내 삭제한 사람</h1>
+  <div class="sub">갈아타기 실패 후 포기한 숨겨진 대출 수요층</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 보험에 관심 있는 게 아닙니다.<br/><strong >지금, 더 싼 보험을 찾는 중입니다.</strong></p>
+  <p>대출 갈아타기 시도 중 93%가 중도 포기.<br><strong>앱 3개 깔고 3일 내 모두 지운 사람들이 있습니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"작년이랑 똑같은데 보험료가 올랐어요.<br/><br/><strong >다이렉트로 바꾸면 20만원 싸대요.</strong>"</p>
-  <div class="from">— B씨, 39세, 자영업</div>
+  <p>"토스·카카오뱅크·핀다 다 깔아봤는데<br><strong>서류가 너무 복잡해서 포기했어요.</strong><br>그냥 기존 대출 그대로 쓰고 있습니다."</p>
+  <div class="from">— 34세, 직장인</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">자동차보험 갱신 시즌입니다.<br/>보험료가 오르면서, 다이렉트 보험을 비교하는 사람들이 늘고 있습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">보험앱을 깔고, <br><strong>같은 주에 가격비교앱에서 견적을 돌리고 있습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">대출 갈아타기 열풍<br>하지만 완주율은 7%뿐</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">금리 인하 기대감에 대출 비교앱 설치는 폭증했지만<br>실제 갈아타기 성공률은 극히 낮습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 한경매거진 · 아이지에이웍스 모바일인덱스</p>
 </div>
 
 <div class="card">
-  <div class="s-label">이 사람의 일주일</div>
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">대출앱 대량 설치 → 즉시 삭제</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">숨겨진 대출 수요</span>
+      <span class="impact-badge hot">급증</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">간편 대출 니즈</span>
+      <span class="impact-badge positive">확산</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">기존 금융사 고착</span>
+      <span class="impact-badge hot">심화</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 사람의 72시간</div>
   <div class="steps">
     <div class="step">
-      <div class="step-num">STEP 01</div>
-      <div class="step-title">보험 만기 알림을 받습니다</div>
-      <div class="step-desc">갱신 안내 문자. 보험료가 올랐습니다. 비교를 시작합니다.</div>
+      <div class="step-num">DAY 1</div>
+      <div class="step-title">대출 비교앱 3개를 동시 설치했습니다</div>
+      <div class="step-desc">금리 인하 소식에 갈아타기를 결심. 토스·핀다·뱅크샐러드를 한번에 깔았습니다.</div>
     </div>
     <div class="step active">
-      <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">가격비교앱에서 견적을 돌립니다</div>
-      <div class="step-desc">카카오페이, 토스. 3곳 이상 견적 비교. 가장 싼 곳을 찾는 중입니다.</div>
+      <div class="step-num">DAY 2 · 전환점</div>
+      <div class="step-title">복잡한 절차에 당황했습니다</div>
+      <div class="step-desc">각 앱마다 다른 서류 요구사항, 복잡한 인증 절차. 생각보다 훨씬 번거로웠습니다.</div>
     </div>
     <div class="step">
-      <div class="step-num">STEP 03</div>
-      <div class="step-title">다이렉트로 갈아탑니다</div>
-      <div class="step-desc">비교가 끝나면 바로 실행합니다. 만기일이 다가오고 있으니까.</div>
+      <div class="step-num">DAY 3</div>
+      <div class="step-title">모든 앱을 삭제했습니다</div>
+      <div class="step-desc">결국 포기하고 앱 3개를 모두 지웠습니다. 기존 대출을 그대로 유지하기로 결정했습니다.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>만기 전에 비교하는 사람은 바로 실행합니다.지금 가장 좋은 조건을 보여주면 됩니다.</span></p>
+  <p><strong>대출 갈아타기를 시도했지만 포기한 사람</strong><br><span>— 니즈는 있지만 절차가 막은 잠재 고객</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 대출 고민, 완전히 다른 결과</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>보험 유지자</h4>
+      <h4>갈아타기 성공자</h4>
       <ul>
-        <li>자동 갱신</li>
-        <li>비교 안 함</li>
-        <li>"귀찮아서 그냥"</li>
+        <li>서류 준비 완벽</li>
+        <li>인증 절차 완주</li>
+        <li>"금리 1% 아꼈다"</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>갈아타기 비교자</h4>
+      <h4>중도 포기자</h4>
       <ul>
-        <li>견적 3곳 이상</li>
-        <li>다이렉트 검색 중</li>
-        <li><strong>지금 더 싼 보험을 찾는 사람</strong></li>
+        <li>대출앱 3개 동시설치</li>
+        <li>72시간 내 모두 삭제</li>
+        <li><strong>절차 복잡성에 좌절한 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>자동차보험 만기 전<br/>갈아타기 비교 중인 사람</h3>
-  <div class="a-num">~9만 명</div>
-  <div class="a-basis">보험앱+가격비교앱 교차 · DMP 실측</div>
-  <div class="a-desc">만기 전에 비교하는 사람은 바로 실행합니다.<br/>지금, 가장 좋은 조건을 기다리는 중.</div>
+  <h3>대출앱 3개를 72시간 내 삭제한 사람</h3>
+  <div class="a-num">~284만 명</div>
+  <div class="a-basis">대출 관련앱 설치 후 즉시삭제 행동 · 모바일인덱스 실측</div>
+  <div class="a-desc">갈아타기 의지는 있었지만 절차가 너무 복잡했습니다.<br><strong>간편한 해결책만 있다면 움직일 사람들입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">다이렉트 보험이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>최저가 견적이 자연스러운 선택지.</p><div class="biz-action">→ "다이렉트 보험, 30초 견적"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">대부업체·저축은행이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>복잡한 절차 때문에 시중은행 갈아타기를 포기한 사람들. 간편 심사를 어필하면 바로 전환됩니다.</p><div class="biz-action">→ "서류 없는 5분 대출승인"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">보험비교라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>한 번에 비교할 수 있는 플랫폼이 자연스러운 선택지.</p><div class="biz-action">→ "보험료 비교, 한 번에 끝내기"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">P2P·대안금융이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>기존 금융권에서 막힌 사람들의 우회 루트입니다. 간편함과 속도를 강조한 마케팅이 효과적입니다.</p><div class="biz-action">→ "은행 포기한 분들을 위한 대출"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🔧</span><span class="biz-name">자동차 정비라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>보험 갈아타기 타이밍에 정비 쿠폰이 자연스럽습니다.</p><div class="biz-action">→ "엔진오일 교환, 할인 쿠폰"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">핀테크 스타트업이라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>기존 앱들의 복잡함에 실망한 얼리어답터들. 더 간편한 UX로 차별화하면 선점 가능합니다.</p><div class="biz-action">→ "클릭 3번으로 끝나는 대출"</div></div></div>
   </div>
 </div>
 
@@ -223,7 +258,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

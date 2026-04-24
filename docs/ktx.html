@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,77 +136,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">여행 · 2026.04.15</div>
-  <h1>KTX 매진 후<br/>대안 교통을 찾는 사람</h1>
-  <div class="meta">2026.04.15 · 오늘의 오디언스 #13</div>
+  <div class="tag">여행 · 2026.04.25</div>
+  <h1>해외항공료 급등 후<br>국내숙박앱 깐 사람</h1>
+  <div class="sub">유류할증료 폭탄에 여행 목적지를 바꾼 사람들</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 KTX를 타려는 게 아닙니다.<br/><strong >지금, 어떻게든 가려는 중입니다.</strong></p>
+  <p>항공료가 2배로 뛰자 해외여행을 포기했습니다.<br><strong>대신 야놀자, 여기어때를 새로 설치한 사람이 134만 명입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"연휴 KTX 예매 열리자마자 들어갔는데 매진이에요.<br/><br/><strong >고속버스 앱 깔고 렌터카도 알아보는 중입니다.</strong>"</p>
-  <div class="from">— W씨, 35세, 회사원</div>
+  <p>"동남아 3박4일이 200만원이래요. 미쳤죠?<br><strong>차라리 제주도 가서 호캉스 할게요.</strong><br>국내도 충분히 예쁜 곳 많잖아요."</p>
+  <div class="from">— 32세, 여행 마니아</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">연휴 KTX가 매진됩니다.<br/>예매에 실패한 사람들이 대안 교통을 찾기 시작합니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">여행앱을 열고, <br><strong>같은 날 대중교통앱과 지도앱을 동시에 열고 있습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">유류할증료 역대급 상승<br>해외여행비 2배 폭등</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">동남아 항공료가 평균 87% 상승했습니다.<br>3월 대비 해외여행 예약 취소율이 43% 급증했습니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 한국소비자원 · 여행업계 집계</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">해외여행 포기 → 국내여행 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">국내숙박 앱 급증</span>
+      <span class="impact-badge hot">신규 설치</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">호캉스 트렌드 가속</span>
+      <span class="impact-badge positive">성장</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">여행 패턴 변화</span>
+      <span class="impact-badge hot">전환점</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">해외여행을 계획하고 있었습니다</div>
+      <div class="step-desc">스카이스캐너로 항공료를 비교하고, 트립닷컴에서 호텔을 찾았습니다. 5월 연휴 해외여행을 준비 중이었습니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">항공료 폭등에 계획을 바꿨습니다</div>
+      <div class="step-desc">예상 예산의 2배가 나오자 해외여행을 포기했습니다. 대신 야놀자나 여기어때를 새로 깔고 국내 숙박을 검색하기 시작했습니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">국내여행 전문가가 됩니다</div>
+      <div class="step-desc">제주도, 부산, 강릉 — 국내 여행지를 새롭게 발견합니다. 호캉스, 펜션 예약이 일상이 됐습니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>교통이 바뀌면 숙소, 일정, 렌터카 — 모든 선택지가 다시 열립니다.</span></p>
+  <p><strong>항공료 급등 후 국내숙박앱을 설치한 사람</strong><br><span>— 해외여행 예산으로 국내 프리미엄 여행을 선택한 현실주의자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">해외파 vs 국내 전환파의 차이</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>여행 계획자</h4>
+      <h4>기존 국내여행족</h4>
       <ul>
-        <li>KTX 예매 완료</li>
-        <li>일정 확정</li>
-        <li>"다 정했어"</li>
+        <li>원래 국내만 다녔음</li>
+        <li>예산 50만원 이하</li>
+        <li>펜션, 모텔 위주</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>대안 교통 탐색자</h4>
+      <h4>해외→국내 전환자</h4>
       <ul>
-        <li>KTX 매진</li>
-        <li>버스/렌터카 검색 중</li>
-        <li><strong>지금 어떻게든 가려는 사람</strong></li>
+        <li>해외여행 경험 풍부</li>
+        <li>예산 100-200만원</li>
+        <li><strong>국내에서 해외급 서비스 추구</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>KTX 매진 후<br/>대안 교통을 찾는 사람</h3>
-  <div class="a-num">~121만 명</div>
-  <div class="a-basis">여행+대중교통+지도앱 3중 교차 · DMP 실측</div>
-  <div class="a-desc">KTX가 매진되면 모든 게 다시 열립니다.<br/>지금, 대안을 찾는 중입니다.</div>
+  <h3>해외항공료 급등 후 국내숙박앱 깐 사람</h3>
+  <div class="a-num">~134만 명</div>
+  <div class="a-basis">3-4월 야놀자·여기어때 신규 설치자 중 해외여행앱 삭제자 · 모바일인덱스 실측</div>
+  <div class="a-desc">해외여행을 포기한 게 아닙니다.<br><strong>더 합리적인 선택을 한 것입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚌</span><span class="biz-name">고속버스라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>프리미엄 고속버스가 자연스러운 선택지.</p><div class="biz-action">→ "연휴 고속버스, 잔여석 확인"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">프리미엄 숙박업체라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 예산 200만원을 국내에서 쓸 준비가 된 사람들입니다. 리조트, 풀빌라 — 해외급 서비스를 어필하세요.</p><div class="biz-action">→ "해외 리조트 부럽지 않은 국내 풀빌라"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>KTX 매진 직후 렌터카 검색이 급증하는 타이밍.</p><div class="biz-action">→ "연휴 렌터카, 최저가 비교"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">✈️</span><span class="biz-name">국내 항공사라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외 대신 제주도, 부산행을 선택하는 사람들입니다. 국내선 특가, 렌터카 패키지로 어필할 기회입니다.</p><div class="biz-action">→ "제주도 2박3일 항공+렌터카 99만원"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">숙박이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>일정 변경에 맞춘 숙소 추천이 자연스럽습니다.</p><div class="biz-action">→ "연휴 숙소, 지금 예약"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카 업체라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>국내 여행지를 새롭게 탐방할 사람들입니다. 장거리 여행, 캠핑카 — 해외여행 대신 국내 로드트립을 제안하세요.</p><div class="biz-action">→ "국내 여행으로도 충분한 캠핑카 여행"</div></div></div>
   </div>
 </div>
 
@@ -204,7 +258,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

@@ -79,6 +79,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -125,77 +136,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">자동차 · 2026.04.14</div>
-  <h1>전기차에서 하이브리드로<br/>선택지를 바꾼 사람</h1>
-  <div class="meta">2026.04.14 · 오늘의 오디언스 #8</div>
+  <div class="tag">자동차 · 2026.04.25</div>
+  <h1>렌터카에서 카셰어링으로<br>갈아타는 사람들</h1>
+  <div class="sub">소유 없는 모빌리티를 선택한 신세대</div>
+  <div class="meta">오늘의 오디언스 #27</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 차를 사려는 게 아닙니다.<br/><strong >지금, 선택지를 바꾸는 중입니다.</strong></p>
+  <p>렌터카 앱을 삭제하고 쏘카·그린카를 깔았습니다.<br><strong>30분 대여가 3일 대여를 이기는 중입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"충전소 줄 서다가 포기했어요.<br/><br/><strong >하이브리드로 바꾸기로 했습니다.</strong>"</p>
-  <div class="from">— P씨, 41세, 영업직</div>
+  <p>"렌터카는 너무 부담돼요. 하루 종일 빌려야 하고.<br><strong>쏘카는 딱 필요한 시간만 쓰면 되니까.</strong><br>주차할 곳도 미리 정해져 있어서 편해요."</p>
+  <div class="from">— 32세, 무차족</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">전기차 보조금이 줄었습니다. 충전 인프라 불만이 커지고 있습니다.<br/>전기차를 알아보던 사람들이 하이브리드를 검색하기 시작했습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">자동차앱에서 전기차 대신 <br><strong>하이브리드 모델을 비교하고, 보험앱을 동시에 열고 있습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">DMP 앱 사용 시그널 기준</p>
+  <div class="s-title">카셰어링이 렌터카를 추월<br>짧은 이용이 대세가 됐습니다</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">쏘카 MAU 163만 vs 롯데렌터카 141만.<br>카셰어링이 전통 렌터카를 넘어선 첫 해입니다.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 모바일인덱스 · 카셰어링협회</p>
 </div>
 
+<div class="card">
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">렌터카 → 카셰어링 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">모빌리티 패러다임 변화</span>
+      <span class="impact-badge hot">혁신</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">짧은 이용 선호</span>
+      <span class="impact-badge positive">트렌드</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">무차족 증가</span>
+      <span class="impact-badge hot">급증</span>
+    </div>
+  </div>
+</div>
 
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">렌터카 이용이 줄어들었습니다</div>
+      <div class="step-desc">하루 종일 빌려야 하는 부담, 복잡한 절차에 지쳐갑니다. 가끔 쓰는데 비용이 너무 큽니다.</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">카셰어링 앱을 새로 설치했습니다</div>
+      <div class="step-desc">쏟카, 그린카, 위카 중 하나를 깔았습니다. 30분 단위 대여, 간단한 인증 — 렌터카보다 훨씬 편하다는 걸 발견합니다.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">이동 패턴이 완전히 바뀝니다</div>
+      <div class="step-desc">이제 렌터카 대신 카셰어링만 씁니다. 필요할 때만 잠깐, 가성비 좋은 이동수단이 됐습니다.</div>
+    </div>
+  </div>
+</div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>차를 바꾸면 보험, 할부, 정비 — 모든 선택지가 동시에 열립니다.</span></p>
+  <p><strong>렌터카를 버리고 카셰어링을 선택한 사람</strong><br><span>— 소유 없는 모빌리티 라이프의 얼리어답터</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 차량 대여, 완전히 다른 철학</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>차량 관심자</h4>
+      <h4>렌터카 이용자</h4>
       <ul>
-        <li>자동차앱 둘러보기만</li>
-        <li>견적 안 냄</li>
-        <li>"내년에 바꿀까"</li>
+        <li>하루~며칠 단위 대여</li>
+        <li>여행·출장 위주</li>
+        <li>대리점 방문 필요</li>
       </ul>
     </div>
     <div class="compare-col">
-      <h4>차량 전환자</h4>
+      <h4>카셰어링 전환자</h4>
       <ul>
-        <li>하이브리드 비교 중</li>
-        <li>보험 견적 조회 시작</li>
-        <li><strong>지금 선택지를 바꾸는 사람</strong></li>
+        <li>30분~몇 시간 대여</li>
+        <li>일상 이동 위주</li>
+        <li><strong>앱으로 즉시 이용하는 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>전기차에서 하이브리드로<br/>선택지를 바꾼 사람</h3>
-  <div class="a-num">~75만 명</div>
-  <div class="a-basis">자동차앱+보험/쇼핑앱 교차 · DMP 실측</div>
-  <div class="a-desc">차를 바꾸면 모든 게 바뀝니다.<br/>지금, 선택지가 열리는 중입니다.</div>
+  <h3>렌터카에서 카셰어링으로 갈아탄 사람</h3>
+  <div class="a-num">~31만 명</div>
+  <div class="a-basis">카셰어링 신규유입 중 렌터카 이탈자 비중 · 모바일인덱스 실측</div>
+  <div class="a-desc">차를 포기한 게 아닙니다.<br><strong>더 효율적인 이용법을 찾았을 뿐입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">완성차라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>시승 예약이 자연스러운 다음 단계입니다.</p><div class="biz-action">→ "하이브리드 시승, 가까운 전시장"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">⚡</span><span class="biz-name">전기차 충전업체라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>카셰어링으로 전기차를 처음 경험하는 사람들입니다. 충전 앱, 충전소 위치 서비스 — 전기차 생태계 진입점이 됩니다.</p><div class="biz-action">→ "카셰어링 이용자 전용 충전 할인"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">할부/리스라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>월 납입금 시뮬레이션이 자연스러운 선택지.</p><div class="biz-action">→ "내 조건에 맞는 할부 계산"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">자동차 브랜드라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>구매 전 다양한 차종을 체험하는 사람들입니다. 카셰어링으로 브랜드를 경험한 후 구매로 이어질 가능성이 높습니다.</p><div class="biz-action">→ "카셰어링 체험 후 구매 혜택"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🛡️</span><span class="biz-name">자동차보험이라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>신차 보험 견적이 자연스러운 타이밍.</p><div class="biz-action">→ "신차 보험, 30초 견적"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">금융·보험사라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>차를 소유하지 않지만 모빌리티 금융 니즈는 있습니다. 카셰어링 전용 보험, 이용료 할부 서비스가 새로운 시장입니다.</p><div class="biz-action">→ "무차족 전용 모빌리티 카드"</div></div></div>
   </div>
 </div>
 
@@ -204,7 +258,6 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
 
 <div style="margin-top:48px;padding-top:32px;border-top:1px solid #eee">
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>

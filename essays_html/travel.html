@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -65,96 +76,120 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">여행 · 2026.04.14</div>
-  <h1>해외여행 대신 국내여행으로<br/>전환한 사람</h1>
-  <div class="meta">2026.04.14 · 오늘의 오디언스 #5</div>
+  <div class="tag">여행 · 2026.04.25</div>
+  <h1>해외여행 취소 후<br>국내여행앱 급설치한 사람</h1>
+  <div class="sub">유류할증료 폭등으로 여행 계획을 180도 바꾼 사람</div>
+  <div class="meta">오늘의 오디언스 #26</div>
 </div>
 
 <div class="punchline">
-  <p >이 사람은 여행을 포기한 게 아닙니다.<br/><strong >지금, 여행의 방향을 바꾸는 중입니다.</strong></p>
+  <p>스카이스캐너 삭제 후 72시간 이내.<br><strong>야놀자·여기어때를 동시 설치한 사람들입니다.</strong></p>
 </div>
 
 <div style="height:20px"></div>
 
 <div class="quote">
-  <p>"발리 항공권 보다가 제주도 숙소 예약했어요.<br/><br/><strong >포기한 게 아니에요. 방향을 바꾼 거예요.</strong>"</p>
-  <div class="from">— S씨, 33세, 마케터</div>
+  <p>"일본 항공료가 2배가 됐어요. 80만원짜리 표가 160만원이라니.<br><strong>그냥 제주도 가기로 했어요.</strong><br>국내도 충분히 힐링되더라고요."</p>
+  <div class="from">— 32세, 직장인</div>
 </div>
 
 <div class="card">
   <div class="s-label">왜 지금인가</div>
-  <p style="font-size:.95rem;color:#333;line-height:1.9">환율이 1,450원을 넘겼습니다.<br/>유류할증료가 4인 가족 기준 60만원. 해외여행 비용이 체감되기 시작했습니다.</p>
-<p style="font-size:.95rem;color:#333;line-height:1.9;margin-top:16px">그런데 이 사람들, 여행앱을 끈 게 아닙니다.<br/><strong>같은 주에 국내 숙박앱을 깔았습니다.</strong></p>
-<p style="font-size:.78rem;color:#999;margin-top:12px">출처: 헤럴드경제 · DMP 앱 설치 시그널 기준</p>
+  <div class="s-title">유류할증료 폭등<br>해외여행 포기자 급증</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8;margin-bottom:10px">유류할증료가 3개월 만에 2.3배 상승했습니다.<br>해외여행 검색량은 40% 급감, 국내여행은 65% 증가.</p>
+  <p style="font-size:.7rem;color:#ccc">출처: 한국관광공사 · 네이버 트렌드</p>
 </div>
 
 <div class="card">
-  <div class="s-label">이 사람의 일주일</div>
+  <div class="s-label">어떤 영향을 줄까?</div>
+  <div class="impact-source">해외여행 → 국내여행 전환</div>
+  <div class="impact-branches">
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">국내 숙박업계 호황</span>
+      <span class="impact-badge hot">급증</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot positive"></span>
+      <span class="impact-name">렌터카 수요 증가</span>
+      <span class="impact-badge positive">상승</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-dot hot"></span>
+      <span class="impact-name">프리미엄 국내여행</span>
+      <span class="impact-badge hot">트렌드</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 사람의 한 달</div>
   <div class="steps">
     <div class="step">
       <div class="step-num">STEP 01</div>
-      <div class="step-title">해외여행앱 접속이 줄었습니다</div>
-      <div class="step-desc">스카이스캐너, 트립닷컴. 항공권 검색을 멈췄습니다.</div>
+      <div class="step-title">해외여행을 계획했습니다</div>
+      <div class="step-desc">스카이스캐너로 항공권을 검색하고, 트립닷컴에서 호텔을 알아봤습니다. 5월 연휴 일본/동남아 여행을 준비 중이었습니다.</div>
     </div>
     <div class="step active">
       <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">국내 숙박앱을 깔았습니다</div>
-      <div class="step-desc">야놀자, 여기어때. 해외 대신 제주, 강릉, 속초. 여행 자체를 포기한 게 아닙니다.</div>
+      <div class="step-title">항공료 폭등에 계획을 포기했습니다</div>
+      <div class="step-desc">유류할증료 때문에 항공료가 2배로 뛰었습니다. 스카이스캐너를 삭제하고 3일 내 야놀자·여기어때를 깔았습니다.</div>
     </div>
     <div class="step">
       <div class="step-num">STEP 03</div>
-      <div class="step-title">렌터카를 예약합니다</div>
-      <div class="step-desc">국내 여행은 차가 필요합니다. 쏘카, 롯데렌터카 앱이 열리기 시작합니다.</div>
+      <div class="step-title">국내여행으로 완전 전환됩니다</div>
+      <div class="step-desc">제주·부산·강원도 숙박을 검색합니다. 해외 대신 국내 프리미엄 리조트를 예약했습니다.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>이 사람은 왜 매력적인가<br><span>여행 예산이 사라진 게 아닙니다.예산의 방향이 바뀐 겁니다.숙소, 렌터카, 맛집 — 국내에서 쓸 준비가 된 사람.</span></p>
+  <p><strong>유료할증료 폭등으로 해외여행을 포기하고 국내로 전환한 사람</strong><br><span>— 여행 욕구는 그대로, 목적지만 바뀐 실용주의자</span></p>
 </div>
 
 <div class="card">
   <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">같은 여행족, 완전히 다른 선택</div>
   <div class="compare">
     <div class="compare-col">
-      <h4>해외여행자</h4>
+      <h4>해외여행 고집파</h4>
       <ul>
-        <li>항공권 비교 중</li>
-        <li>아직 예약 안 함</li>
-        <li>"언젠가 갈 거야"</li>
+        <li>비싸도 해외로 간다</li>
+        <li>스카이스캐너 계속 사용</li>
+        <li>"국내는 재미없어"</li>
       </ul>
     </div>
     <div class="compare-col">
       <h4>국내 전환자</h4>
       <ul>
-        <li>해외앱 접속 감소</li>
-        <li>국내 숙박앱 신규 설치</li>
-        <li><strong>지금 국내에서 쓸 준비가 된 사람</strong></li>
+        <li>스카이스캐너 삭제</li>
+        <li>국내여행앱 신규 설치</li>
+        <li><strong>합리적 대안을 찾은 사람</strong></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="audience-box">
-  <h3>해외여행 대신 국내여행으로<br/>전환한 사람</h3>
-  <div class="a-num">~185만 명</div>
-  <div class="a-basis">여행/숙박/항공앱 2개 이상 사용 · DMP 실측</div>
-  <div class="a-desc">여행을 포기한 게 아닙니다.<br/>지금, 방향을 바꾸는 중입니다.</div>
+  <h3>해외여행 취소 후 국내전환자</h3>
+  <div class="a-num">~89만 명</div>
+  <div class="a-basis">항공앱 삭제 → 국내여행앱 설치자 · 모바일인덱스 실측</div>
+  <div class="a-desc">여행 욕구는 변하지 않았습니다.<br><strong>단지 목적지를 바꿨을 뿐입니다.</strong></div>
 </div>
 
 <div class="card">
   <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">OTA라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>제주, 강릉, 속초 — 국내 숙소가 자연스러운 선택지입니다.</p><div class="biz-action">→ "국내 인기 숙소, 이번 주말"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">국내 호텔·리조트라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 예산이 그대로 국내로 유입됩니다. 프리미엄 숙박, 스파 패키지 — 해외 수준의 서비스를 어필하세요.</p><div class="biz-action">→ "해외 못지않은 프리미엄 스테이"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>숙소 예약 직후 렌터카를 검색하는 타이밍.</p><div class="biz-action">→ "제주 렌터카, 최저가 비교"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카 업체라면</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>국내여행 전환자는 자유여행을 선호합니다. 제주·강원도 렌터카, 캠핑카 — 국내 여행의 새로운 방식을 제안하세요.</p><div class="biz-action">→ "제주도 프리미엄 렌터카 패키지"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
     <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드사라면</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>항공 마일리지 대신 국내 숙소·맛집 할인이 자연스러운 선택지.</p><div class="biz-action">→ "국내여행 캐시백 카드"</div></div></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 적립 카드 대신 국내여행 혜택이 필요합니다. 국내 숙박·교통 할인 — 이들의 새로운 소비패턴에 맞춘 상품을 출시하세요.</p><div class="biz-action">→ "국내여행 전용 혜택 카드"</div></div></div>
   </div>
 </div>
 
