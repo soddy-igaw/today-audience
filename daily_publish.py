@@ -175,7 +175,7 @@ SELECT COUNT(DISTINCT a.adid) FROM a JOIN b ON a.adid = b.adid"""
     return None
 
 
-def build_prompt(category, trends, persona):
+def build_prompt(category, trends, persona, page_type=None):
     """에세이 생성 프롬프트 구성"""
     today_str = datetime.now().strftime("%Y.%m.%d")
     apps = ", ".join(CATEGORY_APPS.get(category, []))
@@ -188,16 +188,24 @@ def build_prompt(category, trends, persona):
 - 추정 모수: {persona.get('estimate_min', '?'):,}~{persona.get('estimate_max', '?'):,}명
 """
 
-    # 기존 에세이 참고용 (토스 스타일)
-    ref_file = os.path.join(ESSAY_DIR, "essays_html", "coupang_exit.html")
-    ref_html = ""
-    if os.path.exists(ref_file):
-        with open(ref_file, "r") as f:
-            ref_html = f.read()
+    # 페이지 타입 결정
+    if not page_type:
+        types = ["감정형", "인사이트형", "데이터형"]
+        page_type = types[datetime.now().timetuple().tm_yday % 3]
 
-    # 페이지 타입 로테이션: 날짜 기반으로 3가지 타입 순환
-    page_types = ["감정형", "인사이트형", "데이터형"]
-    page_type = page_types[datetime.now().timetuple().tm_yday % 3]
+    # 타입별 템플릿 로드
+    type_file_map = {"감정형": "emotion.html", "인사이트형": "insight.html", "데이터형": "data.html"}
+    tmpl_file = os.path.join(ESSAY_DIR, "templates", type_file_map.get(page_type, "emotion.html"))
+    ref_html = ""
+    if os.path.exists(tmpl_file):
+        with open(tmpl_file, "r") as f:
+            ref_html = f.read()
+    else:
+        # fallback: 기존 에세이
+        ref_file = os.path.join(ESSAY_DIR, "essays_html", "coupang_exit.html")
+        if os.path.exists(ref_file):
+            with open(ref_file, "r") as f:
+                ref_html = f.read()
 
     return f"""당신은 IGAWorks의 "오늘의 오디언스" 에세이 작가입니다.
 
@@ -282,7 +290,7 @@ def build_prompt(category, trends, persona):
 - <!DOCTYPE>, <html>, <head>, <body> 태그 절대 금지
 - 추적 가능한 앱: {apps}
 
-## 참고: 토스 스타일 에세이 HTML (이 구조를 그대로 따라하세요, 단 <style> 블록은 제외)
+## 참고: {page_type} 템플릿 HTML (이 구조를 그대로 따라하세요)
 {ref_html}
 
 ## 오늘의 카테고리: {category}

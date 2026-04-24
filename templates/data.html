@@ -1,0 +1,104 @@
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">카테고리 · 날짜</div>
+  <h1>제목 — 숫자가 드러나는 형태</h1>
+  <div class="sub">서브타이틀</div>
+  <div class="meta">오늘의 오디언스 #N</div>
+</div>
+
+<!-- 1막: 숫자로 시작 -->
+<div class="punchline">
+  <p>지난주 대비 <strong>+N%</strong>.<br>이 숫자가 의미하는 것.</p>
+</div>
+
+<div class="card">
+  <div class="s-label">이번 주 데이터</div>
+  <div class="data-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px">
+    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
+      <div style="font-size:1.6rem;font-weight:900;color:#e8530e">+N%</div>
+      <div style="font-size:.72rem;color:#999;margin-top:6px">지표 A</div>
+    </div>
+    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
+      <div style="font-size:1.6rem;font-weight:900;color:#111">N만</div>
+      <div style="font-size:.72rem;color:#999;margin-top:6px">지표 B</div>
+    </div>
+    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
+      <div style="font-size:1.6rem;font-weight:900;color:#111">N일</div>
+      <div style="font-size:.72rem;color:#999;margin-top:6px">지표 C</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2막: 데이터로 타겟 분리 -->
+<div class="card">
+  <div class="s-label">구경꾼 vs 진짜 타겟</div>
+  <div class="s-title">같은 카테고리, 완전히 다른 행동</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>구경꾼</h4>
+      <ul><li>앱 설치만</li><li>1회 실행 후 방치</li><li>전환 없음</li></ul>
+    </div>
+    <div class="compare-col">
+      <h4>진짜 타겟</h4>
+      <ul><li>앱 3개 동시 설치</li><li>매일 실행</li><li><strong>구매/전환 직전</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-line">
+  <p>숫자가 말하는 타겟.<br><span>행동 정의 문장 — DMP로 추적 가능한 구체적 행동.</span></p>
+</div>
+
+<!-- 보조적 페르소나 -->
+<div class="quote">
+  <p>"짧은 인터뷰 — 데이터를 뒷받침하는 실제 사례."</p>
+  <div class="from">— 나이, 직업</div>
+</div>
+
+<!-- 3막: 이 숫자가 광고주에게 의미하는 것 -->
+<div class="card">
+  <div class="s-label">타이밍</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">D-14</div>
+      <div class="step-title">시그널 감지</div>
+      <div class="step-desc">데이터에서 변화가 포착되는 시점</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">D-3 · 골든타임</div>
+      <div class="step-title">전환 직전</div>
+      <div class="step-desc">광고 효율이 가장 높은 구간</div>
+    </div>
+    <div class="step">
+      <div class="step-num">D-Day</div>
+      <div class="step-title">전환 완료</div>
+      <div class="step-desc">이미 늦음 — 여기서 잡으면 비용만 높아짐</div>
+    </div>
+  </div>
+</div>
+
+<div class="audience-box">
+  <h3>오디언스 이름</h3>
+  <div class="a-num">~N만 명</div>
+  <div class="a-basis">시그널 근거 · DMP 실측</div>
+  <div class="a-desc">이 숫자가 광고주에게 의미하는 것.</div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 데이터를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">📊</span><span class="biz-name">업종 1</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>이 데이터를 어떻게 활용하는지</p><div class="biz-action">→ 광고 카피 예시</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">📊</span><span class="biz-name">업종 2</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>이 데이터를 어떻게 활용하는지</p><div class="biz-action">→ 광고 카피 예시</div></div></div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
+</div>
+
+<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
