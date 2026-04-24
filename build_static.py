@@ -243,7 +243,7 @@ function handleSubscribe(e){{
 </script>
 """
 
-cards_html += '\n<div class="footer">오늘의 오디언스 · by IGAWorks · © 2026</div>'
+cards_html += '\n<div class="footer"><div style="margin-bottom:8px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:8px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>'
 
 with open(os.path.join(OUT, "index.html"), "w") as f:
     f.write(page_wrap("오늘의 오디언스", cards_html))
