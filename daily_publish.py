@@ -199,13 +199,24 @@ def build_prompt(category, trends, persona):
 
 ## 에세이 컨셉
 시장 트렌드를 읽고, 행동 시그널을 조합해 아직 아무도 안 쓰는 오디언스를 제안합니다.
-타겟: 광고 마케터, AE, 광고주. "이 사람한테 광고하면 됩니다"를 전달.
+타겟: 광고 마케터, AE, 광고주. "지금 이 시그널을 잡아야 합니다"를 전달.
 
-## 톤 & 스타일
-- 단정적 표현 자제: "~입니다" 대신 "~로 보입니다", "~하는 중입니다"
-- 문장 사이 줄바꿈 충분히: 한 문장 끝나면 <br> 넣기
-- em dash(—) 뒤에 반드시 공백: "금, 달러 — 이 사람은"
+## 톤 & 스타일 — 타이밍 전략 톤
+- 핵심 메시지: "이 시그널이 켜진 지금이 광고 타이밍이다"
+- 긴박감 있는 톤: "지금", "D-7", "72시간", "이번 주" 등 시간 표현 적극 사용
+- 짧고 단정적인 문장. 한 문장 끝나면 <br> 넣기
+- em dash(—) 뒤에 반드시 공백
 - 근거/출처는 "출처: OO" 형태로 명시
+- "~로 보입니다" 같은 약한 표현 대신 "~입니다", "~하고 있습니다"로 확신 있게
+
+## 제목 규칙
+- "~하는 사람"으로만 끝내지 마세요. 다양한 형식을 사용하세요:
+  - 타이밍형: "쿠팡 삭제 후 72시간", "금리 만기 D-30"
+  - 현상형: "운동 2주차의 벽", "전세 만기 카운트다운"
+  - 라벨형: "금리 갈아타기족", "쿠팡 엑소더스"
+  - 질문형: "PT 끊은 사람이 다음에 깔은 앱은?"
+- 광고주가 "이 타이밍에 광고해야겠다"고 느끼는 제목
+- 서브타이틀에서 타겟을 구체적으로 설명
 
 ## 필수 구조 — 토스 카드 스타일 (아래 HTML 구조 그대로 따라하세요)
 
@@ -226,10 +237,6 @@ def build_prompt(category, trends, persona):
 - 앱 설치/삭제, 사용 빈도 변화, 사용 시간대
 - 동시 설치 속도, 앱 조합 패턴
 - ❌ 앱 내부 탭/검색어/장바구니는 추적 불가 — 절대 사용 금지
-
-## 제목 규칙
-- 타겟 직관형: "OO하는 사람"
-- 예: "대출 만기 전 대환을 준비하는 사람"
 
 ## 색상: 흑백 기조 + 포인트 #e8530e
 
@@ -411,22 +418,13 @@ def inject_to_app(category, today, essay_html):
     existing = _re.findall(r'"number":\s*(\d+)', code)
     next_num = max(int(n) for n in existing) + 1 if existing else 1
 
-    # 3. Determine chapter and hero image
+    # 3. Determine chapter
     chapter_map = {
         "금융": "금융", "부동산": "금융", "증권": "금융",
         "골프": "스포츠", "헬스": "스포츠", "러닝": "스포츠",
         "쇼핑": "라이프", "반려동물": "라이프", "자동차": "라이프",
         "게임": "게임", "여행": "여행", "교육": "라이프",
     }
-    hero_images = {
-        "금융": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&q=80",
-        "부동산": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop&q=80",
-        "스포츠": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80",
-        "게임": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80",
-        "여행": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80",
-        "라이프": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80",
-    }
-    img = hero_images.get(category, hero_images.get(chapter_map.get(category, ""), ""))
     stat_label = f"{category} 오디언스 (DMP)"
 
     # 4. Insert new card as first ESSAYS entry
@@ -439,7 +437,6 @@ def inject_to_app(category, today, essay_html):
         f'        "stat_label": "{stat_label}",\n'
         f'        "date": "{date_fmt}",\n'
         f'        "color": "#000",\n'
-        f'        "img": "{img}",\n'
         f'    }},\n'
     )
     code = code.replace('ESSAYS = [\n', f'ESSAYS = [\n{new_card}')
@@ -470,7 +467,7 @@ def inject_to_app(category, today, essay_html):
         new_build_entry = (
             f'    {{"id":"{essay_id}","tag":"{category}","title":"{title}",'
             f'"sub":"{sub[:80]}","stat":"{stat}","stat_label":"{stat_label}",'
-            f'"date":"{date_fmt}","img":"{img}"}},\n'
+            f'"date":"{date_fmt}"}},\n'
         )
         bcode = bcode.replace('ESSAYS = [\n', f'ESSAYS = [\n{new_build_entry}')
         with open(build_script, "w", encoding="utf-8") as f:

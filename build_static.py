@@ -6,29 +6,29 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
-    {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","sub":"개인정보 유출 후 채널을 바꾸는 사람","stat":"~23만","stat_label":"쿠팡 이탈→경쟁앱 전환 9.7%","date":"2026.04.24","img":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&q=80"},
-    {"id":"travel_0423","tag":"여행","title":"유류할증료 보고 해외여행 취소한 사람","sub":"해외에서 국내로 방향을 바꾼 사람","stat":"~185만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
-    {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~67만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23","img":"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=400&fit=crop&q=80"},
-    {"id":"realestate_0422","tag":"부동산","title":"5월 9일 전에 팔아야 하는 다주택자","sub":"양도세 중과 유예 만료 D-17","stat":"~43만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&q=80"},
-    {"id":"realestate_0421","tag":"부동산","title":"전세 포기하고 10억 이하 매매로 선회한 사람","sub":"전세난에 10억 이하 매매로 전환하는 사람","stat":"~43만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21","img":"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&q=80"},
-    {"id":"safehaven_0420","tag":"증권","title":"전쟁 뉴스에 증시를 떠나 안전자산으로 이동하는 사람","sub":"KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람","stat":"~93만","stat_label":"증권앱 이탈+안전자산앱 동시 활성","date":"2026.04.20","img":"https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&h=400&fit=crop&q=80"},
-    {"id":"금융_0420","tag":"금융","title":"고정금리 만료 앞두고 갈아타기 준비하는 사람","sub":"2~3년 전 고정금리 대출자들이 만료 시점에서 갈아타기를 검토 중. 금융·핀테크 광고주의 골든타임.","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.04.20","img":"https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop&q=80"},
-    {"id":"realestate","tag":"부동산","title":"전세→매매 전환 중, 차 담보로 부족분을 메우는 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~43만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&q=80"},
-    {"id":"wegovy","tag":"헬스","title":"다이어트약 처방 후 운동을 끊은 사람","sub":"GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다","stat":"~110만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80"},
-    {"id":"car","tag":"자동차","title":"전기차에서 하이브리드로 선택지를 바꾼 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~75만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&h=400&fit=crop&q=80"},
-    {"id":"game_0422","tag":"게임","title":"GTA6 출시일 확정 후 게이밍 PC를 사전예약하는 사람","sub":"게임 하나 때문에 200만원 쓰는 사람","stat":"~15만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
-    {"id":"game","tag":"게임","title":"신작 발표 후 게이밍 하드웨어 구매 직전인 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~15만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&h=400&fit=crop&q=80"},
-    {"id":"stock","tag":"증권","title":"미국주식에서 금으로 갈아타는 사람","sub":"트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다","stat":"~93만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&h=400&fit=crop&q=80"},
-    {"id":"ktx","tag":"여행","title":"KTX 매진 후 대안 교통을 찾는 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~121만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=400&fit=crop&q=80"},
-    {"id":"travel","tag":"여행","title":"해외여행 대신 국내여행으로 전환한 사람","sub":"환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다","stat":"~185만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=400&fit=crop&q=80"},
-    {"id":"pet","tag":"반려동물","title":"반려동물 첫 입양 후 2주 이내 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~11만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13","img":"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop&q=80"},
-    {"id":"themestock","tag":"테마주","title":"테마주 뉴스에 반응해 추격 매수하는 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~81만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&q=80"},
-    {"id":"carinsurance","tag":"금융","title":"자동차보험 만기 전 갈아타기 비교 중인 사람","sub":"작년보다 15만원 올랐다면, 지금 갈아타세요","stat":"~9만","stat_label":"보험사+비교앱 동시 활성 (DMP)","date":"2026.04.16","img":"https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=400&fit=crop&q=80"},
-    {"id":"tosspay","tag":"금융","title":"기존 간편결제 사용이 줄고 새 결제앱을 깐 사람","sub":"간편결제 갈아타기가 시작됐습니다","stat":"~98만","stat_label":"간편결제앱 전환 행동 유저","date":"2026.04.20","img":"https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=400&fit=crop&q=80"},
-    {"id":"finance","tag":"금융","title":"대출 만기 전 대환을 준비하는 사람","sub":"새벽 2시에 대출앱 3개를 번갈아 여는 사람","stat":"~8만","stat_label":"대출탐색 유저 (DMP)","date":"2026.04.10","img":"https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop&q=80"},
-    {"id":"running","tag":"러닝","title":"매주 뛰면서 러닝 장비에 돈 쓰는 사람","sub":"커머스에서 15만원짜리 러닝화를 반복 조회하면서, 주말 아침 한강에 나타나는 사람","stat":"~27만","stat_label":"러닝앱+커머스 동시 활성 (DMP)","date":"2026.04.15","img":"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=400&fit=crop&q=80"},
-    {"id":"golf","tag":"골프","title":"접대 때문에 골프 시작한 입문자","sub":"접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.","stat":"~8만","stat_label":"골프앱 사용자 (DMP)","date":"2026.04.11","img":"https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&h=400&fit=crop&q=80"},
-    {"id":"health","tag":"건강","title":"운동 시작 후 2주째 지속 중인 사람","sub":"다이어트를 결심한 게 아니라, 몸이 바뀌기 시작한 겁니다","stat":"~25만","stat_label":"운동앱 사용자 (DMP)","date":"2026.04.14","img":"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=400&fit=crop&q=80"},
+    {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","sub":"개인정보 유출 후 채널을 바꾸는 사람","stat":"~23만","stat_label":"쿠팡 이탈→경쟁앱 전환 9.7%","date":"2026.04.24"},
+    {"id":"travel_0423","tag":"여행","title":"유류할증료 보고 해외여행 취소한 사람","sub":"해외에서 국내로 방향을 바꾼 사람","stat":"~185만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23"},
+    {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~67만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23"},
+    {"id":"realestate_0422","tag":"부동산","title":"5월 9일 전에 팔아야 하는 다주택자","sub":"양도세 중과 유예 만료 D-17","stat":"~43만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22"},
+    {"id":"realestate_0421","tag":"부동산","title":"전세 포기하고 10억 이하 매매로 선회한 사람","sub":"전세난에 10억 이하 매매로 전환하는 사람","stat":"~43만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21"},
+    {"id":"safehaven_0420","tag":"증권","title":"전쟁 뉴스에 증시를 떠나 안전자산으로 이동하는 사람","sub":"KOSPI 폭락 후 주식을 전부 정리하고 금·달러로 갈아탄 사람","stat":"~93만","stat_label":"증권앱 이탈+안전자산앱 동시 활성","date":"2026.04.20"},
+    {"id":"금융_0420","tag":"금융","title":"고정금리 만료 앞두고 갈아타기 준비하는 사람","sub":"2~3년 전 고정금리 대출자들이 만료 시점에서 갈아타기를 검토 중. 금융·핀테크 광고주의 골든타임.","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.04.20"},
+    {"id":"realestate","tag":"부동산","title":"전세→매매 전환 중, 차 담보로 부족분을 메우는 사람","sub":"주담대 한도가 부족할 때, 자동차가 두 번째 담보가 됩니다","stat":"~43만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15"},
+    {"id":"wegovy","tag":"헬스","title":"다이어트약 처방 후 운동을 끊은 사람","sub":"GLP-1 다이어트약 처방이 폭발하면서, 운동으로 빼는 사람과 약으로 빼는 사람이 갈리고 있습니다","stat":"~110만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16"},
+    {"id":"car","tag":"자동차","title":"전기차에서 하이브리드로 선택지를 바꾼 사람","sub":"보조금 축소 뉴스 보고 전기차를 포기한 게 아니라, 선택지를 바꾼 겁니다","stat":"~75만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14"},
+    {"id":"game_0422","tag":"게임","title":"GTA6 출시일 확정 후 게이밍 PC를 사전예약하는 사람","sub":"게임 하나 때문에 200만원 쓰는 사람","stat":"~15만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22"},
+    {"id":"game","tag":"게임","title":"신작 발표 후 게이밍 하드웨어 구매 직전인 사람","sub":"신작 출시 전 게임 커뮤니티 접속이 3배 뛰면, 하드웨어 지갑이 열립니다","stat":"~15만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14"},
+    {"id":"stock","tag":"증권","title":"미국주식에서 금으로 갈아타는 사람","sub":"트럼프 관세에 미장을 판 서학개미, 금으로 갈아탔습니다","stat":"~93만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14"},
+    {"id":"ktx","tag":"여행","title":"KTX 매진 후 대안 교통을 찾는 사람","sub":"외국인 관광객이 KR Pass로 좌석을 쓸어가면, 내국인은 대안 교통을 찾기 시작합니다","stat":"~121만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15"},
+    {"id":"travel","tag":"여행","title":"해외여행 대신 국내여행으로 전환한 사람","sub":"환율 1,450원 시대, 여행을 포기한 게 아니라 방향을 바꾼 겁니다","stat":"~185만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14"},
+    {"id":"pet","tag":"반려동물","title":"반려동물 첫 입양 후 2주 이내 사람","sub":"2주 안에 펫앱 3개를 동시에 까는 사람은 3년 고객이 됩니다","stat":"~11만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13"},
+    {"id":"themestock","tag":"테마주","title":"테마주 뉴스에 반응해 추격 매수하는 사람","sub":"광통신 600% 폭등 뉴스에 증권앱 검색이 터진 사람","stat":"~81만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15"},
+    {"id":"carinsurance","tag":"금융","title":"자동차보험 만기 전 갈아타기 비교 중인 사람","sub":"작년보다 15만원 올랐다면, 지금 갈아타세요","stat":"~9만","stat_label":"보험사+비교앱 동시 활성 (DMP)","date":"2026.04.16"},
+    {"id":"tosspay","tag":"금융","title":"기존 간편결제 사용이 줄고 새 결제앱을 깐 사람","sub":"간편결제 갈아타기가 시작됐습니다","stat":"~98만","stat_label":"간편결제앱 전환 행동 유저","date":"2026.04.20"},
+    {"id":"finance","tag":"금융","title":"대출 만기 전 대환을 준비하는 사람","sub":"새벽 2시에 대출앱 3개를 번갈아 여는 사람","stat":"~8만","stat_label":"대출탐색 유저 (DMP)","date":"2026.04.10"},
+    {"id":"running","tag":"러닝","title":"매주 뛰면서 러닝 장비에 돈 쓰는 사람","sub":"커머스에서 15만원짜리 러닝화를 반복 조회하면서, 주말 아침 한강에 나타나는 사람","stat":"~27만","stat_label":"러닝앱+커머스 동시 활성 (DMP)","date":"2026.04.15"},
+    {"id":"golf","tag":"골프","title":"접대 때문에 골프 시작한 입문자","sub":"접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.","stat":"~8만","stat_label":"골프앱 사용자 (DMP)","date":"2026.04.11"},
+    {"id":"health","tag":"건강","title":"운동 시작 후 2주째 지속 중인 사람","sub":"다이어트를 결심한 게 아니라, 몸이 바뀌기 시작한 겁니다","stat":"~25만","stat_label":"운동앱 사용자 (DMP)","date":"2026.04.14"},
 ]
 
 CHAPTERS = [
@@ -47,7 +47,7 @@ CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
 .wrap{max-width:800px;margin:0 auto;padding:0 24px 100px}
-.hero-img{width:calc(100% + 48px);margin:0 -24px;height:320px;object-fit:cover;filter:grayscale(100%)}
+.hero-img{width:calc(100% + 48px);margin:0 -24px;height:320px;object-fit:cover;display:none}
 .detail-wrap{max-width:800px;margin:0 auto}
 .detail-hero,.hero{padding:40px 0 32px}
 .detail-tag,.hero .tag{font-size:.72rem;font-weight:600;color:#e8530e;letter-spacing:1px;margin-bottom:16px;display:block}
@@ -109,6 +109,46 @@ def page_wrap(title, body):
 </div>
 </body>
 </html>"""
+
+# SVG 일러스트 생성 — 카테고리별 미니멀 데이터 비주얼
+TAG_ICONS = {
+    "금융": ("💰", ["앱A 사용량", "앱B 전환", "시그널 포착"]),
+    "부동산": ("🏠", ["매물 조회", "대출 비교", "계약 직전"]),
+    "쇼핑": ("🛒", ["기존앱 이탈", "비교 탐색", "신규앱 설치"]),
+    "배달": ("🛵", ["주문 감소", "비교 시작", "앱 전환"]),
+    "골프": ("⛳", ["앱 설치", "예약 증가", "장비 구매"]),
+    "교육": ("📚", ["강의앱 설치", "학습 패턴", "결제 전환"]),
+    "반려동물": ("🐾", ["펫앱 설치", "병원 예약", "쇼핑 시작"]),
+    "패션": ("👗", ["브랜드 탐색", "가격 비교", "구매 전환"]),
+    "헬스": ("💪", ["운동앱 설치", "루틴 형성", "장비 구매"]),
+    "여행": ("✈️", ["검색 시작", "비교 탐색", "예약 직전"]),
+    "증권": ("📈", ["매도 시그널", "자산 이동", "신규 설치"]),
+    "게임": ("🎮", ["커뮤니티 급증", "스펙 비교", "구매 직전"]),
+    "테마주": ("📈", ["뉴스 반응", "앱 실행 급증", "추격 매수"]),
+    "자동차": ("🚗", ["비교 시작", "시승 예약", "견적 조회"]),
+    "러닝": ("🏃", ["앱 설치", "루틴 형성", "장비 구매"]),
+    "건강": ("💪", ["운동앱 설치", "루틴 형성", "장비 구매"]),
+}
+
+def make_hero_svg(tag):
+    """카테고리별 미니멀 시그널 플로우 SVG"""
+    icon, steps = TAG_ICONS.get(tag, ("📊", ["시그널 A", "시그널 B", "전환 포착"]))
+    return f'''<div style="background:#f8f8f8;margin:0 -24px;padding:48px 32px;text-align:center">
+  <svg viewBox="0 0 400 120" style="max-width:400px;width:100%;height:auto" xmlns="http://www.w3.org/2000/svg">
+    <line x1="60" y1="60" x2="340" y2="60" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="80" cy="60" r="24" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="80" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#bbb">D-14</text>
+    <text x="80" y="100" text-anchor="middle" font-size="9" fill="#999" font-family="Pretendard,sans-serif">{steps[0]}</text>
+    <circle cx="200" cy="60" r="24" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="200" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#bbb">D-7</text>
+    <text x="200" y="100" text-anchor="middle" font-size="9" fill="#999" font-family="Pretendard,sans-serif">{steps[1]}</text>
+    <circle cx="320" cy="60" r="24" fill="#e8530e" stroke="none"/>
+    <text x="320" y="66" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">NOW</text>
+    <text x="320" y="100" text-anchor="middle" font-size="9" fill="#e8530e" font-weight="700" font-family="Pretendard,sans-serif">{steps[2]}</text>
+    <polygon points="145,56 155,60 145,64" fill="#e0e0e0"/>
+    <polygon points="265,56 275,60 265,64" fill="#e8530e"/>
+  </svg>
+</div>'''
 
 # === BUILD INDEX ===
 today = ESSAYS[0]
@@ -278,11 +318,8 @@ for e in ESSAYS:
   <div style="font-size:.82rem;font-weight:800;color:#000;margin-bottom:16px">같은 주제의 오디언스</div>
   <div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch">"""
         for r in related[:5]:
-            thumb = r["img"].replace("w=800", "w=300") if r.get("img") else ""
-            img_tag = f'<img loading="lazy" src="{thumb}" style="width:100%;height:80px;object-fit:cover;filter:grayscale(100%);margin-bottom:8px">' if thumb else ""
             related_html += f"""
     <a href="{r['id']}.html" style="min-width:180px;max-width:200px;flex-shrink:0;text-decoration:none;color:inherit;border:1px solid #eee;padding:12px">
-      {img_tag}
       <div style="font-size:.65rem;font-weight:700;color:#e8530e;margin-bottom:6px">{r['tag']}</div>
       <div style="font-size:.82rem;font-weight:800;color:#000;line-height:1.3;margin-bottom:4px">{r['title']}</div>
       <div style="font-size:.68rem;color:#999">{r['stat']}</div>
@@ -290,7 +327,7 @@ for e in ESSAYS:
         related_html += "\n  </div>\n</div>"
 
     img_url = e.get("img", "")
-    hero_img = f'<img class="hero-img" loading="lazy" src="{img_url}" alt="">\n' if img_url else ""
+    hero_img = make_hero_svg(e.get("tag", "")) + '\n'
     current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
     next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
     next_html = f"""
@@ -303,7 +340,7 @@ for e in ESSAYS:
     is_toss_style = '<style>' in essay_html
 
     if is_toss_style:
-        body = f'{essay_html}\n{related_html}'
+        body = f'{hero_img}{essay_html}\n{related_html}'
     else:
         body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
