@@ -57,3 +57,62 @@ and the repository exists.
 Wed Apr 22 10:09:18 KST 2026 완료
 Thu Apr 23 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
 Fri Apr 24 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
+Sat Apr 25 10:00:03 KST 2026 자동 발행 시작
+OK: index.html
+OK: 헬스_0425.html
+OK: 자동차_0425.html
+OK: coupang_exit.html
+OK: travel_0423.html
+OK: shopping_0423.html
+OK: realestate_0422.html
+OK: realestate_0421.html
+OK: safehaven_0420.html
+OK: 금융_0420.html
+OK: realestate.html
+OK: wegovy.html
+OK: car.html
+OK: game_0422.html
+OK: game.html
+OK: stock.html
+OK: ktx.html
+OK: travel.html
+OK: pet.html
+OK: themestock.html
+OK: carinsurance.html
+OK: tosspay.html
+OK: finance.html
+OK: running.html
+OK: golf.html
+OK: health.html
+
+DONE — 33 files in docs/
+📡 트렌드 기반 카테고리 자동 선택 중...
+   금융: 4개 뉴스
+   부동산: 4개 뉴스
+   쇼핑: 4개 뉴스
+   배달: 3개 뉴스
+   골프: 4개 뉴스
+   교육: 4개 뉴스
+   반려동물: 4개 뉴스
+   패션: 2개 뉴스
+   헬스: 5개 뉴스
+   여행: 5개 뉴스
+   증권: 4개 뉴스
+   게임: 4개 뉴스
+   자동차: 4개 뉴스
+
+🎯 오늘의 카테고리: 헬스 (2026-04-25 Saturday)
+📡 트렌드 수집 중...
+   5개 뉴스 수집
+   → [헬스장 PT] 덱스, 필리핀 헬스장 접수…등 근육 대결에 '짜릿' [RE:TV] - 뉴스1...
+   → [러닝크루] “이래서 러닝 크루하나”…야외 러닝, 실내보다 칼로리 5% 더 소모 - 동아일보...
+   → [홈트레이닝] '미용실 원장' 이지현, 애둘 육아 속 사수한 성난 등근육…"진짜 갓생" - v.daum....
+📊 페르소나: 건강기능식품_관심_유저 (8,000,000~12,000,000명)
+📊 DMP 실측 모수 조회 중...
+   → ~89만 명 (운동앱 2개+쇼핑앱 · DMP 실측)
+✍️  에세이 생성 중...
+📄 에세이 저장: /home/soddy/today-audience/essay_20260425.html
+📄 에세이 저장: /home/soddy/today-audience/essays_html/헬스_0425.html
+📝 app.py 업데이트: #25 헬스_0425
+🏗️  정적 사이트 재빌드 완료
+✅ 에세이 발행 완료! (app.py 업데이트됨)

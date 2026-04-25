@@ -163,6 +163,15 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 
 # ===== CARD DATA =====
 ESSAYS = [
+    {
+        "id": "헬스_0425", "emoji": "💪", "tag": "헬스", "number": 25,
+        "title": "헬스",
+        "sub": "",
+        "stat": "",
+        "stat_label": "헬스 오디언스 (DMP)",
+        "date": "2026.04.25",
+        "color": "#000",
+    },
     {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","stat":"~23만","date":"2026.04.24"},
     {
         "id": "travel_0423", "emoji": "✈️", "tag": "여행", "number": 24,
@@ -431,6 +440,11 @@ elif st.session_state.view == "detail_tosspay":
     if st.button("← 뒤로", key="back_tp"):
         go_feed()
     st.markdown(load_essay("tosspay"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_헬스_0425":
+    if st.button("← 뒤로", key="back_헬스_0425"):
+        go_feed()
+    st.markdown(load_essay("헬스_0425"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
