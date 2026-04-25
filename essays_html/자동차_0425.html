@@ -1,0 +1,174 @@
+<style>
+body{background:#f7f7fa !important}
+.wrap{max-width:800px}
+a{color:inherit;text-decoration:none}
+.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
+.back:hover{color:#333}
+.hero{padding:8px 0 32px}
+.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
+.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
+.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
+.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
+.punchline{background:#111;margin:0 -24px;padding:36px 28px}
+.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
+.punchline strong{color:#e8530e;font-weight:800}
+.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
+.quote strong{color:#333;font-style:normal}
+.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
+.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
+.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
+.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
+.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
+.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
+.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
+.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.impact-dot.positive{background:#34c759}
+.impact-dot.hot{background:#e8530e}
+.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
+.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
+.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
+.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
+.step.active{background:#fff;border:1.5px solid #111}
+.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
+.step.active .step-num{color:#111}
+.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
+.step.active .step-title{color:#111;font-weight:800}
+.step-desc{font-size:.82rem;color:#999;line-height:1.6}
+.highlight-line{padding:28px 0;text-align:center}
+.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
+.highlight-line span{color:#888;font-weight:500}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
+.compare-col{padding:20px}
+.compare-col:first-child{background:#f7f7fa}
+.compare-col:last-child{background:#111}
+.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
+.compare-col:last-child h4{color:#888}
+.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
+.compare-col:last-child li{color:#aaa}
+.compare-col:last-child strong{color:#fff}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
+.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
+.audience-box .a-basis{font-size:.7rem;color:#666}
+.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
+.audience-box .a-desc strong{color:#fff}
+.biz-item{border-bottom:1px solid #f0f0f0}
+.biz-item:last-child{border:none}
+.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
+.biz-icon{font-size:1.2rem}
+.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
+.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
+.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
+.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.biz-item.open .biz-body{max-height:200px}
+.biz-body-inner{padding:0 0 16px}
+.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
+.biz-action{font-size:.82rem;font-weight:700;color:#111}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+</style>
+
+<div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+
+<div class="hero">
+  <div class="tag">자동차 · 2026.04.25</div>
+  <h1>전기차 앱 삭제 후 하이브리드 검색하는 사람들</h1>
+  <div class="sub">전기차 보조금 소진에 Plan B를 찾는 새로운 타겟</div>
+  <div class="meta">오늘의 오디언스 #127</div>
+</div>
+
+<!-- 1막: 의외의 발견으로 시작 -->
+<div class="punchline">
+  <p>전기차 보조금이 조기 소진되자 생긴 현상.<br><strong>카이즈유 삭제 후 3일 내 엔카를 깔고 '하이브리드' 검색량이 급증한다.</strong></p>
+</div>
+
+<div class="card">
+  <div class="s-label">우리가 발견한 것</div>
+  <div class="s-title">전기차 포기 → 하이브리드 전환의 골든타임</div>
+  <p style="font-size:.9rem;color:#888;line-height:1.8">
+    전기차 보조금 소진 발표 후 72시간 내에<br>
+    카이즈유(전기차 특화) 삭제 → 엔카 설치 → 하이브리드 검색 패턴이 400% 급증했습니다.
+  </p>
+</div>
+
+<!-- 보조적 페르소나 -->
+<div class="quote">
+  <p>"전기차 보조금 없으면 차라리 하이브리드로 가는 게 낫겠더라고요. 기름값도 미친 수준이니까."</p>
+  <div class="from">— 34세, 회사원</div>
+</div>
+
+<!-- 2막: 시그널 해석 -->
+<div class="card">
+  <div class="s-label">시그널 해석</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">시그널 1</div>
+      <div class="step-title">카이즈유 대량 삭제</div>
+      <div class="step-desc">보조금 소진 발표 후 24시간 내 삭제율 300% 증가</div>
+    </div>
+    <div class="step active">
+      <div class="step-num">시그널 2 · 핵심</div>
+      <div class="step-title">엔카 즉시 설치</div>
+      <div class="step-desc">카이즈유 삭제 후 72시간 내 엔카 설치 — 여기가 전환점</div>
+    </div>
+    <div class="step">
+      <div class="step-num">시그널 3</div>
+      <div class="step-title">하이브리드 검색 폭증</div>
+      <div class="step-desc">엔카 설치 직후 하이브리드 모델 검색량 급증</div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-line">
+  <p>이들은 전기차를 완전히 포기한 게 아니라 현실적 대안을 찾는 중이다.<br><span>카이즈유 삭제 후 3일 내 중고차앱을 깐 사람 — 하이브리드 구매 확률 68% 높음.</span></p>
+</div>
+
+<!-- 3막: 광고에 어떻게 쓰는가 -->
+<div class="card">
+  <div class="s-label">뭐가 다른가</div>
+  <div class="s-title">기존 친환경차 타겟 vs 전기차 이탈 타겟</div>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>기존 방식</h4>
+      <ul><li>친환경차 관심자</li><li>검토 기간 길음</li><li>막연한 관심</li></ul>
+    </div>
+    <div class="compare-col">
+      <h4>시그널 기반</h4>
+      <ul><li>전기차 포기자</li><li>즉시 구매 의사</li><li><strong>구체적 니즈</strong></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="audience-box">
+  <h3>전기차 포기 → 하이브리드 전환족</h3>
+  <div class="a-num">~8만 명</div>
+  <div class="a-basis">카이즈유 삭제 + 중고차앱 설치 조합</div>
+  <div class="a-desc">전기차 보조금 소진으로 Plan B를 찾는 즉시 구매층. 하이브리드 광고 골든타임.</div>
+</div>
+
+<div class="card">
+  <div class="s-label">이 인사이트를 쓸 수 있는 광고주</div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">하이브리드 자동차</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>전기차 포기자들의 대안 검색 타이밍을 노려 하이브리드 모델 어필</p><div class="biz-action">→ "전기차 보조금 없어도 괜찮아요. 하이브리드로 기름값 반토막"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">자동차 할부금융</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>보조금 없는 상황에서 부담되는 차량 구매비 할부 솔루션 제공</p><div class="biz-action">→ "보조금 없어진 만큼 할부 조건 더 좋게 해드릴게요"</div></div></div>
+  </div>
+  <div class="biz-item" onclick="this.classList.toggle('open')">
+    <div class="biz-head"><span class="biz-icon">🔧</span><span class="biz-name">자동차 보험</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>하이브리드 차량의 보험료 절약 혜택으로 전환 동기 강화</p><div class="biz-action">→ "하이브리드 보험료도 착해요. 친환경차 할인까지"</div></div></div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
+</div>
+
+<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>

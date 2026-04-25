@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"자동차_0425","tag":"자동차","title":"전기차 앱 삭제 후 하이브리드 검색하는 사람들","sub":"고유가 시대, 전기차에서 하이브리드로 갈아타는 시그널","stat":"~75만","stat_label":"자동차앱 전환 유저 (DMP)","date":"2026.04.25"},
     {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡을 떠나 네이버로 옮긴 사람","sub":"개인정보 유출 후 채널을 바꾸는 사람","stat":"~23만","stat_label":"쿠팡 이탈→경쟁앱 전환 9.7%","date":"2026.04.24"},
     {"id":"travel_0423","tag":"여행","title":"유류할증료 보고 해외여행 취소한 사람","sub":"해외에서 국내로 방향을 바꾼 사람","stat":"~185만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23"},
     {"id":"shopping_0423","tag":"쇼핑","title":"하루 더 기다리고 반값에 사는 사람","sub":"구매 채널을 바꾸는 사람","stat":"~67만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23"},
@@ -35,7 +36,7 @@ CHAPTERS = [
     {"label":"금융","ids":["finance","tosspay","stock","realestate","realestate_0421","realestate_0422","themestock","carinsurance","safehaven_0420","금융_0420"]},
     {"label":"여행","ids":["travel","ktx","travel_0423"]},
     {"label":"스포츠","ids":["running","golf","health","wegovy"]},
-    {"label":"라이프","ids":["car","pet"]},
+    {"label":"라이프","ids":["car","pet","자동차_0425"]},
     {"label":"게임","ids":["game","game_0422"]},
     {"label":"쇼핑","ids":["coupang_exit","shopping_0423"]},
 ]
