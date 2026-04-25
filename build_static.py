@@ -6,39 +6,27 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
-    {"id":"car","tag":"자동차","title":"전기차 포기하고 하이브리드 찾는 사람","sub":"충전소 앱 삭제 후 하이브리드 매물 검색으로 돌아서는 타겟","stat":"~75만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.25"},
-    {"id":"자동차_0425","tag":"자동차","title":"전기차 포기하고 하이브리드 찾는 사람","sub":"충전 인프라 부족에 현실적 대안으로 눈돌린 계층","stat":"~75만","stat_label":"자동차앱 전환 유저 (DMP)","date":"2026.04.25"},
+    {"id":"헬스_0425","tag":"헬스","title":"운동앱 2개 깔고 쇼핑앱 여는 사람들","sub":"홈트와 헬스장을 동시에 준비하는 사람들의 구매 패턴","stat":"~89만","stat_label":"운동앱 2개+쇼핑앱 · DMP 실측","date":"2026.04.25"},
     {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡 삭제 후 알리 깐 사람","sub":"236만 이탈자 중 해외직구로 간 진짜 타겟은?","stat":"~23만","stat_label":"쿠팡 이탈→경쟁앱 전환 9.7%","date":"2026.04.24"},
     {"id":"travel_0423","tag":"여행","title":"해외여행 포기하고 국내앱 깐 사람","sub":"유류할증료 급등으로 국내여행 전환하는 예약 취소자들","stat":"~185만","stat_label":"해외앱 감소 + 국내 숙박앱 증가","date":"2026.04.23"},
-    {"id":"shopping_0423","tag":"쇼핑","title":"쿠팡 삭제 후 알리 깐 사람","sub":"배송비 때문에 떠났지만, 결국 더 긴 배송을 선택한 역설","stat":"~67만","stat_label":"쿠팡 감소 + C-커머스 신규","date":"2026.04.23"},
     {"id":"realestate_0422","tag":"부동산","title":"전세 만기 앞둔 사람이 갑자기 카뱅크를 깐 이유","sub":"전세보증금 돌려받기 불안한 세입자들의 숨은 행동 시그널","stat":"~43만","stat_label":"부동산앱 매도 전환 + 세무앱 동시 활성","date":"2026.04.22"},
+    {"id":"game_0422","tag":"게임","title":"스위치2 예약하고 스팀 삭제한 사람","sub":"모바일 게임을 지우고 콘솔로 갈아타는 신호","stat":"~23만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22"},
     {"id":"realestate_0421","tag":"부동산","title":"대출 3개 동시 신청하는 전세족","sub":"전세 만기 D-30, 급하게 움직이는 사람들","stat":"~43만","stat_label":"부동산앱 전세→매매 전환 유저","date":"2026.04.21"},
     {"id":"safehaven_0420","tag":"증권","title":"주식 정리하고 금 사는 사람","sub":"증권앱 삭제 후 3일 내 한국금거래소 설치자가 말하는 것","stat":"~93만","stat_label":"증권앱 이탈+안전자산앱 동시 활성","date":"2026.04.20"},
-    {"id":"금융_0420","tag":"금융","title":"대출앱 삭제 후 ETF앱 깐 사람","sub":"낮아진 금리, 갈아타기 포기하고 투자로 전향","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.04.20"},
+    {"id":"tosspay","tag":"금융","title":"대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람","sub":"빚 줄이기보다 투자로 갚겠다는 사람들","stat":"~8만","stat_label":"대출앱+투자앱 동시 활성","date":"2026.04.20"},
     {"id":"realestate","tag":"부동산","title":"전세 만기 D-30에 매매앱 깐 사람","sub":"전세 끝나기 한 달 전, 직방에서 호갱노노로 넘어간 사람들","stat":"~43만","stat_label":"부동산+대출앱 동시 사용자 (DMP)","date":"2026.04.15"},
-    {"id":"wegovy","tag":"헬스","title":"PT 끊고 홈트앱으로 갈아탄 사람","sub":"3개월 PT 끝나자마자 홈트레이닝 앱 3개를 동시 설치한 사람들의 진짜 이유","stat":"~110만","stat_label":"병원예약+약국앱 동시 활성 (DMP)","date":"2026.04.16"},
-    {"id":"game_0422","tag":"게임","title":"스위치2 예약하고 스팀 삭제한 사람","sub":"모바일 게임을 지우고 콘솔로 갈아타는 신호","stat":"~15만","stat_label":"게임앱+쇼핑앱 동시 활성","date":"2026.04.22"},
-    {"id":"game","tag":"게임","title":"스위치 게임 삭제 후 PC 게임 깐 사람","sub":"휴대용에서 고성능으로 — 게임 플랫폼 이탈의 신호","stat":"~15만","stat_label":"게임앱 사용자 (DMP)","date":"2026.04.14"},
-    {"id":"stock","tag":"증권","title":"증권앱 삭제 후 금거래소 깐 사람","sub":"주식에서 금으로 갈아타는 2만 3천 명의 안전 추구자들","stat":"~93만","stat_label":"증권앱 사용자 (DMP)","date":"2026.04.14"},
-    {"id":"ktx","tag":"여행","title":"해외여행 앱 삭제 후 국내여행 앱 깐 사람","sub":"유류할증료 폭등으로 여행 계획을 급선회한 새로운 타겟","stat":"~121만","stat_label":"코레일+교통앱 동시 활성 (DMP)","date":"2026.04.15"},
-    {"id":"travel","tag":"여행","title":"해외여행 포기하고 국내 숙박앱 깐 사람","sub":"유류할증료 급등으로 항공편 취소 후 72시간 이내 국내여행 전환자","stat":"~185만","stat_label":"여행앱 사용자 (DMP)","date":"2026.04.14"},
+    {"id":"car","tag":"자동차","title":"전기차 포기하고 하이브리드 찾는 사람","sub":"충전소 앱 삭제 후 하이브리드 매물 검색으로 돌아서는 타겟","stat":"~75만","stat_label":"자동차앱 사용자 (DMP)","date":"2026.04.14"},
     {"id":"pet","tag":"반려동물","title":"사료 갈아탄 후 펫닥 3번째 상담 중인 사람","sub":"새 사료 바꾼 후 5일 내 수의사 온라인 상담 앱을 여는 반려인","stat":"~11만","stat_label":"펫앱+커머스 (DMP)","date":"2026.04.13"},
-    {"id":"themestock","tag":"증권","title":"주식 손절하고 금 거래소 깐 사람","sub":"폭락장에서 안전자산으로 갈아탄 투자자들","stat":"~81만","stat_label":"뉴스+증권앱 동시 활성 (DMP)","date":"2026.04.15"},
-    {"id":"carinsurance","tag":"금융","title":"대출 갈아타기 포기하고 ETF 찾는 사람","sub":"금리 비교 후 투자앱으로 이동한 72만 명의 행동 패턴","stat":"~9만","stat_label":"보험사+비교앱 동시 활성 (DMP)","date":"2026.04.16"},
-    {"id":"tosspay","tag":"금융","title":"대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람","sub":"빚 줄이기보다 투자로 갚겠다는 사람들","stat":"~98만","stat_label":"간편결제앱 전환 행동 유저","date":"2026.04.20"},
-    {"id":"finance","tag":"금융","title":"대출앱 삭제 후 ETF앱 깐 사람","sub":"금리 인하로 대출 부담이 줄자, 여유 자금을 투자로 돌리는 사람들","stat":"~8만","stat_label":"대출탐색 유저 (DMP)","date":"2026.04.10"},
-    {"id":"running","tag":"헬스","title":"PT 끊고 홈트앱으로 갈아탄 사람","sub":"헬스장 PT 해지 후 3일 내 홈트레이닝 앱을 설치한 사람들","stat":"~27만","stat_label":"러닝앱+커머스 동시 활성 (DMP)","date":"2026.04.15"},
     {"id":"golf","tag":"골프","title":"스크린골프장 등록 후 필드예약앱 깐 사람","sub":"실전 연습생들의 77일 루틴","stat":"~8만","stat_label":"골프앱 사용자 (DMP)","date":"2026.04.11"},
-    {"id":"health","tag":"헬스","title":"PT 끊고 홈트앱으로 갈아탄 사람","sub":"헬스장 PT 앱 삭제 후 2주 내 홈트 앱을 설치한 전환자들","stat":"~25만","stat_label":"운동앱 사용자 (DMP)","date":"2026.04.14"},
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["finance","tosspay","stock","realestate","realestate_0421","realestate_0422","themestock","carinsurance","safehaven_0420","금융_0420"]},
-    {"label":"여행","ids":["travel","ktx","travel_0423"]},
-    {"label":"스포츠","ids":["running","golf","health","wegovy"]},
-    {"label":"라이프","ids":["car","pet","자동차_0425"]},
-    {"label":"게임","ids":["game","game_0422"]},
-    {"label":"쇼핑","ids":["coupang_exit","shopping_0423"]},
+    {"label":"금융","ids":["tosspay","realestate","realestate_0421","realestate_0422","safehaven_0420"]},
+    {"label":"여행","ids":["travel_0423"]},
+    {"label":"스포츠","ids":["헬스_0425","golf"]},
+    {"label":"라이프","ids":["car","pet"]},
+    {"label":"게임","ids":["game_0422"]},
+    {"label":"쇼핑","ids":["coupang_exit"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init
