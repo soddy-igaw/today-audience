@@ -40,6 +40,9 @@ p{font-size:1.1rem;color:#999;line-height:1.8;margin-bottom:16px}
 .tbl th{text-align:left;font-size:.68rem;font-weight:700;color:#555;letter-spacing:1px;padding:12px 0;border-bottom:1px solid #222}
 .tbl td{font-size:.92rem;color:#ccc;padding:12px 0;border-bottom:1px solid #111}
 .tbl td:last-child{text-align:right;font-weight:700;color:#e8530e}
+.code-box{background:#111;border-radius:12px;padding:24px 28px;margin:16px 0;font-family:'SF Mono',monospace;font-size:.85rem;color:#888;line-height:1.8}
+.code-box .rule{color:#e8530e;font-weight:700}
+.code-box .behavior{color:#fff;font-weight:600}
 .footer-bar{text-align:center;padding:40px;color:#333;font-size:.72rem}
 a{color:#e8530e;text-decoration:none}
 @media(max-width:768px){
@@ -59,43 +62,76 @@ a{color:#e8530e;text-decoration:none}
 <div class="slide">
   <div class="slide-num">01</div>
   <div class="tag">IGAWORKS × KIRO</div>
-  <h1>오늘의 오디언스</h1>
-  <p style="font-size:1.3rem;color:#666">라이브 오디언스 기획에 며칠 걸리던 일을,<br><span class="white" style="font-weight:800">90초 만에 끝내는 자동화 시스템</span></p>
+  <h1>룰베이스 오디언스는 관심이고,<br><span class="accent">행동 오디언스는 의도</span>입니다</h1>
+  <p style="font-size:1.3rem;color:#666">우리는 의도만 찾습니다.<br><span class="white" style="font-weight:800">오늘의 오디언스</span></p>
   <div style="margin-top:48px">
     <a href="https://soddy-igaw.github.io/today-audience/" style="background:#e8530e;color:#fff;padding:14px 32px;border-radius:8px;font-size:.88rem;font-weight:700;display:inline-block">라이브 데모 보기 →</a>
   </div>
 </div>
 
-<!-- SLIDE 2: 문제 -->
+<!-- SLIDE 2: 문제 — 룰베이스의 한계 -->
 <div class="slide">
   <div class="slide-num">02</div>
   <div class="tag">PROBLEM</div>
-  <h2>오디언스 하나 만드는 데<br><span class="accent">2~3일</span>이 걸립니다</h2>
-  <div class="grid3">
-    <div class="card">
-      <h4>트렌드 리서치</h4>
-      <div class="val sm">2~3시간</div>
-      <p>뉴스·커뮤니티 수동 모니터링</p>
-    </div>
-    <div class="card">
-      <h4>DMP 데이터 분석</h4>
-      <div class="val sm">3~4시간</div>
-      <p>분석가가 쿼리 작성·실행</p>
-    </div>
-    <div class="card">
-      <h4>리포트 작성·배포</h4>
-      <div class="val sm">반나절~1일</div>
-      <p>기획자+디자이너 투입</p>
+  <h2>지금 광고 업계가 쓰는 오디언스는<br><span class="accent">관심</span>을 추적합니다</h2>
+  <div class="code-box">
+    <div class="rule">룰베이스 오디언스</div>
+    <div style="margin-top:12px">
+    성별: 여성<br>
+    연령: 25~34세<br>
+    관심사: 여행<br>
+    <br>
+    → 결과: <span style="color:#555">여행에 관심 있는 사람 500만 명</span><br>
+    → 문제: <span style="color:#e8530e">이 중 실제로 예약하는 사람은 몇 %?</span>
     </div>
   </div>
-  <p style="margin-top:32px;color:#555">기획자, 데이터 분석가, 디자이너 — 3개 직군이 투입되고,<br>트렌드가 식은 뒤에야 리포트가 나옵니다.</p>
+  <p style="margin-top:24px">인구통계 + 관심사 조합. 모수는 크지만,<br><strong class="white">지금 움직이는 사람인지 알 수 없습니다.</strong></p>
 </div>
 
-<!-- SLIDE 3: 해결 -->
+<!-- SLIDE 3: 해결 — 행동 오디언스 -->
 <div class="slide">
   <div class="slide-num">03</div>
   <div class="tag">SOLUTION</div>
-  <h2>전부 자동화했습니다</h2>
+  <h2>우리는 <span class="accent">지금 움직이는 사람</span>만 찾습니다</h2>
+  <div class="code-box">
+    <div class="behavior">행동 오디언스</div>
+    <div style="margin-top:12px">
+    시그널 A: 해외여행앱 2개 삭제 <span class="dim">← DMP 추적</span><br>
+    시그널 B: 48시간 내 국내 숙박앱 설치 <span class="dim">← DMP 추적</span><br>
+    교차 조건: A ∩ B<br>
+    <br>
+    → 결과: <span style="color:#e8530e;font-weight:900">~1.8만 명 (Athena 실측)</span><br>
+    → 의미: <span style="color:#fff">지금 예약 직전인 사람만</span>
+    </div>
+  </div>
+  <p style="margin-top:24px">앱 설치·삭제·사용 빈도를 DMP로 추적하고,<br>AWS Athena로 교차 시그널을 실측합니다.</p>
+</div>
+
+<!-- SLIDE 4: Before/After -->
+<div class="slide">
+  <div class="slide-num">04</div>
+  <div class="tag">COMPARISON</div>
+  <div class="compare-row">
+    <div class="compare-left">
+      <h3>룰베이스</h3>
+      <div class="val" style="font-size:1.6rem">500만</div>
+      <p>"여행에 관심 있는 2030 여성"<br>관심일 뿐, 의도는 모름<br>전환율 낮음</p>
+    </div>
+    <div class="compare-mid">→</div>
+    <div class="compare-right">
+      <h3 style="color:rgba(255,255,255,.6)">행동 기반</h3>
+      <div class="val" style="font-size:1.6rem">1.8만</div>
+      <p>"해외앱 삭제 후 국내앱 깐 사람"<br>지금 움직이는 사람만<br><strong>의도가 확인된 타겟</strong></p>
+    </div>
+  </div>
+  <p style="margin-top:32px;text-align:center;color:#555">모수는 작지만, <span class="accent" style="font-weight:700">전부 지금 움직이는 사람</span>입니다.</p>
+</div>
+
+<!-- SLIDE 5: 자동화 -->
+<div class="slide">
+  <div class="slide-num">05</div>
+  <div class="tag">AUTOMATION</div>
+  <h2>이걸 매일 아침 <span class="accent">90초</span> 만에 만듭니다</h2>
   <div class="flow">
     <div class="flow-step">뉴스 트렌드 수집</div>
     <div class="flow-arrow">→</div>
@@ -107,50 +143,42 @@ a{color:#e8530e;text-decoration:none}
     <div class="flow-arrow">→</div>
     <div class="flow-step">자동 배포</div>
   </div>
-  <p>매일 아침 10시, 사람 개입 없이 새로운 오디언스가 라이브 페이지에 올라갑니다.</p>
-</div>
-
-<!-- SLIDE 4: Before/After -->
-<div class="slide">
-  <div class="slide-num">04</div>
-  <div class="tag">IMPACT</div>
-  <div class="compare-row">
-    <div class="compare-left">
-      <h3>BEFORE</h3>
-      <div class="val">2~3일</div>
-      <p>여러 직군 투입<br>트렌드 반영 3~5일 지연<br>"2030 여성" 같은 추상적 타겟</p>
+  <div class="grid2" style="margin-top:40px">
+    <div>
+      <p style="color:#555;font-size:.82rem">기존 오디언스 기획</p>
+      <div class="big-num" style="font-size:3.5rem">2~3일</div>
+      <p style="color:#555;font-size:.82rem">기획자 + 분석가 + 디자이너</p>
     </div>
-    <div class="compare-mid">→</div>
-    <div class="compare-right">
-      <h3 style="color:rgba(255,255,255,.6)">AFTER</h3>
-      <div class="val">90초</div>
-      <p>무인 자동 파이프라인<br>다음 날 아침 즉시 반영<br>DMP 행동 시그널 기반 타겟</p>
+    <div>
+      <p style="color:#555;font-size:.82rem">오늘의 오디언스</p>
+      <div class="big-num" style="font-size:3.5rem">90초</div>
+      <p style="color:#555;font-size:.82rem">무인 자동 파이프라인</p>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 5: 실측 데이터 -->
+<!-- SLIDE 6: 실측 데이터 -->
 <div class="slide">
-  <div class="slide-num">05</div>
+  <div class="slide-num">06</div>
   <div class="tag">DMP 실측 — AWS ATHENA</div>
   <h2>모든 숫자는 <span class="accent">실제 데이터</span>입니다</h2>
   <p>추정치가 아닙니다. DMP 교차 시그널을 Athena로 실측한 ADID 수입니다.</p>
   <table class="tbl">
-    <tr><th>오디언스</th><th>시그널</th><th>실측 모수</th></tr>
+    <tr><th>행동 오디언스</th><th>교차 시그널</th><th>실측</th></tr>
     <tr><td>운동앱 2개 깔고 쇼핑앱 여는 사람</td><td style="color:#555">운동앱 2개+쇼핑앱</td><td>~89만</td></tr>
     <tr><td>주식 정리하고 금 사는 사람</td><td style="color:#555">증권앱+은행앱</td><td>~92만</td></tr>
     <tr><td>게임 플랫폼 전환자</td><td style="color:#555">게임앱+가전앱</td><td>~14만</td></tr>
-    <tr><td>골프 입문자</td><td style="color:#555">골프앱+비즈니스앱</td><td>~8만</td></tr>
+    <tr><td>접대 골프 입문자</td><td style="color:#555">골프앱+비즈니스앱</td><td>~8만</td></tr>
     <tr><td>대출→투자 전환자</td><td style="color:#555">대출앱+은행앱</td><td>~7만</td></tr>
     <tr><td>자동차 전환자</td><td style="color:#555">자동차앱+중고차앱</td><td>~6만</td></tr>
     <tr><td>쇼핑 플랫폼 이탈자</td><td style="color:#555">쇼핑앱+가격비교앱</td><td>~5만</td></tr>
   </table>
 </div>
 
-<!-- SLIDE 6: Kiro 활용 -->
+<!-- SLIDE 7: Kiro 활용 -->
 <div class="slide">
-  <div class="slide-num">06</div>
-  <div class="tag">KIRO 활용</div>
+  <div class="slide-num">07</div>
+  <div class="tag">BUILT WITH KIRO</div>
   <h2>설계부터 디버깅까지,<br>Kiro와 함께 만들었습니다</h2>
   <div class="grid2">
     <div class="card">
@@ -164,38 +192,37 @@ a{color:#e8530e;text-decoration:none}
       <p>Athena 권한 에러의 원인을 Kiro가 소스 분석으로 발견. WorkGroup 파라미터 한 줄이 핵심.</p>
     </div>
     <div class="card">
-      <h4>중복 에세이 식별</h4>
+      <h4>허수 제거</h4>
       <div class="val sm">25개 → 12개</div>
-      <p>25개 에세이를 크로스 분석해 13개 중복 자동 식별. 근본 원인(LLM 제목 패턴)까지 진단.</p>
+      <p>중복 에세이 자동 식별, 검증 불가 수치 제거, 전체 모수를 DMP 실측값으로 교체.</p>
     </div>
     <div class="card">
       <h4>품질 일괄 통일</h4>
       <div class="val sm">12개 동시</div>
-      <p>에세이 섹션 순서, 제목 불일치, 검증 불가 수치를 Kiro가 탐지하고 한 세션에서 전체 수정.</p>
+      <p>에세이 섹션 순서, 제목 불일치를 Kiro가 탐지하고 한 세션에서 전체 수정.</p>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 7: 비즈니스 -->
+<!-- SLIDE 8: 비즈니스 -->
 <div class="slide">
-  <div class="slide-num">07</div>
+  <div class="slide-num">08</div>
   <div class="tag">BUSINESS MODEL</div>
   <h2>에세이가 <span class="accent">영업</span>을 대신합니다</h2>
   <div class="flow">
     <div class="flow-step">에세이 발견</div>
     <div class="flow-arrow">→</div>
-    <div class="flow-step">"이거 쓰고 싶다"</div>
+    <div class="flow-step">"이 타겟 쓰고 싶다"</div>
     <div class="flow-arrow">→</div>
     <div class="flow-step">미팅</div>
     <div class="flow-arrow">→</div>
-    <div class="flow-step" style="background:#e8530e">계약</div>
+    <div class="flow-step" style="background:#e8530e">ADID 세그먼트 계약</div>
   </div>
-  <p style="margin-top:24px">기존: 콜드콜 → 제안서 → 미팅 → 데모 → 계약 <span class="dim">(3~6개월)</span><br>
-  신규: 에세이 발견 → 문의 → 미팅 → 계약 <span class="accent" style="font-weight:700">(2~4주)</span></p>
+  <p style="margin-top:24px">에세이는 무료 샘플. 실제 ADID 리스트가 유료 상품.<br>광고주가 먼저 찾아오는 <span class="accent" style="font-weight:700">인바운드 세일즈</span> 구조.</p>
   <div class="grid3" style="margin-top:32px">
     <div class="card">
       <h4>오디언스 팩</h4>
-      <p>에세이의 오디언스를 실제 ADID 세그먼트로 제공. DSP 연동.</p>
+      <p>에세이의 타겟을 실제 ADID 세그먼트로 제공. DSP 연동.</p>
     </div>
     <div class="card">
       <h4>커스텀 오디언스</h4>
@@ -208,31 +235,31 @@ a{color:#e8530e;text-decoration:none}
   </div>
 </div>
 
-<!-- SLIDE 8: 성과 -->
+<!-- SLIDE 9: 성과 -->
 <div class="slide">
-  <div class="slide-num">08</div>
+  <div class="slide-num">09</div>
   <div class="tag">RESULTS</div>
   <div class="grid2">
     <div>
-      <div class="big-num">99.9%</div>
-      <div class="big-label">시간 절감률</div>
+      <div class="big-num">90초</div>
+      <div class="big-label">행동 오디언스 1건 생성</div>
       <div class="big-num">280+</div>
-      <div class="big-label">커밋</div>
+      <div class="big-label">커밋 (16일간)</div>
     </div>
     <div>
-      <div class="big-num">90초</div>
-      <div class="big-label">오디언스 1건 생성 시간</div>
+      <div class="big-num">12개</div>
+      <div class="big-label">DMP 실측 오디언스 운영 중</div>
       <div class="big-num">87.5%</div>
       <div class="big-label">자동 발행 성공률</div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 9: CTA -->
+<!-- SLIDE 10: CTA -->
 <div class="slide" style="text-align:center">
   <div class="tag">LIVE NOW</div>
-  <h1>직접 확인하세요</h1>
-  <p style="font-size:1.2rem;margin-bottom:40px">매일 아침, 새로운 오디언스가 자동으로 올라갑니다.</p>
+  <h1>관심이 아니라<br><span class="accent">의도</span>를 찾습니다</h1>
+  <p style="font-size:1.2rem;margin-bottom:40px;color:#555">매일 아침, 지금 움직이는 사람만 찾아서 보여드립니다.</p>
   <a href="https://soddy-igaw.github.io/today-audience/" style="background:#e8530e;color:#fff;padding:18px 48px;border-radius:8px;font-size:1rem;font-weight:700;display:inline-block">오늘의 오디언스 →</a>
   <p style="margin-top:48px;color:#333;font-size:.82rem">made by soddy · IGAWorks × Kiro · 2026</p>
 </div>
