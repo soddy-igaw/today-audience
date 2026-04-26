@@ -352,9 +352,9 @@ for e in ESSAYS:
         essay_html = _re.sub(r'<div class="cta-bar">.*?</div>', '', essay_html, flags=_re.DOTALL)
 
     if is_toss_style:
-        body = f'{hero_img}{essay_html}\n{related_html}\n{contact_html}'
+        body = f'{hero_img}{essay_html}\n{contact_html}'
     else:
-        body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}\n{contact_html}'
+        body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{contact_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
