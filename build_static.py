@@ -143,155 +143,141 @@ def make_hero_svg(tag):
 today = ESSAYS[0]
 essay_map = {e["id"]: e for e in ESSAYS}
 
-cards_html = ""
+CAT_TITLES = {
+    "금융": ("💰", "돈이 움직이는 시그널"),
+    "여행": ("✈️", "여행 계획이 바뀌는 순간"),
+    "스포츠": ("💪", "운동 습관이 바뀌는 사람"),
+    "라이프": ("🚗", "생활이 전환되는 타이밍"),
+    "게임": ("🎮", "플랫폼을 갈아타는 게이머"),
+    "쇼핑": ("🛒", "장바구니가 이동하는 신호"),
+}
+
+INDEX_CSS = """
+<style>
+body{background:#f7f7fa !important}
+.wrap{max-width:560px !important;margin:0 auto !important}
+.header{padding:48px 0 24px}
+.header .label{font-size:.65rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:10px}
+.header h1{font-size:1.5rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:8px}
+.header p{font-size:.85rem;color:#999;line-height:1.6}
+.today-card{background:#111;border-radius:20px;padding:32px 24px;margin-bottom:32px;text-decoration:none;display:block;color:inherit}
+.today-card:hover{background:#1a1a1a}
+.today-card .badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px}
+.today-card .badge span:first-child{font-size:.6rem;font-weight:900;color:#e8530e;letter-spacing:2px}
+.today-card .badge span:last-child{font-size:.6rem;font-weight:600;color:#555}
+.today-card h2{font-size:1.4rem;font-weight:900;color:#fff;line-height:1.35;margin-bottom:10px}
+.today-card .sub{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:20px}
+.today-card .bottom{display:flex;align-items:center;gap:10px}
+.today-card .stat{font-size:1.1rem;font-weight:900;color:#e8530e}
+.today-card .signal{font-size:.65rem;color:#555}
+.today-card .arrow{margin-left:auto;font-size:.75rem;font-weight:600;color:#e8530e}
+.cat-section{margin-bottom:32px}
+.cat-header{display:flex;align-items:center;gap:8px;padding:16px 0 12px}
+.cat-emoji{font-size:1.1rem}
+.cat-name{font-size:.88rem;font-weight:800;color:#111}
+.cat-count{font-size:.65rem;color:#bbb;margin-left:auto}
+.essay-card{background:#fff;border-radius:16px;padding:20px;margin-bottom:10px;text-decoration:none;display:block;color:inherit;transition:all .15s}
+.essay-card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.essay-card .etag{font-size:.6rem;font-weight:600;color:#e8530e;margin-bottom:8px}
+.essay-card h3{font-size:.95rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
+.essay-card .esub{font-size:.78rem;color:#999;line-height:1.5;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.essay-card .meta{display:flex;align-items:center;gap:8px}
+.essay-card .stat{font-size:.88rem;font-weight:900;color:#111}
+.essay-card .signal{font-size:.6rem;color:#bbb}
+.essay-card .date{font-size:.6rem;color:#ccc;margin-left:auto}
+.sub-section{background:#111;border-radius:20px;padding:32px 24px;text-align:center;margin-top:40px}
+.sub-section .emoji{font-size:1.8rem;margin-bottom:12px}
+.sub-section h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:6px}
+.sub-section p{font-size:.78rem;color:#666;line-height:1.6;margin-bottom:20px}
+.sub-section input{width:100%;padding:12px 14px;border:1px solid #333;border-radius:10px;background:#1a1a1a;color:#fff;font-size:.85rem;outline:none;margin-bottom:8px;box-sizing:border-box}
+.sub-section input::placeholder{color:#555}
+.sub-section button{width:100%;padding:12px;background:#e8530e;color:#fff;border:none;border-radius:10px;font-size:.85rem;font-weight:700;cursor:pointer}
+.sub-section button:hover{background:#d14a0c}
+.sub-msg{font-size:.68rem;color:#555;margin-top:8px;min-height:14px}
+</style>
+"""
+
+cards_html = INDEX_CSS
+
 # Header
 cards_html += """
-<div style="padding:48px 0 40px">
-  <div style="font-size:.72rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:12px">AUDIENCE IDEA BANK</div>
-  <h1 style="font-size:1.6rem;font-weight:900;color:#000;letter-spacing:-0.5px;margin-bottom:12px">오늘의 오디언스</h1>
-  <div style="font-size:.92rem;color:#666;line-height:1.7;margin-bottom:20px">매일 트렌드를 읽고, DMP 행동 데이터를 교차 분석해<br><strong style="color:#000">광고주가 바로 쓸 수 있는 오디언스</strong>를 제안합니다.</div>
-  <div style="font-size:.75rem;color:#999;margin-top:4px">매일 아침, 새로운 오디언스가 업데이트됩니다.</div>
-</div>
-"""
-# Today hero (검정 배경)
-cards_html += f"""
-<div style="background:#000;padding:48px 32px;margin:0 -24px">
-  <a href="{today['id']}.html" style="text-decoration:none;color:inherit;display:block">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:28px">
-      <span style="font-size:.72rem;font-weight:900;color:#e8530e;letter-spacing:2px">TODAY</span>
-      <span style="font-size:.65rem;font-weight:600;color:#666">{today['tag']} · {today['date']}</span>
-    </div>
-    <div style="font-size:1.8rem;font-weight:900;color:#fff;line-height:1.35;letter-spacing:-0.5px;margin-bottom:16px">{today['title']}</div>
-    <div style="font-size:1rem;color:#888;line-height:1.7;margin-bottom:32px">{today['sub']}</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <span style="font-size:1.3rem;font-weight:900;color:#e8530e">{today['stat']}</span>
-      <span style="font-size:.72rem;color:#666">{today['stat_label']}</span>
-      <span style="margin-left:auto;font-size:.78rem;font-weight:600;color:#e8530e">읽기 →</span>
-    </div>
-  </a>
+<div class="header">
+  <div class="label">AUDIENCE IDEA BANK</div>
+  <h1>오늘의 오디언스</h1>
+  <p>매일 트렌드를 읽고, DMP 행동 데이터를 교차 분석해<br><strong style="color:#111">광고주가 바로 쓸 수 있는 오디언스</strong>를 제안합니다.</p>
 </div>
 """
 
-# 광고주가 많이 본 오디언스 TOP 6 (2×3 그리드)
-import random
-non_today = [e for e in ESSAYS if e["id"] != today["id"]]
-# 골프를 1번으로 고정, 나머지는 셔플
-golf = [e for e in non_today if e["id"] == "golf"]
-others = [e for e in non_today if e["id"] != "golf"]
-random.shuffle(others)
-top6 = golf + others[:5]
-
-cards_html += """
-<div style="margin-top:48px;margin-bottom:16px">
-  <span style="font-size:.95rem;font-weight:900;color:#000">광고주가 많이 본 오디언스</span>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">"""
-for i, pick in enumerate(top6):
-    num = i + 1
-    short_title = pick['title'] if len(pick['title']) <= 20 else pick['title'][:18] + '…'
-    cards_html += f"""
-  <a href="{pick['id']}.html" style="text-decoration:none;color:inherit;display:block;background:#fafafa;border-radius:14px;padding:24px 16px;min-width:0">
-    <div style="font-size:1.5rem;font-weight:900;color:#e0e0e0;margin-bottom:10px">{num}</div>
-    <div style="font-size:.78rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{pick['title']}</div>
-    <div style="font-size:.7rem;font-weight:900;color:#000">{pick['stat']}</div>
-  </a>"""
-cards_html += "\n</div>"
-
-# 당신을 위한 FOR YOU — 관심사 칩 → 하단에 4개 오디언스 노출
-cat_labels = [ch["label"] for ch in CHAPTERS]
-chips_html = ""
-for cl in cat_labels:
-    chips_html += f'<span class="fy-chip" data-cat="{cl}">{cl}</span>'
-
-cat_data = {}
-for ch in CHAPTERS:
-    items = []
-    for eid in ch["ids"]:
-        if eid in essay_map and eid != today["id"]:
-            e = essay_map[eid]
-            items.append({"id": e["id"], "tag": e["tag"], "title": e["title"], "stat": e["stat"]})
-    cat_data[ch["label"]] = items
-
-import json as _json
-cat_json = _json.dumps(cat_data, ensure_ascii=False)
-
+# TODAY card
 cards_html += f"""
-<div style="margin-top:56px;padding-top:32px;border-top:1px solid #f0f0f0">
-  <div style="font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:8px">FOR YOU</div>
-  <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:6px">당신을 위한</div>
-  <div style="font-size:.82rem;color:#999;line-height:1.6;margin-bottom:20px">관심사를 선택하면, 관련 오디언스를 추천해드립니다.</div>
-  <div id="fy-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">{chips_html}</div>
-  <div id="fy-list" style="min-height:40px"></div>
-</div>
-
-<style>
-.fy-chip{{display:inline-block;padding:8px 18px;border:1px solid #eee;border-radius:20px;font-size:.78rem;font-weight:600;color:#888;cursor:pointer;transition:all .15s}}
-.fy-chip:hover,.fy-chip.active{{background:#111;color:#fff;border-color:#111}}
-</style>
-<script>
-var FY_DATA={cat_json};
-document.querySelectorAll('.fy-chip').forEach(function(chip){{
-  chip.addEventListener('click',function(){{
-    document.querySelectorAll('.fy-chip').forEach(function(c){{c.classList.remove('active')}});
-    this.classList.add('active');
-    var cat=this.dataset.cat;
-    var items=(FY_DATA[cat]||[]).slice(0,4);
-    var list=document.getElementById('fy-list');
-    if(!items.length){{list.innerHTML='<div style="font-size:.82rem;color:#ccc;padding:16px 0">아직 준비 중입니다.</div>';return}}
-    list.innerHTML=items.map(function(it){{
-      return '<a href="'+it.id+'.html" style="display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid #f5f5f5;text-decoration:none;color:inherit">'
-        +'<div style="flex:1"><div style="font-size:.6rem;font-weight:600;color:#e8530e;margin-bottom:3px">'+it.tag+'</div>'
-        +'<div style="font-size:.88rem;font-weight:700;color:#111;line-height:1.3">'+it.title+'</div></div>'
-        +'<span style="font-size:.78rem;font-weight:900;color:#000">'+it.stat+'</span></a>'
-    }}).join('');
-  }});
-}});
-</script>
-
-<!-- 구독 팝업 모달 -->
-<div id="sub-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999;justify-content:center;align-items:center" onclick="if(event.target===this)closeSub()">
-  <div style="background:#fff;border-radius:20px;padding:40px 32px;max-width:400px;width:90%;text-align:center;position:relative">
-    <div onclick="closeSub()" style="position:absolute;top:16px;right:20px;font-size:1.2rem;color:#999;cursor:pointer">✕</div>
-    <div style="font-size:2rem;margin-bottom:16px">🎯</div>
-    <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:8px">오늘의 오디언스 구독</div>
-    <div style="font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px">매일 아침, 광고주가 바로 쓸 수 있는<br>새로운 오디언스를 이메일로 보내드립니다.</div>
-    <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
-      <input type="email" id="sub-email" placeholder="이메일 주소" required style="width:100%;padding:14px 16px;border:1px solid #e0e0e0;border-radius:12px;font-size:.88rem;outline:none;margin-bottom:10px;box-sizing:border-box">
-      <button type="submit" id="sub-btn" style="width:100%;padding:14px;background:#111;color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer">구독하기</button>
-    </form>
-    <div id="sub-msg" style="font-size:.72rem;color:#888;margin-top:10px;min-height:16px"></div>
+<a class="today-card" href="{today['id']}.html">
+  <div class="badge"><span>TODAY</span><span>{today['tag']} · {today['date']}</span></div>
+  <h2>{today['title']}</h2>
+  <div class="sub">{today['sub']}</div>
+  <div class="bottom">
+    <span class="stat">{today['stat']}</span>
+    <span class="signal">{today['stat_label']}</span>
+    <span class="arrow">읽기 →</span>
   </div>
-</div>
+</a>
+"""
 
-<!-- 하단 고정 구독 바 -->
-<div id="sub-bar" style="position:fixed;bottom:0;left:0;width:100%;background:#111;padding:14px 24px;z-index:998;display:flex;align-items:center;justify-content:center;gap:12px">
-  <span style="font-size:.82rem;color:#fff;font-weight:600">매일 새로운 오디언스를 받아보세요</span>
-  <button onclick="openSub()" style="padding:8px 20px;background:#e8530e;color:#fff;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer">구독하기</button>
-</div>
+# Category sections
+for ch in CHAPTERS:
+    ch_essays = [essay_map[eid] for eid in ch["ids"] if eid in essay_map and eid != today["id"]]
+    if not ch_essays:
+        continue
+    emoji, cat_title = CAT_TITLES.get(ch["label"], ("📊", ch["label"]))
+    cards_html += f"""
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-emoji">{emoji}</span>
+    <span class="cat-name">{cat_title}</span>
+    <span class="cat-count">{len(ch_essays)}</span>
+  </div>"""
+    for e in ch_essays:
+        date_short = e["date"].replace("2026.", "")
+        cards_html += f"""
+  <a class="essay-card" href="{e['id']}.html">
+    <div class="etag">{e['tag']}</div>
+    <h3>{e['title']}</h3>
+    <div class="esub">{e['sub']}</div>
+    <div class="meta">
+      <span class="stat">{e['stat']}</span>
+      <span class="signal">{e['stat_label']}</span>
+      <span class="date">{date_short}</span>
+    </div>
+  </a>"""
+    cards_html += "\n</div>"
 
+# Subscribe section (inline)
+cards_html += """
+<div class="sub-section">
+  <div class="emoji">🎯</div>
+  <h3>매일 새로운 오디언스를 받아보세요</h3>
+  <p>매일 아침, 광고주가 바로 쓸 수 있는<br>새로운 오디언스를 이메일로 보내드립니다.</p>
+  <form id="sf" onsubmit="return handleSub(event)">
+    <input type="email" id="se" placeholder="이메일 주소" required>
+    <button type="submit" id="sb">구독하기</button>
+  </form>
+  <div class="sub-msg" id="sm"></div>
+</div>
 <script>
-var SHEET_URL='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
-function openSub(){{document.getElementById('sub-overlay').style.display='flex'}}
-function closeSub(){{document.getElementById('sub-overlay').style.display='none'}}
-function handleSubscribe(e){{
+var SU='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
+function handleSub(e){
   e.preventDefault();
-  var email=document.getElementById('sub-email').value;
-  var btn=document.getElementById('sub-btn');btn.disabled=true;btn.textContent='...';
-  fetch(SHEET_URL,{{method:'POST',mode:'no-cors',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{email:email}})}}
-  ).then(function(){{
-    document.getElementById('sub-msg').textContent='구독 완료! 감사합니다 🎉';
-    document.getElementById('subscribe-form').reset();
-    setTimeout(closeSub,2000);
-    document.getElementById('sub-bar').style.display='none';
-  }}).catch(function(){{
-    document.getElementById('sub-msg').textContent='오류가 발생했습니다. 다시 시도해주세요.';
-  }}).finally(function(){{btn.disabled=false;btn.textContent='구독하기'}});
+  var em=document.getElementById('se').value,btn=document.getElementById('sb');
+  btn.disabled=true;btn.textContent='...';
+  fetch(SU,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+  .then(function(){document.getElementById('sm').textContent='구독 완료! 감사합니다 🎉';document.getElementById('sf').reset()})
+  .catch(function(){document.getElementById('sm').textContent='오류가 발생했습니다.'})
+  .finally(function(){btn.disabled=false;btn.textContent='구독하기'});
   return false
-}}
+}
 </script>
 """
 
-cards_html += '\n<div class="footer" style="padding-bottom:80px"><div style="margin-bottom:8px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:8px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>'
+cards_html += '\n<div class="footer" style="text-align:center;color:#ccc;font-size:.65rem;padding:32px 0 16px;line-height:1.8">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰<br>자동 생성한 오디언스 분석입니다.<br>데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks<br>made by soddy</div>'
 
 with open(os.path.join(OUT, "index.html"), "w") as f:
     f.write(page_wrap("오늘의 오디언스", cards_html))
