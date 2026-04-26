@@ -155,7 +155,7 @@ CAT_TITLES = {
 INDEX_CSS = """
 <style>
 body{background:#f7f7fa !important}
-.wrap{max-width:800px !important;margin:0 auto !important}
+.wrap{max-width:960px !important;margin:0 auto !important}
 .header{padding:48px 0 24px}
 .header .label{font-size:.65rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:10px}
 .header h1{font-size:1.5rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:8px}
