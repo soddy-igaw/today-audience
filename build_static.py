@@ -155,11 +155,13 @@ CAT_TITLES = {
 INDEX_CSS = """
 <style>
 body{background:#f7f7fa !important}
-.wrap{max-width:560px !important;margin:0 auto !important}
+.wrap{max-width:800px !important;margin:0 auto !important}
 .header{padding:48px 0 24px}
 .header .label{font-size:.65rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:10px}
 .header h1{font-size:1.5rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:8px}
 .header p{font-size:.85rem;color:#999;line-height:1.6}
+.essay-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.essay-grid{grid-template-columns:1fr 1fr}}
 .today-card{background:#111;border-radius:20px;padding:32px 24px;margin-bottom:32px;text-decoration:none;display:block;color:inherit}
 .today-card:hover{background:#1a1a1a}
 .today-card .badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px}
@@ -234,7 +236,8 @@ for ch in CHAPTERS:
     <span class="cat-emoji">{emoji}</span>
     <span class="cat-name">{cat_title}</span>
     <span class="cat-count">{len(ch_essays)}</span>
-  </div>"""
+  </div>
+  <div class="essay-grid">"""
     for e in ch_essays:
         date_short = e["date"].replace("2026.", "")
         cards_html += f"""
@@ -248,7 +251,7 @@ for ch in CHAPTERS:
       <span class="date">{date_short}</span>
     </div>
   </a>"""
-    cards_html += "\n</div>"
+    cards_html += "\n  </div>\n</div>"
 
 # Subscribe section (inline)
 cards_html += """
