@@ -156,10 +156,10 @@ INDEX_CSS = """
 <style>
 body{background:#f7f7fa !important}
 .wrap{max-width:960px !important;margin:0 auto !important}
-.header{padding:48px 0 24px}
-.header .label{font-size:.65rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:10px}
-.header h1{font-size:2rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:10px}
-.header p{font-size:.92rem;color:#999;line-height:1.7}
+.header{padding:56px 0 28px}
+.header .label{font-size:.68rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:12px}
+.header h1{font-size:2.4rem;font-weight:900;color:#111;letter-spacing:-1px;margin-bottom:12px}
+.header p{font-size:1rem;color:#555;line-height:1.7}
 .essay-grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:640px){.essay-grid{grid-template-columns:1fr 1fr}}
 .today-card{background:#111;border-radius:20px;padding:32px 24px;margin-bottom:32px;text-decoration:none;display:block;color:inherit}
