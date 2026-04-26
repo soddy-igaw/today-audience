@@ -325,15 +325,14 @@ for e in ESSAYS:
     hero_img = ""
     current_idx = next((i for i, x in enumerate(ESSAYS) if x["id"] == e["id"]), -1)
     next_essay = ESSAYS[current_idx + 1] if current_idx >= 0 and current_idx + 1 < len(ESSAYS) else ESSAYS[0]
-    # Contact CTA block
+    # Contact CTA block — 밝은 톤, 같은 주제 아래 배치
     contact_html = """
-<div style="background:#111;border-radius:20px;padding:36px 28px;margin:32px 0;text-align:center">
-  <div style="font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:12px">이 오디언스를 쓰고 싶다면</div>
-  <div style="font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px">DMP 세그먼트로 바로 활용할 수 있습니다</div>
-  <div style="font-size:.82rem;color:#666;line-height:1.6;margin-bottom:24px">ADID 리스트 추출, DSP 연동, 커스텀 오디언스 설계까지<br>IGAWorks 오디언스랩에서 도와드립니다.</div>
+<div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">
+  <div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:6px">이 오디언스를 캠페인에 쓰고 싶다면</div>
+  <div style="font-size:.75rem;color:#999;line-height:1.6;margin-bottom:20px">ADID 세그먼트 추출 · DSP 연동 · 커스텀 오디언스 설계</div>
   <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-    <a href="mailto:audiencelab@igaworks.com" style="background:#e8530e;color:#fff;padding:12px 24px;border-radius:10px;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-block">이메일 문의</a>
-    <a href="https://mobileindex.com" style="background:#222;color:#fff;padding:12px 24px;border-radius:10px;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-block">모바일인덱스 →</a>
+    <a href="mailto:audiencelab@igaworks.com" style="background:#111;color:#fff;padding:10px 22px;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none">이메일 문의</a>
+    <a href="https://mobileindex.com" style="background:#fff;color:#111;padding:10px 22px;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none;border:1px solid #ddd">모바일인덱스 →</a>
   </div>
 </div>
 """
@@ -353,9 +352,9 @@ for e in ESSAYS:
         essay_html = _re.sub(r'<div class="cta-bar">.*?</div>', '', essay_html, flags=_re.DOTALL)
 
     if is_toss_style:
-        body = f'{hero_img}{essay_html}\n{contact_html}\n{related_html}'
+        body = f'{hero_img}{essay_html}\n{related_html}\n{contact_html}'
     else:
-        body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{contact_html}\n{next_html}\n{related_html}'
+        body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{next_html}\n{related_html}\n{contact_html}'
     with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
         f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
