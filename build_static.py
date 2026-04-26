@@ -175,8 +175,11 @@ cards_html += f"""
 # 광고주가 많이 본 오디언스 TOP 6 (2×3 그리드)
 import random
 non_today = [e for e in ESSAYS if e["id"] != today["id"]]
-random.shuffle(non_today)
-top6 = non_today[:6]
+# 골프를 1번으로 고정, 나머지는 셔플
+golf = [e for e in non_today if e["id"] == "golf"]
+others = [e for e in non_today if e["id"] != "golf"]
+random.shuffle(others)
+top6 = golf + others[:5]
 
 cards_html += """
 <div style="margin-top:48px;margin-bottom:16px">
