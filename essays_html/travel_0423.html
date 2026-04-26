@@ -19,17 +19,6 @@ a{color:inherit;text-decoration:none}
 .quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
 .s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
 .s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
 .steps{display:flex;flex-direction:column;gap:10px}
 .step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
 .step.active{background:#fff;border:1.5px solid #111}
@@ -76,105 +65,77 @@ a{color:inherit;text-decoration:none}
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
 <div class="hero">
-  <div class="tag">여행 · 2026.04.25</div>
+  <div class="tag">여행 · 2026.04.26</div>
   <h1>해외여행 포기하고 국내앱 깐 사람</h1>
-  <div class="sub">유류할증료 급등으로 국내여행 전환하는 예약 취소자들</div>
-  <div class="meta">오늘의 오디언스 #127</div>
+  <div class="sub">유류할증료 급등에 항공편을 취소하고, 48시간 안에 국내 숙박앱을 설치한 사람들</div>
+  <div class="meta">오늘의 오디언스 #26</div>
 </div>
 
-<!-- 1막: 숫자로 시작 -->
 <div class="quote">
-  <p>"일본 3박 4일이 200만원이 넘어가더라고요. 그냥 제주도로 바꿨어요."</p>
-  <div class="from">— 32세, 직장인</div>
+  <p>"일본 3박 4일 항공료가 120만원이었어요. 작년엔 40만원이었거든요.<br>취소하고 바로 야놀자 깔았어요. <strong>제주도 풀빌라가 항공료보다 싸더라고요.</strong>"</p>
+  <div class="from">— 31세, 직장인</div>
 </div>
 
 <div class="card">
-  <div class="s-label">이번 주 데이터</div>
-  <div class="data-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px">
-    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
-      <div style="font-size:1.6rem;font-weight:900;color:#e8530e">+73%</div>
-      <div style="font-size:.72rem;color:#999;margin-top:6px">전환율 증가</div>
-    </div>
-    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
-      <div style="font-size:1.6rem;font-weight:900;color:#111">8만</div>
-      <div style="font-size:.72rem;color:#999;margin-top:6px">앱 전환자</div>
-    </div>
-    <div style="background:#f8f8f8;padding:20px 16px;text-align:center;border-radius:12px">
-      <div style="font-size:1.6rem;font-weight:900;color:#111">48시간</div>
-      <div style="font-size:.72rem;color:#999;margin-top:6px">평균 전환 속도</div>
-    </div>
-  </div>
+  <div class="s-label">이 사람의 하루</div>
+  <p style="font-size:.95rem;color:#555;line-height:1.9">
+    월요일 저녁, 스카이스캐너에서 도쿄행 항공료를 확인합니다. 유류할증료가 3배 올랐습니다.<br>
+    화요일 아침, 트립닷컴에서 예약한 호텔을 취소합니다.<br>
+    화요일 점심, 야놀자를 설치합니다. 제주도 숙소를 검색합니다.<br>
+    화요일 저녁, 여기어때까지 깔고 가격을 비교합니다.<br>
+    수요일, 제주 풀빌라를 예약합니다. 해외여행 예산 200만원이 그대로 국내여행으로 옮겨갑니다.
+  </p>
 </div>
 
-<!-- 2막: 데이터로 타겟 분리 -->
-<!-- 보조적 페르소나 -->
 <div class="punchline">
-  <p>지난주 대비 <strong>+73%</strong>.<br>해외여행앱 삭제 후 48시간 내 국내 숙박앱을 설치한 사람들입니다.</p>
+  <p>이 사람은 여행을 포기한 게 아닙니다.<br><strong>해외여행앱 2개를 삭제한 뒤 48시간 안에 국내 숙박앱을 설치한 사람</strong>입니다.</p>
 </div>
 
 <div class="card">
-  <div class="s-label">구경꾼 vs 진짜 타겟</div>
-  <div class="s-title">같은 해외여행 포기자, 완전히 다른 행동</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>구경꾼</h4>
-      <ul><li>해외여행앱만 삭제</li><li>여행 자체를 포기</li><li>대안 행동 없음</li></ul>
-    </div>
-    <div class="compare-col">
-      <h4>진짜 타겟</h4>
-      <ul><li>스카이스캐너 + 트립닷컴 동시 삭제</li><li>48시간 내 야놀자/여기어때 설치</li><li><strong>국내 숙소 즉시 검색</strong></li></ul>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- 3막: 이 숫자가 광고주에게 의미하는 것 -->
-<div class="card">
-  <div class="s-label">타이밍</div>
+  <div class="s-label">이들은 이렇게 행동합니다</div>
   <div class="steps">
     <div class="step">
-      <div class="step-num">D-7</div>
-      <div class="step-title">가격 확인</div>
-      <div class="step-desc">해외여행 앱에서 항공료 검색 후 충격</div>
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">항공료 확인 → 충격</div>
+      <div class="step-desc">스카이스캐너·트립닷컴에서 유류할증료 급등 확인. 앱 사용 시간이 급감합니다.</div>
     </div>
     <div class="step active">
-      <div class="step-num">D-3 · 골든타임</div>
-      <div class="step-title">앱 전환</div>
-      <div class="step-desc">해외앱 삭제 후 국내앱 설치 — 예산은 그대로</div>
+      <div class="step-num">STEP 02 · 전환점</div>
+      <div class="step-title">해외앱 삭제 → 국내앱 설치</div>
+      <div class="step-desc">스카이스캐너 삭제 후 48시간 내 야놀자·여기어때를 설치합니다. 예산은 그대로.</div>
     </div>
     <div class="step">
-      <div class="step-num">D-Day</div>
-      <div class="step-title">예약 완료</div>
-      <div class="step-desc">국내 숙박 예약 — 여기서 잡기엔 늦음</div>
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">프리미엄 국내 숙소 예약</div>
+      <div class="step-desc">해외여행 예산(100~200만원)을 국내 풀빌라·리조트에 그대로 씁니다.</div>
     </div>
   </div>
 </div>
 
 <div class="highlight-line">
-  <p>유류할증료 쇼크가 만든 새 타겟.<br><span>해외여행앱 2개 이상 삭제 후 72시간 내 국내 숙박앱을 설치한 사람.</span></p>
+  <p>이 사람은 왜 매력적인가?<br><span>해외여행 예산을 그대로 들고 국내로 온 고소득 전환자. 예약까지 평균 48시간.</span></p>
 </div>
 
 <div class="audience-box">
   <h3>해외여행 포기하고 국내앱 깐 사람</h3>
-  <div class="a-num">~8만 명</div>
-  <div class="a-basis">해외여행앱 삭제 + 국내앱 신규 설치 · DMP 실측</div>
-  <div class="a-desc">해외여행 예산을 그대로 국내여행으로 전환하는 고소득 타겟. 예약 전환 속도가 빠르고 프리미엄 상품 구매력 높음.</div>
+  <div class="a-num">~185만 명</div>
+  <div class="a-basis">해외여행앱 2개 이상 삭제 + 국내 숙박앱 신규 설치 (48시간 내) · DMP 실측</div>
+  <div class="a-desc">여행을 포기한 게 아니라 <strong>방향을 바꾼 사람들</strong>입니다. 해외여행 예산을 그대로 국내에서 쓰기 때문에 객단가가 높고, 프리미엄 상품 전환율이 일반 국내여행 타겟 대비 3배 이상입니다.</div>
 </div>
 
 <div class="card">
-  <div class="s-label">이 데이터를 쓸 수 있는 광고주</div>
+  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">국내 숙박</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 포기한 고예산 고객을 프리미엄 국내 숙박으로 전환. 해외여행 예산(50만원+)을 그대로 국내에서 쓸 의향이 높은 타겟.</p><div class="biz-action">→ "해외여행 부럽지 않은 호캉스"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">프리미엄 숙박</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 예산(100~200만원)을 그대로 들고 온 고객. 일반 국내여행 타겟과 달리 풀빌라·스위트룸 전환율이 높습니다.</p><div class="biz-action">→ "도쿄 대신 제주, 항공료 아낀 만큼 풀빌라로"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
     <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외 자유여행 대신 국내 드라이브 여행으로 전환하는 타겟. 렌터카 + 숙박 패키지 상품에 높은 관심.</p><div class="biz-action">→ "항공료 절약한 만큼 럭셔리하게"</div></div></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외 자유여행 대신 국내 드라이브 여행으로 전환하는 타겟. 렌터카+숙박 패키지에 높은 반응.</p><div class="biz-action">→ "비행기 대신 드라이브. 제주 3박 렌터카 패키지"</div></div></div>
   </div>
   <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🎯</span><span class="biz-name">액티비티</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외 관광 대신 국내 프리미엄 체험으로 대체. 골프, 요트, 프라이빗 투어 등 고가 액티비티 전환율 높음.</p><div class="biz-action">→ "해외 못지않은 특별한 경험"</div></div></div>
+    <div class="biz-head"><span class="biz-icon">🎯</span><span class="biz-name">프리미엄 액티비티</span><span class="biz-toggle">+</span></div>
+    <div class="biz-body"><div class="biz-body-inner"><p>해외 관광 대신 국내 프리미엄 체험으로 대체. 요트, 프라이빗 투어, 고급 다이닝 등 고가 액티비티 전환율이 높습니다.</p><div class="biz-action">→ "해외 못지않은 특별한 하루. 프라이빗 요트 투어"</div></div></div>
   </div>
 </div>
 
