@@ -174,9 +174,8 @@ body{background:#f7f7fa !important}
 .today-card .signal{font-size:.65rem;color:#555}
 .today-card .arrow{margin-left:auto;font-size:.75rem;font-weight:600;color:#e8530e}
 .cat-section{margin-bottom:32px}
-.cat-header{display:flex;align-items:center;gap:8px;padding:16px 0 12px}
-.cat-emoji{font-size:1.1rem}
-.cat-name{font-size:.88rem;font-weight:800;color:#111}
+.cat-header{display:flex;align-items:baseline;gap:10px;padding:24px 0 14px}
+.cat-name{font-size:1.1rem;font-weight:900;color:#111}
 .cat-count{font-size:.65rem;color:#bbb;margin-left:auto}
 .essay-card{background:#fff;border-radius:16px;padding:20px;margin-bottom:10px;text-decoration:none;display:block;color:inherit;transition:all .15s}
 .essay-card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
@@ -233,9 +232,8 @@ for ch in CHAPTERS:
     cards_html += f"""
 <div class="cat-section">
   <div class="cat-header">
-    <span class="cat-emoji">{emoji}</span>
     <span class="cat-name">{cat_title}</span>
-    <span class="cat-count">{len(ch_essays)}</span>
+    <span class="cat-count" style="background:#eee;padding:2px 8px;border-radius:4px;font-weight:700;color:#999">{len(ch_essays)}</span>
   </div>
   <div class="essay-grid">"""
     for e in ch_essays:
