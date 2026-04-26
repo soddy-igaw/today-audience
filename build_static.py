@@ -159,7 +159,7 @@ body{background:#f7f7fa !important}
 .header{padding:56px 0 28px}
 .header .label{font-size:.68rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:12px}
 .header h1{font-size:2.4rem;font-weight:900;color:#111;letter-spacing:-1px;margin-bottom:12px}
-.header p{font-size:1rem;color:#555;line-height:1.7}
+.header p{font-size:1.05rem;color:#444;line-height:1.75;font-weight:500}
 .essay-grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:640px){.essay-grid{grid-template-columns:1fr 1fr}}
 .today-card{background:#111;border-radius:20px;padding:32px 24px;margin-bottom:32px;text-decoration:none;display:block;color:inherit}
