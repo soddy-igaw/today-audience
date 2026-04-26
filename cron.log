@@ -119,3 +119,4 @@ DONE — 33 files in docs/
 To github.com:soddy-igaw/today-audience.git
    953a2b1..69f2d20  main -> main
 Sat Apr 25 10:01:28 KST 2026 완료
+Sun Apr 26 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
