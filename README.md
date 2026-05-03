@@ -32,7 +32,7 @@
 | `build_static.py` | GitHub Pages용 정적 사이트 빌드 |
 | `app.py` | Streamlit 대시보드 (내부 프리뷰) |
 | `run_daily.sh` | 크론잡 실행 스크립트 (매일 10시) |
-| `templates/` | 에세이 3타입 HTML 템플릿 (감정형·인사이트형·데이터형) |
+| `trend_collector.py` | Google News RSS 기반 13개 카테고리 트렌드 수집 |
 
 ### 커버 카테고리 (13개)
 
@@ -128,10 +128,10 @@
 | 지표 | 수치 |
 |---|---|
 | **오디언스 기획 소요 시간** | **기존 2~3일 → 90초 (99.9% 절감)** |
-| 프로젝트 기간 | 16일 (2026.04.10 ~ 04.26) |
-| 총 커밋 수 | 280+회 |
+| 프로젝트 기간 | 30일 (2026.04.10 ~ 04.30) |
+| 총 커밋 수 | 320+회 |
 | 코드 규모 | 1,568줄 (Python 3개 파일) |
-| 에세이 누적 생성 | 25개 (정리 후 12개 운영) |
+| 에세이 누적 생성 | 25개 (정리 후 13개 운영) |
 | 커버 카테고리 | 13개 |
 
 ### DMP 실측 오디언스 (Athena 교차 시그널)
@@ -175,7 +175,7 @@
 라이브 페이지에서 직접 확인할 수 있습니다:
 
 - **메인 피드**: https://soddy-igaw.github.io/today-audience/
-- **에세이 예시 (여행)**: https://soddy-igaw.github.io/today-audience/travel_0423.html
+- **에세이 예시 (자동차)**: https://soddy-igaw.github.io/today-audience/car_0502.html
 - **에세이 예시 (헬스)**: https://soddy-igaw.github.io/today-audience/헬스_0425.html
 
 매일 아침 10시, 새로운 오디언스가 자동으로 추가됩니다.

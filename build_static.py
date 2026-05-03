@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"parents_day_0503","tag":"쇼핑","title":"어버이날 선물 검색하다 건강식품앱 깐 사람","sub":"쿠팡에서 안마기 보다가 정관장앱까지 깐 사람들","stat":"~5만","stat_label":"쇼핑앱+가격비교앱 교차 · DMP 실측","date":"2026.05.03"},
     {"id":"travel_0423","tag":"여행","title":"해외여행 포기하고 국내앱 깐 사람","sub":"유류할증료 급등으로 국내여행 전환하는 예약 취소자들","stat":"~1.8만","stat_label":"종합여행앱+호텔앱 교차 · DMP 실측","date":"2026.04.26"},
     {"id":"헬스_0425","tag":"헬스","title":"운동앱 2개 깔고 쇼핑앱 여는 사람들","sub":"홈트와 헬스장을 동시에 준비하는 사람들의 구매 패턴","stat":"~89만","stat_label":"운동앱 2개+쇼핑앱 · DMP 실측","date":"2026.04.25"},
     {"id":"coupang_exit","tag":"쇼핑","title":"쿠팡 삭제 후 알리 깐 사람","sub":"236만 이탈자 중 해외직구로 간 진짜 타겟은?","stat":"~5만","stat_label":"쇼핑앱+가격비교앱 교차 · DMP 실측","date":"2026.04.24"},
@@ -14,7 +15,7 @@ ESSAYS = [
     {"id":"safehaven_0420","tag":"증권","title":"주식 정리하고 금 사는 사람","sub":"증권앱 삭제 후 3일 내 한국금거래소 설치자가 말하는 것","stat":"~92만","stat_label":"증권앱+은행앱 교차 · DMP 실측","date":"2026.04.20"},
     {"id":"stock_0427","tag":"증권","title":"미국주식 팔고 국내 증권앱으로 돌아온 사람","sub":"서학개미가 미장을 떠나고 있습니다. 이들이 다음에 여는 앱은?","stat":"~92만","stat_label":"증권앱+은행앱 교차 · DMP 실측","date":"2026.04.27"},
     {"id":"tosspay","tag":"금융","title":"대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람","sub":"빚 줄이기보다 투자로 갚겠다는 사람들","stat":"~7만","stat_label":"대출앱+은행앱 교차 · DMP 실측","date":"2026.04.20"},
-    {"id":"car","tag":"자동차","title":"전기차 포기하고 하이브리드 찾는 사람","sub":"충전소 앱 삭제 후 하이브리드 매물 검색으로 돌아서는 타겟","stat":"~6만","stat_label":"자동차브랜드앱+중고차앱 교차 · DMP 실측","date":"2026.04.14"},
+    {"id":"car_0502","tag":"자동차","title":"리스 만기 후 중고차앱 3개 깐 사람","sub":"반납할까 인수할까 고민하다, 결국 중고차 시세부터 검색하는 사람들","stat":"~6만","stat_label":"자동차브랜드앱+중고차앱 교차 · DMP 실측","date":"2026.05.02"},
     {"id":"pet","tag":"반려동물","title":"사료 갈아탄 후 펫닥 3번째 상담 중인 사람","sub":"새 사료 바꾼 후 5일 내 수의사 온라인 상담 앱을 여는 반려인","stat":"~3만","stat_label":"애완동물앱+쇼핑앱 교차 · DMP 실측","date":"2026.04.13"},
     {"id":"golf","tag":"골프","title":"접대 때문에 골프 시작한 입문자","sub":"접대 골프 입문자는 고민하지 않습니다. 빠르게 삽니다.","stat":"~8만","stat_label":"골프앱+비즈니스앱 교차 · DMP 실측","date":"2026.04.11"},
 ]
@@ -23,9 +24,9 @@ CHAPTERS = [
     {"label":"금융","ids":["tosspay","realestate_0422","safehaven_0420","stock_0427"]},
     {"label":"여행","ids":["travel_0423"]},
     {"label":"스포츠","ids":["헬스_0425","golf"]},
-    {"label":"라이프","ids":["car","pet"]},
+    {"label":"라이프","ids":["car_0502","pet"]},
     {"label":"게임","ids":["game_0422"]},
-    {"label":"쇼핑","ids":["coupang_exit"]},
+    {"label":"쇼핑","ids":["coupang_exit","parents_day_0503"]},
 ]
 
 CSS = open(os.path.join(DIR, "essays_html", "realestate.html")).read()[:0]  # just init

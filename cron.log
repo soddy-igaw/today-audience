@@ -121,3 +121,5 @@ To github.com:soddy-igaw/today-audience.git
 Sat Apr 25 10:01:28 KST 2026 완료
 Sun Apr 26 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
 Mon Apr 27 10:00:05 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
+Tue Apr 28 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
+Sun May  3 10:00:02 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
