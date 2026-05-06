@@ -1,171 +1,98 @@
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">게임 · 2026.04.25</div>
-  <h1>스위치2 예약하고 스팀 삭제한 사람</h1>
-  <div class="sub">모바일 게임을 지우고 콘솔로 갈아타는 신호</div>
-  <div class="meta">오늘의 오디언스 #147</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">게임 · 2026.04.22</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">스위치2 예약하고 스팀 삭제한 사람</h1>
+
+<div class="hook">모바일 게임을 매일 하던 사람이 게임앱을 지웠어요.</div>
+<div class="hook-sub">그리고 가전 쇼핑앱에서 '게이밍 모니터'를 검색해요.</div>
+
+<div class="body">
+<p>이 사람은 게임을 그만둔 게 아니에요.<br><span class="accent">플랫폼을 바꾼 거예요. 모바일에서 콘솔/PC로.</span></p>
+
+<p class="muted">게임앱을 지운 날, 가전앱을 깔아요.<br>모니터, 키보드, 헤드셋. 환경을 세팅하는 거예요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"스위치2 나오면 폰게임 할 시간 없을 것 같아서. 미리 정리하고 있어요."</p>
-  
+<div class="callout">
+  <p>게임앱 최근 30일 활성 + 가전/쇼핑앱 동시 활성.<br><br><strong>모바일 캐주얼 유저가 아니에요. 하드웨어를 사려는 사람이에요.</strong></p>
 </div>
 
-<div class="card">
-  <div class="s-label">우리가 발견한 것</div>
-  <div class="s-title">콘솔 예약과 동시에 일어나는 모바일 게임 이탈</div>
-  <p style="font-size:.9rem;color:#888;line-height:1.8">
-    스위치2 출시 소식 이후 예상치 못한 데이터가 나왔습니다.<br>
-    닌텐도 관련 앱을 설치한 사람의 68%가 일주일 내 모바일 게임을 3개 이상 삭제했습니다.<br>
-    심지어 스팀까지 지우는 사람이 34% 늘었습니다.
-  </p>
+<div class="num-block">
+  <div class="num">14만 명</div>
+  <div class="label">게임앱 × 가전앱 동시 활성 · DMP 실측 (144,029)</div>
 </div>
 
-<div class="punchline">
-  <p>광고주가 몰랐던 사실.<br><strong>스위치2 관련 앱을 깐 사람이 모바일 게임을 대량 삭제하고 있다.</strong></p>
+<div class="compare">
+  <div class="compare-title">모바일 캐주얼 VS 플랫폼 전환자</div>
+  <div class="compare-row"><span class="dim">게임 플랫폼</span><span class="val">콘솔/PC 전환 (vs 모바일 유지)</span></div>
+  <div class="compare-row"><span class="dim">가전앱 사용</span><span class="val">있음 (vs 없음)</span></div>
+  <div class="compare-row"><span class="dim">구매 품목</span><span class="val">모니터/콘솔/주변기기</span></div>
+  <div class="compare-row"><span class="dim">객단가</span><span class="val">높음</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람은 어떻게 찾나요?</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">시그널 1</div>
-      <div class="step-title">닌텐도 관련 앱 급증</div>
-      <div class="step-desc">스위치2 뉴스, 게임 정보 앱 설치량 3배 증가</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">시그널 2 · 핵심</div>
-      <div class="step-title">게임 앱 대량 삭제</div>
-      <div class="step-desc">모바일 게임 3개 이상 동시 삭제 — 게임 플랫폼 전환 준비</div>
-    </div>
-    <div class="step">
-      <div class="step-num">시그널 3</div>
-      <div class="step-title">액세서리 쇼핑 시작</div>
-      <div class="step-desc">게이밍 기어, 케이스, 보호필름 앱 설치 급증</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">게이밍 모니터/주변기기</div>
+    <div class="how">플랫폼 전환자의 첫 구매. 모니터, 키보드, 헤드셋 패키지 광고.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">콘솔 (닌텐도/소니)</div>
+    <div class="how">스위치2 예약자 타겟. 악세서리, 게임 타이틀 번들 광고.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">게이밍 의자/데스크</div>
+    <div class="how">환경 세팅 수요. PC 전환자는 책상부터 바꿔요.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>콘솔 게임으로의 완전한 플랫폼 이동이 시작됐습니다.<br><span>닌텐도 관련 앱 설치 후 일주일 내 모바일 게임 3개 이상 삭제한 사람.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="card">
-  <div class="s-label">뭐가 다를까요?</div>
-  <div class="s-title">단순 게이머 vs 플랫폼 전환자</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>기존 게임 타겟팅</h4>
-      <ul><li>게임 앱 사용자 전체</li><li>플랫폼 구분 없음</li><li>낮은 구매 전환율</li></ul>
-    </div>
-    <div class="compare-col">
-      <h4>플랫폼 전환 시그널</h4>
-      <ul><li>명확한 전환 의도</li><li>높은 구매력 예측</li><li><strong>액세서리 구매 확률 5배</strong></li></ul>
-    </div>
-  </div>
-</div>
-
-<div class="audience-box">
-  <h3>스위치2 예약하고 스팀 삭제한 사람</h3>
-  <div class="a-num">~14만 명</div>
-  <div class="a-basis">게임앱+가전앱 교차 · DMP 실측</div>
-  <div class="a-desc">게임 플랫폼을 완전히 바꾸려는 사람들. 콘솔 생태계 전체에 높은 구매 의도를 보이에요.</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🎮</span><span class="biz-name">게이밍 액세서리</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>콘솔 전환 타이밍에 맞춰 필수 액세서리 제안. 보호 케이스, 컨트롤러, 충전기 등 스위치2 전용 제품군의 골든타임이에요.</p><div class="biz-action">→ "스위치2 완벽 세팅 패키지 할인"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">게임 결제 서비스</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>모바일에서 콘솔로 결제 플랫폼을 바꾸는 시점. 닌텐도 이샵 결제, 게임 구매 할인 쿠폰 등으로 새 플랫폼 첫 결제를 유도할 수 있어요.</p><div class="biz-action">→ "첫 콘솔 게임 구매 시 20% 캐시백"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">모바일 대안 서비스</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>게임 삭제로 생긴 모바일 빈 공간을 채울 수 있는 타이밍. 생산성 앱, 학습 앱, 피트니스 앱 등이 게임 대신 들어갈 수 있어요.</p><div class="biz-action">→ "게임 대신 성장하는 30일 챌린지"</div></div></div>
-  </div>
-</div>
-
-<div class="cta-bar">
-  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
-</div>
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>

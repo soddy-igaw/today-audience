@@ -1,161 +1,98 @@
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">여행 · 2026.04.26</div>
-  <h1>해외여행 포기하고 국내앱 깐 사람</h1>
-  <div class="sub">유류할증료 급등에 항공편을 취소하고, 48시간 안에 국내 숙박앱을 설치한 사람들</div>
-  <div class="meta">오늘의 오디언스 #26</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">여행 · 2026.04.26</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">해외여행 포기하고 국내앱 깐 사람</h1>
+
+<div class="hook">항공권 가격을 확인한 순간, 마음이 바뀌어요.</div>
+<div class="hook-sub">유류할증료 왕복 40만 원. 그날 저녁, 야놀자를 깔았어요.</div>
+
+<div class="body">
+<p>해외여행앱을 닫고 국내 숙소를 검색해요.<br><span class="accent">해외를 포기한 게 아니에요. 예산 안에서 최선을 찾는 거예요.</span></p>
+
+<p class="muted">이 사람은 여행을 안 가는 게 아니에요. 목적지가 바뀐 거예요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"일본 3박 4일 항공료가 120만원이었어요. 작년엔 40만원이었거든요.<br>취소하고 바로 야놀자 깔았어요. <strong>제주도 풀빌라가 항공료보다 싸더라고요.</strong>"</p>
-  
+<div class="callout">
+  <p>종합여행앱 + 호텔/리조트앱을 동시에 활성 사용하는 사람.<br><br><strong>지금 예약 직전인 사람이에요.</strong> 숙소를 비교하고 있어요.</p>
 </div>
 
-<div class="card">
-  <div class="s-label">우리가 발견한 것</div>
-  <div class="s-title">해외여행앱을 지운 사람이 국내 숙박앱을 2개 이상 동시에 깐다</div>
-  <p style="font-size:.9rem;color:#888;line-height:1.8">
-    스카이스캐너와 트립닷컴을 동시에 삭제한 사람들.<br>
-    이들 중 68%가 48시간 내 야놀자·여기어때를 동시에 설치해요.<br>
-    일반 국내여행 타겟의 숙박앱 동시 설치율(23%)과 확연히 다릅니다.<br>
-    <span style="font-size:.75rem;color:#bbb">출처: IGAWorks DMP 앱 설치 데이터</span>
-  </p>
+<div class="num-block">
+  <div class="num">1.8만 명</div>
+  <div class="label">종합여행앱 × 호텔앱 동시 활성 · DMP 실측 (18,839)</div>
 </div>
 
-<div class="punchline">
-  <p>여행을 포기한 게 아닙니다.<br><strong>해외여행앱 2개를 삭제한 뒤 48시간 안에 국내 숙박앱을 설치한 사람.</strong><br>예산은 그대로 들고 방향만 바꿨습니다.</p>
+<div class="compare">
+  <div class="compare-title">여행 꿈꾸는 사람 VS 예약 직전인 사람</div>
+  <div class="compare-row"><span class="dim">여행앱 사용</span><span class="val">활성 (둘 다)</span></div>
+  <div class="compare-row"><span class="dim">호텔앱 동시 사용</span><span class="val">있음 (vs 없음)</span></div>
+  <div class="compare-row"><span class="dim">행동 단계</span><span class="val">숙소 비교 중</span></div>
+  <div class="compare-row"><span class="dim">광고 타이밍</span><span class="val">지금</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람은 어떻게 찾나요?</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">시그널 1</div>
-      <div class="step-title">해외여행앱 사용 급감</div>
-      <div class="step-desc">스카이스캐너·트립닷컴 실행 횟수가 주 5회 → 0회로 떨어집니다</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">시그널 2 · 핵심</div>
-      <div class="step-title">해외앱 삭제 → 국내앱 설치</div>
-      <div class="step-desc">삭제 후 48시간 내 야놀자·여기어때를 설치. 예산은 그대로 유지돼요</div>
-    </div>
-    <div class="step">
-      <div class="step-num">시그널 3</div>
-      <div class="step-title">프리미엄 숙소 검색</div>
-      <div class="step-desc">풀빌라·리조트 등 고가 숙소 위주로 탐색. 일반 국내여행자와 다른 패턴</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">국내 숙소 플랫폼 (야놀자/여기어때)</div>
+    <div class="how">해외 이탈자에게 국내 프로모션. '제주 3박 항공 포함 39만 원' 메시지.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">제주/강원 지역 관광</div>
+    <div class="how">해외 대신 국내로 전환한 사람. 지역 관광 패키지 광고.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">렌터카</div>
+    <div class="how">국내여행 확정자의 이동수단. 숙소 예약 후 3일 내가 렌터카 예약 타이밍.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>해외여행 예산을 그대로 들고 국내로 온 전환자.<br><span>해외앱 삭제 후 48시간 내 국내 숙박앱 2개 동시 설치.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="card">
-  <div class="s-label">뭐가 다를까요?</div>
-  <div class="s-title">일반 국내여행자 vs 해외→국내 전환자</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>일반 국내여행자</h4>
-      <ul><li>숙박앱 1개 사용</li><li>여행앱 사용 빈도 낮음</li><li>설치 후 예약까지 느림</li></ul>
-    </div>
-    <div class="compare-col">
-      <h4>해외→국내 전환자</h4>
-      <ul><li>숙박앱 2개 동시 설치</li><li><strong>설치 직후 사용 빈도 급증</strong></li><li><strong>48시간 내 집중 사용</strong></li></ul>
-    </div>
-  </div>
-</div>
-
-<div class="audience-box">
-  <h3>해외여행 포기하고 국내앱 깐 사람</h3>
-  <div class="a-num">~1.8만 명</div>
-  <div class="a-basis">종합여행앱+호텔앱 교차 · DMP 실측</div>
-  <div class="a-desc">여행을 포기한 게 아니라 <strong>방향을 바꾼 사람들</strong>이에요. 해외여행앱 삭제 직후 국내 숙박앱을 2개 이상 동시 설치하는 패턴이 특징. 설치 직후 사용 빈도가 일반 국내여행 타겟보다 높아 구매 의도가 확실해요.</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏨</span><span class="biz-name">프리미엄 숙박</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외여행 예산(100~200만원)을 그대로 들고 온 고객. 풀빌라·스위트룸 전환율이 일반 타겟 대비 3배.</p><div class="biz-action">→ "도쿄 대신 제주. 항공료 아낀 만큼 풀빌라로"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">렌터카</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외 자유여행 대신 국내 드라이브 여행으로 전환. 렌터카+숙박 패키지에 높은 반응.</p><div class="biz-action">→ "비행기 대신 드라이브. 제주 3박 렌터카 패키지"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🎯</span><span class="biz-name">프리미엄 액티비티</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외 관광 대신 국내 프리미엄 체험으로 대체. 요트, 프라이빗 투어 등 고가 액티비티 전환율 높음.</p><div class="biz-action">→ "해외 못지않은 특별한 하루. 프라이빗 요트 투어"</div></div></div>
-  </div>
-</div>
-
-<div class="cta-bar">
-  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
-</div>
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>

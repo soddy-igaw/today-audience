@@ -59,173 +59,104 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 <body>
 <div class="wrap">
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">쇼핑 · 2026.04.25</div>
-  <h1>쿠팡 삭제 후 알리 깐 사람</h1>
-  <div class="sub">236만 이탈자 중 해외직구로 간 진짜 타겟은?</div>
-  <div class="meta">오늘의 오디언스 #47</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">쇼핑 · 2026.04.24</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">쿠팡 삭제 후 알리 깐 사람</h1>
+
+<div class="hook">로켓배송을 매일 쓰던 사람이 쿠팡을 지웠어요.</div>
+<div class="hook-sub">그리고 알리익스프레스를 깔았어요. 배송이 느려도 괜찮아요. 가격이 반값이니까요.</div>
+
+<div class="body">
+<p>이 사람은 쇼핑을 안 하는 게 아니에요.<br><span class="accent">플랫폼을 갈아탄 거예요.</span></p>
+
+<p class="muted">쿠팡을 떠난 사람에게 쿠팡 광고를 보여주면 늦어요.<br>떠나기 전, 사용 빈도가 줄기 시작한 그 주가 골든타임이에요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"배송 좀 느려도 괜찮으니까. 쿠팡에서 2만원짜리가 알리에선 5천원이더라고."</p>
-  
+<div class="callout">
+  <p>종합쇼핑앱 최근 30일 활성 + 가격비교앱 동시 활성.<br><br><strong>쇼핑을 안 하는 게 아니에요. 더 싼 곳을 찾은 거예요.</strong></p>
 </div>
 
-<div class="card">
-  <div class="s-label">우리가 발견한 것</div>
-  <div class="s-title">쿠팡 삭제 72시간 내 알리익스프레스 신규 설치 급증</div>
-  <p style="font-size:.9rem;color:#888;line-height:1.8">
-    모든 이탈자가 국내 쇼핑몰로 가지 않는다.<br>
-    해외직구로 완전히 구조 변화를 시도하는 사람이 있다.
-  </p>
+<div class="num-block">
+  <div class="num">5만 명</div>
+  <div class="label">종합쇼핑앱 × 가격비교앱 동시 활성 · DMP 실측 (54,060)</div>
 </div>
 
-<div class="punchline">
-  <p>쿠팡 이탈자가 236만 명.<br><strong>그런데 경쟁앱 이동은 9.7%뿐. 나머지는 어디로 갔을까?</strong></p>
+<div class="compare">
+  <div class="compare-title">충성 유저 VS 이탈 전환자</div>
+  <div class="compare-row"><span class="dim">쿠팡 사용 빈도</span><span class="val">감소 중 (vs 유지)</span></div>
+  <div class="compare-row"><span class="dim">가격비교앱</span><span class="val">신규 설치 (vs 없음)</span></div>
+  <div class="compare-row"><span class="dim">구매 행동</span><span class="val">플랫폼 전환 (vs 유지)</span></div>
+  <div class="compare-row"><span class="dim">광고 타이밍</span><span class="val">이탈 직전이 골든타임</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람은 어떻게 찾나요?</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">시그널 1</div>
-      <div class="step-title">쿠팡 앱 삭제</div>
-      <div class="step-desc">총수 규제 이슈로 236만 명 이탈</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">시그널 2 · 핵심</div>
-      <div class="step-title">72시간 내 해외직구 설치</div>
-      <div class="step-desc">알리익스프레스, 테무 동시 설치 — 여기가 타겟</div>
-    </div>
-    <div class="step">
-      <div class="step-num">시그널 3</div>
-      <div class="step-title">배송 추적앱까지 설치</div>
-      <div class="step-desc">해외직구에 완전 적응 준비 완료</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">쿠팡 (리텐션)</div>
+    <div class="how">이탈 직전 사용 빈도 감소 시점에 쿠폰 푸시. 떠난 후가 아니라 떠나기 전에 잡아야 해요.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">알리/테무 (신규 확보)</div>
+    <div class="how">쿠팡 이탈자에게 '첫 주문 90% 할인' 노출. 이미 전환 의사가 있는 사람이에요.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">11번가/G마켓 (대안)</div>
+    <div class="how">쿠팡도 알리도 아닌 제3의 선택지. 비교 쇼핑 단계에서 노출.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>국내 쇼핑몰 경쟁은 끝났다.<br><span>쿠팡 삭제 후 72시간 내 해외직구 2개 이상 설치한 사람 — 완전히 다른 쇼핑 패턴으로 전환 중.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="card">
-  <div class="s-label">뭐가 다를까요?</div>
-  <div class="s-title">기존 이탈자 타겟 vs 해외직구 전환자</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>일반 이탈자</h4>
-      <ul><li>국내몰 비교쇼핑</li><li>로켓배송 대안 찾기</li><li>가격 민감도 낮음</li></ul>
-    </div>
-    <div class="compare-col">
-      <h4>해외직구 전환자</h4>
-      <ul><li>쇼핑 구조 완전 변경</li><li>배송 기간 포기각오</li><li><strong>극한 가성비 추구</strong></li></ul>
-    </div>
-  </div>
-</div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>
 
-<div class="audience-box">
-  <h3>쿠팡 삭제 후 알리 깐 사람</h3>
-  <div class="a-num">~5만 명</div>
-  <div class="a-basis">쇼핑앱+가격비교앱 교차 · DMP 실측</div>
-  <div class="a-desc">가격이 모든 것을 이기는 타겟. 배송비도 계산하면서 산다.</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 타겟을 잡을 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📦</span><span class="biz-name">물류/배송 서비스</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외직구 초보자에게 배송대행, 통관 서비스를 제안. 복잡한 해외쇼핑을 쉽게 만들어주는 솔루션.</p><div class="biz-action">→ "해외직구 처음이신가요? 배송비까지 계산해드려요"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">카드/페이 서비스</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>해외결제 수수료 혜택으로 타겟. 해외직구 전용 카드나 환율 우대 서비스로 어필.</p><div class="biz-action">→ "해외쇼핑 수수료 0원. 환율우대까지"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🔍</span><span class="biz-name">가격비교 플랫폼</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>국내외 가격을 한번에 비교해주는 서비스. 이들의 극한 가성비 추구 성향을 정확히 타겟.</p><div class="biz-action">→ "국내 2만원 vs 해외 5천원, 한눈에 비교"</div></div></div>
-  </div>
-</div>
-
-
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
 
 <div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">
   <div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:6px">이 오디언스를 캠페인에 쓰고 싶다면</div>

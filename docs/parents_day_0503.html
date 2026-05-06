@@ -59,184 +59,103 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 <body>
 <div class="wrap">
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">쇼핑 · 2026.05.03</div>
-  <h1>어버이날 선물 검색하다 건강식품앱 깐 사람</h1>
-  <div class="sub">쿠팡에서 안마기 보다가 정관장앱까지 깐 사람들 — 지금 이 시그널을 잡아야 해요</div>
-  <div class="meta">오늘의 오디언스 #49</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">쇼핑 · 2026.05.03</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">어버이날 선물 검색하다 건강식품앱 깐 사람</h1>
+
+<div class="hook">가족 단톡방에서 시작돼요. '어버이날 뭐 드리지?'</div>
+<div class="hook-sub">쿠팡에서 검색하다가, 정관장 공식앱을 깔아요. 가격이 아니라 '뭘 사야 하는지'를 찾는 거예요.</div>
+
+<div class="body">
+<p><span class="accent">쇼핑앱에서 끝나지 않아요. 브랜드앱까지 깐 사람이에요.</span></p>
+
+<p class="muted">이 사람의 객단가는 10만 원 이상이에요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"작년엔 꽃이랑 케이크 보냈는데, 엄마가 '건강이 최고'라고 하시더라고요.<br><strong>올해는 진짜 드시는 걸로 하려고 앱을 3개나 깔았어요.</strong>"</p>
-  
+<div class="callout">
+  <p>종합쇼핑앱 + 건강앱을 동시에 활성 사용하는 사람.<br><br><strong>검색만 하는 사람이 아니에요. 브랜드앱까지 깐 사람을 잡아야 해요.</strong></p>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람의 하루</div>
-  <p style="font-size:.95rem;color:#555;line-height:1.9">
-    가족 단톡방에서 "어버이날 뭐 드리지?" 대화가 시작돼요.<br>
-    쿠팡에서 검색하다가, 정관장 공식앱을 깔아요.<br>
-    가격이 아니라 "뭘 사야 하는지"를 찾는 거예요.
-  </p>
+<div class="num-block">
+  <div class="num">41만 명</div>
+  <div class="label">쇼핑앱 × 건강앱 동시 활성 · DMP 실측 (419,014)</div>
 </div>
 
-<div class="punchline">
-  <p>이 사람은 효도하고 싶은 게 아닙니다.<br><strong>쇼핑앱에서 선물 검색 후 48시간 내에 건강식품 브랜드앱을 깐 사람이에요.</strong></p>
+<div class="compare">
+  <div class="compare-title">검색만 하는 사람 VS 브랜드앱까지 깐 사람</div>
+  <div class="compare-row"><span class="dim">쇼핑앱 사용</span><span class="val">활성 (둘 다)</span></div>
+  <div class="compare-row"><span class="dim">건강/브랜드앱</span><span class="val">신규 설치 (vs 없음)</span></div>
+  <div class="compare-row"><span class="dim">객단가</span><span class="val">10만 원+ (vs 이모티콘)</span></div>
+  <div class="compare-row"><span class="dim">구매 시점</span><span class="val">D-5 ~ D-1</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">감정이 행동으로 바뀌는 순간</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">STEP 01</div>
-      <div class="step-title">의무감 발동</div>
-      <div class="step-desc">어버이날 D-5. 가족 단톡방에서 선물 얘기가 나오는 순간</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">쇼핑앱 → 브랜드앱 전환</div>
-      <div class="step-desc">쿠팡에서 검색만 하다가 정관장·종근당 공식앱을 설치. 가격 비교가 아니라 "뭘 사야 하는지" 찾는 단계</div>
-    </div>
-    <div class="step">
-      <div class="step-num">STEP 03</div>
-      <div class="step-title">결제</div>
-      <div class="step-desc">D-2~D-1에 집중 결제. 당일배송·새벽배송 가능 여부가 최종 결정 요인</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">건강식품 브랜드 (정관장/종근당)</div>
+    <div class="how">공식몰 할인 + 선물 포장. 어버이날 D-5부터 D-1이 구매 피크예요.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">프리미엄 식품 (마켓컬리/SSG)</div>
+    <div class="how">한우·과일 세트 '배송 보장' 푸시. 장바구니 이탈자 리타겟.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">안마기/건강가전</div>
+    <div class="how">어버이날은 안마의자 렌탈 전환율 연중 최고. '첫 달 무료' 메시지.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>이 사람은 왜 매력적일까요?<br><span>객단가가 높고, 결제까지 48시간. 지금 광고하면 바로 전환돼요.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="card">
-  <div class="s-label">구경꾼 vs 진짜 타겟</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>구경꾼</h4>
-      <ul>
-        <li>쇼핑앱에서 "어버이날" 검색만</li>
-        <li>장바구니에 넣고 이탈</li>
-        <li>가격만 비교</li>
-        <li>브랜드앱 설치 없음</li>
-        <li>결국 카카오 이모티콘으로 대체</li>
-      </ul>
-    </div>
-    <div class="compare-col">
-      <h4>진짜 타겟</h4>
-      <ul>
-        <li><strong>쇼핑앱 + 건강식품 브랜드앱 동시 활성</strong></li>
-        <li><strong>배송일 확인 후 결제</strong></li>
-        <li>가격보다 품질·포장 중시</li>
-        <li>평균 객단가 8~15만 원</li>
-        <li><strong>D-3~D-1에 집중 구매</strong></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="audience-box">
-  <h3>어버이날 선물 검색하다 건강식품앱 깐 사람</h3>
-  <div class="a-num">~5만 명</div>
-  <div class="a-basis">쇼핑앱+가격비교앱 교차 · DMP 실측</div>
-  <div class="a-desc"><strong>어버이날 D-5~D-1</strong>이 골든타임.<br>건강식품, 안마기, 프리미엄 식품 — 객단가 10만 원 이상의 선물 구매가 집중돼요.</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💊</span><span class="biz-name">건강식품 브랜드</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>정관장, 종근당, 뉴트리원 등. 쇼핑앱에서 선물 검색 중인 타겟에게 공식몰 할인+선물 포장 옵션을 노출하면 바로 전환.</p><div class="biz-action">→ "어버이날 한정 홍삼 세트 — 5/7 도착 보장"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🎁</span><span class="biz-name">프리미엄 식품·선물 플랫폼</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>마켓컬리, SSG, 카카오 선물하기. 한우·과일·디저트 세트를 "어버이날 배송 보장"으로 푸시하면 장바구니 이탈자를 잡을 수 있어요.</p><div class="biz-action">→ "부모님께 보내는 프리미엄 한우 — 새벽배송"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🧖</span><span class="biz-name">안마기·건강가전</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>바디프랜드, 세라젬, 코지마. 쇼핑앱에서 안마기를 검색한 사람에게 렌탈 프로모션을 노출. 어버이날은 안마의자 렌탈 전환율이 연중 최고.</p><div class="biz-action">→ "어버이날 안마의자 렌탈 — 첫 달 무료"</div></div></div>
-  </div>
-</div>
-
-
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>
 
 
 <div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">

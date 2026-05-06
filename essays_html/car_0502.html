@@ -1,156 +1,98 @@
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">자동차 · 2026.05.02</div>
-  <h1>리스 만기 후 중고차앱 3개 깐 사람</h1>
-  <div class="sub">반납할까 인수할까 고민하다, 결국 중고차 시세부터 검색하는 사람들</div>
-  <div class="meta">오늘의 오디언스 #48</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">자동차 · 2026.05.02</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">리스 만기 후 중고차앱 3개 깐 사람</h1>
+
+<div class="hook">리스사에서 만기 안내가 와요. 잔존가치를 확인해요.</div>
+<div class="hook-sub">시세보다 높아요. 반납하자니 아깝고, 인수하자니 비싸요.</div>
+
+<div class="body">
+<p>그날부터 엔카, 케이카, KB차차차를 연달아 깔아요.<br><span class="accent">이 사람은 차를 바꾸고 싶은 게 아니에요. 30일 안에 결정해야 하는 사람이에요.</span></p>
+
+<p class="muted">반납이든 인수든 신차든, 반드시 결제가 일어나요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"3년 전에 리스로 뽑았는데, 잔존가치가 시세보다 높더라고요.<br><strong>반납하자니 아깝고, 인수하자니 비싸고. 그래서 중고차앱부터 깔았어요.</strong>"</p>
-  
+<div class="callout">
+  <p>자동차브랜드앱 + 중고차앱을 동시에 활성 사용하는 사람.<br><br><strong>구경꾼이 아니에요. 30일 내 반드시 결제하는 사람이에요.</strong></p>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람의 하루</div>
-  <p style="font-size:.95rem;color:#555;line-height:1.9">
-    오전 8시, 리스사에서 만기 안내 문자가 와요. 잔존가치 1,800만 원.<br>
-    점심시간, 엔카에서 같은 차종 시세를 검색해요. 중고 시세 1,500만 원. 인수하면 300만 원 손해.<br>
-    오후 3시, 케이카와 KB차차차를 연달아 설치해요. 비슷한 연식 다른 차종 매물을 비교하기 시작해요.<br>
-    저녁 9시, 자동차 브랜드 공식앱에서 신차 견적을 뽑아봐요. 월 납입금을 계산해요.
-  </p>
+<div class="num-block">
+  <div class="num">6만 명</div>
+  <div class="label">자동차브랜드앱 × 중고차앱 동시 활성 · DMP 실측 (65,796)</div>
 </div>
 
-<div class="punchline">
-  <p>이 사람은 차를 바꾸고 싶은 게 아닙니다.<br><strong>리스 만기 문자를 받은 후 7일 내에 중고차앱 3개를 동시에 깐 사람이에요.</strong></p>
+<div class="compare">
+  <div class="compare-title">자동차 관심자 VS 구매 확정자</div>
+  <div class="compare-row"><span class="dim">자동차앱 사용</span><span class="val">브랜드앱+중고차앱 동시</span></div>
+  <div class="compare-row"><span class="dim">의사결정 기간</span><span class="val">30일 이내</span></div>
+  <div class="compare-row"><span class="dim">구매 확률</span><span class="val">매우 높음</span></div>
+  <div class="compare-row"><span class="dim">구매 트리거</span><span class="val">리스/할부 만기</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">감정이 행동으로 바뀌는 순간</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">STEP 01</div>
-      <div class="step-title">만기 통보</div>
-      <div class="step-desc">리스 만기 안내를 받고 잔존가치와 시세를 비교하는 순간</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">대안 탐색 폭발</div>
-      <div class="step-desc">중고차앱 3개 동시 설치 — 엔카, 케이카, KB차차차를 하루 만에 깜</div>
-    </div>
-    <div class="step">
-      <div class="step-num">STEP 03</div>
-      <div class="step-title">견적 비교</div>
-      <div class="step-desc">브랜드 공식앱에서 신차 견적까지 뽑아보며 최종 의사결정 진입</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">신차 리스/렌트</div>
+    <div class="how">반납 시점 프로모션. '반납 대신 신차로 갈아타세요 — 첫 달 무료' 메시지.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">중고차 플랫폼</div>
+    <div class="how">매도+매수 양쪽 타겟. 리스 반납 차량 매입 + 대체 차량 추천.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">자동차 금융</div>
+    <div class="how">인수 대출 or 신차 할부. 리스 만기자 전용 저금리 상품.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>이 사람은 왜 매력적일까요?<br><span>구매 의사결정 기간이 30일 이내. 반납이든 인수든 신차든, 반드시 결제가 일어납니다.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="audience-box">
-  <h3>리스 만기 후 중고차앱 3개 깐 사람</h3>
-  <div class="a-num">~6만 명</div>
-  <div class="a-basis">자동차브랜드앱+중고차앱 교차 · DMP 실측</div>
-  <div class="a-desc">리스 만기라는 <strong>확실한 구매 트리거</strong>를 가진 타겟.<br>중고차 매입, 신차 리스, 자동차 금융 — 세 갈래 모두에서 전환이 일어납니다.</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">신차 리스·렌트 회사</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>리스 만기자는 다음 리스 계약의 최우선 타겟. 반납 시점에 신차 리스 프로모션을 노출하면 전환율이 가장 높아요.</p><div class="biz-action">→ "반납 대신 신차로 갈아타세요 — 첫 달 무료"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📱</span><span class="biz-name">중고차 플랫폼</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>인수 포기한 리스 반납 차량은 중고차 시장으로 유입돼요. 동시에 이 사람은 대체 차량을 찾고 있어요. 매도·매수 양쪽 모두 타겟.</p><div class="biz-action">→ "리스 반납 후 다음 차, 여기서 찾으세요"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">자동차 할부·금융</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>잔존가치 인수를 고민하는 사람에게 저금리 인수 대출을, 신차 전환자에게 할부 상품을 제안할 수 있어요.</p><div class="biz-action">→ "리스 인수 전용 금리 2.9% — 지금 비교하세요"</div></div></div>
-  </div>
-</div>
-
-<div class="cta-bar">
-  <p>이 오디언스 활용 요청하기 → audiencelab@igaworks.com</p>
-</div>
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>

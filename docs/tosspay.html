@@ -59,159 +59,104 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 <body>
 <div class="wrap">
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+
+.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
+.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
+
+.body{font-size:.93rem;color:#444;line-height:2.2}
+.body p{margin:0 0 24px}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#e8530e;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
+
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:32px 0}
+.callout p{font-size:.9rem;color:#555;line-height:1.9;margin:0}
+.callout strong{color:#111}
+
+.num-block{text-align:center;padding:40px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+
+.compare{margin:32px 0}
+.compare-title{font-size:.7rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:16px}
+.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
+.compare-row:last-child{border:none}
+.compare-row .dim{flex:1;color:#ccc}
+.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
+
+.usecase{margin:40px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.7rem;font-weight:700;color:#c4956a;letter-spacing:1.5px;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid #f5f5f5}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+
+.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 
-<div class="hero">
-  <div class="tag">금융 · 2026.04.25</div>
-  <h1>대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람</h1>
-  <div class="sub">빚 줄이기보다 투자로 갚겠다는 사람들</div>
-  <div class="meta">오늘의 오디언스 #127</div>
+<div style="font-size:.72rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:10px">금융 · 2026.04.20</div>
+<h1 style="font-size:1.5rem;font-weight:900;color:#111;margin:0 0 24px;line-height:1.3">대출 만기 전에 투자앱 깔기 시작한 사람</h1>
+
+<div class="hook">대출 만기가 다가와요. 보통은 상환 계획을 세워요.</div>
+<div class="hook-sub">그런데 이 사람은 달라요. 대출앱을 열면서 동시에 ETF를 검색해요.</div>
+
+<div class="body">
+<p><span class="accent">빚을 갚는 대신, 투자로 굴리겠다는 거예요.</span></p>
+
+<p class="muted">이 사람은 돈이 없는 게 아니에요. 돈을 굴리려는 사람이에요.</p>
+
+<hr class="divider">
 </div>
 
-<div class="quote">
-  <p>"대출금리가 너무 높아서 매달 이자만 30만원이에요.<br>그런데 갚을 여유자금이 있으면 <strong>차라리 ETF에 넣어서 불려볼까</strong> 싶더라고요."</p>
-  
+<div class="callout">
+  <p>대출앱 + 은행/뱅킹앱을 동시에 활성 사용하는 사람.<br><br><strong>상환만 생각하는 사람이 아니에요. 자금을 운용하려는 사람이에요.</strong></p>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람의 하루</div>
-  <p style="font-size:.95rem;color:#555;line-height:1.9">
-    아침에 뱅크샐러드 알림이 뜹니다. "대출 만기 D-28일".<br>
-    점심시간에 핀다로 갈아타기 금리를 찾아봐요. 하지만 큰 차이가 없어서 실망.<br>
-    저녁에 토스증권을 켜고 ETF 수익률을 봐요. "S&P 500 연 10% 수익"이라는 글에 혹해요.<br>
-    "300만원으로 매달 25만원씩 벌면 이자는 충분히 낸다"는 계산을 해보고, ETF 앱을 설치해요.
-  </p>
+<div class="num-block">
+  <div class="num">7만 명</div>
+  <div class="label">대출앱 × 은행앱 동시 활성 · DMP 실측 (76,535)</div>
 </div>
 
-<div class="punchline">
-  <p>이 사람은 대출을 갚으려는 게 아닙니다.<br><strong>대출 만기 30일 전부터 ETF 앱 3개 이상을 동시 설치한 사람</strong>이에요.</p>
+<div class="compare">
+  <div class="compare-title">상환형 VS 운용형</div>
+  <div class="compare-row"><span class="dim">대출앱 사용</span><span class="val">활성 (둘 다)</span></div>
+  <div class="compare-row"><span class="dim">은행앱 동시 사용</span><span class="val">있음 — ETF/CMA 검색</span></div>
+  <div class="compare-row"><span class="dim">행동</span><span class="val">상환 대신 투자</span></div>
+  <div class="compare-row"><span class="dim">광고 타이밍</span><span class="val">만기 D-30</span></div>
 </div>
 
-<div class="card">
-  <div class="s-label">빚에서 투자로 마음이 바뀌는 순간</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">STEP 01</div>
-      <div class="step-title">절망적 계산</div>
-      <div class="step-desc">갈아타기 금리를 찾아봐도 별 차이 없음을 확인</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">STEP 02 · 전환점</div>
-      <div class="step-title">투자 유혹</div>
-      <div class="step-desc">"투자 수익으로 이자를 벌면 되지 않을까?" 생각 시작</div>
-    </div>
-    <div class="step">
-      <div class="step-num">STEP 03</div>
-      <div class="step-title">앱 설치 러시</div>
-      <div class="step-desc">토스증권, 키움증권, NH투자증권을 3일 내 연속 설치</div>
-    </div>
+<div class="usecase">
+  <div class="usecase-title">이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase-item">
+    <div class="who">증권사 (ETF/CMA)</div>
+    <div class="how">유휴자금 투자 유도. '대출 이자보다 높은 수익률' 메시지.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">대환대출 플랫폼</div>
+    <div class="how">저금리 갈아타기. 만기 전 리파이낸싱 광고.</div>
+  </div>
+  <div class="usecase-item">
+    <div class="who">자산관리 앱</div>
+    <div class="how">대출+투자 통합 관리. '빚과 자산을 한눈에' 포지셔닝.</div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>이 사람은 왜 매력적일까요?<br><span>절망적 상황에서 나온 과감한 투자 의지, 그리고 임박한 결제 시한.</span></p>
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
 
-<div class="audience-box">
-  <h3>대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람</h3>
-  <div class="a-num">~7만 명</div>
-  <div class="a-basis">대출앱+은행앱 교차 · DMP 실측</div>
-  <div class="a-desc">30일 내 목돈 결정을 내려야 하고, 갚기보다 투자를 선택할 확률이 높은 사람들. 조급함 때문에 수수료나 조건을 덜 따지는 경향.</div>
-</div>
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>
 
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">📈</span><span class="biz-name">증권사</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>급하게 투자처를 찾는 사람에게 ETF 상품을 어필하되, 안전성을 강조한 카피로 접근</p><div class="biz-action">→ "매달 받는 배당으로 이자 걱정 끝. 안전 ETF 추천받기"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">대출업체</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>투자 욕구를 역이용해서 "투자자금 확보용 저금리 대출"로 포지셔닝하여 갈아타기 유도</p><div class="biz-action">→ "투자할 종잣돈 만들기. 연 2.9% 투자자 전용 대출"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💰</span><span class="biz-name">핀테크</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>대출 상환과 투자를 동시에 관리할 수 있는 올인원 금융 플랫폼으로 어필</p><div class="biz-action">→ "대출이자 vs 투자수익 실시간 비교. 똑똑한 선택하기"</div></div></div>
-  </div>
-</div>
-
-
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
 
 <div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">
   <div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:6px">이 오디언스를 캠페인에 쓰고 싶다면</div>
