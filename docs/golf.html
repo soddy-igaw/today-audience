@@ -60,66 +60,43 @@ body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:
 <div class="wrap">
 <style>
 body{background:#f7f7fa !important}
-.wrap{max-width:680px}
+.wrap{max-width:640px}
 a{color:inherit;text-decoration:none}
 .back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
 .back:hover{color:#333}
-.hero{padding:8px 0 32px}
+.hero{padding:8px 0 40px}
 .hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
 .hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
+.hero .sub{font-size:.95rem;color:#555;line-height:1.8}
+.section{padding:28px 0;border-bottom:1px solid #eee}
+.section:last-of-type{border:none}
+.section-label{font-size:.62rem;font-weight:800;color:#bbb;letter-spacing:2px;margin-bottom:14px}
+.section p{font-size:.93rem;color:#555;line-height:1.9;margin-bottom:8px}
+.section strong{color:#111}
+.punchline{background:#111;margin:0 -24px;padding:32px 28px}
+.punchline p{font-size:1.05rem;font-weight:700;color:#fff;line-height:1.7;margin:0}
+.punchline strong{color:#e8530e}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:16px}
+.compare-col{padding:22px 20px}
+.compare-col:first-child{background:#fff}
 .compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
+.compare-col h4{font-size:.62rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:12px}
+.compare-col:last-child h4{color:#666}
+.compare-col li{list-style:none;font-size:.82rem;color:#888;padding:4px 0;line-height:1.5}
+.compare-col:last-child li{color:#999}
 .compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin:28px 0;text-align:center;color:#fff}
+.audience-box h3{font-size:1rem;font-weight:800;margin-bottom:10px}
 .audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
 .audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
+.usecase{padding:20px 0}
+.usecase-item{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:10px}
+.usecase-item .u-who{font-size:.85rem;font-weight:800;color:#111;margin-bottom:6px}
+.usecase-item .u-how{font-size:.82rem;color:#888;line-height:1.6}
+.usecase-item .u-action{font-size:.8rem;font-weight:700;color:#e8530e;margin-top:8px}
+.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-top:20px}
 .cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
@@ -127,64 +104,39 @@ a{color:inherit;text-decoration:none}
 <div class="hero">
   <div class="tag">골프 · 2026.04.26</div>
   <h1>접대 때문에 골프 시작한 입문자</h1>
-  <div class="sub">접대 골프 입문자는 고민하지 않아요. 빠르게 사요.</div>
-  <div class="meta">오늘의 오디언스 #11</div>
+  <div class="sub">골프앱과 비즈니스앱을 동시에 쓰는 사람은<br>장비를 2주 안에 사요. 가격 비교 없이.</div>
 </div>
 
-<div class="quote">
-  <p>금요일 저녁, 거래처 사장님한테 카톡이 와요.<br>"다음 주 토요일 라운딩 어때요?"<br><br>골프를 쳐본 적 없어요.<br>그런데 거절할 수 없어요.<br><br><strong>그날 밤, 스크린골프앱을 깔았어요.</strong></p>
-</div>
-
-<div class="card">
-  <div class="s-label">우리가 발견한 것</div>
-  <div class="s-title">골프앱과 비즈니스앱을 동시에 쓰는 사람은 장비를 빠르게 사요</div>
-  <p style="font-size:.9rem;color:#888;line-height:1.8">
-    골프존 앱과 비즈니스 미팅앱(리멤버·명함천하)을 동시에 사용하는 사람들이에요.<br>
-    이들의 골프용품 쇼핑앱 설치 속도가 일반 골프 입문자보다 3배 빨라요.<br>
-    <span style="font-size:.75rem;color:#bbb">출처: IGAWorks DMP 앱 설치 데이터</span>
-  </p>
+<div class="section">
+  <div class="section-label">WHY NOW</div>
+  <p>금요일 저녁, 거래처 사장님한테 카톡이 와요.<br>"다음 주 토요일 라운딩 어때요?"</p>
+  <p>골프를 쳐본 적 없어요. 그런데 거절할 수 없어요.<br><strong>그날 밤, 스크린골프앱을 깔아요.</strong></p>
 </div>
 
 <div class="punchline">
-  <p>이 사람은 골프를 좋아해서 시작한 게 아니에요.<br><strong>골프앱과 비즈니스앱을 동시에 쓰면서, 2주 안에 골프용품 쇼핑앱까지 깐 사람</strong>이에요.</p>
+  <p>이 사람은 골프를 좋아해서 시작한 게 아니에요.<br><strong>다음 주까지 준비해야 하는 사람</strong>이에요.<br>그래서 빠르게 사요. 가격 비교 시간이 일반 입문자의 1/3이에요.</p>
 </div>
 
-<div class="card">
-  <div class="s-label">이 사람은 어떻게 찾나요?</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">시그널 1</div>
-      <div class="step-title">스크린골프앱 설치</div>
-      <div class="step-desc">골프존·카카오VX 등 스크린골프 앱을 처음 설치해요</div>
-    </div>
-    <div class="step active">
-      <div class="step-num">시그널 2 · 핵심</div>
-      <div class="step-title">비즈니스앱과 동시 사용</div>
-      <div class="step-desc">리멤버·명함천하 등 비즈니스앱 활성 유저가 골프앱을 깔아요. 접대 목적 시그널이에요.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">시그널 3</div>
-      <div class="step-title">골프용품 쇼핑 시작</div>
-      <div class="step-desc">2주 내 무신사·쿠팡에서 골프웨어·골프화를 검색해요. 빠르게 구매해요.</div>
-    </div>
-  </div>
-</div>
-
-<div class="highlight-line">
-  <p>접대 골프 입문자는 왜 매력적일까요?<br><span>고민 없이 빠르게 사요. 가격 비교 시간이 일반 입문자의 1/3이에요.</span></p>
-</div>
-
-<div class="card">
-  <div class="s-label">뭐가 다를까요?</div>
-  <div class="s-title">취미 골퍼 vs 접대 골퍼</div>
+<div class="section">
+  <div class="section-label">EVIDENCE</div>
   <div class="compare">
     <div class="compare-col">
       <h4>취미 골퍼</h4>
-      <ul><li>골프앱만 사용</li><li>장비 구매까지 2~3개월</li><li>가격 비교 오래 함</li></ul>
+      <ul>
+        <li>골프앱만 사용</li>
+        <li>장비 구매까지 2~3개월</li>
+        <li>가격 비교 오래 함</li>
+        <li>객단가 ~50만 원</li>
+      </ul>
     </div>
     <div class="compare-col">
       <h4>접대 골퍼</h4>
-      <ul><li>골프앱 + 비즈니스앱 동시</li><li><strong>장비 구매까지 2주</strong></li><li><strong>가격보다 속도 우선</strong></li></ul>
+      <ul>
+        <li><strong>골프앱 + 비즈니스앱 동시</strong></li>
+        <li><strong>장비 구매까지 2주</strong></li>
+        <li><strong>가격보다 속도 우선</strong></li>
+        <li><strong>객단가 ~150만 원</strong></li>
+      </ul>
     </div>
   </div>
 </div>
@@ -192,29 +144,33 @@ a{color:inherit;text-decoration:none}
 <div class="audience-box">
   <h3>접대 때문에 골프 시작한 입문자</h3>
   <div class="a-num">~8만 명</div>
-  <div class="a-basis">골프앱+비즈니스앱 교차 · DMP 실측</div>
-  <div class="a-desc">접대 목적으로 골프를 시작한 사람들이에요. <strong>구매 결정이 빠르고 객단가가 높아요.</strong> 골프웨어·장비·레슨을 2주 안에 한꺼번에 구매하는 패턴이에요.</div>
+  <div class="a-basis">골프앱 × 비즈니스앱 동시 활성 · DMP 실측</div>
 </div>
 
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">👕</span><span class="biz-name">골프웨어</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>접대 골퍼는 필드 드레스코드를 몰라요. "이것만 사면 됩니다" 식의 올인원 추천이 효과적이에요.</p><div class="biz-action">→ "첫 필드, 이 세트면 충분합니다"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏌️</span><span class="biz-name">골프 레슨</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>데드라인이 있는 입문자예요. "다음 달 필드"까지 기본기를 잡아야 하니까 속성 레슨 수요가 높아요.</p><div class="biz-action">→ "4주 만에 필드 데뷔. 접대 골프 속성 코스"</div></div></div>
-  </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">⛳</span><span class="biz-name">골프장·스크린골프</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>비즈니스 미팅 겸용 골프장 수요가 있어요. 식사·회의실이 함께 있는 프리미엄 골프장에 높은 반응이에요.</p><div class="biz-action">→ "라운딩 후 미팅까지. 비즈니스 골프 패키지"</div></div></div>
+<div class="section">
+  <div class="section-label">IMPLICATION — 이 오디언스를 쓸 수 있는 광고주</div>
+  <div class="usecase">
+    <div class="usecase-item">
+      <div class="u-who">👕 골프웨어</div>
+      <div class="u-how">접대 골퍼는 필드 드레스코드를 몰라요. "이것만 사면 됩니다" 식의 올인원 추천이 효과적이에요.</div>
+      <div class="u-action">→ "첫 필드, 이 세트면 충분합니다"</div>
+    </div>
+    <div class="usecase-item">
+      <div class="u-who">🏌️ 골프 레슨</div>
+      <div class="u-how">데드라인이 있는 입문자예요. "다음 달 필드"까지 기본기를 잡아야 하니까 속성 레슨 수요가 높아요.</div>
+      <div class="u-action">→ "4주 만에 필드 데뷔. 접대 골프 속성 코스"</div>
+    </div>
+    <div class="usecase-item">
+      <div class="u-who">⛳ 프리미엄 골프장</div>
+      <div class="u-how">비즈니스 미팅 겸용 골프장 수요가 있어요. 식사·회의실이 함께 있는 곳에 높은 반응이에요.</div>
+      <div class="u-action">→ "라운딩 후 미팅까지. 비즈니스 골프 패키지"</div>
+    </div>
   </div>
 </div>
 
 
 
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석이에요.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
+<div class="footer">본 리포트는 IGAWorks DMP 행동 데이터 기반 자동 생성 오디언스 분석이에요.<br>데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks<br>made by soddy</div>
 
 
 <div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">
