@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"tax_0509","tag":"금융","title":"삼쩜삼 깔고 환급금 확인하는 프리랜서","sub":"5월에 세금앱 여는 사람 = 종소세 신고 대상자. 프리랜서·1인 사업자를 찾는 법","stat":"~230만","stat_label":"세금앱×은행앱 동시 활성 · DMP 실측","date":"2026.05.09"},
     {"id":"overseas_invest_0507","tag":"증권","title":"해외투자에 빠져서 환전앱 여는 사람","sub":"증권앱 98만 명 중 진짜 해외투자자 26만 명을 찾는 법","stat":"~26만","stat_label":"증권앱×은행앱×가상화폐앱 동시 · DMP 실측","date":"2026.05.07"},
     {"id":"parents_day_0503","tag":"쇼핑","title":"어버이날 선물 검색하다 건강식품앱 깐 사람","sub":"쿠팡에서 안마기 보다가 정관장앱까지 깐 사람들","stat":"~41만","stat_label":"쇼핑앱×건강앱 동시 활성 · DMP 실측","date":"2026.05.03"},
     {"id":"travel_0423","tag":"여행","title":"해외여행 포기하고 국내앱 깐 사람","sub":"유류할증료 급등으로 국내여행 전환하는 예약 취소자들","stat":"~1.8만","stat_label":"종합여행앱+호텔앱 교차 · DMP 실측","date":"2026.04.26"},
@@ -21,7 +22,7 @@ ESSAYS = [
 ]
 
 CHAPTERS = [
-    {"label":"금융","ids":["tosspay","safehaven_0420","stock_0427"]},
+    {"label":"금융","ids":["tax_0509","tosspay","safehaven_0420","stock_0427"]},
     {"label":"여행","ids":["travel_0423"]},
     {"label":"스포츠","ids":["헬스_0425","golf"]},
     {"label":"라이프","ids":["car_0502","pet"]},
@@ -279,9 +280,9 @@ function handleSub(e){
 
 cards_html += '\n<div class="footer" style="text-align:center;color:#ccc;font-size:.65rem;padding:32px 0 16px;line-height:1.8">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰<br>자동 생성한 오디언스 분석입니다.<br>데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks<br>made by soddy</div>'
 
-with open(os.path.join(OUT, "index.html"), "w") as f:
+with open(os.path.join(OUT, "index_auto.html"), "w") as f:
     f.write(page_wrap("오늘의 오디언스", cards_html))
-print("OK: index.html")
+print("OK: index_auto.html (manual index.html preserved)")
 
 # === BUILD DETAIL PAGES ===
 essay_chapter = {}
