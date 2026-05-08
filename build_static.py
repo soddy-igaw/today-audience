@@ -156,27 +156,31 @@ CAT_TITLES = {
 INDEX_CSS = """
 <style>
 body{background:#fff !important}
-.wrap{max-width:620px !important;margin:0 auto !important}
-.header{padding:64px 0 40px}
-.header .label{font-size:.62rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:14px}
-.header h1{font-size:1.8rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:10px}
-.header p{font-size:.88rem;color:#888;line-height:1.7}
-.today-card{border:1.5px solid #6366F1;border-radius:16px;padding:32px 28px;margin-bottom:48px;text-decoration:none;display:block;color:inherit;transition:background .15s}
-.today-card:hover{background:#f5f3ff}
-.today-card .badge{font-size:.62rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:16px}
-.today-card h2{font-size:1.35rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:8px}
-.today-card .sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:16px}
-.today-card .arrow{font-size:.75rem;font-weight:700;color:#6366F1}
-.cat-section{margin-bottom:40px}
-.cat-header{padding:0 0 12px;border-bottom:1px solid #f0f0f0;margin-bottom:16px}
-.cat-name{font-size:.72rem;font-weight:700;color:#bbb;letter-spacing:1px}
-.essay-list{display:flex;flex-direction:column;gap:0}
-.essay-card{padding:20px 0;border-bottom:1px solid #f8f8f8;text-decoration:none;display:block;color:inherit;transition:padding-left .15s}
-.essay-card:last-child{border:none}
-.essay-card:hover{padding-left:8px}
-.essay-card h3{font-size:.95rem;font-weight:800;color:#111;line-height:1.45;margin-bottom:4px}
-.essay-card .esub{font-size:.78rem;color:#bbb;line-height:1.5}
-.essay-card .date{font-size:.62rem;color:#ddd;margin-top:6px}
+.wrap{max-width:580px !important;margin:0 auto !important;padding:0 24px 80px}
+.header{padding:72px 0 48px}
+.header .label{font-size:.6rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:12px}
+.header h1{font-size:1.6rem;font-weight:900;color:#111;letter-spacing:-.3px;margin-bottom:8px}
+.header p{font-size:.82rem;color:#bbb;line-height:1.7}
+.today-section{margin-bottom:64px}
+.today-label{font-size:.6rem;font-weight:700;color:#6366F1;letter-spacing:1.5px;margin-bottom:20px}
+.today-card{background:#111;border-radius:20px;padding:40px 32px;text-decoration:none;display:block;color:inherit;transition:transform .15s}
+.today-card:hover{transform:translateY(-2px)}
+.today-card .t-tag{font-size:.6rem;font-weight:600;color:#6366F1;margin-bottom:16px}
+.today-card h2{font-size:1.4rem;font-weight:900;color:#fff;line-height:1.4;margin-bottom:12px}
+.today-card .t-sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px}
+.today-card .t-bottom{display:flex;align-items:center;justify-content:space-between}
+.today-card .t-arrow{font-size:.75rem;font-weight:700;color:#6366F1}
+.cat-section{margin-bottom:48px}
+.cat-header{margin-bottom:20px}
+.cat-name{font-size:.88rem;font-weight:900;color:#111}
+.scroll-row{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;scroll-snap-type:x mandatory}
+.scroll-row::-webkit-scrollbar{height:0}
+.essay-card{min-width:240px;max-width:260px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
+.essay-card:hover{border-color:#6366F1}
+.essay-card h3{font-size:.88rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
+.essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.essay-card .date{font-size:.6rem;color:#ddd;margin-top:10px}
+@media(max-width:640px){.essay-card{min-width:200px;max-width:220px}}
 </style>
 """
 
@@ -193,15 +197,20 @@ cards_html += """
 
 # TODAY card
 cards_html += f"""
-<a class="today-card" href="{today['id']}.html">
-  <div class="badge">TODAY · {today['tag']} · {today['date']}</div>
-  <h2>{today['title']}</h2>
-  <div class="sub">{today['sub']}</div>
-  <div class="arrow">읽기 →</div>
-</a>
+<div class="today-section">
+  <div class="today-label">TODAY</div>
+  <a class="today-card" href="{today['id']}.html">
+    <div class="t-tag">{today['tag']} · {today['date']}</div>
+    <h2>{today['title']}</h2>
+    <div class="t-sub">{today['sub']}</div>
+    <div class="t-bottom">
+      <span class="t-arrow">읽기 →</span>
+    </div>
+  </a>
+</div>
 """
 
-# Category sections
+# Category sections (horizontal scroll)
 for ch in CHAPTERS:
     ch_essays = [essay_map[eid] for eid in ch["ids"] if eid in essay_map and eid != today["id"]]
     if not ch_essays:
@@ -212,15 +221,15 @@ for ch in CHAPTERS:
   <div class="cat-header">
     <span class="cat-name">{cat_title}</span>
   </div>
-  <div class="essay-list">"""
+  <div class="scroll-row">"""
     for e in ch_essays:
         date_short = e["date"].replace("2026.", "")
         cards_html += f"""
-  <a class="essay-card" href="{e['id']}.html">
-    <h3>{e['title']}</h3>
-    <div class="esub">{e['sub']}</div>
-    <div class="date">{date_short}</div>
-  </a>"""
+    <a class="essay-card" href="{e['id']}.html">
+      <h3>{e['title']}</h3>
+      <div class="esub">{e['sub']}</div>
+      <div class="date">{date_short}</div>
+    </a>"""
     cards_html += "\n  </div>\n</div>"
 
 # Subscribe section (inline)
