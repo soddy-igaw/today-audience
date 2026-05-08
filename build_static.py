@@ -156,7 +156,7 @@ CAT_TITLES = {
 INDEX_CSS = """
 <style>
 body{background:#fff !important}
-.wrap{max-width:580px !important;margin:0 auto !important;padding:0 24px 80px}
+.wrap{max-width:960px !important;margin:0 auto !important;padding:0 24px 80px}
 .header{padding:72px 0 48px}
 .header .label{font-size:.6rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:12px}
 .header h1{font-size:1.6rem;font-weight:900;color:#111;letter-spacing:-.3px;margin-bottom:8px}
@@ -170,14 +170,13 @@ body{background:#fff !important}
 .today-card .t-sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px}
 .today-card .t-bottom{display:flex;align-items:center;justify-content:space-between}
 .today-card .t-arrow{font-size:.75rem;font-weight:700;color:#6366F1}
-.cat-section{margin-bottom:48px}
-.cat-header{margin-bottom:20px}
-.cat-name{font-size:.88rem;font-weight:900;color:#111}
-.scroll-row{display:flex;flex-direction:column;gap:12px}
-.scroll-row::-webkit-scrollbar{height:0}
-.essay-card{text-decoration:none;color:inherit;display:block;padding:20px 24px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
+.cat-section{margin-bottom:56px}
+.cat-header{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.cat-name{font-size:1.05rem;font-weight:900;color:#111}
+.essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.essay-card{text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
 .essay-card:hover{border-color:#6366F1}
-.essay-card h3{font-size:.88rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
+.essay-card h3{font-size:.85rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
 .essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5}
 .essay-card .date{font-size:.6rem;color:#ddd;margin-top:10px}
 </style>
@@ -220,7 +219,7 @@ for ch in CHAPTERS:
   <div class="cat-header">
     <span class="cat-name">{cat_title}</span>
   </div>
-  <div class="scroll-row">"""
+  <div class="essay-grid">"""
     for e in ch_essays:
         date_short = e["date"].replace("2026.", "")
         cards_html += f"""

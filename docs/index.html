@@ -62,7 +62,7 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
 
 <style>
 body{background:#fff !important}
-.wrap{max-width:580px !important;margin:0 auto !important;padding:0 24px 80px}
+.wrap{max-width:960px !important;margin:0 auto !important;padding:0 24px 80px}
 .header{padding:72px 0 48px}
 .header .label{font-size:.6rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:12px}
 .header h1{font-size:1.6rem;font-weight:900;color:#111;letter-spacing:-.3px;margin-bottom:8px}
@@ -76,14 +76,13 @@ body{background:#fff !important}
 .today-card .t-sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px}
 .today-card .t-bottom{display:flex;align-items:center;justify-content:space-between}
 .today-card .t-arrow{font-size:.75rem;font-weight:700;color:#6366F1}
-.cat-section{margin-bottom:48px}
-.cat-header{margin-bottom:20px}
-.cat-name{font-size:.88rem;font-weight:900;color:#111}
-.scroll-row{display:flex;flex-direction:column;gap:12px}
-.scroll-row::-webkit-scrollbar{height:0}
-.essay-card{text-decoration:none;color:inherit;display:block;padding:20px 24px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
+.cat-section{margin-bottom:56px}
+.cat-header{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.cat-name{font-size:1.05rem;font-weight:900;color:#111}
+.essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.essay-card{text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
 .essay-card:hover{border-color:#6366F1}
-.essay-card h3{font-size:.88rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
+.essay-card h3{font-size:.85rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
 .essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5}
 .essay-card .date{font-size:.6rem;color:#ddd;margin-top:10px}
 </style>
@@ -110,7 +109,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">이 사람의 돈은 지금 이동 중입니다</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="tosspay.html">
       <h3>대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람</h3>
       <div class="esub">빚 줄이기보다 투자로 갚겠다는 사람들</div>
@@ -132,7 +131,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">목적지가 바뀌는 순간</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="travel_0423.html">
       <h3>해외여행 포기하고 국내앱 깐 사람</h3>
       <div class="esub">유류할증료 급등으로 국내여행 전환하는 예약 취소자들</div>
@@ -144,7 +143,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">몸이 먼저 움직인 사람들</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="헬스_0425.html">
       <h3>운동앱 2개 깔고 쇼핑앱 여는 사람들</h3>
       <div class="esub">홈트와 헬스장을 동시에 준비하는 사람들의 구매 패턴</div>
@@ -161,7 +160,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">30일 안에 결정해야 하는 사람</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="car_0502.html">
       <h3>리스 만기 후 중고차앱 3개 깐 사람</h3>
       <div class="esub">반납할까 인수할까 고민하다, 결국 중고차 시세부터 검색하는 사람들</div>
@@ -178,7 +177,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">플랫폼을 갈아타는 중입니다</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="game_0422.html">
       <h3>스위치2 예약하고 스팀 삭제한 사람</h3>
       <div class="esub">모바일 게임을 지우고 콘솔로 갈아타는 신호</div>
@@ -190,7 +189,7 @@ body{background:#fff !important}
   <div class="cat-header">
     <span class="cat-name">장바구니가 옮겨가고 있습니다</span>
   </div>
-  <div class="scroll-row">
+  <div class="essay-grid">
     <a class="essay-card" href="coupang_exit.html">
       <h3>쿠팡 삭제 후 알리 깐 사람</h3>
       <div class="esub">236만 이탈자 중 해외직구로 간 진짜 타겟은?</div>
