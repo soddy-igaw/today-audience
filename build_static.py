@@ -171,8 +171,8 @@ body{background:#fff !important}
 .today-card .t-bottom{display:flex;align-items:center;justify-content:space-between}
 .today-card .t-arrow{font-size:.75rem;font-weight:700;color:#6366F1}
 .cat-section{margin-bottom:56px}
-.cat-header{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
-.cat-name{font-size:1.05rem;font-weight:900;color:#111}
+.cat-header{margin-bottom:20px;padding:16px 20px;background:#f5f3ff;border-radius:10px}
+.cat-name{font-size:1.05rem;font-weight:900;color:#6366F1}
 .essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .essay-card{text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
 .essay-card:hover{border-color:#6366F1}
@@ -214,21 +214,39 @@ for ch in CHAPTERS:
     if not ch_essays:
         continue
     emoji, cat_title = CAT_TITLES.get(ch["label"], ("📊", ch["label"]))
-    cards_html += f"""
+    # 카드 4개 이상이면 가로 스크롤, 아니면 그리드
+    if len(ch_essays) >= 4:
+        cards_html += f"""
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">{cat_title}</span>
+  </div>
+  <div class="essay-grid" style="display:flex;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px">"""
+        for e in ch_essays:
+            date_short = e["date"].replace("2026.", "")
+            cards_html += f"""
+    <a class="essay-card" href="{e['id']}.html" style="min-width:220px;max-width:240px;flex-shrink:0">
+      <h3>{e['title']}</h3>
+      <div class="esub">{e['sub']}</div>
+      <div class="date">{date_short}</div>
+    </a>"""
+        cards_html += "\n  </div>\n</div>"
+    else:
+        cards_html += f"""
 <div class="cat-section">
   <div class="cat-header">
     <span class="cat-name">{cat_title}</span>
   </div>
   <div class="essay-grid">"""
-    for e in ch_essays:
-        date_short = e["date"].replace("2026.", "")
-        cards_html += f"""
+        for e in ch_essays:
+            date_short = e["date"].replace("2026.", "")
+            cards_html += f"""
     <a class="essay-card" href="{e['id']}.html">
       <h3>{e['title']}</h3>
       <div class="esub">{e['sub']}</div>
       <div class="date">{date_short}</div>
     </a>"""
-    cards_html += "\n  </div>\n</div>"
+        cards_html += "\n  </div>\n</div>"
 
 # Subscribe section (inline)
 cards_html += """
