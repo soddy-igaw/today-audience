@@ -155,47 +155,28 @@ CAT_TITLES = {
 
 INDEX_CSS = """
 <style>
-body{background:#f7f7fa !important}
-.wrap{max-width:960px !important;margin:0 auto !important}
-.header{padding:56px 0 28px}
-.header .label{font-size:.68rem;font-weight:700;letter-spacing:3px;color:#e8530e;margin-bottom:12px}
-.header h1{font-size:2.4rem;font-weight:900;color:#111;letter-spacing:-1px;margin-bottom:12px}
-.header p{font-size:1.05rem;color:#444;line-height:1.75;font-weight:500}
-.essay-grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:640px){.essay-grid{grid-template-columns:1fr 1fr}}
-.today-card{background:#e8530e;border-radius:20px;padding:32px 24px;margin-bottom:32px;text-decoration:none;display:block;color:inherit}
-.today-card:hover{background:#1a1a1a}
-.today-card .badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px}
-.today-card .badge span:first-child{font-size:.6rem;font-weight:900;color:#e8530e;letter-spacing:2px}
-.today-card .badge span:last-child{font-size:.6rem;font-weight:600;color:#555}
-.today-card h2{font-size:1.4rem;font-weight:900;color:#fff;line-height:1.35;margin-bottom:10px}
-.today-card .sub{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:20px}
-.today-card .bottom{display:flex;align-items:center;gap:10px}
-.today-card .stat{font-size:1.1rem;font-weight:900;color:#e8530e}
-.today-card .signal{font-size:.65rem;color:#555}
-.today-card .arrow{margin-left:auto;font-size:.75rem;font-weight:600;color:#e8530e}
-.cat-section{margin-bottom:32px}
-.cat-header{background:#eee;border-radius:12px;padding:24px 24px}
-.cat-name{font-size:1.35rem;font-weight:900;color:#333}
-.cat-count{font-size:.65rem;color:#bbb;margin-left:auto}
-.essay-card{background:#fff;border-radius:16px;padding:20px;margin-bottom:10px;text-decoration:none;display:block;color:inherit;transition:all .15s}
-.essay-card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.essay-card .etag{font-size:.6rem;font-weight:600;color:#e8530e;margin-bottom:8px}
-.essay-card h3{font-size:.95rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
-.essay-card .esub{font-size:.78rem;color:#999;line-height:1.5;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.essay-card .meta{display:flex;align-items:center;gap:8px}
-.essay-card .stat{font-size:.88rem;font-weight:900;color:#111}
-.essay-card .signal{font-size:.6rem;color:#bbb}
-.essay-card .date{font-size:.6rem;color:#ccc;margin-left:auto}
-.sub-section{background:#faf7f4;border-radius:20px;padding:32px 24px;text-align:center;margin-top:40px}
-.sub-section .emoji{font-size:1.8rem;margin-bottom:12px}
-.sub-section h3{font-size:1rem;font-weight:800;color:#111;margin-bottom:6px}
-.sub-section p{font-size:.78rem;color:#888;line-height:1.6;margin-bottom:20px}
-.sub-section input{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;background:#fff;color:#111;font-size:.85rem;outline:none;margin-bottom:8px;box-sizing:border-box}
-.sub-section input::placeholder{color:#bbb}
-.sub-section button{width:100%;padding:12px;background:#e8530e;color:#fff;border:none;border-radius:10px;font-size:.85rem;font-weight:700;cursor:pointer}
-.sub-section button:hover{background:#d14a0c}
-.sub-msg{font-size:.68rem;color:#555;margin-top:8px;min-height:14px}
+body{background:#fff !important}
+.wrap{max-width:620px !important;margin:0 auto !important}
+.header{padding:64px 0 40px}
+.header .label{font-size:.62rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:14px}
+.header h1{font-size:1.8rem;font-weight:900;color:#111;letter-spacing:-.5px;margin-bottom:10px}
+.header p{font-size:.88rem;color:#888;line-height:1.7}
+.today-card{border:1.5px solid #6366F1;border-radius:16px;padding:32px 28px;margin-bottom:48px;text-decoration:none;display:block;color:inherit;transition:background .15s}
+.today-card:hover{background:#f5f3ff}
+.today-card .badge{font-size:.62rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:16px}
+.today-card h2{font-size:1.35rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:8px}
+.today-card .sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:16px}
+.today-card .arrow{font-size:.75rem;font-weight:700;color:#6366F1}
+.cat-section{margin-bottom:40px}
+.cat-header{padding:0 0 12px;border-bottom:1px solid #f0f0f0;margin-bottom:16px}
+.cat-name{font-size:.72rem;font-weight:700;color:#bbb;letter-spacing:1px}
+.essay-list{display:flex;flex-direction:column;gap:0}
+.essay-card{padding:20px 0;border-bottom:1px solid #f8f8f8;text-decoration:none;display:block;color:inherit;transition:padding-left .15s}
+.essay-card:last-child{border:none}
+.essay-card:hover{padding-left:8px}
+.essay-card h3{font-size:.95rem;font-weight:800;color:#111;line-height:1.45;margin-bottom:4px}
+.essay-card .esub{font-size:.78rem;color:#bbb;line-height:1.5}
+.essay-card .date{font-size:.62rem;color:#ddd;margin-top:6px}
 </style>
 """
 
@@ -206,21 +187,17 @@ cards_html += """
 <div class="header">
   <div class="label">AUDIENCE IDEA BANK</div>
   <h1>오늘의 오디언스</h1>
-  <p>매일 트렌드를 읽고, DMP 행동 데이터를 교차 분석해<br><strong style="color:#111">광고주가 바로 쓸 수 있는 오디언스</strong>를 제안해요.</p>
+  <p>DMP 행동 데이터를 교차 분석해, 광고주가 바로 쓸 수 있는 오디언스를 제안합니다.</p>
 </div>
 """
 
 # TODAY card
 cards_html += f"""
 <a class="today-card" href="{today['id']}.html">
-  <div class="badge"><span>TODAY</span><span>{today['tag']} · {today['date']}</span></div>
+  <div class="badge">TODAY · {today['tag']} · {today['date']}</div>
   <h2>{today['title']}</h2>
   <div class="sub">{today['sub']}</div>
-  <div class="bottom">
-    <span class="stat">{today['stat']}</span>
-    <span class="signal">{today['stat_label']}</span>
-    <span class="arrow">읽기 →</span>
-  </div>
+  <div class="arrow">읽기 →</div>
 </a>
 """
 
@@ -235,32 +212,27 @@ for ch in CHAPTERS:
   <div class="cat-header">
     <span class="cat-name">{cat_title}</span>
   </div>
-  <div class="essay-grid">"""
+  <div class="essay-list">"""
     for e in ch_essays:
         date_short = e["date"].replace("2026.", "")
         cards_html += f"""
   <a class="essay-card" href="{e['id']}.html">
-    <div class="etag">{e['tag']}</div>
     <h3>{e['title']}</h3>
     <div class="esub">{e['sub']}</div>
-    <div class="meta">
-      <span class="stat">{e['stat']}</span>
-      <span class="signal">{e['stat_label']}</span>
-      <span class="date">{date_short}</span>
-    </div>
+    <div class="date">{date_short}</div>
   </a>"""
     cards_html += "\n  </div>\n</div>"
 
 # Subscribe section (inline)
 cards_html += """
-<div style="margin-top:48px;padding:40px 0;border-top:1px solid #e5e5e5;text-align:center">
-  <div style="font-size:.65rem;font-weight:700;color:#e8530e;letter-spacing:2px;margin-bottom:12px">SUBSCRIBE</div>
-  <div style="font-size:1.2rem;font-weight:900;color:#111;margin-bottom:6px">매일 새로운 오디언스를 받아보세요</div>
-  <div style="font-size:.82rem;color:#999;line-height:1.6;margin-bottom:24px">매일 아침, 광고주가 바로 쓸 수 있는 오디언스를 이메일로 보내드립니다.</div>
-  <form id="sf" onsubmit="return handleSub(event)" style="max-width:360px;margin:0 auto">
+<div style="margin-top:56px;padding:40px 0;border-top:1px solid #f0f0f0;text-align:center">
+  <div style="font-size:.62rem;font-weight:700;color:#6366F1;letter-spacing:2px;margin-bottom:12px">SUBSCRIBE</div>
+  <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:6px">매일 새로운 오디언스를 받아보세요</div>
+  <div style="font-size:.78rem;color:#999;line-height:1.6;margin-bottom:24px">매일 아침, 광고주가 바로 쓸 수 있는 오디언스를 이메일로 보내드립니다.</div>
+  <form id="sf" onsubmit="return handleSub(event)" style="max-width:340px;margin:0 auto">
     <div style="display:flex;gap:8px">
-      <input type="email" id="se" placeholder="이메일 주소" required style="flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;font-size:.85rem;outline:none">
-      <button type="submit" id="sb" style="padding:12px 20px;background:#111;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
+      <input type="email" id="se" placeholder="이메일 주소" required style="flex:1;padding:12px 14px;border:1px solid #e0e0e0;border-radius:8px;background:#fff;font-size:.85rem;outline:none">
+      <button type="submit" id="sb" style="padding:12px 20px;background:#6366F1;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
     </div>
   </form>
   <div class="sub-msg" id="sm" style="font-size:.68rem;color:#999;margin-top:10px;min-height:14px"></div>
