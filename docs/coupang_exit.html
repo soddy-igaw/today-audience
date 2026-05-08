@@ -61,84 +61,132 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
 <div class="wrap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 <style>
-body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.2px}
+body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',sans-serif;letter-spacing:-.2px}
 *{box-sizing:border-box}
 .wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
 .back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
 .tag-line{font-size:.75rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:32px}
-.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
-.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
-.section-num{font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:1.5px;margin-bottom:16px}
-.body{font-size:.93rem;color:#444;line-height:2.6}
-.body p{margin:0 0 28px}
+.title{font-size:1.6rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:48px}
+.body{font-size:.93rem;color:#444;line-height:2.8}
+.body p{margin:0 0 32px}
+.body .editor{color:#111;font-weight:600}
 .body .accent{color:#111;font-weight:700}
 .body .muted{color:#bbb}
-.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
-.callout{background:#f8f5f0;border-radius:12px;padding:24px;margin:24px 0}
-.callout p{font-size:.88rem;color:#555;line-height:1.9;margin:0}
+.body .orange{color:#6366F1;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:48px 0}
+.body .speaker{font-size:.72rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:8px}
+.callout{background:#f8f5f0;border-radius:12px;padding:28px 24px;margin:36px 0}
+.callout p{font-size:.88rem;color:#555;line-height:2;margin:0}
 .callout strong{color:#111}
-.num-block{text-align:center;padding:32px 0}
-.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
 .num-block .label{font-size:.72rem;color:#999;margin-top:6px}
-.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
-.compare-row:last-child{border:none}
-.compare-row .dim{flex:1;color:#ccc}
-.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
-.usecase{margin:0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase{margin:48px 0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
 .usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .usecase-item:last-child{border:none}
 .usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
 .usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
-.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
-.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
+</style>
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+.usecase{margin:48px 0;background:#f5f3ff;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
 .footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 <div class="tag-line">쇼핑 · 2026.04.24 · 쿠팡 삭제 후 알리 깐 사람</div>
 
-<div class="hook">로켓배송을 매일 쓰던 사람이 쿠팡을 지웠어요.</div>
-<div class="hook-sub">그리고 알리익스프레스를 깔았어요. 배송이 느려도 괜찮아요. 가격이 반값이니까요.</div>
+<div class="title">쿠팡 삭제 후 알리 깐 사람</div>
 
-<div class="section-num">01. 이 사람의 이야기</div>
 <div class="body">
 
-<p>이 사람은 쇼핑을 안 하는 게 아니에요.<br><span class="accent">플랫폼을 갈아탄 거예요.</span></p>
+<p>로켓배송을 매일 쓰던 사람이 쿠팡을 지웠습니다. 그리고 알리익스프레스를 깔았습니다.</p>
 
-<p>쿠팡 사용 빈도가 줄기 시작해요.<br>그리고 가격비교앱이 깔려요.<br>일주일 뒤, 알리에서 첫 주문을 해요.</p>
+<p class="muted">배송이 느려도 괜찮습니다. 가격이 반값이니까요.</p>
 
-<p class="muted">쿠팡을 떠난 사람에게 쿠팡 광고를 보여주면 늦어요.</p>
+<hr class="divider">
 
-<div class="callout">
-  <p><strong>DMP에서 이 사람을 찾는 법</strong><br><br>종합쇼핑앱 최근 30일 활성 + 가격비교앱 동시 활성.<br>떠나기 전, 사용 빈도가 줄기 시작한 그 주가 골든타임이에요.</p>
+<p class="speaker">이 사람은 누구인가</p>
+
+<p><span class="accent">이 사람은 쇼핑을 안 하는 게 아닙니다. 플랫폼을 갈아탄 겁니다.</span></p>
+
+<p>쿠팡 사용 빈도가 줄기 시작합니다. 주 5회에서 주 1회로. 그리고 가격비교앱이 깔립니다. 일주일 뒤, 알리에서 첫 주문을 합니다.</p>
+
+<p class="muted">쿠팡을 떠난 사람에게 쿠팡 광고를 보여주면 늦습니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">이들의 행동 패턴</p>
+
+<p><span class="accent">쇼핑앱 사용 빈도 감소 → 가격비교앱 설치 → 해외직구앱 전환.</span></p>
+
+<p>이 순서가 2~3주 안에 일어납니다. 떠나기 전, 사용 빈도가 줄기 시작한 그 주가 골든타임입니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">우리가 잡은 시그널</p>
+
+<p><span class="editor">이탈 직전의 시그널을 잡아야 합니다. 떠난 후에는 늦어요.</span></p>
+
 </div>
 
+<div style="background:#f5f3ff;border-radius:14px;padding:28px 24px;margin:36px 0">
+  <div style="font-size:.82rem;font-weight:800;color:#6366F1;margin-bottom:24px">시그널 타임라인</div>
+  <div style="position:relative;padding:0 0 0 20px">
+    <div style="position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366F1,#a5b4fc)"></div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-21</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">쇼핑앱 사용 빈도 감소 시작</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">주 5회 → 주 2회. 이탈 조짐</div>
+    </div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-7</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">가격비교앱 신규 설치</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">더 싼 곳을 찾기 시작. 전환 의사 확정</div>
+    </div>
+    <div style="position:relative;padding:0 0 0 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-0</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">해외직구앱에서 첫 주문</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">플랫폼 전환 완료. 여기서 잡으면 늦음</div>
+    </div>
+  </div>
 </div>
 
-<div class="section-num">02. 숫자로 보면</div>
+<div class="body">
+<p><span class="editor">이 5만 명을 지금 누가 찾고 있을까요? 쿠팡은 리텐션으로, 알리는 신규 확보로, 11번가는 대안으로. 이탈 직전이 모두에게 골든타임입니다.</span></p>
+</div>
 
 <div class="num-block">
   <div class="num">5만 명</div>
   <div class="label">종합쇼핑앱 × 가격비교앱 동시 활성 · DMP 실측 (54,060)</div>
+  <div style="font-size:.65rem;color:#ccc;margin-top:4px">* 예상 모수 · 조건 세분화 시 변동 가능</div>
 </div>
 
-<div class="compare-row"><span class="dim">쿠팡 사용 빈도</span><span class="val">감소 중</span></div>
-<div class="compare-row"><span class="dim">가격비교앱</span><span class="val">신규 설치</span></div>
-<div class="compare-row"><span class="dim">광고 타이밍</span><span class="val">이탈 직전</span></div>
-
-<hr style="border:none;border-top:1px solid #f0f0f0;margin:40px 0">
-
-<div class="section-num">03. 광고주가 쓰는 법</div>
-
 <div class="usecase">
+  <div class="usecase-title">이 사람한테 뭘 팔 수 있을까요?</div>
   <div class="usecase-item">
     <div class="who">쿠팡 (리텐션)</div>
-    <div class="how">이탈 직전 사용 빈도 감소 시점에 쿠폰 푸시. 떠나기 전에 잡아야 해요.</div>
+    <div class="how">이탈 직전 사용 빈도 감소 시점에 쿠폰 푸시. 떠나기 전에 잡아야 합니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">알리/테무 (신규 확보)</div>
-    <div class="how">쿠팡 이탈자에게 '첫 주문 90% 할인' 노출. 이미 전환 의사가 있는 사람이에요.</div>
+    <div class="how">쿠팡 이탈자에게 '첫 주문 90% 할인' 노출. 이미 전환 의사가 있는 사람입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">11번가/G마켓</div>
