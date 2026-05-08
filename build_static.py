@@ -345,11 +345,26 @@ for e in ESSAYS:
         essay_html = _re.sub(r'<div class="cta-bar">.*?</div>', '', essay_html, flags=_re.DOTALL)
 
     if is_toss_style:
-        body = f'{hero_img}{essay_html}\n{contact_html}'
+        # 자체 CSS가 있는 에세이는 page_wrap 없이 직접 출력
+        full_html = f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{e["title"]} — 오늘의 오디언스</title>
+</head>
+<body>
+<div style="max-width:580px;margin:0 auto;padding:32px 24px 60px">
+{essay_html}
+</div>
+</body>
+</html>"""
+        with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
+            f.write(full_html)
     else:
         body = f'<a class="back-btn" href="index.html">← 뒤로</a>\n{hero_img}{essay_html}\n{contact_html}'
-    with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
-        f.write(page_wrap(e["title"], body))
+        with open(os.path.join(OUT, f"{e['id']}.html"), "w") as f:
+            f.write(page_wrap(e["title"], body))
     print(f"OK: {e['id']}.html")
 
 print(f"\nDONE — {len(os.listdir(OUT))} files in docs/")
