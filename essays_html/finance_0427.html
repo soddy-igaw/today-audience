@@ -1,245 +1,112 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>대출비교앱 3개 다 깔고 마지막에 차량담보대출앱 깐 사람 — 오늘의 오디언스</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 <style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
-.wrap{max-width:800px;margin:0 auto;padding:0 24px 100px}
-.hero-img{width:calc(100% + 48px);margin:0 -24px;height:320px;object-fit:cover;display:none}
-.detail-wrap{max-width:800px;margin:0 auto}
-.detail-hero,.hero{padding:40px 0 32px}
-.detail-tag,.hero .tag{font-size:.72rem;font-weight:600;color:#e8530e;letter-spacing:1px;margin-bottom:16px;display:block}
-.detail-emoji{display:none}
-.detail-title,.hero h1{font-size:1.8rem;font-weight:900;color:#000;line-height:1.4;letter-spacing:-0.5px}
-.detail-sub{display:none}
-.detail-meta,.hero .meta{font-size:.78rem;color:#bbb;margin-top:16px}
-.body p,.section p,.quote-box p{font-size:1.1rem;color:#333;line-height:2;margin-bottom:16px;letter-spacing:-0.2px}
-.body strong,.section strong,.quote-box strong{color:#000;font-weight:800}
-.section{padding:24px 0;border-bottom:none}
-.section-label{font-size:1.2rem;font-weight:800;color:#000;line-height:1.5;margin:32px 0 12px;letter-spacing:-0.3px}
-.quote-box{padding:32px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin:24px 0;background:none;border-left:none}
-.quote-box p{font-style:italic}
-.quote-box strong{font-style:normal}
-.behavior-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px}
-.behavior-card{background:#fafafa;padding:28px;position:relative;overflow:hidden}
-.behavior-card.highlight{background:#000}
-.behavior-card.highlight .bc-desc{color:#999}
-.bc-step{font-size:.62rem;font-weight:700;color:#bbb;letter-spacing:2px;margin-bottom:10px}
-.behavior-card.highlight .bc-step{color:#666}
-.bc-title{font-size:1.05rem;font-weight:800;color:#000;line-height:1.35;margin-bottom:6px}
-.behavior-card.highlight .bc-title{color:#fff}
-.bc-desc{font-size:.88rem;color:#777;line-height:1.6}
-.bc-num{font-size:2.5rem;font-weight:900;color:#000;opacity:0.06;position:absolute;right:24px;top:50%;transform:translateY(-50%)}
-.behavior-card.highlight .bc-num{color:#e8530e;opacity:1;font-size:1.6rem;position:static;transform:none;margin-top:16px}
-.insight-box{background:#000;padding:40px 32px;margin:32px -24px}
-.insight-box .ins-label{display:none}
-.insight-box p{color:#fff;font-size:1.1rem;line-height:2;font-weight:500;margin:0}
-.insight-box strong{color:#e8530e;font-weight:700}
-.audience-card{background:#000;padding:48px 32px;margin:48px -24px}
-.ind-grid,.ind-card{display:none}
-.footer{text-align:center;color:#ccc;font-size:.72rem;padding:48px 0 16px}
-.back-btn{display:inline-block;background:#000;color:#fff;padding:8px 20px;font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:16px}
-.back-btn:hover{background:#333}
-.ch-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
-.ch-grid::-webkit-scrollbar{height:3px}
-.ch-grid::-webkit-scrollbar-thumb{background:#eee;border-radius:2px}
-.ch-card{min-width:200px;max-width:240px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block}
-.ch-card:hover .ch-title{color:#e8530e}
-.ch-card img{width:100%;height:110px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px}
-.ch-card .ch-tag{font-size:.6rem;font-weight:700;color:#e8530e;letter-spacing:0.5px;margin-bottom:8px}
-.ch-card .ch-title{font-size:.9rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px;transition:color .15s}
-.ch-card .ch-stat{font-size:.85rem;font-weight:900;color:#000}
-@media(max-width:768px){.ch-card{min-width:180px;max-width:220px}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<style>
-body{background:#f7f7fa !important}
-.wrap{max-width:800px}
+body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',sans-serif;letter-spacing:-.2px}
+*{box-sizing:border-box}
+.wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
-.back{display:inline-block;padding:18px 0;font-size:.85rem;color:#999;cursor:pointer}
-.back:hover{color:#333}
-.hero{padding:8px 0 32px}
-.hero .tag{font-size:.72rem;font-weight:600;color:#888;letter-spacing:.3px;margin-bottom:16px}
-.hero h1{font-size:1.75rem;font-weight:900;line-height:1.38;letter-spacing:-.5px;color:#111;margin-bottom:14px}
-.hero .sub{font-size:.95rem;color:#888;line-height:1.7}
-.hero .meta{font-size:.72rem;color:#ccc;margin-top:16px}
-.punchline{background:#111;margin:0 -24px;padding:36px 28px}
-.punchline p{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.7}
-.punchline strong{color:#e8530e;font-weight:800}
-.card{background:#fff;border-radius:16px;padding:28px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote{border-left:3px solid #ddd;padding:22px 24px;background:#fff;border-radius:0 14px 14px 0;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.quote p{font-size:.93rem;color:#888;line-height:1.85;font-style:italic}
-.quote strong{color:#333;font-style:normal}
-.quote .from{font-size:.72rem;color:#bbb;margin-top:10px;font-style:normal}
-.s-label{font-size:.68rem;font-weight:700;color:#bbb;letter-spacing:1.5px;margin-bottom:14px}
-.s-title{font-size:1.15rem;font-weight:800;line-height:1.4;color:#111;margin-bottom:16px}
-.impact-source{font-size:.88rem;font-weight:700;color:#333;margin-bottom:14px}
-.impact-branches{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid #e8e8ee}
-.impact-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f0f5;border-radius:10px;position:relative}
-.impact-item::before{content:'';position:absolute;left:-19px;top:50%;width:18px;height:2px;background:#e8e8ee}
-.impact-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.impact-dot.positive{background:#34c759}
-.impact-dot.hot{background:#e8530e}
-.impact-name{font-size:.84rem;font-weight:600;color:#555;flex:1}
-.impact-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px}
-.impact-badge.positive{background:rgba(52,199,89,.1);color:#2da44e}
-.impact-badge.hot{background:rgba(232,83,14,.08);color:#e8530e}
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:#f7f7fa;border-radius:12px;padding:20px 22px}
-.step.active{background:#fff;border:1.5px solid #111}
-.step-num{font-size:.6rem;font-weight:700;color:#ccc;letter-spacing:1.5px;margin-bottom:6px}
-.step.active .step-num{color:#111}
-.step-title{font-size:.95rem;font-weight:700;color:#333;margin-bottom:4px}
-.step.active .step-title{color:#111;font-weight:800}
-.step-desc{font-size:.82rem;color:#999;line-height:1.6}
-.highlight-line{padding:28px 0;text-align:center}
-.highlight-line p{font-size:1.05rem;font-weight:800;color:#111;line-height:1.6}
-.highlight-line span{color:#888;font-weight:500}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;margin-top:12px}
-.compare-col{padding:20px}
-.compare-col:first-child{background:#f7f7fa}
-.compare-col:last-child{background:#111}
-.compare-col h4{font-size:.66rem;font-weight:700;color:#bbb;letter-spacing:1px;margin-bottom:10px}
-.compare-col:last-child h4{color:#888}
-.compare-col li{list-style:none;font-size:.82rem;color:#999;padding:3px 0;line-height:1.5}
-.compare-col:last-child li{color:#aaa}
-.compare-col:last-child strong{color:#fff}
-.audience-box{background:#111;border-radius:16px;padding:40px 28px;margin-bottom:14px;text-align:center;color:#fff}
-.audience-box h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
-.audience-box .a-num{font-size:2.4rem;font-weight:900;color:#e8530e;margin-bottom:6px}
-.audience-box .a-basis{font-size:.7rem;color:#666}
-.audience-box .a-desc{font-size:.92rem;color:#999;margin-top:20px;line-height:1.7}
-.audience-box .a-desc strong{color:#fff}
-.biz-item{border-bottom:1px solid #f0f0f0}
-.biz-item:last-child{border:none}
-.biz-head{display:flex;align-items:center;gap:12px;padding:16px 0;cursor:pointer}
-.biz-icon{font-size:1.2rem}
-.biz-name{font-size:.88rem;font-weight:700;flex:1;color:#222}
-.biz-toggle{font-size:1rem;color:#ccc;transition:transform .2s}
-.biz-item.open .biz-toggle{transform:rotate(45deg);color:#111}
-.biz-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.biz-item.open .biz-body{max-height:200px}
-.biz-body-inner{padding:0 0 16px}
-.biz-body-inner p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:8px}
-.biz-action{font-size:.82rem;font-weight:700;color:#111}
-.cta-bar{background:#111;border-radius:12px;padding:18px 24px;text-align:center;margin-bottom:14px}
-.cta-bar p{font-size:.85rem;font-weight:700;color:#fff;margin:0}
-.footer{text-align:center;color:#ccc;font-size:.68rem;padding:32px 0 16px}
+.back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
+.tag-line{font-size:.75rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:32px}
+.title{font-size:1.6rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:48px}
+.body{font-size:.93rem;color:#444;line-height:2.8}
+.body p{margin:0 0 32px}
+.body .editor{color:#111;font-weight:600}
+.body .accent{color:#111;font-weight:700}
+.body .muted{color:#bbb}
+.body .orange{color:#6366F1;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:48px 0}
+.body .speaker{font-size:.72rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:8px}
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
+.num-block .label{font-size:.72rem;color:#999;margin-top:6px}
+.usecase{margin:48px 0;background:#f5f3ff;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
+.usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.usecase-item:last-child{border:none}
+.usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
+.usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
+.footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
+<div class="tag-line">금융 · 2026.04.27</div>
 
-<div class="hero">
-  <div class="tag">금융 · 2026.04.27</div>
-  <h1>대출비교앱 3개 다 깔고 마지막에 차량담보대출앱 깐 사람</h1>
-  <div class="sub">신용대출 한도가 막히자, 내 차까지 담보로 내미는 사람들</div>
-  <div class="meta">오늘의 오디언스 #129</div>
+<div class="title">대출비교앱 3개 다 깔고 마지막에 차량담보대출앱 깐 사람</div>
+
+<div class="body">
+
+<p>신용대출 한도가 막히자, 내 차까지 담보로 내미는 사람들</p>
+
+<p class="muted">이 사람은 단순히 대출을 비교하는 게 아닙니다. 신용대출 한도의 끝에서, 마지막으로 차까지 담보로 내미는 사람 입니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">이 사람은 누구인가</p>
+
+<p><span class="accent">이 사람은 왜 매력적인가? 모든 신용대출 옵션을 소진한 뒤 나온 마지막 선택. 전환율이 가장 높은 순간.</span></p>
+
+<hr class="divider">
+
+<p class="speaker">우리가 잡은 시그널</p>
+
+<p><span class="editor">앱 하나로는 안 잡힙니다. 우리는 앱 조합과 타이밍을 봤습니다.</span></p>
+
 </div>
 
-<div class="quote">
-  <p>"핀다에서 한도 조회했는데 300만원밖에 안 나와요.<br>뱅크샐러드도 비슷하고, 토스도 마찬가지.<br><strong>결국 차를 담보로 잡으면 2,000만원까지 된다</strong>고 해서 알아보는 중이에요."</p>
-  <div class="from">— 38세, 자영업자</div>
-</div>
-
-<div class="card">
-  <div class="s-label">이 사람의 일주일</div>
-  <p style="font-size:.95rem;color:#555;line-height:1.9">
-    월요일, 급한 자금이 필요해서 핀다를 깝니다. 한도 조회 결과: 300만원. 턱없이 부족합니다.<br>
-    화요일, 뱅크샐러드를 깝니다. 비슷한 결과. 토스까지 깔아봐도 마찬가지.<br>
-    수요일, 검색창에 "신용대출 한도 더 받는 법"을 칩니다. 자동완성에 "차량담보대출"이 뜹니다.<br>
-    목요일, 카카오뱅크 자동차담보대출 페이지를 열어봅니다. 내 차 시세 2,800만원, 대출 가능액 2,000만원. 신용대출의 7배입니다.
-  </p>
-</div>
-
-<div class="punchline">
-  <p>이 사람은 단순히 대출을 비교하는 게 아닙니다.<br><strong>신용대출 한도의 끝에서, 마지막으로 차까지 담보로 내미는 사람</strong>입니다.</p>
-</div>
-
-<div class="card">
-  <div class="s-label">신용대출에서 차량담보대출까지 넘어가는 순간</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">STEP 01</div>
-      <div class="step-title">대출비교앱 3개 설치</div>
-      <div class="step-desc">핀다·뱅크샐러드·토스에서 한도 조회. 전부 비슷한 결과에 실망</div>
+<div style="background:#f5f3ff;border-radius:14px;padding:28px 24px;margin:36px 0">
+  <div style="font-size:.82rem;font-weight:800;color:#6366F1;margin-bottom:24px">시그널 타임라인</div>
+  <div style="position:relative;padding:0 0 0 20px">
+    <div style="position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366F1,#a5b4fc)"></div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">STEP 01</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">대출비교앱 3개 설치</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">핀다·뱅크샐러드·토스에서 한도 조회. 전부 비슷한 결과에 실망</div>
     </div>
-    <div class="step">
-      <div class="step-num">STEP 02</div>
-      <div class="step-title">한도 벽에 부딪힘</div>
-      <div class="step-desc">신용등급으로는 필요한 금액의 절반도 안 나옴을 확인</div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">STEP 02</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">한도 벽에 부딪힘</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">신용등급으로는 필요한 금액의 절반도 안 나옴을 확인</div>
     </div>
-    <div class="step active">
-      <div class="step-num">STEP 03 · 전환점</div>
-      <div class="step-title">차량담보대출 검색</div>
-      <div class="step-desc">"내 차로 얼마까지 되지?" — 담보대출앱 설치, 차량 시세 조회 시작</div>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="s-label">같은 대출 수요, 완전히 다른 행동</div>
-  <div class="compare">
-    <div class="compare-col">
-      <h4>일반 대출 비교자</h4>
-      <li>대출비교앱 1개만 설치</li>
-      <li>금리만 확인 후 종료</li>
-      <li>급하지 않아 며칠 고민</li>
-    </div>
-    <div class="compare-col">
-      <h4>차량담보까지 간 사람</h4>
-      <li><strong>대출비교앱 3개 연속 설치</strong></li>
-      <li><strong>한도 부족 확인 후 담보대출 전환</strong></li>
-      <li><strong>자금 필요 시점이 임박</strong></li>
+    <div style="position:relative;padding:0 0 0 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">STEP 03 · 전환점</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">차량담보대출 검색</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">"내 차로 얼마까지 되지?" — 담보대출앱 설치, 차량 시세 조회 시작</div>
     </div>
   </div>
 </div>
 
-<div class="highlight-line">
-  <p>이 사람은 왜 매력적인가?<br><span>모든 신용대출 옵션을 소진한 뒤 나온 마지막 선택. 전환율이 가장 높은 순간.</span></p>
+<div class="body">
+<p><span class="editor">이 ~7만 명을 지금 누가 찾고 있을까요? 지금이 광고 타이밍입니다.</span></p>
 </div>
 
-<div class="audience-box">
-  <h3>대출비교앱 3개 다 깔고 마지막에 차량담보대출앱 깐 사람</h3>
-  <div class="a-num">~7만 명</div>
-  <div class="a-basis">대출앱+은행앱 교차 · DMP 실측</div>
-  <div class="a-desc">신용대출 한도의 끝에 도달한 사람들. <strong>자금 필요가 급하고, 담보를 내놓을 각오까지 된 상태</strong>라 금융상품 전환율이 극도로 높습니다.</div>
+<div class="num-block">
+  <div class="num">~7만 명</div>
+  <div class="label">대출앱+은행앱 교차 · DMP 실측</div>
+  <div style="font-size:.65rem;color:#ccc;margin-top:4px">* 예상 모수 · 조건 세분화 시 변동 가능</div>
 </div>
 
-<div class="card">
-  <div class="s-label">이 오디언스를 쓸 수 있는 광고주</div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🚗</span><span class="biz-name">차량담보대출 업체</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>신용대출 한도에 좌절한 사람에게 "내 차로 최대 3,000만원" 메시지는 즉각 반응을 끌어냅니다</p><div class="biz-action">→ "신용대출 한도 부족? 내 차 시세만큼 바로 대출"</div></div></div>
+<div class="usecase">
+  <div class="usecase-title">이 사람한테 뭘 팔 수 있을까요?</div>
+  <div class="usecase-item">
+    <div class="who">차량담보대출 업체</div>
+    <div class="how">신용대출 한도에 좌절한 사람에게 "내 차로 최대 3,000만원" 메시지는 즉각 반응을 끌어냅니다</div>
   </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">🏦</span><span class="biz-name">은행 · 저축은행</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>담보대출까지 알아보는 사람은 금리보다 한도가 급한 상태. 빠른 심사·당일 입금을 강조</p><div class="biz-action">→ "심사 10분, 당일 입금. 차량담보 전용 저금리"</div></div></div>
+  <div class="usecase-item">
+    <div class="who">은행 · 저축은행</div>
+    <div class="how">담보대출까지 알아보는 사람은 금리보다 한도가 급한 상태. 빠른 심사·당일 입금을 강조</div>
   </div>
-  <div class="biz-item" onclick="this.classList.toggle('open')">
-    <div class="biz-head"><span class="biz-icon">💳</span><span class="biz-name">핀테크 · 대출비교</span><span class="biz-toggle">+</span></div>
-    <div class="biz-body"><div class="biz-body-inner"><p>신용대출과 담보대출을 한 번에 비교할 수 있는 플랫폼으로 포지셔닝</p><div class="biz-action">→ "신용·담보·자동차 대출 한 번에 비교. 내 최대 한도 확인"</div></div></div>
-  </div>
-</div>
-
-
-
-<div class="footer"><div style="margin-bottom:6px">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰 자동 생성한 오디언스 분석입니다.</div><div style="margin-bottom:6px">데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks</div><div>made by soddy</div></div>
-
-<div style="background:#f7f7fa;border-radius:16px;padding:32px 28px;margin:24px 0;text-align:center">
-  <div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:6px">이 오디언스를 캠페인에 쓰고 싶다면</div>
-  <div style="font-size:.75rem;color:#999;line-height:1.6;margin-bottom:20px">ADID 세그먼트 추출 · DSP 연동 · 커스텀 오디언스 설계</div>
-  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-    <a href="mailto:audiencelab@igaworks.com" style="background:#111;color:#fff;padding:10px 22px;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none">이메일 문의</a>
-    <a href="https://mobileindex.com" style="background:#fff;color:#111;padding:10px 22px;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none;border:1px solid #ddd">모바일인덱스 →</a>
+  <div class="usecase-item">
+    <div class="who">핀테크 · 대출비교</div>
+    <div class="how">신용대출과 담보대출을 한 번에 비교할 수 있는 플랫폼으로 포지셔닝</div>
   </div>
 </div>
 
+<div class="cta">
+  <a href="mailto:audiencelab@igaworks.com">이 오디언스 활용 문의 →</a>
 </div>
-</body>
-</html>
+
+<div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>
