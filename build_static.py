@@ -145,12 +145,12 @@ today = ESSAYS[0]
 essay_map = {e["id"]: e for e in ESSAYS}
 
 CAT_TITLES = {
-    "금융": ("", "돈이 움직이는 시그널"),
-    "여행": ("", "여행 계획이 바뀌는 순간"),
-    "스포츠": ("", "운동 습관이 바뀌는 사람"),
-    "라이프": ("", "생활이 전환되는 타이밍"),
-    "게임": ("", "플랫폼을 갈아타는 게이머"),
-    "쇼핑": ("", "장바구니가 이동하는 신호"),
+    "금융": ("", "이 사람의 돈은 지금 이동 중입니다"),
+    "여행": ("", "목적지가 바뀌는 순간"),
+    "스포츠": ("", "몸이 먼저 움직인 사람들"),
+    "라이프": ("", "30일 안에 결정해야 하는 사람"),
+    "게임": ("", "플랫폼을 갈아타는 중입니다"),
+    "쇼핑": ("", "장바구니가 옮겨가고 있습니다"),
 }
 
 INDEX_CSS = """
@@ -173,14 +173,13 @@ body{background:#fff !important}
 .cat-section{margin-bottom:48px}
 .cat-header{margin-bottom:20px}
 .cat-name{font-size:.88rem;font-weight:900;color:#111}
-.scroll-row{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;scroll-snap-type:x mandatory}
+.scroll-row{display:flex;flex-direction:column;gap:12px}
 .scroll-row::-webkit-scrollbar{height:0}
-.essay-card{min-width:240px;max-width:260px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
+.essay-card{text-decoration:none;color:inherit;display:block;padding:20px 24px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
 .essay-card:hover{border-color:#6366F1}
 .essay-card h3{font-size:.88rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
-.essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5}
 .essay-card .date{font-size:.6rem;color:#ddd;margin-top:10px}
-@media(max-width:640px){.essay-card{min-width:200px;max-width:220px}}
 </style>
 """
 
