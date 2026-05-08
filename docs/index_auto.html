@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>오늘의 오디언스 — 오늘의 오디언스</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antialiased;color:#1a1a1a}
+.wrap{max-width:800px;margin:0 auto;padding:0 24px 100px}
+.hero-img{width:calc(100% + 48px);margin:0 -24px;height:320px;object-fit:cover;display:none}
+.detail-wrap{max-width:800px;margin:0 auto}
+.detail-hero,.hero{padding:40px 0 32px}
+.detail-tag,.hero .tag{font-size:.72rem;font-weight:600;color:#e8530e;letter-spacing:1px;margin-bottom:16px;display:block}
+.detail-emoji{display:none}
+.detail-title,.hero h1{font-size:1.8rem;font-weight:900;color:#000;line-height:1.4;letter-spacing:-0.5px}
+.detail-sub{display:none}
+.detail-meta,.hero .meta{font-size:.78rem;color:#bbb;margin-top:16px}
+.body p,.section p,.quote-box p{font-size:1.1rem;color:#333;line-height:2;margin-bottom:16px;letter-spacing:-0.2px}
+.body strong,.section strong,.quote-box strong{color:#000;font-weight:800}
+.section{padding:24px 0;border-bottom:none}
+.section-label{font-size:1.2rem;font-weight:800;color:#000;line-height:1.5;margin:32px 0 12px;letter-spacing:-0.3px}
+.quote-box{padding:32px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin:24px 0;background:none;border-left:none}
+.quote-box p{font-style:italic}
+.quote-box strong{font-style:normal}
+.behavior-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+.behavior-card{background:#fafafa;padding:28px;position:relative;overflow:hidden}
+.behavior-card.highlight{background:#000}
+.behavior-card.highlight .bc-desc{color:#999}
+.bc-step{font-size:.62rem;font-weight:700;color:#bbb;letter-spacing:2px;margin-bottom:10px}
+.behavior-card.highlight .bc-step{color:#666}
+.bc-title{font-size:1.05rem;font-weight:800;color:#000;line-height:1.35;margin-bottom:6px}
+.behavior-card.highlight .bc-title{color:#fff}
+.bc-desc{font-size:.88rem;color:#777;line-height:1.6}
+.bc-num{font-size:2.5rem;font-weight:900;color:#000;opacity:0.06;position:absolute;right:24px;top:50%;transform:translateY(-50%)}
+.behavior-card.highlight .bc-num{color:#e8530e;opacity:1;font-size:1.6rem;position:static;transform:none;margin-top:16px}
+.insight-box{background:#000;padding:40px 32px;margin:32px -24px}
+.insight-box .ins-label{display:none}
+.insight-box p{color:#fff;font-size:1.1rem;line-height:2;font-weight:500;margin:0}
+.insight-box strong{color:#e8530e;font-weight:700}
+.audience-card{background:#000;padding:48px 32px;margin:48px -24px}
+.ind-grid,.ind-card{display:none}
+.footer{text-align:center;color:#ccc;font-size:.72rem;padding:48px 0 16px}
+.back-btn{display:inline-block;background:#000;color:#fff;padding:8px 20px;font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:16px}
+.back-btn:hover{background:#333}
+.ch-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.ch-grid::-webkit-scrollbar{height:3px}
+.ch-grid::-webkit-scrollbar-thumb{background:#eee;border-radius:2px}
+.ch-card{min-width:200px;max-width:240px;flex-shrink:0;scroll-snap-align:start;text-decoration:none;color:inherit;display:block}
+.ch-card:hover .ch-title{color:#e8530e}
+.ch-card img{width:100%;height:110px;object-fit:cover;filter:grayscale(100%);margin-bottom:12px}
+.ch-card .ch-tag{font-size:.6rem;font-weight:700;color:#e8530e;letter-spacing:0.5px;margin-bottom:8px}
+.ch-card .ch-title{font-size:.9rem;font-weight:800;color:#000;line-height:1.4;margin-bottom:6px;transition:color .15s}
+.ch-card .ch-stat{font-size:.85rem;font-weight:900;color:#000}
+@media(max-width:768px){.ch-card{min-width:180px;max-width:220px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<style>
+body{background:#fff !important}
+.wrap{max-width:960px !important;margin:0 auto !important;padding:0 24px 80px}
+.header{padding:72px 0 48px}
+.header .label{font-size:.6rem;font-weight:700;letter-spacing:2px;color:#6366F1;margin-bottom:12px}
+.header h1{font-size:1.6rem;font-weight:900;color:#111;letter-spacing:-.3px;margin-bottom:8px}
+.header p{font-size:.82rem;color:#bbb;line-height:1.7}
+.today-section{margin-bottom:64px}
+.today-label{font-size:.6rem;font-weight:700;color:#6366F1;letter-spacing:1.5px;margin-bottom:20px}
+.today-card{background:#111;border-radius:20px;padding:40px 32px;text-decoration:none;display:block;color:inherit;transition:transform .15s}
+.today-card:hover{transform:translateY(-2px)}
+.today-card .t-tag{font-size:.6rem;font-weight:600;color:#6366F1;margin-bottom:16px}
+.today-card h2{font-size:1.4rem;font-weight:900;color:#fff;line-height:1.4;margin-bottom:12px}
+.today-card .t-sub{font-size:.82rem;color:#888;line-height:1.6;margin-bottom:24px}
+.today-card .t-bottom{display:flex;align-items:center;justify-content:space-between}
+.today-card .t-arrow{font-size:.75rem;font-weight:700;color:#6366F1}
+.cat-section{margin-bottom:56px}
+.cat-header{margin-bottom:20px;padding:16px 20px;background:#f5f3ff;border-radius:10px}
+.cat-name{font-size:1.05rem;font-weight:900;color:#6366F1}
+.essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.essay-card{text-decoration:none;color:inherit;display:block;padding:20px;border:1px solid #f0f0f0;border-radius:14px;transition:border-color .15s}
+.essay-card:hover{border-color:#6366F1}
+.essay-card h3{font-size:.85rem;font-weight:800;color:#111;line-height:1.4;margin-bottom:6px}
+.essay-card .esub{font-size:.72rem;color:#bbb;line-height:1.5}
+.essay-card .date{font-size:.6rem;color:#ddd;margin-top:10px}
+</style>
+
+<div class="header">
+  <div class="label">AUDIENCE IDEA BANK</div>
+  <h1>오늘의 오디언스</h1>
+  <p>DMP 행동 데이터를 교차 분석해, 광고주가 바로 쓸 수 있는 오디언스를 제안합니다.</p>
+</div>
+
+<div class="today-section">
+  <div class="today-label">TODAY</div>
+  <a class="today-card" href="insurance_0509.html">
+    <div class="t-tag">보험 · 2026.05.09</div>
+    <h2>임신 확인 후 보험앱 3개 깐 사람</h2>
+    <div class="t-sub">태아보험 20주 데드라인. 임신앱×보험앱 동시 활성자를 찾는 법</div>
+    <div class="t-bottom">
+      <span class="t-arrow">읽기 →</span>
+    </div>
+  </a>
+</div>
+
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">이 사람의 돈은 지금 이동 중입니다</span>
+  </div>
+  <div class="essay-grid" style="display:flex;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px">
+    <a class="essay-card" href="tax_0509.html" style="min-width:220px;max-width:240px;flex-shrink:0">
+      <h3>삼쩜삼 깔고 환급금 확인하는 프리랜서</h3>
+      <div class="esub">5월에 세금앱 여는 사람 = 종소세 신고 대상자. 프리랜서·1인 사업자를 찾는 법</div>
+      <div class="date">05.09</div>
+    </a>
+    <a class="essay-card" href="tosspay.html" style="min-width:220px;max-width:240px;flex-shrink:0">
+      <h3>대출 만기 30일 전부터 ETF 앱 깔기 시작한 사람</h3>
+      <div class="esub">빚 줄이기보다 투자로 갚겠다는 사람들</div>
+      <div class="date">04.20</div>
+    </a>
+    <a class="essay-card" href="safehaven_0420.html" style="min-width:220px;max-width:240px;flex-shrink:0">
+      <h3>주식 정리하고 금 사는 사람</h3>
+      <div class="esub">증권앱 삭제 후 3일 내 한국금거래소 설치자가 말하는 것</div>
+      <div class="date">04.20</div>
+    </a>
+    <a class="essay-card" href="stock_0427.html" style="min-width:220px;max-width:240px;flex-shrink:0">
+      <h3>미국주식 팔고 국내 증권앱으로 돌아온 사람</h3>
+      <div class="esub">서학개미가 미장을 떠나고 있어요. 이들이 다음에 여는 앱은?</div>
+      <div class="date">04.27</div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">목적지가 바뀌는 순간</span>
+  </div>
+  <div class="essay-grid">
+    <a class="essay-card" href="travel_0423.html">
+      <h3>해외여행 포기하고 국내앱 깐 사람</h3>
+      <div class="esub">유류할증료 급등으로 국내여행 전환하는 예약 취소자들</div>
+      <div class="date">04.26</div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">몸이 먼저 움직인 사람들</span>
+  </div>
+  <div class="essay-grid">
+    <a class="essay-card" href="헬스_0425.html">
+      <h3>운동앱 2개 깔고 쇼핑앱 여는 사람들</h3>
+      <div class="esub">홈트와 헬스장을 동시에 준비하는 사람들의 구매 패턴</div>
+      <div class="date">04.25</div>
+    </a>
+    <a class="essay-card" href="golf.html">
+      <h3>접대 때문에 골프 시작한 입문자</h3>
+      <div class="esub">접대 골프 입문자는 고민하지 않아요. 빠르게 사요.</div>
+      <div class="date">04.11</div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">30일 안에 결정해야 하는 사람</span>
+  </div>
+  <div class="essay-grid">
+    <a class="essay-card" href="car_0502.html">
+      <h3>리스 만기 후 중고차앱 3개 깐 사람</h3>
+      <div class="esub">반납할까 인수할까 고민하다, 결국 중고차 시세부터 검색하는 사람들</div>
+      <div class="date">05.02</div>
+    </a>
+    <a class="essay-card" href="pet.html">
+      <h3>사료 갈아탄 후 펫닥 3번째 상담 중인 사람</h3>
+      <div class="esub">새 사료 바꾼 후 5일 내 수의사 온라인 상담 앱을 여는 반려인</div>
+      <div class="date">04.13</div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">플랫폼을 갈아타는 중입니다</span>
+  </div>
+  <div class="essay-grid">
+    <a class="essay-card" href="game_0422.html">
+      <h3>스위치2 예약하고 스팀 삭제한 사람</h3>
+      <div class="esub">모바일 게임을 지우고 콘솔로 갈아타는 신호</div>
+      <div class="date">04.22</div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-header">
+    <span class="cat-name">장바구니가 옮겨가고 있습니다</span>
+  </div>
+  <div class="essay-grid">
+    <a class="essay-card" href="coupang_exit.html">
+      <h3>쿠팡 삭제 후 알리 깐 사람</h3>
+      <div class="esub">236만 이탈자 중 해외직구로 간 진짜 타겟은?</div>
+      <div class="date">04.24</div>
+    </a>
+    <a class="essay-card" href="parents_day_0503.html">
+      <h3>어버이날 선물 검색하다 건강식품앱 깐 사람</h3>
+      <div class="esub">쿠팡에서 안마기 보다가 정관장앱까지 깐 사람들</div>
+      <div class="date">05.03</div>
+    </a>
+  </div>
+</div>
+<div style="margin-top:56px;padding:40px 0;border-top:1px solid #f0f0f0;text-align:center">
+  <div style="font-size:.62rem;font-weight:700;color:#6366F1;letter-spacing:2px;margin-bottom:12px">SUBSCRIBE</div>
+  <div style="font-size:1.1rem;font-weight:900;color:#111;margin-bottom:6px">매일 새로운 오디언스를 받아보세요</div>
+  <div style="font-size:.78rem;color:#999;line-height:1.6;margin-bottom:24px">매일 아침, 광고주가 바로 쓸 수 있는 오디언스를 이메일로 보내드립니다.</div>
+  <form id="sf" onsubmit="return handleSub(event)" style="max-width:340px;margin:0 auto">
+    <div style="display:flex;gap:8px">
+      <input type="email" id="se" placeholder="이메일 주소" required style="flex:1;padding:12px 14px;border:1px solid #e0e0e0;border-radius:8px;background:#fff;font-size:.85rem;outline:none">
+      <button type="submit" id="sb" style="padding:12px 20px;background:#6366F1;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
+    </div>
+  </form>
+  <div class="sub-msg" id="sm" style="font-size:.68rem;color:#999;margin-top:10px;min-height:14px"></div>
+</div>
+<script>
+var SU='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
+function handleSub(e){
+  e.preventDefault();
+  var em=document.getElementById('se').value,btn=document.getElementById('sb');
+  btn.disabled=true;btn.textContent='...';
+  fetch(SU,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+  .then(function(){document.getElementById('sm').textContent='구독 완료! 감사합니다 🎉';document.getElementById('sf').reset()})
+  .catch(function(){document.getElementById('sm').textContent='오류가 발생했습니다.'})
+  .finally(function(){btn.disabled=false;btn.textContent='구독'});
+  return false
+}
+</script>
+
+<div class="footer" style="text-align:center;color:#ccc;font-size:.65rem;padding:32px 0 16px;line-height:1.8">본 리포트는 IGAWorks의 DMP 행동 데이터를 시장 트렌드에 맞춰<br>자동 생성한 오디언스 분석입니다.<br>데이터 기준: 모바일인덱스 실측 · © 2026 IGAWorks<br>made by soddy</div>
+</div>
+</body>
+</html>
