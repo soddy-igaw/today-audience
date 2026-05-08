@@ -1,87 +1,121 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 <style>
-body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.2px}
+body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',sans-serif;letter-spacing:-.2px}
 *{box-sizing:border-box}
 .wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
 .back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
 .tag-line{font-size:.75rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:32px}
-.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
-.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
-.section-num{font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:1.5px;margin-bottom:16px}
-.body{font-size:.93rem;color:#444;line-height:2.6}
-.body p{margin:0 0 28px}
+.title{font-size:1.6rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:48px}
+.body{font-size:.93rem;color:#444;line-height:2.8}
+.body p{margin:0 0 32px}
+.body .editor{color:#111;font-weight:600}
 .body .accent{color:#111;font-weight:700}
 .body .muted{color:#bbb}
-.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
-.callout{background:#f8f5f0;border-radius:12px;padding:24px;margin:24px 0}
-.callout p{font-size:.88rem;color:#555;line-height:1.9;margin:0}
-.callout strong{color:#111}
-.num-block{text-align:center;padding:32px 0}
-.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.body .orange{color:#6366F1;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:48px 0}
+.body .speaker{font-size:.72rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:8px}
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
 .num-block .label{font-size:.72rem;color:#999;margin-top:6px}
-.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
-.compare-row:last-child{border:none}
-.compare-row .dim{flex:1;color:#ccc}
-.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
-.usecase{margin:0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase{margin:48px 0;background:#f5f3ff;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
 .usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .usecase-item:last-child{border:none}
 .usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
 .usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
-.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
-.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
 .footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 <div class="tag-line">쇼핑 · 2026.05.03 · 어버이날 선물 검색하다 건강식품앱 깐 사람</div>
 
-<div class="hook">가족 단톡방에서 시작돼요. '어버이날 뭐 드리지?'</div>
-<div class="hook-sub">쿠팡에서 검색하다가, 정관장 공식앱을 깔아요. 가격이 아니라 '뭘 사야 하는지'를 찾는 거예요.</div>
+<div class="title">어버이날 선물 검색하다 건강식품앱 깐 사람</div>
 
-<div class="section-num">01. 이 사람의 이야기</div>
 <div class="body">
 
-<p>안마기, 건강식품, 과일 세트를 비교해요.<br>쿠팡에서 끝나지 않아요. 브랜드 공식앱까지 깔아요.</p>
+<p>가족 단톡방에서 시작됩니다. '어버이날 뭐 드리지?' 쿠팡에서 검색하다가, 정관장 공식앱을 깝니다.</p>
 
-<p><span class="accent">쇼핑앱에서 검색만 하는 사람이 아니에요.<br>브랜드앱까지 깐 사람이에요.</span></p>
+<p class="muted">가격이 아니라 '뭘 사야 하는지'를 찾는 겁니다.</p>
 
-<p class="muted">이 사람의 객단가는 10만 원 이상이에요.</p>
+<hr class="divider">
 
-<div class="callout">
-  <p><strong>DMP에서 이 사람을 찾는 법</strong><br><br>종합쇼핑앱 + 건강앱을 동시에 활성 사용하는 사람.<br>검색만 하는 사람이 아니에요. 브랜드앱까지 깐 사람을 잡아야 해요.</p>
+<p class="speaker">이 사람은 누구인가</p>
+
+<p><span class="accent">쇼핑앱에서 검색만 하는 사람이 아닙니다. 브랜드앱까지 깐 사람입니다.</span></p>
+
+<p>안마기, 건강식품, 과일 세트를 비교합니다. 쿠팡에서 끝나지 않습니다. 브랜드 공식앱까지 깝니다. 이 사람의 객단가는 10만 원 이상입니다.</p>
+
+<p class="muted">D-5부터 D-1이 구매 피크입니다. 지금이 그 타이밍입니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">이들의 행동 패턴</p>
+
+<p>핵심은 이겁니다. <span class="accent">종합쇼핑앱과 건강앱을 동시에 활성 사용한다는 것.</span></p>
+
+<p>평소 쇼핑하는 사람은 건강앱을 안 깝니다. 쇼핑앱과 건강앱이 동시에 나타나는 건 — 선물을 사려는 사람뿐입니다.</p>
+
+<p class="muted">이 사람은 자기 것을 사는 게 아닙니다. 부모님 것을 사는 겁니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">우리가 잡은 시그널</p>
+
+<p><span class="editor">앱 하나로는 안 잡힙니다. 우리는 앱 조합과 타이밍을 봤습니다.</span></p>
+
 </div>
 
+<div style="background:#f5f3ff;border-radius:14px;padding:28px 24px;margin:36px 0">
+  <div style="font-size:.82rem;font-weight:800;color:#6366F1;margin-bottom:24px">시그널 타임라인</div>
+  <div style="position:relative;padding:0 0 0 20px">
+    <div style="position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366F1,#a5b4fc)"></div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-7</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">쇼핑앱에서 선물 검색 시작</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">건강식품, 안마기, 과일 세트 비교</div>
+    </div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-5</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">브랜드 공식앱 설치</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">정관장·종근당. 공식몰 할인 확인</div>
+    </div>
+    <div style="position:relative;padding:0 0 0 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-1</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">구매 완료 — 배송 보장 확인</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">당일배송·새벽배송 가능 여부가 결정 요인</div>
+    </div>
+  </div>
 </div>
 
-<div class="section-num">02. 숫자로 보면</div>
+<div class="body">
+<p><span class="editor">이 41만 명을 지금 누가 찾고 있을까요? 건강식품 브랜드, 프리미엄 식품, 안마기. 어버이날 D-5부터 D-1이 구매 피크입니다. 지금이 그 타이밍입니다.</span></p>
+</div>
 
 <div class="num-block">
   <div class="num">41만 명</div>
-  <div class="label">쇼핑앱 × 건강앱 동시 활성 · DMP 실측 (419,014)</div>
+  <div class="label">쇼핑앱 × 건강앱 동시 활성 · DMP 실측</div>
+  <div style="font-size:.65rem;color:#ccc;margin-top:4px">* 예상 모수 · 조건 세분화 시 변동 가능</div>
 </div>
 
-<div class="compare-row"><span class="dim">쇼핑앱+건강앱</span><span class="val">동시 활성</span></div>
-<div class="compare-row"><span class="dim">객단가</span><span class="val">10만 원+</span></div>
-<div class="compare-row"><span class="dim">구매 시점</span><span class="val">D-5 ~ D-1</span></div>
-
-<hr style="border:none;border-top:1px solid #f0f0f0;margin:40px 0">
-
-<div class="section-num">03. 광고주가 쓰는 법</div>
-
 <div class="usecase">
+  <div class="usecase-title">이 사람한테 뭘 팔 수 있을까요?</div>
   <div class="usecase-item">
     <div class="who">건강식품 브랜드</div>
-    <div class="how">공식몰 할인 + 선물 포장. 어버이날 D-5부터 D-1이 구매 피크예요.</div>
+    <div class="how">공식몰 할인 + 선물 포장. 어버이날 D-5부터 D-1이 구매 피크입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">프리미엄 식품 (마켓컬리/SSG)</div>
-    <div class="how">한우·과일 세트 '배송 보장' 푸시. 장바구니 이탈자 리타겟.</div>
+    <div class="how">한우·과일 세트 '배송 보장' 푸시. 장바구니 이탈자 리타겟이 효과적입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">안마기/건강가전</div>
-    <div class="how">어버이날은 안마의자 렌탈 전환율 연중 최고. '첫 달 무료' 메시지.</div>
+    <div class="how">어버이날은 안마의자 렌탈 전환율 연중 최고. '첫 달 무료' 메시지가 먹힙니다.</div>
   </div>
 </div>
 

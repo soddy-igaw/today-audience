@@ -1,87 +1,121 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 <style>
-body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.2px}
+body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',sans-serif;letter-spacing:-.2px}
 *{box-sizing:border-box}
 .wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
 .back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
 .tag-line{font-size:.75rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:32px}
-.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
-.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
-.section-num{font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:1.5px;margin-bottom:16px}
-.body{font-size:.93rem;color:#444;line-height:2.6}
-.body p{margin:0 0 28px}
+.title{font-size:1.6rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:48px}
+.body{font-size:.93rem;color:#444;line-height:2.8}
+.body p{margin:0 0 32px}
+.body .editor{color:#111;font-weight:600}
 .body .accent{color:#111;font-weight:700}
 .body .muted{color:#bbb}
-.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
-.callout{background:#f8f5f0;border-radius:12px;padding:24px;margin:24px 0}
-.callout p{font-size:.88rem;color:#555;line-height:1.9;margin:0}
-.callout strong{color:#111}
-.num-block{text-align:center;padding:32px 0}
-.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.body .orange{color:#6366F1;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:48px 0}
+.body .speaker{font-size:.72rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:8px}
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
 .num-block .label{font-size:.72rem;color:#999;margin-top:6px}
-.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
-.compare-row:last-child{border:none}
-.compare-row .dim{flex:1;color:#ccc}
-.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
-.usecase{margin:0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase{margin:48px 0;background:#f5f3ff;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
 .usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .usecase-item:last-child{border:none}
 .usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
 .usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
-.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
-.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
 .footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 <div class="tag-line">여행 · 2026.04.26 · 해외여행 포기하고 국내앱 깐 사람</div>
 
-<div class="hook">항공권 가격을 확인한 순간, 마음이 바뀌어요.</div>
-<div class="hook-sub">유류할증료 왕복 40만 원. 그날 저녁, 야놀자를 깔았어요.</div>
+<div class="title">해외여행 포기하고 국내앱 깐 사람</div>
 
-<div class="section-num">01. 이 사람의 이야기</div>
 <div class="body">
 
-<p>해외여행앱을 닫고 국내 숙소를 검색해요.<br>제주도, 강원도, 전남 순천.</p>
+<p>항공권 가격을 확인하는 사람이 있습니다. 유류할증료 왕복 40만 원. 그날 저녁, 야놀자를 깔았습니다.</p>
 
-<p><span class="accent">해외를 포기한 게 아니에요. 예산 안에서 최선을 찾는 거예요.</span></p>
+<p class="muted">여행을 포기한 게 아닙니다. 목적지가 바뀐 겁니다.</p>
 
-<p class="muted">이 사람은 여행을 안 가는 게 아니에요. 목적지가 바뀐 거예요.</p>
+<hr class="divider">
 
-<div class="callout">
-  <p><strong>DMP에서 이 사람을 찾는 법</strong><br><br>종합여행앱 + 호텔/리조트앱을 동시에 활성 사용하는 사람.<br>지금 예약 직전인 사람이에요. 숙소를 비교하고 있어요.</p>
+<p class="speaker">이 사람은 누구인가</p>
+
+<p><span class="accent">해외여행앱을 닫고 국내 숙소를 검색하는 사람입니다.</span> 제주도, 강원도, 전남 순천. 예산 안에서 최선을 찾는 겁니다.</p>
+
+<p>해외를 포기한 게 아닙니다. 환율과 유류할증이 바꾼 겁니다. 이 사람은 여행을 안 가는 게 아닙니다. 지금 예약 직전입니다.</p>
+
+<p class="muted">숙소를 비교하고 있습니다. 결제까지 3일 남았습니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">이들의 행동 패턴</p>
+
+<p>핵심은 이겁니다. <span class="accent">종합여행앱과 호텔앱을 동시에 활성 사용한다는 것.</span></p>
+
+<p>구경만 하는 사람은 여행앱 하나만 씁니다. 호텔앱까지 동시에 나타나는 건 — 지금 예약하려는 사람뿐입니다.</p>
+
+<p class="muted">이 사람은 꿈꾸는 게 아닙니다. 비교하고 있습니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">우리가 잡은 시그널</p>
+
+<p><span class="editor">앱 하나로는 안 잡힙니다. 우리는 앱 조합과 타이밍을 봤습니다.</span></p>
+
 </div>
 
+<div style="background:#f5f3ff;border-radius:14px;padding:28px 24px;margin:36px 0">
+  <div style="font-size:.82rem;font-weight:800;color:#6366F1;margin-bottom:24px">시그널 타임라인</div>
+  <div style="position:relative;padding:0 0 0 20px">
+    <div style="position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366F1,#a5b4fc)"></div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-day</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">항공권 가격 확인 후 이탈</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">유류할증·환율 부담. 해외여행 보류</div>
+    </div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">같은 날</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">국내 숙소앱 설치</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">야놀자·여기어때. 국내 전환 즉시</div>
+    </div>
+    <div style="position:relative;padding:0 0 0 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D+1 ~ D+3</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">숙소 비교 후 예약 완료</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">제주·강원·전남. 렌터카 예약도 동시에</div>
+    </div>
+  </div>
 </div>
 
-<div class="section-num">02. 숫자로 보면</div>
+<div class="body">
+<p><span class="editor">이 1.8만 명을 지금 누가 찾고 있을까요? 국내 숙소 플랫폼, 지역 관광, 렌터카. 해외여행 포기 시즌이 시작되면 이 사람은 3일 안에 국내 예약을 끝냅니다.</span></p>
+</div>
 
 <div class="num-block">
   <div class="num">1.8만 명</div>
-  <div class="label">종합여행앱 × 호텔앱 동시 활성 · DMP 실측 (18,839)</div>
+  <div class="label">종합여행앱 × 호텔앱 동시 활성 · DMP 실측</div>
+  <div style="font-size:.65rem;color:#ccc;margin-top:4px">* 예상 모수 · 조건 세분화 시 변동 가능</div>
 </div>
 
-<div class="compare-row"><span class="dim">여행앱+호텔앱</span><span class="val">동시 활성</span></div>
-<div class="compare-row"><span class="dim">행동 단계</span><span class="val">숙소 비교 중</span></div>
-<div class="compare-row"><span class="dim">광고 타이밍</span><span class="val">지금</span></div>
-
-<hr style="border:none;border-top:1px solid #f0f0f0;margin:40px 0">
-
-<div class="section-num">03. 광고주가 쓰는 법</div>
-
 <div class="usecase">
+  <div class="usecase-title">이 사람한테 뭘 팔 수 있을까요?</div>
   <div class="usecase-item">
     <div class="who">국내 숙소 플랫폼</div>
-    <div class="how">해외 이탈자에게 국내 프로모션. '제주 3박 항공 포함 39만 원' 메시지.</div>
+    <div class="how">해외 이탈자에게 국내 프로모션. '제주 3박 항공 포함 39만 원' 메시지가 먹힙니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">제주/강원 지역 관광</div>
-    <div class="how">해외 대신 국내로 전환한 사람. 지역 관광 패키지 광고.</div>
+    <div class="how">해외 대신 국내로 전환한 사람. 지역 관광 패키지 광고 타이밍입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">렌터카</div>
-    <div class="how">국내여행 확정자의 이동수단. 숙소 예약 후 3일 내가 렌터카 예약 타이밍.</div>
+    <div class="how">국내여행 확정자의 이동수단. 숙소 예약 후 3일 내가 렌터카 예약 골든타임입니다.</div>
   </div>
 </div>
 

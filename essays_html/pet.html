@@ -1,85 +1,121 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 <style>
-body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.2px}
+body{background:#fff !important;margin:0;padding:0;font-family:'SUIT',sans-serif;letter-spacing:-.2px}
 *{box-sizing:border-box}
 .wrap{max-width:580px;margin:0 auto;padding:32px 24px 60px}
 a{color:inherit;text-decoration:none}
 .back{display:inline-block;padding:0 0 40px;font-size:.82rem;color:#bbb}
 .tag-line{font-size:.75rem;font-weight:600;color:#999;letter-spacing:.3px;margin-bottom:32px}
-.hook{font-size:1.5rem;font-weight:900;color:#111;line-height:1.5;margin-bottom:8px}
-.hook-sub{font-size:.88rem;color:#999;margin-bottom:48px}
-.section-num{font-size:.68rem;font-weight:700;color:#e8530e;letter-spacing:1.5px;margin-bottom:16px}
-.body{font-size:.93rem;color:#444;line-height:2.6}
-.body p{margin:0 0 28px}
+.title{font-size:1.6rem;font-weight:900;color:#111;line-height:1.4;margin-bottom:48px}
+.body{font-size:.93rem;color:#444;line-height:2.8}
+.body p{margin:0 0 32px}
+.body .editor{color:#111;font-weight:600}
 .body .accent{color:#111;font-weight:700}
 .body .muted{color:#bbb}
-.body .divider{border:none;border-top:1px solid #f0f0f0;margin:40px 0}
-.callout{background:#f8f5f0;border-radius:12px;padding:24px;margin:24px 0}
-.callout p{font-size:.88rem;color:#555;line-height:1.9;margin:0}
-.callout strong{color:#111}
-.num-block{text-align:center;padding:32px 0}
-.num-block .num{font-size:2.8rem;font-weight:900;color:#e8530e}
+.body .orange{color:#6366F1;font-weight:700}
+.body .divider{border:none;border-top:1px solid #f0f0f0;margin:48px 0}
+.body .speaker{font-size:.72rem;font-weight:700;color:#6366F1;letter-spacing:1px;margin-bottom:8px}
+.num-block{text-align:center;padding:48px 0}
+.num-block .num{font-size:2.8rem;font-weight:900;color:#6366F1}
 .num-block .label{font-size:.72rem;color:#999;margin-top:6px}
-.compare-row{display:flex;padding:12px 0;border-bottom:1px solid #f5f5f5;font-size:.85rem}
-.compare-row:last-child{border:none}
-.compare-row .dim{flex:1;color:#ccc}
-.compare-row .val{flex:1;text-align:right;color:#111;font-weight:700}
-.usecase{margin:0;background:#faf7f4;border-radius:14px;padding:28px 24px}
+.usecase{margin:48px 0;background:#f5f3ff;border-radius:14px;padding:28px 24px}
+.usecase-title{font-size:.82rem;font-weight:800;color:#111;margin-bottom:20px}
 .usecase-item{padding:16px 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .usecase-item:last-child{border:none}
 .usecase-item .who{font-size:.88rem;font-weight:700;color:#111;margin-bottom:6px}
 .usecase-item .how{font-size:.82rem;color:#888;line-height:1.7}
-.cta{text-align:center;padding:40px 0;border-top:1px solid #f0f0f0}
-.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#e8530e;padding:14px 32px;border-radius:8px;display:inline-block}
+.cta{text-align:center;padding:48px 0;border-top:1px solid #f0f0f0}
+.cta a{font-size:.82rem;font-weight:700;color:#fff;background:#6366F1;padding:14px 32px;border-radius:8px;display:inline-block}
 .footer{text-align:center;color:#ddd;font-size:.62rem;padding:24px 0;line-height:1.8}
 </style>
 
 <div class="back" onclick="history.back()">← 오늘의 오디언스</div>
 <div class="tag-line">반려동물 · 2026.04.13 · 사료 바꾼 후 수의사앱 깐 사람</div>
 
-<div class="hook">새 사료로 바꿨어요. 3일째, 강아지가 밥을 남겨요.</div>
-<div class="hook-sub">5일째, 펫닥을 깔았어요. 사료를 바꾸는 건 쉬워요. 그 뒤에 오는 불안이 소비를 만들어요.</div>
+<div class="title">사료 바꾼 후 수의사앱 깐 사람</div>
 
-<div class="section-num">01. 이 사람의 이야기</div>
 <div class="body">
 
-<p>수의사 온라인 상담을 예약해요.<br>프리미엄 사료를 검색해요.<br>펫보험까지 알아봐요.</p>
+<p>새 사료로 바꾼 사람이 있습니다. 3일째, 강아지가 밥을 남깁니다. 5일째, 펫닥을 깔았습니다.</p>
 
-<p><span class="accent">이 사람은 반려동물을 키우는 사람이 아니에요.<br>지금 반려동물을 위해 돈을 쓰는 사람이에요.</span></p>
+<p class="muted">사료를 바꾸는 건 쉽습니다. 그 뒤에 오는 불안이 소비를 만듭니다.</p>
 
-<div class="callout">
-  <p><strong>DMP에서 이 사람을 찾는 법</strong><br><br>애완동물앱 + 종합쇼핑앱을 동시에 활성 사용하는 사람.<br>구경꾼이 아니에요. 지금 반려동물을 위해 결제하는 사람이에요.</p>
+<hr class="divider">
+
+<p class="speaker">이 사람은 누구인가</p>
+
+<p><span class="accent">수의사 온라인 상담을 예약합니다.</span> 프리미엄 사료를 검색합니다. 펫보험까지 알아봅니다.</p>
+
+<p>이 사람은 반려동물을 키우는 사람이 아닙니다. 지금 반려동물을 위해 돈을 쓰는 사람입니다.</p>
+
+<p class="muted">건강 불안이 트리거입니다. 이 순간 객단가가 올라갑니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">이들의 행동 패턴</p>
+
+<p>핵심은 이겁니다. <span class="accent">애완동물앱과 쇼핑앱을 동시에 활성 사용한다는 것.</span></p>
+
+<p>구경만 하는 사람은 커뮤니티앱만 씁니다. 쇼핑앱이 동시에 나타나는 건 — 지금 결제하려는 사람뿐입니다.</p>
+
+<p class="muted">이 사람은 정보를 찾는 게 아닙니다. 지갑을 여는 중입니다.</p>
+
+<hr class="divider">
+
+<p class="speaker">우리가 잡은 시그널</p>
+
+<p><span class="editor">앱 하나로는 안 잡힙니다. 우리는 앱 조합과 타이밍을 봤습니다.</span></p>
+
 </div>
 
+<div style="background:#f5f3ff;border-radius:14px;padding:28px 24px;margin:36px 0">
+  <div style="font-size:.82rem;font-weight:800;color:#6366F1;margin-bottom:24px">시그널 타임라인</div>
+  <div style="position:relative;padding:0 0 0 20px">
+    <div style="position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366F1,#a5b4fc)"></div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D-day</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">사료 전환 후 이상 증상 발견</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">밥 남김, 구토, 설사. 불안 시작</div>
+    </div>
+    <div style="position:relative;padding:0 0 28px 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">D+3 ~ D+5</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">수의사앱 설치 + 상담 예약</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">펫닥·굿닥. 온라인 상담 먼저</div>
+    </div>
+    <div style="position:relative;padding:0 0 0 24px">
+      <div style="position:absolute;left:-6px;top:6px;width:14px;height:14px;background:#6366F1;border-radius:50%;border:3px solid #f5f3ff"></div>
+      <div style="font-size:.68rem;font-weight:700;color:#6366F1;margin-bottom:4px">같은 주</div>
+      <div style="font-size:.88rem;font-weight:700;color:#111">프리미엄 사료 + 펫보험 검색</div>
+      <div style="font-size:.75rem;color:#888;margin-top:3px">가격 비교 없이 구매. 불안이 객단가를 올림</div>
+    </div>
+  </div>
 </div>
 
-<div class="section-num">02. 숫자로 보면</div>
+<div class="body">
+<p><span class="editor">이 1.6만 명을 지금 누가 찾고 있을까요? 프리미엄 사료, 펫보험, 동물병원 플랫폼. 건강 불안이 시작되면 이 사람은 일주일 안에 다 삽니다.</span></p>
+</div>
 
 <div class="num-block">
   <div class="num">1.6만 명</div>
-  <div class="label">애완동물앱 × 쇼핑앱 동시 활성 · DMP 실측 (16,245)</div>
+  <div class="label">애완동물앱 × 쇼핑앱 동시 활성 · DMP 실측</div>
+  <div style="font-size:.65rem;color:#ccc;margin-top:4px">* 예상 모수 · 조건 세분화 시 변동 가능</div>
 </div>
 
-<div class="compare-row"><span class="dim">애완동물앱+쇼핑앱</span><span class="val">동시 활성</span></div>
-<div class="compare-row"><span class="dim">구매 트리거</span><span class="val">건강 불안</span></div>
-<div class="compare-row"><span class="dim">객단가</span><span class="val">높음 — 프리미엄 선호</span></div>
-
-<hr style="border:none;border-top:1px solid #f0f0f0;margin:40px 0">
-
-<div class="section-num">03. 광고주가 쓰는 법</div>
-
 <div class="usecase">
+  <div class="usecase-title">이 사람한테 뭘 팔 수 있을까요?</div>
   <div class="usecase-item">
     <div class="who">프리미엄 사료/간식</div>
-    <div class="how">사료 전환기 타겟. '장 건강에 좋은 사료' 메시지가 먹히는 타이밍이에요.</div>
+    <div class="how">사료 전환기 타겟. '장 건강에 좋은 사료' 메시지가 먹히는 타이밍입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">펫보험</div>
-    <div class="how">건강 불안 시점 노출. 동물병원 앱 설치 직후가 보험 전환 골든타임이에요.</div>
+    <div class="how">건강 불안 시점 노출. 동물병원 앱 설치 직후가 보험 전환 골든타임입니다.</div>
   </div>
   <div class="usecase-item">
     <div class="who">동물병원 플랫폼</div>
-    <div class="how">온라인 상담 → 오프라인 방문 전환. 첫 상담 무료 프로모션.</div>
+    <div class="how">온라인 상담 → 오프라인 방문 전환. 첫 상담 무료 프로모션이 효과적입니다.</div>
   </div>
 </div>
 
