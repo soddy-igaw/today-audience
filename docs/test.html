@@ -76,8 +76,16 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
     <div class="rank-sub">모수 × 최신성 기준 정렬</div>
   </div>
   <div class="rank-list">
-    <a class="rank-item" href="safehaven_0420.html">
+    <a class="rank-item" href="travel_0423.html">
       <span class="rank-num">1</span>
+      <div class="rank-content">
+        <h3>해외여행 포기하고 국내앱 깐 사람</h3>
+        <div class="r-sub">종합여행앱 × 호텔앱 동시 활성</div>
+      </div>
+      <span class="rank-badge">1.8만</span>
+    </a>
+    <a class="rank-item" href="safehaven_0420.html">
+      <span class="rank-num">2</span>
       <div class="rank-content">
         <h3>주식 정리하고 금 사는 사람</h3>
         <div class="r-sub">증권앱 × 은행앱 동시 활성</div>
@@ -85,7 +93,7 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
       <span class="rank-badge">92만</span>
     </a>
     <a class="rank-item" href="stock_0427.html">
-      <span class="rank-num">2</span>
+      <span class="rank-num">3</span>
       <div class="rank-content">
         <h3>미국주식 팔고 국내 증권앱으로 돌아온 사람</h3>
         <div class="r-sub">증권앱 × 은행앱 동시 활성</div>
@@ -93,28 +101,20 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
       <span class="rank-badge">92만</span>
     </a>
     <a class="rank-item" href="parents_day_0503.html">
-      <span class="rank-num">3</span>
+      <span class="rank-num">4</span>
       <div class="rank-content">
         <h3>어버이날 선물 검색하다 건강식품앱 깐 사람</h3>
         <div class="r-sub">쇼핑앱 × 건강앱 동시 활성</div>
       </div>
       <span class="rank-badge">41만</span>
     </a>
-    <a class="rank-item" href="overseas_invest_0507.html">
-      <span class="rank-num">4</span>
-      <div class="rank-content">
-        <h3>해외투자에 빠져서 환전앱 여는 사람</h3>
-        <div class="r-sub">증권앱 × 은행앱 × 가상화폐앱</div>
-      </div>
-      <span class="rank-badge">26만</span>
-    </a>
-    <a class="rank-item" href="game_0422.html">
+    <a class="rank-item" href="golf.html">
       <span class="rank-num">5</span>
       <div class="rank-content">
-        <h3>스위치2 예약하고 스팀 삭제한 사람</h3>
-        <div class="r-sub">게임앱 × 가전앱 동시 활성</div>
+        <h3>접대 때문에 골프 시작한 입문자</h3>
+        <div class="r-sub">골프앱 × 비즈니스앱 동시 활성</div>
       </div>
-      <span class="rank-badge">14만</span>
+      <span class="rank-badge">8만</span>
     </a>
   </div>
 </div>
@@ -224,10 +224,29 @@ body{background:#fff;font-family:'SUIT',sans-serif;-webkit-font-smoothing:antial
 
 <div class="blog-cta">
   <div class="bc-label">SUBSCRIBE</div>
-  <h3>데이터로 읽는 오디언스 인사이트</h3>
-  <p>매주 새로운 오디언스 분석과 마켓 트렌드를 블로그에서 확인하세요.</p>
-  <a href="https://www.igaworksblog.com/" target="_blank">블로그 구독하기 →</a>
+  <h3>매일 새로운 오디언스를 받아보세요</h3>
+  <p>매일 아침, 광고주가 바로 쓸 수 있는 오디언스를 이메일로 보내드립니다.</p>
+  <form id="sf" onsubmit="return handleSub(event)" style="max-width:340px;margin:0 auto">
+    <div style="display:flex;gap:8px">
+      <input type="email" id="se" placeholder="이메일 주소" required style="flex:1;padding:12px 14px;border:1px solid #e0e0e0;border-radius:8px;background:#fff;font-size:.85rem;outline:none">
+      <button type="submit" id="sb" style="padding:12px 20px;background:#6366F1;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">구독</button>
+    </div>
+  </form>
+  <div id="sm" style="font-size:.68rem;color:#999;margin-top:10px;min-height:14px"></div>
 </div>
+<script>
+var SU='https://script.google.com/macros/s/AKfycbxqiD464kHQ0YMiy724hZvgP359D1kATb5cxJ8qtN7Z6Vylx2GI-vzlMbPt5f-PZPnKNQ/exec';
+function handleSub(e){
+  e.preventDefault();
+  var em=document.getElementById('se').value,btn=document.getElementById('sb');
+  btn.disabled=true;btn.textContent='...';
+  fetch(SU,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+  .then(function(){document.getElementById('sm').textContent='구독 완료! 감사합니다 🎉';document.getElementById('sf').reset()})
+  .catch(function(){document.getElementById('sm').textContent='오류가 발생했습니다.'})
+  .finally(function(){btn.disabled=false;btn.textContent='구독'});
+  return false
+}
+</script>
 
 <div class="footer">IGAWorks DMP 행동 데이터 기반 · 모바일인덱스 실측 · © 2026<br>made by soddy</div>
 
