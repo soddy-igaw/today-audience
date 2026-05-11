@@ -164,6 +164,15 @@ div[data-testid="stButton"] > button:focus { box-shadow:none!important; }
 # ===== CARD DATA =====
 ESSAYS = [
     {
+        "id": "금융_0511", "emoji": "💰", "tag": "금융", "number": 26,
+        "title": "금융",
+        "sub": "",
+        "stat": "",
+        "stat_label": "금융 오디언스 (DMP)",
+        "date": "2026.05.11",
+        "color": "#000",
+    },
+    {
         "id": "헬스_0425", "emoji": "💪", "tag": "헬스", "number": 25,
         "title": "헬스",
         "sub": "",
@@ -445,6 +454,11 @@ elif st.session_state.view == "detail_헬스_0425":
     if st.button("← 뒤로", key="back_헬스_0425"):
         go_feed()
     st.markdown(load_essay("헬스_0425"), unsafe_allow_html=True)
+
+elif st.session_state.view == "detail_금융_0511":
+    if st.button("← 뒤로", key="back_금융_0511"):
+        go_feed()
+    st.markdown(load_essay("금융_0511"), unsafe_allow_html=True)
 
 elif st.session_state.view == "detail_realestate":
     if st.button("← 뒤로", key="back_re"):
