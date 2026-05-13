@@ -176,3 +176,59 @@ DONE — 25 files in docs/
 📝 app.py 업데이트: #26 금융_0511
 🏗️  정적 사이트 재빌드 완료
 ✅ 에세이 발행 완료! (app.py 업데이트됨)
+ssh: Could not resolve hostname github.com: Temporary failure in name resolution
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Mon May 11 10:07:36 KST 2026 완료
+Tue May 12 10:00:20 KST 2026 SSO 세션 만료 — aws sso login --profile audmaker_soddy 필요
+Wed May 13 10:00:03 KST 2026 자동 발행 시작
+OK: index_auto.html (manual index.html preserved)
+OK: 금융_0513.html
+OK: 금융_0511.html
+OK: insurance_0509.html
+OK: tax_0509.html
+OK: overseas_invest_0507.html
+OK: parents_day_0503.html
+OK: travel_0423.html
+OK: 헬스_0425.html
+OK: coupang_exit.html
+OK: game_0422.html
+OK: safehaven_0420.html
+OK: stock_0427.html
+OK: tosspay.html
+OK: car_0502.html
+OK: pet.html
+OK: golf.html
+
+DONE — 26 files in docs/
+📡 트렌드 기반 카테고리 자동 선택 중...
+   금융: 4개 뉴스
+   부동산: 4개 뉴스
+   쇼핑: 4개 뉴스
+   배달: 1개 뉴스
+   골프: 3개 뉴스
+   교육: 3개 뉴스
+   반려동물: 4개 뉴스
+   패션: 3개 뉴스
+   헬스: 4개 뉴스
+   여행: 3개 뉴스
+   증권: 4개 뉴스
+   게임: 4개 뉴스
+   자동차: 4개 뉴스
+
+🎯 오늘의 카테고리: 금융 (2026-05-13 Wednesday)
+📡 트렌드 수집 중...
+   4개 뉴스 수집
+   → [대출 갈아타기] 토허제 완화에 비거주 1주택 매물 나올까…"고령층 매도·젊은층 보유" - 뉴스1...
+   → [금리 비교] 2025 파킹통장 금리비교‼️ 현시점 쉽게 이자 많이 주는 입출금통장 추천 (Yp6nK31...
+   → [ETF 투자] “버핏 따라사지마, 이게 이긴다” 한국 ETF 대부가 산 종목 4 - 중앙일보...
+📊 DMP 실측 모수 조회 중...
+   → ~7만 명 (대출앱+은행앱 · DMP 실측)
+✍️  에세이 생성 중...
+📄 에세이 저장: /home/soddy/today-audience/essay_20260513.html
+📄 에세이 저장: /home/soddy/today-audience/essays_html/금융_0513.html
+📝 app.py 업데이트: #27 금융_0513
+🏗️  정적 사이트 재빌드 완료
+✅ 에세이 발행 완료! (app.py 업데이트됨)
