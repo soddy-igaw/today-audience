@@ -232,3 +232,59 @@ DONE — 26 files in docs/
 📝 app.py 업데이트: #27 금융_0513
 🏗️  정적 사이트 재빌드 완료
 ✅ 에세이 발행 완료! (app.py 업데이트됨)
+ssh: Could not resolve hostname github.com: Temporary failure in name resolution
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Wed May 13 10:06:05 KST 2026 완료
+Thu May 14 10:00:04 KST 2026 자동 발행 시작
+OK: index_auto.html (manual index.html preserved)
+OK: 금융_0514.html
+OK: 금융_0513.html
+OK: 금융_0511.html
+OK: insurance_0509.html
+OK: tax_0509.html
+OK: overseas_invest_0507.html
+OK: parents_day_0503.html
+OK: travel_0423.html
+OK: 헬스_0425.html
+OK: coupang_exit.html
+OK: game_0422.html
+OK: safehaven_0420.html
+OK: stock_0427.html
+OK: tosspay.html
+OK: car_0502.html
+OK: pet.html
+OK: golf.html
+
+DONE — 27 files in docs/
+📡 트렌드 기반 카테고리 자동 선택 중...
+   금융: 4개 뉴스
+   부동산: 3개 뉴스
+   쇼핑: 4개 뉴스
+   배달: 3개 뉴스
+   골프: 4개 뉴스
+   교육: 4개 뉴스
+   반려동물: 4개 뉴스
+   패션: 2개 뉴스
+   헬스: 4개 뉴스
+   여행: 3개 뉴스
+   증권: 1개 뉴스
+   게임: 4개 뉴스
+   자동차: 4개 뉴스
+
+🎯 오늘의 카테고리: 금융 (2026-05-14 Thursday)
+📡 트렌드 수집 중...
+   4개 뉴스 수집
+   → [대출 갈아타기] 주담대 금리 다시 7% 넘봐… 한은 인상 깜박이에 영끌 차주 불안 - IT조선...
+   → [금리 비교] 주담대 금리 다시 7% 넘봐… 한은 인상 깜박이에 영끌 차주 불안 - IT조선...
+   → [ETF 투자] “퇴직금 투자로 월 1000만원 탄다” 김부장이 놓친 대박 ETF - 중앙일보...
+📊 DMP 실측 모수 조회 중...
+   → ~7만 명 (대출앱+은행앱 · DMP 실측)
+✍️  에세이 생성 중...
+📄 에세이 저장: /home/soddy/today-audience/essay_20260514.html
+📄 에세이 저장: /home/soddy/today-audience/essays_html/금융_0514.html
+📝 app.py 업데이트: #28 금융_0514
+🏗️  정적 사이트 재빌드 완료
+✅ 에세이 발행 완료! (app.py 업데이트됨)

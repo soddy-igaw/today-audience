@@ -6,6 +6,7 @@ OUT = os.path.join(DIR, "docs")
 os.makedirs(OUT, exist_ok=True)
 
 ESSAYS = [
+    {"id":"금융_0514","tag":"금융","title":"금융","sub":"","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.05.14"},
     {"id":"금융_0513","tag":"금융","title":"금융","sub":"","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.05.13"},
     {"id":"금융_0511","tag":"금융","title":"금융","sub":"","stat":"","stat_label":"금융 오디언스 (DMP)","date":"2026.05.11"},
     {"id":"insurance_0509","tag":"보험","title":"임신 확인 후 보험앱 3개 깐 사람","sub":"태아보험 20주 데드라인. 임신앱×보험앱 동시 활성자를 찾는 법","stat":"~12만","stat_label":"임신앱×보험앱 동시 활성 · DMP 실측","date":"2026.05.09"},
